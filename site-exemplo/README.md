@@ -37,7 +37,7 @@ site-exemplo/
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/Ola-Mundo.git
+   git clone https://github.com/AdaoJOAQUIM/Ola-Mundo.git
    cd Ola-Mundo/site-exemplo
    ```
 
@@ -69,7 +69,7 @@ As cores principais estão definidas em variáveis CSS no arquivo `style.css`:
 
 ### Conteúdo
 1. **Nome e Título**: Edite linha 36 em `index.html`
-2. **Projetos**: Adicione seus projetos na seção de projetos (linha 149+)
+2. **Projetos**: Adicione seus projetos na hseção de projetos (linha 149+)
 3. **Habilidades**: Ajuste as porcentagens das barras de progresso (linha 91+)
 4. **Informações de Contato**: Atualize email, telefone e localização (linha 238+)
 5. **Links Sociais**: Adicione seus links de redes sociais (linha 42+)
@@ -87,7 +87,7 @@ O portfolio é totalmente responsivo e se adapta a:
 1. Vá para Settings > Pages no seu repositório
 2. Selecione a branch main e a pasta `/site-exemplo`
 3. Clique em Save
-4. Seu site estará disponível em: `https://seu-usuario.github.io/Ola-Mundo/site-exemplo/`
+4. Seu site estará disponível em: `https://AdaoJOAQUIM.github.io/Ola-Mundo/site-exemplo/`
 
 ### Outras Opções
 - **Netlify**: Arraste a pasta no site do Netlify
@@ -125,12 +125,12 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 ## 📞 Contato
 
-- Email: seu-email@example.com
-- LinkedIn: [Seu Nome](https://linkedin.com/in/seu-perfil)
-- GitHub: [Seu Usuário](https://github.com/seu-usuario)
+- Email: AdaoJOAQUIMstreght@gmail.com
+- LinkedIn: Adao JOAQUIM(https://linkedin.com/in/seu-perfil)
+- GitHub: AdaoJOAQUIM(https://github.com/AdaoJOAQUIM)
 
 ---
 
 ⭐ Se você gostou deste projeto, não esqueça de dar uma estrela!
 
-**Criado com 💜 por [Seu Nome]**
+**Criado com 💜 por Adao JOAQUIM**
