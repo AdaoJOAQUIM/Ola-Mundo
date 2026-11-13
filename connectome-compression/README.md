@@ -37,3 +37,22 @@ actifs, 9 054 spikes, MN9 = 61 (graine 1).
 - Un seul comportement mesuré (sucre → MN9).
 - Les groupes sont tirés du câblage, pas des types cellulaires annotés.
 - Power Query et DAX (feuille LISEZ-MOI du classeur) n'ont pas été exécutés : pas d'Excel ici.
+
+## Mini-circuit à 19 000 : 1 (une seule tâche)
+
+`mini.py` classe chaque connexion par ce qu'elle transporte réellement vers MN9 (trafic mesuré dans la
+simulation complète, importance remontée depuis MN9), garde les k meilleures et rejoue le cerveau entier.
+
+| Connexions gardées | Rapport | MN9 (3 graines ; référence 61, 71, 58) |
+|---|---|---|
+| 1 200 | 12 577 : 1 | 66, 69, 66 |
+| 794 | 19 008 : 1 | 38, 47, 49 |
+| 794, gain 1,1 | 19 008 : 1 | 58, 60, 59 |
+| 400 | 37 730 : 1 | 7, 12, 12 |
+
+`circuit_794.csv` contient ces 794 connexions (151 neurones). Réponse à d'autres intensités de sucre,
+jamais utilisées pour construire le circuit (complet / mini, moyenne de 3 graines) :
+25 Hz : 0 / 0 ; 50 Hz : 14 / 9 ; 75 Hz : 52 / 34 ; 150 Hz : 79 / 85 ; 200 Hz : 87 / 99.
+
+Limites : ce circuit ne reproduit que la sortie MN9 pour la stimulation sucre ; le gain a été réglé sur
+la mesure qu'il sert à évaluer ; ce n'est pas une compression du cerveau entier.
