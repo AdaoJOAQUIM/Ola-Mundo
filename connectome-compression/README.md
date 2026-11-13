@@ -56,3 +56,15 @@ jamais utilisées pour construire le circuit (complet / mini, moyenne de 3 grain
 
 Limites : ce circuit ne reproduit que la sortie MN9 pour la stimulation sucre ; le gain a été réglé sur
 la mesure qu'il sert à évaluer ; ce n'est pas une compression du cerveau entier.
+
+## Cerveau entier dans Power Query (moteur événementiel)
+
+- `evenementiel.py` : moteur qui ne calcule que les neurones recevant un signal (forme fermée entre deux
+  événements, prédiction du pas exact du prochain spike). Sur 3 graines : 0 neurone en écart avec la
+  simulation complète des 138 639 neurones, environ 10 000 neurones réveillés, 1,3 million d'événements.
+- `Simuler.pq`, `Spikes.pq` : le même moteur en langage M. Syntaxe validée par l'analyseur de Microsoft ;
+  jamais exécuté (pas d'Excel ici).
+- `pq_miroir.py` : miroir Python ligne à ligne du code M, qui relit le classeur produit. 0 écart avec la
+  simulation complète (valeurs dans `attendu.json`).
+- `build_pq_xlsx.py` : construit `cerveau_entier_PQ.xlsx` (49 Mo, non versionné) : câblage complet en
+  138 639 cellules, réglages, valeurs de contrôle, code M et mesures DAX.
