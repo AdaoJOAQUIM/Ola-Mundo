@@ -1,0 +1,84 @@
+{"name": "exact", "spec": ["exact"], "seed": 3, "hz": 100, "size": 45275949, "ratio": 1.0, "t": 12, "mn9": 58, "spikes": 8721, "actifs": 358}
+{"name": "prune2", "spec": ["prune", 2], "seed": 1, "hz": 100, "size": 22787901, "ratio": 1.9868415700068207, "t": 14, "mn9": 59, "spikes": 8881, "actifs": 359}
+{"name": "exact", "spec": ["exact"], "seed": 1, "hz": 100, "size": 45275949, "ratio": 1.0, "t": 15, "mn9": 61, "spikes": 9054, "actifs": 356}
+{"name": "exact", "spec": ["exact"], "seed": 2, "hz": 100, "size": 45275949, "ratio": 1.0, "t": 15, "mn9": 71, "spikes": 9386, "actifs": 353}
+{"name": "prune2", "spec": ["prune", 2], "seed": 2, "hz": 100, "size": 22787901, "ratio": 1.9868415700068207, "t": 12, "mn9": 62, "spikes": 8695, "actifs": 351}
+{"name": "prune2", "spec": ["prune", 2], "seed": 3, "hz": 100, "size": 22787901, "ratio": 1.9868415700068207, "t": 15, "mn9": 62, "spikes": 8753, "actifs": 358}
+{"name": "prune5", "spec": ["prune", 5], "seed": 1, "hz": 100, "size": 8101539, "ratio": 5.58856150664707, "t": 16, "mn9": 60, "spikes": 7644, "actifs": 293}
+{"name": "prune5", "spec": ["prune", 5], "seed": 2, "hz": 100, "size": 8101539, "ratio": 5.58856150664707, "t": 17, "mn9": 59, "spikes": 7520, "actifs": 313}
+{"name": "prune5", "spec": ["prune", 5], "seed": 3, "hz": 100, "size": 8101539, "ratio": 5.58856150664707, "t": 14, "mn9": 64, "spikes": 7304, "actifs": 304}
+{"name": "prune10", "spec": ["prune", 10], "seed": 1, "hz": 100, "size": 3200466, "ratio": 14.146673953105578, "t": 14, "mn9": 51, "spikes": 5699, "actifs": 260}
+{"name": "prune10", "spec": ["prune", 10], "seed": 3, "hz": 100, "size": 3200466, "ratio": 14.146673953105578, "t": 15, "mn9": 41, "spikes": 4902, "actifs": 247}
+{"name": "prune10", "spec": ["prune", 10], "seed": 2, "hz": 100, "size": 3200466, "ratio": 14.146673953105578, "t": 17, "mn9": 49, "spikes": 5361, "actifs": 245}
+{"name": "prune20", "spec": ["prune", 20], "seed": 1, "hz": 100, "size": 1100592, "ratio": 41.13781401282219, "t": 13, "mn9": 6, "spikes": 3073, "actifs": 160}
+{"name": "prune20", "spec": ["prune", 20], "seed": 2, "hz": 100, "size": 1100592, "ratio": 41.13781401282219, "t": 11, "mn9": 6, "spikes": 3148, "actifs": 159}
+{"name": "prune20", "spec": ["prune", 20], "seed": 3, "hz": 100, "size": 1100592, "ratio": 41.13781401282219, "t": 11, "mn9": 4, "spikes": 2907, "actifs": 82}
+{"name": "prune50", "spec": ["prune", 50], "seed": 1, "hz": 100, "size": 199314, "ratio": 227.15890002709293, "t": 14, "mn9": 0, "spikes": 2131, "actifs": 23}
+{"name": "prune50", "spec": ["prune", 50], "seed": 2, "hz": 100, "size": 199314, "ratio": 227.15890002709293, "t": 12, "mn9": 0, "spikes": 2113, "actifs": 23}
+{"name": "prune50", "spec": ["prune", 50], "seed": 3, "hz": 100, "size": 199314, "ratio": 227.15890002709293, "t": 12, "mn9": 0, "spikes": 2082, "actifs": 23}
+{"name": "mf_K3000", "spec": ["mf", "K3000"], "seed": 1, "hz": 100, "size": 2485194, "ratio": 18.2182755149095, "t": 16, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "mf_K3000", "spec": ["mf", "K3000"], "seed": 2, "hz": 100, "size": 2485194, "ratio": 18.2182755149095, "t": 13, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "mf_K3000", "spec": ["mf", "K3000"], "seed": 3, "hz": 100, "size": 2485194, "ratio": 18.2182755149095, "t": 11, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "mf_K10000", "spec": ["mf", "K10000"], "seed": 1, "hz": 100, "size": 7131510, "ratio": 6.348718434104418, "t": 15, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "mf_K10000", "spec": ["mf", "K10000"], "seed": 3, "hz": 100, "size": 7131510, "ratio": 6.348718434104418, "t": 16, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "sbm_K300", "spec": ["sbm", "K300", 0], "seed": 1, "hz": 100, "size": 304039, "ratio": 148.91493854406835, "t": 14, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "sbm_K300", "spec": ["sbm", "K300", 0], "seed": 2, "hz": 100, "size": 304039, "ratio": 148.91493854406835, "t": 13, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "sbm_K1000", "spec": ["sbm", "K1000", 0], "seed": 1, "hz": 100, "size": 1023167, "ratio": 44.25079092660338, "t": 13, "mn9": 0, "spikes": 2015, "actifs": 25}
+{"name": "sbm_K300", "spec": ["sbm", "K300", 0], "seed": 3, "hz": 100, "size": 304039, "ratio": 148.91493854406835, "t": 15, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "sbm_K1000", "spec": ["sbm", "K1000", 0], "seed": 3, "hz": 100, "size": 1023167, "ratio": 44.25079092660338, "t": 15, "mn9": 0, "spikes": 1967, "actifs": 24}
+{"name": "sbm_K3000", "spec": ["sbm", "K3000", 0], "seed": 1, "hz": 100, "size": 3267379, "ratio": 13.856962721496343, "t": 16, "mn9": 0, "spikes": 2015, "actifs": 24}
+{"name": "sbm_K3000", "spec": ["sbm", "K3000", 0], "seed": 3, "hz": 100, "size": 3267379, "ratio": 13.856962721496343, "t": 18, "mn9": 0, "spikes": 1967, "actifs": 26}
+{"name": "sbm_K10000", "spec": ["sbm", "K10000", 0], "seed": 1, "hz": 100, "size": 9462467, "ratio": 4.78479333137965, "t": 20, "mn9": 0, "spikes": 2239, "actifs": 59}
+{"name": "sbm_K10000", "spec": ["sbm", "K10000", 0], "seed": 2, "hz": 100, "size": 9462467, "ratio": 4.78479333137965, "t": 20, "mn9": 0, "spikes": 2240, "actifs": 57}
+{"name": "lr1", "spec": ["lr", 1], "seed": 1, "hz": 100, "size": 277279, "ratio": 163.28661384381795, "t": 23, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "lr1", "spec": ["lr", 1], "seed": 2, "hz": 100, "size": 277279, "ratio": 163.28661384381795, "t": 21, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "lr1", "spec": ["lr", 1], "seed": 3, "hz": 100, "size": 277279, "ratio": 163.28661384381795, "t": 25, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "lr4", "spec": ["lr", 4], "seed": 1, "hz": 100, "size": 1109116, "ratio": 40.82165346095449, "t": 52, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "lr4", "spec": ["lr", 4], "seed": 3, "hz": 100, "size": 1109116, "ratio": 40.82165346095449, "t": 67, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "lr4", "spec": ["lr", 4], "seed": 2, "hz": 100, "size": 1109116, "ratio": 40.82165346095449, "t": 69, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "lr16", "spec": ["lr", 16], "seed": 1, "hz": 100, "size": 4436464, "ratio": 10.205413365238622, "t": 87, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "lr16", "spec": ["lr", 16], "seed": 2, "hz": 100, "size": 4436464, "ratio": 10.205413365238622, "t": 85, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "lr16", "spec": ["lr", 16], "seed": 3, "hz": 100, "size": 4436464, "ratio": 10.205413365238622, "t": 86, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "lr64", "spec": ["lr", 64], "seed": 1, "hz": 100, "size": 17745856, "ratio": 2.5513533413096554, "t": 114, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "hyb_K1000_t10", "spec": ["hyb", "K1000", 10], "seed": 1, "hz": 100, "size": 4000617, "ratio": 11.317241565488523, "t": 48, "mn9": 50, "spikes": 6121, "actifs": 281}
+{"name": "lr64", "spec": ["lr", 64], "seed": 2, "hz": 100, "size": 17745856, "ratio": 2.5513533413096554, "t": 111, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "hyb_K1000_t10", "spec": ["hyb", "K1000", 10], "seed": 2, "hz": 100, "size": 4000617, "ratio": 11.317241565488523, "t": 37, "mn9": 43, "spikes": 5486, "actifs": 251}
+{"name": "lr64", "spec": ["lr", 64], "seed": 3, "hz": 100, "size": 17745856, "ratio": 2.5513533413096554, "t": 97, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "hyb_K1000_t10", "spec": ["hyb", "K1000", 10], "seed": 3, "hz": 100, "size": 4000617, "ratio": 11.317241565488523, "t": 26, "mn9": 40, "spikes": 5391, "actifs": 247}
+{"name": "hyb_K1000_t20", "spec": ["hyb", "K1000", 20], "seed": 1, "hz": 100, "size": 1901988, "ratio": 23.80453977627619, "t": 27, "mn9": 9, "spikes": 3110, "actifs": 140}
+{"name": "hyb_K1000_t20", "spec": ["hyb", "K1000", 20], "seed": 3, "hz": 100, "size": 1901988, "ratio": 23.80453977627619, "t": 13, "mn9": 3, "spikes": 2960, "actifs": 81}
+{"name": "hyb_K1000_t20", "spec": ["hyb", "K1000", 20], "seed": 2, "hz": 100, "size": 1901988, "ratio": 23.80453977627619, "t": 19, "mn9": 16, "spikes": 3336, "actifs": 149}
+{"name": "hyb_K1000_t50", "spec": ["hyb", "K1000", 50], "seed": 1, "hz": 100, "size": 1001235, "ratio": 45.22010217381534, "t": 16, "mn9": 0, "spikes": 2136, "actifs": 23}
+{"name": "hyb_K1000_t50", "spec": ["hyb", "K1000", 50], "seed": 2, "hz": 100, "size": 1001235, "ratio": 45.22010217381534, "t": 16, "mn9": 0, "spikes": 2115, "actifs": 23}
+{"name": "hyb_K10000_t10", "spec": ["hyb", "K10000", 10], "seed": 1, "hz": 100, "size": 10277076, "ratio": 4.405528284504269, "t": 15, "mn9": 62, "spikes": 6984, "actifs": 315}
+{"name": "hyb_K1000_t50", "spec": ["hyb", "K1000", 50], "seed": 3, "hz": 100, "size": 1001235, "ratio": 45.22010217381534, "t": 17, "mn9": 0, "spikes": 2091, "actifs": 23}
+{"name": "hyb_K10000_t10", "spec": ["hyb", "K10000", 10], "seed": 3, "hz": 100, "size": 10277076, "ratio": 4.405528284504269, "t": 15, "mn9": 46, "spikes": 5778, "actifs": 285}
+{"name": "hyb_K10000_t10", "spec": ["hyb", "K10000", 10], "seed": 2, "hz": 100, "size": 10277076, "ratio": 4.405528284504269, "t": 20, "mn9": 65, "spikes": 6443, "actifs": 273}
+{"name": "hyb_K10000_t20", "spec": ["hyb", "K10000", 20], "seed": 1, "hz": 100, "size": 8211600, "ratio": 5.513657387110916, "t": 16, "mn9": 24, "spikes": 3537, "actifs": 163}
+{"name": "hyb_K10000_t20", "spec": ["hyb", "K10000", 20], "seed": 2, "hz": 100, "size": 8211600, "ratio": 5.513657387110916, "t": 16, "mn9": 32, "spikes": 4094, "actifs": 190}
+{"name": "hyb_K10000_t50", "spec": ["hyb", "K10000", 50], "seed": 1, "hz": 100, "size": 7326042, "ratio": 6.180137787907849, "t": 14, "mn9": 0, "spikes": 2146, "actifs": 24}
+{"name": "hyb_K10000_t20", "spec": ["hyb", "K10000", 20], "seed": 3, "hz": 100, "size": 8211600, "ratio": 5.513657387110916, "t": 17, "mn9": 30, "spikes": 3509, "actifs": 139}
+{"name": "hyb_K10000_t50", "spec": ["hyb", "K10000", 50], "seed": 2, "hz": 100, "size": 7326042, "ratio": 6.180137787907849, "t": 18, "mn9": 0, "spikes": 2126, "actifs": 28}
+{"name": "hyb_K10000_t50", "spec": ["hyb", "K10000", 50], "seed": 3, "hz": 100, "size": 7326042, "ratio": 6.180137787907849, "t": 15, "mn9": 0, "spikes": 2099, "actifs": 23}
+{"name": "mf_K100", "spec": ["mf", "K100"], "seed": 3, "hz": 100, "size": 148840, "ratio": 304.19207874227357, "t": 11, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "mf_K100", "spec": ["mf", "K100"], "seed": 2, "hz": 100, "size": 148840, "ratio": 304.19207874227357, "t": 12, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "mf_K300", "spec": ["mf", "K300"], "seed": 1, "hz": 100, "size": 228040, "ratio": 198.54389142255744, "t": 13, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "mf_K300", "spec": ["mf", "K300"], "seed": 2, "hz": 100, "size": 228040, "ratio": 198.54389142255744, "t": 15, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "mf_R1000", "spec": ["mf", "R1000"], "seed": 1, "hz": 100, "size": 1138639, "ratio": 39.76321643646494, "t": 11, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "mf_K10000", "spec": ["mf", "K10000"], "seed": 2, "hz": 100, "size": 7131510, "ratio": 6.348718434104418, "t": 14, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "mf_R1000", "spec": ["mf", "R1000"], "seed": 2, "hz": 100, "size": 1138639, "ratio": 39.76321643646494, "t": 15, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "mf_R1000", "spec": ["mf", "R1000"], "seed": 3, "hz": 100, "size": 1138639, "ratio": 39.76321643646494, "t": 16, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "sbm_K3000", "spec": ["sbm", "K3000", "0"], "seed": 2, "hz": 100, "size": 3267379, "ratio": 13.856962721496343, "t": 13, "mn9": 0, "spikes": 1996, "actifs": 27}
+{"name": "sbm_K1000", "spec": ["sbm", "K1000", "0"], "seed": 2, "hz": 100, "size": 1023167, "ratio": 44.25079092660338, "t": 16, "mn9": 0, "spikes": 1995, "actifs": 26}
+{"name": "sbm_K10000", "spec": ["sbm", "K10000", "0"], "seed": 3, "hz": 100, "size": 9462467, "ratio": 4.78479333137965, "t": 16, "mn9": 0, "spikes": 2180, "actifs": 55}
+{"name": "sbm_R1000", "spec": ["sbm", "R1000", "0"], "seed": 1, "hz": 100, "size": 2138639, "ratio": 21.17044952420675, "t": 16, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "sbm_R1000", "spec": ["sbm", "R1000", "0"], "seed": 2, "hz": 100, "size": 2138639, "ratio": 21.17044952420675, "t": 14, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "sbm_R1000", "spec": ["sbm", "R1000", "0"], "seed": 3, "hz": 100, "size": 2138639, "ratio": 21.17044952420675, "t": 18, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "mf_K30", "spec": ["mf", "K30"], "seed": 1, "hz": 100, "size": 139600, "ratio": 324.32628223495703, "t": 11, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "mf_K30", "spec": ["mf", "K30"], "seed": 3, "hz": 100, "size": 139600, "ratio": 324.32628223495703, "t": 16, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "mf_K100", "spec": ["mf", "K100"], "seed": 1, "hz": 100, "size": 148840, "ratio": 304.19207874227357, "t": 16, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "mf_K30", "spec": ["mf", "K30"], "seed": 2, "hz": 100, "size": 139600, "ratio": 324.32628223495703, "t": 17, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "mf_K300", "spec": ["mf", "K300"], "seed": 3, "hz": 100, "size": 228040, "ratio": 198.54389142255744, "t": 15, "mn9": 0, "spikes": 1950, "actifs": 20}
+{"name": "mf_K1000", "spec": ["mf", "K1000"], "seed": 2, "hz": 100, "size": 802035, "ratio": 56.45133815855917, "t": 12, "mn9": 0, "spikes": 1978, "actifs": 20}
+{"name": "mf_K1000", "spec": ["mf", "K1000"], "seed": 1, "hz": 100, "size": 802035, "ratio": 56.45133815855917, "t": 15, "mn9": 0, "spikes": 1993, "actifs": 20}
+{"name": "mf_K1000", "spec": ["mf", "K1000"], "seed": 3, "hz": 100, "size": 802035, "ratio": 56.45133815855917, "t": 15, "mn9": 0, "spikes": 1950, "actifs": 20}
