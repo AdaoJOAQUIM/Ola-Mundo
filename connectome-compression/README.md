@@ -108,3 +108,37 @@ Plancher de bruit des graines : 5,7 Hz (écart-type) ; R² maximal atteignable s
 
 Limites : une seule sortie (MN9), une seule famille d'entrées (20 neurones sucre), 1 s de stimulation
 constante. La loi ne contient pas le câblage et ne permet pas de le retrouver.
+
+## Loi du cerveau entier pour l'entrée sucre (19 278 : 1)
+
+Données : les 440 simulations exactes de `campagne.py` (activité complète de chaque neurone conservée).
+480 neurones tirent au moins une fois ; les 138 159 autres restent muets dans les 440 simulations.
+
+`loi_cerveau.py` : toutes les sorties (460 neurones, hors les 20 entrées) prédites ensemble par
+`y_k = max(0, b_k + c_k · z)`, `z = A r`, avec `A` (20 × d) commun à tout le cerveau. Score sur 100 motifs jamais
+utilisés : part de la variance prévisible captée (le reste étant le bruit des graines, mesuré sur 40 répétitions).
+
+| Loi | Part prévisible captée | R² MN9 | Fichier binaire complet | Rapport à 92 613 300 octets |
+|---|---|---|---|---|
+| Linéaire, 21 nombres par neurone | 91,7 % | 0,84 | — | — |
+| 3 variables cachées | 84,0 % | 0,83 | 4 804 octets | 19 278 : 1 |
+| 4 variables cachées | 87,3 % | 0,83 | 5 764 octets | 16 068 : 1 |
+| 6 variables cachées | 90,0 % | 0,84 | 7 684 octets | 12 053 : 1 |
+
+Les fichiers `loi_sucre_d*.bin` sont autonomes : indices des 20 entrées, indices des 460 sorties (écarts),
+paramètres en 16 bits (passer de 64 à 16 bits ne change pas les scores). Pas de biais moyen sur le total de
+spikes (rapport prédit / exact : 0,99 en test), mais de 0,72 à 1,81 selon le motif.
+
+`loi_cerveau_sucre.xlsx` (1 408 formules, 0 erreur dans LibreOffice) : la loi à 3 variables, les 100 motifs de
+test et leur activité exacte. Prédictions identiques à Python (écart maximal 0,0002 Hz sur les motifs 1, 50, 100).
+
+### La loi se lit-elle dans le câblage ? (`structure_loi.py`)
+
+Influence structurelle = somme signée des chemins de 1 à 4 synapses de chaque entrée vers chaque sortie.
+
+- Vers MN9 : corrélation de 0,86 (chemins de 3 synapses) et 0,88 à 0,89 (4 synapses) avec les poids de la loi.
+- Pour les 460 sorties : corrélation de 0,43 au mieux par longueur, 0,66 à 0,77 en mélangeant les longueurs.
+  Câblage + gain et base par neurone : 74,5 % de la part prévisible (82 % en limitant aux neurones actifs).
+
+Limites : une seule famille d'entrées (20 neurones sucre, 0 à 200 Hz, 1 s constante). Les neurones muets le sont
+dans 440 simulations, ce n'est pas une preuve. La loi décrit le comportement, pas le câblage.
