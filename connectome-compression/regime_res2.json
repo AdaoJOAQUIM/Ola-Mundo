@@ -1,0 +1,35 @@
+{
+ "50": {
+  "exact_mn9": 11.333333333333334,
+  "regime_mn9": 223.97149265452583,
+  "exact_actifs": 231,
+  "regime_actifs": 462,
+  "exact_spikes": 2882.0,
+  "regime_spikes": 17882.291070103645,
+  "corr": 0.46429217341859197,
+  "iters": 224,
+  "secondes": 15.1
+ },
+ "100": {
+  "exact_mn9": 63.333333333333336,
+  "regime_mn9": 0.3492056154850038,
+  "exact_actifs": 352,
+  "regime_actifs": 12806,
+  "exact_spikes": 9073.0,
+  "regime_spikes": 920740.5712339261,
+  "corr": 0.07072061716544198,
+  "iters": 300,
+  "secondes": 48.0
+ },
+ "200": {
+  "exact_mn9": 87.33333333333333,
+  "regime_mn9": 243.03122433395927,
+  "exact_actifs": 401,
+  "regime_actifs": 12933,
+  "exact_spikes": 16103.666666666668,
+  "regime_spikes": 935432.6474054044,
+  "corr": 0.14491218275674433,
+  "iters": 300,
+  "secondes": 51.9
+ }
+}

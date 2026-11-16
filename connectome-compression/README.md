@@ -68,3 +68,43 @@ la mesure qu'il sert à évaluer ; ce n'est pas une compression du cerveau entie
   simulation complète (valeurs dans `attendu.json`).
 - `build_pq_xlsx.py` : construit `cerveau_entier_PQ.xlsx` (49 Mo, non versionné) : câblage complet en
   138 639 cellules, réglages, valeurs de contrôle, code M et mesures DAX.
+
+## Chercher les lois plutôt que compresser le câblage
+
+### Étape 1 : résoudre le régime permanent au lieu de simuler (échec)
+
+`regime.py` / `regime2.py` résolvent les fréquences de tous les neurones (entrées de Poisson, noyau exact du
+modèle, formule de Siegert pour le LIF à bruit, signaux perdus en période réfractaire). Critère fixé avant le
+test : MN9 à moins de 20 % du moteur exact sur la courbe dose-réponse du sucre.
+
+| Sucre | MN9 exact | MN9 régime permanent | Neurones actifs (exact / régime) |
+|---|---|---|---|
+| 25 Hz | 0 | 0 | 61 / 43 |
+| 50 Hz | 11 | 224 | 231 / 462 |
+| 100 Hz | 63 | 0,3 à 14 | 352 / 12 806 |
+| 200 Hz | 87 | 243 | 401 / 12 933 |
+
+Critère non rempli : le solveur ne converge pas dès 50 Hz (une première version avait un défaut de seuil ;
+corrigé dans `regime2.py`, même résultat). Cause non établie : pas de point fixe stable, ou point fixe de
+haute activité que la simulation d'une seconde n'atteint pas ; l'hypothèse de bruit de Poisson indépendant est
+probablement en cause.
+
+### Plan de repli : campagne sur le moteur exact
+
+`campagne.py` : 400 motifs de stimulation (fréquence tirée au hasard entre 0 et 200 Hz pour chacun des 20
+neurones sucre, un tiers muets), cerveau entier exact, 1 s, plus 40 répétitions avec une autre graine pour
+mesurer le bruit. `lois_fit.py` : 300 motifs pour ajuster, 100 pour tester.
+
+| Loi | R² test | Erreur moyenne |
+|---|---|---|
+| Constante | -0,06 | 14,5 Hz |
+| Courbe dose-réponse de la fréquence moyenne | 0,49 | 9,4 Hz |
+| **20 poids + courbe monotone (62 points)** | **0,86** | **4,9 Hz** |
+| max(0, b + Σ aᵢ rᵢ), 21 nombres | 0,81 | 5,7 Hz |
+| Réseau 20-32-32-1 (référence non compacte) | 0,79 | 6,5 Hz |
+
+Plancher de bruit des graines : 5,7 Hz (écart-type) ; R² maximal atteignable sur ce test : 0,88.
+`loi_MN9.xlsx` (36 Ko, 503 formules, 0 erreur) contient la loi et les 100 tests, recalculés par formules.
+
+Limites : une seule sortie (MN9), une seule famille d'entrées (20 neurones sucre), 1 s de stimulation
+constante. La loi ne contient pas le câblage et ne permet pas de le retrouver.

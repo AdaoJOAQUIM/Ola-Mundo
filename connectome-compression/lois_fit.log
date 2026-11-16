@@ -1,0 +1,9 @@
+MN9 : moyenne 39.3 ecart-type 17.7 max 73.0  | motifs ou MN9=0 : 5 / 400
+plancher de bruit (meme motif, autre graine) : 5.7 Hz d'ecart-type
+constante (moyenne)                            R2 test -0.060   erreur moyenne  14.5 Hz   1 nombre
+loi 1 : courbe dose-reponse de la frequence moyenne R2 test  0.488   erreur moyenne   9.4 Hz   1 courbe monotone
+loi 2 : 20 poids + courbe monotone (un indice) R2 test  0.861   erreur moyenne   4.9 Hz   20 poids + 1 courbe
+loi 3 : max(0, b + somme a_i r_i)  (21 nombres) R2 test  0.808   erreur moyenne   5.7 Hz   21 nombres
+  warnings.warn(
+reference libre : reseau 20-32-32-1 (non compact) R2 test  0.791   erreur moyenne   6.5 Hz   1 697 nombres
+poids loi 3 (Hz^-1) : [0.037, 0.015, 0.013, 0.014, 0.05, -0.004, -0.007, 0.007, 0.025, -0.012, 0.004, 0.03, 0.144, 0.041, 0.058, 0.075, 0.028, 0.039, 0.011, 0.034] b = -2.24
