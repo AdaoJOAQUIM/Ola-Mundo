@@ -1442,6 +1442,8 @@ def regle_locale(nom, feat, paires, tests):
     def fn(g):
         F = feat(g)
         return tuple(tuple(table.get(F[r][c], g[r][c]) for c in range(W(g))) for r in range(H(g)))
+    # cellules de test dont la clé est inconnue (repli : couleur inchangée)
+    fn.inconnues = sum(1 for g in tests for row in feat(g) for k in row if k not in table)
     return fn
 
 
@@ -1449,11 +1451,15 @@ def appr_local(train, tests, dl):
     paires = [(p[0], p[1]) for p in train]
     if any((H(a), W(a)) != (H(b), W(b)) for a, b in paires):
         return
-    for nom, feat in FEATURES:
+    cand = []
+    for i, (nom, feat) in enumerate(FEATURES):
         dl.verifier()
         fn = regle_locale(nom, feat, paires, tests)
         if fn is not None:
-            yield ('regle_locale[%s]' % nom, fn)
+            cand.append((fn.inconnues, i, nom, fn))
+    cand.sort(key=lambda x: x[:2])  # d'abord les règles qui couvrent tout le test
+    for _, _, nom, fn in cand:
+        yield ('regle_locale[%s]' % nom, fn)
 
 
 # --- règles locales « relatives » : sortie = S (inchangé) / couleur d'un voisin / absolue
@@ -1821,7 +1827,7 @@ def resoudre(tache, budget=10.0):
             if len(cands) >= 2:
                 break
         if len(cands) < 2:
-            for appr in (appr_local, appr_relative, appr_objets, appr_symetrie):
+            for appr in (appr_relative, appr_objets, appr_symetrie, appr_local):
                 for texte, fn in appr(train, tests, dl):
                     offrir(texte, fn)
                     if len(cands) >= 2:
