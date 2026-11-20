@@ -1,0 +1,7 @@
+__pycache__/
+data/*
+!data/raw/
+data/raw/*
+!data/raw/SOURCES.md
+out/
+tok/
