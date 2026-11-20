@@ -1,4 +1,5 @@
 data/
 memoire_fr.xz
 __pycache__/
-arc/data/
+arc/data/*
+!arc/data/SOURCE.md
