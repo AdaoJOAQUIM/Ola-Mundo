@@ -58,6 +58,7 @@ import heapq
 import itertools
 import re
 import sys
+import time
 from dataclasses import dataclass, field
 
 import raisonneur as rz
@@ -256,7 +257,8 @@ class Planificateur:
         return Objectif("possede", obj, s), None
 
     # -- point d'entrée ---------------------------------------------------
-    def planifier(self, raisonneur, texte_objectif, verifier_plan=True):
+    def planifier(self, raisonneur, texte_objectif, verifier_plan=True, limite_cpu=None):
+        """``limite_cpu`` : échéance absolue en ``time.process_time()`` (optionnelle)."""
         brut = analyser_objectif(texte_objectif)
         if brut is None:
             return ResultatPlan("incompris", "Je ne comprends pas cet objectif "
@@ -272,7 +274,7 @@ class Planificateur:
             return ResultatPlan("impossible", f"Objectif impossible : {impossible}.",
                                 raison=impossible)
         obj.texte = texte_objectif.strip()
-        res = self._astar(mo, obj)
+        res = self._astar(mo, obj, limite_cpu)
         res.objectif = obj
         if res.statut != "plan":
             return res
@@ -281,7 +283,7 @@ class Planificateur:
         return res
 
     # -- A* ---------------------------------------------------------------
-    def _astar(self, mo, obj):
+    def _astar(self, mo, obj, limite_cpu=None):
         P, L = mo.personnes, mo.lieux
         ip = {p: i for i, p in enumerate(P)}
         il = {l: i for i, l in enumerate(L)}
@@ -392,6 +394,12 @@ class Planificateur:
                 cout = sum(self.cout_action(a[0], a[1]) for a in actions)
                 return ResultatPlan("plan", "", actions=actions, cout=cout,
                                     noeuds=fermes_expansions)
+            if (limite_cpu is not None and (fermes_expansions & 63) == 0
+                    and time.process_time() > limite_cpu):
+                return ResultatPlan(
+                    "budget", "Budget CPU dépassé pendant la recherche : je ne sais pas "
+                    "si l'objectif est atteignable.", noeuds=fermes_expansions,
+                    raison="budget CPU dépassé")
             if fermes_expansions >= self.budget:
                 return ResultatPlan(
                     "budget",
