@@ -1,0 +1,153 @@
+{
+ "nom": "B",
+ "args": {
+  "nom": "B",
+  "budget": 1200.0,
+  "d": 128,
+  "blocs": 2,
+  "n": 1,
+  "T": 1,
+  "nsup": 1,
+  "act": 0,
+  "bs": 32,
+  "lr": 0.001,
+  "wd": 0.05,
+  "graine": 0,
+  "sortie": "/home/user/Ola-Mundo/echo/trm/runs",
+  "nlog": 10
+ },
+ "export": {
+  "params": 331128,
+  "tenseurs": 27,
+  "int8_octets": 331236,
+  "fp16_octets": 662256
+ },
+ "budget_s": 1200.0,
+ "horloge_entrainement_s": 1200.0369699001312,
+ "cpu_process_s": 2233.5303921940003,
+ "pas_optimiseur": 9784,
+ "pas_supervision_echantillons": 313088,
+ "puzzles_consommes": 313088,
+ "courbe": [
+  {
+   "t_s": 120.0,
+   "pas_opt": 876,
+   "lr": 0.0009767825646590587,
+   "perte_ce_train": 1.3446822698529997,
+   "cases_ok_train_pas": 0.431250922237289,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.5289855072463768,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.5238267802138068,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 240.0,
+   "pas_opt": 2020,
+   "lr": 0.0009093532144151301,
+   "perte_ce_train": 1.0731224140504023,
+   "cases_ok_train_pas": 0.5312186507443031,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.5727355072463768,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.5655009965573473,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 401.3,
+   "pas_opt": 2762,
+   "lr": 0.0008138626444676383,
+   "perte_ce_train": 0.985114237690229,
+   "cases_ok_train_pas": 0.569643385326766,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.5955615942028986,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.5879688349338649,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 480.0,
+   "pas_opt": 3210,
+   "lr": 0.0006719062685242005,
+   "perte_ce_train": 0.942886358126998,
+   "cases_ok_train_pas": 0.5862729816830584,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.6015398550724638,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.5972096394274325,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 600.0,
+   "pas_opt": 4039,
+   "lr": 0.0005251620923499313,
+   "perte_ce_train": 0.8980343461899476,
+   "cases_ok_train_pas": 0.6046264221210963,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.6234601449275362,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.6152382678021381,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 720.0,
+   "pas_opt": 4874,
+   "lr": 0.00037830207309365045,
+   "perte_ce_train": 0.8431552532190334,
+   "cases_ok_train_pas": 0.6282682527325111,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.6426630434782609,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.6362565682188802,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 840.1,
+   "pas_opt": 6067,
+   "lr": 0.00024582405462027695,
+   "perte_ce_train": 0.8115125420407298,
+   "cases_ok_train_pas": 0.6414289240165608,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.6560688405797102,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.6488494292444283,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 960.0,
+   "pas_opt": 7313,
+   "lr": 0.00014077974389477792,
+   "perte_ce_train": 0.7930966506608991,
+   "cases_ok_train_pas": 0.6481568352655652,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.6596014492753624,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.6565500996557347,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 1080.0,
+   "pas_opt": 8551,
+   "lr": 7.326726660872582e-05,
+   "perte_ce_train": 0.777267075846384,
+   "cases_ok_train_pas": 0.6543234398946624,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.6603260869565217,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.6554629461859033,
+   "pas_moyens_par_puzzle": 1.0
+  },
+  {
+   "t_s": 1200.0,
+   "pas_opt": 9784,
+   "lr": 5.0000003996701505e-05,
+   "perte_ce_train": 0.7692611754569018,
+   "cases_ok_train_pas": 0.6571469560253456,
+   "ema_test200_exact": 0.0,
+   "ema_test200_cases": 0.6652173913043479,
+   "ema_train200_exact": 0.0,
+   "ema_train200_cases": 0.6567312919007067,
+   "pas_moyens_par_puzzle": 1.0
+  }
+ ]
+}
