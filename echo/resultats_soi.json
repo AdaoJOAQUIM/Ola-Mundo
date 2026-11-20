@@ -1,0 +1,768 @@
+{
+ "graine": 2024,
+ "n_eval_car": 2000,
+ "fraction_memoire": 0.1,
+ "hypothese_energie": "10 W par coeur occupe (estimation)",
+ "memoire": {
+  "en": {
+   "paragraphes": 82109,
+   "caracteres": 15679400,
+   "fichier": "memoire.xz"
+  },
+  "fr": {
+   "paragraphes": 56402,
+   "caracteres": 7114138,
+   "fichier": "memoire_fr.xz"
+  },
+  "paragraphes_total": 138511,
+  "caracteres_total": 22793538,
+  "langues": [
+   "anglais (memoire.xz)",
+   "français (memoire_fr.xz, data/francais.txt)"
+  ]
+ },
+ "calibration": {
+  "T_pool": 1.086559211831244,
+  "T_en": 1.1149373637752826,
+  "en": {
+   "n_eval_car": 2000,
+   "n_cal_car": 2000,
+   "ece_avant": 0.08550479146057363,
+   "ece_avant_ic95": [
+    0.07029432625069738,
+    0.10495438723968312
+   ],
+   "brier_avant": 0.19426941033963127,
+   "biais": -0.06283647248695401,
+   "conf_moy_avant": 0.529663527513046,
+   "exactitude": 0.5925,
+   "bpc_avant": 2.2236060619392317,
+   "table_avant": [
+    {
+     "seau": "[0.0 ; 0.1[",
+     "n": 3,
+     "conf_moy": 0.08359859095153212,
+     "exactitude": 0.0
+    },
+    {
+     "seau": "[0.1 ; 0.2[",
+     "n": 89,
+     "conf_moy": 0.15365793702681724,
+     "exactitude": 0.11235955056179775
+    },
+    {
+     "seau": "[0.2 ; 0.3[",
+     "n": 202,
+     "conf_moy": 0.25069967625044604,
+     "exactitude": 0.1782178217821782
+    },
+    {
+     "seau": "[0.3 ; 0.4[",
+     "n": 134,
+     "conf_moy": 0.36705137152575706,
+     "exactitude": 0.373134328358209
+    },
+    {
+     "seau": "[0.4 ; 0.5[",
+     "n": 66,
+     "conf_moy": 0.45607018489072954,
+     "exactitude": 0.3939393939393939
+    },
+    {
+     "seau": "[0.5 ; 0.6[",
+     "n": 936,
+     "conf_moy": 0.5035258025984569,
+     "exactitude": 0.6047008547008547
+    },
+    {
+     "seau": "[0.6 ; 0.7[",
+     "n": 178,
+     "conf_moy": 0.6607249596654504,
+     "exactitude": 0.8033707865168539
+    },
+    {
+     "seau": "[0.7 ; 0.8[",
+     "n": 122,
+     "conf_moy": 0.747112363468207,
+     "exactitude": 0.8688524590163934
+    },
+    {
+     "seau": "[0.8 ; 0.9[",
+     "n": 163,
+     "conf_moy": 0.8302282424593685,
+     "exactitude": 0.901840490797546
+    },
+    {
+     "seau": "[0.9 ; 1.0]",
+     "n": 107,
+     "conf_moy": 0.9354181902001557,
+     "exactitude": 0.9439252336448598
+    }
+   ],
+   "ece_apres_T_langue": 0.11648972599015549,
+   "ece_apres_T_langue_ic95": [
+    0.10114664212005939,
+    0.1372875477329407
+   ],
+   "brier_apres_T_langue": 0.20156047993359058,
+   "biais_apres_T_langue": -0.10591247598426567,
+   "bpc_apres_T_langue": 2.230302670496092,
+   "table_apres_T_langue": [
+    {
+     "seau": "[0.0 ; 0.1[",
+     "n": 6,
+     "conf_moy": 0.08608151801214536,
+     "exactitude": 0.0
+    },
+    {
+     "seau": "[0.1 ; 0.2[",
+     "n": 109,
+     "conf_moy": 0.15063102748977836,
+     "exactitude": 0.12844036697247707
+    },
+    {
+     "seau": "[0.2 ; 0.3[",
+     "n": 202,
+     "conf_moy": 0.2393918510336468,
+     "exactitude": 0.21287128712871287
+    },
+    {
+     "seau": "[0.3 ; 0.4[",
+     "n": 137,
+     "conf_moy": 0.35244397804842675,
+     "exactitude": 0.3357664233576642
+    },
+    {
+     "seau": "[0.4 ; 0.5[",
+     "n": 940,
+     "conf_moy": 0.45313391902634176,
+     "exactitude": 0.601063829787234
+    },
+    {
+     "seau": "[0.5 ; 0.6[",
+     "n": 92,
+     "conf_moy": 0.555084851039863,
+     "exactitude": 0.6630434782608695
+    },
+    {
+     "seau": "[0.6 ; 0.7[",
+     "n": 210,
+     "conf_moy": 0.6429383715811855,
+     "exactitude": 0.8428571428571429
+    },
+    {
+     "seau": "[0.7 ; 0.8[",
+     "n": 156,
+     "conf_moy": 0.7493985883891126,
+     "exactitude": 0.8910256410256411
+    },
+    {
+     "seau": "[0.8 ; 0.9[",
+     "n": 95,
+     "conf_moy": 0.8522711134390629,
+     "exactitude": 0.9368421052631579
+    },
+    {
+     "seau": "[0.9 ; 1.0]",
+     "n": 53,
+     "conf_moy": 0.9376436650507305,
+     "exactitude": 0.9622641509433962
+    }
+   ],
+   "ece_apres_T_commun": 0.10773834025826289,
+   "brier_apres_T_commun": 0.19937885576273245,
+   "biais_apres_T_commun": -0.09558555396110985,
+   "bpc_apres_T_commun": 2.226219885003353,
+   "ece_cal_avant": 0.04035383365884421,
+   "ece_cal_apres": 0.07649436041800606,
+   "infos": {
+    "memoire_en_paragraphes_total": 82109,
+    "memoire_en_caracteres_total": 15679400,
+    "valid_total": 829,
+    "valid_fuites_exclues": 106,
+    "memoire_paragraphes": 8211,
+    "eval_paragraphes": 7,
+    "cal_paragraphes": 22,
+    "memoire_caracteres": 1416976
+   },
+   "cpu_s": 43.474986017999996
+  },
+  "T_fr": 1.0576511859597724,
+  "fr": {
+   "n_eval_car": 2000,
+   "n_cal_car": 2000,
+   "ece_avant": 0.07656248803244334,
+   "ece_avant_ic95": [
+    0.061742400421926184,
+    0.09646836253344807
+   ],
+   "brier_avant": 0.1837510363836804,
+   "biais": -0.0700725090207246,
+   "conf_moy_avant": 0.5779274909792754,
+   "exactitude": 0.648,
+   "bpc_avant": 1.9394375652284181,
+   "table_avant": [
+    {
+     "seau": "[0.0 ; 0.1[",
+     "n": 3,
+     "conf_moy": 0.08512776342233706,
+     "exactitude": 0.3333333333333333
+    },
+    {
+     "seau": "[0.1 ; 0.2[",
+     "n": 62,
+     "conf_moy": 0.15038753255667245,
+     "exactitude": 0.11290322580645161
+    },
+    {
+     "seau": "[0.2 ; 0.3[",
+     "n": 179,
+     "conf_moy": 0.24673716197321224,
+     "exactitude": 0.22346368715083798
+    },
+    {
+     "seau": "[0.3 ; 0.4[",
+     "n": 132,
+     "conf_moy": 0.37124331178198666,
+     "exactitude": 0.4166666666666667
+    },
+    {
+     "seau": "[0.4 ; 0.5[",
+     "n": 85,
+     "conf_moy": 0.45580712194035494,
+     "exactitude": 0.5176470588235295
+    },
+    {
+     "seau": "[0.5 ; 0.6[",
+     "n": 707,
+     "conf_moy": 0.5026928484580339,
+     "exactitude": 0.6053748231966054
+    },
+    {
+     "seau": "[0.6 ; 0.7[",
+     "n": 284,
+     "conf_moy": 0.6653392895493905,
+     "exactitude": 0.7992957746478874
+    },
+    {
+     "seau": "[0.7 ; 0.8[",
+     "n": 180,
+     "conf_moy": 0.752270745619186,
+     "exactitude": 0.85
+    },
+    {
+     "seau": "[0.8 ; 0.9[",
+     "n": 161,
+     "conf_moy": 0.8400921029022892,
+     "exactitude": 0.8695652173913043
+    },
+    {
+     "seau": "[0.9 ; 1.0]",
+     "n": 207,
+     "conf_moy": 0.9629861462117572,
+     "exactitude": 0.9710144927536232
+    }
+   ],
+   "ece_apres_T_langue": 0.09643821815216456,
+   "ece_apres_T_langue_ic95": [
+    0.08114764665041309,
+    0.11756040316222395
+   ],
+   "brier_apres_T_langue": 0.1874810373806778,
+   "biais_apres_T_langue": -0.09139790725341967,
+   "bpc_apres_T_langue": 1.9426391940817938,
+   "table_apres_T_langue": [
+    {
+     "seau": "[0.0 ; 0.1[",
+     "n": 7,
+     "conf_moy": 0.09039748787731114,
+     "exactitude": 0.14285714285714285
+    },
+    {
+     "seau": "[0.1 ; 0.2[",
+     "n": 73,
+     "conf_moy": 0.15690405416730058,
+     "exactitude": 0.1506849315068493
+    },
+    {
+     "seau": "[0.2 ; 0.3[",
+     "n": 171,
+     "conf_moy": 0.24193790389375955,
+     "exactitude": 0.2222222222222222
+    },
+    {
+     "seau": "[0.3 ; 0.4[",
+     "n": 135,
+     "conf_moy": 0.3602603262733426,
+     "exactitude": 0.4148148148148148
+    },
+    {
+     "seau": "[0.4 ; 0.5[",
+     "n": 754,
+     "conf_moy": 0.4730725611000042,
+     "exactitude": 0.603448275862069
+    },
+    {
+     "seau": "[0.5 ; 0.6[",
+     "n": 42,
+     "conf_moy": 0.552736509016645,
+     "exactitude": 0.5238095238095238
+    },
+    {
+     "seau": "[0.6 ; 0.7[",
+     "n": 280,
+     "conf_moy": 0.6415167648458341,
+     "exactitude": 0.8035714285714286
+    },
+    {
+     "seau": "[0.7 ; 0.8[",
+     "n": 236,
+     "conf_moy": 0.7405705940816307,
+     "exactitude": 0.864406779661017
+    },
+    {
+     "seau": "[0.8 ; 0.9[",
+     "n": 122,
+     "conf_moy": 0.8510682157739521,
+     "exactitude": 0.8852459016393442
+    },
+    {
+     "seau": "[0.9 ; 1.0]",
+     "n": 180,
+     "conf_moy": 0.960942002102498,
+     "exactitude": 0.9777777777777777
+    }
+   ],
+   "ece_apres_T_commun": 0.1062301793834146,
+   "brier_apres_T_commun": 0.18973917102682553,
+   "biais_apres_T_commun": -0.10191764457616159,
+   "bpc_apres_T_commun": 1.9467463737187252,
+   "ece_cal_avant": 0.0758830044244545,
+   "ece_cal_apres": 0.09595074746805289,
+   "infos": {
+    "memoire_en_paragraphes_total": 82109,
+    "memoire_en_caracteres_total": 15679400,
+    "fr_lignes_total": 56971,
+    "fr_tenues": 569,
+    "fr_tenues_fuites_exclues": 19,
+    "memoire_paragraphes": 13851,
+    "memoire_fr_paragraphes": 5640,
+    "memoire_fr_caracteres_total": 7114138,
+    "memoire_fr_paragraphes_total": 56402,
+    "eval_paragraphes": 16,
+    "cal_paragraphes": 16,
+    "memoire_caracteres": 2126299
+   },
+   "cpu_s": 64.194090303
+  }
+ },
+ "auto_prediction": {
+  "n": 300,
+  "justes": 262,
+  "exactitude": 0.8733333333333333,
+  "exactitude_majoritaire": 0.38666666666666666,
+  "compte_issue": {
+   "compris": 116,
+   "incompris": 87,
+   "abstenu": 82,
+   "faux": 15
+  },
+  "matrice": {
+   "je vais comprendre": {
+    "compris": 116,
+    "incompris": 0,
+    "abstenu": 23,
+    "faux": 15
+   },
+   "je ne vais pas comprendre": {
+    "compris": 0,
+    "incompris": 87,
+    "abstenu": 0,
+    "faux": 0
+   },
+   "je vais devoir m'abstenir": {
+    "compris": 0,
+    "incompris": 0,
+    "abstenu": 59,
+    "faux": 0
+   }
+  },
+  "precision_comprendre": 0.7532467532467533,
+  "faux_confiants": 38,
+  "par_type": {
+   "contrôlée": {
+    "n": 110,
+    "justes": 110
+   },
+   "sans réponse": {
+    "n": 80,
+    "justes": 57
+   },
+   "libre": {
+    "n": 110,
+    "justes": 95
+   }
+  },
+  "par_sous_type": {
+   "contrôlée (t1 position)": {
+    "n": 22,
+    "justes": 22
+   },
+   "contrôlée (t2 objet)": {
+    "n": 22,
+    "justes": 22
+   },
+   "contrôlée (t3 déduction)": {
+    "n": 22,
+    "justes": 22
+   },
+   "contrôlée (t4 oui/non)": {
+    "n": 22,
+    "justes": 22
+   },
+   "contrôlée (t6 arithmétique)": {
+    "n": 22,
+    "justes": 22
+   },
+   "sans réponse": {
+    "n": 80,
+    "justes": 57
+   },
+   "libre": {
+    "n": 110,
+    "justes": 95
+   }
+  },
+  "erreurs": [
+   {
+    "type": "sans réponse",
+    "requete": "Médor est-il un cheval ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le stylo ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Est-ce que Milou est un fleur ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le sac ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Tom est-il un métal ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le ballon ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Rantanplan est-il un cheval ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le journal ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Titi est-il un loup ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le journal ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Bambi est-il un insecte ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le ballon ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Est-ce que Rantanplan est un aigle ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est la bouteille ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Félix est-il un poisson ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le livre ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Socrate est-il un mammifère ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est la lampe ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Azor est-il un reptile ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le journal ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Milou est-il un fleur ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Où est le ballon ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 6
+   },
+   {
+    "type": "sans réponse",
+    "requete": "Est-ce que Rex est un chien ?",
+    "pred": "je vais comprendre",
+    "raison": "question analysable, entités connues",
+    "issue": "abstenu",
+    "genre": 1
+   },
+   {
+    "type": "libre",
+    "requete": "Paul est le frère de Marie.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "La pomme est rouge.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Marie est en retard.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Jean est à l'heure.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Marie est allée dans la cuisine hier.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Jean prend le train.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Socrate est un homme mortel.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Le ciel est bleu aujourd'hui.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Tout le monde est mortel.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Combien font 7 plus 5 ?",
+    "pred": "je vais comprendre",
+    "raison": "calcul analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Le café est chaud.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Aucun homme n'est une île.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Jean est le père de Paul.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Julie est médecin.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   },
+   {
+    "type": "libre",
+    "requete": "Tout est possible.",
+    "pred": "je vais comprendre",
+    "raison": "affirmation analysable",
+    "issue": "faux",
+    "genre": null
+   }
+  ],
+  "n_erreurs": 38,
+  "cpu_prediction_moy_us": 85.95212666665593,
+  "cpu_execution_moy_us": 168.2200066666691,
+  "graine": 2024
+ },
+ "cpu_s": [
+  [
+   "Calibration en (collecte, mémoire 10 %)",
+   43.474986017999996
+  ],
+  [
+   "Calibration fr (collecte, mémoire 10 %)",
+   64.194090303
+  ],
+  [
+   "Ajustement des températures + tables + bootstrap",
+   2.077580174
+  ],
+  [
+   "Auto-prédiction (300 demandes, prédiction + exécution)",
+   0.09786410699999992
+  ]
+ ],
+ "cpu_total_s": 109.84452060199999,
+ "energie_estimee_J": 1098.44520602,
+ "duree_mur_s": 67.9649133682251
+}

@@ -1,0 +1,649 @@
+{
+ "meta": {
+  "graine": 2024,
+  "python": "3.13.18",
+  "plateforme": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39",
+  "repetitions": 89,
+  "repetitions_runs": 1,
+  "runs_b": 0
+ },
+ "strategies": {
+  "aiguilleur": {
+   "n": 400,
+   "cpu_total_s": 9.364589603999995,
+   "cpu_moyen_us": 23411.474009999987,
+   "cpu_hors_generation_s": 0.054749717999996506,
+   "cpu_moyen_hors_generation_us": 138.9586751268947,
+   "cpu_generation_s": 9.309839885999999,
+   "energie_estimee_j": 93.64589603999995,
+   "energie_estimee_hors_generation_j": 0.5474971799999651,
+   "justes": 400,
+   "exactitude": 1.0,
+   "hallucinations": 0,
+   "depassements_budget": 0,
+   "par_categorie": {
+    "calcul": {
+     "n": 33,
+     "justes": 33,
+     "cpu_moyen_us": 69.52175757568106
+    },
+    "generation": {
+     "n": 6,
+     "justes": 6,
+     "cpu_moyen_us": 1551639.9809999997
+    },
+    "illisible": {
+     "n": 9,
+     "justes": 9,
+     "cpu_moyen_us": 47.420444444581626
+    },
+    "insertion": {
+     "n": 144,
+     "justes": 144,
+     "cpu_moyen_us": 52.06997222222988
+    },
+    "objectif": {
+     "n": 50,
+     "justes": 50,
+     "cpu_moyen_us": 646.2152200000296
+    },
+    "q_inconnue": {
+     "n": 13,
+     "justes": 13,
+     "cpu_moyen_us": 32.08915384612611
+    },
+    "q_logique": {
+     "n": 89,
+     "justes": 89,
+     "cpu_moyen_us": 75.97871910106485
+    },
+    "q_monde": {
+     "n": 56,
+     "justes": 56,
+     "cpu_moyen_us": 90.0109642857259
+    }
+   },
+   "modules": {
+    "0": 67,
+    "1": 281,
+    "2": 37,
+    "3": 6,
+    "aucun": 9
+   },
+   "cache": {
+    "requetes": 400,
+    "cache_hits": 67,
+    "cache_miss": 333
+   },
+   "erreurs": [],
+   "cpu_total_runs_s": [
+    9.364589603999995
+   ]
+  },
+  "sans_cache": {
+   "n": 400,
+   "cpu_total_s": 9.001534711000014,
+   "cpu_moyen_us": 22503.836777500037,
+   "cpu_hors_generation_s": 0.07436432200000986,
+   "cpu_moyen_hors_generation_us": 188.74193401017732,
+   "cpu_generation_s": 8.927170389000004,
+   "energie_estimee_j": 90.01534711000014,
+   "energie_estimee_hors_generation_j": 0.7436432200000986,
+   "justes": 400,
+   "exactitude": 1.0,
+   "hallucinations": 0,
+   "depassements_budget": 0,
+   "par_categorie": {
+    "calcul": {
+     "n": 33,
+     "justes": 33,
+     "cpu_moyen_us": 116.69018181813304
+    },
+    "generation": {
+     "n": 6,
+     "justes": 6,
+     "cpu_moyen_us": 1487861.7315000007
+    },
+    "illisible": {
+     "n": 9,
+     "justes": 9,
+     "cpu_moyen_us": 41.863111111576735
+    },
+    "insertion": {
+     "n": 144,
+     "justes": 144,
+     "cpu_moyen_us": 46.71639583338679
+    },
+    "objectif": {
+     "n": 50,
+     "justes": 50,
+     "cpu_moyen_us": 956.9996000000458
+    },
+    "q_inconnue": {
+     "n": 13,
+     "justes": 13,
+     "cpu_moyen_us": 31.57307692283404
+    },
+    "q_logique": {
+     "n": 89,
+     "justes": 89,
+     "cpu_moyen_us": 96.7546629213836
+    },
+    "q_monde": {
+     "n": 56,
+     "justes": 56,
+     "cpu_moyen_us": 116.75039285709487
+    }
+   },
+   "modules": {
+    "1": 335,
+    "2": 50,
+    "3": 6,
+    "aucun": 9
+   },
+   "cache": {
+    "requetes": 400,
+    "cache_hits": 0,
+    "cache_miss": 0
+   },
+   "erreurs": [],
+   "cpu_total_runs_s": [
+    9.001534711000014
+   ]
+  },
+  "toujours_tout_syntaxe": {
+   "n": 400,
+   "cpu_total_s": 9.103807397000011,
+   "cpu_moyen_us": 22759.51849250003,
+   "cpu_hors_generation_s": 0.07000419800001723,
+   "cpu_moyen_hors_generation_us": 177.67562944166806,
+   "cpu_generation_s": 9.033803198999994,
+   "energie_estimee_j": 91.03807397000011,
+   "energie_estimee_hors_generation_j": 0.7000419800001723,
+   "justes": 400,
+   "exactitude": 1.0,
+   "hallucinations": 0,
+   "depassements_budget": 0,
+   "par_categorie": {
+    "calcul": {
+     "n": 33,
+     "justes": 33,
+     "cpu_moyen_us": 104.31930303045681
+    },
+    "generation": {
+     "n": 6,
+     "justes": 6,
+     "cpu_moyen_us": 1505633.8664999988
+    },
+    "illisible": {
+     "n": 9,
+     "justes": 9,
+     "cpu_moyen_us": 36.54833333320716
+    },
+    "insertion": {
+     "n": 144,
+     "justes": 144,
+     "cpu_moyen_us": 46.426305555464296
+    },
+    "objectif": {
+     "n": 50,
+     "justes": 50,
+     "cpu_moyen_us": 879.0748800006298
+    },
+    "q_inconnue": {
+     "n": 13,
+     "justes": 13,
+     "cpu_moyen_us": 31.147230769280352
+    },
+    "q_logique": {
+     "n": 89,
+     "justes": 89,
+     "cpu_moyen_us": 101.5925955055468
+    },
+    "q_monde": {
+     "n": 56,
+     "justes": 56,
+     "cpu_moyen_us": 109.76676785715408
+    }
+   },
+   "modules": {
+    "1": 335,
+    "2": 50,
+    "3": 6,
+    "aucun": 9
+   },
+   "cache": {
+    "requetes": 400,
+    "cache_hits": 0,
+    "cache_miss": 0
+   },
+   "erreurs": [],
+   "cpu_total_runs_s": [
+    9.103807397000011
+   ]
+  }
+ },
+ "planificateur": {
+  "n": 30,
+  "stats": {
+   "instances": 30,
+   "oracle_plan": 23,
+   "plans": 23,
+   "plans_verifies": 23,
+   "plans_valides_rejeu_independant": 23,
+   "comparables": 23,
+   "optimaux": 23,
+   "oracle_impossible": 7,
+   "impossibles_declares": 7,
+   "impossibles_corrects": 7
+  },
+  "noeuds_moyen": 0.8333333333333334,
+  "noeuds_max": 6,
+  "cpu_total_s": 0.007186689999993945,
+  "cpu_moyen_ms": 0.2395563333331315,
+  "cpu_max_ms": 0.42362800000006473,
+  "ecarts": []
+ },
+ "planificateur_instances": [
+  {
+   "k": 0,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 4,
+   "but": "Objectif : Paul doit avoir le livre.",
+   "oracle": "plan",
+   "cout_oracle": 4.0,
+   "statut": "plan",
+   "cout_astar": 4.0,
+   "noeuds": 6,
+   "verifie": true
+  },
+  {
+   "k": 1,
+   "personnes": 3,
+   "lieux": 4,
+   "objets": 1,
+   "but": "Objectif : la pomme doit être dans le salon.",
+   "oracle": "plan",
+   "cout_oracle": 3.0,
+   "statut": "plan",
+   "cout_astar": 3.0,
+   "noeuds": 4,
+   "verifie": true
+  },
+  {
+   "k": 2,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 3,
+   "but": "Objectif : Pierre doit être au jardin.",
+   "oracle": "impossible",
+   "cout_oracle": null,
+   "statut": "impossible",
+   "cout_astar": null,
+   "noeuds": 0,
+   "verifie": false
+  },
+  {
+   "k": 3,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 2,
+   "but": "Objectif : Paul doit avoir le livre.",
+   "oracle": "plan",
+   "cout_oracle": 1.0,
+   "statut": "plan",
+   "cout_astar": 1.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 4,
+   "personnes": 3,
+   "lieux": 3,
+   "objets": 4,
+   "but": "Objectif : le ballon doit être dans la cuisine.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 5,
+   "personnes": 3,
+   "lieux": 5,
+   "objets": 4,
+   "but": "Objectif : la pomme doit être dans la cuisine.",
+   "oracle": "plan",
+   "cout_oracle": 2.0,
+   "statut": "plan",
+   "cout_astar": 2.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 6,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 4,
+   "but": "Objectif : Pierre doit être au jardin.",
+   "oracle": "impossible",
+   "cout_oracle": null,
+   "statut": "impossible",
+   "cout_astar": null,
+   "noeuds": 0,
+   "verifie": false
+  },
+  {
+   "k": 7,
+   "personnes": 3,
+   "lieux": 4,
+   "objets": 4,
+   "but": "Objectif : le livre doit être dans la cuisine.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 8,
+   "personnes": 2,
+   "lieux": 5,
+   "objets": 3,
+   "but": "Objectif : la pomme doit être au jardin.",
+   "oracle": "impossible",
+   "cout_oracle": null,
+   "statut": "impossible",
+   "cout_astar": null,
+   "noeuds": 0,
+   "verifie": false
+  },
+  {
+   "k": 9,
+   "personnes": 4,
+   "lieux": 5,
+   "objets": 1,
+   "but": "Objectif : la pomme doit être au grenier.",
+   "oracle": "impossible",
+   "cout_oracle": null,
+   "statut": "impossible",
+   "cout_astar": null,
+   "noeuds": 0,
+   "verifie": false
+  },
+  {
+   "k": 10,
+   "personnes": 4,
+   "lieux": 4,
+   "objets": 2,
+   "but": "Objectif : la pomme doit être au garage.",
+   "oracle": "impossible",
+   "cout_oracle": null,
+   "statut": "impossible",
+   "cout_astar": null,
+   "noeuds": 0,
+   "verifie": false
+  },
+  {
+   "k": 11,
+   "personnes": 2,
+   "lieux": 3,
+   "objets": 1,
+   "but": "Objectif : Jean doit avoir la pomme.",
+   "oracle": "plan",
+   "cout_oracle": 2.0,
+   "statut": "plan",
+   "cout_astar": 2.0,
+   "noeuds": 3,
+   "verifie": true
+  },
+  {
+   "k": 12,
+   "personnes": 3,
+   "lieux": 3,
+   "objets": 3,
+   "but": "Objectif : Marie doit être au jardin.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 13,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 4,
+   "but": "Objectif : Marie doit avoir la pomme.",
+   "oracle": "plan",
+   "cout_oracle": 2.0,
+   "statut": "plan",
+   "cout_astar": 2.0,
+   "noeuds": 4,
+   "verifie": true
+  },
+  {
+   "k": 14,
+   "personnes": 2,
+   "lieux": 2,
+   "objets": 4,
+   "but": "Objectif : le livre doit être dans la cuisine.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 15,
+   "personnes": 2,
+   "lieux": 3,
+   "objets": 3,
+   "but": "Objectif : le stylo doit être dans le salon.",
+   "oracle": "impossible",
+   "cout_oracle": null,
+   "statut": "impossible",
+   "cout_astar": null,
+   "noeuds": 0,
+   "verifie": false
+  },
+  {
+   "k": 16,
+   "personnes": 3,
+   "lieux": 5,
+   "objets": 2,
+   "but": "Objectif : le livre doit être au jardin.",
+   "oracle": "plan",
+   "cout_oracle": 1.0,
+   "statut": "plan",
+   "cout_astar": 1.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 17,
+   "personnes": 3,
+   "lieux": 3,
+   "objets": 1,
+   "but": "Objectif : Paul doit être au jardin.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 18,
+   "personnes": 2,
+   "lieux": 4,
+   "objets": 4,
+   "but": "Objectif : le ballon doit être dans le salon.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 19,
+   "personnes": 3,
+   "lieux": 3,
+   "objets": 1,
+   "but": "Objectif : la pomme doit être au garage.",
+   "oracle": "impossible",
+   "cout_oracle": null,
+   "statut": "impossible",
+   "cout_astar": null,
+   "noeuds": 0,
+   "verifie": false
+  },
+  {
+   "k": 20,
+   "personnes": 2,
+   "lieux": 3,
+   "objets": 4,
+   "but": "Objectif : la clé doit être dans le salon.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 21,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 4,
+   "but": "Objectif : Marie doit avoir le livre.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 22,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 3,
+   "but": "Objectif : Jean doit avoir la pomme.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 23,
+   "personnes": 4,
+   "lieux": 2,
+   "objets": 2,
+   "but": "Objectif : la pomme doit être au jardin.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  },
+  {
+   "k": 24,
+   "personnes": 3,
+   "lieux": 2,
+   "objets": 3,
+   "but": "Objectif : Paul doit être dans la cuisine.",
+   "oracle": "plan",
+   "cout_oracle": 3.0,
+   "statut": "plan",
+   "cout_astar": 3.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 25,
+   "personnes": 2,
+   "lieux": 2,
+   "objets": 3,
+   "but": "Objectif : Jean doit avoir la clé.",
+   "oracle": "plan",
+   "cout_oracle": 3.0,
+   "statut": "plan",
+   "cout_astar": 3.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 26,
+   "personnes": 2,
+   "lieux": 5,
+   "objets": 1,
+   "but": "Objectif : Jean doit être dans le salon.",
+   "oracle": "plan",
+   "cout_oracle": 1.0,
+   "statut": "plan",
+   "cout_astar": 1.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 27,
+   "personnes": 2,
+   "lieux": 2,
+   "objets": 2,
+   "but": "Objectif : Jean doit avoir le livre.",
+   "oracle": "plan",
+   "cout_oracle": 1.0,
+   "statut": "plan",
+   "cout_astar": 1.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 28,
+   "personnes": 2,
+   "lieux": 3,
+   "objets": 4,
+   "but": "Objectif : Marie doit avoir la pomme.",
+   "oracle": "plan",
+   "cout_oracle": 1.0,
+   "statut": "plan",
+   "cout_astar": 1.0,
+   "noeuds": 1,
+   "verifie": true
+  },
+  {
+   "k": 29,
+   "personnes": 3,
+   "lieux": 2,
+   "objets": 3,
+   "but": "Objectif : Paul doit avoir le livre.",
+   "oracle": "plan",
+   "cout_oracle": 0.0,
+   "statut": "plan",
+   "cout_astar": 0,
+   "noeuds": 0,
+   "verifie": true
+  }
+ ],
+ "composition": {
+  "insertion": 144,
+  "q_monde": 56,
+  "q_logique": 89,
+  "calcul": 33,
+  "objectif": 50,
+  "illisible": 9,
+  "q_inconnue": 13,
+  "generation": 6
+ }
+}
