@@ -1,4 +1,4 @@
-data/
+/data/
 memoire_fr.xz
 __pycache__/
 arc/data/*
