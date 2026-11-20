@@ -17,10 +17,10 @@ Pour chaque caractère à prédire, on prend le meilleur candidat (top-1) et sa 
 
 ### Résumé (échantillon d'évaluation)
 
-| Langue | Exactitude top-1 | Confiance moy. | Biais | Sens | ECE brut [IC95 bootstrap] | Brier top-1 | bpc |
+| Langue | Exactitude top-1 | Confiance moy. | Biais | Sens | ECE brut [IC95 par paragraphes] | Brier top-1 | bpc |
 |---|---:|---:|---:|---|---:|---:|---:|
-| anglais | 0.593 | 0.530 | -0.0628 | TROP MODESTE (sous-confiant) | 0.0855 [0.0703 ; 0.1050] | 0.1943 | 2.224 |
-| français | 0.648 | 0.578 | -0.0701 | TROP MODESTE (sous-confiant) | 0.0766 [0.0617 ; 0.0965] | 0.1838 | 1.939 |
+| anglais | 0.593 | 0.530 | -0.0628 | TROP MODESTE (sous-confiant) | 0.0855 [0.0743 ; 0.1259] | 0.1943 | 2.224 |
+| français | 0.648 | 0.578 | -0.0701 | TROP MODESTE (sous-confiant) | 0.0766 [0.0603 ; 0.1022] | 0.1838 | 1.939 |
 
 ### Table de fiabilité brute — anglais (évaluation)
 
@@ -54,47 +54,49 @@ Pour chaque caractère à prédire, on prend le meilleur candidat (top-1) et sa 
 
 ## 1bis. Correction paramétrique : une température
 
-Les probabilités sont élevées à la puissance 1/T puis renormalisées. T est **1 réel ajusté** (recherche en section dorée, critère : bits par caractère sur l'échantillon de CALIBRATION, jamais sur l'évaluation). Le candidat en tête ne change pas, donc l'exactitude top-1 est inchangée.
+Les probabilités sont élevées à la puissance 1/T puis renormalisées (T < 1 : plus tranché ; T > 1 : plus modeste). T est **1 réel ajusté** (recherche en section dorée sur l'échantillon de CALIBRATION, jamais sur l'évaluation). Critère retenu : Brier du top-1. À titre de comparaison, T ajusté sur les bits par caractère (NLL) : critère standard du « temperature scaling », mais il vise toute la distribution, pas la confiance du top-1. Le candidat en tête ne change pas, donc l'exactitude top-1 est inchangée.
 
-| Réglage | T | ECE éval. avant | ECE éval. après | Brier avant | Brier après | Biais après | bpc avant | bpc après |
+| Réglage | T | ECE éval. avant | ECE éval. après [IC95 par paragraphes] | Brier avant | Brier après | Biais après | bpc avant | bpc après |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| anglais, T propre à la langue | 1.115 | 0.0855 | 0.1165 | 0.1943 | 0.2016 | -0.1059 | 2.224 | 2.230 |
-| français, T propre à la langue | 1.058 | 0.0766 | 0.0964 | 0.1838 | 0.1875 | -0.0914 | 1.939 | 1.943 |
-| anglais, T commun (calibration EN+FR réunies) | 1.087 | 0.0855 | 0.1077 | 0.1943 | 0.1994 | -0.0956 | 2.224 | 2.226 |
-| français, T commun (calibration EN+FR réunies) | 1.087 | 0.0766 | 0.1062 | 0.1838 | 0.1897 | -0.1019 | 1.939 | 1.947 |
+| anglais, T Brier propre à la langue (retenu) | 0.989 | 0.0855 | 0.0809 [0.0695 ; 0.1208] | 0.1943 | 0.1938 | -0.0584 | 2.224 | 2.224 |
+| français, T Brier propre à la langue (retenu) | 0.882 | 0.0766 | 0.0434 [0.0294 ; 0.0635] | 0.1838 | 0.1797 | -0.0249 | 1.939 | 1.958 |
+| anglais, T Brier commun (calibration EN+FR réunies) | 0.936 | 0.0855 | 0.0683 | 0.1943 | 0.1922 | -0.0375 | 2.224 | 2.233 |
+| français, T Brier commun (calibration EN+FR réunies) | 0.936 | 0.0766 | 0.0600 | 0.1838 | 0.1809 | -0.0460 | 1.939 | 1.945 |
+| anglais, T NLL (comparaison) | 1.115 | 0.0855 | 0.1165 | 0.1943 | 0.2016 | -0.1059 | 2.224 | 2.230 |
+| français, T NLL (comparaison) | 1.058 | 0.0766 | 0.0964 | 0.1838 | 0.1875 | -0.0914 | 1.939 | 1.943 |
 
-Contrôle sur l'échantillon de calibration (où T a été ajusté) — anglais : ECE 0.0404 -> 0.0765 ; sur l'évaluation, IC95 de l'ECE après T : [0.1011 ; 0.1373].
-Contrôle sur l'échantillon de calibration (où T a été ajusté) — français : ECE 0.0759 -> 0.0960 ; sur l'évaluation, IC95 de l'ECE après T : [0.0811 ; 0.1176].
+Contrôle sur l'échantillon de calibration (où T a été ajusté) — anglais : ECE 0.0404 -> 0.0390 ; IC95 de l'ECE brut sur l'évaluation : [0.0743 ; 0.1259].
+Contrôle sur l'échantillon de calibration (où T a été ajusté) — français : ECE 0.0759 -> 0.0395 ; IC95 de l'ECE brut sur l'évaluation : [0.0603 ; 0.1022].
 
 ### Table de fiabilité après température (T de la langue) — anglais (évaluation)
 
 | Seau de confiance | N | Confiance moy. | Exactitude top-1 | Écart (conf. − exact.) |
 |---|---:|---:|---:|---:|
-| [0.0 ; 0.1[ | 6 | 0.086 | 0.000 | +0.086 |
-| [0.1 ; 0.2[ | 109 | 0.151 | 0.128 | +0.022 |
-| [0.2 ; 0.3[ | 202 | 0.239 | 0.213 | +0.027 |
-| [0.3 ; 0.4[ | 137 | 0.352 | 0.336 | +0.017 |
-| [0.4 ; 0.5[ | 940 | 0.453 | 0.601 | -0.148 |
-| [0.5 ; 0.6[ | 92 | 0.555 | 0.663 | -0.108 |
-| [0.6 ; 0.7[ | 210 | 0.643 | 0.843 | -0.200 |
-| [0.7 ; 0.8[ | 156 | 0.749 | 0.891 | -0.142 |
-| [0.8 ; 0.9[ | 95 | 0.852 | 0.937 | -0.085 |
-| [0.9 ; 1.0] | 53 | 0.938 | 0.962 | -0.025 |
+| [0.0 ; 0.1[ | 3 | 0.084 | 0.000 | +0.084 |
+| [0.1 ; 0.2[ | 88 | 0.155 | 0.114 | +0.041 |
+| [0.2 ; 0.3[ | 203 | 0.253 | 0.177 | +0.076 |
+| [0.3 ; 0.4[ | 77 | 0.346 | 0.351 | -0.005 |
+| [0.4 ; 0.5[ | 107 | 0.424 | 0.393 | +0.031 |
+| [0.5 ; 0.6[ | 952 | 0.508 | 0.602 | -0.093 |
+| [0.6 ; 0.7[ | 177 | 0.666 | 0.802 | -0.136 |
+| [0.7 ; 0.8[ | 123 | 0.752 | 0.870 | -0.117 |
+| [0.8 ; 0.9[ | 161 | 0.834 | 0.901 | -0.066 |
+| [0.9 ; 1.0] | 109 | 0.938 | 0.945 | -0.007 |
 
 ### Table de fiabilité après température (T de la langue) — français (évaluation)
 
 | Seau de confiance | N | Confiance moy. | Exactitude top-1 | Écart (conf. − exact.) |
 |---|---:|---:|---:|---:|
-| [0.0 ; 0.1[ | 7 | 0.090 | 0.143 | -0.052 |
-| [0.1 ; 0.2[ | 73 | 0.157 | 0.151 | +0.006 |
-| [0.2 ; 0.3[ | 171 | 0.242 | 0.222 | +0.020 |
-| [0.3 ; 0.4[ | 135 | 0.360 | 0.415 | -0.055 |
-| [0.4 ; 0.5[ | 754 | 0.473 | 0.603 | -0.130 |
-| [0.5 ; 0.6[ | 42 | 0.553 | 0.524 | +0.029 |
-| [0.6 ; 0.7[ | 280 | 0.642 | 0.804 | -0.162 |
-| [0.7 ; 0.8[ | 236 | 0.741 | 0.864 | -0.124 |
-| [0.8 ; 0.9[ | 122 | 0.851 | 0.885 | -0.034 |
-| [0.9 ; 1.0] | 180 | 0.961 | 0.978 | -0.017 |
+| [0.0 ; 0.1[ | 2 | 0.095 | 0.000 | +0.095 |
+| [0.1 ; 0.2[ | 59 | 0.162 | 0.119 | +0.043 |
+| [0.2 ; 0.3[ | 161 | 0.263 | 0.224 | +0.040 |
+| [0.3 ; 0.4[ | 69 | 0.349 | 0.275 | +0.074 |
+| [0.4 ; 0.5[ | 133 | 0.450 | 0.489 | -0.039 |
+| [0.5 ; 0.6[ | 690 | 0.550 | 0.593 | -0.043 |
+| [0.6 ; 0.7[ | 88 | 0.647 | 0.750 | -0.103 |
+| [0.7 ; 0.8[ | 317 | 0.742 | 0.808 | -0.065 |
+| [0.8 ; 0.9[ | 213 | 0.841 | 0.859 | -0.018 |
+| [0.9 ; 1.0] | 268 | 0.967 | 0.951 | +0.016 |
 
 ## 2. Auto-prédiction de compétence
 
@@ -106,15 +108,15 @@ Mélange fixe (graine 2024) de 300 demandes : 110 contrôlée, 110 libre, 80 san
 
 | Prédiction \ Issue | compris | incompris | abstenu | faux | Total |
 |---|---:|---:|---:|---:|---:|
-| je vais comprendre | 116 | 0 | 23 | 15 | 154 |
+| je vais comprendre | 117 | 0 | 23 | 14 | 154 |
 | je ne vais pas comprendre | 0 | 87 | 0 | 0 | 87 |
 | je vais devoir m'abstenir | 0 | 0 | 59 | 0 | 59 |
-| **Total issue** | 116 | 87 | 82 | 15 | 300 |
+| **Total issue** | 117 | 87 | 82 | 14 | 300 |
 
-- **Exactitude de l'auto-prédiction : 87.3 % (262/300).**
-- Référence « toujours prédire l'issue la plus fréquente » : 38.7 %.
-- Précision de « je vais comprendre » : 75.3 % ; 38 fois j'ai annoncé « je vais comprendre » et c'était faux ou abstenu.
-- Coût moyen : prédiction 86.0 µs, exécution 168.2 µs (CPU).
+- **Exactitude de l'auto-prédiction : 87.7 % (263/300).**
+- Référence « toujours prédire l'issue la plus fréquente » : 39.0 %.
+- Précision de « je vais comprendre » : 76.0 % ; 37 fois j'ai annoncé « je vais comprendre » et c'était faux ou abstenu.
+- Coût moyen : prédiction 74.3 µs, exécution 147.6 µs (CPU).
 
 | Type de demande | N | Prédictions justes |
 |---|---:|---:|
@@ -123,10 +125,10 @@ Mélange fixe (graine 2024) de 300 demandes : 110 contrôlée, 110 libre, 80 san
 | contrôlée (t3 déduction) | 22 | 22/22 (100.0 %) |
 | contrôlée (t4 oui/non) | 22 | 22/22 (100.0 %) |
 | contrôlée (t6 arithmétique) | 22 | 22/22 (100.0 %) |
-| libre | 110 | 95/110 (86.4 %) |
+| libre | 110 | 96/110 (87.3 %) |
 | sans réponse | 80 | 57/80 (71.2 %) |
 
-Erreurs d'auto-prédiction (jusqu'à 40 sur 38) :
+Erreurs d'auto-prédiction (jusqu'à 40 sur 37) :
 
 | Type | Demande | Prédiction | Issue | Raison |
 |---|---|---|---|---|
@@ -162,7 +164,6 @@ Erreurs d'auto-prédiction (jusqu'à 40 sur 38) :
 | libre | Socrate est un homme mortel. | je vais comprendre | faux | affirmation analysable |
 | libre | Le ciel est bleu aujourd'hui. | je vais comprendre | faux | affirmation analysable |
 | libre | Tout le monde est mortel. | je vais comprendre | faux | affirmation analysable |
-| libre | Combien font 7 plus 5 ? | je vais comprendre | faux | calcul analysable |
 | libre | Le café est chaud. | je vais comprendre | faux | affirmation analysable |
 | libre | Aucun homme n'est une île. | je vais comprendre | faux | affirmation analysable |
 | libre | Jean est le père de Paul. | je vais comprendre | faux | affirmation analysable |
@@ -181,18 +182,18 @@ Mémoire mesurée : 138 511 paragraphes, 22 793 538 caractères (anglais 82 109 
 
 | Étape | CPU (s) | Énergie estimée (J) |
 |---|---:|---:|
-| Calibration en (collecte, mémoire 10 %) | 43.5 | 434.7 |
-| Calibration fr (collecte, mémoire 10 %) | 64.2 | 641.9 |
-| Ajustement des températures + tables + bootstrap | 2.1 | 20.8 |
-| Auto-prédiction (300 demandes, prédiction + exécution) | 0.1 | 1.0 |
-| **Total CPU (tous processus)** | **109.8** | **1098.4** |
+| Calibration en (collecte, mémoire 10 %) | 43.6 | 435.7 |
+| Calibration fr (collecte, mémoire 10 %) | 65.3 | 652.9 |
+| Ajustement des températures + tables + bootstrap | 2.0 | 19.5 |
+| Auto-prédiction (300 demandes, prédiction + exécution) | 0.1 | 0.9 |
+| **Total CPU (tous processus)** | **110.9** | **1109.0** |
 
-Durée réelle totale : 68 s (au plus 2 processus en parallèle).
+Durée réelle totale : 69 s (au plus 2 processus en parallèle).
 
 ## Limites (à lire)
 
 1. **Ce n'est pas une conscience.** Calibrer ses probabilités et prédire son propre comportement est de la métacognition fonctionnelle ; rien ne dit qu'il y ait une expérience derrière, et rien dans le code ne le suggère.
-2. **Calibration sur un seul échantillon par langue** (~2000 caractères évalués, ~2000 pour calibrer) : voir les IC95 bootstrap de l'ECE ; des différences de quelques millièmes ne sont pas significatives. Les caractères voisins d'un même paragraphe ne sont pas indépendants, l'IC est donc trop étroit.
+2. **Calibration sur un seul échantillon par langue** (~2000 caractères évalués, ~2000 pour calibrer) : voir les IC95 bootstrap par paragraphes de l'ECE ; des différences de quelques millièmes ne sont pas significatives. Peu de paragraphes distincts (voir protocole) : l'IC par paragraphes est large et l'ECE d'une langue peut varier du simple au double d'un échantillon à l'autre.
 3. **Mémoires réduites (10 %)** : la calibration de la mémoire complète (15,7 M caractères) n'a pas été mesurée ; T dépend probablement de la taille de la mémoire et de la langue.
 4. **Un seul réel ajusté** par réglage (T). Il corrige un biais global de confiance, pas les erreurs locales ; le test « T commun » montre à quel point il dépend de la langue.
 5. **L'auto-prédiction ne voit pas ses erreurs de lecture** : le système ne prédit jamais « faux » ; les phrases mal lues passent l'analyseur sans alerte. Elle ne prévoit pas non plus les abstentions qui dépendent d'un raisonnement (réciproque non valide, porteur jamais localisé…), car on ne lance pas d'inférence avant.

@@ -363,7 +363,10 @@ def _limites_raisonneur():
         m = re.match(r"^\d+\.\s+(.*)$", l)
         if dedans and m:
             t = m.group(1).replace("**", "")
-            out.append(t.split(". ")[0][:170].rstrip("."))
+            t = t.split(". ")[0]
+            if len(t) > 170:
+                t = t[:170].rsplit(" ", 1)[0] + " …"
+            out.append(t.rstrip(". :"))
     return out
 
 
@@ -466,7 +469,7 @@ def decrire_soi():
     L.append("CE QUE JE NE SAIS PAS FAIRE (limites relues dans resultats_raisonneur.md)")
     if f["limites_rais"]:
         for i, t in enumerate(f["limites_rais"], 1):
-            L.append("  %d. %s." % (i, t))
+            L.append("  %d. %s%s" % (i, t, "" if t.endswith("…") else "."))
     else:
         L.append("  (liste introuvable)")
     if rais and rais.get("phrases_libres"):
