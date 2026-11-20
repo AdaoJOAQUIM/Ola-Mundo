@@ -5,3 +5,4 @@ data/raw/*
 !data/raw/SOURCES.md
 out/
 tok/
+train_stdout.txt

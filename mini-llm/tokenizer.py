@@ -45,14 +45,25 @@ def main():
             if va:
                 np.asarray(va, dtype=np.uint16).tofile(fva); nva += len(va)
 
-        start = 0
+        # Le corpus est coupé à ~70 caractères par ligne : on regroupe les lignes
+        # en paragraphes (séparés par une ligne vide) et on ne met EOS qu'à la
+        # fin de chaque paragraphe, sinon le modèle apprend à couper ses phrases.
+        start, para = 0, []
+
+        def end_para():
+            nonlocal start, buf
+            if para:
+                buf.append(" ".join(para)); para.clear()
+            if len(buf) >= a.chunk_lines:
+                flush(buf, start); start += len(buf); buf = []
+
         for line in f:
             line = line.strip()
             if not line:
+                end_para()
                 continue
-            buf.append(line)
-            if len(buf) >= a.chunk_lines:
-                flush(buf, start); start += len(buf); buf = []
+            para.append(line)
+        end_para()
         if buf:
             flush(buf, start)
     print(f"train tokens: {ntr:,}  val tokens: {nva:,}")
