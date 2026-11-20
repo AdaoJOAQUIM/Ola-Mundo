@@ -12,15 +12,16 @@ Charge : **400 requêtes**, composition : calcul 33, generation 6, illisible 9, 
 
 Définitions : (a) cache (question normalisée exacte + version de la base) puis raisonneur, planificateur, génération, en s'arrêtant au premier résultat accepté ; (c) pareil sans cache ; (b) **tous** les modules lancés sur **toutes** les requêtes (génération incluse, 40 caractères d'amorce par requête non générative), sans cache, on garde le meilleur résultat vérifié ; (b') tous les modules dont la forme syntaxique convient (planificateur seulement pour « Objectif », génération seulement pour « Écris/Continue »).
 
-Mesures : médiane de 1 exécutions complètes pour (a), (c), (b') ; (b) : 0 exécution(s) (très coûteuse en CPU). Le temps de chargement de `memoire.xz` (paresseux) est compté dans la première requête de génération.
+Mesures : médiane de 5 exécutions complètes pour (a), (c), (b') ; (b) : 1 exécution(s) (très coûteuse en CPU). Le temps de chargement de `memoire.xz` (paresseux) est compté dans la première requête de génération.
 
 ### Coût total
 
 | Stratégie | CPU total (s) | CPU moyen / requête (µs) | CPU hors génération (ms) | CPU moyen hors génération (µs) | Énergie estimée totale (J) | Énergie estimée hors génération (mJ) |
 |---|---|---|---|---|---|---|
-| (a) aiguilleur : le moins cher + cache | 9,365 | 23 411,5 | 54,75 | 139,0 | 93,646 | 547,50 |
-| (c) le moins cher, sans cache | 9,002 | 22 503,8 | 74,36 | 188,7 | 90,015 | 743,64 |
-| (b') « toujours tout » limité aux formes adaptées | 9,104 | 22 759,5 | 70,00 | 177,7 | 91,038 | 700,04 |
+| (a) aiguilleur : le moins cher + cache | 9,233 | 23 082,9 | 57,66 | 146,3 | 92,331 | 576,61 |
+| (c) le moins cher, sans cache | 9,155 | 22 887,2 | 71,58 | 181,7 | 91,549 | 715,76 |
+| (b') « toujours tout » limité aux formes adaptées | 9,375 | 23 436,6 | 81,10 | 205,8 | 93,747 | 811,01 |
+| (b) « toujours tout » (tous les modules, toutes les requêtes) | 274,659 | 686 648,5 | 265 580,14 | 674 061,3 | 2 746,594 | 2 655 801,43 |
 
 **Lecture honnête** : la génération (Écho) coûte des centaines de milliers de fois plus qu'une réponse du raisonneur ; le total est donc dominé par elle dès qu'on la lance, et c'est exactement ce que « toujours tout » fait. La colonne « hors génération » isole l'effet du cache et de l'ordre des modules sur le reste de la charge.
 
@@ -31,6 +32,7 @@ Mesures : médiane de 1 exécutions complètes pour (a), (c), (b') ; (b) : 0 ex�
 | (a) aiguilleur : le moins cher + cache | 400/400 | 100,0 % (400/400) | 0 | 0 |
 | (c) le moins cher, sans cache | 400/400 | 100,0 % (400/400) | 0 | 0 |
 | (b') « toujours tout » limité aux formes adaptées | 400/400 | 100,0 % (400/400) | 0 | 0 |
+| (b) « toujours tout » (tous les modules, toutes les requêtes) | 400/400 | 100,0 % (400/400) | 0 | 0 |
 
 « Juste » : insertion acceptée/refusée comme attendu ; réponse exacte avec preuve vérifiée ; abstention quand aucune réponse n'existe ; refus des phrases illisibles ; objectif : plan vérifié, rejoué par le banc avec ses propres règles, de **coût égal à l'optimum de l'oracle**, ou « impossible » quand l'oracle le dit ; génération : texte non vide étiqueté « non vérifié » (on ne juge pas sa qualité).
 
@@ -38,14 +40,14 @@ Mesures : médiane de 1 exécutions complètes pour (a), (c), (b') ; (b) : 0 ex�
 
 | Catégorie | Requêtes | Justes | CPU moyen (µs) |
 |---|---|---|---|
-| calcul | 33 | 33 | 69,5 |
-| generation | 6 | 6 | 1 551 640,0 |
-| illisible | 9 | 9 | 47,4 |
-| insertion | 144 | 144 | 52,1 |
-| objectif | 50 | 50 | 646,2 |
-| q_inconnue | 13 | 13 | 32,1 |
-| q_logique | 89 | 89 | 76,0 |
-| q_monde | 56 | 56 | 90,0 |
+| calcul | 33 | 33 | 61,8 |
+| generation | 6 | 6 | 1 529 246,9 |
+| illisible | 9 | 9 | 43,0 |
+| insertion | 144 | 144 | 57,1 |
+| objectif | 50 | 50 | 684,3 |
+| q_inconnue | 13 | 13 | 33,2 |
+| q_logique | 89 | 89 | 77,1 |
+| q_monde | 56 | 56 | 98,2 |
 
 Aucune erreur pour (a) sur cette charge.
 
@@ -56,33 +58,36 @@ Aucune erreur pour (a) sur cette charge.
 | (a) aiguilleur : le moins cher + cache | 67 | 281 | 37 | 6 | 9 |
 | (c) le moins cher, sans cache | 0 | 335 | 50 | 6 | 9 |
 | (b') « toujours tout » limité aux formes adaptées | 0 | 335 | 50 | 6 | 9 |
+| (b) « toujours tout » (tous les modules, toutes les requêtes) | 0 | 335 | 50 | 6 | 9 |
 
-Cache de (a) : 67 succès, 333 échecs de recherche (taux de succès 16,8 % (67/400)). Les « aucun » comptent aussi les abstentions honnêtes du raisonneur (le module 1 a répondu « Je ne sais pas ») : elles sont rangées sous « aucun » dans ce tableau seulement quand `module` vaut None ; sinon elles sont comptées sous le module 1.
+Cache de (a) : 67 succès, 333 échecs de recherche (taux de succès 16,8 % (67/400)). Colonne « aucun » : requêtes qu'aucun module n'a su traiter (phrases illisibles refusées). Les abstentions honnêtes (« Je ne sais pas ») sont comptées sous le module 1 ; elles ne sont pas mises en cache, d'où un écart avec la borne haute des répétitions ci-dessus.
 
-**Gain du cache** (hors génération) : 26,4 % de CPU en moins que (c) (54,75 ms contre 74,36 ms).
+**Gain du cache** (hors génération) : 19,4 % de CPU en moins que (c) (57,66 ms contre 71,58 ms).
+
+**Aiguilleur contre « toujours tout »** : 9,233 s contre 274,7 s de CPU, soit un facteur 29,7 ; exactitude 100,0 % (400/400) contre 100,0 % (400/400). L'économie vient du fait que la génération n'est jamais lancée sans que la requête la demande ; elle ne dit rien de la qualité d'un modèle de langage neuronal.
 
 ## 2. Planificateur (A*) sur 200 mondes aléatoires
 
-30 mondes : 2 à 4 personnes, 2 à 5 lieux, 1 à 4 objets, historique aléatoire de 2 à 12 événements après un premier déplacement (85 % des personnes), buts aléatoires dont environ 15 % d'impossibles volontaires ; la moitié des mondes ont des multiplicateurs de coût par personne (1, 2 ou 3), 30 % des coûts d'action modifiés (prendre = 2, donner = 3). L'oracle est une recherche à coût uniforme sur l'état **complet** (tous les objets, plafond 250000 nœuds).
+200 mondes : 2 à 4 personnes, 2 à 5 lieux, 1 à 4 objets, historique aléatoire de 2 à 12 événements après un premier déplacement (85 % des personnes), buts aléatoires dont environ 15 % d'impossibles volontaires ; la moitié des mondes ont des multiplicateurs de coût par personne (1, 2 ou 3), 30 % des coûts d'action modifiés (prendre = 2, donner = 3). L'oracle est une recherche à coût uniforme sur l'état **complet** (tous les objets, plafond 250000 nœuds).
 
 | Mesure | Valeur |
 |---|---|
-| Instances faisables selon l'oracle | 23 |
-| Instances impossibles selon l'oracle | 7 |
+| Instances faisables selon l'oracle | 152 |
+| Instances impossibles selon l'oracle | 48 |
 | Oracle à plafond (non comparable) | 0 |
-| Plans trouvés (parmi les faisables) | 100,0 % (23/23) |
-| Plans vérifiés par le raisonneur frais + vérificateur | 100,0 % (23/23) |
-| Plans valides au rejeu indépendant du banc | 100,0 % (23/23) |
-| Optimalité (coût A* = coût oracle) | 100,0 % (23/23) |
-| Impossibles détectés correctement | 100,0 % (7/7) |
+| Plans trouvés (parmi les faisables) | 100,0 % (152/152) |
+| Plans vérifiés par le raisonneur frais + vérificateur | 100,0 % (152/152) |
+| Plans valides au rejeu indépendant du banc | 100,0 % (152/152) |
+| Optimalité (coût A* = coût oracle) | 100,0 % (152/152) |
+| Impossibles détectés correctement | 100,0 % (48/48) |
 | « Impossible » déclaré à tort | 0 |
 | Plan renvoyé alors que l'oracle dit impossible | 0 |
 | Budget de nœuds épuisé | 0 |
 | Plans non vérifiés (refusés) | 0 |
-| Nœuds développés, moyenne / maximum | 0,83 / 6 |
-| CPU total (s) | 0,007 |
-| CPU moyen / maximum par instance (ms) | 0,24 / 0,42 |
-| Énergie estimée totale (mJ) | 71,87 |
+| Nœuds développés, moyenne / maximum | 0,97 / 9 |
+| CPU total (s) | 0,052 |
+| CPU moyen / maximum par instance (ms) | 0,26 / 0,65 |
+| Énergie estimée totale (mJ) | 523,17 |
 
 Aucun écart d'optimalité sur les instances comparables.
 

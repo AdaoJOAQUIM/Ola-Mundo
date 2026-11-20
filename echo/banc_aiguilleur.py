@@ -788,13 +788,17 @@ def ecrire_rapport(meta, charge, strat, plan):
         if k not in strat:
             continue
         s = strat[k]
+        if k == "toujours_tout":    # la génération est lancée sur chaque requête : colonne sans objet
+            hg = ["sans objet", "sans objet", "sans objet"]
+        else:
+            hg = [fr(1e3 * s['cpu_hors_generation_s'], 2), fr(s['cpu_moyen_hors_generation_us'], 1),
+                  fr(1e3 * s['energie_estimee_hors_generation_j'], 2)]
         L.append(f"| {noms[k]} | {fr(s['cpu_total_s'], 3)} | {fr(s['cpu_moyen_us'], 1)} | "
-                 f"{fr(1e3 * s['cpu_hors_generation_s'], 2)} | {fr(s['cpu_moyen_hors_generation_us'], 1)} | "
-                 f"{fr(s['energie_estimee_j'], 3)} | {fr(1e3 * s['energie_estimee_hors_generation_j'], 2)} |")
+                 f"{hg[0]} | {hg[1]} | {fr(s['energie_estimee_j'], 3)} | {hg[2]} |")
     L.append("")
     L.append("**Lecture honnête** : la génération (Écho) coûte des centaines de milliers de fois plus "
              "qu'une réponse du raisonneur ; le total est donc dominé par elle dès qu'on la lance, et c'est "
-             "exactement ce que « toujours tout » fait. La colonne « hors génération » isole l'effet du cache "
+             "exactement ce que « toujours tout » fait. La colonne « hors génération » (sans objet pour (b), où la génération tourne sur chaque requête) isole l'effet du cache "
              "et de l'ordre des modules sur le reste de la charge.\n")
     L.append("### Exactitude (vérité terrain indépendante)\n")
     L.append("| Stratégie | Justes | Exactitude | Hallucinations (réponse affirmée fausse) | Dépassements de budget |")
@@ -824,7 +828,7 @@ def ecrire_rapport(meta, charge, strat, plan):
     else:
         L.append("Aucune erreur pour (a) sur cette charge.\n")
     L.append("### Qui a répondu (nombre de requêtes par module)\n")
-    L.append("| Stratégie | 0 cache | 1 raisonneur | 2 planificateur | 3 génération | aucun (abstention/refus) |")
+    L.append("| Stratégie | 0 cache | 1 raisonneur | 2 planificateur | 3 génération | aucun (refus) |")
     L.append("|---|---|---|---|---|---|")
     for k in ("aiguilleur", "sans_cache", "toujours_tout_syntaxe", "toujours_tout"):
         if k not in strat:
@@ -881,6 +885,15 @@ def ecrire_rapport(meta, charge, strat, plan):
     L.append(f"| Budget de nœuds épuisé | {s.get('budget_epuise', 0)} |")
     L.append(f"| Plans non vérifiés (refusés) | {s.get('statut_non_verifie', 0)} |")
     L.append(f"| Nœuds développés, moyenne / maximum | {fr(plan['noeuds_moyen'], 2)} / {plan['noeuds_max']} |")
+    pl_ = [i for i in plan["instances"] if i["statut"] == "plan"]
+    couts_ = [i["cout_astar"] for i in pl_]
+    L.append(f"| Plans de coût 0 (objectif déjà atteint) | {sum(1 for c in couts_ if c == 0)} |")
+    L.append(f"| Plans de coût > 0 : nombre, coût moyen, coût maximum | "
+             f"{sum(1 for c in couts_ if c > 0)}, {fr(statistics.mean([c for c in couts_ if c > 0]), 2)}, "
+             f"{fr(max(couts_), 1)} |")
+    nz = [i["noeuds"] for i in pl_ if i["cout_astar"] and i["cout_astar"] > 0]
+    L.append(f"| Nœuds développés sur les plans de coût > 0, moyenne / maximum | "
+             f"{fr(statistics.mean(nz), 2)} / {max(nz)} |")
     L.append(f"| CPU total (s) | {fr(plan['cpu_total_s'], 3)} |")
     L.append(f"| CPU moyen / maximum par instance (ms) | {fr(plan['cpu_moyen_ms'], 2)} / {fr(plan['cpu_max_ms'], 2)} |")
     L.append(f"| Énergie estimée totale (mJ) | {fr(1e3 * PUISSANCE_W * plan['cpu_total_s'], 2)} |")
