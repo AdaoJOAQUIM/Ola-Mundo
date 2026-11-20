@@ -33,7 +33,8 @@ def wilson(k, n, z=1.96):
 
 def viole(grille):
     """True si la grille (81 entiers) contient un doublon dans une unité."""
-    return not donnees.sans_conflit(list(grille))
+    # int() : avec des tenseurs 0-d, set() comparerait les objets et non les valeurs
+    return not donnees.sans_conflit([int(x) for x in grille])
 
 
 def trajectoire(m, P, S, bs=250):

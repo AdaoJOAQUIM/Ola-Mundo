@@ -1,0 +1,726 @@
+{
+ "n_test": 1000,
+ "A": {
+  "params": 331128,
+  "export": {
+   "params": 331128,
+   "tenseurs": 27,
+   "int8_octets": 331236,
+   "fp16_octets": 662256
+  },
+  "cfg": {
+   "d": 128,
+   "n_blocs": 2,
+   "n": 3,
+   "T": 2
+  },
+  "ema": {
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.558210684480168,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5922084034830464,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6153442314306921,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6132985752819566,
+     "viol_contrainte": 1.0
+    },
+    "16": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6005539564438168,
+     "viol_contrainte": 1.0
+    },
+    "32": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5894386212639621,
+     "viol_contrainte": 1.0
+    }
+   },
+   "adaptatif": {
+    "exact": 0,
+    "exact_ic95": [
+     0.0,
+     0.003826898586390522
+    ],
+    "pas_moyens": 16.0,
+    "n_arret_declare": 0,
+    "precision_quand_dit_fini": null
+   },
+   "calibration_pas1": [
+    {
+     "tranche": "[0.0,0.1)",
+     "n": 1000,
+     "proba_moy": 2.2704110726884386e-12,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.1,0.3)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.3,0.5)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.5,0.7)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.7,0.9)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.9,1.0)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    }
+   ],
+   "calibration_pasN": [
+    {
+     "tranche": "[0.0,0.1)",
+     "n": 1000,
+     "proba_moy": 3.932603132028589e-09,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.1,0.3)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.3,0.5)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.5,0.7)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.7,0.9)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.9,1.0)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    }
+   ],
+   "viol_et_confiant": null
+  },
+  "raw": {
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5566357102771593,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5927514980358081,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6138778761382356,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6105106899111136,
+     "viol_contrainte": 1.0
+    },
+    "16": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5941273375694709,
+     "viol_contrainte": 1.0
+    },
+    "32": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5848042144137294,
+     "viol_contrainte": 1.0
+    }
+   }
+  },
+  "ema_int8": {
+   "octets_export_reels": 331236,
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.557558971016854,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5915385868679737,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.613787360379442,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6117598073824653,
+     "viol_contrainte": 1.0
+    },
+    "16": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6014229077282355,
+     "viol_contrainte": 1.0
+    },
+    "32": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5915385868679737,
+     "viol_contrainte": 1.0
+    }
+   }
+  }
+ },
+ "B": {
+  "params": 331128,
+  "export": {
+   "params": 331128,
+   "tenseurs": 27,
+   "int8_octets": 331236,
+   "fp16_octets": 662256
+  },
+  "cfg": {
+   "d": 128,
+   "n_blocs": 2,
+   "n": 1,
+   "T": 1
+  },
+  "ema": {
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6625753543691957,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5593511830409674,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.39218667970093596,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.2494252249316606,
+     "viol_contrainte": 1.0
+    }
+   },
+   "adaptatif": {
+    "exact": 0,
+    "exact_ic95": [
+     0.0,
+     0.003826898586390522
+    ],
+    "pas_moyens": 3.356,
+    "n_arret_declare": 1000,
+    "precision_quand_dit_fini": 0.0
+   },
+   "calibration_pas1": [
+    {
+     "tranche": "[0.0,0.1)",
+     "n": 1000,
+     "proba_moy": 1.5528726748925692e-07,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.1,0.3)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.3,0.5)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.5,0.7)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.7,0.9)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.9,1.0)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    }
+   ],
+   "calibration_pasN": [
+    {
+     "tranche": "[0.0,0.1)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.1,0.3)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.3,0.5)",
+     "n": 1,
+     "proba_moy": 0.38693439960479736,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.5,0.7)",
+     "n": 2,
+     "proba_moy": 0.6763907670974731,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.7,0.9)",
+     "n": 7,
+     "proba_moy": 0.8692675828933716,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.9,1.0)",
+     "n": 990,
+     "proba_moy": 0.9982680082321167,
+     "exact_reel": 0.0
+    }
+   ],
+   "viol_et_confiant": null
+  },
+  "raw": {
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6619960535129166,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5572512174369558,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.38834881152808703,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.24680026792664603,
+     "viol_contrainte": 1.0
+    }
+   }
+  },
+  "ema_int8": {
+   "octets_export_reels": 331236,
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6619598472093992,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.5610890856098046,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.38887380292908996,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.24765111605930593,
+     "viol_contrainte": 1.0
+    }
+   }
+  }
+ },
+ "C": {
+  "params": 1284162,
+  "export": {
+   "params": 1284162,
+   "tenseurs": 81,
+   "int8_octets": 1284486,
+   "fp16_octets": 2568324
+  },
+  "cfg": {
+   "d": 128,
+   "n_blocs": 8,
+   "n": 1,
+   "T": 1
+  },
+  "ema": {
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6073245352015786,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.4793533554191785,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.3393616828689875,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.23988486395481454,
+     "viol_contrainte": 1.0
+    }
+   },
+   "adaptatif": {
+    "exact": 0,
+    "exact_ic95": [
+     0.0,
+     0.003826898586390522
+    ],
+    "pas_moyens": 2.011,
+    "n_arret_declare": 1000,
+    "precision_quand_dit_fini": 0.0
+   },
+   "calibration_pas1": [
+    {
+     "tranche": "[0.0,0.1)",
+     "n": 1000,
+     "proba_moy": 1.4544651094183791e-05,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.1,0.3)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.3,0.5)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.5,0.7)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.7,0.9)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.9,1.0)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    }
+   ],
+   "calibration_pasN": [
+    {
+     "tranche": "[0.0,0.1)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.1,0.3)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.3,0.5)",
+     "n": 0,
+     "proba_moy": null,
+     "exact_reel": null
+    },
+    {
+     "tranche": "[0.5,0.7)",
+     "n": 1,
+     "proba_moy": 0.6263294219970703,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.7,0.9)",
+     "n": 1,
+     "proba_moy": 0.795905590057373,
+     "exact_reel": 0.0
+    },
+    {
+     "tranche": "[0.9,1.0)",
+     "n": 998,
+     "proba_moy": 0.9996438026428223,
+     "exact_reel": 0.0
+    }
+   ],
+   "viol_et_confiant": null
+  },
+  "raw": {
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6100581111171455,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.4738137909810098,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.332446278897156,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.23534097286337552,
+     "viol_contrainte": 1.0
+    }
+   }
+  },
+  "ema_int8": {
+   "octets_export_reels": 1284486,
+   "par_pas": {
+    "1": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.6071435036839914,
+     "viol_contrainte": 1.0
+    },
+    "2": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.47909991129455637,
+     "viol_contrainte": 1.0
+    },
+    "4": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.33776860551422,
+     "viol_contrainte": 1.0
+    },
+    "8": {
+     "exact": 0,
+     "exact_ic95": [
+      0.0,
+      0.003826898586390522
+     ],
+     "cases_vides": 0.23957711037491627,
+     "viol_contrainte": 1.0
+    }
+   }
+  }
+ }
+}

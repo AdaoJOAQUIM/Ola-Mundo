@@ -5,3 +5,4 @@ arc/data/*
 !arc/data/SOURCE.md
 arc/*.out
 trm/*.log
+trm/runs/
