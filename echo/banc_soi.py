@@ -395,7 +395,7 @@ def rapport(C, A, M, cpu, duree, params):
                         c["n_cal_car"], i["cal_paragraphes"]))
     L.append("")
     L += ["### Résumé (échantillon d'évaluation)", "",
-          "| Langue | Exactitude top-1 | Confiance moy. | Biais | Sens | ECE brut [IC95 bootstrap] | Brier top-1 | bpc |",
+          "| Langue | Exactitude top-1 | Confiance moy. | Biais | Sens | ECE brut [IC95 par paragraphes] | Brier top-1 | bpc |",
           "|---|---:|---:|---:|---|---:|---:|---:|"]
     for lang, nom in (("en", "anglais"), ("fr", "français")):
         if lang in C:
@@ -409,32 +409,42 @@ def rapport(C, A, M, cpu, duree, params):
         if lang in C:
             L += ["### Table de fiabilité brute — %s (évaluation)" % nom, ""] + table_fiabilite(C[lang]["table_avant"]) + [""]
     L += ["## 1bis. Correction paramétrique : une température", "",
-          "Les probabilités sont élevées à la puissance 1/T puis renormalisées. T est **1 réel ajusté** (recherche en"
-          " section dorée, critère : bits par caractère sur l'échantillon de CALIBRATION, jamais sur l'évaluation)."
+          "Les probabilités sont élevées à la puissance 1/T puis renormalisées (T < 1 : plus tranché ; T > 1 : plus modeste)."
+          " T est **1 réel ajusté** (recherche en section dorée sur l'échantillon de CALIBRATION, jamais sur l'évaluation)."
+          " Critère retenu : Brier du top-1. À titre de comparaison, T ajusté sur les bits par caractère (NLL) : critère standard"
+          " du « temperature scaling », mais il vise toute la distribution, pas la confiance du top-1."
           " Le candidat en tête ne change pas, donc l'exactitude top-1 est inchangée.", "",
-          "| Réglage | T | ECE éval. avant | ECE éval. après | Brier avant | Brier après | Biais après | bpc avant | bpc après |",
+          "| Réglage | T | ECE éval. avant | ECE éval. après [IC95 par paragraphes] | Brier avant | Brier après | Biais après | bpc avant | bpc après |",
           "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for lang, nom in (("en", "anglais"), ("fr", "français")):
         if lang in C:
             c = C[lang]
-            L.append("| %s, T propre à la langue | %s | %s | %s | %s | %s | %+.4f | %s | %s |" % (
+            L.append("| %s, T Brier propre à la langue (retenu) | %s | %s | %s [%s ; %s] | %s | %s | %+.4f | %s | %s |" % (
                 nom, f3(C["T_" + lang], 3), f3(c["ece_avant"]), f3(c["ece_apres_T_langue"]),
+                f3(c["ece_apres_T_langue_ic95"][0]), f3(c["ece_apres_T_langue_ic95"][1]),
                 f3(c["brier_avant"]), f3(c["brier_apres_T_langue"]), c["biais_apres_T_langue"],
                 f3(c["bpc_avant"], 3), f3(c["bpc_apres_T_langue"], 3)))
     for lang, nom in (("en", "anglais"), ("fr", "français")):
         if lang in C:
             c = C[lang]
-            L.append("| %s, T commun (calibration EN+FR réunies) | %s | %s | %s | %s | %s | %+.4f | %s | %s |" % (
+            L.append("| %s, T Brier commun (calibration EN+FR réunies) | %s | %s | %s | %s | %s | %+.4f | %s | %s |" % (
                 nom, f3(C["T_pool"], 3), f3(c["ece_avant"]), f3(c["ece_apres_T_commun"]),
                 f3(c["brier_avant"]), f3(c["brier_apres_T_commun"]), c["biais_apres_T_commun"],
                 f3(c["bpc_avant"], 3), f3(c["bpc_apres_T_commun"], 3)))
+    for lang, nom in (("en", "anglais"), ("fr", "français")):
+        if lang in C:
+            c = C[lang]
+            L.append("| %s, T NLL (comparaison) | %s | %s | %s | %s | %s | %+.4f | %s | %s |" % (
+                nom, f3(C["T_nll_" + lang], 3), f3(c["ece_avant"]), f3(c["ece_apres_T_nll"]),
+                f3(c["brier_avant"]), f3(c["brier_apres_T_nll"]), c["biais_apres_T_nll"],
+                f3(c["bpc_avant"], 3), f3(c["bpc_apres_T_nll"], 3)))
     L.append("")
     for lang, nom in (("en", "anglais"), ("fr", "français")):
         if lang in C:
             c = C[lang]
-            L.append("Contrôle sur l'échantillon de calibration (où T a été ajusté) — %s : ECE %s -> %s ; sur l'évaluation, IC95 de l'ECE après T : [%s ; %s]."
+            L.append("Contrôle sur l'échantillon de calibration (où T a été ajusté) — %s : ECE %s -> %s ; IC95 de l'ECE brut sur l'évaluation : [%s ; %s]."
                      % (nom, f3(c["ece_cal_avant"]), f3(c["ece_cal_apres"]),
-                        f3(c["ece_apres_T_langue_ic95"][0]), f3(c["ece_apres_T_langue_ic95"][1])))
+                        f3(c["ece_avant_ic95"][0]), f3(c["ece_avant_ic95"][1])))
     L.append("")
     for lang, nom in (("en", "anglais"), ("fr", "français")):
         if lang in C:
@@ -491,8 +501,8 @@ def rapport(C, A, M, cpu, duree, params):
           "1. **Ce n'est pas une conscience.** Calibrer ses probabilités et prédire son propre comportement est de la"
           " métacognition fonctionnelle ; rien ne dit qu'il y ait une expérience derrière, et rien dans le code ne le suggère.",
           "2. **Calibration sur un seul échantillon par langue** (~%d caractères évalués, ~%d pour calibrer) : voir les IC95"
-          " bootstrap de l'ECE ; des différences de quelques millièmes ne sont pas significatives. Les caractères voisins"
-          " d'un même paragraphe ne sont pas indépendants, l'IC est donc trop étroit." % (params["n_eval"], params["n_eval"]),
+          " bootstrap par paragraphes de l'ECE ; des différences de quelques millièmes ne sont pas significatives. Peu de paragraphes"
+          " distincts (voir protocole) : l'IC par paragraphes est large et l'ECE d'une langue peut varier du simple au double d'un échantillon à l'autre." % (params["n_eval"], params["n_eval"]),
           "3. **Mémoires réduites (10 %)** : la calibration de la mémoire complète (15,7 M caractères) n'a pas été mesurée ;"
           " T dépend probablement de la taille de la mémoire et de la langue.",
           "4. **Un seul réel ajusté** par réglage (T). Il corrige un biais global de confiance, pas les erreurs locales ;"
