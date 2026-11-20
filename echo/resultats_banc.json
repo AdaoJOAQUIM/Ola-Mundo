@@ -1,0 +1,215 @@
+{
+  "rapide": false,
+  "n_car": 3000,
+  "watts_hypothese": 10.0,
+  "duree_totale_s": 763.6418716907501,
+  "taille": {
+    "en": 4048144,
+    "fr": 1638508,
+    "somme": 5686652
+  },
+  "resultats": [
+    {
+      "genre": "base",
+      "fraction": 1.0,
+      "algo": "bz2",
+      "bpc": 2.461333333333333,
+      "octets_memoire_comprimee": 4008142,
+      "octets_tout_comprime": 4009065,
+      "duree_mur_s": 2.9609978199005127
+    },
+    {
+      "genre": "base",
+      "fraction": 1.0,
+      "algo": "zlib",
+      "bpc": 3.3706666666666667,
+      "octets_memoire_comprimee": 5439213,
+      "octets_tout_comprime": 5440477,
+      "duree_mur_s": 3.4161176681518555
+    },
+    {
+      "genre": "base",
+      "fraction": 0.1,
+      "algo": "bz2",
+      "bpc": 2.672,
+      "octets_memoire_comprimee": 390373,
+      "octets_tout_comprime": 391375,
+      "duree_mur_s": 0.2878396511077881
+    },
+    {
+      "genre": "base",
+      "fraction": 0.1,
+      "algo": "zlib",
+      "bpc": 3.3573333333333335,
+      "octets_memoire_comprimee": 496748,
+      "octets_tout_comprime": 498007,
+      "duree_mur_s": 0.37332725524902344
+    },
+    {
+      "genre": "base",
+      "fraction": 0.1,
+      "algo": "lzma",
+      "bpc": 2.4106666666666667,
+      "octets_memoire_comprimee": 418400,
+      "octets_tout_comprime": 419304,
+      "duree_mur_s": 1.2442920207977295
+    },
+    {
+      "genre": "base",
+      "fraction": 0.01,
+      "algo": "lzma",
+      "bpc": 2.72,
+      "octets_memoire_comprimee": 49376,
+      "octets_tout_comprime": 50396,
+      "duree_mur_s": 0.13741564750671387
+    },
+    {
+      "genre": "base",
+      "fraction": 0.01,
+      "algo": "bz2",
+      "bpc": 2.512,
+      "octets_memoire_comprimee": 45648,
+      "octets_tout_comprime": 46590,
+      "duree_mur_s": 0.02350163459777832
+    },
+    {
+      "genre": "base",
+      "fraction": 0.01,
+      "algo": "zlib",
+      "bpc": 3.2906666666666666,
+      "octets_memoire_comprimee": 53940,
+      "octets_tout_comprime": 55174,
+      "duree_mur_s": 0.026279211044311523
+    },
+    {
+      "genre": "echo_a",
+      "fraction": 0.01,
+      "caracteres_memoire": 133076,
+      "bpc": 2.5615797697327976,
+      "cpu_s": 2.644724309,
+      "duree_mur_s": 2.650214433670044,
+      "cpu_s_par_car": 0.0008815747696666666,
+      "mJ_par_car": 8.815747696666666
+    },
+    {
+      "genre": "base",
+      "fraction": 0.001,
+      "algo": "lzma",
+      "bpc": 3.264,
+      "octets_memoire_comprimee": 6372,
+      "octets_tout_comprime": 7596,
+      "duree_mur_s": 0.07369256019592285
+    },
+    {
+      "genre": "base",
+      "fraction": 0.001,
+      "algo": "bz2",
+      "bpc": 2.978666666666667,
+      "octets_memoire_comprimee": 6007,
+      "octets_tout_comprime": 7124,
+      "duree_mur_s": 0.003599405288696289
+    },
+    {
+      "genre": "base",
+      "fraction": 0.001,
+      "algo": "zlib",
+      "bpc": 3.501333333333333,
+      "octets_memoire_comprimee": 6516,
+      "octets_tout_comprime": 7829,
+      "duree_mur_s": 0.0013287067413330078
+    },
+    {
+      "genre": "echo_a",
+      "fraction": 0.001,
+      "caracteres_memoire": 14164,
+      "bpc": 3.2379855208735076,
+      "cpu_s": 0.34905723600000016,
+      "duree_mur_s": 0.349804162979126,
+      "cpu_s_par_car": 0.00011635241200000005,
+      "mJ_par_car": 1.1635241200000004
+    },
+    {
+      "genre": "base",
+      "fraction": 1.0,
+      "algo": "lzma",
+      "bpc": 2.176,
+      "octets_memoire_comprimee": 4048144,
+      "octets_tout_comprime": 4048960,
+      "duree_mur_s": 25.72116208076477
+    },
+    {
+      "genre": "echo_a",
+      "fraction": 0.1,
+      "caracteres_memoire": 1344461,
+      "bpc": 2.2814425539056873,
+      "cpu_s": 24.649498784000002,
+      "duree_mur_s": 25.083228588104248,
+      "cpu_s_par_car": 0.008216499594666667,
+      "mJ_par_car": 82.16499594666666
+    },
+    {
+      "genre": "echo_a",
+      "fraction": 1.0,
+      "caracteres_memoire": 15679400,
+      "bpc": 2.041580813049309,
+      "cpu_s": 280.85152411900003,
+      "duree_mur_s": 283.755277633667,
+      "cpu_s_par_car": 0.09361717470633335,
+      "mJ_par_car": 936.1717470633336
+    },
+    {
+      "genre": "cont",
+      "cond": "b_fr",
+      "bpc": 5.470585718120084,
+      "cpu_s": 140.66800037000002,
+      "caracteres_memoire": 15679400,
+      "ajout": null,
+      "caracteres_eval": 3000,
+      "duree_mur_s": 142.87026858329773,
+      "cpu_s_par_car": 0.046889333456666675,
+      "mJ_par_car": 468.89333456666674
+    },
+    {
+      "genre": "cont",
+      "cond": "a_en",
+      "bpc": 2.041580813049309,
+      "cpu_s": 281.836905603,
+      "caracteres_memoire": 15679400,
+      "ajout": null,
+      "caracteres_eval": 3000,
+      "duree_mur_s": 285.57137393951416,
+      "cpu_s_par_car": 0.093945635201,
+      "mJ_par_car": 939.4563520099999
+    },
+    {
+      "genre": "cont",
+      "cond": "c_en",
+      "bpc": 2.091195380668995,
+      "cpu_s": 408.44711321299997,
+      "caracteres_memoire": 22793538,
+      "ajout": {
+        "mur_s": 0.07156818100020246,
+        "cpu_s": 0.07034273700000002
+      },
+      "caracteres_eval": 3000,
+      "duree_mur_s": 414.5480661392212,
+      "cpu_s_par_car": 0.13614903773766665,
+      "mJ_par_car": 1361.4903773766664
+    },
+    {
+      "genre": "cont",
+      "cond": "c_fr",
+      "bpc": 1.7594508602608276,
+      "cpu_s": 448.001323609,
+      "caracteres_memoire": 22793538,
+      "ajout": {
+        "mur_s": 0.07140942900014124,
+        "cpu_s": 0.07079402600000001
+      },
+      "caracteres_eval": 3000,
+      "duree_mur_s": 454.6283459663391,
+      "cpu_s_par_car": 0.14933377453633334,
+      "mJ_par_car": 1493.3377453633334
+    }
+  ]
+}
