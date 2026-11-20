@@ -29,13 +29,13 @@ Définitions (calculées, pas supposées) :
 
 | Tâche | Phrases de contexte (moy.) | CPU moyen par question (µs) | CPU moyen par phrase insérée (µs) | Énergie estimée par question (µJ) |
 |---|---|---|---|---|
-| Tâche 1 | 10,4 | 47,5 | 19,1 | 474,71 |
-| Tâche 2 | 9,1 | 84,3 | 20,1 | 842,87 |
-| Tâche 3 | 7,0 | 167,5 | 31,4 | 1 674,88 |
-| Tâche 4 | 5,3 | 128,2 | 31,9 | 1 282,15 |
-| Tâche 5 | 3,1 | 19,4 | 26,8 | 193,82 |
-| Tâche 6 | 0,5 | 86,1 | 17,4 | 860,98 |
-| Tâche 7 | 7,0 | 115,1 | 27,2 | 1 150,70 |
+| Tâche 1 | 10,4 | 44,6 | 17,6 | 446,15 |
+| Tâche 2 | 9,1 | 77,7 | 18,7 | 776,94 |
+| Tâche 3 | 7,0 | 163,4 | 30,3 | 1 634,31 |
+| Tâche 4 | 5,3 | 121,5 | 30,4 | 1 215,28 |
+| Tâche 5 | 3,1 | 18,9 | 26,1 | 189,47 |
+| Tâche 6 | 0,5 | 82,4 | 18,3 | 824,02 |
+| Tâche 7 | 7,0 | 107,8 | 23,9 | 1 078,24 |
 
 **ESTIMATION, pas une mesure** : l'énergie est calculée comme temps CPU (`time.process_time`) × 10 W, en supposant 10 W par cœur occupé. Aucun wattmètre n'a été utilisé ; la valeur réelle dépend de la machine. Pour la tâche 7, la « question » est l'insertion de la dernière phrase (avec recherche de contradiction). Le temps de lecture des phrases de contexte est donné à part (par phrase insérée).
 
@@ -88,6 +88,8 @@ Aucun échec sur les instances générées.
 
 ### Phrases libres testées
 
+Transparence : après un premier essai de ces phrases, j'ai durci l'analyseur (mots de quantité, « très », « à », verbes de relation…) pour que plusieurs d'entre elles soient refusées au lieu d'être mal lues. Les refus corrects ci-dessous sont donc en partie le résultat de ce réglage, pas une compréhension. Les cas « MAL INTERPRÉTÉE » sont ceux qui passent encore entre les mailles ; les « refus à tort » sont du français contrôlé raisonnable que le système ne connaît pas (verbes ou tournures absents de la liste).
+
 | Phrase | Ce que fait le système | Verdict |
 |---|---|---|
 | Le chat dort sur le canapé. | refusée (« Je ne comprends pas ») | refus correct |
@@ -115,7 +117,18 @@ Aucun échec sur les instances générées.
 | Socrate n'est-il pas mortel ? | refusée (« Je ne comprends pas ») | refus correct |
 | Quel âge a Marie ? | refusée (« Je ne comprends pas ») | refus correct |
 | Paul est le frère de Marie. | acceptée comme ('est', 'paul', 'frere de marie', True) | MAL INTERPRÉTÉE (aurait dû être refusée) |
-| La pomme est rouge. | acceptée comme ('regle', 'pomme', 'rouge') | correct |
+| La pomme est rouge. | acceptée comme ('regle', 'pomme', 'rouge') | DISCUTABLE (fait particulier lu comme règle générale) |
+| Marie est en retard. | acceptée comme ('evt', 'va', 'marie', 'retard') | MAL INTERPRÉTÉE (aurait dû être refusée) |
+| Jean est à l'heure. | acceptée comme ('evt', 'va', 'jean', 'heure') | MAL INTERPRÉTÉE (aurait dû être refusée) |
+| Marie est allée dans la cuisine hier. | acceptée comme ('evt', 'va', 'marie', 'cuisine hier') | MAL INTERPRÉTÉE (aurait dû être refusée) |
+| Jean prend le train. | acceptée comme ('evt', 'prend', 'jean', 'train') | MAL INTERPRÉTÉE (aurait dû être refusée) |
+| Le livre est sur la table. | refusée (« Je ne comprends pas ») | refus correct |
+| Socrate est un homme mortel. | acceptée comme ('est', 'socrate', 'homme mortel', True) | interprétation différente |
+| Marie rentre à la maison. | refusée (« Je ne comprends pas ») | refus à tort |
+| Jean confie la pomme à Marie. | refusée (« Je ne comprends pas ») | refus à tort |
+| Marie traverse le jardin. | refusée (« Je ne comprends pas ») | refus à tort |
+| Tout humain est mortel. | acceptée comme ('regle', 'humain', 'mortel') | correct |
+| Marie se rend dans la cuisine. | acceptée comme ('evt', 'va', 'marie', 'cuisine') | correct |
 | Le ciel est bleu aujourd'hui. | acceptée comme ('regle', 'ciel', "bleu aujourd'hui") | MAL INTERPRÉTÉE (aurait dû être refusée) |
 | Tout le monde est mortel. | acceptée comme ('regle', 'monde', 'mortel') | MAL INTERPRÉTÉE (aurait dû être refusée) |
 | Socrate est mortel. | acceptée comme ('est', 'socrate', 'mortel', True) | correct |
@@ -124,4 +137,4 @@ Aucun échec sur les instances générées.
 | Les chats sont des animaux | acceptée comme ('regle', 'chat', 'animal') | correct |
 | Combien font 7 plus 5 ? | question q_calc | correct |
 
-Sur 33 phrases libres : 30 traitées comme un lecteur correct le ferait, 3 mal interprétées ou différemment, 0 refusées à tort.
+Sur 44 phrases libres : 32 traitées comme un lecteur correct le ferait, 9 mal interprétées ou différemment, 3 refusées à tort.

@@ -21,9 +21,9 @@
       "contradictions_manquees": 0,
       "erreurs_contexte": 0,
       "phrases_moy": 10.42,
-      "cpu_moyen_us": 47.471334999999904,
-      "cpu_insertion_moyen_us": 19.07823413135478,
-      "energie_uJ": 474.713349999999,
+      "cpu_moyen_us": 44.615219999999226,
+      "cpu_insertion_moyen_us": 17.610365529206817,
+      "energie_uJ": 446.15219999999226,
       "echecs": []
     },
     {
@@ -44,9 +44,9 @@
       "contradictions_manquees": 0,
       "erreurs_contexte": 0,
       "phrases_moy": 9.11,
-      "cpu_moyen_us": 84.2870500000001,
-      "cpu_insertion_moyen_us": 20.06745090082137,
-      "energie_uJ": 842.8705000000008,
+      "cpu_moyen_us": 77.6942599999994,
+      "cpu_insertion_moyen_us": 18.663961605047813,
+      "energie_uJ": 776.942599999994,
       "echecs": []
     },
     {
@@ -67,9 +67,9 @@
       "contradictions_manquees": 0,
       "erreurs_contexte": 0,
       "phrases_moy": 7.02,
-      "cpu_moyen_us": 167.48780999999906,
-      "cpu_insertion_moyen_us": 31.414806573412438,
-      "energie_uJ": 1674.8780999999906,
+      "cpu_moyen_us": 163.4306600000028,
+      "cpu_insertion_moyen_us": 30.309613190475943,
+      "energie_uJ": 1634.306600000028,
       "echecs": [],
       "par_longueur": {
         "1": [
@@ -112,9 +112,9 @@
       "contradictions_manquees": 0,
       "erreurs_contexte": 0,
       "phrases_moy": 5.26,
-      "cpu_moyen_us": 128.2153300000008,
-      "cpu_insertion_moyen_us": 31.94862381944485,
-      "energie_uJ": 1282.1533000000077,
+      "cpu_moyen_us": 121.52849999999687,
+      "cpu_insertion_moyen_us": 30.388279228174888,
+      "energie_uJ": 1215.2849999999687,
       "echecs": [],
       "par_genre": {
         "oui (chaîne)": [
@@ -157,9 +157,9 @@
       "contradictions_manquees": 0,
       "erreurs_contexte": 0,
       "phrases_moy": 3.13,
-      "cpu_moyen_us": 19.38245000000144,
-      "cpu_insertion_moyen_us": 26.81530458333343,
-      "energie_uJ": 193.82450000001438,
+      "cpu_moyen_us": 18.946660000002947,
+      "cpu_insertion_moyen_us": 26.095805833333493,
+      "energie_uJ": 189.46660000002947,
       "echecs": []
     },
     {
@@ -180,9 +180,9 @@
       "contradictions_manquees": 0,
       "erreurs_contexte": 0,
       "phrases_moy": 0.505,
-      "cpu_moyen_us": 86.09773500000084,
-      "cpu_insertion_moyen_us": 17.400959999999966,
-      "energie_uJ": 860.9773500000084,
+      "cpu_moyen_us": 82.40161000000023,
+      "cpu_insertion_moyen_us": 18.310020000000815,
+      "energie_uJ": 824.0161000000023,
       "echecs": []
     },
     {
@@ -203,9 +203,9 @@
       "contradictions_manquees": 0,
       "erreurs_contexte": 0,
       "phrases_moy": 7.005,
-      "cpu_moyen_us": 115.0696800000023,
-      "cpu_insertion_moyen_us": 27.17134555285008,
-      "energie_uJ": 1150.696800000023,
+      "cpu_moyen_us": 107.82353499999897,
+      "cpu_insertion_moyen_us": 23.916986619769016,
+      "energie_uJ": 1078.2353499999897,
       "echecs": [],
       "par_genre": {
         "injectée disjonction ajoutée": [
@@ -388,6 +388,61 @@
     {
       "phrase": "La pomme est rouge.",
       "obtenu": "acceptée comme ('regle', 'pomme', 'rouge')",
+      "verdict": "DISCUTABLE (fait particulier lu comme règle générale)"
+    },
+    {
+      "phrase": "Marie est en retard.",
+      "obtenu": "acceptée comme ('evt', 'va', 'marie', 'retard')",
+      "verdict": "MAL INTERPRÉTÉE (aurait dû être refusée)"
+    },
+    {
+      "phrase": "Jean est à l'heure.",
+      "obtenu": "acceptée comme ('evt', 'va', 'jean', 'heure')",
+      "verdict": "MAL INTERPRÉTÉE (aurait dû être refusée)"
+    },
+    {
+      "phrase": "Marie est allée dans la cuisine hier.",
+      "obtenu": "acceptée comme ('evt', 'va', 'marie', 'cuisine hier')",
+      "verdict": "MAL INTERPRÉTÉE (aurait dû être refusée)"
+    },
+    {
+      "phrase": "Jean prend le train.",
+      "obtenu": "acceptée comme ('evt', 'prend', 'jean', 'train')",
+      "verdict": "MAL INTERPRÉTÉE (aurait dû être refusée)"
+    },
+    {
+      "phrase": "Le livre est sur la table.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Socrate est un homme mortel.",
+      "obtenu": "acceptée comme ('est', 'socrate', 'homme mortel', True)",
+      "verdict": "interprétation différente"
+    },
+    {
+      "phrase": "Marie rentre à la maison.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus à tort"
+    },
+    {
+      "phrase": "Jean confie la pomme à Marie.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus à tort"
+    },
+    {
+      "phrase": "Marie traverse le jardin.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus à tort"
+    },
+    {
+      "phrase": "Tout humain est mortel.",
+      "obtenu": "acceptée comme ('regle', 'humain', 'mortel')",
+      "verdict": "correct"
+    },
+    {
+      "phrase": "Marie se rend dans la cuisine.",
+      "obtenu": "acceptée comme ('evt', 'va', 'marie', 'cuisine')",
       "verdict": "correct"
     },
     {

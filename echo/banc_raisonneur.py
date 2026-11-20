@@ -582,7 +582,18 @@ LIBRES = [
     ("Socrate n'est-il pas mortel ?", None),
     ("Quel âge a Marie ?", None),
     ("Paul est le frère de Marie.", None),
-    ("La pomme est rouge.", ("regle", "pomme", "rouge")),   # lecture « règle générale » : discutable
+    ("La pomme est rouge.", "discutable"),   # fait particulier lu comme règle générale
+    ("Marie est en retard.", None),
+    ("Jean est à l'heure.", None),
+    ("Marie est allée dans la cuisine hier.", None),
+    ("Jean prend le train.", None),
+    ("Le livre est sur la table.", None),
+    ("Socrate est un homme mortel.", ("est", "socrate", "homme"),),
+    ("Marie rentre à la maison.", ("evt", "va", "marie", "maison")),
+    ("Jean confie la pomme à Marie.", ("evt", "donne", "jean", "pomme", "marie")),
+    ("Marie traverse le jardin.", ("evt", "va", "marie", "jardin")),
+    ("Tout humain est mortel.", ("regle", "humain", "mortel")),
+    ("Marie se rend dans la cuisine.", ("evt", "va", "marie", "cuisine")),
     ("Le ciel est bleu aujourd'hui.", None),
     ("Tout le monde est mortel.", None),
     ("Socrate est mortel.", ("est", "socrate", "mortel", True)),
@@ -611,6 +622,8 @@ def tester_libres():
             obtenu = f"acceptée comme {a.forme}"
             if attendu is None:
                 verdict = "MAL INTERPRÉTÉE (aurait dû être refusée)"
+            elif attendu == "discutable":
+                verdict = "DISCUTABLE (fait particulier lu comme règle générale)"
             elif a.forme == attendu:
                 verdict = "correct"
             else:
@@ -740,10 +753,17 @@ def rapport(res, libres, n, graine):
     L.append("9. **Estimation d'énergie** : voir plus haut ; un modèle de langage neuronal n'a pas été "
              "mesuré ici, aucune comparaison chiffrée n'est faite ou revendiquée.\n")
     L.append("### Phrases libres testées\n")
+    L.append("Transparence : après un premier essai de ces phrases, j'ai durci l'analyseur "
+             "(mots de quantité, « très », « à », verbes de relation…) pour que plusieurs "
+             "d'entre elles soient refusées au lieu d'être mal lues. Les refus corrects "
+             "ci-dessous sont donc en partie le résultat de ce réglage, pas une compréhension. "
+             "Les cas « MAL INTERPRÉTÉE » sont ceux qui passent encore entre les mailles ; "
+             "les « refus à tort » sont du français contrôlé raisonnable que le système ne "
+             "connaît pas (verbes ou tournures absents de la liste).\n")
     L.append("| Phrase | Ce que fait le système | Verdict |\n|---|---|---|")
     for e in libres:
         L.append(f"| {e['phrase']} | {e['obtenu']} | {e['verdict']} |")
-    mal = [e for e in libres if e["verdict"].startswith("MAL") or e["verdict"] == "interprétation différente"]
+    mal = [e for e in libres if e["verdict"].startswith(("MAL", "DISCUTABLE")) or e["verdict"] == "interprétation différente"]
     refus_tort = [e for e in libres if e["verdict"] == "refus à tort"]
     L.append("")
     L.append(f"Sur {len(libres)} phrases libres : "
