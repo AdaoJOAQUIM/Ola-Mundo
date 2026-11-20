@@ -18,12 +18,12 @@ Mesures : médiane de 5 exécutions complètes pour (a), (c), (b') ; (b) : 1 ex�
 
 | Stratégie | CPU total (s) | CPU moyen / requête (µs) | CPU hors génération (ms) | CPU moyen hors génération (µs) | Énergie estimée totale (J) | Énergie estimée hors génération (mJ) |
 |---|---|---|---|---|---|---|
-| (a) aiguilleur : le moins cher + cache | 9,233 | 23 082,9 | 57,66 | 146,3 | 92,331 | 576,61 |
-| (c) le moins cher, sans cache | 9,155 | 22 887,2 | 71,58 | 181,7 | 91,549 | 715,76 |
-| (b') « toujours tout » limité aux formes adaptées | 9,375 | 23 436,6 | 81,10 | 205,8 | 93,747 | 811,01 |
-| (b) « toujours tout » (tous les modules, toutes les requêtes) | 274,659 | 686 648,5 | 265 580,14 | 674 061,3 | 2 746,594 | 2 655 801,43 |
+| (a) aiguilleur : le moins cher + cache | 9,522 | 23 804,7 | 52,72 | 133,8 | 95,219 | 527,16 |
+| (c) le moins cher, sans cache | 9,130 | 22 823,9 | 71,89 | 182,5 | 91,296 | 718,93 |
+| (b') « toujours tout » limité aux formes adaptées | 9,138 | 22 845,8 | 68,31 | 173,4 | 91,383 | 683,09 |
+| (b) « toujours tout » (tous les modules, toutes les requêtes) | 271,178 | 677 944,3 | sans objet | sans objet | 2 711,777 | sans objet |
 
-**Lecture honnête** : la génération (Écho) coûte des centaines de milliers de fois plus qu'une réponse du raisonneur ; le total est donc dominé par elle dès qu'on la lance, et c'est exactement ce que « toujours tout » fait. La colonne « hors génération » isole l'effet du cache et de l'ordre des modules sur le reste de la charge.
+**Lecture honnête** : la génération (Écho) coûte des centaines de milliers de fois plus qu'une réponse du raisonneur ; le total est donc dominé par elle dès qu'on la lance, et c'est exactement ce que « toujours tout » fait. La colonne « hors génération » (sans objet pour (b), où la génération tourne sur chaque requête) isole l'effet du cache et de l'ordre des modules sur le reste de la charge.
 
 ### Exactitude (vérité terrain indépendante)
 
@@ -40,20 +40,20 @@ Mesures : médiane de 5 exécutions complètes pour (a), (c), (b') ; (b) : 1 ex�
 
 | Catégorie | Requêtes | Justes | CPU moyen (µs) |
 |---|---|---|---|
-| calcul | 33 | 33 | 61,8 |
-| generation | 6 | 6 | 1 529 246,9 |
-| illisible | 9 | 9 | 43,0 |
-| insertion | 144 | 144 | 57,1 |
-| objectif | 50 | 50 | 684,3 |
-| q_inconnue | 13 | 13 | 33,2 |
-| q_logique | 89 | 89 | 77,1 |
-| q_monde | 56 | 56 | 98,2 |
+| calcul | 33 | 33 | 112,0 |
+| generation | 6 | 6 | 1 578 196,8 |
+| illisible | 9 | 9 | 39,8 |
+| insertion | 144 | 144 | 49,2 |
+| objectif | 50 | 50 | 584,4 |
+| q_inconnue | 13 | 13 | 31,2 |
+| q_logique | 89 | 89 | 77,8 |
+| q_monde | 56 | 56 | 89,8 |
 
 Aucune erreur pour (a) sur cette charge.
 
 ### Qui a répondu (nombre de requêtes par module)
 
-| Stratégie | 0 cache | 1 raisonneur | 2 planificateur | 3 génération | aucun (abstention/refus) |
+| Stratégie | 0 cache | 1 raisonneur | 2 planificateur | 3 génération | aucun (refus) |
 |---|---|---|---|---|---|
 | (a) aiguilleur : le moins cher + cache | 67 | 281 | 37 | 6 | 9 |
 | (c) le moins cher, sans cache | 0 | 335 | 50 | 6 | 9 |
@@ -62,9 +62,9 @@ Aucune erreur pour (a) sur cette charge.
 
 Cache de (a) : 67 succès, 333 échecs de recherche (taux de succès 16,8 % (67/400)). Colonne « aucun » : requêtes qu'aucun module n'a su traiter (phrases illisibles refusées). Les abstentions honnêtes (« Je ne sais pas ») sont comptées sous le module 1 ; elles ne sont pas mises en cache, d'où un écart avec la borne haute des répétitions ci-dessus.
 
-**Gain du cache** (hors génération) : 19,4 % de CPU en moins que (c) (57,66 ms contre 71,58 ms).
+**Gain du cache** (hors génération) : 26,7 % de CPU en moins que (c) (52,72 ms contre 71,89 ms).
 
-**Aiguilleur contre « toujours tout »** : 9,233 s contre 274,7 s de CPU, soit un facteur 29,7 ; exactitude 100,0 % (400/400) contre 100,0 % (400/400). L'économie vient du fait que la génération n'est jamais lancée sans que la requête la demande ; elle ne dit rien de la qualité d'un modèle de langage neuronal.
+**Aiguilleur contre « toujours tout »** : 9,522 s contre 271,2 s de CPU, soit un facteur 28,5 ; exactitude 100,0 % (400/400) contre 100,0 % (400/400). L'économie vient du fait que la génération n'est jamais lancée sans que la requête la demande ; elle ne dit rien de la qualité d'un modèle de langage neuronal.
 
 ## 2. Planificateur (A*) sur 200 mondes aléatoires
 
@@ -85,9 +85,12 @@ Cache de (a) : 67 succès, 333 échecs de recherche (taux de succès 16,8 % (67/
 | Budget de nœuds épuisé | 0 |
 | Plans non vérifiés (refusés) | 0 |
 | Nœuds développés, moyenne / maximum | 0,97 / 9 |
-| CPU total (s) | 0,052 |
-| CPU moyen / maximum par instance (ms) | 0,26 / 0,65 |
-| Énergie estimée totale (mJ) | 523,17 |
+| Plans de coût 0 (objectif déjà atteint) | 54 |
+| Plans de coût > 0 : nombre, coût moyen, coût maximum | 98, 1,95, 6,0 |
+| Nœuds développés sur les plans de coût > 0, moyenne / maximum | 1,98 / 9 |
+| CPU total (s) | 0,050 |
+| CPU moyen / maximum par instance (ms) | 0,25 / 0,53 |
+| Énergie estimée totale (mJ) | 504,16 |
 
 Aucun écart d'optimalité sur les instances comparables.
 

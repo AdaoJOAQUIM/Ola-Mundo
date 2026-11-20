@@ -1,3 +1,14 @@
 train 200 17s
 train 400 36s
 train 600 54s
+train 800 72s
+train 1000 89s
+test 200 107s
+test 400 124s
+test 600 141s
+test 800 158s
+test 1000 175s
+train {'min': 22, 'max': 29, 'moyenne': 25.676, 'distribution': {22: 6, 23: 41, 24: 201, 25: 244, 26: 194, 27: 160, 28: 153, 29: 1}}
+  résolus par propagation seule : 525 / 1000
+test {'min': 22, 'max': 29, 'moyenne': 25.761, 'distribution': {22: 4, 23: 57, 24: 160, 25: 235, 26: 204, 27: 179, 28: 159, 29: 2}}
+  résolus par propagation seule : 565 / 1000
