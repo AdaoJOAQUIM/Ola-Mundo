@@ -1,0 +1,429 @@
+{
+  "graine": 2024,
+  "n_par_tache": 200,
+  "hypothese_energie": "10.0 W par coeur occupe (estimation)",
+  "taches": [
+    {
+      "tache": "Tâche 1",
+      "description": "un fait suffit : où est X après plusieurs déplacements",
+      "n": 200,
+      "correct": 200,
+      "exactitude": 1.0,
+      "ic95": [
+        0.9811539940816792,
+        1.0
+      ],
+      "hallucinations": 0,
+      "taux_hallucination": 0.0,
+      "abstentions": 0,
+      "abstentions_correctes": 0,
+      "abstentions_a_tort": 0,
+      "contradictions_manquees": 0,
+      "erreurs_contexte": 0,
+      "phrases_moy": 10.42,
+      "cpu_moyen_us": 47.471334999999904,
+      "cpu_insertion_moyen_us": 19.07823413135478,
+      "energie_uJ": 474.713349999999,
+      "echecs": []
+    },
+    {
+      "tache": "Tâche 2",
+      "description": "deux faits : où est l'objet porté (ou posé), qui l'a",
+      "n": 200,
+      "correct": 200,
+      "exactitude": 1.0,
+      "ic95": [
+        0.9811539940816792,
+        1.0
+      ],
+      "hallucinations": 0,
+      "taux_hallucination": 0.0,
+      "abstentions": 0,
+      "abstentions_correctes": 0,
+      "abstentions_a_tort": 0,
+      "contradictions_manquees": 0,
+      "erreurs_contexte": 0,
+      "phrases_moy": 9.11,
+      "cpu_moyen_us": 84.2870500000001,
+      "cpu_insertion_moyen_us": 20.06745090082137,
+      "energie_uJ": 842.8705000000008,
+      "echecs": []
+    },
+    {
+      "tache": "Tâche 3",
+      "description": "déduction : chaînes de règles de longueur 1 à 5",
+      "n": 200,
+      "correct": 200,
+      "exactitude": 1.0,
+      "ic95": [
+        0.9811539940816792,
+        1.0
+      ],
+      "hallucinations": 0,
+      "taux_hallucination": 0.0,
+      "abstentions": 0,
+      "abstentions_correctes": 0,
+      "abstentions_a_tort": 0,
+      "contradictions_manquees": 0,
+      "erreurs_contexte": 0,
+      "phrases_moy": 7.02,
+      "cpu_moyen_us": 167.48780999999906,
+      "cpu_insertion_moyen_us": 31.414806573412438,
+      "energie_uJ": 1674.8780999999906,
+      "echecs": [],
+      "par_longueur": {
+        "1": [
+          40,
+          40
+        ],
+        "2": [
+          40,
+          40
+        ],
+        "3": [
+          40,
+          40
+        ],
+        "4": [
+          40,
+          40
+        ],
+        "5": [
+          40,
+          40
+        ]
+      }
+    },
+    {
+      "tache": "Tâche 4",
+      "description": "oui/non avec négations (faits, contraposition, disjonction)",
+      "n": 200,
+      "correct": 200,
+      "exactitude": 1.0,
+      "ic95": [
+        0.9811539940816792,
+        1.0
+      ],
+      "hallucinations": 0,
+      "taux_hallucination": 0.0,
+      "abstentions": 0,
+      "abstentions_correctes": 0,
+      "abstentions_a_tort": 0,
+      "contradictions_manquees": 0,
+      "erreurs_contexte": 0,
+      "phrases_moy": 5.26,
+      "cpu_moyen_us": 128.2153300000008,
+      "cpu_insertion_moyen_us": 31.94862381944485,
+      "energie_uJ": 1282.1533000000077,
+      "echecs": [],
+      "par_genre": {
+        "oui (chaîne)": [
+          40,
+          40
+        ],
+        "non (fait négatif)": [
+          40,
+          40
+        ],
+        "non (contraposition)": [
+          40,
+          40
+        ],
+        "non (disjonction)": [
+          40,
+          40
+        ],
+        "oui (malgré négations)": [
+          40,
+          40
+        ]
+      }
+    },
+    {
+      "tache": "Tâche 5",
+      "description": "questions sans réponse possible (doit s'abstenir)",
+      "n": 200,
+      "correct": 200,
+      "exactitude": 1.0,
+      "ic95": [
+        0.9811539940816792,
+        1.0
+      ],
+      "hallucinations": 0,
+      "taux_hallucination": 0.0,
+      "abstentions": 200,
+      "abstentions_correctes": 200,
+      "abstentions_a_tort": 0,
+      "contradictions_manquees": 0,
+      "erreurs_contexte": 0,
+      "phrases_moy": 3.13,
+      "cpu_moyen_us": 19.38245000000144,
+      "cpu_insertion_moyen_us": 26.81530458333343,
+      "energie_uJ": 193.82450000001438,
+      "echecs": []
+    },
+    {
+      "tache": "Tâche 6",
+      "description": "arithmétique exacte, nombres jusqu'à 10^12",
+      "n": 200,
+      "correct": 200,
+      "exactitude": 1.0,
+      "ic95": [
+        0.9811539940816792,
+        1.0
+      ],
+      "hallucinations": 0,
+      "taux_hallucination": 0.0,
+      "abstentions": 0,
+      "abstentions_correctes": 0,
+      "abstentions_a_tort": 0,
+      "contradictions_manquees": 0,
+      "erreurs_contexte": 0,
+      "phrases_moy": 0.505,
+      "cpu_moyen_us": 86.09773500000084,
+      "cpu_insertion_moyen_us": 17.400959999999966,
+      "energie_uJ": 860.9773500000084,
+      "echecs": []
+    },
+    {
+      "tache": "Tâche 7",
+      "description": "contradictions injectées (détection à l'insertion)",
+      "n": 200,
+      "correct": 200,
+      "exactitude": 1.0,
+      "ic95": [
+        0.9811539940816792,
+        1.0
+      ],
+      "hallucinations": 0,
+      "taux_hallucination": 0.0,
+      "abstentions": 0,
+      "abstentions_correctes": 0,
+      "abstentions_a_tort": 0,
+      "contradictions_manquees": 0,
+      "erreurs_contexte": 0,
+      "phrases_moy": 7.005,
+      "cpu_moyen_us": 115.0696800000023,
+      "cpu_insertion_moyen_us": 27.17134555285008,
+      "energie_uJ": 1150.696800000023,
+      "echecs": [],
+      "par_genre": {
+        "injectée disjonction ajoutée": [
+          16,
+          16
+        ],
+        "injectée fait ajouté après la négation": [
+          17,
+          17
+        ],
+        "injectée fait contre chaîne": [
+          17,
+          17
+        ],
+        "injectée fait contre fait": [
+          17,
+          17
+        ],
+        "injectée règle ajoutée en dernier": [
+          17,
+          17
+        ],
+        "injectée événement impossible": [
+          16,
+          16
+        ],
+        "témoin disjonction ajoutée": [
+          16,
+          16
+        ],
+        "témoin fait ajouté après la négation": [
+          17,
+          17
+        ],
+        "témoin fait contre chaîne": [
+          17,
+          17
+        ],
+        "témoin fait contre fait": [
+          17,
+          17
+        ],
+        "témoin règle ajoutée en dernier": [
+          17,
+          17
+        ],
+        "témoin événement impossible": [
+          16,
+          16
+        ]
+      }
+    }
+  ],
+  "phrases_libres": [
+    {
+      "phrase": "Le chat dort sur le canapé.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Marie et Jean vont au parc.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Marie va au parc, puis elle prend la clé.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Elle prend la pomme.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Il est mortel.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Socrate était un homme.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Socrate est très intelligent.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Si Socrate est un homme alors il est mortel.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Socrate est un homme et Platon aussi.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Jean a une pomme.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Jean mange la pomme.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Jean prend la pomme et part.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Marie a posé la pomme dans la cuisine.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Jean est plus grand que Marie.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Les oiseaux ne volent pas.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Médor aboie.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "La plupart des chats sont gris.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Marie est née à Paris.",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Quelle est la capitale de la France ?",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Pourquoi le ciel est bleu ?",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Combien de pommes a Jean ?",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Où habite Marie ?",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Socrate n'est-il pas mortel ?",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Quel âge a Marie ?",
+      "obtenu": "refusée (« Je ne comprends pas »)",
+      "verdict": "refus correct"
+    },
+    {
+      "phrase": "Paul est le frère de Marie.",
+      "obtenu": "acceptée comme ('est', 'paul', 'frere de marie', True)",
+      "verdict": "MAL INTERPRÉTÉE (aurait dû être refusée)"
+    },
+    {
+      "phrase": "La pomme est rouge.",
+      "obtenu": "acceptée comme ('regle', 'pomme', 'rouge')",
+      "verdict": "correct"
+    },
+    {
+      "phrase": "Le ciel est bleu aujourd'hui.",
+      "obtenu": "acceptée comme ('regle', 'ciel', \"bleu aujourd'hui\")",
+      "verdict": "MAL INTERPRÉTÉE (aurait dû être refusée)"
+    },
+    {
+      "phrase": "Tout le monde est mortel.",
+      "obtenu": "acceptée comme ('regle', 'monde', 'mortel')",
+      "verdict": "MAL INTERPRÉTÉE (aurait dû être refusée)"
+    },
+    {
+      "phrase": "Socrate est mortel.",
+      "obtenu": "acceptée comme ('est', 'socrate', 'mortel', True)",
+      "verdict": "correct"
+    },
+    {
+      "phrase": "Marie va à Paris.",
+      "obtenu": "acceptée comme ('evt', 'va', 'marie', 'paris')",
+      "verdict": "correct"
+    },
+    {
+      "phrase": "marie va dans la cuisine",
+      "obtenu": "acceptée comme ('evt', 'va', 'marie', 'cuisine')",
+      "verdict": "correct"
+    },
+    {
+      "phrase": "Les chats sont des animaux",
+      "obtenu": "acceptée comme ('regle', 'chat', 'animal')",
+      "verdict": "correct"
+    },
+    {
+      "phrase": "Combien font 7 plus 5 ?",
+      "obtenu": "question q_calc",
+      "verdict": "correct"
+    }
+  ]
+}
