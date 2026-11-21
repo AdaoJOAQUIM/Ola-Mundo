@@ -1,0 +1,99 @@
+{
+  "modele": "HuggingFaceTB/SmolLM2-135M",
+  "perplexite_selection_avant": 30.81,
+  "essais": [
+    {
+      "couches": 2,
+      "colonnes": 64,
+      "intensite": 1.0,
+      "parametres_modifies": 73728,
+      "boucles_diagnostic": 0.5,
+      "perplexite_selection": 30.88
+    },
+    {
+      "couches": 2,
+      "colonnes": 64,
+      "intensite": 2.0,
+      "parametres_modifies": 73728,
+      "boucles_diagnostic": 0.5,
+      "perplexite_selection": 30.98
+    },
+    {
+      "couches": 2,
+      "colonnes": "toutes",
+      "intensite": 1.0,
+      "parametres_modifies": 1769472,
+      "boucles_diagnostic": 0.5,
+      "perplexite_selection": 30.9
+    },
+    {
+      "couches": 2,
+      "colonnes": "toutes",
+      "intensite": 2.0,
+      "parametres_modifies": 1769472,
+      "boucles_diagnostic": 0.475,
+      "perplexite_selection": 31.06
+    },
+    {
+      "couches": 4,
+      "colonnes": 64,
+      "intensite": 1.0,
+      "parametres_modifies": 147456,
+      "boucles_diagnostic": 0.425,
+      "perplexite_selection": 31.12
+    },
+    {
+      "couches": 4,
+      "colonnes": 64,
+      "intensite": 2.0,
+      "parametres_modifies": 147456,
+      "boucles_diagnostic": 0.375,
+      "perplexite_selection": 31.67
+    },
+    {
+      "couches": 4,
+      "colonnes": "toutes",
+      "intensite": 1.0,
+      "parametres_modifies": 3538944,
+      "boucles_diagnostic": 0.35,
+      "perplexite_selection": 31.27
+    },
+    {
+      "couches": 4,
+      "colonnes": "toutes",
+      "intensite": 2.0,
+      "parametres_modifies": 3538944,
+      "boucles_diagnostic": 0.275,
+      "perplexite_selection": 32.33
+    }
+  ],
+  "reglage_choisi": {
+    "couches": 4,
+    "colonnes": "toutes",
+    "intensite": 1.0,
+    "parametres_modifies": 3538944,
+    "boucles_diagnostic": 0.35,
+    "perplexite_selection": 31.27
+  },
+  "evaluation_unique": {
+    "avant": {
+      "taux_boucles": 0.5,
+      "repetition_4grammes": 0.559,
+      "perplexite_texte_tenu_a_l_ecart": 29.65,
+      "exemple": " you are not going to be a\nmember of the party, you will be a member of the party, and that is the\nonly thing that matters.\"\n\n\"But I am not going to be a member of the party,\" said the other.\n\n\"But you are not going to be a member of the party,\" said Corkscrew.\n\n\"But I am not going to be a member of the party,\" said the other.\n\n"
+    },
+    "apres": {
+      "taux_boucles": 0.35,
+      "repetition_4grammes": 0.501,
+      "perplexite_texte_tenu_a_l_ecart": 29.99,
+      "exemple": " you are going to be a\nman, you must be a man of the world, and you must be a man of the world, and\nyou must be a man of the world, and you must be a man of the world, and you\nmust be a man of the world, and you must be a man of the world, and you must\nbe a man of the world, and you must be a man of the world, and you must be\n"
+    },
+    "temoin_aleatoire": {
+      "taux_boucles": 0.45,
+      "repetition_4grammes": 0.543,
+      "perplexite_texte_tenu_a_l_ecart": 29.68,
+      "exemple": " you are not going to be a\nmember of the party, you will be a member of the party, and that you will\nbe a member of the party, and that you will be a member of the party, and\nthat you will be a member of the party, and that you will be a member of\nthe party, and that you will be a member of the party, and that you will be\na member of the party, and that you will"
+    }
+  },
+  "cpu_s": 1231.8
+}
