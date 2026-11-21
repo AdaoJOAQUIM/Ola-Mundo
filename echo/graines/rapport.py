@@ -24,5 +24,14 @@ for mod, d in R.items():
         z = d['lzma_rtn4']
         L.append(f"\nRTN 4 bits, codes seuls : {z['bpw_codes_brut']:.3f} b/poids bruts → {z['bpw_codes_lzma']:.3f} b/poids après lzma "
                  f"({z['bpw_lzma_avec_echelles']:.3f} avec les échelles 8 bits non compressées).")
-open(os.path.join(D, 'tableaux.md'), 'w').write('\n'.join(L))
-print('\n'.join(L))
+
+S = R['SmolLM2-135M']['sensibilite_seedlm']
+sens = ["| Config | 2^12 graines | 2^14 graines | 2^16 graines, K=1 | 2^16 graines, K=8 |", "|---|---|---|---|---|"]
+for k, d in S.items():
+    v = list(d.values())
+    sens.append(f"| {k} | {v[0]:.3f} | {v[1]:.3f} | {v[2]:.3f} | {v[3]:.3f} |")
+T = "\n".join(L)
+SE = "\n".join(sens)
+TXT = open(os.path.join(D, 'texte_resultats.md'), encoding='utf-8').read()
+open(os.path.join(D, 'resultats_graines.md'), 'w', encoding='utf-8').write(TXT.replace('{{TABLEAUX}}', T).replace('{{SENS}}', SE))
+print('ok')
