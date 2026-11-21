@@ -62,8 +62,9 @@ class ReseauEcrit(torch.nn.Module):
         C = torch.relu(C - au_moins_un(torch.einsum('ij,njd->nid', self.A, pose)))
         # règle 2 : chiffre possible dans une seule case d'une unité -> il s'y place
         unique = exactement_un(torch.einsum('uc,ncd->nud', self.U, C))
-        g = torch.relu(unique[:, :, None, :] + C[:, None, :, :] - 1) * self.U[None, :, :, None]
-        force = au_moins_un(g.sum(1))
+        # si la case a encore ce chiffre et qu'une de ses unités n'a qu'une place
+        # pour lui, cette place est forcément elle : ET logique = ReLU(a + b - 1)
+        force = torch.relu(C + au_moins_un(torch.einsum('uc,nud->ncd', self.U, unique)) - 1)
         return torch.relu(C - au_moins_un(force @ self.J))
 
 

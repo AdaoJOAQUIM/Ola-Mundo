@@ -1,0 +1,28 @@
+{
+  "test": {
+    "n": 1000,
+    "resolus": 1000,
+    "controle_independant_ok": 1000,
+    "reponses_fausses": 0,
+    "sans_reponse": 0,
+    "sans_recherche": 565,
+    "noeuds_moyen": 3.36,
+    "noeuds_max": 49,
+    "profondeur": 9,
+    "largeur_max_du_lot": 1000,
+    "cpu_s": 1.23
+  },
+  "train": {
+    "n": 1000,
+    "resolus": 1000,
+    "controle_independant_ok": 1000,
+    "reponses_fausses": 0,
+    "sans_reponse": 0,
+    "sans_recherche": 525,
+    "noeuds_moyen": 3.5,
+    "noeuds_max": 37,
+    "profondeur": 9,
+    "largeur_max_du_lot": 1000,
+    "cpu_s": 1.13
+  }
+}

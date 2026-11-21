@@ -18,6 +18,18 @@ logiques du Sudoku traduites en matrices 0/1 et en ReLU, appliquées en boucle
 - Aucune contradiction, aucune grille fausse : quand le réseau ne sait pas, il laisse
   les candidats ouverts au lieu d'inventer.
 
+## Étape 2 : recherche complète pilotée par le réseau écrit (`recherche_ecrite.py`)
+
+Quand le réseau bloque, un contrôleur de quelques lignes choisit la case la plus
+contrainte et ouvre une branche par chiffre possible, en parallèle dans le même lot ;
+le réseau propage, les branches contradictoires meurent. Chaque grille trouvée passe
+un contrôle indépendant (règles du Sudoku, indices conservés).
+
+| Jeu | Résolus | Réponses fausses | Contrôle indépendant | Sans recherche | Nœuds moyen / max | CPU |
+|---|---|---|---|---|---|---|
+| Test | **1 000 / 1 000** | 0 | 1 000 / 1 000 | 565 | 3,4 / 49 | 1,2 s |
+| Entraînement | **1 000 / 1 000** | 0 | 1 000 / 1 000 | 525 | 3,5 / 37 | 1,1 s |
+
 ## Limites
 
 - La capacité vient de celui qui a écrit les poids : elle est transférée, pas créée de rien.

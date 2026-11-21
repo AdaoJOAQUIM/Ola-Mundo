@@ -10,7 +10,7 @@
     "cases_vides_trouvees": 0.6909,
     "pas_moyen": 8.17,
     "pas_max": 21,
-    "cpu_s": 4.552,
+    "cpu_s": 0.591,
     "reference_propagation": 565,
     "accord_avec_reference": 1000
   },
@@ -22,7 +22,7 @@
     "cases_vides_trouvees": 0.6664,
     "pas_moyen": 8.2,
     "pas_max": 19,
-    "cpu_s": 4.325,
+    "cpu_s": 0.525,
     "reference_propagation": 525,
     "accord_avec_reference": 1000
   }
