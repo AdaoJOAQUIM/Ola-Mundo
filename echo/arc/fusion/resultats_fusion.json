@@ -1,113 +1,135 @@
 {
  "taches": 20,
  "methodes_presentes": [
+  "soar_lite",
   "trm",
   "compressarc"
  ],
  "resolus_pass2": {
+  "soar_lite": 2,
   "trm": 12,
   "compressarc": 1,
-  "fusion": 12
+  "fusion": 8
  },
  "plafond_au_moins_une_methode": 12,
  "detail": {
   "00576224": {
    "fusion": true,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "11e1fe23": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   },
   "15696249": {
    "fusion": true,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "1a2e2828": {
    "fusion": true,
+   "soar_lite": true,
    "trm": true,
    "compressarc": true
   },
   "1da012fc": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   },
   "25094a63": {
-   "fusion": true,
+   "fusion": false,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "358ba94e": {
    "fusion": true,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "48131b3c": {
    "fusion": true,
+   "soar_lite": true,
    "trm": true,
    "compressarc": false
   },
   "4f537728": {
    "fusion": true,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "7d1f7ee8": {
-   "fusion": true,
+   "fusion": false,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "7e02026e": {
-   "fusion": true,
+   "fusion": false,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "81c0276b": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   },
   "891232d6": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   },
   "8cb8642d": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   },
   "9def23fe": {
-   "fusion": true,
+   "fusion": false,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "b15fca0b": {
    "fusion": true,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "bc4146bd": {
    "fusion": true,
+   "soar_lite": false,
    "trm": true,
    "compressarc": false
   },
   "bf89d739": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   },
   "d94c3b52": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   },
   "fafd9572": {
    "fusion": false,
+   "soar_lite": false,
    "trm": false,
    "compressarc": false
   }

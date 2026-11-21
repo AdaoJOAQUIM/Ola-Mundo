@@ -62,23 +62,31 @@ Contrôle : 6 énigmes sur 6 restent résolues quand on retire leurs réponses d
 | Audit des poids : Qwen3.5-0.8B d'origine contre corrigé | Seuls **2 tenseurs sur 488** diffèrent (couches 15 et 19, `mlp.down_proj`, 64 colonnes chacun) : **130 188 poids**, exactement le manifeste des auteurs |
 | Comportement, 20 problèmes MATH-500 faciles, 2 048 jetons au plus | **Non concluant** : les deux modèles sont coupés à la limite dans 95 % des cas (19 sur 20) ; chacun ne termine qu'un problème (juste). Les « réussites » brutes (45 % et 35 %) viennent surtout de réponses repérées au milieu d'un raisonnement coupé : elles ne mesurent rien. Il faudrait au moins 16 000 jetons par réponse, soit environ une journée de CPU ici (3,4 h pour le modèle corrigé à 2 048 jetons) |
 
-## 7. Fusion des gagnants des Paper Awards de l'ARC Prize 2025 — **en cours**
+## 7. Fusion des gagnants des Paper Awards de l'ARC Prize 2025
 
 Même sous-ensemble de 20 énigmes d'évaluation pour tous (notre solveur : 2 sur 20).
 
-| Méthode | Ce qui est utilisé | État |
+| Méthode | Ce qui est utilisé | Résultat (2 essais par énigme) |
 |---|---|---|
 | TRM (1er prix) | point de contrôle officiel `arcprize/trm_arc_prize_verification`, 8 votes par énigme au lieu d'environ 1 000 | **12 sur 20** (10 au premier essai), environ 6 min de CPU par énigme ; recompté par nous sur les réponses officielles. Réserve : ce modèle a appris les exemples de démonstration de ces énigmes pendant son entraînement (protocole officiel de TRM) ; seules les réponses de test sont inédites. 20 énigmes, c'est peu : environ ±11 points d'incertitude |
-| SOAR (2e prix) | son idée (s'améliorer à partir de ses propres solutions), appliquée à notre solveur | en cours |
+| SOAR (2e prix) | son idée, sans grand modèle de langage : notre solveur apprend de ses propres solutions (3 rondes sur l'entraînement seulement), puis une seule évaluation | **2 sur 20** ; sur les 400 énigmes d'évaluation, 63 → 64 : gain dans le bruit (`arc/soar_lite/`) |
 | CompressARC (3e prix) | code officiel, entraînement réduit à environ 500 s par énigme sur 1 cœur (150 à 783 pas au lieu de 2 000) | **1 sur 20** (1a2e2828, déjà résolue par TRM), 2,4 h au total. Borne basse : les grandes énigmes n'ont eu que 150 pas ; l'article annonce environ 20 % sur l'évaluation avec l'entraînement complet |
-| **Fusion** (`arc/fusion/fusionner.py`) | réponses vérifiées d'abord, puis accord entre méthodes, puis TRM, puis CompressARC | prête |
+| **Fusion** (`arc/fusion/fusionner.py`, règle fixée avant les résultats) | réponses « vérifiées » d'abord, puis accord entre méthodes, puis TRM, puis CompressARC | **8 sur 20 : pire que TRM seul** |
+
+Pourquoi la fusion perd : un programme « vérifié » reproduit tous les exemples, mais cela
+ne prouve pas qu'il a trouvé la règle. Sur les 400 énigmes d'évaluation, 149 programmes
+reproduisent les exemples et 64 seulement donnent la bonne réponse au test (43 %) ; sur nos
+20 énigmes, 9 contre 2. Placés en tête, ils ont chassé 4 bonnes réponses de TRM. Et aucune
+méthode ne résout ici une énigme que TRM rate (au mieux 12 sur 20) : sur cet échantillon,
+aucune règle de fusion ne pouvait battre TRM seul.
 
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,
 128 Go de disque) ; compression du modèle ; monde infini procédural ; agent « phone
-use » avec garde-fous. Une fois le CPU libre : la notation stricte de Qwen et le
-résultat de la fusion ARC.
+use » avec garde-fous. Possibles ensuite : la notation stricte de Qwen (environ une
+journée de CPU) ; vérifier sur plus d'énigmes si notre solveur résout ce que TRM rate
+(sur nos 20 : aucune).
 
 ## Ce qu'il faut retenir
 
@@ -86,7 +94,9 @@ résultat de la fusion ARC.
    connues et exactes** : Sudoku 1 000 sur 1 000 sans entraînement, contre 0 pour un réseau entraîné.
 2. **Sur un vrai modèle, on débloque ce qu'il sait déjà, on ne crée pas de savoir** :
    capitales 0 → 57 %, mais jamais au-dessus de ce qu'il fait avec des exemples.
-3. **La vérification change tout** : 0 hallucination partout où un vérificateur existe.
+3. **La vérification change tout, si elle vérifie la bonne chose** : 0 hallucination quand
+   le vérificateur contrôle la réponse elle-même (raisonneur, Sudoku). Sur ARC, « reproduit
+   les exemples » n'est juste que 43 fois sur 100 : s'y fier aveuglément a fait perdre la fusion.
 4. **Les comportements diffus résistent** (boucles d'un petit modèle de base), comme l'a aussi constaté l'étude du MIT.
 
 ## Notes pratiques
