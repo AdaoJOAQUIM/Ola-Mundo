@@ -1,0 +1,68 @@
+test_partition_deterministe (test_bayes_langue.TestBibliothequeReduite.test_partition_deterministe) ... ok
+test_A_reduit_moins_que_A_original (test_bayes_langue.TestCoherenceAvecOriginal.test_A_reduit_moins_que_A_original)
+Retirer ~0,4 % des paragraphes fait baisser les comptes de moins de 1 % (A recompté). ... ok
+test_causalite_comptes_biblio (test_bayes_langue.TestComptage.test_causalite_comptes_biblio) ... ok
+test_comptes_contre_brut (test_bayes_langue.TestComptage.test_comptes_contre_brut) ... ok
+test_json_sans_texte_francais (test_bayes_langue.TestDisciplineDeLecture.test_json_sans_texte_francais)
+Le JSON de résultats ne contient que des nombres et des noms d'experts (pas de phrase du corpus). ... /home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:307: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/resultats_bayes_langue.json' mode='r' encoding='utf-8'>
+  txt = open(chemin, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_pas_de_chemin_francais_ailleurs (test_bayes_langue.TestDisciplineDeLecture.test_pas_de_chemin_francais_ailleurs) ... /home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/optimisation.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/experts.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/evolution_comptage.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/final.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/efficacite.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/dev.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/donnees_bayes.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/rapport.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/user/Ola-Mundo/echo/bayes/test_bayes_langue.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/melange.py' mode='r' encoding='utf-8'>
+  out[f] = open(os.path.join(ICI, f), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_rien_n_est_ecrit_pour_E_ou_francais (test_bayes_langue.TestDisciplineDeLecture.test_rien_n_est_ecrit_pour_E_ou_francais)
+Aucun module n'écrit de tableau ou de texte E/français sur disque (le français n'est pas redistribuable). ... ok
+test_seul_final_appelle (test_bayes_langue.TestDisciplineDeLecture.test_seul_final_appelle) ... ok
+test_temoin_refuse_deuxieme_execution (test_bayes_langue.TestDisciplineDeLecture.test_temoin_refuse_deuxieme_execution) ... /home/user/Ola-Mundo/echo/bayes/final.py:186: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/bayes/cache/parametres_figes.json' mode='r' encoding='utf-8'>
+  fig = json.load(open(os.path.join(db.CACHE, "parametres_figes.json")))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_causalite_distributions (test_bayes_langue.TestExperts.test_causalite_distributions)
+Modifier un caractère futur ne change jamais la distribution aux positions antérieures (statique et mise à jour). ... ok
+test_flux_vide_retrouve_statique (test_bayes_langue.TestExperts.test_flux_vide_retrouve_statique)
+β = 1 et aucun texte lu (flux vide) : l'expert à mise à jour est l'expert statique. ... ok
+test_main_egale_grille (test_bayes_langue.TestExperts.test_main_egale_grille)
+e = 16·d, ordre 10, γ = 1 : la référence à la main du juge (source épinglée) = notre chaîne. ... /home/user/Ola-Mundo/echo/evolution/bayes.py:560: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/Ola-Mundo/echo/evolution/analyse_champion.json' mode='r' encoding='utf-8'>
+  return json.load(open(os.path.join(ICI, "analyse_champion.json")))["reference_a_la_main"]["source"]
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_normalisation_mise_a_jour (test_bayes_langue.TestExperts.test_normalisation_mise_a_jour) ... ok
+test_normalisation_pitman_yor_et_log2_vrai (test_bayes_langue.TestExperts.test_normalisation_pitman_yor_et_log2_vrai) ... ok
+test_normalisation_statique (test_bayes_langue.TestExperts.test_normalisation_statique) ... ok
+test_causalite_flux (test_bayes_langue.TestFlux.test_causalite_flux) ... ok
+test_flux_contre_force_brute (test_bayes_langue.TestFlux.test_flux_contre_force_brute) ... ok
+test_causalite_melange (test_bayes_langue.TestMelange.test_causalite_melange) ... ok
+test_egal_bma_evolution (test_bayes_langue.TestMelange.test_egal_bma_evolution) ... ok
+test_masse_somme_un_et_entropie (test_bayes_langue.TestMelange.test_masse_somme_un_et_entropie) ... ok
+test_regret_bma (test_bayes_langue.TestMelange.test_regret_bma) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.974s
+
+OK

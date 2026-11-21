@@ -90,10 +90,10 @@ def analyser(nom, jeu, fig, lib, texte, n_fen_lzma, fen_pertes, pas_snap):
         a = fig["alphas"][etiq]["alpha"]
         Pc = np.ascontiguousarray(P[:, cols])
         gc_o, gc_b = g_ordre[cols], g_beta[cols]
-        rb_o = ml.melanger(Pc, 0.0, None, gc_o, pas_snap)
-        rb_b = ml.melanger(Pc, 0.0, None, gc_b, pas_snap)
-        rf_o = ml.melanger(Pc, a, None, gc_o, pas_snap)
-        rf_b = ml.melanger(Pc, a, None, gc_b, pas_snap)
+        rb_o = ml.melanger(Pc, 0.0, None, gc_o, pas_snap, len(ORDRES_ETIQ))
+        rb_b = ml.melanger(Pc, 0.0, None, gc_b, pas_snap, len(BETAS_ETIQ))
+        rf_o = ml.melanger(Pc, a, None, gc_o, pas_snap, len(ORDRES_ETIQ))
+        rf_b = ml.melanger(Pc, a, None, gc_b, pas_snap, len(BETAS_ETIQ))
         mc = [metas[i] for i in cols]
         pos_ent = [0, 100, 500, 1000, 2000, 5000, 10000, 20000, 40000, L.shape[1] - 1]
         mel[etiq] = {"alpha": a,
@@ -165,8 +165,7 @@ def calculer(E, F, texte_E, texte_F, lib, fig, n_fen_lzma_fr=None, lzma_E=True):
            "fixed_share_sans_optuna": fenetres(melF["sans_optuna"]["_pertes_fs"]),
            "bma_avec_optuna": fenetres(melF["avec_optuna"]["_pertes_bma"]),
            "optuna": fenetres(-LF[idxF["Optuna TPE (gagnant sur B)"]])}
-    if n_fen_lzma is None:
-        n_fen_lzma = n_fen
+    n_fen_lzma = n_fen if n_fen_lzma_fr is None else n_fen_lzma_fr
     lz, taille_lib = lzma_fenetres(lib, texte_F, n_fen_lzma)
     fen["lzma"] = lz
     rF["fenetres_bpc"] = fen

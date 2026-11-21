@@ -15,7 +15,7 @@ PLANCHER_P = 1e-10
 GRILLE_ALPHA = [1e-5, 3e-5, 1e-4, 3e-4, 1e-3, 3e-3, 1e-2, 3e-2, 1e-1]
 
 
-def melanger(P, alpha=0.0, prior=None, groupes=None, pas_snap=500):
+def melanger(P, alpha=0.0, prior=None, groupes=None, pas_snap=500, n_groupes=None):
     """P : (T, M) probabilités du vrai symbole (lignes = positions). Retourne dict.
 
     pertes : -log2 du mélange, par position ; entropie : entropie (bits) du poids a priori de chaque pas ;
@@ -25,7 +25,7 @@ def melanger(P, alpha=0.0, prior=None, groupes=None, pas_snap=500):
     w = np.full(M, 1.0 / M) if prior is None else np.asarray(prior, float) / np.sum(prior)
     pertes = np.empty(T)
     ent = np.empty(T)
-    G = int(groupes.max()) + 1 if groupes is not None else 0
+    G = (n_groupes or int(groupes.max()) + 1) if groupes is not None else 0
     masses, pos_snap = [], []
     for t in range(T):
         if groupes is not None and t % pas_snap == 0:
