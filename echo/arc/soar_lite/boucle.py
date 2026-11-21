@@ -27,21 +27,29 @@ def lancer(split, budget=10.0, procs=1, ids=None):
     return [solveur._travail(a) for a in args]
 
 
+def hindsight_cache(tid, train_dir):
+    f = os.path.join(R, 'hindsight.json')
+    cache = json.load(open(f)) if os.path.exists(f) else {}
+    if tid not in cache:
+        t = json.load(open(os.path.join(train_dir, tid + '.json')))
+        tr = [(solveur.en_grille(x['input']), solveur.en_grille(x['output'])) for x in t['train']]
+        cache[tid] = [list(s) for s in bib.hindsight(tr)]
+        json.dump(cache, open(f, 'w'))
+    return cache[tid]
+
+
 def donnees_ronde(details, train_dir):
-    """Données d'apprentissage : programmes réussis + relabeling a posteriori sur les échecs."""
+    """Programmes réussis (poids 1) + relabeling a posteriori sur les paires d'entraînement de
+    toutes les tâches (poids 0.5), en profondeur <= 2."""
     out = []
     for r in details:
-        if r['resolu2']:
-            for p, ok in zip(r['programmes'], r['ok']):
-                if ok:
-                    s = bib.noms_prog(p)
-                    if s:
-                        out.append((r['id'], 1.0, s))
-        elif not r['resolu1']:
-            t = json.load(open(os.path.join(train_dir, r['id'] + '.json')))
-            tr = [(solveur.en_grille(x['input']), solveur.en_grille(x['output'])) for x in t['train']]
-            for s in bib.hindsight(tr):
-                out.append((r['id'], 0.5, list(s)))
+        for p, ok in zip(r['programmes'], r['ok']):
+            if ok:
+                s = bib.noms_prog(p)
+                if s:
+                    out.append((r['id'], 1.0, s))
+        for s in hindsight_cache(r['id'], train_dir):
+            out.append((r['id'], 0.5, s))
     return out
 
 

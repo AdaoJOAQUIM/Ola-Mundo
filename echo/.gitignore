@@ -10,3 +10,8 @@ langue/chemins_repro.json
 arc/externes/
 arc/compressarc/code/
 arc/trm_officiel/code/
+arc/**/*.log
+arc/compressarc/out/
+arc/soar_lite/rondes/
+arc/soar_lite/ancien/
+arc/trm_officiel/*.pkl

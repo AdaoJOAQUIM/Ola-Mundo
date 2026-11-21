@@ -55,11 +55,11 @@ def developper(texte):
     return texte.replace('+', ' ; ')
 
 
-def hindsight(train, base_s=1.2, nmax=3):
+def hindsight(train, base_s=2.0, nmax=3):
     """Relabeling a posteriori : pour chaque paire d'entraînement prise isolément, programmes
     (profondeur <= 2, primitives de base) qui produisent EXACTEMENT sa sortie."""
     progs = []
-    for gi, go in train[:2]:
+    for gi, go in train[:3]:
         t_fin = time.process_time() + base_s
         trouves, vus, niv = [], {gi}, [((), gi)]
         try:
@@ -102,7 +102,7 @@ def apprendre(donnees, K, ancien=None):
                     pt[k][tid] = max(pt[k][tid], w)
     score = {k: sum(v.values()) for k, v in pt.items()}
     macros = dict(ancien['macros']) if ancien else {}
-    cand = sorted(((s, k) for k, s in score.items() if len(k) > 1 and s >= 1.5),
+    cand = sorted(((s, k) for k, s in score.items() if len(k) > 1 and s >= 1.0 and len(pt[k]) >= 2),
                   key=lambda x: (-x[0], -len(x[1]), x[1]))
     for s, k in cand:
         if len(macros) >= K:
