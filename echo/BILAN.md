@@ -112,6 +112,19 @@ borne théorique). L'échantillonnage de Thompson pour choisir les mutations : n
 (P = 0,44). Pitman–Yor ne retrouve pas les décomptes de Kneser–Ney, car il part des comptes
 bruts ; Kneser–Ney utilise des comptes de continuation.
 
+### La fusion ARC refaite avec Bayes (`arc/bayes/`)
+
+Fiabilité de chaque méthode mesurée sur d'autres énigmes (20 nouvelles énigmes pour TRM),
+paramètres figés avant la notation, validation croisée en 2 plis (40 énigmes en tout).
+
+| Sur 40 énigmes | TRM seul | Notre solveur seul | Ancienne règle | **Fusion bayésienne** | Au mieux |
+|---|---|---|---|---|---|
+| Résolues (2 essais) | 21 | 5 | 18 | **20 à 21** | 25 |
+
+Bayes répare la règle (18 → 21) mais ne bat pas TRM seul : les écarts tiennent en une ou
+deux énigmes. Routeur « valeur du calcul » : aucune économie sans perte (TRM fait 98 % du
+calcul ; couper TRM sur 9 énigmes économise 44 % mais fait tomber le pli 1 de 11 à 6).
+
 ### Bayes comme principe unique (`bayes/`)
 
 Lire = mettre à jour ses croyances (la bibliothèque sert d'a priori) ; prédire = garder

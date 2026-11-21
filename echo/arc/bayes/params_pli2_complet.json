@@ -1,0 +1,115 @@
+{
+ "params": {
+  "prior": 0.17045454545454544,
+  "n_calibration": {
+   "justes": 14,
+   "faux": 72
+  },
+  "log_lr": {
+   "bucket": [
+    -1.085540207100757,
+    -1.373222279552538,
+    0.443854997659807,
+    0.993901334579079,
+    3.478807984367079
+   ],
+   "rang": [
+    -1.0445450673978338,
+    1.4403615823901663,
+    -0.16907633004393413,
+    -1.0986122886681098
+   ],
+   "accord": [
+    -0.18024039059013008,
+    1.936941479072553
+   ],
+   "dsl": [
+    -0.060083154426615035,
+    0.3850922193491141
+   ]
+  },
+  "caracteristiques": [
+   "bucket",
+   "rang",
+   "accord",
+   "dsl"
+  ],
+  "dsl": {
+   "taches_hors_test": 380,
+   "golds_couverts": 61,
+   "candidats_faux": 143,
+   "faux_trm_par_tache": 3.05,
+   "p_dsl_juste": 0.16230366492146597,
+   "p_dsl_faux": 0.11042944785276074
+  },
+  "comptes_trm": {
+   "True": {
+    "bucket": [
+     0,
+     2,
+     4,
+     1,
+     7
+    ],
+    "rang": [
+     0,
+     10,
+     2,
+     2
+    ],
+    "accord": [
+     12,
+     2
+    ]
+   },
+   "False": {
+    "bucket": [
+     11,
+     47,
+     12,
+     2,
+     0
+    ],
+    "rang": [
+     11,
+     10,
+     14,
+     37
+    ],
+    "accord": [
+     71,
+     1
+    ]
+   }
+  }
+ },
+ "meta": {
+  "pli": "pli2",
+  "test": "nouveau",
+  "calibration_trm": "ancien",
+  "variante": "complet",
+  "taches_test_exclues": [
+   "00dbd492",
+   "1c0d0a4b",
+   "22a4bbc2",
+   "281123b4",
+   "54db823b",
+   "58e15b12",
+   "762cd429",
+   "9c1e755f",
+   "a59b95c0",
+   "b942fd60",
+   "bd14c3bf",
+   "c3202e5a",
+   "cd3c21df",
+   "cfb2ce5a",
+   "d4b1c2b1",
+   "dd2401ed",
+   "e2092e0c",
+   "e633a9e5",
+   "e6de6e8f",
+   "e9b4f6fc"
+  ]
+ },
+ "sha256": "8d89a607e8b2bf442f13efabc6e735e085da2922d43722d6e2f080369b383e54"
+}

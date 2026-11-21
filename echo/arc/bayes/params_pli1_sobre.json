@@ -1,0 +1,103 @@
+{
+ "params": {
+  "prior": 0.14634146341463414,
+  "n_calibration": {
+   "justes": 11,
+   "faux": 69
+  },
+  "log_lr": {
+   "bucket": [
+    0.6151856390902334,
+    -1.7072020811999917,
+    -0.2602830982636666,
+    1.2437942985126076,
+    2.7842393394597567
+   ],
+   "dsl": [
+    -0.07584033555353607,
+    0.5090840403347361
+   ]
+  },
+  "caracteristiques": [
+   "bucket",
+   "dsl"
+  ],
+  "dsl": {
+   "taches_hors_test": 380,
+   "golds_couverts": 62,
+   "candidats_faux": 135,
+   "faux_trm_par_tache": 3.25,
+   "p_dsl_juste": 0.1649214659685864,
+   "p_dsl_faux": 0.09912536443148688
+  },
+  "comptes_trm": {
+   "True": {
+    "bucket": [
+     1,
+     1,
+     1,
+     2,
+     6
+    ],
+    "rang": [
+     1,
+     9,
+     0,
+     1
+    ],
+    "accord": [
+     9,
+     2
+    ]
+   },
+   "False": {
+    "bucket": [
+     4,
+     50,
+     11,
+     3,
+     1
+    ],
+    "rang": [
+     4,
+     11,
+     17,
+     37
+    ],
+    "accord": [
+     69,
+     0
+    ]
+   }
+  }
+ },
+ "meta": {
+  "pli": "pli1",
+  "test": "ancien",
+  "calibration_trm": "nouveau",
+  "variante": "sobre",
+  "taches_test_exclues": [
+   "00576224",
+   "11e1fe23",
+   "15696249",
+   "1a2e2828",
+   "1da012fc",
+   "25094a63",
+   "358ba94e",
+   "48131b3c",
+   "4f537728",
+   "7d1f7ee8",
+   "7e02026e",
+   "81c0276b",
+   "891232d6",
+   "8cb8642d",
+   "9def23fe",
+   "b15fca0b",
+   "bc4146bd",
+   "bf89d739",
+   "d94c3b52",
+   "fafd9572"
+  ]
+ },
+ "sha256": "de8493fca1268485c4f6f00fcc92084b4304dceaad893fbcfd688691b479fd3e"
+}
