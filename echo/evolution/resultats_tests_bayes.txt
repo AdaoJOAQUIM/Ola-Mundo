@@ -1,0 +1,15 @@
+OK     test_ajustement_ameliore_et_respecte_les_bornes
+OK     test_bma_borne_de_regret_exacte
+OK     test_bootstrap_bayesien
+OK     test_choisir_alpha_sur_donnees_a_changements
+OK     test_d_n_a_pas_ete_ouverte_par_ce_module_et_c_reste_intacte
+OK     test_fixed_share_alpha0_egal_bma_et_borne_un_changement
+OK     test_fixed_share_et_bma_sur_modeles_reels_ne_depassent_pas_la_borne
+OK     test_modeles_de_reference_reproduisent_les_scores_connus
+OK     test_muter_thompson_produit_des_genomes_valides
+OK     test_p_moyenne_inferieure
+OK     test_py_cas_limites
+OK     test_py_normalise_et_coherent_avec_le_vrai_symbole
+OK     test_thompson_converge_vers_le_meilleur_bras
+OK     test_tranche_fraiche_D_est_disjointe_et_comptages_exacts
+14 tests, 0 échec(s)

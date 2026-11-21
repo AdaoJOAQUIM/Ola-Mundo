@@ -94,6 +94,24 @@ A pour évoluer, B pour choisir, C pour le test, lu une seule fois.
 | Soi, objectif (longueur minimale + front de Pareto), coût, convergence, émergence (MAP-Elites) | moteur complet meilleur à calcul égal, mais pas significativement (p = 0,057 sur A) ; le soi saute 9 à 25 % des essais ; aucune technique connue redécouverte ; les « structures émergentes » sont surtout du code inutile |
 | Garde-fous | 17 codes malveillants sur 17 refusés ; 18 tests sur 18 ; une tentative de modifier le fichier de garde-fous protégé a été bloquée par les permissions |
 
+### Bayes, la dernière pierre (`evolution/bayes.py`)
+
+Test sur un texte neuf D (51 271 car., lu une seule fois ; réglages choisis sur A seulement) :
+
+| Modèle | bit/car. sur D | P(meilleur que le champion) |
+|---|---|---|
+| Départ (PPM-C) | 2,472 | 0 |
+| Champion évolué | 1,897 | — |
+| Pitman–Yor hiérarchique (bayésien, réglages par l'évidence) | 1,974 | 0 |
+| Mélange bayésien des modèles | 1,897 | 0,45 |
+| **Mélange bayésien qui peut changer de favori (« fixed share »)** | **1,889** | **1,00** (gain faible : 0,008) |
+| LZMA | 2,314 | — |
+
+Le mélange simple se fixe sur un modèle en quelques caractères (perte exacte : 2 bits, la
+borne théorique). L'échantillonnage de Thompson pour choisir les mutations : non concluant
+(P = 0,44). Pitman–Yor ne retrouve pas les décomptes de Kneser–Ney, car il part des comptes
+bruts ; Kneser–Ney utilise des comptes de continuation.
+
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,
