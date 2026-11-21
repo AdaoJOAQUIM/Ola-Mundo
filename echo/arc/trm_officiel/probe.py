@@ -22,7 +22,7 @@ P = {}
 for s in ['training', 'evaluation', 'concept']:
     P.update(json.load(open(f'code/kaggle/combined/arc-agi_{s}_challenges.json')))
 def demo(name, cid):
-    ex = P[name]['train'][:2]; ok = []
+    ex = P[name]['train'][:1]; ok = []
     for e in ex:
         a, b = arc_grid_to_np(e['input']), arc_grid_to_np(e['output'])
         i, _ = np_grid_to_seq_translational_augment(a, b, False)
@@ -35,5 +35,5 @@ def demo(name, cid):
                 if fin: break
         ok.append(bool(np.array_equal(_crop(pr['preds'][0].numpy()), b)))
     return ok
-for n in [names[0], names[1], names[200], names[399], names[400], names[401]] + sys.argv[1:]:
-    t = time.time(); print(n, idmap[n], demo(n, idmap[n]), f'{time.time()-t:.0f}s', flush=True)
+for n in [names[int(i)] for i in sys.argv[1:]]:
+    t = time.time(); print(int(sys.argv[1+[names[int(i)] for i in sys.argv[1:]].index(n)]), n, idmap[n], demo(n, idmap[n]), f'{time.time()-t:.0f}s', flush=True)

@@ -1,0 +1,264 @@
+{
+  "n": 20,
+  "max_nouveaux_jetons": 2048,
+  "niveaux": "1-2",
+  "essais_par_probleme": 1,
+  "base": {
+    "reussite": 0.45,
+    "coupes_a_la_limite": 0.95,
+    "jetons_moyens": 2010.8,
+    "cpu_s": 6610.9,
+    "details": [
+      {
+        "id": "test/intermediate_algebra/2046.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/346.json",
+        "juste": true,
+        "jetons": 1304,
+        "coupe": false
+      },
+      {
+        "id": "test/intermediate_algebra/752.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/counting_and_probability/199.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/precalculus/24313.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/intermediate_algebra/991.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/prealgebra/977.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/1425.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/2680.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/2199.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/precalculus/807.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/intermediate_algebra/1168.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/1004.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/1787.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/geometry/456.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/number_theory/410.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/prealgebra/1622.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/2551.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/478.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/precalculus/1289.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      }
+    ],
+    "exemple_fin": "ln 3 \\approx 1.0986$.\n    $\\frac{1}{2} \\ln 10 \\approx 0.5 \\times 2.3026 = 1.1513$.\n    So $\\ln 3 < \\frac{1}{2} \\ln 10$.\n    Therefore, $3^u$ grows slower than $10^{u/2}$?\n    Wait, $a^b$ where $a<b$ and $b>0$ implies $a^b < b^a$ ? No.\n    Compare $3^u$ and $10^{u/2}$.\n    $\\ln(3^u) = u \\ln 3$.\n    $\\ln(10^{u/2}) = \\frac{u}{2} \\ln 10$.\n    Since $\\ln 3 < \\frac{1}{2} \\ln 10$ (because $1.0986 < 1.151"
+  },
+  "corrige": {
+    "reussite": 0.35,
+    "coupes_a_la_limite": 0.95,
+    "jetons_moyens": 2032.5,
+    "cpu_s": 12365.5,
+    "details": [
+      {
+        "id": "test/intermediate_algebra/2046.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/346.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/intermediate_algebra/752.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/counting_and_probability/199.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/precalculus/24313.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/intermediate_algebra/991.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/prealgebra/977.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/1425.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/2680.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/2199.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/precalculus/807.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/intermediate_algebra/1168.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/1004.json",
+        "juste": true,
+        "jetons": 1738,
+        "coupe": false
+      },
+      {
+        "id": "test/algebra/1787.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/geometry/456.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/number_theory/410.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/prealgebra/1622.json",
+        "juste": false,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/2551.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/algebra/478.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      },
+      {
+        "id": "test/precalculus/1289.json",
+        "juste": true,
+        "jetons": 2048,
+        "coupe": true
+      }
+    ],
+    "exemple_fin": " 0$?\n    Because I substituted $10^x = 19$ into the equation $3^{2x} + 19 = 19$.\n    If $x = \\frac{\\ln 19}{\\ln 10}$, then $10^x = 19$.\n    So the equation becomes $3^{2x} + 19 = 19$.\n    $3^{2x} = 0$.\n    But $x = \\frac{\\ln 19}{\\ln 10} \\approx \\frac{2.94}{2.3} \\approx 1.27$.\n    $3^{2x} = 3^{2.54} \\approx 16$.\n    So $16 + 19 = 35 \\neq 19$.\n    Where is the error?\n\n    Ah. The problem is that $3^{"
+  }
+}

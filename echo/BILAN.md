@@ -60,7 +60,7 @@ Contrôle : 6 énigmes sur 6 restent résolues quand on retire leurs réponses d
 | Vérification | Résultat |
 |---|---|
 | Audit des poids : Qwen3.5-0.8B d'origine contre corrigé | Seuls **2 tenseurs sur 488** diffèrent (couches 15 et 19, `mlp.down_proj`, 64 colonnes chacun) : **130 188 poids**, exactement le manifeste des auteurs |
-| Comportement, 20 problèmes MATH-500 faciles, 2 048 jetons au plus | Modèle d'origine : **95 % des réponses coupées** (les boucles) ; modèle corrigé : **en cours**. La réussite du modèle d'origine (45 %) est gonflée par une notation trop souple, à refaire sur la seule réponse encadrée |
+| Comportement, 20 problèmes MATH-500 faciles, 2 048 jetons au plus | **Non concluant** : les deux modèles sont coupés à la limite dans 95 % des cas (19 sur 20) ; chacun ne termine qu'un problème (juste). Les « réussites » brutes (45 % et 35 %) viennent surtout de réponses repérées au milieu d'un raisonnement coupé : elles ne mesurent rien. Il faudrait au moins 16 000 jetons par réponse, soit environ une journée de CPU ici (3,4 h pour le modèle corrigé à 2 048 jetons) |
 
 ## 7. Fusion des gagnants des Paper Awards de l'ARC Prize 2025 — **en cours**
 

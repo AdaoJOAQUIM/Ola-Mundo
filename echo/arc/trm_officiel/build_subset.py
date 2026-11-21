@@ -10,6 +10,7 @@ import dataset.build_arc_dataset as B
 KMAX = 32
 sub = set(json.load(open('/home/user/Ola-Mundo/echo/arc/sous_ensemble_fusion.json'))['taches'])
 orig = B.convert_single_arc_puzzle
+KEEP = {}
 def patched(results, name, puzzle, aug_count, dest_mapping):
     tmp = {}
     orig(tmp, name, puzzle, aug_count, dest_mapping)
@@ -17,10 +18,9 @@ def patched(results, name, puzzle, aug_count, dest_mapping):
         for ss, groups in d.items():
             for g in groups:
                 if name in sub:
-                    keep = g[:KMAX]
-                else:
-                    keep = [B.ARCPuzzle(p.id, []) for p in g]   # ids only (needed for identifier map)
-                results.setdefault(sp, {}).setdefault(ss, []).append(keep if name in sub else keep)
+                    KEEP[(sp, name)] = g[:KMAX]
+                # ids only for the identifier map (FULL group, not truncated)
+                results.setdefault(sp, {}).setdefault(ss, []).append([B.ARCPuzzle(p.id, []) for p in g])
 B.convert_single_arc_puzzle = patched
 cfg = B.DataProcessConfig(input_file_prefix='/home/user/Ola-Mundo/echo/arc/trm_officiel/code/kaggle/combined/arc-agi',
     output_dir='x', subsets=['training','evaluation','concept'], test_set_name='evaluation')
@@ -34,8 +34,5 @@ for sp, split in data.items():
                 if p.id not in idmap: idmap[p.id] = n; n += 1
 print('num ids', n, 'splits', list(data.keys()))
 out = {'idmap': idmap, 'n': n, 'test_puzzles': {k: v for k, v in test_puzzles.items() if k in sub}, 'groups': {}}
-for sp in data:
-    for g in data[sp]['all']:
-        if g[0].id in sub:
-            out['groups'].setdefault((sp, g[0].id), g)
+out['groups'] = KEEP
 pickle.dump(out, open('subset_data.pkl', 'wb'))
