@@ -178,13 +178,13 @@ qu'environ un quart d'un bloc de 64 poids. PRANC (0,99) et l'hyper-réseau (0,99
 
 **Vérification indépendante.** Tests : 4 réussis. Comptabilité des bits : exacte pour RTN, SeedLM, PRANC et hyper-réseau.
 Perplexité de base 23,12 et RTN 4 bits ×1,20 retrouvées. Erreur d'un bloc à 0,375 bit : 0,862 en moyenne
-(théorie ≈ 0,86). Parts de paramètres comprimés : 59,2 % et 35,1 %. Scripts et chiffres dans `graines/verif/`.
+(théorie ≈ 0,86 ; des blocs de bruit pur donnent aussi 0,862). Parts de paramètres comprimés : 59,2 % et 35,1 %. Scripts et chiffres dans `graines/verif/`.
 
 **Réserves.**
 - Petits modèles (135 M et 0,8 B). Le plus grand est plus robuste (jusqu'à trois ordres de grandeur de moins
-  de dégradation à erreur égale), mais reste ruiné à 0,375 bit.
+  de dégradation à débit égal, en partie parce qu'on y comprime moins de paramètres), mais reste ruiné à 0,375 bit.
 - Écarts documentés : recherche de graines partielle sur certaines lignes, exposant partagé élargi, PRANC par blocs,
-  un seul hyper-réseau essayé (25 min d'entraînement).
+  un seul hyper-réseau essayé (25 min d'entraînement) ; PRANC et l'hyper-réseau n'ont pas été essayés sur Qwen.
 - Le test comprime 59 % (SmolLM2) et 35 % (Qwen) des paramètres. Les experts de K3.1 en font environ 98 %,
   donc il n'y a presque rien d'intact pour compenser : le cas réel est plus dur.
 
