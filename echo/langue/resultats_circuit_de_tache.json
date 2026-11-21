@@ -1,0 +1,140 @@
+{
+  "modele": "HuggingFaceTB/SmolLM2-135M",
+  "perplexite_avant": 28.42,
+  "taches": {
+    "capitales": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 0.8666666666666667,
+      "circuit_ecrit_sans_exemple": 0.5666666666666667,
+      "temoin_aleatoire": 0.0,
+      "couche": 21,
+      "intensite": 1.0,
+      "detecteur_separe": true,
+      "precision_calibration": 0.8,
+      "perplexite_avec_circuit": 28.42,
+      "exemples_reponses": [
+        [
+          "Colombia",
+          "Buenos Aires"
+        ],
+        [
+          "Japan",
+          "Tokyo"
+        ],
+        [
+          "Italy",
+          "Madrid"
+        ],
+        [
+          "Hungary",
+          "Berlin"
+        ],
+        [
+          "Portugal",
+          "Buenos Aires"
+        ]
+      ]
+    },
+    "contraires": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 1.0,
+      "circuit_ecrit_sans_exemple": 0.06666666666666667,
+      "temoin_aleatoire": 0.0,
+      "couche": 25,
+      "intensite": 1.0,
+      "detecteur_separe": true,
+      "precision_calibration": 0.2,
+      "perplexite_avec_circuit": 28.46,
+      "exemples_reponses": [
+        [
+          "tall",
+          "high : low : low :"
+        ],
+        [
+          "big",
+          "bad"
+        ],
+        [
+          "weak",
+          "bad"
+        ],
+        [
+          "poor",
+          "bad"
+        ],
+        [
+          "clean",
+          "clean up"
+        ]
+      ]
+    },
+    "anglais_francais": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 0.26666666666666666,
+      "circuit_ecrit_sans_exemple": 0.0,
+      "temoin_aleatoire": 0.0,
+      "couche": 29,
+      "intensite": 1.0,
+      "detecteur_separe": true,
+      "precision_calibration": 0.0,
+      "perplexite_avec_circuit": 28.42,
+      "exemples_reponses": [
+        [
+          "book",
+          "10000"
+        ],
+        [
+          "house",
+          "10000"
+        ],
+        [
+          "mother",
+          "10000"
+        ],
+        [
+          "blue",
+          "1, 2,"
+        ],
+        [
+          "wine",
+          "10000"
+        ]
+      ]
+    },
+    "passe_irregulier": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 1.0,
+      "circuit_ecrit_sans_exemple": 0.3333333333333333,
+      "temoin_aleatoire": 0.0,
+      "couche": 23,
+      "intensite": 1.0,
+      "detecteur_separe": true,
+      "precision_calibration": 0.6,
+      "perplexite_avec_circuit": 28.43,
+      "exemples_reponses": [
+        [
+          "write",
+          "read_read_read_"
+        ],
+        [
+          "eat",
+          "goto goto goto"
+        ],
+        [
+          "sell",
+          "won't be able to get"
+        ],
+        [
+          "tell",
+          "goto goto goto"
+        ],
+        [
+          "build",
+          "learned"
+        ]
+      ]
+    }
+  },
+  "poids_ecrits_par_tache": 1153,
+  "cpu_s": 654.4
+}
