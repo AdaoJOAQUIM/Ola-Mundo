@@ -7,3 +7,4 @@ arc/*.out
 trm/*.log
 trm/runs/
 langue/chemins_repro.json
+arc/externes/
