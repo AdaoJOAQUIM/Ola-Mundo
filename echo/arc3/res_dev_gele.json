@@ -1,0 +1,193 @@
+[
+ {
+  "jeu": "cn04-2fe56bfb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "resets_compteur": 6,
+  "score_sdk": 0.0,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   29,
+   54,
+   85,
+   300,
+   208,
+   113
+  ],
+  "cpu_s": 2.06,
+  "cpu_cerveau_s": 0.68,
+  "mur_s": 2.11,
+  "prefixe": "cn04",
+  "genre": "cerveau",
+  "graine": 0,
+  "stats_cerveau": {
+   "resets_cerveau": 0,
+   "morts": 6,
+   "niveaux": 0,
+   "volatiles": 0
+  }
+ },
+ {
+  "jeu": "ls20-9607627b",
+  "etat": "ACTION_CAP",
+  "niveaux": 1,
+  "niveaux_total": 7,
+  "actions": 500,
+  "resets_compteur": 5,
+  "score_sdk": 0.04409171075837742,
+  "niveaux_actions": [
+   198,
+   302,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   22,
+   123,
+   73,
+   84,
+   96,
+   192,
+   186
+  ],
+  "cpu_s": 2.31,
+  "cpu_cerveau_s": 0.18,
+  "mur_s": 2.34,
+  "prefixe": "ls20",
+  "genre": "cerveau",
+  "graine": 0,
+  "stats_cerveau": {
+   "resets_cerveau": 0,
+   "morts": 5,
+   "niveaux": 1,
+   "volatiles": 128
+  }
+ },
+ {
+  "jeu": "sc25-635fd71a",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "resets_compteur": 8,
+  "score_sdk": 0.0,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   36,
+   6,
+   32,
+   83,
+   143,
+   50
+  ],
+  "cpu_s": 2.89,
+  "cpu_cerveau_s": 1.05,
+  "mur_s": 2.97,
+  "prefixe": "sc25",
+  "genre": "cerveau",
+  "graine": 0,
+  "stats_cerveau": {
+   "resets_cerveau": 0,
+   "morts": 8,
+   "niveaux": 0,
+   "volatiles": 0
+  }
+ },
+ {
+  "jeu": "tn36-ef4dde99",
+  "etat": "ACTION_CAP",
+  "niveaux": 1,
+  "niveaux_total": 7,
+  "actions": 500,
+  "resets_compteur": 7,
+  "score_sdk": 3.1636183885318836,
+  "niveaux_actions": [
+   34,
+   466,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   32,
+   72,
+   26,
+   40,
+   30,
+   55,
+   62
+  ],
+  "cpu_s": 2.83,
+  "cpu_cerveau_s": 0.9,
+  "mur_s": 2.85,
+  "prefixe": "tn36",
+  "genre": "cerveau",
+  "graine": 0,
+  "stats_cerveau": {
+   "resets_cerveau": 0,
+   "morts": 7,
+   "niveaux": 1,
+   "volatiles": 64
+  }
+ },
+ {
+  "jeu": "ka59-38d34dbb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "resets_compteur": 4,
+  "score_sdk": 0.0,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   28,
+   109,
+   51,
+   51,
+   33,
+   132,
+   326
+  ],
+  "cpu_s": 1.95,
+  "cpu_cerveau_s": 1.02,
+  "mur_s": 1.96,
+  "prefixe": "ka59",
+  "genre": "cerveau",
+  "graine": 0,
+  "stats_cerveau": {
+   "resets_cerveau": 0,
+   "morts": 4,
+   "niveaux": 0,
+   "volatiles": 0
+  }
+ }
+]

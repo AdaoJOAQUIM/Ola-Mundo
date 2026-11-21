@@ -1,0 +1,987 @@
+{
+ "decoupe": {
+  "graine": 2026,
+  "dev": [
+   "cn04",
+   "ls20",
+   "sc25",
+   "tn36",
+   "ka59"
+  ],
+  "held_out": [
+   "ar25",
+   "bp35",
+   "cd82",
+   "dc22",
+   "ft09",
+   "g50t",
+   "lf52",
+   "lp85",
+   "m0r0",
+   "r11l",
+   "re86",
+   "s5i5",
+   "sb26",
+   "sk48",
+   "sp80",
+   "su15",
+   "tr87",
+   "tu93",
+   "vc33",
+   "wa30"
+  ]
+ },
+ "held_out": {
+  "nous": {
+   "jeux": 20,
+   "niveaux": 7,
+   "niveaux_total": 150,
+   "jeux_gagnes": 0,
+   "actions": 10000,
+   "cpu_s": 63.9,
+   "score_sdk_moyen": 0.587
+  },
+  "aleatoire": {
+   "par_graine": [
+    {
+     "jeux": 20,
+     "niveaux": 2,
+     "niveaux_total": 150,
+     "jeux_gagnes": 0,
+     "actions": 10000,
+     "cpu_s": 46.4,
+     "score_sdk_moyen": 0.24
+    },
+    {
+     "jeux": 20,
+     "niveaux": 2,
+     "niveaux_total": 150,
+     "jeux_gagnes": 0,
+     "actions": 10000,
+     "cpu_s": 45.9,
+     "score_sdk_moyen": 0.005
+    },
+    {
+     "jeux": 20,
+     "niveaux": 1,
+     "niveaux_total": 150,
+     "jeux_gagnes": 0,
+     "actions": 10000,
+     "cpu_s": 42.3,
+     "score_sdk_moyen": 0.129
+    }
+   ],
+   "niveaux_moyenne": 1.67,
+   "jeux_gagnes_moyenne": 0.0,
+   "actions_moyenne": 10000.0,
+   "cpu_s_moyenne": 44.87,
+   "score_sdk_moyen_moyenne": 0.12,
+   "niveaux_total": 150
+  },
+  "prime_run1": {
+   "niveaux": 145,
+   "niveaux_total": 150,
+   "jeux_gagnes": 19,
+   "actions": 9886
+  }
+ },
+ "dev": {
+  "nous": {
+   "jeux": 5,
+   "niveaux": 2,
+   "niveaux_total": 33,
+   "jeux_gagnes": 0,
+   "actions": 2500,
+   "cpu_s": 12.0,
+   "score_sdk_moyen": 0.642
+  },
+  "aleatoire": {
+   "par_graine": [
+    {
+     "jeux": 5,
+     "niveaux": 0,
+     "niveaux_total": 33,
+     "jeux_gagnes": 0,
+     "actions": 2500,
+     "cpu_s": 6.4,
+     "score_sdk_moyen": 0.0
+    },
+    {
+     "jeux": 5,
+     "niveaux": 0,
+     "niveaux_total": 33,
+     "jeux_gagnes": 0,
+     "actions": 2500,
+     "cpu_s": 7.0,
+     "score_sdk_moyen": 0.0
+    },
+    {
+     "jeux": 5,
+     "niveaux": 0,
+     "niveaux_total": 33,
+     "jeux_gagnes": 0,
+     "actions": 2500,
+     "cpu_s": 6.3,
+     "score_sdk_moyen": 0.0
+    }
+   ],
+   "niveaux_moyenne": 0.0,
+   "jeux_gagnes_moyenne": 0.0,
+   "actions_moyenne": 2500.0,
+   "cpu_s_moyenne": 6.57,
+   "score_sdk_moyen_moyenne": 0.0,
+   "niveaux_total": 33
+  },
+  "prime_run1": {
+   "niveaux": 33,
+   "niveaux_total": 33,
+   "jeux_gagnes": 5,
+   "actions": 1483
+  }
+ },
+ "tous": {
+  "nous": {
+   "jeux": 25,
+   "niveaux": 9,
+   "niveaux_total": 183,
+   "jeux_gagnes": 0,
+   "actions": 12500,
+   "cpu_s": 75.9,
+   "score_sdk_moyen": 0.598
+  },
+  "aleatoire": {
+   "par_graine": [
+    {
+     "jeux": 25,
+     "niveaux": 2,
+     "niveaux_total": 183,
+     "jeux_gagnes": 0,
+     "actions": 12500,
+     "cpu_s": 52.8,
+     "score_sdk_moyen": 0.192
+    },
+    {
+     "jeux": 25,
+     "niveaux": 2,
+     "niveaux_total": 183,
+     "jeux_gagnes": 0,
+     "actions": 12500,
+     "cpu_s": 52.8,
+     "score_sdk_moyen": 0.004
+    },
+    {
+     "jeux": 25,
+     "niveaux": 1,
+     "niveaux_total": 183,
+     "jeux_gagnes": 0,
+     "actions": 12500,
+     "cpu_s": 48.6,
+     "score_sdk_moyen": 0.103
+    }
+   ],
+   "niveaux_moyenne": 1.67,
+   "jeux_gagnes_moyenne": 0.0,
+   "actions_moyenne": 12500.0,
+   "cpu_s_moyenne": 51.4,
+   "score_sdk_moyen_moyenne": 0.1,
+   "niveaux_total": 183
+  },
+  "prime_run1": {
+   "niveaux": 178,
+   "niveaux_total": 183,
+   "jeux_gagnes": 24,
+   "actions": 11369
+  }
+ },
+ "economie_calcul": {
+  "run-1": {
+   "cout_total_usd": 1059.35,
+   "economie_usd_niveaux_egaux": 63.8,
+   "economie_pct_niveaux_egaux": 6.02,
+   "economie_usd_ponderee_reference": 20.5,
+   "economie_pct_ponderee_reference": 1.93
+  },
+  "run-2": {
+   "cout_total_usd": 1288.07,
+   "economie_usd_niveaux_egaux": 97.9,
+   "economie_pct_niveaux_egaux": 7.6,
+   "economie_usd_ponderee_reference": 29.8,
+   "economie_pct_ponderee_reference": 2.32
+  },
+  "run-3": {
+   "cout_total_usd": 944.0,
+   "economie_usd_niveaux_egaux": 39.4,
+   "economie_pct_niveaux_egaux": 4.17,
+   "economie_usd_ponderee_reference": 14.2,
+   "economie_pct_ponderee_reference": 1.51
+  }
+ },
+ "par_jeu": [
+  {
+   "jeu": "ar25",
+   "split": "held-out",
+   "niveaux_total": 8,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.51,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 8,
+   "prime_etat": "WIN",
+   "prime_actions": 264,
+   "prime_appels_modele": 73
+  },
+  {
+   "jeu": "bp35",
+   "split": "held-out",
+   "niveaux_total": 9,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 5.91,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 9,
+   "prime_etat": "WIN",
+   "prime_actions": 602,
+   "prime_appels_modele": 234
+  },
+  {
+   "jeu": "cd82",
+   "split": "held-out",
+   "niveaux_total": 6,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.09,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 363,
+   "prime_appels_modele": 156
+  },
+  {
+   "jeu": "cn04",
+   "split": "dev",
+   "niveaux_total": 6,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.06,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 200,
+   "prime_appels_modele": 125
+  },
+  {
+   "jeu": "dc22",
+   "split": "held-out",
+   "niveaux_total": 6,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.31,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 985,
+   "prime_appels_modele": 261
+  },
+  {
+   "jeu": "ft09",
+   "split": "held-out",
+   "niveaux_total": 6,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.66,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 75,
+   "prime_appels_modele": 37
+  },
+  {
+   "jeu": "g50t",
+   "split": "held-out",
+   "niveaux_total": 7,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 4.83,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 7,
+   "prime_etat": "WIN",
+   "prime_actions": 491,
+   "prime_appels_modele": 142
+  },
+  {
+   "jeu": "ka59",
+   "split": "dev",
+   "niveaux_total": 7,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 1.95,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 7,
+   "prime_etat": "WIN",
+   "prime_actions": 306,
+   "prime_appels_modele": 87
+  },
+  {
+   "jeu": "lf52",
+   "split": "held-out",
+   "niveaux_total": 10,
+   "nous_niveaux": 1,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.06079406307977736,
+   "nous_cpu_s": 4.76,
+   "nous_niveaux_actions": [
+    175,
+    325,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 5,
+   "prime_etat": "ACTIVE",
+   "prime_actions": 2635,
+   "prime_appels_modele": 1397
+  },
+  {
+   "jeu": "lp85",
+   "split": "held-out",
+   "niveaux_total": 8,
+   "nous_niveaux": 1,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 1.6586317722681359,
+   "nous_cpu_s": 2.08,
+   "nous_niveaux_actions": [
+    22,
+    478,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 8,
+   "prime_etat": "WIN",
+   "prime_actions": 114,
+   "prime_appels_modele": 92
+  },
+  {
+   "jeu": "ls20",
+   "split": "dev",
+   "niveaux_total": 7,
+   "nous_niveaux": 1,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.04409171075837742,
+   "nous_cpu_s": 2.31,
+   "nous_niveaux_actions": [
+    198,
+    302,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 7,
+   "prime_etat": "WIN",
+   "prime_actions": 504,
+   "prime_appels_modele": 177
+  },
+  {
+   "jeu": "m0r0",
+   "split": "held-out",
+   "niveaux_total": 6,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.42,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 212,
+   "prime_appels_modele": 83
+  },
+  {
+   "jeu": "r11l",
+   "split": "held-out",
+   "niveaux_total": 6,
+   "nous_niveaux": 1,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 4.761904761904762,
+   "nous_cpu_s": 4.13,
+   "nous_niveaux_actions": [
+    10,
+    490,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    1,
+    1,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 86,
+   "prime_appels_modele": 96
+  },
+  {
+   "jeu": "re86",
+   "split": "held-out",
+   "niveaux_total": 8,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 1.01,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 8,
+   "prime_etat": "WIN",
+   "prime_actions": 694,
+   "prime_appels_modele": 160
+  },
+  {
+   "jeu": "s5i5",
+   "split": "held-out",
+   "niveaux_total": 8,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 0.97,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 8,
+   "prime_etat": "WIN",
+   "prime_actions": 298,
+   "prime_appels_modele": 126
+  },
+  {
+   "jeu": "sb26",
+   "split": "held-out",
+   "niveaux_total": 8,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 12.47,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 8,
+   "prime_etat": "WIN",
+   "prime_actions": 133,
+   "prime_appels_modele": 37
+  },
+  {
+   "jeu": "sc25",
+   "split": "dev",
+   "niveaux_total": 6,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.89,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 149,
+   "prime_appels_modele": 66
+  },
+  {
+   "jeu": "sk48",
+   "split": "held-out",
+   "niveaux_total": 8,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 2.12,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 8,
+   "prime_etat": "WIN",
+   "prime_actions": 1024,
+   "prime_appels_modele": 192
+  },
+  {
+   "jeu": "sp80",
+   "split": "held-out",
+   "niveaux_total": 6,
+   "nous_niveaux": 1,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.19047619047619052,
+   "nous_cpu_s": 2.77,
+   "nous_niveaux_actions": [
+    195,
+    305,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    1,
+    1,
+    1
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 148,
+   "prime_appels_modele": 70
+  },
+  {
+   "jeu": "su15",
+   "split": "held-out",
+   "niveaux_total": 9,
+   "nous_niveaux": 1,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.009359086290195487,
+   "nous_cpu_s": 3.28,
+   "nous_niveaux_actions": [
+    339,
+    161,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 9,
+   "prime_etat": "WIN",
+   "prime_actions": 126,
+   "prime_appels_modele": 135
+  },
+  {
+   "jeu": "tn36",
+   "split": "dev",
+   "niveaux_total": 7,
+   "nous_niveaux": 1,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 3.1636183885318836,
+   "nous_cpu_s": 2.83,
+   "nous_niveaux_actions": [
+    34,
+    466,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 7,
+   "prime_etat": "WIN",
+   "prime_actions": 324,
+   "prime_appels_modele": 142
+  },
+  {
+   "jeu": "tr87",
+   "split": "held-out",
+   "niveaux_total": 6,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 1.06,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 6,
+   "prime_etat": "WIN",
+   "prime_actions": 195,
+   "prime_appels_modele": 70
+  },
+  {
+   "jeu": "tu93",
+   "split": "held-out",
+   "niveaux_total": 9,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 4.27,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 9,
+   "prime_etat": "WIN",
+   "prime_actions": 199,
+   "prime_appels_modele": 87
+  },
+  {
+   "jeu": "vc33",
+   "split": "held-out",
+   "niveaux_total": 7,
+   "nous_niveaux": 2,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 5.0584249679314075,
+   "nous_cpu_s": 1.39,
+   "nous_niveaux_actions": [
+    16,
+    23,
+    461,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 7,
+   "prime_etat": "WIN",
+   "prime_actions": 213,
+   "prime_appels_modele": 67
+  },
+  {
+   "jeu": "wa30",
+   "split": "held-out",
+   "niveaux_total": 9,
+   "nous_niveaux": 0,
+   "nous_etat": "ACTION_CAP",
+   "nous_actions": 500,
+   "nous_score_sdk": 0.0,
+   "nous_cpu_s": 0.83,
+   "nous_niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "aleatoire_niveaux_par_graine": [
+    0,
+    0,
+    0
+   ],
+   "prime_niveaux": 9,
+   "prime_etat": "WIN",
+   "prime_actions": 1029,
+   "prime_appels_modele": 184
+  }
+ ],
+ "journal_versions": {
+  "champion": "v2",
+  "groupes_transfert": [
+   "C"
+  ],
+  "journal": [
+   {
+    "version": "v0",
+    "date": "2026-11-21T12:06:14",
+    "description": "prieurs Beta non informatifs, aucun transfert",
+    "decision": "base"
+   },
+   {
+    "version": "v1",
+    "date": "2026-11-21T12:06:43",
+    "description": "transfert des prieurs d'actions simples (A1-A5, A7)",
+    "jeux_test": [
+     "ls20",
+     "sc25",
+     "tn36",
+     "ka59"
+    ],
+    "graines": [
+     0,
+     1,
+     2
+    ],
+    "victoires_candidat": 0,
+    "defaites_candidat": 1,
+    "P_meilleur": 0.245,
+    "niveaux_candidat": 3,
+    "niveaux_champion": 4,
+    "decision": "RETOUR ARRIERE"
+   },
+   {
+    "version": "v2",
+    "date": "2026-11-21T12:07:12",
+    "description": "transfert des prieurs de clics par couleur/taille d'objet",
+    "jeux_test": [
+     "ls20",
+     "sc25",
+     "tn36",
+     "ka59"
+    ],
+    "graines": [
+     0,
+     1,
+     2
+    ],
+    "victoires_candidat": 3,
+    "defaites_candidat": 0,
+    "P_meilleur": 0.9418,
+    "niveaux_candidat": 4,
+    "niveaux_champion": 4,
+    "decision": "GARDE"
+   }
+  ]
+ }
+}

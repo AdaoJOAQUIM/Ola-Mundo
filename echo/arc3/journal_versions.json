@@ -1,0 +1,58 @@
+{
+ "champion": "v2",
+ "groupes_transfert": [
+  "C"
+ ],
+ "journal": [
+  {
+   "version": "v0",
+   "date": "2026-11-21T12:06:14",
+   "description": "prieurs Beta non informatifs, aucun transfert",
+   "decision": "base"
+  },
+  {
+   "version": "v1",
+   "date": "2026-11-21T12:06:43",
+   "description": "transfert des prieurs d'actions simples (A1-A5, A7)",
+   "jeux_test": [
+    "ls20",
+    "sc25",
+    "tn36",
+    "ka59"
+   ],
+   "graines": [
+    0,
+    1,
+    2
+   ],
+   "victoires_candidat": 0,
+   "defaites_candidat": 1,
+   "P_meilleur": 0.245,
+   "niveaux_candidat": 3,
+   "niveaux_champion": 4,
+   "decision": "RETOUR ARRIERE"
+  },
+  {
+   "version": "v2",
+   "date": "2026-11-21T12:07:12",
+   "description": "transfert des prieurs de clics par couleur/taille d'objet",
+   "jeux_test": [
+    "ls20",
+    "sc25",
+    "tn36",
+    "ka59"
+   ],
+   "graines": [
+    0,
+    1,
+    2
+   ],
+   "victoires_candidat": 3,
+   "defaites_candidat": 0,
+   "P_meilleur": 0.9418,
+   "niveaux_candidat": 4,
+   "niveaux_champion": 4,
+   "decision": "GARDE"
+  }
+ ]
+}

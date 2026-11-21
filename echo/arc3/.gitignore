@@ -1,0 +1,6 @@
+# Artefacts d'exécution : enregistrements du SDK, journaux, caches
+runs/
+recordings/
+*.jsonl
+__pycache__/
+*.pyc
