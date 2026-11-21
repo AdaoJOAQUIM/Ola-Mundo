@@ -1,0 +1,29 @@
+{
+  "parametres": 8829,
+  "octets_int8": 10939,
+  "entrainement": "aucun (0 donnée, 0 gradient)",
+  "test": {
+    "n": 1000,
+    "resolus": 565,
+    "violations": 0,
+    "contradictions": 0,
+    "cases_vides_trouvees": 0.6909,
+    "pas_moyen": 8.17,
+    "pas_max": 21,
+    "cpu_s": 4.552,
+    "reference_propagation": 565,
+    "accord_avec_reference": 1000
+  },
+  "entrainement_jeu": {
+    "n": 1000,
+    "resolus": 525,
+    "violations": 0,
+    "contradictions": 0,
+    "cases_vides_trouvees": 0.6664,
+    "pas_moyen": 8.2,
+    "pas_max": 19,
+    "cpu_s": 4.325,
+    "reference_propagation": 525,
+    "accord_avec_reference": 1000
+  }
+}
