@@ -1,0 +1,120 @@
+{
+  "modele": "HuggingFaceTB/SmolLM2-135M",
+  "perplexite_avant": 28.42,
+  "taches": {
+    "capitales": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 0.9,
+      "vecteur_ecrit_sans_exemple": 0.43333333333333335,
+      "temoin_aleatoire": 0.0,
+      "couche": 21,
+      "intensite": 1.0,
+      "precision_calibration": 0.7,
+      "perplexite_avec_vecteur": 76.57,
+      "exemples_reponses": [
+        [
+          "Colombia",
+          "Buenos Aires"
+        ],
+        [
+          "Japan",
+          "Tokyo"
+        ],
+        [
+          "Italy",
+          "Madrid"
+        ],
+        [
+          "Hungary",
+          "Berlin"
+        ]
+      ]
+    },
+    "contraires": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 0.9333333333333333,
+      "vecteur_ecrit_sans_exemple": 0.06666666666666667,
+      "temoin_aleatoire": 0.0,
+      "couche": 26,
+      "intensite": 1.0,
+      "precision_calibration": 0.15,
+      "perplexite_avec_vecteur": 53.84,
+      "exemples_reponses": [
+        [
+          "tall",
+          "low low low low low low"
+        ],
+        [
+          "big",
+          "bad bad bad bad bad bad"
+        ],
+        [
+          "weak",
+          "bad_bad_bad_"
+        ],
+        [
+          "poor",
+          "bad bad bad bad bad bad"
+        ]
+      ]
+    },
+    "anglais_francais": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 0.26666666666666666,
+      "vecteur_ecrit_sans_exemple": 0.0,
+      "temoin_aleatoire": 0.0,
+      "couche": 18,
+      "intensite": 2.0,
+      "precision_calibration": 0.05,
+      "perplexite_avec_vecteur": 2355.24,
+      "exemples_reponses": [
+        [
+          "book",
+          "- - - - - -"
+        ],
+        [
+          "house",
+          "- - - - - -"
+        ],
+        [
+          "mother",
+          "m - - - - -"
+        ],
+        [
+          "blue",
+          "– – – – – –"
+        ]
+      ]
+    },
+    "passe_irregulier": {
+      "sans_exemple": 0.0,
+      "cinq_exemples": 0.9666666666666667,
+      "vecteur_ecrit_sans_exemple": 0.23333333333333334,
+      "temoin_aleatoire": 0.0,
+      "couche": 23,
+      "intensite": 1.0,
+      "precision_calibration": 0.6,
+      "perplexite_avec_vecteur": 85.8,
+      "exemples_reponses": [
+        [
+          "write",
+          "wrote wrote wrote wrote wrote wrote"
+        ],
+        [
+          "eat",
+          "got got got got got got"
+        ],
+        [
+          "sell",
+          "won won won won won won"
+        ],
+        [
+          "tell",
+          "got got got got got got"
+        ]
+      ]
+    }
+  },
+  "poids_ecrits_par_tache": 576,
+  "cpu_s": 458.2
+}
