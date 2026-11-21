@@ -8,7 +8,10 @@ import sys, json, pickle, numpy as np
 sys.path.insert(0, '/home/user/Ola-Mundo/echo/arc/trm_officiel/code')
 import dataset.build_arc_dataset as B
 KMAX = 32
-sub = set(json.load(open('/home/user/Ola-Mundo/echo/arc/sous_ensemble_fusion.json'))['taches'])
+# Extension : sous-ensemble et sortie paramétrables (défauts = comportement d'origine)
+SUB_JSON = sys.argv[1] if len(sys.argv) > 1 else '/home/user/Ola-Mundo/echo/arc/sous_ensemble_fusion.json'
+OUT_PKL = sys.argv[2] if len(sys.argv) > 2 else 'subset_data.pkl'
+sub = set(json.load(open(SUB_JSON))['taches'])
 orig = B.convert_single_arc_puzzle
 KEEP = {}
 def patched(results, name, puzzle, aug_count, dest_mapping):
@@ -35,4 +38,4 @@ for sp, split in data.items():
 print('num ids', n, 'splits', list(data.keys()))
 out = {'idmap': idmap, 'n': n, 'test_puzzles': {k: v for k, v in test_puzzles.items() if k in sub}, 'groups': {}}
 out['groups'] = KEEP
-pickle.dump(out, open('subset_data.pkl', 'wb'))
+pickle.dump(out, open(OUT_PKL, 'wb'))

@@ -1,0 +1,26 @@
+{
+ "graine": 2026,
+ "tirage": "random.Random(2026).sample(taches d'\u00e9valuation \u00e0 1 seule entr\u00e9e de test, hors ancien sous-ensemble, 20)",
+ "taches": [
+  "00dbd492",
+  "1c0d0a4b",
+  "22a4bbc2",
+  "281123b4",
+  "54db823b",
+  "58e15b12",
+  "762cd429",
+  "9c1e755f",
+  "a59b95c0",
+  "b942fd60",
+  "bd14c3bf",
+  "c3202e5a",
+  "cd3c21df",
+  "cfb2ce5a",
+  "d4b1c2b1",
+  "dd2401ed",
+  "e2092e0c",
+  "e633a9e5",
+  "e6de6e8f",
+  "e9b4f6fc"
+ ]
+}

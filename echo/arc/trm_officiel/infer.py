@@ -12,7 +12,7 @@ from utils.functions import load_model_class
 CK = '/root/.cache/huggingface/hub/models--arcprize--trm_arc_prize_verification/snapshots/55ced5dd59de74c52f53d47aa2898232b5a15b7a/arc_v1_public/'
 cfg = yaml.safe_load(open(CK + 'all_config.yaml'))['arch']
 DT = os.environ.get('TRM_DTYPE', 'float32'); cfg['forward_dtype'] = DT
-D = pickle.load(open('subset_data.pkl', 'rb'))
+D = pickle.load(open(os.environ.get('TRM_PKL', 'subset_data.pkl'), 'rb'))  # extension : jeu de tâches paramétrable
 mc = {k: v for k, v in cfg.items() if k not in ('name', 'loss')}
 mc.update(batch_size=1, vocab_size=12, seq_len=900, num_puzzle_identifiers=876406, causal=False)
 model = load_model_class(cfg['name'])(mc)
@@ -58,7 +58,7 @@ if mode == 'verify':
     sys.exit()
 
 res = {}
-outp = f'res_K{K}.json'
+outp = os.environ.get('TRM_OUT', f'res_K{K}.json')
 if os.path.exists(outp): res = json.load(open(outp))
 for t in tasks:
     if t in res: continue
