@@ -1,0 +1,60 @@
+{
+ "tests": "4 passed",
+ "bit_accounting": {
+  "rtn4": {
+   "attendu": 338412960,
+   "json": 338412960,
+   "bpw": 4.2500180844907405,
+   "note": "4 bits code + 8 bits echelle de groupe + fp16 par matrice (decompresseur: sq*smax/255, sq entier 8 bits)"
+  },
+  "seedlm0375": {
+   "attendu": 29861280,
+   "json": 29861280,
+   "note": "graine 16 + exposant 4 + coef 4 par bloc de 64 + echelle fp16 par matrice"
+  },
+  "pranc0375": {
+   "json": 29862720,
+   "alpha_bits": 29859840,
+   "seeds_32b_par_matrice": 2880,
+   "reste": 0,
+   "note": "alpha fp16 comptes; graine de base 32 b par matrice (surcompte, conservateur)"
+  },
+  "hyper0375": {
+   "json": 29835152,
+   "attendu": 29835152,
+   "budget": 29859840.0,
+   "sous_budget": true
+  }
+ },
+ "bit_accounting_ok": true,
+ "ppl_baseline": {
+  "mine": 23.117865881800466,
+  "claimed": 23.12,
+  "tokens": 11753,
+  "pass_": true
+ },
+ "rtn4": {
+  "mine_ratio": 1.1970612848404745,
+  "claimed": 1.2,
+  "mine_err": 0.100196307642898,
+  "variant": "echelle de groupe fp16 (4.5 b/w)",
+  "pass_": true
+ },
+ "lfsr": {
+  "mean_rel_err_real_blocks": 0.8623877763748169,
+  "global_rel_real": 0.8629874587059021,
+  "energy_captured": 0.2558383047580719,
+  "gauss_mean_rel": 0.861728310585022,
+  "claimed": 0.863,
+  "pass_": true
+ },
+ "mlp_share": {
+  "smol": 0.5919506022703429,
+  "qwen": 0.3512009595665789,
+  "claimed": [
+   0.592,
+   0.351
+  ],
+  "pass_": true
+ }
+}

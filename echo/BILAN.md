@@ -152,6 +152,42 @@ et un modèle du monde sous forme de programme testé par l'expérience. Prime A
 déjà tous les niveaux dans un passage sur trois ; ses derniers points perdus viennent de
 l'efficacité en actions.
 
+## 7 quater. Graines : Kimi K3.1 complet dans 128 Go ? (`graines/`)
+
+**Question.** K3.1 a 2,78 T de paramètres. 128 Go = 1,024·10¹² bits, soit environ 0,375 bit par poids.
+Des générateurs de poids (SeedLM, PRANC, hyper-réseau) peuvent-ils atteindre ce débit sans casser le modèle ?
+
+**Critère fixé à l'avance.** « Plausible » seulement si une méthode à ≤ 0,375 bit/poids reste à +10 % de
+perplexité sur les deux modèles testés. Sinon, dire où la qualité casse.
+
+**Résultats** (MLP comprimés, tous les bits comptés ; perplexité / original ; SmolLM2 = 23,12, Qwen = 27,20).
+
+| Débit (bit/poids) | Meilleure méthode | SmolLM2-135M | Qwen3.5-0.8B |
+|---|---|---|---|
+| 4,25 | RTN 4 bits | ×1,20 | ×1,09 |
+| 4,0 | SeedLM (recherche complète) | ×1,44 | ×1,28 (recherche partielle) |
+| 3,25 | RTN 3 bits | ×3,0 | non mesuré |
+| 2,25 | RTN 2 bits | ×4,5·10⁴ | ×168 |
+| 1,0 | SeedLM | ×2,4·10⁶ | non mesuré |
+| 0,375 | SeedLM (PRANC, hyper-réseau : pires) | ×2,7·10⁷ | ×2,3·10⁴ |
+
+**Verdict : critère non atteint.** À 0,375 bit/poids le modèle est détruit sur les deux modèles. L'erreur relative de
+SeedLM est de 0,86 : 16 bits de graine choisissent parmi 65 536 motifs aléatoires, et le meilleur ne conserve
+qu'environ un quart d'un bloc de 64 poids. PRANC (0,99) et l'hyper-réseau (0,999) n'apprennent rien de mieux que la moyenne.
+À 4 bits, SeedLM (×1,44) est moins bon que l'arrondi simple (RTN ×1,20) : la graine ne fait pas mieux que de bonnes échelles.
+
+**Vérification indépendante.** Tests : 4 réussis. Comptabilité des bits : exacte pour RTN, SeedLM, PRANC et hyper-réseau.
+Perplexité de base 23,12 et RTN 4 bits ×1,20 retrouvées. Erreur d'un bloc à 0,375 bit : 0,862 en moyenne
+(théorie ≈ 0,86). Parts de paramètres comprimés : 59,2 % et 35,1 %. Scripts et chiffres dans `graines/verif/`.
+
+**Réserves.**
+- Petits modèles (135 M et 0,8 B). Le plus grand est plus robuste (jusqu'à trois ordres de grandeur de moins
+  de dégradation à erreur égale), mais reste ruiné à 0,375 bit.
+- Écarts documentés : recherche de graines partielle sur certaines lignes, exposant partagé élargi, PRANC par blocs,
+  un seul hyper-réseau essayé (25 min d'entraînement).
+- Le test comprime 59 % (SmolLM2) et 35 % (Qwen) des paramètres. Les experts de K3.1 en font environ 98 %,
+  donc il n'y a presque rien d'intact pour compenser : le cas réel est plus dur.
+
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,

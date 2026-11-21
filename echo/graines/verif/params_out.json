@@ -1,0 +1,1 @@
+{"smol": [134515008, 79626240, 0.5919506022703429], "qwen": [873438784, 275251200, 0.31513507877387775], "qwen_language_model": [752393024, 264241152, 0.3512009595665789], "qwen_note": "fichier complet = 873438784 (visuel 100.6M + MTP 20.5M exclus du modele de langue charge); MLP du modele de langue 264241152"}
