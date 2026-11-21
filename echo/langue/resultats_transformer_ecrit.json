@@ -1,0 +1,23 @@
+{
+  "version_litterale_identique": true,
+  "bibliotheque_caracteres": 133429,
+  "evaluation_caracteres": 3000,
+  "K": 10,
+  "beta": 16,
+  "epsilon": 0.05,
+  "bpc": {
+    "unigramme": 4.392,
+    "transformer_ecrit_contexte_seul": 4.354,
+    "transformer_ecrit_bibliotheque": 2.316,
+    "transformer_ecrit_bibliotheque_plus_contexte": 2.285,
+    "echo_p_meme_bibliotheque": 2.632,
+    "lzma_meme_bibliotheque": 2.741
+  },
+  "copie_sequences_aleatoires": {
+    "reussite": 1.0,
+    "controle_valeurs_melangees": 0.0121,
+    "hasard": 0.002
+  },
+  "exemple": "It was a dark and stormy nightle wasn't---- Sheir joing his mist race d\nI am not:he plan. to being sor a rand snow hant fleeps;) and hearth: broad, Hal's windle is pve hundreparticular ing it mho tWhat my relief Sillion of Israel At and returned Tarder,\" saw a bust a fact me look aw mine is Mays soonsidegroom to better me come t",
+  "cpu_s": 66.7
+}
