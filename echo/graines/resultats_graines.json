@@ -1,0 +1,311 @@
+{
+ "SmolLM2-135M": {
+  "info": {
+   "params_total": 134515008,
+   "params_mlp": 79626240,
+   "part_comprimee": 0.5919506022703429,
+   "n_matrices": 90
+  },
+  "orig": {
+   "ppl": 23.117865881800466,
+   "n_tokens": 11753,
+   "bpw_orig": 16.0
+  },
+  "rtn4": {
+   "bits": 338412960,
+   "n_comprime": 79626240,
+   "bpw": 4.2500180844907405,
+   "err_rel": 0.10169645366240633,
+   "err_rel_moy_matrice": 0.10171017214457642,
+   "methode": "RTN g32 sym, echelle 8 bits",
+   "bits_nominal": 4,
+   "ppl": 27.678374815484258,
+   "ppl_rel": 1.1972720560367145,
+   "temps_compression_s": 0.24775242805480957,
+   "cpu_s": 64.12992781400001
+  },
+  "rtn3": {
+   "bits": 258786720,
+   "n_comprime": 79626240,
+   "bpw": 3.250018084490741,
+   "err_rel": 0.23653100416785372,
+   "err_rel_moy_matrice": 0.23655832419082812,
+   "methode": "RTN g32 sym, echelle 8 bits",
+   "bits_nominal": 3,
+   "ppl": 68.42137261950857,
+   "ppl_rel": 2.9596751261271605,
+   "temps_compression_s": 0.14024949073791504,
+   "cpu_s": 59.43947482500002
+  },
+  "rtn2": {
+   "bits": 179160480,
+   "n_comprime": 79626240,
+   "bpw": 2.250018084490741,
+   "err_rel": 0.6682373195679323,
+   "err_rel_moy_matrice": 0.6682543620405946,
+   "methode": "RTN g32 sym, echelle 8 bits",
+   "bits_nominal": 2,
+   "ppl": 1039429.6169581747,
+   "ppl_rel": 44962.17870077988,
+   "temps_compression_s": 0.16749286651611328,
+   "cpu_s": 62.493272061
+  },
+  "lzma_rtn4": {
+   "bits_codes_brut": 318504960,
+   "bits_lzma": 289335488,
+   "bpw_codes_brut": 4.0,
+   "bpw_codes_lzma": 3.633670106738683,
+   "bpw_lzma_avec_echelles": 3.883670106738683
+  },
+  "pr0375": {
+   "bits": 29862720,
+   "n_comprime": 79626240,
+   "bpw": 0.37503616898148145,
+   "err_rel": 0.9882073492051584,
+   "err_rel_moy_matrice": 0.9882069704691656,
+   "methode": "PRANC par blocs L=4096 (base partagee, alpha fp16 MC)",
+   "bpw_cible": 0.375,
+   "ppl": 714205694.9693772,
+   "ppl_rel": 30894101.497994907,
+   "temps_compression_s": 0.38815903663635254,
+   "cpu_s": 53.63839760000002
+  },
+  "pr1": {
+   "bits": 79629120,
+   "n_comprime": 79626240,
+   "bpw": 1.0000361689814814,
+   "err_rel": 0.9682466601361226,
+   "err_rel_moy_matrice": 0.9682497907572725,
+   "methode": "PRANC par blocs L=4096 (base partagee, alpha fp16 MC)",
+   "bpw_cible": 1.0,
+   "ppl": 703044514.1275982,
+   "ppl_rel": 30411306.89667465,
+   "temps_compression_s": 0.873753547668457,
+   "cpu_s": 52.78579834599998
+  },
+  "sensibilite_seedlm": {
+   "sl4": {
+    "nseeds=4096,topk=8": 0.18958419561386108,
+    "nseeds=16384,topk=8": 0.1527213752269745,
+    "nseeds=65535,topk=1": 37.18193435668945,
+    "nseeds=65535,topk=8": 0.12640871107578278
+   },
+   "sl3": {
+    "nseeds=4096,topk=8": 0.30460500717163086,
+    "nseeds=16384,topk=8": 0.2635980546474457,
+    "nseeds=65535,topk=1": 16.053831100463867,
+    "nseeds=65535,topk=8": 0.22850766777992249
+   },
+   "sl2": {
+    "nseeds=4096,topk=8": 0.5036556124687195,
+    "nseeds=16384,topk=8": 0.45529869198799133,
+    "nseeds=65535,topk=1": 0.41916027665138245,
+    "nseeds=65535,topk=8": 0.4174898564815521
+   },
+   "sl1": {
+    "nseeds=4096,topk=8": 0.751704216003418,
+    "nseeds=16384,topk=8": 0.718612015247345,
+    "nseeds=65535,topk=1": 0.6918200850486755,
+    "nseeds=65535,topk=8": 0.6917731165885925
+   },
+   "sl0375": {
+    "nseeds=4096,topk=8": 0.8957483768463135,
+    "nseeds=16384,topk=8": 0.8793318271636963,
+    "nseeds=65535,topk=1": 0.8632570505142212,
+    "nseeds=65535,topk=8": 0.8632420301437378
+   }
+  },
+  "sl0375_full": {
+   "bits": 29861280,
+   "n_comprime": 79626240,
+   "bpw": 0.37501808449074076,
+   "err_rel": 0.8633902209945947,
+   "err_rel_moy_matrice": 0.8633975913836262,
+   "methode": "SeedLM",
+   "C": 64,
+   "P": 1,
+   "nseeds": 65535,
+   "topk": 8,
+   "bits_bloc": 24,
+   "ppl": 630048689.8331442,
+   "ppl_rel": 27253756.599096365,
+   "temps_compression_s": 165.1430389881134,
+   "cpu_s": 658.211050198
+  },
+  "sl1_full": {
+   "bits": 79627680,
+   "n_comprime": 79626240,
+   "bpw": 1.0000180844907407,
+   "err_rel": 0.691918976526659,
+   "err_rel_moy_matrice": 0.6919458181567857,
+   "methode": "SeedLM",
+   "C": 24,
+   "P": 1,
+   "nseeds": 65535,
+   "topk": 8,
+   "bits_bloc": 24,
+   "ppl": 56318437.95450133,
+   "ppl_rel": 2436143.4676735452,
+   "temps_compression_s": 376.6279299259186,
+   "cpu_s": 1446.211012716
+  },
+  "sl4_p12": {
+   "bits": 318506400,
+   "n_comprime": 79626240,
+   "bpw": 4.0000180844907405,
+   "err_rel": 0.18958176413904826,
+   "err_rel_moy_matrice": 0.1895832725041303,
+   "methode": "SeedLM",
+   "C": 8,
+   "P": 3,
+   "nseeds": 4096,
+   "topk": 8,
+   "bits_bloc": 32,
+   "ppl": 48.223931702267194,
+   "ppl_rel": 2.0860027456181185,
+   "temps_compression_s": 67.96029591560364,
+   "cpu_s": 319.6642263489998
+  },
+  "sl3_p12": {
+   "bits": 238880160,
+   "n_comprime": 79626240,
+   "bpw": 3.000018084490741,
+   "err_rel": 0.3043625293347723,
+   "err_rel_moy_matrice": 0.30436691766476476,
+   "methode": "SeedLM",
+   "C": 12,
+   "P": 4,
+   "nseeds": 4096,
+   "topk": 8,
+   "bits_bloc": 36,
+   "ppl": 422.23364666577413,
+   "ppl_rel": 18.264386895599106,
+   "temps_compression_s": 55.072829723358154,
+   "cpu_s": 266.78697875299986
+  },
+  "sl2_p12": {
+   "bits": 159255360,
+   "n_comprime": 79626240,
+   "bpw": 2.0000361689814814,
+   "err_rel": 0.502964758610061,
+   "err_rel_moy_matrice": 0.5029808178448648,
+   "methode": "SeedLM",
+   "C": 14,
+   "P": 2,
+   "nseeds": 4096,
+   "topk": 8,
+   "bits_bloc": 28,
+   "ppl": 4522104.149007279,
+   "ppl_rel": 195610.79608854832,
+   "temps_compression_s": 34.17216658592224,
+   "cpu_s": 187.70803438600024
+  },
+  "hyper25": {
+   "bits": 29835152,
+   "n_comprime": 79626240,
+   "bpw": 0.3746899514531893,
+   "err_rel": 0.9985909235469776,
+   "err_rel_moy_matrice": 0.9985251203156199,
+   "methode": "HyperNetwork MLP (coordonnees -> bloc de 32 poids)",
+   "H": 1287,
+   "params_fp16": 1864607,
+   "pas_entrainement": 11399,
+   "minutes_entrainement": 25.001207836469014,
+   "bits_params": 29835152,
+   "ppl": 642228888.7050686,
+   "ppl_rel": 27780630.443516117,
+   "temps_compression_s": 1533.7184660434723,
+   "cpu_s": 6110.710151093001
+  }
+ },
+ "Qwen3.5-0.8B": {
+  "info": {
+   "params_total": 752393024,
+   "params_mlp": 264241152,
+   "part_comprimee": 0.3512009595665789,
+   "n_matrices": 72
+  },
+  "orig": {
+   "ppl": 27.204615481141904,
+   "n_tokens": 11753,
+   "bpw_orig": 16.0
+  },
+  "rtn4": {
+   "bits": 1123026048,
+   "n_comprime": 264241152,
+   "bpw": 4.250004359654018,
+   "err_rel": 0.10159005194942111,
+   "err_rel_moy_matrice": 0.10158658731881973,
+   "methode": "RTN g32 sym, echelle 8 bits",
+   "bits_nominal": 4,
+   "ppl": 29.581777842607224,
+   "ppl_rel": 1.087380847676864,
+   "temps_compression_s": 0.5155284404754639,
+   "cpu_s": 305.96693452299996
+  },
+  "rtn2": {
+   "bits": 594543744,
+   "n_comprime": 264241152,
+   "bpw": 2.250004359654018,
+   "err_rel": 0.6681259319438958,
+   "err_rel_moy_matrice": 0.668625112212314,
+   "methode": "RTN g32 sym, echelle 8 bits",
+   "bits_nominal": 2,
+   "ppl": 4559.561107248445,
+   "ppl_rel": 167.6024831304493,
+   "temps_compression_s": 0.46004700660705566,
+   "cpu_s": 293.59684929700006
+  },
+  "sl0375_full": {
+   "bits": 99091584,
+   "n_comprime": 264241152,
+   "bpw": 0.37500435965401785,
+   "err_rel": 0.8632960967791513,
+   "err_rel_moy_matrice": 0.8632834522242376,
+   "methode": "SeedLM",
+   "C": 64,
+   "P": 1,
+   "nseeds": 65535,
+   "topk": 8,
+   "bits_bloc": 24,
+   "ppl": 617727.6264418486,
+   "ppl_rel": 22706.72147048188,
+   "temps_compression_s": 527.8201162815094,
+   "cpu_s": 2256.578918747
+  },
+  "sl2_p12": {
+   "bits": 528483456,
+   "n_comprime": 264241152,
+   "bpw": 2.000004359654018,
+   "err_rel": 0.50259197758193,
+   "err_rel_moy_matrice": 0.5026756381252889,
+   "methode": "SeedLM",
+   "C": 14,
+   "P": 2,
+   "nseeds": 4096,
+   "topk": 8,
+   "bits_bloc": 28,
+   "ppl": 384.44317489909173,
+   "ppl_rel": 14.131542317353675,
+   "temps_compression_s": 122.14588713645935,
+   "cpu_s": 768.627421875
+  },
+  "sl4_p12": {
+   "bits": 1056965760,
+   "n_comprime": 264241152,
+   "bpw": 4.000004359654018,
+   "err_rel": 0.18941463204231437,
+   "err_rel_moy_matrice": 0.18948647169601282,
+   "methode": "SeedLM",
+   "C": 8,
+   "P": 3,
+   "nseeds": 4096,
+   "topk": 8,
+   "bits_bloc": 32,
+   "ppl": 34.74820410704813,
+   "ppl_rel": 1.277290764544546,
+   "temps_compression_s": 229.74813580513,
+   "cpu_s": 1180.7632122570003
+  }
+ }
+}
