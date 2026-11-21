@@ -70,7 +70,7 @@ Même sous-ensemble de 20 énigmes d'évaluation pour tous (notre solveur : 2 su
 |---|---|---|
 | TRM (1er prix) | point de contrôle officiel `arcprize/trm_arc_prize_verification`, 8 votes par énigme au lieu d'environ 1 000 | **12 sur 20** (10 au premier essai), environ 6 min de CPU par énigme ; recompté par nous sur les réponses officielles. Réserve : ce modèle a appris les exemples de démonstration de ces énigmes pendant son entraînement (protocole officiel de TRM) ; seules les réponses de test sont inédites. 20 énigmes, c'est peu : environ ±11 points d'incertitude |
 | SOAR (2e prix) | son idée (s'améliorer à partir de ses propres solutions), appliquée à notre solveur | en cours |
-| CompressARC (3e prix) | code officiel, entraînement réduit à ≈ 500 s par énigme sur CPU | en attente du CPU |
+| CompressARC (3e prix) | code officiel, entraînement réduit à environ 500 s par énigme sur 1 cœur (150 à 783 pas au lieu de 2 000) | **1 sur 20** (1a2e2828, déjà résolue par TRM), 2,4 h au total. Borne basse : les grandes énigmes n'ont eu que 150 pas ; l'article annonce environ 20 % sur l'évaluation avec l'entraînement complet |
 | **Fusion** (`arc/fusion/fusionner.py`) | réponses vérifiées d'abord, puis accord entre méthodes, puis TRM, puis CompressARC | prête |
 
 ## 8. Ce qui reste à faire
