@@ -112,6 +112,33 @@ borne théorique). L'échantillonnage de Thompson pour choisir les mutations : n
 (P = 0,44). Pitman–Yor ne retrouve pas les décomptes de Kneser–Ney, car il part des comptes
 bruts ; Kneser–Ney utilise des comptes de continuation.
 
+### Bayes comme principe unique (`bayes/`)
+
+Lire = mettre à jour ses croyances (la bibliothèque sert d'a priori) ; prédire = garder
+tous les modèles (429), pondérés par leur probabilité a posteriori.
+
+| Mesure | Résultat |
+|---|---|
+| Texte neuf E (56 195 car., retiré de la bibliothèque, lu une fois) | mélange « fixed share » **1,634** contre champion 1,657 et LZMA 2,057 |
+| Changement de langue (bibliothèque anglaise, lecture de français) | 5,14 → **2,45** bit/car. par simple mise à jour, sans entraînement ; meilleur que LZMA dans 24 fenêtres sur 24. Une partie du gain vient des caractères absents de l'anglais |
+| Optimisation bayésienne (Optuna) contre évolution | même niveau en **7 à 16 fois moins d'essais** ; sur E, égale la retouche faite à la main |
+
+## 7 ter. ARC-AGI-3 : le harnais de Prime Agent sans grand modèle (`arc3/`)
+
+Protocole et code d'accès au jeu repris de Prime Agent (licence MIT) ; les jeux sont des
+boîtes noires, leur code n'est jamais lu. Réglage sur 5 jeux, test une seule fois sur 20.
+
+| 20 jeux de test | Niveaux | Jeux gagnés |
+|---|---|---|
+| Hasard (3 graines) | 1,7 / 150 | 0 |
+| **Cerveau bayésien sur CPU** (2 à 5 s par jeu) | **7 / 150** (recompté par nous : identique) | 0 |
+| Prime Agent + Claude Opus 5 (environ 1 000 $ par passage) | 145 / 150 | 19 |
+
+Ce qui manque : des connaissances de base (objet, personnage, but), deviner le but du jeu,
+et un modèle du monde sous forme de programme testé par l'expérience. Prime Agent réussit
+déjà tous les niveaux dans un passage sur trois ; ses derniers points perdus viennent de
+l'efficacité en actions.
+
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,
