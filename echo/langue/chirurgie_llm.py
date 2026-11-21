@@ -155,7 +155,7 @@ def main():
     choisies = [(k, u) for _, k, u in classement[:2]]
     temoin = copy.deepcopy(mod)
     g = torch.Generator().manual_seed(0)
-    hasard = [(k, (lambda v: v / v.norm())(torch.randn(u.shape[0], generator=g))) for k, _ in choisies]
+    hasard = [(k, (lambda v: v / v.norm())(torch.randn(u.shape[0], generator=g))) for k, u in choisies]
     modifies = editer(mod, choisies, a.n_col)
     editer(temoin, hasard, a.n_col)
     apres = mesurer(mod, tok, evalu, tenus, a.n_new)
