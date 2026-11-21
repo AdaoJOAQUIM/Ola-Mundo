@@ -1,0 +1,36 @@
+{
+  "modele": "HuggingFaceTB/SmolLM2-135M",
+  "parametres": 134515008,
+  "parametres_modifies": 73728,
+  "fraction_modifiee_pourcent": 0.0548,
+  "boucles_au_diagnostic": 0.475,
+  "couches_choisies": [
+    {
+      "couche": 20,
+      "separation": 1.72
+    },
+    {
+      "couche": 18,
+      "separation": 1.64
+    }
+  ],
+  "avant": {
+    "taux_boucles": 0.5,
+    "repetition_4grammes": 0.559,
+    "perplexite_texte_tenu_a_l_ecart": 29.65,
+    "exemple": " you are not going to be a\nmember of the party, you will be a member of the party, and that is the\nonly thing that matters.\"\n\n\"But I am not going to be a member of the party,\" said the other.\n\n\"But you are not going to be a member of the party,\" said Corkscrew.\n\n\"But I am not going to be a member of the party,\" said the other.\n\n"
+  },
+  "apres_chirurgie": {
+    "taux_boucles": 0.35,
+    "repetition_4grammes": 0.53,
+    "perplexite_texte_tenu_a_l_ecart": 29.66,
+    "exemple": " you are not going to be a\nmember of the party, you will be a member of the party.\"\n\n\"I am not going to be a member of the party,\" said the other, \"I am\ngoing to be a member of the party of the people.\"\n\n\"But you are not going to be a member of the party of the people,\"\nsaid Corkscrew, \"you are going to be a member of the party of the"
+  },
+  "temoin_direction_aleatoire": {
+    "taux_boucles": 0.475,
+    "repetition_4grammes": 0.55,
+    "perplexite_texte_tenu_a_l_ecart": 29.65,
+    "exemple": " you are not going to be a\nmember of the party, you will be a member of the party, and that is the\nonly thing that matters.\"\n\n\"But I am not going to be a member of the party,\" said the other.\n\n\"But you are not going to be a member of the party,\" said Corkscrew.\n\n\"But I am not going to be a member of the party,\" said the other.\n\n"
+  },
+  "cpu_s": 437.8
+}
