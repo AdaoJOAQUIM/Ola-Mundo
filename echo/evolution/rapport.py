@@ -169,7 +169,14 @@ def main():
            md_tableau(["Essai", "Raison du rejet"], [[k, v] for k, v in rejets_malv.items()]), ""]
     md += ["## 5. Tests unitaires", "", "```", tests_txt, "```", ""]
     md += [open(os.path.join(ICI, "texte_formule.md"), encoding="utf-8").read().strip(), ""]
-    md += ["## 7. Temps de calcul", "",
+    import rapport_composants
+    md_c, out_c = rapport_composants.construire(md_tableau)
+    md += md_c
+    if out_c:
+        out["composants"] = out_c
+        with open(os.path.join(ICI, "resultats_evolution.json"), "w", encoding="utf-8") as f:
+            json.dump(out, f, indent=1, ensure_ascii=False)
+    md += ["## 10. Temps de calcul", "",
            "Temps mur total des runs et du test : environ %.0f minutes, sur 4 coeurs (4 processus d'évaluation). "
            "Le temps CPU cumulé est de l'ordre de 3 fois le temps mur." % (temps_total / 60), ""]
     md += [open(os.path.join(ICI, "texte_limites.md"), encoding="utf-8").read().strip(), ""]

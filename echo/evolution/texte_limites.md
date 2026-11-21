@@ -1,4 +1,4 @@
-## 8. Limites et précautions
+## 11. Limites et précautions
 
 - **Un seul domaine de texte.** Bibliothèque et validation viennent des mêmes sources (romans anglais, textes bibliques, etc.). Rien ne dit que le champion vaut autant sur un autre type de texte.
 - **A sert à la fitness, B à la sélection, C a servi une seule fois.** Mais A, B et C sont trois morceaux consécutifs d'un même fichier : les trois peuvent se ressembler plus que des textes réellement différents. Les bpc de A, B et C ne sont pas comparables entre eux (textes différents).
@@ -9,3 +9,10 @@
 - **LZMA conditionnel** compresse biblio + C d'un bloc. C'est une référence grossière, pas un modèle de même nature.
 - **Peu de graines.** L'ablation compare 5 graines par mode ; la différence éventuelle est à lire avec le test de permutation indiqué.
 - **Mutations aléatoires, pas de gradient.** Le moteur ne descend pas les constantes de façon fine : voir la comparaison avec la référence à la main.
+- **Moteur complet : A/B seulement.** Les composants ajoutés (soi, MDL/Pareto, coût, MAP-Elites, arrêt précoce) n'ont pas été jugés sur C : C avait déjà servi pour le champion du run principal. Les comparaisons « complet contre simple » reposent sur A (fitness) et B (sélection).
+- **Coût mesuré, bruité.** Le CPU par évaluation vient de `time.process_time` sur une machine à 4 processus en parallèle ; le budget « CPU égal » inclut le CPU du processus parent. Les facteurs de pénalité (MDL 0,5 ; coût 0,01) sont des choix, pas des optimums.
+- **Garde-fous inchangés.** Les fichiers épinglés (`juge.py`, `garde_fous.py`, `donnees.py`, caches) n'ont pas été modifiés : la mesure du CPU est faite dans `composants.py`, autour de la tâche d'évaluation d'origine.
+- **Détection de structures.** Les « caractéristiques » des élites sont repérées par des règles syntaxiques simples ; une règle peut se tromper (une première version voyait de fausses remises, corrigée).
+- **Attribution.** L'ablation « complet contre simple » compare le paquet de cinq composants, pas chacun isolé. Le gain à CPU égal peut venir autant de la pénalité de coût et du MDL (génomes plus petits et plus rapides : plus d'évaluations pour le même CPU) que du soi. Le soi seul a sauté 9 pour cent (run principal) à 25 pour cent (ablation) des enfants ; la séparation entre enfants prédits mauvais et les autres est réelle mais modeste (taux de succès 0,055 contre 0,117).
+- **Perturbation du budget CPU du moteur simple.** Pendant les premiers runs « simple » de l'ablation, d'autres calculs tournaient sur la machine (tests, analyses) : le CPU mesuré y est gonflé et le nombre d'évaluations faites y est plus faible (888, 1392, 2720, 1752 contre 2048 à 2960 pour le complet). Quatre graines et p = 0,057 : tendance favorable au moteur complet, pas une preuve.
+- **Temps de calcul supplémentaire** : run complet 6 min (749 s de CPU cumulé) plus 1 min de vérification du point fixe ; ablation complet/simple : 15 min de temps mur.

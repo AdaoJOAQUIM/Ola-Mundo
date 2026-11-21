@@ -194,11 +194,117 @@ def test_comptages_contre_force_brute():
 
 
 def test_moteur_ne_touche_pas_c():
-    for f in ("moteur.py", "lancer_ablation.py", "mutations.py", "juge.py"):
+    for f in ("moteur.py", "lancer_ablation.py", "lancer_ablation2.py", "mutations.py", "juge.py", "composants.py"):
         txt = open(os.path.join(ICI, f), encoding="utf-8").read()
         assert "c.npz" not in txt and "CHEMIN_C" not in txt and "import tester" not in txt, f
     # le moteur n'importe que charger_ab (A et B)
     assert "charger_ab" in open(os.path.join(ICI, "moteur.py"), encoding="utf-8").read()
+
+
+# ---------------------------------------------------------------- composants ajoutés
+def test_pareto_jouet():
+    import composants as cp
+    # (bpc, taille) : 0 et 2 et 3 forment le front ; 1 est dominé par 0 ; 4 par 2
+    objs = [(1.0, 5.0), (1.5, 6.0), (2.0, 2.0), (3.0, 1.0), (2.5, 2.5)]
+    assert cp.front_pareto(objs) == [0, 2, 3]
+    rang = cp.tri_non_domine(objs)
+    assert rang[0] == rang[2] == rang[3] == 0 and rang[1] == 1 and rang[4] == 1
+    assert cp.domine((1, 1), (2, 2)) and not cp.domine((1, 2), (2, 1)) and not cp.domine((1, 1), (1, 1))
+    d = cp.distance_encombrement(objs, [0, 2, 3])
+    assert d[0] == d[3] == float("inf") and 0 < d[2] < float("inf")
+    # ajouter un point qui domine tout change le front
+    assert cp.front_pareto(objs + [(0.5, 0.5)]) == [5]
+
+
+def test_arret_precoce():
+    import composants as cp
+    a = cp.ArretPrecoce(delta=0.01, patience=300)
+    assert not a.mise_a_jour(0, 1.60)
+    assert not a.mise_a_jour(100, 1.50)      # vrai gain : on repart de 100
+    assert not a.mise_a_jour(250, 1.495)     # gain < delta : ne compte pas
+    assert not a.mise_a_jour(399, 1.495)
+    assert a.mise_a_jour(400, 1.495) and "patience" in a.raison
+    b = cp.ArretPrecoce(delta=0.01, patience=None, cible=1.5)
+    assert not b.mise_a_jour(10, 1.6) and b.mise_a_jour(20, 1.49) and b.raison == "cible_atteinte"
+
+
+def test_soi_apprend_et_se_calibre():
+    import composants as cp
+    rng = np.random.default_rng(0)
+    s = cp.Soi(min_exemples=100)
+    poids = np.zeros(len(s.ops) + 5)
+    poids[0] = 2.0          # l'opérateur 0 réussit plus souvent
+    poids[-1] = -2.5        # biais : succès rares
+    for _ in range(1500):
+        x = np.zeros(len(poids))
+        x[rng.integers(0, len(s.ops))] = 1.0
+        x[-1] = 1.0
+        p_vrai = 1 / (1 + np.exp(-(x @ poids)))
+        y = rng.random() < p_vrai
+        p_pred = s.predire(x)
+        s.observer(x, p_pred, [], y)
+        s.reentrainer()
+    r = s.rapport()
+    assert r["ECE_prequentiel"] < 0.05, r
+    assert r["Brier_prequentiel"] <= r["Brier_constant_taux_base"] + 1e-3, r
+    x0 = np.zeros(len(poids)); x0[0] = 1; x0[-1] = 1
+    x1 = np.zeros(len(poids)); x1[1] = 1; x1[-1] = 1
+    assert s.predire(x0) > s.predire(x1)
+    # saut : p très faible -> on saute, sauf exploration epsilon (~10 %)
+    import random
+    s.w = np.zeros(len(poids)); s.w[-1] = -8.0
+    rr = random.Random(1)
+    evalues = sum(s.decider(x1, rr)[0] for _ in range(2000))
+    assert 100 < evalues < 320, evalues
+
+
+def test_cout_mesure():
+    import composants as cp
+    jeu = _jeu_petit(T=400, A=30)
+    ev = cp.EvaluateurMesure({"A": jeu}, nproc=2, delai=10)
+    try:
+        res = ev.evaluer_lot([genome_initial.SOURCE, _gen(MALVEILLANTS["open"])], "A")
+    finally:
+        ev.fermer()
+    assert res[0]["ok"] and res[0]["cpu_s"] > 0
+    assert not res[1]["ok"] and res[1]["cpu_s"] == 0.0
+
+
+def test_mdl_et_descripteurs_map_elites():
+    import composants as cp
+    petit = genome_initial.SOURCE
+    gros = petit.replace("return p", "p = p + 0.1 * np.sqrt(p) + 0.2 * np.tanh(p) - 0.3 * np.abs(p)\n    return p")
+    assert cp.taille_mdl_bits(gros) > cp.taille_mdl_bits(petit)
+    assert cp.descripteur(petit)[1:] == (0, 0, 0)
+    remise = petit.replace("n[k] + e * p", "np.maximum(n[k] - 0.7, 0.0) + e * p")
+    assert "remise" in cp.caracteristiques(remise) and "remise" not in cp.caracteristiques(petit)
+    u = petit.replace("e = d[k] * 1.0", "e = d[k] + u1[k]")
+    assert "utilise_u1" in cp.caracteristiques(u)
+    carte = cp.MapElites()
+    assert carte.inserer({"source": petit, "id": 0}, 2.0)
+    assert not carte.inserer({"source": petit, "id": 1}, 2.5)   # même case, moins bon
+    assert carte.inserer({"source": petit, "id": 2}, 1.9)       # même case, meilleur
+    assert carte.inserer({"source": remise, "id": 3}, 2.1)      # autre case
+    assert carte.ids() == [2, 3] and abs(carte.couverture() - 2 / cp.NB_CASES_TOTAL) < 1e-12
+
+
+def test_moteur_complet_court_et_arrets():
+    import moteur
+    tmp = tempfile.mkdtemp()
+    try:
+        r = moteur.executer("t_complet", 90, 1, "auto", dossier=tmp, verbeux=False, complet=True)
+        assert r["raison_arret"] == "budget" and r["cpu_total_s"] > 0
+        for cle in ("soi", "front_pareto", "elites", "cpu_par_evaluation_s", "gain_par_cpu_s"):
+            assert cle in r, cle
+        assert len(r["front_pareto"]) >= 1
+        r2 = moteur.executer("t_cible", 10**5, 1, "auto", dossier=tmp, verbeux=False, cible=10.0)
+        assert r2["raison_arret"] == "cible_atteinte"
+        r3 = moteur.executer("t_cpu", 10**5, 1, "auto", dossier=tmp, verbeux=False, budget_cpu=8.0)
+        assert r3["raison_arret"].startswith("budget_cpu")
+        r4 = moteur.executer("t_pat", 10**5, 1, "auto", dossier=tmp, verbeux=False, patience=100, delta=10.0)
+        assert r4["raison_arret"].startswith("patience")
+    finally:
+        shutil.rmtree(tmp)
 
 
 def lancer():

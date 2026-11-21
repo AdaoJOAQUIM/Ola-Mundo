@@ -1,0 +1,6 @@
+**Lecture honnête de l'émergence.**
+
+- Les structures « nouvelles » des élites sont presque toutes des habillages ou des restes : variables intermédiaires, `np.maximum`, `np.log1p`, termes `u1` et `u2` dans la boucle. Quand on les retire (colonne « Retirer la structure change-t-il A ? »), le bpc sur A ne bouge pas dans la grande majorité des cas. Elles ne servent pas : ce sont des restes de la dérive aléatoire, pas des découvertes.
+- Les constantes propres à chaque ordre sont aussi, en général, neutres : la même valeur partout donne le même score.
+- **Pas de Kneser-Ney.** Une « remise » au sens du détecteur (soustraire un terme directement au compte n[k]) existe dans de nombreux génomes de l'archive, mais le terme soustrait est la probabilité `p` de l'ordre inférieur (de l'ordre de 0,01), et non une remise constante D proportionnelle aux comptes ; il n'y a pas non plus de comptes de continuation. Ce n'est pas du Kneser-Ney, et ces génomes ne sont pas meilleurs que les autres. Nous ne revendiquons donc aucune technique connue redécouverte, sauf l'aplatissement des scores (puissance) et l'augmentation de la masse d'échappement, déjà signalés plus haut et qui sont du réglage, pas de la structure nouvelle.
+- La couverture de la grille reste partielle : peu de cases sont remplies, surtout les structures simples.

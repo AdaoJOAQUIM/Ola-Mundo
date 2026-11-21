@@ -80,6 +80,20 @@ reproduisent les exemples et 64 seulement donnent la bonne réponse au test (43 
 méthode ne résout ici une énigme que TRM rate (au mieux 12 sur 20) : sur cet échantillon,
 aucune règle de fusion ne pouvait battre TRM seul.
 
+## 7 bis. Moteur d'auto-amélioration (`evolution/`)
+
+Le moteur réécrit lui-même le code de l'estimateur d'Écho, sous garde-fous : juge protégé
+par empreinte, liste blanche du code produit, exécution isolée. Il garde une archive de
+variantes (idée de la Darwin Gödel Machine). Le texte de validation est coupé en trois :
+A pour évoluer, B pour choisir, C pour le test, lu une seule fois.
+
+| Mesure | Résultat |
+|---|---|
+| Test C (60 000 car.) | départ 1,863 → **variante évoluée 1,538 bit/car. (−17,5 %)** ; LZMA 1,925 ; une retouche faite à la main (une constante) : 1,524 |
+| « S'améliorer à s'améliorer » (méta-génome qui évolue) | pas de gain significatif (5 graines) |
+| Soi, objectif (longueur minimale + front de Pareto), coût, convergence, émergence (MAP-Elites) | moteur complet meilleur à calcul égal, mais pas significativement (p = 0,057 sur A) ; le soi saute 9 à 25 % des essais ; aucune technique connue redécouverte ; les « structures émergentes » sont surtout du code inutile |
+| Garde-fous | 17 codes malveillants sur 17 refusés ; 18 tests sur 18 ; une tentative de modifier le fichier de garde-fous protégé a été bloquée par les permissions |
+
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,
