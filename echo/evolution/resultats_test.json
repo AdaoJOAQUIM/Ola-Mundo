@@ -1,0 +1,87 @@
+{
+ "taille_C": 60000,
+ "alphabet": 102,
+ "C": {
+  "depart_bpc": 1.8632415748950477,
+  "champion_bpc": 1.5377157627089941,
+  "gain_relatif": 0.17470939709167332,
+  "gain_relatif_IC95_blocs500": [
+   0.16377981801306815,
+   0.18481994319900658
+  ]
+ },
+ "A_B": {
+  "depart_A": 2.047998769098972,
+  "depart_B": 1.7144254576196176,
+  "champion_A": 1.627593710557111,
+  "champion_B": 1.477202417189546
+ },
+ "reference_a_la_main": {
+  "c": 16,
+  "gamma": 1.0,
+  "bpc_C": 1.5240973943532217,
+  "gain_relatif_sur_depart": 0.18201836257380055,
+  "champion_moins_reference_bpc": 0.013618368355772459
+ },
+ "sous_ensemble_echo_p": {
+  "positions": 9600,
+  "blocs": 24,
+  "longueur_bloc": 400,
+  "echo_p_bpc": 1.9181533460572124,
+  "depart_bpc": 1.8990938701432951,
+  "champion_bpc": 1.544445297322835,
+  "reference_main_bpc": 1.5328481890076833,
+  "duree_s": 377.2
+ },
+ "lzma_conditionnel": {
+  "taille_biblio_octets": 4048144,
+  "taille_biblio_plus_C_octets": 4062584,
+  "bpc": 1.9253333333333333
+ },
+ "categories": {
+  "minuscule": {
+   "n": 44859,
+   "part_des_caracteres": 0.74765,
+   "bpc_depart": 1.9402973977680447,
+   "bpc_champion": 1.6364180744967707,
+   "part_du_gain_total": 0.6979335202884461
+  },
+  "espace": {
+   "n": 11131,
+   "part_des_caracteres": 0.18551666666666666,
+   "bpc_depart": 0.4408467379762956,
+   "bpc_champion": 0.3957475293221594,
+   "part_du_gain_total": 0.02570197061374009
+  },
+  "majuscule": {
+   "n": 1513,
+   "part_des_caracteres": 0.025216666666666665,
+   "bpc_depart": 5.800766148129825,
+   "bpc_champion": 4.115363024018099,
+   "part_du_gain_total": 0.1305587673502005
+  },
+  "ponctuation": {
+   "n": 2034,
+   "part_des_caracteres": 0.0339,
+   "bpc_depart": 4.737996242233208,
+   "bpc_champion": 3.5526495441402033,
+   "part_du_gain_total": 0.12344106538127977
+  },
+  "retour_ligne": {
+   "n": 291,
+   "part_des_caracteres": 0.00485,
+   "bpc_depart": 1.2437512486695068,
+   "bpc_champion": 0.971477664904847,
+   "part_du_gain_total": 0.0040565965334382025
+  },
+  "chiffre": {
+   "n": 172,
+   "part_des_caracteres": 0.0028666666666666667,
+   "bpc_depart": 6.232868224572195,
+   "bpc_champion": 4.153884774396342,
+   "part_du_gain_total": 0.01830807983289661
+  }
+ },
+ "champion_id": 3321,
+ "duree_totale_s": 394.8
+}

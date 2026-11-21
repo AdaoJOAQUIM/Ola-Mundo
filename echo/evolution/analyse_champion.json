@@ -1,0 +1,39 @@
+{
+ "depart": {
+  "A": 2.048,
+  "B": 1.7144
+ },
+ "champion": {
+  "A": 1.6276,
+  "B": 1.4772
+ },
+ "ablations_du_champion": {
+  "sans la puissance finale": {
+   "A": 1.729,
+   "B": 1.5291
+  },
+  "sans les constantes par ordre (une seule valeur, 2.2)": {
+   "A": 1.6272,
+   "B": 1.4774
+  },
+  "sans le terme u1": {
+   "A": 1.6289,
+   "B": 1.4724
+  },
+  "sans le terme (e + m) : seulement m": {
+   "A": 1.7489,
+   "B": 1.5184
+  },
+  "sans le terme m : seulement e": {
+   "A": 1.6727,
+   "B": 1.5197
+  }
+ },
+ "reference_a_la_main": {
+  "c": 16,
+  "gamma": 1.0,
+  "source": "def estimer(n, N, d, u1, u2, K):\n    p = 0 * n[0] + 1.0 / n.shape[-1]\n    for k in range(K + 1):\n        e = d[k] * 16\n        p = np.where(N[k] > 0, div(n[k] + e * p, N[k] + e), p)\n    p = p ** 1.0\n    return p\n",
+  "A": 1.6083,
+  "B": 1.4608
+ }
+}

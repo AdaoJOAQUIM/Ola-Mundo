@@ -1,0 +1,1092 @@
+{
+ "principal": {
+  "evals": 6000,
+  "generations": 750,
+  "taille_archive": 3926,
+  "seed_A": 2.047998769098972,
+  "seed_B": 1.7144254576196176,
+  "champion": {
+   "id": 3321,
+   "fit_A": 1.627593710557111,
+   "fit_B": 1.477202417189546,
+   "source": "def estimer(n, N, d, u1, u2, K):\n    p = np.sqrt(0) + 0.92546 / n.shape[-1]\n    for k in range(K + 1):\n        b = div(u2[k], p)\n        m = n[k] + d[k]\n        e = d[k] * [2.17814, 2.23475, 2.3698, 2.43409, 2.36564, 2.30956, 2.34621, 2.18404, 1.94839, 2.20264, 2.19865][k] + u1[k]\n        q = p\n        p = np.where(N[k] > 0.25491, div(np.maximum(n[k], 0.0) + (e + m) * p, N[k]), p)\n    p = p ** 0.64919\n    return p\n"
+  },
+  "temps_mur_s": 481.7,
+  "points": [
+   {
+    "evals": 256,
+    "gen": 32,
+    "best_A": 1.668231256484929,
+    "best_B": 1.4923249320387424,
+    "champion_id": 62,
+    "taille_archive": 116,
+    "temps_s": 16.9
+   },
+   {
+    "evals": 504,
+    "gen": 63,
+    "best_A": 1.668231256484929,
+    "best_B": 1.4923249320387424,
+    "champion_id": 62,
+    "taille_archive": 256,
+    "temps_s": 33.9
+   },
+   {
+    "evals": 752,
+    "gen": 94,
+    "best_A": 1.668231256484929,
+    "best_B": 1.4923249320387424,
+    "champion_id": 62,
+    "taille_archive": 413,
+    "temps_s": 52.6
+   },
+   {
+    "evals": 1000,
+    "gen": 125,
+    "best_A": 1.668231256484929,
+    "best_B": 1.4923249320387424,
+    "champion_id": 62,
+    "taille_archive": 579,
+    "temps_s": 71.2
+   },
+   {
+    "evals": 1256,
+    "gen": 157,
+    "best_A": 1.668231256484929,
+    "best_B": 1.4923249320387424,
+    "champion_id": 62,
+    "taille_archive": 738,
+    "temps_s": 90.9
+   },
+   {
+    "evals": 1504,
+    "gen": 188,
+    "best_A": 1.668231256484929,
+    "best_B": 1.487630875799363,
+    "champion_id": 899,
+    "taille_archive": 915,
+    "temps_s": 110.4
+   },
+   {
+    "evals": 1752,
+    "gen": 219,
+    "best_A": 1.6506248659578278,
+    "best_B": 1.487630875799363,
+    "champion_id": 899,
+    "taille_archive": 1077,
+    "temps_s": 130.5
+   },
+   {
+    "evals": 2000,
+    "gen": 250,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.487630875799363,
+    "champion_id": 899,
+    "taille_archive": 1252,
+    "temps_s": 150.6
+   },
+   {
+    "evals": 2256,
+    "gen": 282,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.487630875799363,
+    "champion_id": 899,
+    "taille_archive": 1427,
+    "temps_s": 169.1
+   },
+   {
+    "evals": 2504,
+    "gen": 313,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.487630875799363,
+    "champion_id": 899,
+    "taille_archive": 1591,
+    "temps_s": 188.7
+   },
+   {
+    "evals": 2752,
+    "gen": 344,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.487630875799363,
+    "champion_id": 899,
+    "taille_archive": 1744,
+    "temps_s": 207.9
+   },
+   {
+    "evals": 3000,
+    "gen": 375,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 1909,
+    "temps_s": 227.9
+   },
+   {
+    "evals": 3256,
+    "gen": 407,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 2079,
+    "temps_s": 248.2
+   },
+   {
+    "evals": 3504,
+    "gen": 438,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 2242,
+    "temps_s": 267.4
+   },
+   {
+    "evals": 3752,
+    "gen": 469,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 2409,
+    "temps_s": 286.1
+   },
+   {
+    "evals": 4000,
+    "gen": 500,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 2578,
+    "temps_s": 306.7
+   },
+   {
+    "evals": 4256,
+    "gen": 532,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 2745,
+    "temps_s": 328.2
+   },
+   {
+    "evals": 4504,
+    "gen": 563,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 2907,
+    "temps_s": 346.8
+   },
+   {
+    "evals": 4752,
+    "gen": 594,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 3069,
+    "temps_s": 367.0
+   },
+   {
+    "evals": 5000,
+    "gen": 625,
+    "best_A": 1.6413793343778713,
+    "best_B": 1.4857113744642794,
+    "champion_id": 1814,
+    "taille_archive": 3236,
+    "temps_s": 387.4
+   },
+   {
+    "evals": 5256,
+    "gen": 657,
+    "best_A": 1.627593710557111,
+    "best_B": 1.477202417189546,
+    "champion_id": 3321,
+    "taille_archive": 3422,
+    "temps_s": 407.5
+   },
+   {
+    "evals": 5504,
+    "gen": 688,
+    "best_A": 1.627593710557111,
+    "best_B": 1.477202417189546,
+    "champion_id": 3321,
+    "taille_archive": 3598,
+    "temps_s": 431.2
+   },
+   {
+    "evals": 5752,
+    "gen": 719,
+    "best_A": 1.627593710557111,
+    "best_B": 1.477202417189546,
+    "champion_id": 3321,
+    "taille_archive": 3766,
+    "temps_s": 459.3
+   },
+   {
+    "evals": 6000,
+    "gen": 750,
+    "best_A": 1.627593710557111,
+    "best_B": 1.477202417189546,
+    "champion_id": 3321,
+    "taille_archive": 3926,
+    "temps_s": 481.3
+   }
+  ],
+  "meta_moyen_final": {
+   "sigma": 0.4998206790494017,
+   "nmut": 1.4784338399272248,
+   "poids": {
+    "perturbe": 5.553949112372674,
+    "feuille": 1.614827735019679,
+    "enveloppe": 2.2628200847691464,
+    "insere": 2.1838051411918324,
+    "supprime": 2.1970300169207353,
+    "par_ordre": 1.3375176572701595,
+    "croise": 0.6862695129924928,
+    "post": 0.5595532106861307,
+    "instruction": 0.5950183338774325
+   }
+  },
+  "ecartes_trop_mauvais": 1554,
+  "rejets": {
+   "forme_incorrecte": 226,
+   "negatif": 81,
+   "non_fini": 212,
+   "erreur_execution": 2
+  }
+ },
+ "ablation": {
+  "evals": [
+   256,
+   504,
+   752,
+   1000,
+   1256,
+   1504,
+   1752,
+   2000
+  ],
+  "modes": {
+   "auto": {
+    "graines": [
+     1001,
+     1002,
+     1003,
+     1004,
+     1005
+    ],
+    "finale_A": [
+     1.655102209978715,
+     1.6232277813715472,
+     1.618303772269799,
+     1.6556731547526733,
+     1.6601410652461948
+    ],
+    "finale_B_champion": [
+     1.491819861966888,
+     1.4814048055003286,
+     1.472862090172139,
+     1.5316997050705283,
+     1.529245647837218
+    ],
+    "moy_best_A": [
+     1.6508841386844146,
+     1.650865926766184,
+     1.6479176600000656,
+     1.6463893491112422,
+     1.6426058987863683,
+     1.6425236259935247,
+     1.6425236259935247,
+     1.6424895967237858
+    ],
+    "moy_best_B": [
+     1.5067662544247198,
+     1.5067662544247198,
+     1.5067662544247198,
+     1.5060428602457967,
+     1.5018832312733554,
+     1.5014064221094205,
+     1.5014064221094205,
+     1.5014064221094205
+    ],
+    "std_best_A": [
+     0.016399359305362203,
+     0.016435251601618517,
+     0.01675861352419237,
+     0.015742414347415943,
+     0.017926811359142793,
+     0.017845016626396558,
+     0.017845016626396558,
+     0.01789094850252412
+    ],
+    "std_best_B": [
+     0.023856626498411863,
+     0.023856626498411863,
+     0.023856626498411863,
+     0.023020108751716246,
+     0.025046908347295546,
+     0.02449265673533279,
+     0.02449265673533279,
+     0.02449265673533279
+    ],
+    "palier_evals": [
+     256,
+     504,
+     752,
+     1000,
+     1256,
+     1504,
+     1752,
+     2000
+    ]
+   },
+   "fixe": {
+    "graines": [
+     1001,
+     1002,
+     1003,
+     1004,
+     1005
+    ],
+    "finale_A": [
+     1.6354635510748592,
+     1.6971282743173486,
+     1.62150240137892,
+     1.6255276691350438,
+     1.6212378720319502
+    ],
+    "finale_B_champion": [
+     1.4782397676021088,
+     1.5221892369571706,
+     1.4673777093003257,
+     1.4680008379860185,
+     1.4490784809810382
+    ],
+    "moy_best_A": [
+     1.686577167052982,
+     1.6579780737092769,
+     1.6579780737092769,
+     1.653626160735918,
+     1.6401719535876242,
+     1.6401719535876242,
+     1.6401719535876242,
+     1.6401719535876242
+    ],
+    "moy_best_B": [
+     1.4902106018421748,
+     1.4799677520426864,
+     1.4793246201864885,
+     1.4793114963396632,
+     1.4769772065653324,
+     1.4769772065653324,
+     1.4769772065653324,
+     1.4769772065653324
+    ],
+    "std_best_A": [
+     0.04506919798578368,
+     0.02768799909454907,
+     0.02768799909454907,
+     0.029091777490982223,
+     0.028940277180593738,
+     0.028940277180593738,
+     0.028940277180593738,
+     0.028940277180593738
+    ],
+    "std_best_B": [
+     0.025650964849974676,
+     0.02382545258776208,
+     0.023782428172555305,
+     0.02378388368492927,
+     0.024481773556523225,
+     0.024481773556523225,
+     0.024481773556523225,
+     0.024481773556523225
+    ],
+    "palier_evals": [
+     256,
+     504,
+     752,
+     1000,
+     1256,
+     1504,
+     1752,
+     2000
+    ]
+   }
+  },
+  "p_permutation_A": 0.9841269841269841,
+  "p_permutation_B": 0.15873015873015872
+ },
+ "test_C": {
+  "taille_C": 60000,
+  "alphabet": 102,
+  "C": {
+   "depart_bpc": 1.8632415748950477,
+   "champion_bpc": 1.5377157627089941,
+   "gain_relatif": 0.17470939709167332,
+   "gain_relatif_IC95_blocs500": [
+    0.16377981801306815,
+    0.18481994319900658
+   ]
+  },
+  "A_B": {
+   "depart_A": 2.047998769098972,
+   "depart_B": 1.7144254576196176,
+   "champion_A": 1.627593710557111,
+   "champion_B": 1.477202417189546
+  },
+  "reference_a_la_main": {
+   "c": 16,
+   "gamma": 1.0,
+   "bpc_C": 1.5240973943532217,
+   "gain_relatif_sur_depart": 0.18201836257380055,
+   "champion_moins_reference_bpc": 0.013618368355772459
+  },
+  "sous_ensemble_echo_p": {
+   "positions": 9600,
+   "blocs": 24,
+   "longueur_bloc": 400,
+   "echo_p_bpc": 1.9181533460572124,
+   "depart_bpc": 1.8990938701432951,
+   "champion_bpc": 1.544445297322835,
+   "reference_main_bpc": 1.5328481890076833,
+   "duree_s": 377.2
+  },
+  "lzma_conditionnel": {
+   "taille_biblio_octets": 4048144,
+   "taille_biblio_plus_C_octets": 4062584,
+   "bpc": 1.9253333333333333
+  },
+  "categories": {
+   "minuscule": {
+    "n": 44859,
+    "part_des_caracteres": 0.74765,
+    "bpc_depart": 1.9402973977680447,
+    "bpc_champion": 1.6364180744967707,
+    "part_du_gain_total": 0.6979335202884461
+   },
+   "espace": {
+    "n": 11131,
+    "part_des_caracteres": 0.18551666666666666,
+    "bpc_depart": 0.4408467379762956,
+    "bpc_champion": 0.3957475293221594,
+    "part_du_gain_total": 0.02570197061374009
+   },
+   "majuscule": {
+    "n": 1513,
+    "part_des_caracteres": 0.025216666666666665,
+    "bpc_depart": 5.800766148129825,
+    "bpc_champion": 4.115363024018099,
+    "part_du_gain_total": 0.1305587673502005
+   },
+   "ponctuation": {
+    "n": 2034,
+    "part_des_caracteres": 0.0339,
+    "bpc_depart": 4.737996242233208,
+    "bpc_champion": 3.5526495441402033,
+    "part_du_gain_total": 0.12344106538127977
+   },
+   "retour_ligne": {
+    "n": 291,
+    "part_des_caracteres": 0.00485,
+    "bpc_depart": 1.2437512486695068,
+    "bpc_champion": 0.971477664904847,
+    "part_du_gain_total": 0.0040565965334382025
+   },
+   "chiffre": {
+    "n": 172,
+    "part_des_caracteres": 0.0028666666666666667,
+    "bpc_depart": 6.232868224572195,
+    "bpc_champion": 4.153884774396342,
+    "part_du_gain_total": 0.01830807983289661
+   }
+  },
+  "champion_id": 3321,
+  "duree_totale_s": 394.8
+ },
+ "rejets_total_par_raison": {
+  "forme_incorrecte": 1136,
+  "negatif": 789,
+  "non_fini": 1094,
+  "erreur_execution": 3
+ },
+ "rejets_malveillants_de_test": {
+  "open": "appel_interdit",
+  "__import__": "dunder",
+  "import os": "noeud_interdit",
+  "np.load": "attribut_interdit",
+  "n.__class__": "dunder",
+  "exec": "appel_interdit",
+  "lambda": "noeud_interdit",
+  "while": "noeud_interdit",
+  "getattr": "appel_interdit",
+  "eval": "appel_interdit",
+  "compréhension": "noeud_interdit",
+  "np.save": "attribut_interdit",
+  "attribut .sum": "attribut_interdit",
+  "puissance géante": "puissance_non_bornee",
+  "chaîne": "constante_interdite",
+  "dunder nom": "dunder",
+  "boucle non range": "boucle_interdite"
+ },
+ "tests_unitaires": "OK     test_200_mutations_parsent\nOK     test_comptages_contre_force_brute\nOK     test_empreintes_detectent_modification\nOK     test_empreintes_du_depot_intactes\nOK     test_evaluateur_en_processus\nOK     test_juge_constant_donne_log2_A\nOK     test_juge_rejette_nan_negatif_forme\nOK     test_liste_blanche_graine\nOK     test_liste_blanche_rejette_malveillants\nOK     test_meta_heritee_borne\nOK     test_moteur_ne_touche_pas_c\nOK     test_taille_et_syntaxe\n12 tests, 0 échec(s)",
+ "temps_mur_total_s": 1896.3,
+ "run_long": {
+  "evals": 15000,
+  "generations": 1875,
+  "taille_archive": 9681,
+  "champion": {
+   "id": 3202,
+   "fit_A": 1.6298854292936904,
+   "fit_B": 1.4536975805307302,
+   "source": "def estimer(n, N, d, u1, u2, K):\n    p = 0.28086 * np.clip(n[0], 0.0, 0.0318) + np.clip(1.0, 0.0, 3.60139) / n.shape[-1]\n    for k in range(K + 1):\n        e = d[k] * np.exp(2.0)\n        p = np.where(N[k] > 0, div(n[k] + e * p, N[k] + np.maximum(e, 0.0)), p)\n    p = p * 0.48028 + 5e-05\n    return p * u1[0]\n"
+  },
+  "temps_mur_s": 1216.7,
+  "points": [
+   {
+    "evals": 256,
+    "gen": 32,
+    "best_A": 1.7376388052896565,
+    "best_B": 1.5084154384485309,
+    "champion_id": 59,
+    "taille_archive": 134,
+    "temps_s": 21.5
+   },
+   {
+    "evals": 504,
+    "gen": 63,
+    "best_A": 1.6377553598960017,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 281,
+    "temps_s": 48.3
+   },
+   {
+    "evals": 752,
+    "gen": 94,
+    "best_A": 1.6377553598960017,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 423,
+    "temps_s": 76.6
+   },
+   {
+    "evals": 1000,
+    "gen": 125,
+    "best_A": 1.6331232517389669,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 567,
+    "temps_s": 105.4
+   },
+   {
+    "evals": 1256,
+    "gen": 157,
+    "best_A": 1.6331232517389669,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 746,
+    "temps_s": 138.1
+   },
+   {
+    "evals": 1504,
+    "gen": 188,
+    "best_A": 1.6331232517389669,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 914,
+    "temps_s": 169.7
+   },
+   {
+    "evals": 1752,
+    "gen": 219,
+    "best_A": 1.6331232517389669,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 1066,
+    "temps_s": 198.9
+   },
+   {
+    "evals": 2000,
+    "gen": 250,
+    "best_A": 1.612168152542744,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 1229,
+    "temps_s": 228.4
+   },
+   {
+    "evals": 2256,
+    "gen": 282,
+    "best_A": 1.612168152542744,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 1391,
+    "temps_s": 259.3
+   },
+   {
+    "evals": 2504,
+    "gen": 313,
+    "best_A": 1.612168152542744,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 1552,
+    "temps_s": 289.6
+   },
+   {
+    "evals": 2752,
+    "gen": 344,
+    "best_A": 1.612168152542744,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 1709,
+    "temps_s": 321.1
+   },
+   {
+    "evals": 3000,
+    "gen": 375,
+    "best_A": 1.612168152542744,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 1868,
+    "temps_s": 353.6
+   },
+   {
+    "evals": 3256,
+    "gen": 407,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 2033,
+    "temps_s": 384.5
+   },
+   {
+    "evals": 3504,
+    "gen": 438,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 2201,
+    "temps_s": 405.6
+   },
+   {
+    "evals": 3752,
+    "gen": 469,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 2360,
+    "temps_s": 423.3
+   },
+   {
+    "evals": 4000,
+    "gen": 500,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 2511,
+    "temps_s": 441.1
+   },
+   {
+    "evals": 4256,
+    "gen": 532,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 2665,
+    "temps_s": 458.0
+   },
+   {
+    "evals": 4504,
+    "gen": 563,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 2834,
+    "temps_s": 474.2
+   },
+   {
+    "evals": 4752,
+    "gen": 594,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 3000,
+    "temps_s": 491.5
+   },
+   {
+    "evals": 5000,
+    "gen": 625,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4556693633662217,
+    "champion_id": 278,
+    "taille_archive": 3157,
+    "temps_s": 508.7
+   },
+   {
+    "evals": 5256,
+    "gen": 657,
+    "best_A": 1.612073858828376,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 3320,
+    "temps_s": 524.7
+   },
+   {
+    "evals": 5504,
+    "gen": 688,
+    "best_A": 1.6120738436024373,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 3478,
+    "temps_s": 540.7
+   },
+   {
+    "evals": 5752,
+    "gen": 719,
+    "best_A": 1.6120738436024373,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 3642,
+    "temps_s": 557.1
+   },
+   {
+    "evals": 6000,
+    "gen": 750,
+    "best_A": 1.6118656185475189,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 3803,
+    "temps_s": 575.5
+   },
+   {
+    "evals": 6256,
+    "gen": 782,
+    "best_A": 1.6118656185475189,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 3972,
+    "temps_s": 593.1
+   },
+   {
+    "evals": 6504,
+    "gen": 813,
+    "best_A": 1.6118656185475189,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 4127,
+    "temps_s": 610.5
+   },
+   {
+    "evals": 6752,
+    "gen": 844,
+    "best_A": 1.6118656185475189,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 4282,
+    "temps_s": 627.2
+   },
+   {
+    "evals": 7000,
+    "gen": 875,
+    "best_A": 1.6118656185475189,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 4461,
+    "temps_s": 645.6
+   },
+   {
+    "evals": 7256,
+    "gen": 907,
+    "best_A": 1.611865618127355,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 4639,
+    "temps_s": 664.7
+   },
+   {
+    "evals": 7504,
+    "gen": 938,
+    "best_A": 1.611865618127355,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 4803,
+    "temps_s": 683.4
+   },
+   {
+    "evals": 7752,
+    "gen": 969,
+    "best_A": 1.611865618127355,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 4965,
+    "temps_s": 700.8
+   },
+   {
+    "evals": 8000,
+    "gen": 1000,
+    "best_A": 1.611865618127355,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 5124,
+    "temps_s": 719.0
+   },
+   {
+    "evals": 8256,
+    "gen": 1032,
+    "best_A": 1.611865618127355,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 5293,
+    "temps_s": 737.9
+   },
+   {
+    "evals": 8504,
+    "gen": 1063,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 5438,
+    "temps_s": 755.2
+   },
+   {
+    "evals": 8752,
+    "gen": 1094,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 5604,
+    "temps_s": 773.0
+   },
+   {
+    "evals": 9000,
+    "gen": 1125,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 5758,
+    "temps_s": 791.4
+   },
+   {
+    "evals": 9256,
+    "gen": 1157,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 5933,
+    "temps_s": 810.1
+   },
+   {
+    "evals": 9504,
+    "gen": 1188,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 6087,
+    "temps_s": 826.9
+   },
+   {
+    "evals": 9752,
+    "gen": 1219,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 6256,
+    "temps_s": 845.4
+   },
+   {
+    "evals": 10000,
+    "gen": 1250,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 6425,
+    "temps_s": 862.2
+   },
+   {
+    "evals": 10256,
+    "gen": 1282,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 6596,
+    "temps_s": 879.7
+   },
+   {
+    "evals": 10504,
+    "gen": 1313,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 6751,
+    "temps_s": 897.4
+   },
+   {
+    "evals": 10752,
+    "gen": 1344,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 6904,
+    "temps_s": 915.5
+   },
+   {
+    "evals": 11000,
+    "gen": 1375,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 7073,
+    "temps_s": 933.0
+   },
+   {
+    "evals": 11256,
+    "gen": 1407,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 7233,
+    "temps_s": 951.5
+   },
+   {
+    "evals": 11504,
+    "gen": 1438,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 7388,
+    "temps_s": 968.4
+   },
+   {
+    "evals": 11752,
+    "gen": 1469,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 7538,
+    "temps_s": 985.9
+   },
+   {
+    "evals": 12000,
+    "gen": 1500,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 7706,
+    "temps_s": 1003.8
+   },
+   {
+    "evals": 12256,
+    "gen": 1532,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 7871,
+    "temps_s": 1022.5
+   },
+   {
+    "evals": 12504,
+    "gen": 1563,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 8036,
+    "temps_s": 1040.1
+   },
+   {
+    "evals": 12752,
+    "gen": 1594,
+    "best_A": 1.6096919179886702,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 8201,
+    "temps_s": 1057.0
+   },
+   {
+    "evals": 13000,
+    "gen": 1625,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 8371,
+    "temps_s": 1074.6
+   },
+   {
+    "evals": 13256,
+    "gen": 1657,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 8549,
+    "temps_s": 1091.9
+   },
+   {
+    "evals": 13504,
+    "gen": 1688,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 8711,
+    "temps_s": 1108.5
+   },
+   {
+    "evals": 13752,
+    "gen": 1719,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 8871,
+    "temps_s": 1125.2
+   },
+   {
+    "evals": 14000,
+    "gen": 1750,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 9042,
+    "temps_s": 1142.9
+   },
+   {
+    "evals": 14256,
+    "gen": 1782,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 9201,
+    "temps_s": 1161.6
+   },
+   {
+    "evals": 14504,
+    "gen": 1813,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 9352,
+    "temps_s": 1179.0
+   },
+   {
+    "evals": 14752,
+    "gen": 1844,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 9507,
+    "temps_s": 1198.1
+   },
+   {
+    "evals": 15000,
+    "gen": 1875,
+    "best_A": 1.6076697870708727,
+    "best_B": 1.4536975805307302,
+    "champion_id": 3202,
+    "taille_archive": 9681,
+    "temps_s": 1216.3
+   }
+  ],
+  "rejets": {
+   "negatif": 374,
+   "forme_incorrecte": 739,
+   "non_fini": 289,
+   "erreur_execution": 1
+  }
+ }
+}

@@ -1,0 +1,13 @@
+OK     test_200_mutations_parsent
+OK     test_comptages_contre_force_brute
+OK     test_empreintes_detectent_modification
+OK     test_empreintes_du_depot_intactes
+OK     test_evaluateur_en_processus
+OK     test_juge_constant_donne_log2_A
+OK     test_juge_rejette_nan_negatif_forme
+OK     test_liste_blanche_graine
+OK     test_liste_blanche_rejette_malveillants
+OK     test_meta_heritee_borne
+OK     test_moteur_ne_touche_pas_c
+OK     test_taille_et_syntaxe
+12 tests, 0 échec(s)
