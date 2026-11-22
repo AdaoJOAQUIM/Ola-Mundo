@@ -375,6 +375,8 @@ class Moteur:
             self.st["pred_issued"] += len(pr)
         self.st["routed"] += int(T * self.topk)
         self.st["culled"] += int((~keep).sum())
+        self.st["slots_q2"] += int((keep & lod).sum())
+        self.st["slots_q4"] += int((keep & ~lod).sum())
         out = torch.zeros_like(x)
         tiers = ["bf16"] if self.mode == "bf16" else ["q4", "q2"]
         for e in torch.unique(ti[keep]).tolist():
