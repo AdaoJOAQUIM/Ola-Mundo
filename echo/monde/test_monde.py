@@ -182,3 +182,30 @@ def test_modele_complet_jouet_vs_reference(tiny):
     refl = ref[len(prompt) - 1: len(prompt) - 1 + 8]
     assert (refl.argmax(-1).tolist()) == toks
     assert (refl - logs).abs().max() < 1e-3
+
+
+# ------------------------------------------------------------------ 5. decodage == lots, comptage exact
+@pytest.mark.parametrize("mode,lod,cull", [("q4", 0.0, 0.0), ("q4", 0.3, 0.1)])
+def test_decodage_egal_lot(tiny, mode, lod, cull):
+    """La perplexite est mesuree par lots, les octets/token en decodage : memes calculs."""
+    _, world = tiny
+    ids = [random.Random(7).randrange(V) for _ in range(20)]
+    m = mt.Moteur(world, mode=mode, lod_thr=lod, cull_thr=cull, max_ctx=64)
+    with torch.no_grad():
+        batch = m.forward(ids, 0, all_logits=True)
+        m2 = mt.Moteur(world, mode=mode, lod_thr=lod, cull_thr=cull, max_ctx=64)
+        step = torch.cat([m2.forward([t], i) for i, t in enumerate(ids)])
+    assert (batch - step).abs().max() < 1e-4
+    m.close(); m2.close()
+
+
+def test_comptage_octets_exact(tiny):
+    _, world = tiny
+    m = mt.Moteur(world, cache_frac=0.0, max_ctx=16)
+    m.reader.bytes = m.reader.ops = 0
+    with torch.no_grad():
+        m.forward([3], 0)
+    # 2 couches x 2 experts actifs, un pread par chunk q4, sans cache
+    assert m.reader.ops == NL * K and m.reader.bytes == NL * K * m.store.size["q4"]
+    assert m.st["disk_miss"] == m.reader.ops
+    m.close()

@@ -1,0 +1,43 @@
+{
+ "name": "agressif",
+ "kind": "decode",
+ "params": {
+  "cache_frac": 0.01,
+  "prefetch": true,
+  "lod_thr": 0.12,
+  "cull_thr": 0.07
+ },
+ "n_tokens_total": 4551,
+ "steps": 128,
+ "bytes_per_token": 381090816.0,
+ "reads_per_token": 141.9765625,
+ "total_bytes": 48779624448,
+ "total_reads": 18173,
+ "wall_s": 162.89580607414246,
+ "io_wait_s": 11.155825551993985,
+ "compute_s_per_token": 1.185468597829285,
+ "nll_mean": 2.976630128607212,
+ "uses": 14497,
+ "cache_hits": 0,
+ "pf_hits": 9622,
+ "disk_miss": 4875,
+ "uses_q4": 7481,
+ "uses_q2": 7016,
+ "routed": 16384,
+ "culled": 1887,
+ "hit_rate_cache": 0.0,
+ "hit_rate_cache_ou_prefetch": 0.6637235290060013,
+ "pred_hit_rate": 0.8466950021984464,
+ "pred_precision": 0.8688524590163934,
+ "prefetch_submitted": 13298,
+ "cache_max_used_mb": 36.175872,
+ "cache_budget_mb": 36.238786,
+ "budget_moteur_mb": 2198.402498,
+ "rss_peak_mb": 2851.27734375,
+ "direct": true,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ }
+}

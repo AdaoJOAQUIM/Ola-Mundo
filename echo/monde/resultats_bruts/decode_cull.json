@@ -1,0 +1,40 @@
+{
+ "name": "cull",
+ "kind": "decode",
+ "params": {
+  "cull_thr": 0.06
+ },
+ "n_tokens_total": 4551,
+ "steps": 128,
+ "bytes_per_token": 428239872.0,
+ "reads_per_token": 121.0078125,
+ "total_bytes": 54814703616,
+ "total_reads": 15489,
+ "wall_s": 192.08263683319092,
+ "io_wait_s": 39.56372360999467,
+ "compute_s_per_token": 1.1915540095562207,
+ "nll_mean": 2.9698594256478827,
+ "uses": 15489,
+ "cache_hits": 0,
+ "pf_hits": 0,
+ "disk_miss": 15489,
+ "uses_q4": 15489,
+ "uses_q2": 0,
+ "routed": 16384,
+ "culled": 895,
+ "hit_rate_cache": 0.0,
+ "hit_rate_cache_ou_prefetch": 0.0,
+ "pred_hit_rate": null,
+ "pred_precision": null,
+ "prefetch_submitted": 0,
+ "cache_max_used_mb": 0.0,
+ "cache_budget_mb": 0.0,
+ "budget_moteur_mb": 2105.540608,
+ "rss_peak_mb": 2791.76953125,
+ "direct": true,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ }
+}

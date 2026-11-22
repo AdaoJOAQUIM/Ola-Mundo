@@ -1,0 +1,40 @@
+{
+ "name": "cache25",
+ "kind": "decode",
+ "params": {
+  "cache_frac": 0.25
+ },
+ "n_tokens_total": 4551,
+ "steps": 128,
+ "bytes_per_token": 222898176.0,
+ "reads_per_token": 62.984375,
+ "total_bytes": 28530966528,
+ "total_reads": 8062,
+ "wall_s": 194.80236840248108,
+ "io_wait_s": 22.075361027016697,
+ "compute_s_per_token": 1.3494297451208155,
+ "nll_mean": 2.941945305079571,
+ "uses": 16384,
+ "cache_hits": 8322,
+ "pf_hits": 0,
+ "disk_miss": 8062,
+ "uses_q4": 16384,
+ "uses_q2": 0,
+ "routed": 16384,
+ "culled": 0,
+ "hit_rate_cache": 0.5079345703125,
+ "hit_rate_cache_ou_prefetch": 0.5079345703125,
+ "pred_hit_rate": null,
+ "pred_precision": null,
+ "prefetch_submitted": 0,
+ "cache_max_used_mb": 905.969664,
+ "cache_budget_mb": 905.969664,
+ "budget_moteur_mb": 3011.510272,
+ "rss_peak_mb": 3650.3359375,
+ "direct": true,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ }
+}

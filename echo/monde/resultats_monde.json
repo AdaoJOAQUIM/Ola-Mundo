@@ -1,0 +1,1182 @@
+{
+ "lossless": {
+  "prompts": [
+   {
+    "n_prompt_tokens": 5,
+    "identical": true,
+    "max_abs_logit_diff": 1.6689300537109375e-05,
+    "bytes_lus": 56937676800,
+    "lectures": 4583
+   },
+   {
+    "n_prompt_tokens": 13,
+    "identical": true,
+    "max_abs_logit_diff": 1.049041748046875e-05,
+    "bytes_lus": 58963525632,
+    "lectures": 4698
+   },
+   {
+    "n_prompt_tokens": 9,
+    "identical": true,
+    "max_abs_logit_diff": 1.4781951904296875e-05,
+    "bytes_lus": 56962842624,
+    "lectures": 4537
+   }
+  ],
+  "max_abs_logit_diff": 1.6689300537109375e-05,
+  "all_tokens_identical": true,
+  "n_tokens": 32,
+  "ref_seconds": 31.081355810165405,
+  "pass": true,
+  "moteur": {
+   "rss_peak_mb": 2965.07421875,
+   "cache_max_mb": 125.82912,
+   "cache_budget_mb": 128.849018,
+   "budget_total_mb": 2232.292474
+  }
+ },
+ "total_expert_bytes_q4": 3623878656,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ },
+ "ppl": {
+  "bf16": {
+   "ppl": 14.209332466125488,
+   "rel_q4_pct": -5.732265617788346,
+   "frac_culled": 0.0,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3585.921875,
+   "params": {
+    "mode": "bf16"
+   }
+  },
+  "combo_l0.06_c0.06": {
+   "ppl": 15.224306106567383,
+   "rel_q4_pct": 1.0012854318629083,
+   "frac_culled": 0.06312328296703297,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3581.37890625,
+   "params": {
+    "lod_thr": 0.06,
+    "cull_thr": 0.06
+   }
+  },
+  "combo_l0.08_c0.04": {
+   "ppl": 15.221878051757812,
+   "rel_q4_pct": 0.9851771997274605,
+   "frac_culled": 0.007874313186813187,
+   "frac_q2": 0.20536885572173744,
+   "rss_peak_mb": 3556.37109375,
+   "params": {
+    "lod_thr": 0.08,
+    "cull_thr": 0.04
+   }
+  },
+  "combo_l0.08_c0.06": {
+   "ppl": 15.343265533447266,
+   "rel_q4_pct": 1.7904875764468864,
+   "frac_culled": 0.06330528846153846,
+   "frac_q2": 0.15881590597051312,
+   "rss_peak_mb": 3556.1875,
+   "params": {
+    "lod_thr": 0.08,
+    "cull_thr": 0.06
+   }
+  },
+  "combo_l0.10_c0.02": {
+   "ppl": 15.379938125610352,
+   "rel_q4_pct": 2.0337813543480188,
+   "frac_culled": 0.0007881181318681318,
+   "frac_q2": 0.3942908301700688,
+   "rss_peak_mb": 3558.890625,
+   "params": {
+    "lod_thr": 0.1,
+    "cull_thr": 0.02
+   }
+  },
+  "combo_l0.10_c0.04": {
+   "ppl": 15.377177238464355,
+   "rel_q4_pct": 2.015465041688125,
+   "frac_culled": 0.008016826923076923,
+   "frac_q2": 0.38993753148091415,
+   "rss_peak_mb": 3563.69921875,
+   "params": {
+    "lod_thr": 0.1,
+    "cull_thr": 0.04
+   }
+  },
+  "combo_l0.10_c0.08": {
+   "ppl": 15.782073020935059,
+   "rel_q4_pct": 4.701629797521556,
+   "frac_culled": 0.21390968406593405,
+   "frac_q2": 0.23189295332871723,
+   "rss_peak_mb": 3558.1640625,
+   "params": {
+    "lod_thr": 0.1,
+    "cull_thr": 0.08
+   }
+  },
+  "combo_l0.125_c0.04": {
+   "ppl": 16.03751564025879,
+   "rel_q4_pct": 6.396290475333943,
+   "frac_culled": 0.008128434065934066,
+   "frac_q2": 0.5777681220636146,
+   "rss_peak_mb": 3557.28515625,
+   "params": {
+    "lod_thr": 0.125,
+    "cull_thr": 0.04
+   }
+  },
+  "combo_l0.12_c0.07": {
+   "ppl": 16.205551147460938,
+   "rel_q4_pct": 7.511073776905297,
+   "frac_culled": 0.12749656593406594,
+   "frac_q2": 0.48173162831154825,
+   "rss_peak_mb": 3558.51171875,
+   "params": {
+    "lod_thr": 0.12,
+    "cull_thr": 0.07
+   }
+  },
+  "combo_l0.15_c0.10": {
+   "ppl": 19.823789596557617,
+   "rel_q4_pct": 31.515237368972727,
+   "frac_culled": 0.40259100274725274,
+   "frac_q2": 0.5547795396213617,
+   "rss_peak_mb": 3575.95703125,
+   "params": {
+    "lod_thr": 0.15,
+    "cull_thr": 0.1
+   }
+  },
+  "cull0.02": {
+   "ppl": 15.07258129119873,
+   "rel_q4_pct": -0.005289270253427958,
+   "frac_culled": 0.0008310439560439561,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3571.94140625,
+   "params": {
+    "cull_thr": 0.02
+   }
+  },
+  "cull0.04": {
+   "ppl": 15.096022605895996,
+   "rel_q4_pct": 0.15022539820264136,
+   "frac_culled": 0.007821085164835165,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3594.2890625,
+   "params": {
+    "cull_thr": 0.04
+   }
+  },
+  "cull0.06": {
+   "ppl": 15.224306106567383,
+   "rel_q4_pct": 1.0012854318629083,
+   "frac_culled": 0.06312328296703297,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3586.48046875,
+   "params": {
+    "cull_thr": 0.06
+   }
+  },
+  "cull0.08": {
+   "ppl": 15.584310531616211,
+   "rel_q4_pct": 3.3896313726611726,
+   "frac_culled": 0.21347527472527472,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3591.1640625,
+   "params": {
+    "cull_thr": 0.08
+   }
+  },
+  "cull0.10": {
+   "ppl": 17.04012107849121,
+   "rel_q4_pct": 13.047788240395807,
+   "frac_culled": 0.39817479395604394,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3572.94140625,
+   "params": {
+    "cull_thr": 0.1
+   }
+  },
+  "lod0.05": {
+   "ppl": 15.081297874450684,
+   "rel_q4_pct": 0.05253839734984389,
+   "frac_culled": 0.0,
+   "frac_q2": 0.025171703296703297,
+   "rss_peak_mb": 3553.37890625,
+   "params": {
+    "lod_thr": 0.05
+   }
+  },
+  "lod0.08": {
+   "ppl": 15.218728065490723,
+   "rel_q4_pct": 0.9642795207237764,
+   "frac_culled": 0.0,
+   "frac_q2": 0.21146634615384616,
+   "rss_peak_mb": 3573.015625,
+   "params": {
+    "lod_thr": 0.08
+   }
+  },
+  "lod0.10": {
+   "ppl": 15.371169090270996,
+   "rel_q4_pct": 1.9756057084385992,
+   "frac_culled": 0.0,
+   "frac_q2": 0.39478537087912086,
+   "rss_peak_mb": 3574.63671875,
+   "params": {
+    "lod_thr": 0.1
+   }
+  },
+  "lod0.125": {
+   "ppl": 16.020689010620117,
+   "rel_q4_pct": 6.2846590347221065,
+   "frac_culled": 0.0,
+   "frac_q2": 0.5810164835164835,
+   "rss_peak_mb": 3570.609375,
+   "params": {
+    "lod_thr": 0.125
+   }
+  },
+  "lod0.15": {
+   "ppl": 17.08746337890625,
+   "rel_q4_pct": 13.361867132645466,
+   "frac_culled": 0.0,
+   "frac_q2": 0.732606456043956,
+   "rss_peak_mb": 3572.81640625,
+   "params": {
+    "lod_thr": 0.15
+   }
+  },
+  "lod0.20": {
+   "ppl": 19.512317657470703,
+   "rel_q4_pct": 29.44886626453449,
+   "frac_culled": 0.0,
+   "frac_q2": 0.9061778846153846,
+   "rss_peak_mb": 3570.18359375,
+   "params": {
+    "lod_thr": 0.2
+   }
+  },
+  "q4": {
+   "ppl": 15.073378562927246,
+   "rel_q4_pct": 0.0,
+   "frac_culled": 0.0,
+   "frac_q2": 0.0,
+   "rss_peak_mb": 3572.03515625,
+   "params": {}
+  }
+ },
+ "decode": {
+  "cache1_pf": {
+   "name": "cache1_pf",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.01,
+    "prefetch": true
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 512068608.0,
+   "reads_per_token": 144.6953125,
+   "total_bytes": 65544781824,
+   "total_reads": 18521,
+   "wall_s": 200.11386942863464,
+   "io_wait_s": 8.967710562988941,
+   "compute_s_per_token": 1.493329366137857,
+   "nll_mean": 2.941945305079571,
+   "uses": 16384,
+   "cache_hits": 0,
+   "pf_hits": 13223,
+   "disk_miss": 3161,
+   "uses_q4": 16384,
+   "uses_q2": 0,
+   "routed": 16384,
+   "culled": 0,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.80706787109375,
+   "pred_hit_rate": 0.8608723958333333,
+   "pred_precision": 0.8608723958333333,
+   "prefetch_submitted": 15360,
+   "cache_max_used_mb": 35.38944,
+   "cache_budget_mb": 36.238786,
+   "budget_moteur_mb": 2198.402498,
+   "rss_peak_mb": 2874.890625,
+   "direct": true,
+   "bytes_rel_naif": 1.13043212890625
+  },
+  "cull": {
+   "name": "cull",
+   "kind": "decode",
+   "params": {
+    "cull_thr": 0.06
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 428239872.0,
+   "reads_per_token": 121.0078125,
+   "total_bytes": 54814703616,
+   "total_reads": 15489,
+   "wall_s": 192.08263683319092,
+   "io_wait_s": 39.56372360999467,
+   "compute_s_per_token": 1.1915540095562207,
+   "nll_mean": 2.9698594256478827,
+   "uses": 15489,
+   "cache_hits": 0,
+   "pf_hits": 0,
+   "disk_miss": 15489,
+   "uses_q4": 15489,
+   "uses_q2": 0,
+   "routed": 16384,
+   "culled": 895,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.0,
+   "pred_hit_rate": null,
+   "pred_precision": null,
+   "prefetch_submitted": 0,
+   "cache_max_used_mb": 0.0,
+   "cache_budget_mb": 0.0,
+   "budget_moteur_mb": 2105.540608,
+   "rss_peak_mb": 2791.76953125,
+   "direct": true,
+   "bytes_rel_naif": 0.94537353515625
+  },
+  "combo_sans_pf": {
+   "name": "combo_sans_pf",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.01,
+    "lod_thr": 0.08,
+    "cull_thr": 0.06
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 398392320.0,
+   "reads_per_token": 121.0390625,
+   "total_bytes": 50994216960,
+   "total_reads": 15493,
+   "wall_s": 194.09394311904907,
+   "io_wait_s": 38.632300393963305,
+   "compute_s_per_token": 1.2145440837897326,
+   "nll_mean": 2.9671192544410587,
+   "uses": 15493,
+   "cache_hits": 0,
+   "pf_hits": 0,
+   "disk_miss": 15493,
+   "uses_q4": 13055,
+   "uses_q2": 2438,
+   "routed": 16384,
+   "culled": 891,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.0,
+   "pred_hit_rate": null,
+   "pred_precision": null,
+   "prefetch_submitted": 0,
+   "cache_max_used_mb": 36.175872,
+   "cache_budget_mb": 36.238786,
+   "budget_moteur_mb": 2141.779394,
+   "rss_peak_mb": 2821.953125,
+   "direct": true,
+   "bytes_rel_naif": 0.8794826931423612
+  },
+  "lod": {
+   "name": "lod",
+   "kind": "decode",
+   "params": {
+    "lod_thr": 0.1
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 374169600.0,
+   "reads_per_token": 128.0,
+   "total_bytes": 47893708800,
+   "total_reads": 16384,
+   "wall_s": 165.587717294693,
+   "io_wait_s": 34.58075277393618,
+   "compute_s_per_token": 1.0234919103184126,
+   "nll_mean": 2.9271128060790943,
+   "uses": 16384,
+   "cache_hits": 0,
+   "pf_hits": 0,
+   "disk_miss": 16384,
+   "uses_q4": 9970,
+   "uses_q2": 6414,
+   "routed": 16384,
+   "culled": 0,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.0,
+   "pred_hit_rate": null,
+   "pred_precision": null,
+   "prefetch_submitted": 0,
+   "cache_max_used_mb": 0.0,
+   "cache_budget_mb": 0.0,
+   "budget_moteur_mb": 2105.540608,
+   "rss_peak_mb": 2790.3984375,
+   "direct": true,
+   "bytes_rel_naif": 0.8260091145833334
+  },
+  "combo": {
+   "name": "combo",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.01,
+    "prefetch": true,
+    "lod_thr": 0.08,
+    "cull_thr": 0.06
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 464855040.0,
+   "reads_per_token": 145.84375,
+   "total_bytes": 59501445120,
+   "total_reads": 18668,
+   "wall_s": 183.52686095237732,
+   "io_wait_s": 11.15985964792435,
+   "compute_s_per_token": 1.3466171976910388,
+   "nll_mean": 2.9671192544410587,
+   "uses": 15493,
+   "cache_hits": 0,
+   "pf_hits": 11070,
+   "disk_miss": 4423,
+   "uses_q4": 13055,
+   "uses_q2": 2438,
+   "routed": 16384,
+   "culled": 891,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.714516233137546,
+   "pred_hit_rate": 0.8501203162598832,
+   "pred_precision": 0.868023868023868,
+   "prefetch_submitted": 14245,
+   "cache_max_used_mb": 36.175872,
+   "cache_budget_mb": 36.238786,
+   "budget_moteur_mb": 2198.402498,
+   "rss_peak_mb": 2874.18359375,
+   "direct": true,
+   "bytes_rel_naif": 1.0262044270833333
+  },
+  "combo25": {
+   "name": "combo25",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.25,
+    "prefetch": true,
+    "lod_thr": 0.08,
+    "cull_thr": 0.06
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 270323712.0,
+   "reads_per_token": 89.09375,
+   "total_bytes": 34601435136,
+   "total_reads": 11404,
+   "wall_s": 153.5601944923401,
+   "io_wait_s": 6.882746942018457,
+   "compute_s_per_token": 1.1459175589868877,
+   "nll_mean": 2.9671192544410587,
+   "uses": 15493,
+   "cache_hits": 6615,
+   "pf_hits": 5740,
+   "disk_miss": 3138,
+   "uses_q4": 13055,
+   "uses_q2": 2438,
+   "routed": 16384,
+   "culled": 891,
+   "hit_rate_cache": 0.42696701736267995,
+   "hit_rate_cache_ou_prefetch": 0.7974569160265926,
+   "pred_hit_rate": 0.8501203162598832,
+   "pred_precision": 0.868023868023868,
+   "prefetch_submitted": 8266,
+   "cache_max_used_mb": 905.969664,
+   "cache_budget_mb": 905.969664,
+   "budget_moteur_mb": 3068.133376,
+   "rss_peak_mb": 3697.390625,
+   "direct": true,
+   "bytes_rel_naif": 0.5967610677083334
+  },
+  "agressif": {
+   "name": "agressif",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.01,
+    "prefetch": true,
+    "lod_thr": 0.12,
+    "cull_thr": 0.07
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 381090816.0,
+   "reads_per_token": 141.9765625,
+   "total_bytes": 48779624448,
+   "total_reads": 18173,
+   "wall_s": 162.89580607414246,
+   "io_wait_s": 11.155825551993985,
+   "compute_s_per_token": 1.185468597829285,
+   "nll_mean": 2.976630128607212,
+   "uses": 14497,
+   "cache_hits": 0,
+   "pf_hits": 9622,
+   "disk_miss": 4875,
+   "uses_q4": 7481,
+   "uses_q2": 7016,
+   "routed": 16384,
+   "culled": 1887,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.6637235290060013,
+   "pred_hit_rate": 0.8466950021984464,
+   "pred_precision": 0.8688524590163934,
+   "prefetch_submitted": 13298,
+   "cache_max_used_mb": 36.175872,
+   "cache_budget_mb": 36.238786,
+   "budget_moteur_mb": 2198.402498,
+   "rss_peak_mb": 2851.27734375,
+   "direct": true,
+   "bytes_rel_naif": 0.8412882486979166
+  },
+  "cache25": {
+   "name": "cache25",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.25
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 222898176.0,
+   "reads_per_token": 62.984375,
+   "total_bytes": 28530966528,
+   "total_reads": 8062,
+   "wall_s": 194.80236840248108,
+   "io_wait_s": 22.075361027016697,
+   "compute_s_per_token": 1.3494297451208155,
+   "nll_mean": 2.941945305079571,
+   "uses": 16384,
+   "cache_hits": 8322,
+   "pf_hits": 0,
+   "disk_miss": 8062,
+   "uses_q4": 16384,
+   "uses_q2": 0,
+   "routed": 16384,
+   "culled": 0,
+   "hit_rate_cache": 0.5079345703125,
+   "hit_rate_cache_ou_prefetch": 0.5079345703125,
+   "pred_hit_rate": null,
+   "pred_precision": null,
+   "prefetch_submitted": 0,
+   "cache_max_used_mb": 905.969664,
+   "cache_budget_mb": 905.969664,
+   "budget_moteur_mb": 3011.510272,
+   "rss_peak_mb": 3650.3359375,
+   "direct": true,
+   "bytes_rel_naif": 0.4920654296875
+  },
+  "cache1": {
+   "name": "cache1",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.01
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 452984832.0,
+   "reads_per_token": 128.0,
+   "total_bytes": 57982058496,
+   "total_reads": 16384,
+   "wall_s": 188.61187720298767,
+   "io_wait_s": 38.81620962001989,
+   "compute_s_per_token": 1.1702786529919358,
+   "nll_mean": 2.941945305079571,
+   "uses": 16384,
+   "cache_hits": 0,
+   "pf_hits": 0,
+   "disk_miss": 16384,
+   "uses_q4": 16384,
+   "uses_q2": 0,
+   "routed": 16384,
+   "culled": 0,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.0,
+   "pred_hit_rate": null,
+   "pred_precision": null,
+   "prefetch_submitted": 0,
+   "cache_max_used_mb": 35.38944,
+   "cache_budget_mb": 36.238786,
+   "budget_moteur_mb": 2141.779394,
+   "rss_peak_mb": 2821.859375,
+   "direct": true,
+   "bytes_rel_naif": 1.0
+  },
+  "naif": {
+   "name": "naif",
+   "kind": "decode",
+   "params": {
+    "cache_frac": 0.0
+   },
+   "n_tokens_total": 4551,
+   "steps": 128,
+   "bytes_per_token": 452984832.0,
+   "reads_per_token": 128.0,
+   "total_bytes": 57982058496,
+   "total_reads": 16384,
+   "wall_s": 196.50153756141663,
+   "io_wait_s": 40.88789902801568,
+   "compute_s_per_token": 1.2157315510421949,
+   "nll_mean": 2.941945305079571,
+   "uses": 16384,
+   "cache_hits": 0,
+   "pf_hits": 0,
+   "disk_miss": 16384,
+   "uses_q4": 16384,
+   "uses_q2": 0,
+   "routed": 16384,
+   "culled": 0,
+   "hit_rate_cache": 0.0,
+   "hit_rate_cache_ou_prefetch": 0.0,
+   "pred_hit_rate": null,
+   "pred_precision": null,
+   "prefetch_submitted": 0,
+   "cache_max_used_mb": 0.0,
+   "cache_budget_mb": 0.0,
+   "budget_moteur_mb": 2105.540608,
+   "rss_peak_mb": 2791.4375,
+   "direct": true,
+   "bytes_rel_naif": 1.0
+  }
+ },
+ "sim_cache": {
+  "cache1_pf": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.5079345703125,
+    "bytes_par_token_lru": 222898176.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "cull": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 428239872.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 428239872.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 428239872.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.5093937633159016,
+    "bytes_par_token_lru": 210097152.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "combo_sans_pf": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.42696701736267995,
+    "bytes_par_token_lru": 219482112.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "lod": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 374169600.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 374169600.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 374169600.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.37969970703125,
+    "bytes_par_token_lru": 224547840.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "combo": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.42696701736267995,
+    "bytes_par_token_lru": 219482112.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "combo25": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 398392320.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.42696701736267995,
+    "bytes_par_token_lru": 219482112.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "agressif": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 314600448.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 314600448.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.00027591915568738357,
+    "bytes_par_token_lru": 314502144.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.3911843829757881,
+    "bytes_par_token_lru": 188405760.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "cache25": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.5079345703125,
+    "bytes_par_token_lru": 222898176.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "cache1": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.5079345703125,
+    "bytes_par_token_lru": 222898176.0,
+    "hit_rate_lfu_bonus": 0.0
+   }
+  },
+  "naif": {
+   "0.0025": {
+    "budget_mb": 9.05969664,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.01385498046875
+   },
+   "0.01": {
+    "budget_mb": 36.23878656,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.0576171875
+   },
+   "0.05": {
+    "budget_mb": 181.1939328,
+    "hit_rate_lru": 0.0,
+    "bytes_par_token_lru": 452984832.0,
+    "hit_rate_lfu_bonus": 0.172607421875
+   },
+   "0.25": {
+    "budget_mb": 905.969664,
+    "hit_rate_lru": 0.5079345703125,
+    "bytes_par_token_lru": 222898176.0,
+    "hit_rate_lfu_bonus": 0.512939453125
+   }
+  }
+ },
+ "vitesse": {
+  "cache1_pf": {
+   "NVMe": {
+    "s_par_token": 1.6541042139592856,
+    "tokens_par_s": 0.604556829951111,
+    "s_par_token_recouvert": 1.493329366137857
+   },
+   "SATA": {
+    "s_par_token": 2.546405644637857,
+    "tokens_par_s": 0.39271040814167585,
+    "s_par_token_recouvert": 1.493329366137857
+   },
+   "USB": {
+    "s_par_token": 2.0777456303878568,
+    "tokens_par_s": 0.481290868995031,
+    "s_par_token_recouvert": 1.493329366137857
+   }
+  },
+  "cull": {
+   "NVMe": {
+    "s_par_token": 1.3260090399490778,
+    "tokens_par_s": 0.7541426716354834,
+    "s_par_token_recouvert": 1.1915540095562207
+   },
+   "SATA": {
+    "s_par_token": 2.072235316056221,
+    "tokens_par_s": 0.4825706773027844,
+    "s_par_token_recouvert": 1.1915540095562207
+   },
+   "USB": {
+    "s_par_token": 1.6802977878062206,
+    "tokens_par_s": 0.595132605218501,
+    "s_par_token_recouvert": 1.1915540095562207
+   }
+  },
+  "combo_sans_pf": {
+   "NVMe": {
+    "s_par_token": 1.3404743671825896,
+    "tokens_par_s": 0.7460045671009742,
+    "s_par_token_recouvert": 1.2145440837897326
+   },
+   "SATA": {
+    "s_par_token": 2.0355365362897326,
+    "tokens_par_s": 0.4912709657487881,
+    "s_par_token_recouvert": 1.2145440837897326
+   },
+   "USB": {
+    "s_par_token": 1.6734559350397324,
+    "tokens_par_s": 0.5975657793321324,
+    "s_par_token_recouvert": 1.2145440837897326
+   }
+  },
+  "lod": {
+   "NVMe": {
+    "s_par_token": 1.1431975103184127,
+    "tokens_par_s": 0.8747394837498131,
+    "s_par_token_recouvert": 1.0234919103184126
+   },
+   "SATA": {
+    "s_par_token": 1.7974311103184126,
+    "tokens_par_s": 0.5563495559075148,
+    "s_par_token_recouvert": 1.0234919103184126
+   },
+   "USB": {
+    "s_par_token": 1.4616615103184125,
+    "tokens_par_s": 0.6841529266116867,
+    "s_par_token_recouvert": 1.0234919103184126
+   }
+  },
+  "combo": {
+   "NVMe": {
+    "s_par_token": 1.4940172984053246,
+    "tokens_par_s": 0.6693362928711563,
+    "s_par_token_recouvert": 1.3466171976910388
+   },
+   "SATA": {
+    "s_par_token": 2.3054960276910386,
+    "tokens_par_s": 0.43374613878710655,
+    "s_par_token_recouvert": 1.3466171976910388
+   },
+   "USB": {
+    "s_par_token": 1.8843941126910388,
+    "tokens_par_s": 0.5306745511807688,
+    "s_par_token_recouvert": 1.3466171976910388
+   }
+  },
+  "combo25": {
+   "NVMe": {
+    "s_par_token": 1.232062280272602,
+    "tokens_par_s": 0.8116472811575266,
+    "s_par_token_recouvert": 1.1459175589868877
+   },
+   "SATA": {
+    "s_par_token": 1.7043837329868876,
+    "tokens_par_s": 0.58672233291474,
+    "s_par_token_recouvert": 1.1459175589868877
+   },
+   "USB": {
+    "s_par_token": 1.4607881459868877,
+    "tokens_par_s": 0.6845619624907445,
+    "s_par_token_recouvert": 1.1459175589868877
+   }
+  },
+  "agressif": {
+   "NVMe": {
+    "s_par_token": 1.3085493443649991,
+    "tokens_par_s": 0.7642050369031141,
+    "s_par_token_recouvert": 1.185468597829285
+   },
+   "SATA": {
+    "s_par_token": 1.976045542329285,
+    "tokens_par_s": 0.5060612109279825,
+    "s_par_token_recouvert": 1.185468597829285
+   },
+   "USB": {
+    "s_par_token": 1.6375476950792849,
+    "tokens_par_s": 0.6106692360808356,
+    "s_par_token_recouvert": 1.185468597829285
+   }
+  },
+  "cache25": {
+   "NVMe": {
+    "s_par_token": 1.4194133757636727,
+    "tokens_par_s": 0.7045163988693428,
+    "s_par_token_recouvert": 1.3494297451208155
+   },
+   "SATA": {
+    "s_par_token": 1.8078229721208154,
+    "tokens_par_s": 0.5531515062157152,
+    "s_par_token_recouvert": 1.3494297451208155
+   },
+   "USB": {
+    "s_par_token": 1.6038201086208155,
+    "tokens_par_s": 0.6235113243840902,
+    "s_par_token_recouvert": 1.3494297451208155
+   }
+  },
+  "cache1": {
+   "NVMe": {
+    "s_par_token": 1.3125028907062215,
+    "tokens_par_s": 0.7619030838567735,
+    "s_par_token_recouvert": 1.1702786529919358
+   },
+   "SATA": {
+    "s_par_token": 2.1018483169919358,
+    "tokens_par_s": 0.4757717252552039,
+    "s_par_token_recouvert": 1.1702786529919358
+   },
+   "USB": {
+    "s_par_token": 1.6872634849919357,
+    "tokens_par_s": 0.5926756602598909,
+    "s_par_token_recouvert": 1.1702786529919358
+   }
+  },
+  "naif": {
+   "NVMe": {
+    "s_par_token": 1.3579557887564806,
+    "tokens_par_s": 0.7364009994137798,
+    "s_par_token_recouvert": 1.2157315510421949
+   },
+   "SATA": {
+    "s_par_token": 2.147301215042195,
+    "tokens_par_s": 0.4657008495104632,
+    "s_par_token_recouvert": 1.2157315510421949
+   },
+   "USB": {
+    "s_par_token": 1.7327163830421948,
+    "tokens_par_s": 0.5771284959193741,
+    "s_par_token_recouvert": 1.2157315510421949
+   }
+  }
+ },
+ "extrapolation": {
+  "Kimi-Linear-48B-A3B (config lue : 26 couches MoE, 256 experts, 8 actifs, d=2304, I=1024)": {
+   "taille_expert_Mo": 3.981312,
+   "octets_par_token_naif_Go": 0.828112896,
+   "lectures_par_token": 208,
+   "total_experts_Go": 26.499612672,
+   "cache_0_25pct_Mo": 66.24903168,
+   "cache_0_25pct_nb_experts": 16.64,
+   "compute_s_par_token_mis_a_l_echelle": 3.090842926378462,
+   "quant": "4 bits g32 fp16 (format du moteur)",
+   "disques": {
+    "NVMe": {
+     "naif_io_seul_s": 0.2574036845714286,
+     "naif_avec_compute_s": 3.3482466109498903,
+     "meca_io_seul_s": 0.2263820857316468,
+     "meca_avec_compute_s": 3.3172250121101086
+    },
+    "SATA": {
+     "naif_io_seul_s": 1.6978257920000002,
+     "naif_avec_compute_s": 4.788668718378462,
+     "meca_io_seul_s": 1.493208400034722,
+     "meca_avec_compute_s": 4.584051326413184
+    },
+    "USB": {
+     "naif_io_seul_s": 0.932112896,
+     "naif_avec_compute_s": 4.022955822378462,
+     "meca_io_seul_s": 0.8197771600868056,
+     "meca_avec_compute_s": 3.9106200864652676
+    }
+   }
+  },
+  "Kimi K3 config lue (92 couches MoE, 896 experts, 16 actifs, d=7168, I=3072, MXFP4)": {
+   "taille_expert_Mo": 35.094528,
+   "octets_par_token_naif_Go": 51.659145216,
+   "lectures_par_token": 1472,
+   "total_experts_Go": 2892.912132096,
+   "cache_0_25pct_Mo": 7232.280330240001,
+   "cache_0_25pct_nb_experts": 206.08,
+   "compute_s_par_token_mis_a_l_echelle": 103.27613144316676,
+   "quant": "MXFP4 (4,25 bits/poids)",
+   "disques": {
+    "NVMe": {
+     "naif_io_seul_s": 14.906955776,
+     "naif_avec_compute_s": 118.18308721916677,
+     "meca_io_seul_s": 13.110409612430555,
+     "meca_avec_compute_s": 116.38654105559732
+    },
+    "SATA": {
+     "naif_io_seul_s": 103.612690432,
+     "naif_avec_compute_s": 206.88882187516674,
+     "meca_io_seul_s": 91.12556802486111,
+     "meca_avec_compute_s": 194.40169946802786
+    },
+    "USB": {
+     "naif_io_seul_s": 52.395145215999996,
+     "naif_avec_compute_s": 155.67127665916675,
+     "meca_io_seul_s": 46.080623422152776,
+     "meca_avec_compute_s": 149.35675486531954
+    }
+   }
+  },
+  "Kimi K3.1 coherent avec 2,78T (92 couches, 896 experts, 16 actifs, expert = 33,7 M params, MXFP4)": {
+   "taille_expert_Mo": 17.91628251164596,
+   "octets_par_token_naif_Go": 26.372767857142858,
+   "lectures_par_token": 1472,
+   "total_experts_Go": 1476.875,
+   "cache_0_25pct_Mo": 3692.1875,
+   "cache_0_25pct_nb_experts": 206.08,
+   "compute_s_par_token_mis_a_l_echelle": 54.23693420811729,
+   "quant": "MXFP4 (4,25 bits/poids)",
+   "disques": {
+    "NVMe": {
+     "naif_io_seul_s": 7.682276530612245,
+     "naif_avec_compute_s": 61.91921073872953,
+     "meca_io_seul_s": 6.756429252607211,
+     "meca_avec_compute_s": 60.9933634607245
+    },
+    "SATA": {
+     "naif_io_seul_s": 53.03993571428572,
+     "naif_avec_compute_s": 107.27686992240301,
+     "meca_io_seul_s": 46.64770550609771,
+     "meca_avec_compute_s": 100.884639714215
+    },
+    "USB": {
+     "naif_io_seul_s": 27.10876785714286,
+     "naif_avec_compute_s": 81.34570206526016,
+     "meca_io_seul_s": 23.841692162771075,
+     "meca_avec_compute_s": 78.07862637088837
+    }
+   }
+  },
+  "hypotheses": [
+   "EXTRAPOLATION, pas une mesure : aucun de ces modeles n'a ete execute.",
+   "Configs lues sur le Hub (moonshotai/Kimi-Linear-48B-A3B-Instruct, moonshotai/Kimi-K3). Le depot Kimi-K3.1 n'est pas accessible (401) : on utilise la config Kimi-K3 et les chiffres de la consigne.",
+   "La config K3 lue (I=3072) donne ~5,4 T de params d'experts, incompatible avec 2,78 T : on montre les deux lectures.",
+   "Calcul : 1.03 ns par parametre actif, mesure sur OLMoE (4 coeurs, torch fp32, dequantification incluse), applique tel quel. Un noyau natif serait bien plus rapide.",
+   "Les mecanismes sont appliques via le rapport d'octets mesure sur OLMoE (LOD 0,08 + culling 0,06 sans prefetch / naif = 0.879 ; le prefetch, lui, ajoute ~13 % de lectures inutiles mais cache la latence). Le cache a 0,25 % est suppose sans effet (taux de succes mesure sur OLMoE = 0).",
+   "Latences SATA 0,2 ms et USB 0,5 ms : hypotheses (la consigne ne donne que NVMe 0,1 ms)."
+  ],
+  "ratio_meca": 0.8794826931423612
+ }
+}

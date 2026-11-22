@@ -1,0 +1,19 @@
+{
+ "name": "combo_l0.06_c0.06",
+ "kind": "ppl",
+ "params": {
+  "lod_thr": 0.06,
+  "cull_thr": 0.06
+ },
+ "n_tokens_total": 4551,
+ "nll_total": 12389.164489746094,
+ "n_scored": 4550,
+ "nll": 2.722893294449691,
+ "ppl": 15.224306106567383,
+ "wall_s": 63.70244288444519,
+ "rss_peak_mb": 3581.37890625,
+ "frac_culled": 0.06312328296703297,
+ "frac_q2_of_used": 0.0,
+ "cache_max_used_mb": 0.0,
+ "budget_moteur_mb": 2606.759936
+}

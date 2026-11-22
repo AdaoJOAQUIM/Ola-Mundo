@@ -1,0 +1,43 @@
+{
+ "name": "combo",
+ "kind": "decode",
+ "params": {
+  "cache_frac": 0.01,
+  "prefetch": true,
+  "lod_thr": 0.08,
+  "cull_thr": 0.06
+ },
+ "n_tokens_total": 4551,
+ "steps": 128,
+ "bytes_per_token": 464855040.0,
+ "reads_per_token": 145.84375,
+ "total_bytes": 59501445120,
+ "total_reads": 18668,
+ "wall_s": 183.52686095237732,
+ "io_wait_s": 11.15985964792435,
+ "compute_s_per_token": 1.3466171976910388,
+ "nll_mean": 2.9671192544410587,
+ "uses": 15493,
+ "cache_hits": 0,
+ "pf_hits": 11070,
+ "disk_miss": 4423,
+ "uses_q4": 13055,
+ "uses_q2": 2438,
+ "routed": 16384,
+ "culled": 891,
+ "hit_rate_cache": 0.0,
+ "hit_rate_cache_ou_prefetch": 0.714516233137546,
+ "pred_hit_rate": 0.8501203162598832,
+ "pred_precision": 0.868023868023868,
+ "prefetch_submitted": 14245,
+ "cache_max_used_mb": 36.175872,
+ "cache_budget_mb": 36.238786,
+ "budget_moteur_mb": 2198.402498,
+ "rss_peak_mb": 2874.18359375,
+ "direct": true,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ }
+}
