@@ -1,0 +1,16 @@
+# Jamais de poids dans git
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.npy
+*.npz
+*.world
+monde_data/
+donnees/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
