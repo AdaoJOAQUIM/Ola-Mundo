@@ -1,0 +1,8 @@
+{
+ "n_tokens": 16,
+ "bytes_per_token": 460873728.0,
+ "wall_s": 24.286969661712646,
+ "cache_max_mb": 36.175872,
+ "cache_budget_mb": 36.238786,
+ "budget_moteur_mb": 2171.139522
+}

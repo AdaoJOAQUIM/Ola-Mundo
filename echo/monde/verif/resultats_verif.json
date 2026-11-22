@@ -1,0 +1,297 @@
+{
+ "tests": {
+  "passed": 13,
+  "expected": 13,
+  "ok": true
+ },
+ "a": {
+  "ok": true,
+  "prompts": 1,
+  "tokens": 16,
+  "tokens_identical": true,
+  "max_abs_logit_diff": 6.67572021484375e-06,
+  "claim": 1.7e-05,
+  "tol": 0.01,
+  "ref": "transformers 5.23 OlmoeForCausalLM fp32, couches chargees une a la fois par hooks, poids bf16 du disque"
+ },
+ "b": {
+  "ok": true,
+  "peak_rss_MB_16tok_all_mechanisms": 2833.65234375,
+  "poll_peak_MB": 2833.65234375,
+  "ru_maxrss_MB": 2833.640625,
+  "claim_MB": 3697,
+  "limit_GB": 4,
+  "note": "le 3697 Mo revendique vient du run avec cache 25 % ; le run toutes-mecanismes cache 1 % donne 2874 Mo chez l'agent et 2834 Mo ici",
+  "bytes_per_token_16tok": 460873728.0
+ },
+ "bytes": {
+  "weights_per_expert": 6291456,
+  "raw4": 3538944,
+  "chunk4_calc": 3538944,
+  "chunk4_manifest": 3538944,
+  "raw2": 1966080,
+  "chunk2_calc": 1966080,
+  "chunk2_manifest": 1966080,
+  "file4": 3623878656,
+  "file2": 2013265920,
+  "file4_over_chunk": 1024.0,
+  "file2_over_chunk": 1024.0,
+  "n_chunks_expected": 1024,
+  "naive_bytes_per_token": 452984832,
+  "naive_MB": 452.984832,
+  "bits_per_weight_effective": 4.5,
+  "scale_bytes_per_group": 2,
+  "group": 32,
+  "match": true
+ },
+ "d": {
+  "claim_pct_naive": 102.6,
+  "my_16_token_run_pct": 101.74153645833333,
+  "failed_confirmed": true,
+  "ppl_rerun": false
+ },
+ "cache": {
+  "distinct_chunks_per_token": 128,
+  "bytes_per_token": 452984832,
+  "frac_of_expert_bytes_per_token": 0.125,
+  "rows": [
+   {
+    "cache": "0.25%",
+    "slots": 2,
+    "lru_hit": 0.0,
+    "pinned_oracle_per_layer": 0.01092529296875,
+    "pinned_heldout_per_layer": 0.010986328125,
+    "pinned_heldout_global": 0.0135498046875,
+    "pinned_heldout_per_layer_reverse": 0.0081787109375,
+    "bytes_per_token_heldout_MB": 448.008192
+   },
+   {
+    "cache": "1%",
+    "slots": 10,
+    "lru_hit": 0.0,
+    "pinned_oracle_per_layer": 0.05279541015625,
+    "pinned_heldout_per_layer": 0.0494384765625,
+    "pinned_heldout_global": 0.0526123046875,
+    "pinned_heldout_per_layer_reverse": 0.0504150390625,
+    "bytes_per_token_heldout_MB": 430.589952
+   },
+   {
+    "cache": "5%",
+    "slots": 51,
+    "lru_hit": 0.0,
+    "pinned_oracle_per_layer": 0.187744140625,
+    "pinned_heldout_per_layer": 0.163818359375,
+    "pinned_heldout_global": 0.16455078125,
+    "pinned_heldout_per_layer_reverse": 0.171142578125,
+    "bytes_per_token_heldout_MB": 378.7776
+   },
+   {
+    "cache": "25%",
+    "slots": 256,
+    "lru_hit": 0.5079345703125,
+    "pinned_oracle_per_layer": 0.5682373046875,
+    "pinned_heldout_per_layer": 0.4952392578125,
+    "pinned_heldout_global": 0.498046875,
+    "pinned_heldout_per_layer_reverse": 0.5035400390625,
+    "bytes_per_token_heldout_MB": 228.64896
+   }
+  ],
+  "reuse_distance_median": 226,
+  "reuse_fraction_of_uses": 0.94189453125,
+  "frac_experts_same_as_prev_token": 0.4085875984251969
+ },
+ "speed": {
+  "model": "somme (io+calcul) dans rapport.py:temps(), colonne entre parentheses = max(io,calcul)",
+  "compute_s": 1.2157315510421949,
+  "bytes_MB": 452.984832,
+  "reads": 128.0,
+  "wall_s_per_token_measured": 1.5351682621985674,
+  "io_wait_s_per_token_measured": 0.3194367111563725,
+  "NVMe3.5": {
+   "io_s": 0.14222423771428572,
+   "sum_s": 1.3579557887564806,
+   "max_s": 1.2157315510421949
+  },
+  "SATA0.5": {
+   "io_s": 0.931569664,
+   "sum_s": 2.147301215042195,
+   "max_s": 1.2157315510421949
+  },
+  "USB1.0": {
+   "io_s": 0.516984832,
+   "sum_s": 1.7327163830421948,
+   "max_s": 1.2157315510421949
+  },
+  "note": "Sans prefetch rien ne recouvre : la somme est le modele juste pour le naif ; max() n'est valable qu'avec prefetch effectif. Mesure reelle (disque ~1.5 Go/s) : wall/token ci-dessus."
+ },
+ "extrapolation": {
+  "K31": {
+   "model": "Kimi-K3.1-Pro",
+   "params_by_type_B": {
+    "routed_experts": 2722.741,
+    "latent_proj": 4.727,
+    "shared_experts": 12.155,
+    "router": 0.591,
+    "dense_mlp": 0.727,
+    "attn_kda": 30.619,
+    "attn_mla": 5.573,
+    "dsa_indexer": 0.179,
+    "embeddings": 1.174,
+    "lm_head": 1.174
+   },
+   "vision_B": 0.401,
+   "total_B": 2780.06,
+   "nonrouted_read_every_token_B": 55.74,
+   "routed_active_B": 48.62,
+   "active_B": 104.36,
+   "expert_params_M": 33.030144,
+   "experts_read_per_token": 1472,
+   "formats": {
+    "publie (MXFP4 routes + bf16 reste)": {
+     "routed_GB": 25.83,
+     "nonrouted_GB": 111.49,
+     "nonrouted_lu_GB": 108.49,
+     "total_GB": 134.32,
+     "s_par_token": {
+      "NVMe 3.5": 38.38,
+      "NVMe 7": 19.19,
+      "SATA 0.5": 268.64,
+      "USB 1.0": 134.32
+     },
+     "s_routes_seuls": {
+      "NVMe 3.5": 7.38,
+      "NVMe 7": 3.69,
+      "SATA 0.5": 51.66,
+      "USB 1.0": 25.83
+     }
+    },
+    "tout a 4.25 bits": {
+     "routed_GB": 25.83,
+     "nonrouted_GB": 29.61,
+     "nonrouted_lu_GB": 26.61,
+     "total_GB": 52.44,
+     "s_par_token": {
+      "NVMe 3.5": 14.98,
+      "NVMe 7": 7.49,
+      "SATA 0.5": 104.89,
+      "USB 1.0": 52.44
+     },
+     "s_routes_seuls": {
+      "NVMe 3.5": 7.38,
+      "NVMe 7": 3.69,
+      "SATA 0.5": 51.66,
+      "USB 1.0": 25.83
+     }
+    },
+    "tout bf16": {
+     "routed_GB": 97.24,
+     "nonrouted_GB": 111.49,
+     "nonrouted_lu_GB": 108.49,
+     "total_GB": 205.73,
+     "s_par_token": {
+      "NVMe 3.5": 58.78,
+      "NVMe 7": 29.39,
+      "SATA 0.5": 411.46,
+      "USB 1.0": 205.73
+     },
+     "s_routes_seuls": {
+      "NVMe 3.5": 27.78,
+      "NVMe 7": 13.89,
+      "SATA 0.5": 194.48,
+      "USB 1.0": 97.24
+     }
+    }
+   },
+   "somme_fichiers_GB": 1561.3,
+   "taille_estimee_depuis_params_GB": 1561.1,
+   "total_si_expert_33.7M": 2.778
+  },
+  "KL": {
+   "model": "Kimi-Linear-48B-A3B",
+   "params_by_type_B": {
+    "routed_experts": 47.11,
+    "latent_proj": 0.0,
+    "shared_experts": 0.184,
+    "router": 0.015,
+    "dense_mlp": 0.064,
+    "attn_kda": 0.79,
+    "attn_mla": 0.204,
+    "dsa_indexer": 0.0,
+    "embeddings": 0.377,
+    "lm_head": 0.377
+   },
+   "vision_B": 0.0,
+   "total_B": 49.12,
+   "nonrouted_read_every_token_B": 1.63,
+   "routed_active_B": 1.47,
+   "active_B": 3.11,
+   "expert_params_M": 7.077888,
+   "experts_read_per_token": 208,
+   "formats": {
+    "publie (MXFP4 routes + bf16 reste)": {
+     "routed_GB": 0.78,
+     "nonrouted_GB": 3.27,
+     "nonrouted_lu_GB": 0.27,
+     "total_GB": 1.05,
+     "s_par_token": {
+      "NVMe 3.5": 0.3,
+      "NVMe 7": 0.15,
+      "SATA 0.5": 2.1,
+      "USB 1.0": 1.05
+     },
+     "s_routes_seuls": {
+      "NVMe 3.5": 0.22,
+      "NVMe 7": 0.11,
+      "SATA 0.5": 1.56,
+      "USB 1.0": 0.78
+     }
+    },
+    "tout a 4.25 bits": {
+     "routed_GB": 0.78,
+     "nonrouted_GB": 0.87,
+     "nonrouted_lu_GB": 0.0,
+     "total_GB": 0.78,
+     "s_par_token": {
+      "NVMe 3.5": 0.22,
+      "NVMe 7": 0.11,
+      "SATA 0.5": 1.56,
+      "USB 1.0": 0.78
+     },
+     "s_routes_seuls": {
+      "NVMe 3.5": 0.22,
+      "NVMe 7": 0.11,
+      "SATA 0.5": 1.56,
+      "USB 1.0": 0.78
+     }
+    },
+    "tout bf16": {
+     "routed_GB": 2.94,
+     "nonrouted_GB": 3.27,
+     "nonrouted_lu_GB": 0.27,
+     "total_GB": 3.21,
+     "s_par_token": {
+      "NVMe 3.5": 0.92,
+      "NVMe 7": 0.46,
+      "SATA 0.5": 6.43,
+      "USB 1.0": 3.21
+     },
+     "s_routes_seuls": {
+      "NVMe 3.5": 0.84,
+      "NVMe 7": 0.42,
+      "SATA 0.5": 5.89,
+      "USB 1.0": 2.94
+     }
+    }
+   }
+  },
+  "agent_precedent": {
+   "K31_octets_GB": 26.4,
+   "K31_NVMe35_s": 7.7,
+   "KL_octets_GB": 0.8,
+   "KL_NVMe35_s": 0.3,
+   "expert_K31_Mparams": 33.7,
+   "note": "33.7M = 2.78T/(92*896) : retro-calcule depuis le total, sans non-routes ; la valeur lue (latent 3584 x 3072 x 3) est 33.03M"
+  }
+ },
+ "cpu_wall_minutes_approx": 30
+}

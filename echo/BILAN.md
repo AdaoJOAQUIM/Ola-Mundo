@@ -188,6 +188,41 @@ Perplexité de base 23,12 et RTN 4 bits ×1,20 retrouvées. Erreur d'un bloc à 
 - Le test comprime 59 % (SmolLM2) et 35 % (Qwen) des paramètres. Les experts de K3.1 en font environ 98 %,
   donc il n'y a presque rien d'intact pour compenser : le cas réel est plus dur.
 
+## 7 quinquies. Moteur Monde Infini (phase 1) (`monde/`)
+
+**Idée.** Le modèle est un monde ouvert : on ne charge que ce dont le mot courant a besoin. Le noyau (attention, normes,
+routeur, embeddings) reste en RAM ; chaque expert est un bloc contigu lu sur disque d'un seul `pread`. Test sur OLMoE-1B-7B (CPU, 15 Go).
+
+**Critères fixés à l'avance, revérifiés indépendamment.**
+- (a) Sans perte vs transformers : RÉUSSI. 16 tokens identiques, écart max de logit 6,7·10⁻⁶ (revendiqué 1,7·10⁻⁵ sur 3×32 tokens ; limite 10⁻²).
+- (b) RAM ≤ 4 Go : RÉUSSI. Pic mesuré 2,83 Go (16 tokens, tous les mécanismes). Le 3,70 Go revendiqué vient du run à cache 25 %.
+- (c) Prefetch sans effet sur les sorties : RÉUSSI (tests, 13 sur 13).
+- (d) Moitié des octets du 4 bits naïf à ≤ +2 % de perplexité : **ÉCHEC**. Tous mécanismes : 103 % des octets (101,7 % sur mes 16 tokens), +1,79 %.
+- Octets : 16 couches × 8 experts × 3 538 944 o = 453 Mo/token. Le bloc est bien 4 bits, groupes de 32, échelle fp16, arrondi à 4096 o.
+
+**Ce que chaque mécanisme donne vraiment.**
+- Cache LRU : 0 % de succès à 0,25 %, 1 % et 5 % (confirmé), 50,8 % à 25 %. Cause : un token touche 128 blocs distincts (12,5 % du volume),
+  la distance de réutilisation médiane est 226 blocs, donc un LRU plus petit qu'un token entier ne sert à rien.
+- Cache épinglé par fréquence (mes mesures, appris sur 64 tokens, testé sur 64 autres) : 1,1 % à 0,25 %, 4,9 % à 1 %, 16,4 % à 5 %, 49,5 % à 25 %.
+- Prefetch : devine 86 % des experts, cache la latence disque (attente 70 ms/token au lieu de 319), mais lit 13 % d'octets en plus.
+- LOD et culling : environ −12 % d'octets pour +1,8 % de perplexité ; au-delà la qualité s'effondre.
+- Vitesse : le modèle additionne lecture et calcul (le recouvrement parfait n'est donné qu'entre parenthèses). OLMoE sur NVMe 3,5 Go/s :
+  1,36 s/token en somme, 1,22 s avec recouvrement parfait. Le calcul (CPU, torch) domine, pas le disque.
+
+**Extrapolations corrigées (calcul, rien n'a été exécuté).** Configs lues sur le Hub. Les paramètres retrouvent 2 780 Md (total) et 104 Md (actifs) pour K3.1,
+et la taille des fichiers (1 561 Go). 3 Go de poids non routés chauds gardés en RAM. Secondes par token, lecture seule, NVMe 3,5 / NVMe 7 / SATA 0,5 / USB 1 Go/s.
+- Kimi-Linear-48B-A3B (49,1 Md, 3,1 Md actifs) : publié en bf16 : 3,2 Go/token, 0,92 / 0,46 / 6,4 / 3,2 s. À 4,25 bits : 0,78 Go, 0,22 / 0,11 / 1,6 / 0,78 s.
+- K3.1 (experts latents 3584 × 3072, 33,0 M de paramètres) : publié (MXFP4 + bf16) : 134 Go/token, 38 / 19 / 269 / 134 s.
+  Tout à 4,25 bits : 52 Go/token, 15 / 7,5 / 105 / 52 s.
+- Écart avec le premier rapport (26 Go, 7,7 s sur NVMe) : il ne lisait que les experts. Les poids non routés (56 Md, bf16 : 111 Go)
+  se lisent à chaque token ; seuls 25,8 Go sont des experts. Son expert de 33,7 M était rétro-calculé depuis le total ; la valeur lue est 33,0 M.
+
+**Réserves.**
+- Un seul modèle petit, un seul run par configuration, 128 tokens ; perplexité non refaite (chiffres de l'agent).
+- Extrapolations sans noyau natif ni mesure : les formes des couches KDA/MLA sont déduites des configs (le total concorde, les détails fins non).
+- Latences SATA/USB supposées dans le premier rapport ; ici seulement le débit. Les 3 Go résidents sont une hypothèse.
+- Le 4 bits simple coûte déjà +6 % de perplexité contre bf16 ; l'objectif (d) était hors de portée avec ces mécanismes.
+
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,

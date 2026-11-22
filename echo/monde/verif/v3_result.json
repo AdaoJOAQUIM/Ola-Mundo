@@ -1,0 +1,9 @@
+{
+ "rc": 0,
+ "poll_peak_rss_MB": 2833.65234375,
+ "vmhwm_MB": 2833.65234375,
+ "ru_maxrss_MB": 2833.640625,
+ "poll_peak_GB_decimal": 2.97129984,
+ "claim_MB": 3697,
+ "limit_GB": 4
+}

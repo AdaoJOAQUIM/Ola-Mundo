@@ -1,0 +1,24 @@
+{
+ "model": "somme (io+calcul) dans rapport.py:temps(), colonne entre parentheses = max(io,calcul)",
+ "compute_s": 1.2157315510421949,
+ "bytes_MB": 452.984832,
+ "reads": 128.0,
+ "wall_s_per_token_measured": 1.5351682621985674,
+ "io_wait_s_per_token_measured": 0.3194367111563725,
+ "NVMe3.5": {
+  "io_s": 0.14222423771428572,
+  "sum_s": 1.3579557887564806,
+  "max_s": 1.2157315510421949
+ },
+ "SATA0.5": {
+  "io_s": 0.931569664,
+  "sum_s": 2.147301215042195,
+  "max_s": 1.2157315510421949
+ },
+ "USB1.0": {
+  "io_s": 0.516984832,
+  "sum_s": 1.7327163830421948,
+  "max_s": 1.2157315510421949
+ },
+ "note": "Sans prefetch rien ne recouvre : la somme est le modele juste pour le naif ; max() n'est valable qu'avec prefetch effectif. Mesure reelle (disque ~1.5 Go/s) : wall/token ci-dessus."
+}

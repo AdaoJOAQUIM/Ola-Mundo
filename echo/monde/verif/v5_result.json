@@ -1,0 +1,50 @@
+{
+ "distinct_chunks_per_token": 128,
+ "bytes_per_token": 452984832,
+ "frac_of_expert_bytes_per_token": 0.125,
+ "rows": [
+  {
+   "cache": "0.25%",
+   "slots": 2,
+   "lru_hit": 0.0,
+   "pinned_oracle_per_layer": 0.01092529296875,
+   "pinned_heldout_per_layer": 0.010986328125,
+   "pinned_heldout_global": 0.0135498046875,
+   "pinned_heldout_per_layer_reverse": 0.0081787109375,
+   "bytes_per_token_heldout_MB": 448.008192
+  },
+  {
+   "cache": "1%",
+   "slots": 10,
+   "lru_hit": 0.0,
+   "pinned_oracle_per_layer": 0.05279541015625,
+   "pinned_heldout_per_layer": 0.0494384765625,
+   "pinned_heldout_global": 0.0526123046875,
+   "pinned_heldout_per_layer_reverse": 0.0504150390625,
+   "bytes_per_token_heldout_MB": 430.589952
+  },
+  {
+   "cache": "5%",
+   "slots": 51,
+   "lru_hit": 0.0,
+   "pinned_oracle_per_layer": 0.187744140625,
+   "pinned_heldout_per_layer": 0.163818359375,
+   "pinned_heldout_global": 0.16455078125,
+   "pinned_heldout_per_layer_reverse": 0.171142578125,
+   "bytes_per_token_heldout_MB": 378.7776
+  },
+  {
+   "cache": "25%",
+   "slots": 256,
+   "lru_hit": 0.5079345703125,
+   "pinned_oracle_per_layer": 0.5682373046875,
+   "pinned_heldout_per_layer": 0.4952392578125,
+   "pinned_heldout_global": 0.498046875,
+   "pinned_heldout_per_layer_reverse": 0.5035400390625,
+   "bytes_per_token_heldout_MB": 228.64896
+  }
+ ],
+ "reuse_distance_median": 226,
+ "reuse_fraction_of_uses": 0.94189453125,
+ "frac_experts_same_as_prev_token": 0.4085875984251969
+}

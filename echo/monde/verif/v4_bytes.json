@@ -1,0 +1,20 @@
+{
+ "weights_per_expert": 6291456,
+ "raw4": 3538944,
+ "chunk4_calc": 3538944,
+ "chunk4_manifest": 3538944,
+ "raw2": 1966080,
+ "chunk2_calc": 1966080,
+ "chunk2_manifest": 1966080,
+ "file4": 3623878656,
+ "file2": 2013265920,
+ "file4_over_chunk": 1024.0,
+ "file2_over_chunk": 1024.0,
+ "n_chunks_expected": 1024,
+ "naive_bytes_per_token": 452984832,
+ "naive_MB": 452.984832,
+ "bits_per_weight_effective": 4.5,
+ "scale_bytes_per_group": 2,
+ "group": 32,
+ "match": true
+}

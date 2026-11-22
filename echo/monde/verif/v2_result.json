@@ -1,0 +1,9 @@
+{
+ "ids_equal": true,
+ "tokens_identical": true,
+ "n_tokens": 16,
+ "max_abs_logit_diff": 6.67572021484375e-06,
+ "ref_seconds": 452.6139347553253,
+ "claim_diff": 1.7e-05,
+ "tol": 0.01
+}
