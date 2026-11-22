@@ -1,0 +1,40 @@
+{
+ "name": "naif",
+ "kind": "decode",
+ "params": {
+  "cache_frac": 0.0
+ },
+ "n_tokens_total": 4551,
+ "steps": 128,
+ "bytes_per_token": 452984832.0,
+ "reads_per_token": 128.0,
+ "total_bytes": 57982058496,
+ "total_reads": 16384,
+ "wall_s": 196.50153756141663,
+ "io_wait_s": 40.88789902801568,
+ "compute_s_per_token": 1.2157315510421949,
+ "nll_mean": 2.941945305079571,
+ "uses": 16384,
+ "cache_hits": 0,
+ "pf_hits": 0,
+ "disk_miss": 16384,
+ "uses_q4": 16384,
+ "uses_q2": 0,
+ "routed": 16384,
+ "culled": 0,
+ "hit_rate_cache": 0.0,
+ "hit_rate_cache_ou_prefetch": 0.0,
+ "pred_hit_rate": null,
+ "pred_precision": null,
+ "prefetch_submitted": 0,
+ "cache_max_used_mb": 0.0,
+ "cache_budget_mb": 0.0,
+ "budget_moteur_mb": 2105.540608,
+ "rss_peak_mb": 2791.4375,
+ "direct": true,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ }
+}

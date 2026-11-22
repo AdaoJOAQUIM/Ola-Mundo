@@ -1,0 +1,18 @@
+{
+ "name": "lod0.125",
+ "kind": "ppl",
+ "params": {
+  "lod_thr": 0.125
+ },
+ "n_tokens_total": 4551,
+ "nll_total": 12621.158233642578,
+ "n_scored": 4550,
+ "nll": 2.7738809304708965,
+ "ppl": 16.020689010620117,
+ "wall_s": 75.74542140960693,
+ "rss_peak_mb": 3570.609375,
+ "frac_culled": 0.0,
+ "frac_q2_of_used": 0.5810164835164835,
+ "cache_max_used_mb": 0.0,
+ "budget_moteur_mb": 2606.759936
+}

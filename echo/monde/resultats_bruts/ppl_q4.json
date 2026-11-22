@@ -1,0 +1,16 @@
+{
+ "name": "q4",
+ "kind": "ppl",
+ "params": {},
+ "n_tokens_total": 4551,
+ "nll_total": 12343.8330078125,
+ "n_scored": 4550,
+ "nll": 2.7129303313873625,
+ "ppl": 15.073382377624512,
+ "wall_s": 63.137890577316284,
+ "rss_peak_mb": 4162.59375,
+ "frac_culled": 0.0,
+ "frac_q2_of_used": 0.0,
+ "cache_max_used_mb": 0.0,
+ "budget_moteur_mb": 2606.759936
+}

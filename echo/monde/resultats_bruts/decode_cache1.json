@@ -1,0 +1,40 @@
+{
+ "name": "cache1",
+ "kind": "decode",
+ "params": {
+  "cache_frac": 0.01
+ },
+ "n_tokens_total": 4551,
+ "steps": 128,
+ "bytes_per_token": 452984832.0,
+ "reads_per_token": 128.0,
+ "total_bytes": 57982058496,
+ "total_reads": 16384,
+ "wall_s": 188.61187720298767,
+ "io_wait_s": 38.81620962001989,
+ "compute_s_per_token": 1.1702786529919358,
+ "nll_mean": 2.941945305079571,
+ "uses": 16384,
+ "cache_hits": 0,
+ "pf_hits": 0,
+ "disk_miss": 16384,
+ "uses_q4": 16384,
+ "uses_q2": 0,
+ "routed": 16384,
+ "culled": 0,
+ "hit_rate_cache": 0.0,
+ "hit_rate_cache_ou_prefetch": 0.0,
+ "pred_hit_rate": null,
+ "pred_precision": null,
+ "prefetch_submitted": 0,
+ "cache_max_used_mb": 35.38944,
+ "cache_budget_mb": 36.238786,
+ "budget_moteur_mb": 2141.779394,
+ "rss_peak_mb": 2821.859375,
+ "direct": true,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ }
+}

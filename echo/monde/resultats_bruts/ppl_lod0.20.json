@@ -1,0 +1,18 @@
+{
+ "name": "lod0.20",
+ "kind": "ppl",
+ "params": {
+  "lod_thr": 0.2
+ },
+ "n_tokens_total": 4551,
+ "nll_total": 13518.258834838867,
+ "n_scored": 4550,
+ "nll": 2.971045897766784,
+ "ppl": 19.512317657470703,
+ "wall_s": 67.85360741615295,
+ "rss_peak_mb": 3570.18359375,
+ "frac_culled": 0.0,
+ "frac_q2_of_used": 0.9061778846153846,
+ "cache_max_used_mb": 0.0,
+ "budget_moteur_mb": 2606.759936
+}

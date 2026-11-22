@@ -1,0 +1,41 @@
+{
+ "name": "cache1_pf",
+ "kind": "decode",
+ "params": {
+  "cache_frac": 0.01,
+  "prefetch": true
+ },
+ "n_tokens_total": 4551,
+ "steps": 128,
+ "bytes_per_token": 488623104.0,
+ "reads_per_token": 138.0703125,
+ "total_bytes": 62543757312,
+ "total_reads": 17673,
+ "wall_s": 191.39791584014893,
+ "io_wait_s": 15.35191314102849,
+ "compute_s_per_token": 1.3753593960868784,
+ "nll_mean": 2.941945305079571,
+ "uses": 16384,
+ "cache_hits": 0,
+ "pf_hits": 10487,
+ "disk_miss": 5897,
+ "uses_q4": 16384,
+ "uses_q2": 0,
+ "routed": 16384,
+ "culled": 0,
+ "hit_rate_cache": 0.0,
+ "hit_rate_cache_ou_prefetch": 0.64007568359375,
+ "pred_hit_rate": 0.8608723958333333,
+ "pred_precision": 0.8608723958333333,
+ "prefetch_submitted": 11776,
+ "cache_max_used_mb": 35.38944,
+ "cache_budget_mb": 36.238786,
+ "budget_moteur_mb": 2184.246722,
+ "rss_peak_mb": 2862.1875,
+ "direct": true,
+ "chunk_sizes": {
+  "q4": 3538944,
+  "q2": 1966080,
+  "bf16": 12582912
+ }
+}

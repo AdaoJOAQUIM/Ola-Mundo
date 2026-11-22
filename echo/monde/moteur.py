@@ -216,7 +216,7 @@ def rot_half(x):
 class Moteur:
     def __init__(self, world, mode="q4", cache_frac=0.0, prefetch=False, lod_thr=0.0, cull_thr=0.0,
                  max_ctx=1024, budget_bytes=4 * 2**30, direct="auto", drop=True, pf_width=8,
-                 pf_chunks=12, trace=False):
+                 pf_chunks=None, trace=False):
         torch.set_num_threads(os.cpu_count() or 4)
         self.world, self.mode = world, mode
         self.lod_thr, self.cull_thr = lod_thr, cull_thr
@@ -270,6 +270,7 @@ class Moteur:
         # --- cache / prefetch
         self.cache = LRUCache(cache_frac * self.total_expert_bytes)
         self.budget.declare("cache", self.cache.budget)
+        pf_chunks = pf_chunks or 2 * max(pf_width, self.topk)  # predits de L+1 + restes de L
         self.pf = Prefetcher(self.store, pf_chunks) if prefetch else None
         self.budget.declare("prefetch", pf_chunks * self.store.size[self.base] if prefetch else 0)
         self.budget.declare("travail", 4 * 4 * self.cfg["intermediate_size"] * self.d * 3 + 256 * 2**20)
@@ -395,7 +396,7 @@ class Moteur:
             self.pf.drop_layer(L)
         return h + out
 
-    def forward(self, ids, pos0, all_logits=False):
+    def forward(self, ids, pos0, all_logits=False, hidden=False):
         """ids: liste de tokens a partir de la position pos0 -> logits (derniere ligne ou toutes)."""
         h = self.embed[torch.as_tensor(ids)].float()
         T = h.shape[0]
@@ -404,8 +405,9 @@ class Moteur:
             if self.pf is not None and T == 1 and L + 1 < self.NL:
                 self.predict_next(L, h)
             h = self.moe(L, h)
-        h = h if all_logits else h[-1:]
-        return rms(h, self.fnorm, self.eps) @ self.lm_head.T
+        h = h if (all_logits or hidden) else h[-1:]
+        h = rms(h, self.fnorm, self.eps)
+        return h if hidden else h @ self.lm_head.T
 
     # ---------------------------------------------------------------- usages
     @torch.no_grad()
@@ -443,8 +445,11 @@ class Moteur:
             w = ids[s:s + window + 1]
             if len(w) < 2:
                 break
-            lg = self.forward(w[:-1], 0, all_logits=True)
-            tot += float(F.cross_entropy(lg, torch.tensor(w[1:]), reduction="sum"))
+            hid = self.forward(w[:-1], 0, hidden=True)
+            tgt = torch.tensor(w[1:])
+            for a in range(0, hid.shape[0], 128):  # logits par blocs : memoire bornee
+                lg = hid[a:a + 128] @ self.lm_head.T
+                tot += float(F.cross_entropy(lg, tgt[a:a + 128], reduction="sum"))
             n += len(w) - 1
         return tot, n
 

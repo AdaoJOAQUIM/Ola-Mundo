@@ -1,0 +1,18 @@
+{
+ "name": "cull0.02",
+ "kind": "ppl",
+ "params": {
+  "cull_thr": 0.02
+ },
+ "n_tokens_total": 4551,
+ "nll_total": 12343.591918945312,
+ "n_scored": 4550,
+ "nll": 2.712877344823146,
+ "ppl": 15.07258129119873,
+ "wall_s": 58.99984097480774,
+ "rss_peak_mb": 3571.94140625,
+ "frac_culled": 0.0008310439560439561,
+ "frac_q2_of_used": 0.0,
+ "cache_max_used_mb": 0.0,
+ "budget_moteur_mb": 2606.759936
+}
