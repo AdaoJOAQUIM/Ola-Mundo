@@ -6,3 +6,19 @@ cat game_protocol_guard.py broker_client.py (lecture)
 python (tirage random.Random(2026).sample) -> ['cn04','ls20','sc25']
 mkdir skills gradients modeles runs; ecriture pilote.json .gitignore
 git add/commit tirage
+ecriture serveur.py (demon harnais)
+ecriture percep.py jc.py
+export JEU=cn04; /home/user/Ola-Mundo/echo/arc/externes/arc3-venv/bin/python jc.py start
+[cn04 lv0] jc obs 
+[cn04 lv0] jc py crop(F,8,8,52,52)
+[cn04 lv0] jc a A1
+[cn04 lv0] jc a A4
+[cn04 lv0] jc a A5
+[cn04 lv0] jc py print(fmt_comps(comps(F)))
+[cn04 lv0] jc a A2
+[cn04 lv0] jc py print(fmt_comps(comps(F)))
+[cn04 lv0] jc a A2 A2 A2 A2 A2 A2 A2
+[cn04 lv0] jc py print(fmt_comps(comps(F)))
+[cn04 lv0] jc a A4 A4 A4 A4 A4 A4 A4 A4
+[cn04 lv0] jc py print(fmt_comps(comps(F)))
+[cn04 lv0] jc py crop(F,28,33,50,57)
