@@ -189,4 +189,8 @@ def construire_reseau(frames, rec=None):
                 ext[0], ext[1] = min(ext[0], q0), max(ext[1], q0)
                 ext[2], ext[3] = min(ext[2], r0), max(ext[3], r0)
     gx0, gx1, gy0, gy1 = ext
+    # a priori de rendu : plateau carré, centré horizontalement, dont l'origine est celle du réseau (n = (64 - 2 px) // c)
+    n = (frames[0].shape[1] - 2 * px) // c
+    if gx0 >= 0 and gy0 >= 0 and gx1 < n and gy1 < n and n >= 3:
+        gx0, gy0, gx1, gy1 = 0, 0, n - 1, n - 1
     return Reseau(c, px, py, bg, gx0, gy0, gx1 - gx0 + 1, gy1 - gy0 + 1)

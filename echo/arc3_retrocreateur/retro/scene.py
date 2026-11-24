@@ -5,7 +5,7 @@ import numpy as np
 
 from .reseau import Types, construire_reseau, signature_case
 
-PAD = 2
+PAD = 0
 
 
 class Geo:
@@ -28,6 +28,8 @@ class Geo:
         self.nb = nb
         self.dirs = ((-1, 0), (1, 0), (0, -1), (0, 1))
         self.cle = (net.cle(), R, C, gx0, gy0, self.ignore, self.outer)
+        self.nm = None                            # cycles de clic propres à ce niveau (type -> type suivant)
+        self.cap = None                           # capacité d'énergie estimée du niveau (actions effectives par vie)
 
     def voisin(self, p, d):
         return self.nb[p][d]
@@ -80,9 +82,48 @@ class Scene:
                     ignore.add(r * C + q)
                 else:
                     outer.add(r * C + q)
+        # barres fines et longues (jauges du bandeau) : jamais du plateau
+        hud = self._lignes_hud(frame, bg)
+        self.hud_rows = hud
+        if hud:
+            for r in range(R):
+                y0 = net.py + (gy0 + r) * c
+                if any(y0 <= y < y0 + c for y in hud):
+                    for q in range(C):
+                        ignore.add(r * C + q)
+                        outer.discard(r * C + q)
         self._cache = {}
         self.geo = Geo(net, R, C, gx0, gy0, frozenset(ignore), frozenset(outer))
         return self.geo
+
+    @staticmethod
+    def _lignes_hud(frame, bg, long=20, epais=3):
+        """Lignes de pixels appartenant à une bande de couleur unie (>= `long` pixels de large) d'au plus `epais` lignes."""
+        lignes = []
+        for y in range(frame.shape[0]):
+            ligne = frame[y]
+            best, cur, prev = 0, 0, -1
+            for v in ligne.tolist():
+                if v == prev and v != bg:
+                    cur += 1
+                else:
+                    cur = 1 if v != bg else 0
+                prev = v
+                if cur > best:
+                    best = cur
+            lignes.append(best >= long)
+        out, y = [], 0
+        while y < len(lignes):
+            if lignes[y]:
+                z = y
+                while z < len(lignes) and lignes[z]:
+                    z += 1
+                if z - y <= epais:
+                    out.extend(range(y, z))
+                y = z
+            else:
+                y += 1
+        return out
 
     # ------------------------------------------------------------ lecture
     def lire(self, frame):

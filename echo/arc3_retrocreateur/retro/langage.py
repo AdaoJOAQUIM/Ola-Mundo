@@ -39,6 +39,7 @@ class Prog:
         self.sync = []
         self.win = None
         self.grav = None
+        self.undo = None
 
     def copie(self):
         p = Prog(self.types)
@@ -47,7 +48,7 @@ class Prog:
         p.fx = dict(self.fx)
         p.clk = dict(self.clk)
         p.sync = list(self.sync)
-        p.win, p.grav = self.win, self.grav
+        p.win, p.grav, p.undo = self.win, self.grav, self.undo
         return p
 
     def taille(self):
@@ -217,7 +218,7 @@ class Prog:
                             Ml[i] = A
                             ch = True
             else:
-                nm = ck[2]
+                nm = ck[2] if geo.nm is None else {**ck[2], **geo.nm}
                 for dr, dc in ck[1]:
                     r, c = r0 + dr, c0 + dc
                     if 0 <= r < geo.R and 0 <= c < geo.C:
@@ -236,6 +237,17 @@ class Prog:
                 flag = 1
             return (tuple(Ml), pos, avc, tor), flag, T
         return None
+
+    def pas_u(self, geo, s, u, act):
+        """Pas avec minuterie d'énergie : u = nombre d'actions effectives déjà dépensées dans la vie courante."""
+        r = self.pas(geo, s, act)
+        if r is None:
+            return None
+        s2, fl, tin = r
+        u2 = u + 1
+        if fl == 0 and geo.cap is not None and u2 >= geo.cap:
+            fl = 2
+        return s2, fl, tin, u2
 
     def actions(self, geo, s, avail_click=True):
         """Actions que le programme sait exécuter depuis s."""

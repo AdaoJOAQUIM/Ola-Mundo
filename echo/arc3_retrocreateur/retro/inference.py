@@ -77,6 +77,7 @@ class Modele:
         self.stats = {"surprises": 0, "evenements": 0, "reevals": 0}
         self.avc_change = False
         self.win_nonobs = set()
+        self.undo = None
 
     # ------------------------------------------------------------ construction
     def construire(self, choix=None):
@@ -86,6 +87,7 @@ class Modele:
         p.fx = {t: tuple(v) for t, v in self.fx.items()}
         p.clk = dict(self.clk)
         p.grav = self.grav
+        p.undo = self.undo
         for cle, cr in self.creneaux.items():
             nom = cr.alts[(choix or {}).get(cle, cr.choix)][0]
             self._appliquer(p, cle, nom)
@@ -547,17 +549,18 @@ class Modele:
             return changed
         if offs == {(0, 0)}:
             a, b = next(iter(pairs))
-            old = self.clk.get(T)
-            nm = dict(old[2]) if old and old[0] == "next" else {}
-            nm[a] = b
-            self.clk[T] = ("next", ((0, 0),), nm)
-            self._fermer_cycles(T)
-            for t in list(nm):
-                if t != T:
-                    self.clk[t] = self.clk[T]
-            for t in nm.values():
-                if t not in self.clk:
-                    self.clk[t] = self.clk[T]
+            loc = dict(geo.nm or {})
+            loc[a] = b
+            # fermeture du cycle dans ce niveau : la chaîne a -> b -> c se referme sur sa tête
+            dest = set(loc.values())
+            tetes = [x for x in loc if x not in dest]
+            fins = [x for x in dest if x not in loc]
+            if len(tetes) == 1 and len(fins) == 1:
+                loc[fins[0]] = tetes[0]
+            geo.nm = loc
+            spec = ("next", ((0, 0),), dict(loc))
+            for t in set(loc) | set(loc.values()) | {T}:
+                self.clk[t] = spec
             return True
         offs4 = {(-1, 0), (1, 0), (0, -1), (0, 1)}
         offs2 = set(offs)
