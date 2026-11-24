@@ -636,6 +636,177 @@
     "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
     "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
    }
+  },
+  {
+   "date": "2026-11-24T08:43:47",
+   "ronde": "r4",
+   "retrait": "couloir",
+   "accepte": false,
+   "raison": "retrait : niveaux perdus=[('sc25', 0)]",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": -0.2,
+    "sd": 0.42163702135578396,
+    "borne_inf": -0.3844,
+    "niveaux_base": 7,
+    "niveaux_candidat": 5,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 50,
+    "niveaux_perdus": [
+     [
+      "sc25",
+      0
+     ]
+    ]
+   },
+   "posterieur": {
+    "activations": 443,
+    "succes": 7,
+    "alpha": 8,
+    "beta": 437,
+    "moyenne": 0.018,
+    "elagable": true
+   }
+  },
+  {
+   "date": "2026-11-24T08:44:37",
+   "ronde": "r4",
+   "retrait": "tour_objets",
+   "accepte": true,
+   "raison": "retrait : niveaux perdus=[]",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": 0.0,
+    "sd": 0.0,
+    "borne_inf": 0.0,
+    "niveaux_base": 7,
+    "niveaux_candidat": 7,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 686,
+    "niveaux_perdus": []
+   },
+   "posterieur": {
+    "activations": 140,
+    "succes": 0,
+    "alpha": 1,
+    "beta": 141,
+    "moyenne": 0.007,
+    "elagable": true
+   }
+  },
+  {
+   "date": "2026-11-24T08:45:47",
+   "ronde": "r5",
+   "candidat": "paires_clics__r5",
+   "sha_source": "e4402ef8aecb3603",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": 0.1,
+    "sd": 0.8755950357709131,
+    "borne_inf": -0.2829353600805232,
+    "niveaux_base": 7,
+    "niveaux_candidat": 8,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 562,
+    "niveaux_perdus": []
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      0,
+      0,
+      1,
+      2
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
+  },
+  {
+   "date": "2026-11-24T08:46:09",
+   "ronde": "r5",
+   "candidat": "sonde_clics__r5",
+   "sha_source": "eb65bd7b9290aae9",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": -0.1,
+    "sd": 0.31622776601683794,
+    "borne_inf": -0.2383,
+    "niveaux_base": 7,
+    "niveaux_candidat": 6,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 1087,
+    "niveaux_perdus": []
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      0,
+      1,
+      0,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
   }
  ]
 }
