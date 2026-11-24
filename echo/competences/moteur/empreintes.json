@@ -1,0 +1,12 @@
+{
+ "fichiers": {
+  "juge.py": "86a0339752d76c3783ed0d65a5d21107a6ce346c32c906837be186513b56f7ab",
+  "sim.py": "16b148d816cd8da87c09f08cdbc6e2f4934159d218f553f26cf8de275014046c",
+  "layout.py": "0551dce490a3454fca08071d554fb38b1ed0662d0c1aed671599fd175889be10",
+  "garde_skills.py": "00e6c80b050ba3a671ec8f83eb4521be1e85d4773bd263ffae4e344fc5d9f2f8",
+  "donnees.py": "9b2f75331dda041fe16f8ad5bc554c240c612b395ea87df243a32f87816bbbc3",
+  "perm_canaux.npz": "b21c94ee3ca060783207794ae7227a4d097b785d589289440e72521cb3767964"
+ },
+ "gros": {},
+ "note": "juge.py epingle ici avant tout tour ; gros fichiers (cm_nib.bin) ajoutes apres la fin de construire.py"
+}
