@@ -1,0 +1,10 @@
+# poids, caches et fichiers volumineux (jamais commites)
+*.bin
+*.pt
+*.safetensors
+*.npz
+*.pkl
+__pycache__/
+.pytest_cache/
+cache/
+*.log
