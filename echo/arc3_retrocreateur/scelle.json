@@ -1,0 +1,29 @@
+{
+ "graine": 2026,
+ "methode": "random.Random(2026).sample(sorted(MECANIQUES),3)",
+ "mecaniques_secretes": [
+  "cibles",
+  "ennemis",
+  "teleporteurs"
+ ],
+ "toutes": [
+  "annuler",
+  "attente",
+  "blocs_poussables",
+  "cibles",
+  "cles_portes",
+  "collectibles",
+  "couleurs",
+  "dangers",
+  "deplacement",
+  "energie",
+  "ennemis",
+  "gravite",
+  "interrupteurs",
+  "lumieres",
+  "motif",
+  "murs",
+  "selection",
+  "teleporteurs"
+ ]
+}
