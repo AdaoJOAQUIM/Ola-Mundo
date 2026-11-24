@@ -31,3 +31,31 @@ J1 atteint si : taux de programme exact >= 70 %, niveaux résolus (500 actions) 
 ## Engagements
 - Résultats rapportés tels quels. Aucun réglage sur les 300 mondes J1 : un seul passage final (les résultats de développement ne sont pas indépendants).
 - Le dossier des vrais jeux (`echo/arc/externes/arc3-jeux`) n'est jamais ouvert. `echo/arc3_scientifique/v2` n'est pas modifié.
+
+---
+
+# Phase 3 : critères pré-enregistrés (J3, vrais jeux de développement)
+
+Cette section est commitée AVANT toute mesure J3. Les écarts éventuels seront signalés dans resultats_j3.md, pas ici.
+
+## Jeux et découpe
+- La découpe vient de `echo/arc3/lancer.py` (DEV = 5 jeux tirés par `random.Random(2026)`, HELD = les 20 autres), importée, jamais recopiée. Un garde du lanceur lève une erreur si un jeu HELD est demandé (test).
+- **DEV-train** = cn04, ls20, sc25 : seuls jeux autorisés pour le développement (observations et rejeux uniquement ; jamais le code ni les fichiers des jeux).
+- **DEV-val** = tn36, ka59 : jamais joués pendant le développement. Un seul passage final, agent gelé (commit marqué). Seul signal équitable, car DEV-train a servi à développer.
+- Les 20 jeux HELD ne sont pas touchés.
+
+## Protocole
+- Accès par `AdaptateurARC3(jeu_id, budget)` (v1). Aucun réseau ni modèle de langue à la partie (test de garde de socket), aucun identifiant de jeu dans le code de l'agent (test).
+- Budget de protocole : 500 actions par jeu ; graines d'agent 0, 1 et 2 (le jeu lui-même est déterministe : le courtier le crée avec la graine 0). Budget large : 5 000 actions, rapporté à part.
+- CPU seulement.
+
+## Mesures
+1. **Niveaux résolus** = niveaux terminés / niveaux totaux, par jeu et par graine, puis agrégé (somme sur les graines / somme des niveaux).
+2. **Actions par niveau contre la référence humaine** (`niveaux_reference` du SDK) : pour chaque niveau résolu, actions utilisées sur ce niveau / actions de référence ; rapport agrégé et médiane.
+3. Programme prédit : taux de prédiction exacte des transitions de l'agent sur ses propres observations (information, pas un seuil).
+4. Régression sur les mondes : 100 graines J1 tirées par `random.Random(11)` parmi les 300 graines J1 (budget 500) ; la part de niveaux ne doit pas baisser de plus de 5 points par rapport au commit f9bd261 (mêmes 100 mondes).
+
+## Seuil J3
+- **J3 atteint** si les niveaux résolus à 500 actions sont >= 50 % sur l'ensemble des 5 jeux DEV (moyenne sur les 3 graines, agrégée sur les niveaux).
+- Lecture équitable : DEV-val seul >= 50 % est la seule preuve de généralisation ; si DEV-val < 50 % alors que le total >= 50 %, le résultat est rapporté comme « atteint mais non généralisé ».
+- Rapporté tel quel, quel que soit le résultat. Aucun réglage sur tn36 et ka59.
