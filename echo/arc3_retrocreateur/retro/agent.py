@@ -111,48 +111,46 @@ class RetroCreateur:
         pos, avc, tor = -1, 0, 0
         if sc.av_class is not None:
             cand = sc.cellules_avatar(raw)
-            if not cand and prev is not None and prev[1] >= 0:
-                # couleur d'avatar nouvelle : parties de la bonne forme sur des cases qui ont changé
-                for p in range(geo.N):
-                    if p in geo.ignore or raw[p] == raw_prev[p]:
-                        continue
-                    for col, cl in self.types.inv[raw[p]]:
-                        if cl == sc.av_class:
-                            cand.append((p, col))
-                            break
-                cand = [x for x in cand if isinstance(x, tuple)]
+            if prev is not None and prev[1] >= 0:
+                # valides : avatar immobile (case inchangée) ou case d'arrivée (case changée) ; la case précédente
+                # modifiée n'est qu'un dernier recours (sosie statique révélé)
+                bons = [p for p in cand if (p == prev[1]) == (raw[p] == raw_prev[p])]
+                cand = bons or [p for p in cand if p == prev[1] or raw[p] != raw_prev[p]]
                 if not cand:
-                    # fusion avec une case de même couleur : unique case d'arrivée voisine dont la signature a changé
+                    # repli : nouvelle couleur d'avatar (forme reconnue) sur une case qui a changé, voisine de l'ancienne
                     pr, pc = divmod(prev[1], geo.C)
-                    arr = [p for p in range(geo.N) if p not in geo.ignore and p != prev[1] and raw[p] != raw_prev[p]
-                           and raw[p] != 0 and abs(p // geo.C - pr) + abs(p % geo.C - pc) == 1]
-                    if len(arr) == 1:
-                        for col, cl in self.types.inv[raw[arr[0]]]:
-                            if col in sc.av_colors or True:
-                                sc.ajouter_part((col, cl))
-                                cand = [(arr[0], col)]
+                    nouv = []
+                    for p in range(geo.N):
+                        if p in geo.ignore or raw[p] == raw_prev[p] or abs(p // geo.C - pr) + abs(p % geo.C - pc) > 1:
+                            continue
+                        for col, cl in self.types.inv[raw[p]]:
+                            if cl == sc.av_class:
+                                nouv.append((p, col))
                                 break
-                        if cand:
-                            self.modele.avc_change = True if cand[0][1] not in sc.av_colors else self.modele.avc_change
-                            sc.ajouter_couleur_av(cand[0][1])
+                    if nouv:
+                        best = min(nouv, key=lambda x: abs(x[0] // geo.C - pr) + abs(x[0] % geo.C - pc))
+                        sc.ajouter_couleur_av(best[1])
+                        self.modele.avc_change = True
+                        cand = [best[0]]
+                    else:
+                        # fusion avec une case de même couleur : unique case d'arrivée voisine dont la signature a changé
+                        arr = [p for p in range(geo.N) if p not in geo.ignore and p != prev[1] and raw[p] != raw_prev[p]
+                               and raw[p] != 0 and abs(p // geo.C - pr) + abs(p % geo.C - pc) == 1]
+                        if len(arr) == 1:
+                            for col, cl in self.types.inv[raw[arr[0]]]:
+                                sc.ajouter_part((col, cl))
+                                if col not in sc.av_colors:
+                                    self.modele.avc_change = True
+                                sc.ajouter_couleur_av(col)
+                                cand = [arr[0]]
+                                break
                 if cand:
-                    best = min(cand, key=lambda x: abs(x[0] // geo.C - prev[1] // geo.C) + abs(x[0] % geo.C - prev[1] % geo.C))
-                    sc.ajouter_couleur_av(best[1])
-                    self.modele.avc_change = True
-                    cand = [best[0]]
-            if cand:
-                if prev is not None and prev[1] >= 0:
-                    # valides : avatar immobile (case inchangée) ou case d'arrivée (case changée) ;
-                    # la case précédente modifiée n'est qu'un dernier recours (look-alike révélé)
-                    bons = [p for p in cand if (p == prev[1]) == (raw[p] == raw_prev[p])]
-                    ok = bons or [p for p in cand if p == prev[1] or raw[p] != raw_prev[p]]
-                    if ok:
-                        cand = ok
                     pr, pc = divmod(prev[1], geo.C)
                     cand.sort(key=lambda p: abs(p // geo.C - pr) + abs(p % geo.C - pc))
-                elif len(cand) > 1:
-                    c0 = sc.av_colors[0]
-                    cand.sort(key=lambda p: 0 if (c0, sc.av_class) in self.types.inv[raw[p]] else 1)
+            elif len(cand) > 1:
+                c0 = sc.av_colors[0]
+                cand.sort(key=lambda p: 0 if (c0, sc.av_class) in self.types.inv[raw[p]] else 1)
+            if cand:
                 pos = cand[0]
                 part = sc.partie_avatar(raw[pos])
                 avc = part[0]
@@ -477,6 +475,8 @@ class RetroCreateur:
         if sx[1] < 0:
             return pre or None
         strict = {t for t in self._types_presents(sx) if t not in self.modele.explore and t > 0}
+        if w[0] == "enter":
+            strict -= set(w[1])
         res = chercher(prog, geo, sx, lambda s2, fl, tin, act: fl == 1, interdit=strict)
         if res is None:
             return None
@@ -566,7 +566,12 @@ class RetroCreateur:
         mo = self.modele
         cols = list(self.scene.av_colors)
         cands = []
-        for t in set(s[0]):
+        latents = {B for _, B, _ in prog.sync}
+        for fx in prog.fx.values():
+            for e in fx:
+                if e[0] in ("recolor", "toggle"):
+                    latents.add(e[2])
+        for t in set(s[0]) | latents:
             if t <= 0 or t in prog.solid or t in prog.kill or t in prog.push:
                 continue
             for c in cols:
@@ -587,9 +592,9 @@ class RetroCreateur:
                 p2.win = ("entermatch", cls)
             else:
                 p2.win = ("enter", frozenset({t}))
-            res = chercher(p2, geo, s, lambda s2, fl, tin, act: fl == 1, interdit=strict, cap=20000)
-            if res:
-                return res[0][0]
+            plan = self._plan_victoire(p2, geo, s)
+            if plan:
+                return plan[0]
         return None
 
     def _poids_clic(self, t, cnt, M, geo):

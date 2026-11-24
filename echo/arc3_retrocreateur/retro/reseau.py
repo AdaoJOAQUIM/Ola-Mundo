@@ -183,7 +183,7 @@ def construire_reseau(frames, rec=None):
             if q0 != q1 or r0 != r1:
                 continue
             ccx, ccy = px + q0 * c + (c - 1) / 2, py + r0 * c + (c - 1) / 2
-            if abs((b[0] + b[2]) / 2 - ccx) > 1.0 or abs((b[1] + b[3]) / 2 - ccy) > 1.0:
+            if abs((b[0] + b[2]) / 2 - ccx) > 0.51 or abs((b[1] + b[3]) / 2 - ccy) > 0.51:
                 continue
             if True:
                 ext[0], ext[1] = min(ext[0], q0), max(ext[1], q0)

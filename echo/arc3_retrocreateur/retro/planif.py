@@ -139,7 +139,7 @@ def clics_pour(prog, geo, s0, atomes, cap=300000):
             if p not in cib:
                 continue
             t = M0[p]
-            nm = prog.clk[t][2]
+            nm = {**prog.clk[t][2], **(geo.nm or {})}
             k = 0
             while t not in cib[p]:
                 t = nm.get(t)

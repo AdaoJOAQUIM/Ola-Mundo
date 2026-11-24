@@ -463,7 +463,14 @@ class Modele:
                     changed = True
                 continue
             cle = ("evt", T0, a, b)
-            if cle not in self.creneaux and ("evt", T0, b, a) not in self.creneaux:
+            inv = ("evt", T0, b, a)
+            if inv in self.creneaux and cle not in self.creneaux:
+                # A->B puis B->A déclenchés par le même type : c'est une bascule
+                del self.creneaux[inv]
+                self._ajouter_creneau_certain(T0, min(a, b), max(a, b))
+                changed = True
+                continue
+            if cle not in self.creneaux and inv not in self.creneaux:
                 collecte = any(e[0] == "set" and e[1] == 0 for e in self.fx.get(T0, [])) or True
                 self.creneaux[cle] = Creneau(cle, [("recolor", math.log(0.5)), ("sync", math.log(0.35)),
                                                    ("toggle", math.log(0.15))])
