@@ -7,6 +7,15 @@
   "donnees.py": "9b2f75331dda041fe16f8ad5bc554c240c612b395ea87df243a32f87816bbbc3",
   "perm_canaux.npz": "b21c94ee3ca060783207794ae7227a4d097b785d589289440e72521cb3767964"
  },
- "gros": {},
- "note": "juge.py epingle ici avant tout tour ; gros fichiers (cm_nib.bin) ajoutes apres la fin de construire.py"
+ "gros": {
+  "cm_nib.bin": [
+   "/home/user/monde_data/cm/cm_nib.bin",
+   "427a8cde072c8122251f829230a8d5112b87c7dd7ddff9eae2dafa704e4a6cf7"
+  ],
+  "cm_planes.bin": [
+   "/home/user/monde_data/cm/cm_planes.bin",
+   "8bde419a367980d8ad92d6bc6c834309a7202499f99889fbdee1b422d370cdae"
+  ]
+ },
+ "note": "juge.py epingle au commit b060751 (avant tout tour) ; sim.py/layout.py corriges ensuite (quantification par blocs d'entree), re-epingles avant le tour 1 ; juge.py inchange."
 }
