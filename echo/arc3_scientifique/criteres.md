@@ -22,3 +22,8 @@ Ce fichier est commité AVANT toute expérience. Il ne sera pas modifié ensuite
 ## Engagements d'honnêteté
 - Les résultats sont rapportés tels quels, même si M1 n'est pas atteint. Aucun réglage après l'ouverture de HELD.
 - Les jeux DEV servent au développement : leurs scores ne sont pas indépendants.
+
+## Amendement du 2026-11-24 (consigne du coordinateur, avant toute ouverture de HELD)
+- L'évaluation HELD est REPORTÉE à une évaluation finale unique, après plusieurs tours d'amélioration. Elle n'est pas lancée dans cette session ; `lancer_sci.py held` reste inutilisé.
+- M1 (HELD >= 30/150) sera jugé à ce moment-là, selon les critères ci-dessus, sans changement.
+- Dans cette session : travail sur DEV uniquement (résultats par jeu, ablations, courbe d'apprentissage, gabarits du sommeil), agent gelé en fin de session, point d'entrée documenté `run.py`, et accès à l'environnement derrière une petite classe adaptatrice.

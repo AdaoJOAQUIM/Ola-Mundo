@@ -168,7 +168,8 @@ def extraire_mouvement(a: np.ndarray, b: np.ndarray, hud=None, max_shift=14, min
         n = len(ys)
         if n < 2 * min_cells:
             break
-        meilleur = None
+        cands = []
+        smax = 0
         for dy in range(-max_shift, max_shift + 1):
             for dx in range(-max_shift, max_shift + 1):
                 if dy == 0 and dx == 0:
@@ -183,9 +184,30 @@ def extraire_mouvement(a: np.ndarray, b: np.ndarray, hud=None, max_shift=14, min
                 ok2 = (ty >= 0) & (ty < H) & (tx >= 0) & (tx < W)
                 dep = np.zeros(n, dtype=bool)
                 dep[ok2] = b[ty[ok2], tx[ok2]] == a[ys[ok2], xs[ok2]]
-                s = min(int(arr.sum()), int(dep.sum()))
-                if meilleur is None or s > meilleur[0]:
-                    meilleur = (s, dy, dx, arr, dep)
+                # une vraie translation : la source d'une arrivée est elle-même une cellule changée,
+                # et la destination d'un départ aussi (écarte les coïncidences sur fond uniforme)
+                src_ch = np.zeros(n, dtype=bool)
+                src_ch[ok] = ch[sy[ok], sx[ok]]
+                dst_ch = np.zeros(n, dtype=bool)
+                dst_ch[ok2] = ch[ty[ok2], tx[ok2]]
+                arr = arr & src_ch
+                dep = dep & dst_ch
+                sc = min(int(arr.sum()), int(dep.sum()))
+                if sc >= smax and sc > 0:
+                    if sc > smax:
+                        cands = []
+                        smax = sc
+                    cands.append((sc, dy, dx, arr, dep))
+        meilleur = None
+        if cands:
+            # départage : l'objet qui bouge est plutôt de couleurs rares (le fond « se déplace » symétriquement)
+            freq = np.bincount(a.ravel().astype(np.int64), minlength=16) / a.size
+
+            def rarete(c):
+                _, dy, dx, arr, dep = c
+                cols = a[ys[dep], xs[dep]]
+                return float(freq[cols].mean()) if len(cols) else 1.0
+            meilleur = min(cands, key=rarete)
         if meilleur is None or meilleur[0] < min_cells or meilleur[0] < 0.25 * n:
             break
         s, dy, dx, arr, dep = meilleur

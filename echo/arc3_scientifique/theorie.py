@@ -27,17 +27,21 @@ EPS = 0.03
 ISSUES = ("moved", "blocked", "died", "win")
 
 
-def lik_issue(issue: str, types) -> float:
+def issue_predite(types) -> str:
+    """Issue déterministe prédite par une affectation de types aux couleurs touchées."""
     a = set(types)
-    if issue == "blocked":
-        ok = BLOCK in a
-    elif issue == "died":
-        ok = LETHAL in a
-    elif issue == "win":
-        ok = WIN in a
-    else:  # moved sans événement
-        ok = not (a & {BLOCK, LETHAL, WIN})
-    return 1.0 - EPS if ok else EPS
+    if LETHAL in a:
+        return "died"
+    if BLOCK in a:
+        return "blocked"
+    if WIN in a:
+        return "win"
+    return "moved"
+
+
+def lik_issue(issue: str, types) -> float:
+    """P(issue observée | affectation) : prédiction déterministe + bruit EPS sur chaque autre issue."""
+    return 1.0 - 3 * EPS if issue_predite(types) == issue else EPS
 
 
 def lik_reveal(changed: bool, t: int) -> float:
@@ -90,26 +94,124 @@ class Prior:
                 "gabarits": [{"pred": p, "probs": list(map(float, q))} for p, q in self.gabarits]}
 
 
+_LIK_CACHE = {}
+
+
+def tenseur_lik(k: int, issue: str) -> np.ndarray:
+    """Tenseur 5^k : P(issue | types des k couleurs touchées)."""
+    key = (k, issue)
+    if key not in _LIK_CACHE:
+        t = np.zeros((5,) * k)
+        for idx in itertools.product(range(5), repeat=k):
+            t[idx] = lik_issue(issue, idx)
+        _LIK_CACHE[key] = t
+    return _LIK_CACHE[key]
+
+
 class Croyances:
-    """Postérieur sur le type de règle de chaque couleur."""
+    """Postérieur sur le type de règle de chaque couleur, par propagation de croyance (BP) sur les
+    motifs d'observation (couleurs touchées, issue) : inférence indépendante de l'ordre des observations,
+    avec explication par élimination (une couleur déjà établie bloquante absorbe l'effet)."""
+
+    MAX_K = 4
 
     def __init__(self, prior: Prior | None = None):
         self.prior = prior or Prior()
-        self.p = {}              # couleur -> vecteur de probas
+        self.p = {}              # couleur -> vecteur de probas (croyance)
         self.cars = {}           # couleur -> primitives
-        self.n_reveal = {}       # couleur -> nombre d'observations de dévoilement
+        self.n_reveal = {}
         self.n_contact = {}
+        self.motifs = {}         # (couleurs triées, issue) -> nombre
+        self.msg = {}            # (motif, couleur) -> message (5,)
+        self.rev = {}            # couleur -> (n_changé, n_inchangé)
+        self.par_couleur = {}    # couleur -> set de motifs
 
     def definir_cars(self, cars: dict):
         for c, v in cars.items():
-            self.cars[c] = v
+            if c not in self.cars:
+                self.cars[c] = v
+
+    def prior_c(self, c):
+        return self.prior.loi(self.cars.get(c))
 
     def get(self, c) -> np.ndarray:
         if c not in self.p:
-            self.p[c] = self.prior.loi(self.cars.get(c))
+            self.p[c] = self.prior_c(c)
         return self.p[c]
 
-    # -- énumération conjointe sur les couleurs incertaines ------------------------------
+    # -- BP ----------------------------------------------------------------------------
+    def _creer_motif(self, colors, issue):
+        cs = tuple(sorted(set(colors)))
+        # écarte les couleurs déjà établies sans effet (passables certaines) : réduit la dimension
+        gardees = tuple(c for c in cs if not (self.get(c)[PASS] > 0.995))
+        if not gardees:
+            return None
+        if len(gardees) > self.MAX_K:
+            gardees = tuple(sorted(sorted(gardees, key=lambda c: -entropie(self.get(c)))[:self.MAX_K]))
+        return (gardees, issue)
+
+    def _recalculer(self, couleurs, sweeps=3):
+        dirty = set(couleurs)
+        for _ in range(sweeps):
+            motifs = set()
+            for c in dirty:
+                motifs |= self.par_couleur.get(c, set())
+            if not motifs:
+                break
+            nouveau = set()
+            for m in motifs:
+                cs, issue = m
+                k = len(cs)
+                L = tenseur_lik(k, issue) ** self.motifs[m]
+                cav = []
+                for c in cs:
+                    q = self.get(c) / np.maximum(self.msg.get((m, c), np.ones(5)), 1e-12)
+                    cav.append(q / q.sum())
+                for i, c in enumerate(cs):
+                    T = L
+                    for j in range(k):
+                        if j != i:
+                            shape = [1] * k
+                            shape[j] = 5
+                            T = T * cav[j].reshape(shape)
+                    ax = tuple(j for j in range(k) if j != i)
+                    mi = T.sum(axis=ax) if ax else T
+                    mi = np.maximum(mi, 1e-12)
+                    mi = mi / mi.sum()
+                    old = self.msg.get((m, c), np.ones(5))
+                    new_q = self.get(c) / np.maximum(old, 1e-12) * mi
+                    new_q = np.maximum(new_q, 1e-9)
+                    new_q /= new_q.sum()
+                    if np.abs(new_q - self.p[c]).max() > 1e-4:
+                        nouveau.add(c)
+                    self.p[c] = new_q
+                    self.msg[(m, c)] = mi
+            dirty = nouveau
+            if not dirty:
+                break
+
+    def maj_contact(self, colors, issue: str):
+        colors = list(colors)
+        m = self._creer_motif(colors, issue)
+        for c in colors:
+            self.n_contact[c] = self.n_contact.get(c, 0) + 1
+            self.get(c)
+        if m is None:
+            return
+        self.motifs[m] = self.motifs.get(m, 0) + 1
+        for c in m[0]:
+            self.par_couleur.setdefault(c, set()).add(m)
+        self._recalculer(m[0])
+
+    def maj_reveal(self, c, changed: bool):
+        v = self.get(c)
+        l = np.array([lik_reveal(changed, t) for t in range(5)])
+        # la vraisemblance de dévoilement multiplie directement la croyance (facteur unaire)
+        v = np.maximum(v * l, 1e-9)
+        self.p[c] = v / v.sum()
+        self.n_reveal[c] = self.n_reveal.get(c, 0) + 1
+
+    # -- prédictions ----------------------------------------------------------------
     def _joint(self, colors, poids_fn, max_inc=5):
         colors = list(colors)
         fixes, inc = {}, []
@@ -124,7 +226,6 @@ class Croyances:
             for c in inc[max_inc:]:
                 fixes[c] = int(self.get(c).argmax())
             inc = inc[:max_inc]
-        marg = {c: np.zeros(5) for c in inc}
         Z = 0.0
         for combo in itertools.product(range(5), repeat=len(inc)):
             aff = dict(fixes)
@@ -132,33 +233,11 @@ class Croyances:
             for c, t in zip(inc, combo):
                 aff[c] = t
                 pr *= self.get(c)[t]
-            w = pr * poids_fn(aff)
-            Z += w
-            for c, t in zip(inc, combo):
-                marg[c][t] += w
-        return inc, marg, Z
+            Z += pr * poids_fn(aff)
+        return inc, None, Z
 
-    def maj_contact(self, colors, issue: str):
-        colors = list(colors)
-        if not colors:
-            return
-        inc, marg, Z = self._joint(colors, lambda aff: lik_issue(issue, aff.values()))
-        if Z <= 0:
-            return
-        for c in inc:
-            v = marg[c] / Z
-            self.p[c] = np.maximum(v, 1e-6) / np.maximum(v, 1e-6).sum()
-        for c in colors:
-            self.n_contact[c] = self.n_contact.get(c, 0) + 1
-
-    def maj_reveal(self, c, changed: bool):
-        v = self.get(c) * np.array([lik_reveal(changed, t) for t in range(5)])
-        v = np.maximum(v, 1e-9)
-        self.p[c] = v / v.sum()
-        self.n_reveal[c] = self.n_reveal.get(c, 0) + 1
-
-    # -- prédictions ----------------------------------------------------------------
     def proba_issues(self, colors) -> dict:
+        """Distribution prédictive sur les issues (moved/blocked/died/win), moyennée sur le postérieur."""
         colors = list(colors)
         res = {}
         for issue in ISSUES:
@@ -169,15 +248,18 @@ class Croyances:
 
     def gain_info(self, colors) -> float:
         """Gain d'information espéré d'une expérience « entrer en contact avec ces couleurs » :
-        entropie de l'issue prédite + incertitude résiduelle sur le type des couleurs non encore résolues."""
+        information mutuelle I(théorie ; issue) = H(issue) - E_théorie[H(issue | théorie)],
+        plus l'incertitude résiduelle sur « disparaît/reste » des couleurs jamais dévoilées."""
         colors = list(colors)
         if not colors:
             return 0.0
         pi = self.proba_issues(colors)
-        g = entropie(list(pi.values()))
+        h_cond = entropie([1 - 3 * EPS, EPS, EPS, EPS])      # bruit irréductible d'une affectation donnée
+        g = max(0.0, entropie(list(pi.values())) - h_cond)
         for c in colors:
             if self.n_reveal.get(c, 0) < 2:
-                g += 0.3 * entropie(self.get(c))
+                v = self.get(c)
+                g += 0.3 * entropie([v[COLLECT], 1 - v[COLLECT]]) if v.max() < 0.995 else 0.0
         return g
 
     def p_type(self, colors, t: int) -> float:
@@ -191,7 +273,7 @@ class Croyances:
         return {c: TYPES[int(v.argmax())] for c, v in self.p.items()}
 
     def exporter_etiquettes(self, seuil=0.6):
-        """(couleur, type, primitives) pour les couleurs dont le type est établi par l'expérience."""
+        """(type, primitives) pour les couleurs dont le type est établi par l'expérience."""
         out = []
         for c, v in self.p.items():
             if self.n_contact.get(c, 0) >= 1 and v.max() >= seuil:
