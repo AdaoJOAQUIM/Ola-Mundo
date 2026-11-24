@@ -1,0 +1,7 @@
+runs/
+recordings/
+__pycache__/
+*.pyc
+*.pt
+*.npz
+checkpoints/
