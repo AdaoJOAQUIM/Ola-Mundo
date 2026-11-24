@@ -68,8 +68,10 @@ class Modele:
         self.events = []
         self.vus = set()
         self.dans_events = set()
+        self._cache_cond = {}
         self.explore = set()          # types dont le comportement à l'entrée est connu
         self.explore_click = set()    # types déjà essayés par un clic
+        self.entre_sans_gain = set()  # (type, couleur d'avatar) franchis sans victoire
         self.click_inerte = set()
         self.prog = Prog(types)
         self.stats = {"surprises": 0, "evenements": 0, "reevals": 0}
@@ -159,6 +161,19 @@ class Modele:
         return ats
 
     def apprendre_cond(self, A, B, prog):
+        cle = (A, B, len(self.events), len(self.dans_events),
+               tuple(sorted(t for t, fx in self.fx.items() if any(e[0] == "set" and e[1] == 0 for e in fx))),
+               tuple(sorted(self.clk)))
+        c = self._cache_cond.get(cle)
+        if c is not None:
+            return c[0]
+        r = self._apprendre_cond(A, B, prog)
+        if len(self._cache_cond) > 400:
+            self._cache_cond.clear()
+        self._cache_cond[cle] = (r,)
+        return r
+
+    def _apprendre_cond(self, A, B, prog):
         """Plus petite conjonction d'atomes vraie sur tous les états où B est affiché et fausse sur au moins un
         atome des états où A est affiché."""
         pos, neg = [], []
@@ -250,6 +265,10 @@ class Modele:
 
     def _marquer_explore(self, ev):
         name = ev.act[0]
+        if ev.flag == 0 and ev.s0[1] >= 0 and name != "ACTION6" and name in self.dirmap and ev.s1 is not None:
+            q = ev.geo.nb[ev.s0[1]][self.dirmap[name]]
+            if q >= 0 and ev.s1[1] == q:
+                self.entre_sans_gain.add((ev.s0[0][q], ev.s0[2]))
         if name == "ACTION6":
             p = ev.act[1]
             if p is not None and p >= 0 and ev.s0[0][p] > 0:

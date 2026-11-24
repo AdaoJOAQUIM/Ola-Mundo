@@ -29,7 +29,10 @@ def _act_dict(act, geo):
 class RetroCreateur:
     def __init__(self, graine=0, options=None):
         self.rng = random.Random(graine)
-        self.opt = options or {}
+        self.opt = dict(options or {})
+        import os, json as _json
+        if os.environ.get('RETRO_OPTS'):
+            self.opt.update(_json.loads(os.environ['RETRO_OPTS']))
         self.types = Types()
         self.scene = Scene(self.types)
         self.modele = Modele(self.types)
@@ -157,7 +160,11 @@ class RetroCreateur:
         except Exception:                  # sécurité : jamais d'exception vers le harnais
             import traceback
             self.trace.append(traceback.format_exc())
-            return self._fallback(obs, "exception")
+            self.n_exc = getattr(self, "n_exc", 0) + 1
+            if self.n_exc > 25 or self.geo is None:
+                return self._fallback(obs, "exception")
+            self.prev_snap, self.prev_act = self.snap, ("ACTION5", None)
+            return self._act_de_secours(obs)
         self.prev_snap = self.snap
         self.prev_act = act
         self.raw_prev = self.raw
@@ -357,7 +364,7 @@ class RetroCreateur:
             inex = [t for t in cnt if t not in mo.clk and t not in mo.click_inerte
                     and t not in prog.solid and t not in prog.kill and t not in prog.push]
             if inex:
-                poids = {t: self._poids(t, cnt) for t in inex}
+                poids = {t: self._poids_clic(t, cnt, M, geo) for t in inex}
                 t = max(inex, key=lambda t: poids[t])
                 cells = [p for p, x in enumerate(M) if x == t and p not in geo.ignore]
                 sc = poids[t] / 1.5
@@ -375,7 +382,62 @@ class RetroCreateur:
                 elif cl is not None:
                     self.guess_excl.append(self.guess)
                     self.guess = None
+        # (d) exploration épuisée sans but connu : tester des hypothèses de victoire (type, couleur d'avatar)
+        if best is None and s[1] >= 0 and prog.win is None and not self.opt.get('no_d'):
+            best = self._tester_victoire(prog, geo, s)
         return best
+
+    def _tester_victoire(self, prog, geo, s):
+        mo = self.modele
+        cols = list(self.scene.av_colors)
+        cands = []
+        for t in set(s[0]):
+            if t <= 0 or t in prog.solid or t in prog.kill or t in prog.push:
+                continue
+            for c in cols:
+                if (t, c) in mo.entre_sans_gain:
+                    continue
+                tc = self.types.couleurs(t)
+                sc = 1.0 if c in tc else 0.15
+                cands.append((sc, t, c))
+        cands.sort(reverse=True)
+        strict = {t for t in set(s[0]) if t not in mo.explore and t > 0}
+        for sc, t, c in cands[:6]:
+            p2 = prog.copie()
+            cls = None
+            for col, cl in self.types.inv[t]:
+                if col == c:
+                    cls = cl
+            if cls is not None and len(cols) > 1:
+                p2.win = ("entermatch", cls)
+            else:
+                p2.win = ("enter", frozenset({t}))
+            res = chercher(p2, geo, s, lambda s2, fl, tin, act: fl == 1, interdit=strict, cap=20000)
+            if res:
+                return res[0][0]
+        return None
+
+    def _poids_clic(self, t, cnt, M, geo):
+        """A priori : les réseaux compacts de 4 à 10 cases semblables sont des panneaux cliquables ;
+        les objets isolés et les longs murs le sont rarement."""
+        cells = [p for p, x in enumerate(M) if x == t]
+        n = len(cells)
+        if n < 4:
+            return 0.12
+        if n > 10:
+            return 0.05
+        rs = [p // geo.C for p in cells]
+        cs = [p % geo.C for p in cells]
+        aire = (max(rs) - min(rs) + 1) * (max(cs) - min(cs) + 1)
+        # voisins d'un autre type non vide : un panneau mêle deux états
+        voisins = 0
+        for p in cells:
+            for q in geo.nb[p]:
+                if q >= 0 and M[q] > 0 and M[q] != t:
+                    voisins += 1
+        if aire <= 2.6 * n and voisins >= n // 2:
+            return 1.2
+        return 0.2
 
     def _poids(self, t, cnt):
         n = cnt.get(t, 0)
@@ -387,6 +449,14 @@ class RetroCreateur:
         if self.types.inv[t] and any(cl[0] == 0 for _, cl in self.types.inv[t] if cl):
             w *= 0.5            # plein : mur probable
         return w
+
+    def _act_de_secours(self, obs):
+        """Après une exception interne : une action sûre qui n'engage pas l'inférence."""
+        self.prev_act = None
+        a = [k for k in MOVES if k in self.avail]
+        if a:
+            return {"name": f"ACTION{self.rng.choice(a)}", "data": {}}
+        return {"name": "ACTION5", "data": {}}
 
     # ------------------------------------------------------------ repli
     def _fallback(self, obs, raison):
