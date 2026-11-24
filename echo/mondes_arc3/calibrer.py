@@ -162,8 +162,8 @@ def lecture(out):
              "l'évaluation de la difficulté réelle.")
     rg = cb["par_rang_de_niveau"]
     L.append("- Le premier niveau d'un monde est nettement plus facile que les suivants (cerveau : "
-             + ", ".join(f"niveau {k} : {pct(v['taux'])}" for k, v in list(rg.items())[:4]) + "), comme dans les vrais jeux où "
-             "le premier niveau enseigne la règle.")
+             + ", ".join(f"niveau {k} : {pct(v['taux'])}" for k, v in list(rg.items())[:4]) + "). "
+             "Les niveaux suivants réutilisent les mêmes règles avec plus d'éléments.")
     pm = {k: v for k, v in cb["par_mecanique"].items() if v["total"] >= 40}
     ordre = sorted(pm.items(), key=lambda kv: kv[1]["taux"])
     L.append("- Mécaniques les plus difficiles pour le cerveau : " + ", ".join(f"{k} ({pct(v['taux'])})" for k, v in ordre[:4])
@@ -179,7 +179,22 @@ def lecture(out):
     return L
 
 
-USAGE = """## Utilisation
+USAGE = """## Contenu des mondes
+
+18 mécaniques composables (3 à 8 niveaux par monde, mêmes règles dans tout le monde) : déplacement, murs, clés et portes,
+blocs poussables, collectibles avec compteur (sortie verrouillée), dangers mortels, téléporteurs, interrupteurs qui
+basculent des murs, couleurs (cases de peinture, sortie de la bonne couleur), lumières (lights-out), sélection puis
+déplacement (clic sur une pièce, puis flèches), motif à recopier, gravité (4 directions possibles, sur les blocs),
+énergie limitée (barre en bas), ennemis à patrouille déterministe (+ action d'attente), cibles (blocs sur cibles),
+annuler (ACTION7). Règles cachées, tirées de la graine : but, mécaniques actives, correspondance ACTION1..4 vers
+directions, couleurs et formes de chaque rôle, sens de la gravité. Aucune consigne n'est affichée ; seuls indices : la
+sortie est creuse tant qu'un verrou (gemmes, panneau) n'est pas levé, la barre d'énergie, les pastilles de niveaux.
+Les mécaniques sont corrélées à la difficulté et entre elles : le tableau par mécanique n'est pas une expérience contrôlée.
+
+Garanties : chaque niveau est résolu par un A* sur l'état interne (optimum = proxy d'efficacité humaine), la solution
+optimale est rejouée par l'interface publique dans les tests, tout est déterministe selon (graine, difficulté).
+
+## Utilisation
 
 - `MondeEnv(seed, difficulte)` : même surface que l'env du SDK vu par le harnais (`reset()`, `step(GameAction, data)`,
   `action1..7`), observations 64x64 en 16 couleurs, états NOT_FINISHED / WIN / GAME_OVER.

@@ -1,0 +1,9881 @@
+{
+ "jeu_de_mondes": {
+  "mondes": 200,
+  "niveaux": 1049,
+  "niveaux_par_monde_moy": 5.25,
+  "optimum_moy": 16.2,
+  "optimum_min": 2,
+  "optimum_max": 51,
+  "mondes_avec_mecanique": {
+   "deplacement": 157,
+   "murs": 157,
+   "cles_portes": 64,
+   "blocs_poussables": 88,
+   "collectibles": 71,
+   "dangers": 74,
+   "teleporteurs": 36,
+   "interrupteurs": 73,
+   "couleurs": 41,
+   "lumieres": 56,
+   "selection": 10,
+   "motif": 51,
+   "gravite": 50,
+   "energie": 106,
+   "ennemis": 69,
+   "cibles": 50,
+   "annuler": 99,
+   "attente": 69
+  },
+  "mecaniques_par_monde_moy": 6.61
+ },
+ "dev_reel": {
+  "cerveau": {
+   "niveaux": 2,
+   "total": 33,
+   "jeux": 5
+  },
+  "aleatoire": {
+   "niveaux": 0,
+   "total": 33,
+   "jeux": 5
+  }
+ },
+ "agents": {
+  "cerveau": {
+   "global": {
+    "mondes": 200,
+    "niveaux_resolus": 99,
+    "niveaux_total": 1049,
+    "taux": 0.0944,
+    "mondes_gagnes": 1,
+    "actions_sur_resolus": 17609,
+    "optimum_sur_resolus": 699,
+    "efficacite_vs_optimum": 0.0397,
+    "actions_totales": 99894,
+    "cpu_s": 174.5
+   },
+   "par_mecanique": {
+    "annuler": {
+     "resolus": 34,
+     "total": 516,
+     "taux": 0.066,
+     "mondes": 99
+    },
+    "attente": {
+     "resolus": 11,
+     "total": 366,
+     "taux": 0.03,
+     "mondes": 69
+    },
+    "blocs_poussables": {
+     "resolus": 31,
+     "total": 441,
+     "taux": 0.07,
+     "mondes": 88
+    },
+    "cibles": {
+     "resolus": 14,
+     "total": 259,
+     "taux": 0.054,
+     "mondes": 50
+    },
+    "cles_portes": {
+     "resolus": 23,
+     "total": 346,
+     "taux": 0.066,
+     "mondes": 64
+    },
+    "collectibles": {
+     "resolus": 21,
+     "total": 371,
+     "taux": 0.057,
+     "mondes": 71
+    },
+    "couleurs": {
+     "resolus": 10,
+     "total": 231,
+     "taux": 0.043,
+     "mondes": 41
+    },
+    "dangers": {
+     "resolus": 25,
+     "total": 393,
+     "taux": 0.064,
+     "mondes": 74
+    },
+    "deplacement": {
+     "resolus": 65,
+     "total": 825,
+     "taux": 0.079,
+     "mondes": 157
+    },
+    "energie": {
+     "resolus": 36,
+     "total": 537,
+     "taux": 0.067,
+     "mondes": 106
+    },
+    "ennemis": {
+     "resolus": 11,
+     "total": 366,
+     "taux": 0.03,
+     "mondes": 69
+    },
+    "gravite": {
+     "resolus": 23,
+     "total": 251,
+     "taux": 0.092,
+     "mondes": 50
+    },
+    "interrupteurs": {
+     "resolus": 25,
+     "total": 394,
+     "taux": 0.063,
+     "mondes": 73
+    },
+    "lumieres": {
+     "resolus": 27,
+     "total": 293,
+     "taux": 0.092,
+     "mondes": 56
+    },
+    "motif": {
+     "resolus": 7,
+     "total": 274,
+     "taux": 0.026,
+     "mondes": 51
+    },
+    "murs": {
+     "resolus": 65,
+     "total": 825,
+     "taux": 0.079,
+     "mondes": 157
+    },
+    "selection": {
+     "resolus": 0,
+     "total": 55,
+     "taux": 0.0,
+     "mondes": 10
+    },
+    "teleporteurs": {
+     "resolus": 25,
+     "total": 186,
+     "taux": 0.134,
+     "mondes": 36
+    }
+   },
+   "par_difficulte": {
+    "1": {
+     "resolus": 42,
+     "total": 197,
+     "taux": 0.213,
+     "mondes": 40
+    },
+    "2": {
+     "resolus": 32,
+     "total": 207,
+     "taux": 0.155,
+     "mondes": 40
+    },
+    "3": {
+     "resolus": 11,
+     "total": 215,
+     "taux": 0.051,
+     "mondes": 40
+    },
+    "4": {
+     "resolus": 12,
+     "total": 228,
+     "taux": 0.053,
+     "mondes": 40
+    },
+    "5": {
+     "resolus": 2,
+     "total": 202,
+     "taux": 0.01,
+     "mondes": 40
+    }
+   },
+   "par_but": {
+    "cibles": {
+     "resolus": 14,
+     "total": 259,
+     "taux": 0.054,
+     "mondes": 50
+    },
+    "panel": {
+     "resolus": 34,
+     "total": 224,
+     "taux": 0.152,
+     "mondes": 43
+    },
+    "sortie": {
+     "resolus": 51,
+     "total": 566,
+     "taux": 0.09,
+     "mondes": 107
+    }
+   },
+   "par_rang_de_niveau": {
+    "1": {
+     "resolus": 60,
+     "total": 200,
+     "taux": 0.3
+    },
+    "2": {
+     "resolus": 25,
+     "total": 200,
+     "taux": 0.125
+    },
+    "3": {
+     "resolus": 10,
+     "total": 200,
+     "taux": 0.05
+    },
+    "4": {
+     "resolus": 4,
+     "total": 159,
+     "taux": 0.025
+    },
+    "5": {
+     "resolus": 0,
+     "total": 117,
+     "taux": 0.0
+    },
+    "6": {
+     "resolus": 0,
+     "total": 92,
+     "taux": 0.0
+    },
+    "7": {
+     "resolus": 0,
+     "total": 56,
+     "taux": 0.0
+    },
+    "8": {
+     "resolus": 0,
+     "total": 25,
+     "taux": 0.0
+    }
+   },
+   "mondes": [
+    {
+     "jeu": "mx01000d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      14,
+      12,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01001d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      30,
+      18,
+      18,
+      17,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01002d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      8,
+      15,
+      17,
+      15,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01003d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      23,
+      27,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01004d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      20,
+      32,
+      24,
+      23,
+      23,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01005d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      50,
+      450,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      15,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01006d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      215,
+      285,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      14,
+      18,
+      21,
+      24,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01007d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      60,
+      419,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      20,
+      10,
+      15,
+      20,
+      28,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01008d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      12,
+      14,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01009d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      28,
+      26,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01010d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01011d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      155,
+      307,
+      0
+     ],
+     "niveaux_reference": [
+      5,
+      5,
+      12
+     ]
+    },
+    {
+     "jeu": "mx01012d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      19,
+      22,
+      25,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01013d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      239,
+      221,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01014d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      27,
+      22,
+      24,
+      27,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01015d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      309,
+      191,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01016d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      333,
+      144,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      9,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01017d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      477,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      8,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01018d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      463,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      6,
+      9,
+      8,
+      9,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01019d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      480,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      14,
+      21,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01020d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      285,
+      215,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      3,
+      5,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01021d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      358,
+      97,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01022d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      493,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      10,
+      19,
+      27,
+      23,
+      33,
+      24,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01023d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      482,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      23,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01024d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      26,
+      32,
+      22,
+      30,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01025d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      114,
+      214,
+      160,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      7,
+      15,
+      10,
+      25,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01026d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      478,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      8,
+      13,
+      22,
+      14,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01027d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      16,
+      19,
+      37,
+      32,
+      24,
+      23,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01028d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      352,
+      84,
+      22
+     ],
+     "niveaux_reference": [
+      4,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01029d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      30,
+      24,
+      22,
+      47,
+      29,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01030d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      315,
+      185,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      6,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01031d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      44,
+      439,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      15,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01032d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      472,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      17,
+      11,
+      14,
+      12,
+      17,
+      18,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01033d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      26,
+      22,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01034d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      21,
+      31,
+      21,
+      26,
+      28,
+      24,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01035d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      145,
+      114,
+      241,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      15,
+      24,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01036d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      173,
+      117,
+      190
+     ],
+     "niveaux_reference": [
+      5,
+      11,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01037d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      26,
+      7,
+      18,
+      11,
+      19,
+      14,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01038d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      460,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      6,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01039d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      470,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      6,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01040d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01041d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      394,
+      91,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      6,
+      9,
+      10,
+      11,
+      16,
+      20,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01042d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      12,
+      22,
+      27,
+      31,
+      31,
+      28,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01043d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      29,
+      19,
+      21,
+      15,
+      22,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01044d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      478,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      25,
+      24,
+      18,
+      23,
+      42
+     ]
+    },
+    {
+     "jeu": "mx01045d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      7,
+      10,
+      15,
+      12,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01046d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      479,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      11,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01047d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      15,
+      21,
+      29,
+      27,
+      14,
+      28
+     ]
+    },
+    {
+     "jeu": "mx01048d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      12,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01049d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      26,
+      17,
+      34,
+      21,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01050d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      109,
+      369,
+      0
+     ],
+     "niveaux_reference": [
+      5,
+      14,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01051d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      13,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01052d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      13,
+      18,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01053d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      474,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      16,
+      16,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01054d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      194,
+      249,
+      18,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      5,
+      6,
+      6,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01055d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      262,
+      238,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      3,
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01056d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      14,
+      11,
+      20,
+      19,
+      28,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01057d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      128,
+      341,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      6,
+      8,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01058d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      25,
+      30,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01059d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      28,
+      22,
+      28,
+      26,
+      19,
+      24,
+      42
+     ]
+    },
+    {
+     "jeu": "mx01060d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      146,
+      141,
+      207,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      8,
+      16,
+      10,
+      11,
+      26,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01061d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      12,
+      15,
+      11,
+      15,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01062d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      467,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01063d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      25,
+      25,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01064d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      28,
+      21,
+      18,
+      19,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01065d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      10,
+      17,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01066d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      453,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      4,
+      5,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01067d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      14,
+      27,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01068d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      469,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      14,
+      16,
+      23,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01069d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      484,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      26,
+      26,
+      29,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01070d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      7,
+      9,
+      10,
+      12,
+      15,
+      15,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01071d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      13,
+      8
+     ]
+    },
+    {
+     "jeu": "mx01072d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      138,
+      362,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      9,
+      10,
+      15,
+      21,
+      15,
+      21,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01073d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      21,
+      18,
+      31,
+      23,
+      35,
+      33,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01074d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      26,
+      17,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01075d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      11,
+      9,
+      11,
+      12
+     ]
+    },
+    {
+     "jeu": "mx01076d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      147,
+      204,
+      149
+     ],
+     "niveaux_reference": [
+      10,
+      12,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01077d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      98,
+      138,
+      252,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      7,
+      10,
+      16,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01078d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      10,
+      11,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01079d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      19,
+      14,
+      16,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01080d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      6,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01081d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      16,
+      15,
+      17,
+      16,
+      18,
+      21,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01082d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      136,
+      72,
+      292,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01083d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      33,
+      22,
+      34,
+      27,
+      28,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01084d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      25,
+      24,
+      34,
+      32
+     ]
+    },
+    {
+     "jeu": "mx01085d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01086d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 3,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      26,
+      124,
+      204,
+      139,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      11,
+      18,
+      20,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01087d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      480,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      16,
+      15,
+      27,
+      28,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01088d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      11,
+      11,
+      18,
+      24,
+      25,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01089d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      19,
+      25,
+      23,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01090d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      15,
+      14,
+      9,
+      18,
+      16,
+      15,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01091d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      190,
+      263,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      6,
+      7,
+      8
+     ]
+    },
+    {
+     "jeu": "mx01092d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      27,
+      24,
+      21,
+      19,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01093d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      465,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      8,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01094d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      27,
+      26,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01095d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 4,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      135,
+      68,
+      146,
+      101,
+      50
+     ],
+     "niveaux_reference": [
+      12,
+      11,
+      13,
+      13,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01096d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      21,
+      20,
+      19,
+      16,
+      25,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01097d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      14,
+      10,
+      9,
+      13,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01098d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      193,
+      307,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01099d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      21,
+      24,
+      26,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01100d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      258,
+      242,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      6,
+      8
+     ]
+    },
+    {
+     "jeu": "mx01101d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      449,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01102d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      474,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      29,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01103d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      7,
+      7,
+      6,
+      10,
+      7,
+      9,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01104d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      19,
+      16,
+      35
+     ]
+    },
+    {
+     "jeu": "mx01105d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 4,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      137,
+      18,
+      99,
+      101,
+      145,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      6,
+      8,
+      10,
+      14,
+      17,
+      15,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01106d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 3,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      105,
+      118,
+      157,
+      120
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01107d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      455,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01108d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      460,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      6,
+      6,
+      8,
+      8,
+      5,
+      9,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01109d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      27,
+      38
+     ]
+    },
+    {
+     "jeu": "mx01110d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      480,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      10,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01111d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      477,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      9,
+      14,
+      15,
+      23,
+      40,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01112d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      480,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      23,
+      28
+     ]
+    },
+    {
+     "jeu": "mx01113d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      476,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      31,
+      25,
+      20,
+      51
+     ]
+    },
+    {
+     "jeu": "mx01114d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      480,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      32,
+      28,
+      32,
+      25,
+      27,
+      27,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01115d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      30,
+      284,
+      175,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      10,
+      9,
+      15,
+      11,
+      15,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01116d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      14,
+      28,
+      36,
+      27,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01117d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      17,
+      15,
+      25,
+      29,
+      27,
+      25,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01118d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      479,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      11,
+      18,
+      19,
+      21,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01119d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      484,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      30,
+      24,
+      42
+     ]
+    },
+    {
+     "jeu": "mx01120d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      476,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      21,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01121d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      184,
+      269,
+      47,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      8,
+      24,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01122d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      21,
+      20,
+      31,
+      25,
+      31,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01123d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      34,
+      15,
+      24,
+      25,
+      31,
+      36
+     ]
+    },
+    {
+     "jeu": "mx01124d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      29,
+      18,
+      18,
+      22,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01125d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      10,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01126d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      479,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      9,
+      10,
+      14,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01127d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      12,
+      15,
+      13,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01128d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 3,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      139,
+      10,
+      19,
+      296,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01129d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      7,
+      8,
+      9,
+      8,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01130d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      472,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      6,
+      14,
+      14,
+      14,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01131d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      314,
+      145,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      8,
+      7,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01132d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      20,
+      34,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01133d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      408,
+      52,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01134d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      31,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01135d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      11,
+      19,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01136d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 3,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      132,
+      236,
+      74,
+      9,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01137d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      15,
+      19,
+      19,
+      23,
+      24,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01138d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      15,
+      16,
+      23,
+      45,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01139d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      30,
+      29,
+      30,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01140d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      173,
+      136,
+      170,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      7,
+      8,
+      12,
+      12,
+      20,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01141d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      454,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01142d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      455,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      5,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01143d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      476,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      19,
+      19,
+      22,
+      18,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01144d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      17,
+      15,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01145d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      270,
+      212,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      14,
+      10,
+      11,
+      13,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01146d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      455,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      7,
+      6,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01147d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      16,
+      27,
+      12
+     ]
+    },
+    {
+     "jeu": "mx01148d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      27,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01149d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      20,
+      19,
+      25,
+      22,
+      26,
+      23,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01150d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      408,
+      92,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01151d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      6,
+      6,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01152d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      125,
+      361,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      22,
+      28,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01153d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      29,
+      18,
+      32,
+      21,
+      20,
+      30,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01154d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      28,
+      16,
+      30,
+      31,
+      32,
+      23,
+      37
+     ]
+    },
+    {
+     "jeu": "mx01155d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      300,
+      53,
+      122,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      7,
+      8,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01156d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      37,
+      445,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      23,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01157d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      493,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      6,
+      8,
+      26,
+      23,
+      22,
+      19,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01158d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      445,
+      15,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01159d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      17,
+      17,
+      18,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01160d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      9,
+      7,
+      11,
+      12,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01161d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      33,
+      457,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      11,
+      13,
+      10,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01162d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      479,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      19,
+      20,
+      23,
+      21,
+      19,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01163d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      416,
+      77,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      15,
+      22,
+      21,
+      28,
+      22,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01164d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      28,
+      18,
+      26,
+      23,
+      33,
+      30,
+      38
+     ]
+    },
+    {
+     "jeu": "mx01165d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 4,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      6,
+      75,
+      171,
+      207,
+      30,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      7,
+      14,
+      12,
+      12,
+      15,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01166d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 3,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      236,
+      67,
+      78,
+      119,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      8,
+      14,
+      35,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01167d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      209,
+      270,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      21,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01168d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      21,
+      23,
+      17,
+      22,
+      29,
+      32
+     ]
+    },
+    {
+     "jeu": "mx01169d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      20,
+      15,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01170d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      222,
+      238,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      9,
+      12,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01171d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      24,
+      18,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01172d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      12,
+      8,
+      12,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01173d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      394,
+      69,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      8,
+      7,
+      8,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01174d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      484,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      30,
+      32,
+      32
+     ]
+    },
+    {
+     "jeu": "mx01175d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      15,
+      11,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01176d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      26,
+      24,
+      28,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01177d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      18,
+      413,
+      50,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      11,
+      14,
+      13,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01178d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      459,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      5,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01179d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      459,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01180d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "WIN",
+     "niveaux": 3,
+     "niveaux_total": 3,
+     "actions": 394,
+     "niveaux_actions": [
+      76,
+      84,
+      198
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01181d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      387,
+      71,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      3,
+      4,
+      8,
+      6,
+      7,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01182d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      14,
+      17,
+      28,
+      34,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01183d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      269,
+      221,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      14,
+      17,
+      21,
+      18,
+      23,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01184d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      16,
+      23,
+      18,
+      24,
+      22,
+      28
+     ]
+    },
+    {
+     "jeu": "mx01185d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      215,
+      268,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      14,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01186d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      28,
+      424,
+      22,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      5,
+      12,
+      8,
+      16,
+      16,
+      34,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01187d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      26,
+      22,
+      13,
+      9,
+      14,
+      14,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01188d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      459,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01189d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      22,
+      25,
+      29,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01190d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01191d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      19,
+      25,
+      21,
+      21,
+      22,
+      30,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01192d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      455,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01193d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      30,
+      25,
+      32,
+      22,
+      38,
+      37
+     ]
+    },
+    {
+     "jeu": "mx01194d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      23,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01195d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 4,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      34,
+      129,
+      133,
+      180,
+      24,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      7,
+      11,
+      13,
+      11,
+      15,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01196d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      478,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      12,
+      12,
+      28,
+      33,
+      31,
+      37
+     ]
+    },
+    {
+     "jeu": "mx01197d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      12,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01198d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      482,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      36,
+      24,
+      24,
+      25,
+      33,
+      32,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01199d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      22,
+      25,
+      17
+     ]
+    }
+   ]
+  },
+  "aleatoire": {
+   "global": {
+    "mondes": 200,
+    "niveaux_resolus": 35,
+    "niveaux_total": 1049,
+    "taux": 0.0334,
+    "mondes_gagnes": 0,
+    "actions_sur_resolus": 6669,
+    "optimum_sur_resolus": 221,
+    "efficacite_vs_optimum": 0.0331,
+    "actions_totales": 100000,
+    "cpu_s": 13.6
+   },
+   "par_mecanique": {
+    "annuler": {
+     "resolus": 8,
+     "total": 516,
+     "taux": 0.016,
+     "mondes": 99
+    },
+    "attente": {
+     "resolus": 6,
+     "total": 366,
+     "taux": 0.016,
+     "mondes": 69
+    },
+    "blocs_poussables": {
+     "resolus": 20,
+     "total": 441,
+     "taux": 0.045,
+     "mondes": 88
+    },
+    "cibles": {
+     "resolus": 12,
+     "total": 259,
+     "taux": 0.046,
+     "mondes": 50
+    },
+    "cles_portes": {
+     "resolus": 11,
+     "total": 346,
+     "taux": 0.032,
+     "mondes": 64
+    },
+    "collectibles": {
+     "resolus": 9,
+     "total": 371,
+     "taux": 0.024,
+     "mondes": 71
+    },
+    "couleurs": {
+     "resolus": 2,
+     "total": 231,
+     "taux": 0.009,
+     "mondes": 41
+    },
+    "dangers": {
+     "resolus": 14,
+     "total": 393,
+     "taux": 0.036,
+     "mondes": 74
+    },
+    "deplacement": {
+     "resolus": 31,
+     "total": 825,
+     "taux": 0.038,
+     "mondes": 157
+    },
+    "energie": {
+     "resolus": 11,
+     "total": 537,
+     "taux": 0.02,
+     "mondes": 106
+    },
+    "ennemis": {
+     "resolus": 6,
+     "total": 366,
+     "taux": 0.016,
+     "mondes": 69
+    },
+    "gravite": {
+     "resolus": 15,
+     "total": 251,
+     "taux": 0.06,
+     "mondes": 50
+    },
+    "interrupteurs": {
+     "resolus": 8,
+     "total": 394,
+     "taux": 0.02,
+     "mondes": 73
+    },
+    "lumieres": {
+     "resolus": 3,
+     "total": 293,
+     "taux": 0.01,
+     "mondes": 56
+    },
+    "motif": {
+     "resolus": 1,
+     "total": 274,
+     "taux": 0.004,
+     "mondes": 51
+    },
+    "murs": {
+     "resolus": 31,
+     "total": 825,
+     "taux": 0.038,
+     "mondes": 157
+    },
+    "selection": {
+     "resolus": 0,
+     "total": 55,
+     "taux": 0.0,
+     "mondes": 10
+    },
+    "teleporteurs": {
+     "resolus": 11,
+     "total": 186,
+     "taux": 0.059,
+     "mondes": 36
+    }
+   },
+   "par_difficulte": {
+    "1": {
+     "resolus": 16,
+     "total": 197,
+     "taux": 0.081,
+     "mondes": 40
+    },
+    "2": {
+     "resolus": 12,
+     "total": 207,
+     "taux": 0.058,
+     "mondes": 40
+    },
+    "3": {
+     "resolus": 7,
+     "total": 215,
+     "taux": 0.033,
+     "mondes": 40
+    },
+    "4": {
+     "resolus": 0,
+     "total": 228,
+     "taux": 0.0,
+     "mondes": 40
+    },
+    "5": {
+     "resolus": 0,
+     "total": 202,
+     "taux": 0.0,
+     "mondes": 40
+    }
+   },
+   "par_but": {
+    "cibles": {
+     "resolus": 12,
+     "total": 259,
+     "taux": 0.046,
+     "mondes": 50
+    },
+    "panel": {
+     "resolus": 4,
+     "total": 224,
+     "taux": 0.018,
+     "mondes": 43
+    },
+    "sortie": {
+     "resolus": 19,
+     "total": 566,
+     "taux": 0.034,
+     "mondes": 107
+    }
+   },
+   "par_rang_de_niveau": {
+    "1": {
+     "resolus": 27,
+     "total": 200,
+     "taux": 0.135
+    },
+    "2": {
+     "resolus": 7,
+     "total": 200,
+     "taux": 0.035
+    },
+    "3": {
+     "resolus": 1,
+     "total": 200,
+     "taux": 0.005
+    },
+    "4": {
+     "resolus": 0,
+     "total": 159,
+     "taux": 0.0
+    },
+    "5": {
+     "resolus": 0,
+     "total": 117,
+     "taux": 0.0
+    },
+    "6": {
+     "resolus": 0,
+     "total": 92,
+     "taux": 0.0
+    },
+    "7": {
+     "resolus": 0,
+     "total": 56,
+     "taux": 0.0
+    },
+    "8": {
+     "resolus": 0,
+     "total": 25,
+     "taux": 0.0
+    }
+   },
+   "mondes": [
+    {
+     "jeu": "mx01000d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      14,
+      12,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01001d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      30,
+      18,
+      18,
+      17,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01002d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      8,
+      15,
+      17,
+      15,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01003d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      23,
+      27,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01004d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      20,
+      32,
+      24,
+      23,
+      23,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01005d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      15,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01006d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      14,
+      18,
+      21,
+      24,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01007d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      12,
+      461,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      20,
+      10,
+      15,
+      20,
+      28,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01008d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      12,
+      14,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01009d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      28,
+      26,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01010d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01011d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      285,
+      36,
+      153
+     ],
+     "niveaux_reference": [
+      5,
+      5,
+      12
+     ]
+    },
+    {
+     "jeu": "mx01012d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      493,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      19,
+      22,
+      25,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01013d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01014d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      27,
+      22,
+      24,
+      27,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01015d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01016d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      459,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      9,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01017d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      8,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01018d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      6,
+      9,
+      8,
+      9,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01019d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      14,
+      21,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01020d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      3,
+      5,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01021d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01022d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      10,
+      19,
+      27,
+      23,
+      33,
+      24,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01023d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      472,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      23,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01024d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      26,
+      32,
+      22,
+      30,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01025d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 3,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      58,
+      251,
+      178,
+      2,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      7,
+      15,
+      10,
+      25,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01026d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      8,
+      13,
+      22,
+      14,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01027d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      16,
+      19,
+      37,
+      32,
+      24,
+      23,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01028d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01029d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      30,
+      24,
+      22,
+      47,
+      29,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01030d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      246,
+      75,
+      179
+     ],
+     "niveaux_reference": [
+      7,
+      6,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01031d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      427,
+      42,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      15,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01032d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      469,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      17,
+      11,
+      14,
+      12,
+      17,
+      18,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01033d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      26,
+      22,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01034d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      21,
+      31,
+      21,
+      26,
+      28,
+      24,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01035d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      351,
+      149,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      15,
+      24,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01036d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      364,
+      99,
+      0
+     ],
+     "niveaux_reference": [
+      5,
+      11,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01037d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      26,
+      7,
+      18,
+      11,
+      19,
+      14,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01038d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      6,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01039d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      6,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01040d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      116,
+      384,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01041d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      6,
+      9,
+      10,
+      11,
+      16,
+      20,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01042d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      12,
+      22,
+      27,
+      31,
+      31,
+      28,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01043d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      471,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      29,
+      19,
+      21,
+      15,
+      22,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01044d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      470,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      25,
+      24,
+      18,
+      23,
+      42
+     ]
+    },
+    {
+     "jeu": "mx01045d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      7,
+      10,
+      15,
+      12,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01046d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      472,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      11,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01047d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      424,
+      76,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      15,
+      21,
+      29,
+      27,
+      14,
+      28
+     ]
+    },
+    {
+     "jeu": "mx01048d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      12,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01049d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      26,
+      17,
+      34,
+      21,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01050d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      146,
+      338,
+      0
+     ],
+     "niveaux_reference": [
+      5,
+      14,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01051d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      13,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01052d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      493,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      13,
+      18,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01053d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      476,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      16,
+      16,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01054d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      5,
+      6,
+      6,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01055d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      3,
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01056d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      14,
+      11,
+      20,
+      19,
+      28,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01057d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      6,
+      8,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01058d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      25,
+      30,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01059d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      28,
+      22,
+      28,
+      26,
+      19,
+      24,
+      42
+     ]
+    },
+    {
+     "jeu": "mx01060d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      8,
+      16,
+      10,
+      11,
+      26,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01061d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      12,
+      15,
+      11,
+      15,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01062d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      465,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01063d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      25,
+      25,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01064d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      28,
+      21,
+      18,
+      19,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01065d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      10,
+      17,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01066d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      4,
+      5,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01067d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      14,
+      27,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01068d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      14,
+      16,
+      23,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01069d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      26,
+      26,
+      29,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01070d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      7,
+      9,
+      10,
+      12,
+      15,
+      15,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01071d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      13,
+      8
+     ]
+    },
+    {
+     "jeu": "mx01072d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      9,
+      10,
+      15,
+      21,
+      15,
+      21,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01073d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      21,
+      18,
+      31,
+      23,
+      35,
+      33,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01074d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      26,
+      17,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01075d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      11,
+      9,
+      11,
+      12
+     ]
+    },
+    {
+     "jeu": "mx01076d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      12,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01077d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      10,
+      168,
+      313,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      7,
+      10,
+      16,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01078d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      10,
+      11,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01079d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      19,
+      14,
+      16,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01080d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      6,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01081d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      16,
+      15,
+      17,
+      16,
+      18,
+      21,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01082d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01083d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      33,
+      22,
+      34,
+      27,
+      28,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01084d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      25,
+      24,
+      34,
+      32
+     ]
+    },
+    {
+     "jeu": "mx01085d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01086d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      11,
+      18,
+      20,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01087d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      463,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      16,
+      15,
+      27,
+      28,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01088d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      464,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      11,
+      11,
+      18,
+      24,
+      25,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01089d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      19,
+      25,
+      23,
+      31
+     ]
+    },
+    {
+     "jeu": "mx01090d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      15,
+      14,
+      9,
+      18,
+      16,
+      15,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01091d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      6,
+      7,
+      8
+     ]
+    },
+    {
+     "jeu": "mx01092d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      484,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      27,
+      24,
+      21,
+      19,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01093d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      8,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01094d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      27,
+      26,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01095d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      218,
+      282,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      11,
+      13,
+      13,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01096d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      21,
+      20,
+      19,
+      16,
+      25,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01097d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      14,
+      10,
+      9,
+      13,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01098d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01099d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      21,
+      24,
+      26,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01100d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      6,
+      8
+     ]
+    },
+    {
+     "jeu": "mx01101d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      14,
+      271,
+      200,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01102d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      477,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      29,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01103d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      7,
+      7,
+      6,
+      10,
+      7,
+      9,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01104d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      19,
+      16,
+      35
+     ]
+    },
+    {
+     "jeu": "mx01105d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      138,
+      97,
+      265,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      6,
+      8,
+      10,
+      14,
+      17,
+      15,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01106d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01107d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01108d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      6,
+      6,
+      8,
+      8,
+      5,
+      9,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01109d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      27,
+      38
+     ]
+    },
+    {
+     "jeu": "mx01110d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      483,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      10,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01111d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      9,
+      14,
+      15,
+      23,
+      40,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01112d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      476,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      23,
+      28
+     ]
+    },
+    {
+     "jeu": "mx01113d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      31,
+      25,
+      20,
+      51
+     ]
+    },
+    {
+     "jeu": "mx01114d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      32,
+      28,
+      32,
+      25,
+      27,
+      27,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01115d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      91,
+      390,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      10,
+      9,
+      15,
+      11,
+      15,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01116d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      493,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      14,
+      28,
+      36,
+      27,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01117d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      17,
+      15,
+      25,
+      29,
+      27,
+      25,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01118d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      489,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      11,
+      18,
+      19,
+      21,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01119d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      30,
+      24,
+      42
+     ]
+    },
+    {
+     "jeu": "mx01120d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      476,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      21,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01121d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 2,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      80,
+      240,
+      180,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      8,
+      24,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01122d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      21,
+      20,
+      31,
+      25,
+      31,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01123d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      34,
+      15,
+      24,
+      25,
+      31,
+      36
+     ]
+    },
+    {
+     "jeu": "mx01124d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      29,
+      18,
+      18,
+      22,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01125d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      182,
+      318,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      10,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01126d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      9,
+      10,
+      14,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01127d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      12,
+      15,
+      13,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01128d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01129d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      7,
+      8,
+      9,
+      8,
+      9
+     ]
+    },
+    {
+     "jeu": "mx01130d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      475,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      6,
+      14,
+      14,
+      14,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01131d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      8,
+      7,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01132d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      20,
+      34,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01133d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01134d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      484,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      31,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01135d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      11,
+      19,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01136d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      4,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01137d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      474,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      22,
+      15,
+      19,
+      19,
+      23,
+      24,
+      30
+     ]
+    },
+    {
+     "jeu": "mx01138d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      15,
+      16,
+      23,
+      45,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01139d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      486,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      23,
+      30,
+      29,
+      30,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01140d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      482,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      7,
+      8,
+      12,
+      12,
+      20,
+      16
+     ]
+    },
+    {
+     "jeu": "mx01141d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01142d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      5,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01143d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      19,
+      19,
+      22,
+      18,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01144d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      17,
+      15,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01145d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      493,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      10,
+      14,
+      10,
+      11,
+      13,
+      13
+     ]
+    },
+    {
+     "jeu": "mx01146d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      457,
+      39,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      7,
+      6,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01147d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      494,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      16,
+      27,
+      12
+     ]
+    },
+    {
+     "jeu": "mx01148d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      27,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01149d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      20,
+      19,
+      25,
+      22,
+      26,
+      23,
+      27
+     ]
+    },
+    {
+     "jeu": "mx01150d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01151d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      6,
+      6,
+      7
+     ]
+    },
+    {
+     "jeu": "mx01152d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      315,
+      176,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      6,
+      22,
+      28,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01153d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      29,
+      18,
+      32,
+      21,
+      20,
+      30,
+      22
+     ]
+    },
+    {
+     "jeu": "mx01154d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      28,
+      16,
+      30,
+      31,
+      32,
+      23,
+      37
+     ]
+    },
+    {
+     "jeu": "mx01155d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      473,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      7,
+      8,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01156d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      54,
+      424,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      23,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01157d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      17,
+      6,
+      8,
+      26,
+      23,
+      22,
+      19,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01158d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01159d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      487,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      18,
+      17,
+      17,
+      18,
+      21
+     ]
+    },
+    {
+     "jeu": "mx01160d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      9,
+      7,
+      11,
+      12,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01161d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      238,
+      251,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      11,
+      13,
+      10,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01162d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      468,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      19,
+      20,
+      23,
+      21,
+      19,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01163d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      15,
+      22,
+      21,
+      28,
+      22,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01164d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      28,
+      18,
+      26,
+      23,
+      33,
+      30,
+      38
+     ]
+    },
+    {
+     "jeu": "mx01165d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      36,
+      455,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      7,
+      14,
+      12,
+      12,
+      15,
+      23
+     ]
+    },
+    {
+     "jeu": "mx01166d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      11,
+      8,
+      14,
+      35,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01167d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      213,
+      279,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      21,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01168d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      479,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      24,
+      21,
+      23,
+      17,
+      22,
+      29,
+      32
+     ]
+    },
+    {
+     "jeu": "mx01169d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      496,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      20,
+      15,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01170d1",
+     "but": "cibles",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      16,
+      445,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      9,
+      12,
+      15
+     ]
+    },
+    {
+     "jeu": "mx01171d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      498,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      24,
+      18,
+      17
+     ]
+    },
+    {
+     "jeu": "mx01172d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      13,
+      12,
+      8,
+      12,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01173d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      8,
+      7,
+      8,
+      10
+     ]
+    },
+    {
+     "jeu": "mx01174d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      481,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      20,
+      30,
+      32,
+      32
+     ]
+    },
+    {
+     "jeu": "mx01175d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      15,
+      11,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01176d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      26,
+      24,
+      28,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01177d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      269,
+      208,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      11,
+      14,
+      13,
+      24
+     ]
+    },
+    {
+     "jeu": "mx01178d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      5,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01179d5",
+     "but": "panel",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      5,
+      4,
+      5
+     ]
+    },
+    {
+     "jeu": "mx01180d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      480,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01181d2",
+     "but": "panel",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      3,
+      3,
+      4,
+      8,
+      6,
+      7,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01182d3",
+     "but": "cibles",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 6,
+     "actions": 500,
+     "niveaux_actions": [
+      488,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      14,
+      17,
+      28,
+      34,
+      34
+     ]
+    },
+    {
+     "jeu": "mx01183d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      493,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      9,
+      14,
+      17,
+      21,
+      18,
+      23,
+      20
+     ]
+    },
+    {
+     "jeu": "mx01184d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      490,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      16,
+      23,
+      18,
+      24,
+      22,
+      28
+     ]
+    },
+    {
+     "jeu": "mx01185d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      479,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      7,
+      14,
+      14
+     ]
+    },
+    {
+     "jeu": "mx01186d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      338,
+      148,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      5,
+      12,
+      8,
+      16,
+      16,
+      34,
+      19
+     ]
+    },
+    {
+     "jeu": "mx01187d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      499,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      26,
+      22,
+      13,
+      9,
+      14,
+      14,
+      25
+     ]
+    },
+    {
+     "jeu": "mx01188d4",
+     "but": "panel",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      4,
+      6
+     ]
+    },
+    {
+     "jeu": "mx01189d5",
+     "but": "cibles",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 5,
+     "actions": 500,
+     "niveaux_actions": [
+      492,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      16,
+      22,
+      25,
+      29,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01190d1",
+     "but": "panel",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      2,
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01191d2",
+     "but": "sortie",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      21,
+      19,
+      25,
+      21,
+      21,
+      22,
+      30,
+      26
+     ]
+    },
+    {
+     "jeu": "mx01192d3",
+     "but": "panel",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      3,
+      4,
+      4
+     ]
+    },
+    {
+     "jeu": "mx01193d4",
+     "but": "sortie",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      500,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      30,
+      25,
+      32,
+      22,
+      38,
+      37
+     ]
+    },
+    {
+     "jeu": "mx01194d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      497,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      29,
+      23,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01195d1",
+     "but": "sortie",
+     "difficulte": 1,
+     "etat": "ACTION_CAP",
+     "niveaux": 1,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      255,
+      245,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      8,
+      7,
+      11,
+      13,
+      11,
+      15,
+      18
+     ]
+    },
+    {
+     "jeu": "mx01196d2",
+     "but": "cibles",
+     "difficulte": 2,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 7,
+     "actions": 500,
+     "niveaux_actions": [
+      474,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      12,
+      12,
+      28,
+      33,
+      31,
+      37
+     ]
+    },
+    {
+     "jeu": "mx01197d3",
+     "but": "sortie",
+     "difficulte": 3,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 3,
+     "actions": 500,
+     "niveaux_actions": [
+      495,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      15,
+      12,
+      11
+     ]
+    },
+    {
+     "jeu": "mx01198d4",
+     "but": "cibles",
+     "difficulte": 4,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 8,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      14,
+      36,
+      24,
+      24,
+      25,
+      33,
+      32,
+      29
+     ]
+    },
+    {
+     "jeu": "mx01199d5",
+     "but": "sortie",
+     "difficulte": 5,
+     "etat": "ACTION_CAP",
+     "niveaux": 0,
+     "niveaux_total": 4,
+     "actions": 500,
+     "niveaux_actions": [
+      485,
+      0,
+      0,
+      0
+     ],
+     "niveaux_reference": [
+      12,
+      22,
+      25,
+      17
+     ]
+    }
+   ]
+  }
+ }
+}
