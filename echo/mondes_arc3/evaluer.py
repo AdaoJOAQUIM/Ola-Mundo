@@ -99,13 +99,13 @@ def main():
     ap.add_argument("--agent", required=True)
     ap.add_argument("--mondes", type=int, default=20)
     ap.add_argument("--graine", type=int, default=0, help="première graine de monde")
-    ap.add_argument("--difficulte", default="mix", help="1, 2, 3 ou mix (cycle)")
+    ap.add_argument("--difficulte", default="mix", help="1 à 5 ou mix (cycle 1..5)")
     ap.add_argument("--budget", type=int, default=MAX_ACTIONS)
     ap.add_argument("--procs", type=int, default=2)
     ap.add_argument("--json", default=None)
     a = ap.parse_args()
     seeds = [a.graine + i for i in range(a.mondes)]
-    ds = [1 + i % 3 for i in range(a.mondes)] if a.difficulte == "mix" else [int(a.difficulte)] * a.mondes
+    ds = [1 + i % 5 for i in range(a.mondes)] if a.difficulte == "mix" else [int(a.difficulte)] * a.mondes
     res = lancer(a.agent, seeds, ds, a.budget, a.procs, a.graine)
     r = resume(res)
     for x in res:

@@ -204,9 +204,10 @@ def difficulte_niveau(W: Monde, k: int) -> float:
 
 
 def bornes(W: Monde, k: int):
+    sup = max(0, W.d - 3)          # paliers 4 et 5 : niveaux plus longs (calibrage vers les jeux réels)
     if W.goal == "panel":
-        return 2 + k // 3, 5 + 2 * k + 2 * W.d
-    return 3 + 2 * k, min(80, 16 + 6 * k + 10 * (W.d - 1))
+        return 2 + k // 3 + sup, 5 + 2 * k + 2 * W.d
+    return 3 + 2 * k + 4 * sup, min(90, 16 + 6 * k + 10 * (W.d - 1))
 
 
 def gen_niveau(W: Monde, k: int) -> Niveau:
