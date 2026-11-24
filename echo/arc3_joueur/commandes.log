@@ -1,0 +1,3 @@
+ls arc3 arc/externes/prime-agent competences/arc3
+cat arc3/harnais.py arc3/lancer.py (lecture)
+cat prime-agent README AGENTS broker (lecture)

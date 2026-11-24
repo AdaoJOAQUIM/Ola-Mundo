@@ -34,7 +34,7 @@ def ecrire(nom, obj):
 
 def charger_bassin():
     b = lire("bassin.json", {"competences": []})
-    return [{"nom": c["nom"], "fichier": c["fichier"], "source": (SKILLS / c["fichier"]).read_text()}
+    return [{"nom": c["nom"], "fichier": c["fichier"], "source": source_de(c["fichier"])}
             for c in b["competences"]]
 
 
@@ -93,10 +93,39 @@ def juger(k, candidats):
     return bassin
 
 
+def juger_groupe(k, candidats):
+    """Un seul jugement pour un groupe (<= 3 nouvelles/révisées) ajouté ensemble au bassin courant."""
+    import juge
+    bassin = charger_bassin()
+    pr = jouer.prieurs_geles() or None
+    lign = lire("lignee.json", {"evenements": []})
+    nouveau = list(bassin)
+    for c in candidats:
+        cand = {"nom": nom_de(c), "fichier": c, "source": source_de(c)}
+        if any(b["nom"] == cand["nom"] for b in nouveau):
+            nouveau = [cand if b["nom"] == cand["nom"] else b for b in nouveau]
+        else:
+            nouveau.append(cand)
+    dossier = juge.juger([{"nom": b["nom"], "source": b["source"]} for b in bassin],
+                         [{"nom": b["nom"], "source": b["source"]} for b in nouveau], pr, "ajout", {})
+    ev = {"date": datetime.now().isoformat(timespec="seconds"), "ronde": k, "candidat": "+".join(candidats),
+          "groupe": True, "accepte": dossier["accepte"], "raison": dossier.get("raison"),
+          "mesures": dossier.get("mesures"), "niveaux_par_jeu_graine": dossier.get("niveaux_par_jeu_graine"),
+          "empreintes_juge": dossier.get("empreintes")}
+    lign["evenements"].append(ev)
+    print("GROUPE", candidats, "->", "ACCEPTE" if dossier["accepte"] else "REJETE", dossier.get("raison"),
+          {kk: (round(v, 3) if isinstance(v, float) else v) for kk, v in (dossier.get("mesures") or {}).items()})
+    if dossier["accepte"]:
+        ecrire("bassin.json", {"competences": [{"nom": b["nom"], "fichier": b["fichier"]} for b in nouveau]})
+    ecrire("lignee.json", lign)
+
+
 if __name__ == "__main__":
     cmd, k = sys.argv[1], sys.argv[2]
     args = sys.argv[3:]
     if cmd == "train":
         train(k, args)
+    elif cmd == "groupe":
+        juger_groupe(k, args)
     elif cmd == "juger":
         juger(k, args)

@@ -75,7 +75,7 @@ class Accum:
         self.layer_lost_gu = np.zeros(NL)
         self.skill_slots = np.zeros(nskills + 1)
         self.skill_saved = np.zeros(nskills + 1)       # octets economises vs 4 bits dense (pages)
-        self.skill_saved_win = []                      # par fenetre
+        self.win_saved = None
         self.faults = 0
         self.bytes_sector = 0.0
 
@@ -243,8 +243,8 @@ class Sim(mt.Moteur):
                 # octets
                 by = lay.slot_bytes(mg, md, kg, kd, lay.PAGE)
                 bys = lay.slot_bytes(mg, md, kg, kd, lay.SECTOR)
-                np.add.at(self.tok_bytes, tok + self.tok0, by)
-                np.add.at(self.tok_bytes_sec, tok + self.tok0, bys)
+                np.add.at(self.tok_bytes, tok, by)
+                np.add.at(self.tok_bytes_sec, tok, bys)
                 a_.layer_bytes[L] += by.sum()
                 a_.layer_keep_gu[L] += mg.mean(1).sum()
                 a_.layer_keep_dn[L] += md.mean(1).sum()
@@ -254,6 +254,7 @@ class Sim(mt.Moteur):
                     m = sk[G] == s_
                     a_.skill_slots[s_] += m.sum()
                     a_.skill_saved[s_] += (lay.NAIVE_SLOT - by[m]).sum()
+                    np.add.at(a_.win_saved, (self.win_of_tok[tok[m]], s_), lay.NAIVE_SLOT - by[m])
         # emplacements ecartes (bg == 0)
         cul = bg == 0
         if cul.any():
@@ -263,60 +264,69 @@ class Sim(mt.Moteur):
                 m = cul & (sk == s_)
                 a_.skill_slots[s_] += m.sum()
                 a_.skill_saved[s_] += lay.NAIVE_SLOT * m.sum()
+                np.add.at(a_.win_saved, (self.win_of_tok[slot_tok[m]], s_), lay.NAIVE_SLOT)
         a_.layer_slots[L] += N
         return h + out
 
     # ---------------------------------------------------------------- passes
+    def forward_multi(self, wins):
+        """Toutes les fenetres ensemble : attention par fenetre, experts sur tous les jetons (un seul decodage/expert)."""
+        lens = [len(w) for w in wins]
+        hs = [self.embed[torch.as_tensor(w)].float() for w in wins]
+        for L in range(self.NL):
+            hs = [self.attention(L, h, 0) for h in hs]
+            H = self.moe(L, torch.cat(hs))
+            hs = list(H.split(lens))
+        return [mt.rms(h, self.fnorm, self.eps) for h in hs]
+
     @torch.no_grad()
     def run(self, windows, pool=(), only_layers=None, collect=True):
         """windows : listes de LONG+1 jetons. Renvoie un dict de nombres/tableaux."""
         self.pool = list(pool)
         self.only_layers = None if only_layers is None else set(only_layers)
         self.acc = Accum(len(self.pool))
-        n_tot = sum(len(w) - 1 for w in windows)
+        lens = [len(w) - 1 for w in windows]
+        n_tot = sum(lens)
+        self.win_of_tok = np.repeat(np.arange(len(windows)), lens)
+        self.acc.win_saved = np.zeros((len(windows), len(self.pool) + 1))
+        self.tok0 = 0
         self.tok_bytes = np.zeros(n_tot)
         self.tok_bytes_sec = np.zeros(n_tot)
         nll_tok = np.zeros(n_tot, np.float32)
         arg = np.zeros(n_tot, np.int32)
         t0 = time.time()
+        hids = self.forward_multi([w[:-1] for w in windows])
         pos = 0
-        win_saved = []
-        for w in windows:
+        for w, hid in zip(windows, hids):
             n = len(w) - 1
-            self.tok0 = pos
-            prev = self.acc.skill_saved.copy()
-            hid = self.forward(w[:-1], 0, hidden=True)
             tgt = torch.tensor(w[1:])
             for a in range(0, n, 128):
                 lg = hid[a:a + 128] @ self.lm_head.T
                 nll_tok[pos + a:pos + a + lg.shape[0]] = F.cross_entropy(lg, tgt[a:a + 128], reduction="none").numpy()
                 arg[pos + a:pos + a + lg.shape[0]] = lg.argmax(-1).numpy()
-            win_saved.append((self.acc.skill_saved - prev) / n)
             pos += n
         a_ = self.acc
+        full = lay.NAIVE_SLOT * TOPK * NL
         res = dict(
             n_tokens=n_tot, nll=float(nll_tok.sum() / n_tot), ppl=float(np.exp(nll_tok.sum() / n_tot)),
-            nll_tok=nll_tok, argmax=arg, wall_s=time.time() - t0,
-            bytes_per_token=float(self.tok_bytes.mean()) if self.backend == "cm" else float(lay.NAIVE_SLOT * TOPK * NL),
-            bytes_sector_per_token=float(self.tok_bytes_sec.mean()) if self.backend == "cm" else float(lay.NAIVE_SLOT * TOPK * NL),
-            faults=int(a_.faults),
-        )
-        res["pct_naive"] = 100.0 * res["bytes_per_token"] / (lay.NAIVE_SLOT * TOPK * NL)
-        res["pct_naive_sector"] = 100.0 * res["bytes_sector_per_token"] / (lay.NAIVE_SLOT * TOPK * NL)
+            nll_tok=nll_tok, argmax=arg, wall_s=time.time() - t0, faults=int(a_.faults),
+            bytes_per_token=float(self.tok_bytes.mean()) if self.backend == "cm" else float(full),
+            bytes_sector_per_token=float(self.tok_bytes_sec.mean()) if self.backend == "cm" else float(full))
+        res["pct_naive"] = 100.0 * res["bytes_per_token"] / full
+        res["pct_naive_sector"] = 100.0 * res["bytes_sector_per_token"] / full
         if collect and self.backend == "cm":
-            nl = max(a_.layer_slots.max(), 1)
             res["tok_bytes"] = self.tok_bytes.copy()
+            res["win_len"] = lens
+            den = np.maximum(a_.layer_slots - a_.layer_cull, 1)
             res["layer"] = dict(
                 bytes_per_slot=(a_.layer_bytes / np.maximum(a_.layer_slots, 1)).tolist(),
-                keep_gu=(a_.layer_keep_gu / np.maximum(a_.layer_slots - a_.layer_cull, 1)).tolist(),
-                keep_dn=(a_.layer_keep_dn / np.maximum(a_.layer_slots - a_.layer_cull, 1)).tolist(),
-                lost_gu=(a_.layer_lost_gu / np.maximum(a_.layer_slots - a_.layer_cull, 1)).tolist(),
-                cull=(a_.layer_cull / np.maximum(a_.layer_slots, 1)).tolist(),
+                keep_gu=(a_.layer_keep_gu / den).tolist(), keep_dn=(a_.layer_keep_dn / den).tolist(),
+                lost_gu=(a_.layer_lost_gu / den).tolist(), cull=(a_.layer_cull / np.maximum(a_.layer_slots, 1)).tolist(),
                 bits=(a_.layer_bits / np.maximum(a_.layer_slots[:, None], 1)).tolist())
             res["skills"] = dict(
                 slots=a_.skill_slots.tolist(),
-                saved_pct_naive=(100.0 * a_.skill_saved / n_tot / (lay.NAIVE_SLOT * TOPK * NL)).tolist(),
-                saved_win_pct=[(100.0 * s / (lay.NAIVE_SLOT * TOPK * NL)).tolist() for s in win_saved])
+                saved_pct_naive=(100.0 * a_.skill_saved / n_tot / full).tolist(),
+                saved_win_pct=(100.0 * a_.win_saved / np.array(lens)[:, None] / full).tolist())
         return res
 
     def calibrer(self, windows):

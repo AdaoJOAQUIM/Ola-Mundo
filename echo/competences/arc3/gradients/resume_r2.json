@@ -1,0 +1,1798 @@
+{
+ "ronde": "r2",
+ "bassin": [
+  "sonde_clics",
+  "paires_clics",
+  "repetition_clic",
+  "clic_puis_fleches"
+ ],
+ "resumes": [
+  {
+   "jeu": "ls20",
+   "graine": 0,
+   "niveaux": 1,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [
+    198
+   ],
+   "gagnes_a_l_action": [
+    198
+   ],
+   "attribution_gain": [
+    "cerveau"
+   ],
+   "actions_competences": 0,
+   "actions_cerveau": 495,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [],
+   "nb_fenetres": 0,
+   "traj": {
+    "images_distinctes": 437,
+    "n_images": 495,
+    "part_sans_effet": 0.085,
+    "types_actions": {
+     "ACTION1": 191,
+     "ACTION4": 126,
+     "ACTION2": 75,
+     "ACTION3": 103
+    }
+   }
+  },
+  {
+   "jeu": "ls20",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 497,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [],
+   "nb_fenetres": 0
+  },
+  {
+   "jeu": "ls20",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 497,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [],
+   "nb_fenetres": 0
+  },
+  {
+   "jeu": "cn04",
+   "graine": 0,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 368,
+   "actions_cerveau": 128,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 7,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 126,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 39,
+     "succes": 0,
+     "actions": 144,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 91,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     6,
+     7
+    ],
+    [
+     "clic_puis_fleches",
+     8,
+     74,
+     67
+    ],
+    [
+     "clic_puis_fleches",
+     76,
+     99,
+     24
+    ],
+    [
+     "paires_clics",
+     101,
+     200,
+     100
+    ],
+    [
+     "repetition_clic",
+     203,
+     208,
+     6
+    ],
+    [
+     "paires_clics",
+     210,
+     235,
+     26
+    ],
+    [
+     "repetition_clic",
+     240,
+     240,
+     1
+    ],
+    [
+     "repetition_clic",
+     247,
+     248,
+     2
+    ],
+    [
+     "repetition_clic",
+     253,
+     255,
+     3
+    ],
+    [
+     "repetition_clic",
+     258,
+     262,
+     5
+    ],
+    [
+     "repetition_clic",
+     269,
+     269,
+     1
+    ],
+    [
+     "repetition_clic",
+     272,
+     274,
+     3
+    ],
+    [
+     "repetition_clic",
+     281,
+     281,
+     1
+    ],
+    [
+     "repetition_clic",
+     285,
+     288,
+     4
+    ],
+    [
+     "repetition_clic",
+     291,
+     295,
+     5
+    ],
+    [
+     "repetition_clic",
+     299,
+     299,
+     1
+    ],
+    [
+     "repetition_clic",
+     306,
+     308,
+     3
+    ],
+    [
+     "repetition_clic",
+     315,
+     317,
+     3
+    ],
+    [
+     "repetition_clic",
+     320,
+     324,
+     5
+    ],
+    [
+     "repetition_clic",
+     327,
+     331,
+     5
+    ],
+    [
+     "repetition_clic",
+     335,
+     338,
+     4
+    ],
+    [
+     "repetition_clic",
+     343,
+     345,
+     3
+    ],
+    [
+     "repetition_clic",
+     349,
+     350,
+     2
+    ],
+    [
+     "repetition_clic",
+     354,
+     354,
+     1
+    ],
+    [
+     "repetition_clic",
+     358,
+     363,
+     6
+    ],
+    [
+     "repetition_clic",
+     366,
+     371,
+     6
+    ],
+    [
+     "repetition_clic",
+     374,
+     378,
+     5
+    ],
+    [
+     "repetition_clic",
+     382,
+     384,
+     3
+    ],
+    [
+     "repetition_clic",
+     392,
+     393,
+     2
+    ],
+    [
+     "repetition_clic",
+     396,
+     400,
+     5
+    ],
+    [
+     "repetition_clic",
+     403,
+     407,
+     5
+    ],
+    [
+     "repetition_clic",
+     410,
+     414,
+     5
+    ],
+    [
+     "repetition_clic",
+     418,
+     421,
+     4
+    ],
+    [
+     "repetition_clic",
+     425,
+     426,
+     2
+    ],
+    [
+     "repetition_clic",
+     430,
+     433,
+     4
+    ],
+    [
+     "repetition_clic",
+     438,
+     440,
+     3
+    ],
+    [
+     "repetition_clic",
+     443,
+     447,
+     5
+    ],
+    [
+     "repetition_clic",
+     450,
+     454,
+     5
+    ],
+    [
+     "repetition_clic",
+     458,
+     460,
+     3
+    ],
+    [
+     "repetition_clic",
+     464,
+     469,
+     6
+    ]
+   ],
+   "nb_fenetres": 44,
+   "traj": {
+    "images_distinctes": 292,
+    "n_images": 496,
+    "part_sans_effet": 0.079,
+    "types_actions": {
+     "ACTION6": 313,
+     "ACTION4": 32,
+     "ACTION3": 32,
+     "ACTION2": 33,
+     "ACTION1": 26,
+     "RESET": 42,
+     "ACTION5": 18
+    }
+   }
+  },
+  {
+   "jeu": "cn04",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 400,
+   "actions_cerveau": 97,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 7,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 168,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 34,
+     "succes": 0,
+     "actions": 134,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 91,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     6,
+     7
+    ],
+    [
+     "clic_puis_fleches",
+     8,
+     74,
+     67
+    ],
+    [
+     "clic_puis_fleches",
+     76,
+     99,
+     24
+    ],
+    [
+     "paires_clics",
+     101,
+     200,
+     100
+    ],
+    [
+     "repetition_clic",
+     203,
+     208,
+     6
+    ],
+    [
+     "paires_clics",
+     210,
+     277,
+     68
+    ],
+    [
+     "repetition_clic",
+     282,
+     283,
+     2
+    ],
+    [
+     "repetition_clic",
+     286,
+     290,
+     5
+    ],
+    [
+     "repetition_clic",
+     294,
+     294,
+     1
+    ],
+    [
+     "repetition_clic",
+     299,
+     304,
+     6
+    ],
+    [
+     "repetition_clic",
+     308,
+     308,
+     1
+    ],
+    [
+     "repetition_clic",
+     311,
+     311,
+     1
+    ],
+    [
+     "repetition_clic",
+     314,
+     316,
+     3
+    ],
+    [
+     "repetition_clic",
+     328,
+     330,
+     3
+    ],
+    [
+     "repetition_clic",
+     334,
+     337,
+     4
+    ],
+    [
+     "repetition_clic",
+     340,
+     344,
+     5
+    ],
+    [
+     "repetition_clic",
+     347,
+     350,
+     4
+    ],
+    [
+     "repetition_clic",
+     355,
+     359,
+     5
+    ],
+    [
+     "repetition_clic",
+     362,
+     366,
+     5
+    ],
+    [
+     "repetition_clic",
+     369,
+     373,
+     5
+    ],
+    [
+     "repetition_clic",
+     377,
+     380,
+     4
+    ],
+    [
+     "repetition_clic",
+     384,
+     387,
+     4
+    ],
+    [
+     "repetition_clic",
+     390,
+     392,
+     3
+    ],
+    [
+     "repetition_clic",
+     395,
+     399,
+     5
+    ],
+    [
+     "repetition_clic",
+     404,
+     406,
+     3
+    ],
+    [
+     "repetition_clic",
+     409,
+     413,
+     5
+    ],
+    [
+     "repetition_clic",
+     417,
+     417,
+     1
+    ],
+    [
+     "repetition_clic",
+     421,
+     426,
+     6
+    ],
+    [
+     "repetition_clic",
+     432,
+     435,
+     4
+    ],
+    [
+     "repetition_clic",
+     438,
+     442,
+     5
+    ],
+    [
+     "repetition_clic",
+     445,
+     449,
+     5
+    ],
+    [
+     "repetition_clic",
+     452,
+     456,
+     5
+    ],
+    [
+     "repetition_clic",
+     460,
+     463,
+     4
+    ],
+    [
+     "repetition_clic",
+     466,
+     468,
+     3
+    ],
+    [
+     "repetition_clic",
+     471,
+     475,
+     5
+    ],
+    [
+     "repetition_clic",
+     478,
+     482,
+     5
+    ],
+    [
+     "repetition_clic",
+     485,
+     489,
+     5
+    ],
+    [
+     "repetition_clic",
+     492,
+     496,
+     5
+    ],
+    [
+     "repetition_clic",
+     499,
+     499,
+     1
+    ]
+   ],
+   "nb_fenetres": 39
+  },
+  {
+   "jeu": "cn04",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 370,
+   "actions_cerveau": 126,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 7,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 126,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 36,
+     "succes": 0,
+     "actions": 146,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 91,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     6,
+     7
+    ],
+    [
+     "clic_puis_fleches",
+     8,
+     74,
+     67
+    ],
+    [
+     "clic_puis_fleches",
+     76,
+     99,
+     24
+    ],
+    [
+     "paires_clics",
+     101,
+     200,
+     100
+    ],
+    [
+     "paires_clics",
+     205,
+     230,
+     26
+    ],
+    [
+     "repetition_clic",
+     238,
+     243,
+     6
+    ],
+    [
+     "repetition_clic",
+     248,
+     250,
+     3
+    ],
+    [
+     "repetition_clic",
+     254,
+     257,
+     4
+    ],
+    [
+     "repetition_clic",
+     260,
+     264,
+     5
+    ],
+    [
+     "repetition_clic",
+     269,
+     274,
+     6
+    ],
+    [
+     "repetition_clic",
+     277,
+     282,
+     6
+    ],
+    [
+     "repetition_clic",
+     286,
+     290,
+     5
+    ],
+    [
+     "repetition_clic",
+     299,
+     303,
+     5
+    ],
+    [
+     "repetition_clic",
+     308,
+     312,
+     5
+    ],
+    [
+     "repetition_clic",
+     316,
+     319,
+     4
+    ],
+    [
+     "repetition_clic",
+     323,
+     326,
+     4
+    ],
+    [
+     "repetition_clic",
+     329,
+     333,
+     5
+    ],
+    [
+     "repetition_clic",
+     337,
+     340,
+     4
+    ],
+    [
+     "repetition_clic",
+     344,
+     345,
+     2
+    ],
+    [
+     "repetition_clic",
+     349,
+     352,
+     4
+    ],
+    [
+     "repetition_clic",
+     355,
+     359,
+     5
+    ],
+    [
+     "repetition_clic",
+     364,
+     366,
+     3
+    ],
+    [
+     "repetition_clic",
+     369,
+     373,
+     5
+    ],
+    [
+     "repetition_clic",
+     376,
+     379,
+     4
+    ],
+    [
+     "repetition_clic",
+     385,
+     385,
+     1
+    ],
+    [
+     "repetition_clic",
+     388,
+     388,
+     1
+    ],
+    [
+     "repetition_clic",
+     392,
+     395,
+     4
+    ],
+    [
+     "repetition_clic",
+     399,
+     402,
+     4
+    ],
+    [
+     "repetition_clic",
+     405,
+     409,
+     5
+    ],
+    [
+     "repetition_clic",
+     413,
+     416,
+     4
+    ],
+    [
+     "repetition_clic",
+     419,
+     421,
+     3
+    ],
+    [
+     "repetition_clic",
+     430,
+     435,
+     6
+    ],
+    [
+     "repetition_clic",
+     438,
+     442,
+     5
+    ],
+    [
+     "repetition_clic",
+     445,
+     449,
+     5
+    ],
+    [
+     "repetition_clic",
+     453,
+     455,
+     3
+    ],
+    [
+     "repetition_clic",
+     464,
+     464,
+     1
+    ],
+    [
+     "repetition_clic",
+     467,
+     471,
+     5
+    ],
+    [
+     "repetition_clic",
+     474,
+     478,
+     5
+    ],
+    [
+     "repetition_clic",
+     481,
+     485,
+     5
+    ],
+    [
+     "repetition_clic",
+     491,
+     492,
+     2
+    ]
+   ],
+   "nb_fenetres": 41
+  },
+  {
+   "jeu": "ka59",
+   "graine": 0,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 340,
+   "actions_cerveau": 157,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 13,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 168,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 29,
+     "succes": 0,
+     "actions": 42,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 117,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     12,
+     13
+    ],
+    [
+     "paires_clics",
+     14,
+     113,
+     100
+    ],
+    [
+     "clic_puis_fleches",
+     115,
+     213,
+     99
+    ],
+    [
+     "clic_puis_fleches",
+     215,
+     225,
+     11
+    ],
+    [
+     "paires_clics",
+     227,
+     294,
+     68
+    ],
+    [
+     "clic_puis_fleches",
+     296,
+     302,
+     7
+    ],
+    [
+     "repetition_clic",
+     311,
+     311,
+     1
+    ],
+    [
+     "repetition_clic",
+     316,
+     316,
+     1
+    ],
+    [
+     "repetition_clic",
+     321,
+     322,
+     2
+    ],
+    [
+     "repetition_clic",
+     326,
+     327,
+     2
+    ],
+    [
+     "repetition_clic",
+     330,
+     330,
+     1
+    ],
+    [
+     "repetition_clic",
+     339,
+     341,
+     3
+    ],
+    [
+     "repetition_clic",
+     352,
+     352,
+     1
+    ],
+    [
+     "repetition_clic",
+     358,
+     358,
+     1
+    ],
+    [
+     "repetition_clic",
+     368,
+     369,
+     2
+    ],
+    [
+     "repetition_clic",
+     372,
+     372,
+     1
+    ],
+    [
+     "repetition_clic",
+     391,
+     391,
+     1
+    ],
+    [
+     "repetition_clic",
+     406,
+     406,
+     1
+    ],
+    [
+     "repetition_clic",
+     409,
+     409,
+     1
+    ],
+    [
+     "repetition_clic",
+     412,
+     412,
+     1
+    ],
+    [
+     "repetition_clic",
+     416,
+     417,
+     2
+    ],
+    [
+     "repetition_clic",
+     420,
+     420,
+     1
+    ],
+    [
+     "repetition_clic",
+     425,
+     425,
+     1
+    ],
+    [
+     "repetition_clic",
+     430,
+     431,
+     2
+    ],
+    [
+     "repetition_clic",
+     434,
+     434,
+     1
+    ],
+    [
+     "repetition_clic",
+     441,
+     442,
+     2
+    ],
+    [
+     "repetition_clic",
+     447,
+     448,
+     2
+    ],
+    [
+     "repetition_clic",
+     452,
+     453,
+     2
+    ],
+    [
+     "repetition_clic",
+     458,
+     459,
+     2
+    ],
+    [
+     "repetition_clic",
+     464,
+     464,
+     1
+    ],
+    [
+     "repetition_clic",
+     470,
+     470,
+     1
+    ],
+    [
+     "repetition_clic",
+     473,
+     473,
+     1
+    ],
+    [
+     "repetition_clic",
+     477,
+     478,
+     2
+    ],
+    [
+     "repetition_clic",
+     484,
+     484,
+     1
+    ],
+    [
+     "repetition_clic",
+     491,
+     492,
+     2
+    ]
+   ],
+   "nb_fenetres": 35,
+   "traj": {
+    "images_distinctes": 273,
+    "n_images": 497,
+    "part_sans_effet": 0.19,
+    "types_actions": {
+     "ACTION6": 220,
+     "RESET": 56,
+     "ACTION4": 69,
+     "ACTION3": 75,
+     "ACTION2": 35,
+     "ACTION1": 42
+    }
+   }
+  },
+  {
+   "jeu": "ka59",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 349,
+   "actions_cerveau": 148,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 13,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 168,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 33,
+     "succes": 0,
+     "actions": 51,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 117,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     12,
+     13
+    ],
+    [
+     "paires_clics",
+     14,
+     113,
+     100
+    ],
+    [
+     "clic_puis_fleches",
+     115,
+     213,
+     99
+    ],
+    [
+     "clic_puis_fleches",
+     215,
+     225,
+     11
+    ],
+    [
+     "paires_clics",
+     227,
+     294,
+     68
+    ],
+    [
+     "repetition_clic",
+     296,
+     296,
+     1
+    ],
+    [
+     "clic_puis_fleches",
+     298,
+     304,
+     7
+    ],
+    [
+     "repetition_clic",
+     321,
+     322,
+     2
+    ],
+    [
+     "repetition_clic",
+     325,
+     327,
+     3
+    ],
+    [
+     "repetition_clic",
+     333,
+     333,
+     1
+    ],
+    [
+     "repetition_clic",
+     336,
+     336,
+     1
+    ],
+    [
+     "repetition_clic",
+     344,
+     344,
+     1
+    ],
+    [
+     "repetition_clic",
+     347,
+     347,
+     1
+    ],
+    [
+     "repetition_clic",
+     357,
+     358,
+     2
+    ],
+    [
+     "repetition_clic",
+     363,
+     363,
+     1
+    ],
+    [
+     "repetition_clic",
+     369,
+     369,
+     1
+    ],
+    [
+     "repetition_clic",
+     377,
+     377,
+     1
+    ],
+    [
+     "repetition_clic",
+     385,
+     386,
+     2
+    ],
+    [
+     "repetition_clic",
+     390,
+     391,
+     2
+    ],
+    [
+     "repetition_clic",
+     398,
+     398,
+     1
+    ],
+    [
+     "repetition_clic",
+     402,
+     403,
+     2
+    ],
+    [
+     "repetition_clic",
+     406,
+     406,
+     1
+    ],
+    [
+     "repetition_clic",
+     409,
+     409,
+     1
+    ],
+    [
+     "repetition_clic",
+     412,
+     412,
+     1
+    ],
+    [
+     "repetition_clic",
+     416,
+     417,
+     2
+    ],
+    [
+     "repetition_clic",
+     422,
+     423,
+     2
+    ],
+    [
+     "repetition_clic",
+     430,
+     431,
+     2
+    ],
+    [
+     "repetition_clic",
+     434,
+     434,
+     1
+    ],
+    [
+     "repetition_clic",
+     442,
+     442,
+     1
+    ],
+    [
+     "repetition_clic",
+     446,
+     448,
+     3
+    ],
+    [
+     "repetition_clic",
+     454,
+     456,
+     3
+    ],
+    [
+     "repetition_clic",
+     459,
+     459,
+     1
+    ],
+    [
+     "repetition_clic",
+     462,
+     462,
+     1
+    ],
+    [
+     "repetition_clic",
+     465,
+     467,
+     3
+    ],
+    [
+     "repetition_clic",
+     475,
+     475,
+     1
+    ],
+    [
+     "repetition_clic",
+     479,
+     481,
+     3
+    ],
+    [
+     "repetition_clic",
+     484,
+     484,
+     1
+    ],
+    [
+     "repetition_clic",
+     487,
+     487,
+     1
+    ],
+    [
+     "repetition_clic",
+     492,
+     492,
+     1
+    ]
+   ],
+   "nb_fenetres": 39
+  },
+  {
+   "jeu": "ka59",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 342,
+   "actions_cerveau": 155,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 13,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 168,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "repetition_clic": {
+     "activations": 26,
+     "succes": 0,
+     "actions": 44,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "clic_puis_fleches": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 117,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     12,
+     13
+    ],
+    [
+     "paires_clics",
+     14,
+     113,
+     100
+    ],
+    [
+     "clic_puis_fleches",
+     115,
+     213,
+     99
+    ],
+    [
+     "clic_puis_fleches",
+     215,
+     225,
+     11
+    ],
+    [
+     "paires_clics",
+     227,
+     294,
+     68
+    ],
+    [
+     "clic_puis_fleches",
+     296,
+     302,
+     7
+    ],
+    [
+     "repetition_clic",
+     311,
+     311,
+     1
+    ],
+    [
+     "repetition_clic",
+     318,
+     319,
+     2
+    ],
+    [
+     "repetition_clic",
+     329,
+     330,
+     2
+    ],
+    [
+     "repetition_clic",
+     346,
+     347,
+     2
+    ],
+    [
+     "repetition_clic",
+     357,
+     358,
+     2
+    ],
+    [
+     "repetition_clic",
+     366,
+     366,
+     1
+    ],
+    [
+     "repetition_clic",
+     369,
+     369,
+     1
+    ],
+    [
+     "repetition_clic",
+     372,
+     372,
+     1
+    ],
+    [
+     "repetition_clic",
+     378,
+     380,
+     3
+    ],
+    [
+     "repetition_clic",
+     383,
+     383,
+     1
+    ],
+    [
+     "repetition_clic",
+     388,
+     388,
+     1
+    ],
+    [
+     "repetition_clic",
+     396,
+     398,
+     3
+    ],
+    [
+     "repetition_clic",
+     401,
+     403,
+     3
+    ],
+    [
+     "repetition_clic",
+     414,
+     414,
+     1
+    ],
+    [
+     "repetition_clic",
+     419,
+     420,
+     2
+    ],
+    [
+     "repetition_clic",
+     423,
+     423,
+     1
+    ],
+    [
+     "repetition_clic",
+     437,
+     437,
+     1
+    ],
+    [
+     "repetition_clic",
+     442,
+     442,
+     1
+    ],
+    [
+     "repetition_clic",
+     445,
+     445,
+     1
+    ],
+    [
+     "repetition_clic",
+     449,
+     450,
+     2
+    ],
+    [
+     "repetition_clic",
+     455,
+     456,
+     2
+    ],
+    [
+     "repetition_clic",
+     461,
+     462,
+     2
+    ],
+    [
+     "repetition_clic",
+     471,
+     473,
+     3
+    ],
+    [
+     "repetition_clic",
+     476,
+     478,
+     3
+    ],
+    [
+     "repetition_clic",
+     484,
+     484,
+     1
+    ],
+    [
+     "repetition_clic",
+     489,
+     489,
+     1
+    ]
+   ],
+   "nb_fenetres": 32
+  }
+ ]
+}
