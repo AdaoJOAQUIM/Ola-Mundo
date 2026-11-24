@@ -1,0 +1,4708 @@
+{
+ "bassin": [
+  "sonde_clics",
+  "couloir",
+  "paires_clics"
+ ],
+ "jeux": [
+  {
+   "jeu": "ar25-0c556536",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 8,
+   "actions": 500,
+   "resets_compteur": 6,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    32,
+    50,
+    75,
+    37,
+    89,
+    159,
+    233,
+    73
+   ],
+   "cpu_s": 2.91,
+   "cpu_cerveau_s": 1.14,
+   "mur_s": 2.92,
+   "prefixe": "ar25",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 11,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 58,
+     "succes": 0,
+     "actions": 349,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 360,
+   "actions_cerveau": 134,
+   "resume": {
+    "jeu": "ar25",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 360,
+    "actions_cerveau": 134,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 11,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 58,
+      "succes": 0,
+      "actions": 349,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      10,
+      11
+     ],
+     [
+      "couloir",
+      14,
+      21,
+      8
+     ],
+     [
+      "couloir",
+      23,
+      28,
+      6
+     ],
+     [
+      "couloir",
+      31,
+      34,
+      4
+     ],
+     [
+      "couloir",
+      39,
+      46,
+      8
+     ],
+     [
+      "couloir",
+      49,
+      56,
+      8
+     ],
+     [
+      "couloir",
+      61,
+      68,
+      8
+     ],
+     [
+      "couloir",
+      71,
+      78,
+      8
+     ],
+     [
+      "couloir",
+      81,
+      84,
+      4
+     ],
+     [
+      "couloir",
+      88,
+      92,
+      5
+     ],
+     [
+      "couloir",
+      94,
+      101,
+      8
+     ],
+     [
+      "couloir",
+      105,
+      112,
+      8
+     ],
+     [
+      "couloir",
+      117,
+      122,
+      6
+     ],
+     [
+      "couloir",
+      125,
+      125,
+      1
+     ],
+     [
+      "couloir",
+      129,
+      136,
+      8
+     ],
+     [
+      "couloir",
+      138,
+      139,
+      2
+     ],
+     [
+      "couloir",
+      142,
+      148,
+      7
+     ],
+     [
+      "couloir",
+      153,
+      160,
+      8
+     ],
+     [
+      "couloir",
+      164,
+      166,
+      3
+     ],
+     [
+      "couloir",
+      175,
+      182,
+      8
+     ],
+     [
+      "couloir",
+      184,
+      186,
+      3
+     ],
+     [
+      "couloir",
+      188,
+      195,
+      8
+     ],
+     [
+      "couloir",
+      197,
+      204,
+      8
+     ],
+     [
+      "couloir",
+      209,
+      216,
+      8
+     ],
+     [
+      "couloir",
+      219,
+      226,
+      8
+     ],
+     [
+      "couloir",
+      228,
+      230,
+      3
+     ],
+     [
+      "couloir",
+      234,
+      241,
+      8
+     ],
+     [
+      "couloir",
+      244,
+      248,
+      5
+     ],
+     [
+      "couloir",
+      250,
+      257,
+      8
+     ],
+     [
+      "couloir",
+      261,
+      268,
+      8
+     ],
+     [
+      "couloir",
+      270,
+      277,
+      8
+     ],
+     [
+      "couloir",
+      280,
+      287,
+      8
+     ],
+     [
+      "couloir",
+      291,
+      298,
+      8
+     ],
+     [
+      "couloir",
+      305,
+      307,
+      3
+     ],
+     [
+      "couloir",
+      311,
+      311,
+      1
+     ],
+     [
+      "couloir",
+      317,
+      317,
+      1
+     ],
+     [
+      "couloir",
+      319,
+      323,
+      5
+     ],
+     [
+      "couloir",
+      326,
+      333,
+      8
+     ],
+     [
+      "couloir",
+      335,
+      337,
+      3
+     ],
+     [
+      "couloir",
+      339,
+      346,
+      8
+     ]
+    ],
+    "nb_fenetres": 59
+   }
+  },
+  {
+   "jeu": "bp35-0a0ad940",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 9,
+   "actions": 500,
+   "resets_compteur": 42,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    21,
+    48,
+    44,
+    38,
+    33,
+    87,
+    86,
+    131,
+    163
+   ],
+   "cpu_s": 8.62,
+   "cpu_cerveau_s": 1.8,
+   "mur_s": 8.65,
+   "prefixe": "bp35",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 40,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 56,
+     "succes": 0,
+     "actions": 189,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 90,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 319,
+   "actions_cerveau": 169,
+   "resume": {
+    "jeu": "bp35",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 319,
+    "actions_cerveau": 169,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 40,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 56,
+      "succes": 0,
+      "actions": 189,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 90,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      39,
+      40
+     ],
+     [
+      "couloir",
+      41,
+      41,
+      1
+     ],
+     [
+      "paires_clics",
+      43,
+      132,
+      90
+     ],
+     [
+      "couloir",
+      134,
+      138,
+      5
+     ],
+     [
+      "couloir",
+      140,
+      145,
+      6
+     ],
+     [
+      "couloir",
+      150,
+      155,
+      6
+     ],
+     [
+      "couloir",
+      157,
+      160,
+      4
+     ],
+     [
+      "couloir",
+      164,
+      164,
+      1
+     ],
+     [
+      "couloir",
+      168,
+      172,
+      5
+     ],
+     [
+      "couloir",
+      174,
+      180,
+      7
+     ],
+     [
+      "couloir",
+      182,
+      185,
+      4
+     ],
+     [
+      "couloir",
+      189,
+      193,
+      5
+     ],
+     [
+      "couloir",
+      197,
+      203,
+      7
+     ],
+     [
+      "couloir",
+      205,
+      210,
+      6
+     ],
+     [
+      "couloir",
+      215,
+      215,
+      1
+     ],
+     [
+      "couloir",
+      219,
+      223,
+      5
+     ],
+     [
+      "couloir",
+      225,
+      230,
+      6
+     ],
+     [
+      "couloir",
+      232,
+      238,
+      7
+     ],
+     [
+      "couloir",
+      243,
+      243,
+      1
+     ],
+     [
+      "couloir",
+      248,
+      248,
+      1
+     ],
+     [
+      "couloir",
+      252,
+      253,
+      2
+     ],
+     [
+      "couloir",
+      255,
+      258,
+      4
+     ],
+     [
+      "couloir",
+      261,
+      265,
+      5
+     ],
+     [
+      "couloir",
+      268,
+      270,
+      3
+     ],
+     [
+      "couloir",
+      276,
+      276,
+      1
+     ],
+     [
+      "couloir",
+      283,
+      287,
+      5
+     ],
+     [
+      "couloir",
+      289,
+      291,
+      3
+     ],
+     [
+      "couloir",
+      293,
+      295,
+      3
+     ],
+     [
+      "couloir",
+      297,
+      297,
+      1
+     ],
+     [
+      "couloir",
+      308,
+      310,
+      3
+     ],
+     [
+      "couloir",
+      312,
+      314,
+      3
+     ],
+     [
+      "couloir",
+      329,
+      329,
+      1
+     ],
+     [
+      "couloir",
+      333,
+      333,
+      1
+     ],
+     [
+      "couloir",
+      335,
+      340,
+      6
+     ],
+     [
+      "couloir",
+      344,
+      344,
+      1
+     ],
+     [
+      "couloir",
+      347,
+      351,
+      5
+     ],
+     [
+      "couloir",
+      353,
+      355,
+      3
+     ],
+     [
+      "couloir",
+      357,
+      358,
+      2
+     ],
+     [
+      "couloir",
+      366,
+      368,
+      3
+     ],
+     [
+      "couloir",
+      370,
+      371,
+      2
+     ]
+    ],
+    "nb_fenetres": 58
+   }
+  },
+  {
+   "jeu": "cd82-fb555c5d",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 6,
+   "actions": 500,
+   "resets_compteur": 33,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    55,
+    8,
+    41,
+    21,
+    23,
+    23
+   ],
+   "cpu_s": 2.95,
+   "cpu_cerveau_s": 1.04,
+   "mur_s": 2.99,
+   "prefixe": "cd82",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 13,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 53,
+     "succes": 0,
+     "actions": 102,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 90,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 205,
+   "actions_cerveau": 292,
+   "resume": {
+    "jeu": "cd82",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 205,
+    "actions_cerveau": 292,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 13,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 53,
+      "succes": 0,
+      "actions": 102,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 90,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      12,
+      13
+     ],
+     [
+      "paires_clics",
+      14,
+      103,
+      90
+     ],
+     [
+      "couloir",
+      113,
+      113,
+      1
+     ],
+     [
+      "couloir",
+      116,
+      117,
+      2
+     ],
+     [
+      "couloir",
+      121,
+      122,
+      2
+     ],
+     [
+      "couloir",
+      131,
+      132,
+      2
+     ],
+     [
+      "couloir",
+      140,
+      141,
+      2
+     ],
+     [
+      "couloir",
+      143,
+      144,
+      2
+     ],
+     [
+      "couloir",
+      146,
+      147,
+      2
+     ],
+     [
+      "couloir",
+      155,
+      156,
+      2
+     ],
+     [
+      "couloir",
+      161,
+      162,
+      2
+     ],
+     [
+      "couloir",
+      164,
+      165,
+      2
+     ],
+     [
+      "couloir",
+      170,
+      171,
+      2
+     ],
+     [
+      "couloir",
+      173,
+      174,
+      2
+     ],
+     [
+      "couloir",
+      176,
+      177,
+      2
+     ],
+     [
+      "couloir",
+      180,
+      181,
+      2
+     ],
+     [
+      "couloir",
+      185,
+      186,
+      2
+     ],
+     [
+      "couloir",
+      189,
+      190,
+      2
+     ],
+     [
+      "couloir",
+      192,
+      193,
+      2
+     ],
+     [
+      "couloir",
+      196,
+      197,
+      2
+     ],
+     [
+      "couloir",
+      199,
+      200,
+      2
+     ],
+     [
+      "couloir",
+      205,
+      205,
+      1
+     ],
+     [
+      "couloir",
+      213,
+      214,
+      2
+     ],
+     [
+      "couloir",
+      218,
+      219,
+      2
+     ],
+     [
+      "couloir",
+      224,
+      225,
+      2
+     ],
+     [
+      "couloir",
+      232,
+      233,
+      2
+     ],
+     [
+      "couloir",
+      239,
+      240,
+      2
+     ],
+     [
+      "couloir",
+      245,
+      246,
+      2
+     ],
+     [
+      "couloir",
+      251,
+      252,
+      2
+     ],
+     [
+      "couloir",
+      267,
+      268,
+      2
+     ],
+     [
+      "couloir",
+      278,
+      279,
+      2
+     ],
+     [
+      "couloir",
+      283,
+      284,
+      2
+     ],
+     [
+      "couloir",
+      289,
+      290,
+      2
+     ],
+     [
+      "couloir",
+      293,
+      294,
+      2
+     ],
+     [
+      "couloir",
+      297,
+      298,
+      2
+     ],
+     [
+      "couloir",
+      310,
+      310,
+      1
+     ],
+     [
+      "couloir",
+      314,
+      315,
+      2
+     ],
+     [
+      "couloir",
+      327,
+      328,
+      2
+     ],
+     [
+      "couloir",
+      333,
+      334,
+      2
+     ],
+     [
+      "couloir",
+      337,
+      338,
+      2
+     ]
+    ],
+    "nb_fenetres": 55
+   }
+  },
+  {
+   "jeu": "dc22-fdcac232",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 6,
+   "actions": 500,
+   "resets_compteur": 33,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    59,
+    102,
+    67,
+    98,
+    324,
+    578
+   ],
+   "cpu_s": 3.2,
+   "cpu_cerveau_s": 1.79,
+   "mur_s": 3.24,
+   "prefixe": "dc22",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 33,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 33,
+     "succes": 0,
+     "actions": 70,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 90,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 193,
+   "actions_cerveau": 304,
+   "resume": {
+    "jeu": "dc22",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 193,
+    "actions_cerveau": 304,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 33,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 33,
+      "succes": 0,
+      "actions": 70,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 90,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      32,
+      33
+     ],
+     [
+      "paires_clics",
+      34,
+      123,
+      90
+     ],
+     [
+      "couloir",
+      126,
+      126,
+      1
+     ],
+     [
+      "couloir",
+      128,
+      128,
+      1
+     ],
+     [
+      "couloir",
+      142,
+      143,
+      2
+     ],
+     [
+      "couloir",
+      147,
+      148,
+      2
+     ],
+     [
+      "couloir",
+      156,
+      157,
+      2
+     ],
+     [
+      "couloir",
+      162,
+      163,
+      2
+     ],
+     [
+      "couloir",
+      165,
+      166,
+      2
+     ],
+     [
+      "couloir",
+      168,
+      169,
+      2
+     ],
+     [
+      "couloir",
+      174,
+      175,
+      2
+     ],
+     [
+      "couloir",
+      188,
+      189,
+      2
+     ],
+     [
+      "couloir",
+      192,
+      193,
+      2
+     ],
+     [
+      "couloir",
+      209,
+      210,
+      2
+     ],
+     [
+      "couloir",
+      213,
+      214,
+      2
+     ],
+     [
+      "couloir",
+      223,
+      224,
+      2
+     ],
+     [
+      "couloir",
+      226,
+      227,
+      2
+     ],
+     [
+      "couloir",
+      229,
+      230,
+      2
+     ],
+     [
+      "couloir",
+      238,
+      239,
+      2
+     ],
+     [
+      "couloir",
+      248,
+      248,
+      1
+     ],
+     [
+      "couloir",
+      257,
+      257,
+      1
+     ],
+     [
+      "couloir",
+      272,
+      273,
+      2
+     ],
+     [
+      "couloir",
+      283,
+      288,
+      6
+     ],
+     [
+      "couloir",
+      306,
+      311,
+      6
+     ],
+     [
+      "couloir",
+      322,
+      322,
+      1
+     ],
+     [
+      "couloir",
+      325,
+      327,
+      3
+     ],
+     [
+      "couloir",
+      331,
+      331,
+      1
+     ],
+     [
+      "couloir",
+      346,
+      346,
+      1
+     ],
+     [
+      "couloir",
+      361,
+      362,
+      2
+     ],
+     [
+      "couloir",
+      364,
+      365,
+      2
+     ],
+     [
+      "couloir",
+      368,
+      369,
+      2
+     ],
+     [
+      "couloir",
+      385,
+      387,
+      3
+     ],
+     [
+      "couloir",
+      389,
+      389,
+      1
+     ],
+     [
+      "couloir",
+      425,
+      425,
+      1
+     ],
+     [
+      "couloir",
+      435,
+      439,
+      5
+     ]
+    ],
+    "nb_fenetres": 35
+   }
+  },
+  {
+   "jeu": "ft09-0d8bbf25",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 6,
+   "actions": 500,
+   "resets_compteur": 115,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    43,
+    12,
+    23,
+    28,
+    65,
+    37
+   ],
+   "cpu_s": 3.79,
+   "cpu_cerveau_s": 0.26,
+   "mur_s": 3.83,
+   "prefixe": "ft09",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 40,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 40,
+   "actions_cerveau": 460,
+   "resume": {
+    "jeu": "ft09",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 40,
+    "actions_cerveau": 460,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 40,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      39,
+      40
+     ]
+    ],
+    "nb_fenetres": 1
+   }
+  },
+  {
+   "jeu": "g50t-5849a774",
+   "etat": "ACTION_CAP",
+   "niveaux": 1,
+   "niveaux_total": 7,
+   "actions": 500,
+   "resets_compteur": 3,
+   "score_sdk": 0.23824143051369925,
+   "niveaux_actions": [
+    302,
+    198,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    78,
+    175,
+    179,
+    230,
+    96,
+    54,
+    67
+   ],
+   "cpu_s": 6.14,
+   "cpu_cerveau_s": 0.25,
+   "mur_s": 6.19,
+   "prefixe": "g50t",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 66,
+     "succes": 3,
+     "actions": 262,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 262,
+   "actions_cerveau": 235,
+   "resume": {
+    "jeu": "g50t",
+    "graine": 0,
+    "niveaux": 1,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [
+     302
+    ],
+    "gagnes_a_l_action": [
+     302
+    ],
+    "attribution_gain": [
+     "couloir"
+    ],
+    "actions_competences": 262,
+    "actions_cerveau": 235,
+    "competences": {
+     "sonde_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 66,
+      "succes": 3,
+      "actions": 262,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "couloir",
+      15,
+      18,
+      4
+     ],
+     [
+      "couloir",
+      20,
+      23,
+      4
+     ],
+     [
+      "couloir",
+      38,
+      41,
+      4
+     ],
+     [
+      "couloir",
+      44,
+      47,
+      4
+     ],
+     [
+      "couloir",
+      50,
+      56,
+      7
+     ],
+     [
+      "couloir",
+      59,
+      62,
+      4
+     ],
+     [
+      "couloir",
+      65,
+      68,
+      4
+     ],
+     [
+      "couloir",
+      72,
+      75,
+      4
+     ],
+     [
+      "couloir",
+      79,
+      82,
+      4
+     ],
+     [
+      "couloir",
+      86,
+      89,
+      4
+     ],
+     [
+      "couloir",
+      92,
+      98,
+      7
+     ],
+     [
+      "couloir",
+      100,
+      106,
+      7
+     ],
+     [
+      "couloir",
+      108,
+      111,
+      4
+     ],
+     [
+      "couloir",
+      118,
+      121,
+      4
+     ],
+     [
+      "couloir",
+      125,
+      129,
+      5
+     ],
+     [
+      "couloir",
+      133,
+      136,
+      4
+     ],
+     [
+      "couloir",
+      143,
+      146,
+      4
+     ],
+     [
+      "couloir",
+      155,
+      157,
+      3
+     ],
+     [
+      "couloir",
+      166,
+      169,
+      4
+     ],
+     [
+      "couloir",
+      174,
+      177,
+      4
+     ],
+     [
+      "couloir",
+      179,
+      182,
+      4
+     ],
+     [
+      "couloir",
+      185,
+      188,
+      4
+     ],
+     [
+      "couloir",
+      194,
+      197,
+      4
+     ],
+     [
+      "couloir",
+      205,
+      208,
+      4
+     ],
+     [
+      "couloir",
+      210,
+      213,
+      4
+     ],
+     [
+      "couloir",
+      236,
+      239,
+      4
+     ],
+     [
+      "couloir",
+      242,
+      245,
+      4
+     ],
+     [
+      "couloir",
+      247,
+      250,
+      4
+     ],
+     [
+      "couloir",
+      253,
+      256,
+      4
+     ],
+     [
+      "couloir",
+      263,
+      263,
+      1
+     ],
+     [
+      "couloir",
+      266,
+      269,
+      4
+     ],
+     [
+      "couloir",
+      282,
+      284,
+      3
+     ],
+     [
+      "couloir",
+      290,
+      296,
+      7
+     ],
+     [
+      "couloir",
+      298,
+      301,
+      4
+     ],
+     [
+      "couloir",
+      315,
+      318,
+      4
+     ],
+     [
+      "couloir",
+      322,
+      322,
+      1
+     ],
+     [
+      "couloir",
+      324,
+      324,
+      1
+     ],
+     [
+      "couloir",
+      326,
+      332,
+      7
+     ],
+     [
+      "couloir",
+      336,
+      342,
+      7
+     ],
+     [
+      "couloir",
+      344,
+      344,
+      1
+     ]
+    ],
+    "nb_fenetres": 66
+   }
+  },
+  {
+   "jeu": "lf52-271a04aa",
+   "etat": "ACTION_CAP",
+   "niveaux": 1,
+   "niveaux_total": 10,
+   "actions": 500,
+   "resets_compteur": 31,
+   "score_sdk": 0.008875775546891658,
+   "niveaux_actions": [
+    458,
+    42,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    32,
+    81,
+    60,
+    71,
+    205,
+    148,
+    244,
+    109,
+    164,
+    225
+   ],
+   "cpu_s": 6.86,
+   "cpu_cerveau_s": 0.59,
+   "mur_s": 6.95,
+   "prefixe": "lf52",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 80,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 91,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 171,
+   "actions_cerveau": 329,
+   "resume": {
+    "jeu": "lf52",
+    "graine": 0,
+    "niveaux": 1,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [
+     458
+    ],
+    "gagnes_a_l_action": [
+     458
+    ],
+    "attribution_gain": [
+     "sonde_clics"
+    ],
+    "actions_competences": 171,
+    "actions_cerveau": 329,
+    "competences": {
+     "sonde_clics": {
+      "activations": 2,
+      "succes": 0,
+      "actions": 80,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 2,
+      "succes": 0,
+      "actions": 91,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      39,
+      40
+     ],
+     [
+      "paires_clics",
+      41,
+      130,
+      90
+     ],
+     [
+      "sonde_clics",
+      458,
+      497,
+      40
+     ],
+     [
+      "paires_clics",
+      499,
+      499,
+      1
+     ]
+    ],
+    "nb_fenetres": 4
+   }
+  },
+  {
+   "jeu": "lp85-305b61c3",
+   "etat": "ACTION_CAP",
+   "niveaux": 3,
+   "niveaux_total": 8,
+   "actions": 500,
+   "resets_compteur": 45,
+   "score_sdk": 1.4622221990454471,
+   "niveaux_actions": [
+    68,
+    170,
+    89,
+    173,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    17,
+    38,
+    31,
+    16,
+    41,
+    60,
+    26,
+    159
+   ],
+   "cpu_s": 1.6,
+   "cpu_cerveau_s": 0.65,
+   "mur_s": 1.62,
+   "prefixe": "lp85",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 4,
+     "succes": 0,
+     "actions": 155,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 3,
+     "succes": 1,
+     "actions": 30,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 185,
+   "actions_cerveau": 314,
+   "resume": {
+    "jeu": "lp85",
+    "graine": 0,
+    "niveaux": 3,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [
+     68,
+     170,
+     89
+    ],
+    "gagnes_a_l_action": [
+     68,
+     238,
+     327
+    ],
+    "attribution_gain": [
+     "sonde_clics",
+     "sonde_clics",
+     "sonde_clics"
+    ],
+    "actions_competences": 185,
+    "actions_cerveau": 314,
+    "competences": {
+     "sonde_clics": {
+      "activations": 4,
+      "succes": 0,
+      "actions": 155,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 3,
+      "succes": 1,
+      "actions": 30,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      34,
+      35
+     ],
+     [
+      "paires_clics",
+      36,
+      41,
+      6
+     ],
+     [
+      "sonde_clics",
+      68,
+      107,
+      40
+     ],
+     [
+      "paires_clics",
+      109,
+      126,
+      18
+     ],
+     [
+      "sonde_clics",
+      238,
+      277,
+      40
+     ],
+     [
+      "paires_clics",
+      279,
+      284,
+      6
+     ],
+     [
+      "sonde_clics",
+      327,
+      366,
+      40
+     ]
+    ],
+    "nb_fenetres": 7
+   }
+  },
+  {
+   "jeu": "m0r0-492f87ba",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 6,
+   "actions": 500,
+   "resets_compteur": 5,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    30,
+    111,
+    203,
+    26,
+    500,
+    237
+   ],
+   "cpu_s": 2.81,
+   "cpu_cerveau_s": 1.63,
+   "mur_s": 2.82,
+   "prefixe": "m0r0",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 2,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 98,
+     "succes": 0,
+     "actions": 275,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 6,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 283,
+   "actions_cerveau": 214,
+   "resume": {
+    "jeu": "m0r0",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 283,
+    "actions_cerveau": 214,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 2,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 98,
+      "succes": 0,
+      "actions": 275,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 6,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      1,
+      2
+     ],
+     [
+      "couloir",
+      12,
+      13,
+      2
+     ],
+     [
+      "couloir",
+      15,
+      17,
+      3
+     ],
+     [
+      "couloir",
+      19,
+      21,
+      3
+     ],
+     [
+      "paires_clics",
+      23,
+      28,
+      6
+     ],
+     [
+      "couloir",
+      31,
+      31,
+      1
+     ],
+     [
+      "couloir",
+      34,
+      35,
+      2
+     ],
+     [
+      "couloir",
+      37,
+      37,
+      1
+     ],
+     [
+      "couloir",
+      45,
+      47,
+      3
+     ],
+     [
+      "couloir",
+      49,
+      51,
+      3
+     ],
+     [
+      "couloir",
+      54,
+      56,
+      3
+     ],
+     [
+      "couloir",
+      60,
+      61,
+      2
+     ],
+     [
+      "couloir",
+      64,
+      65,
+      2
+     ],
+     [
+      "couloir",
+      75,
+      77,
+      3
+     ],
+     [
+      "couloir",
+      80,
+      82,
+      3
+     ],
+     [
+      "couloir",
+      86,
+      88,
+      3
+     ],
+     [
+      "couloir",
+      90,
+      92,
+      3
+     ],
+     [
+      "couloir",
+      95,
+      96,
+      2
+     ],
+     [
+      "couloir",
+      102,
+      103,
+      2
+     ],
+     [
+      "couloir",
+      106,
+      108,
+      3
+     ],
+     [
+      "couloir",
+      111,
+      113,
+      3
+     ],
+     [
+      "couloir",
+      115,
+      116,
+      2
+     ],
+     [
+      "couloir",
+      119,
+      120,
+      2
+     ],
+     [
+      "couloir",
+      122,
+      124,
+      3
+     ],
+     [
+      "couloir",
+      127,
+      129,
+      3
+     ],
+     [
+      "couloir",
+      131,
+      133,
+      3
+     ],
+     [
+      "couloir",
+      136,
+      138,
+      3
+     ],
+     [
+      "couloir",
+      143,
+      145,
+      3
+     ],
+     [
+      "couloir",
+      150,
+      152,
+      3
+     ],
+     [
+      "couloir",
+      156,
+      158,
+      3
+     ],
+     [
+      "couloir",
+      160,
+      162,
+      3
+     ],
+     [
+      "couloir",
+      164,
+      166,
+      3
+     ],
+     [
+      "couloir",
+      169,
+      171,
+      3
+     ],
+     [
+      "couloir",
+      173,
+      174,
+      2
+     ],
+     [
+      "couloir",
+      176,
+      177,
+      2
+     ],
+     [
+      "couloir",
+      180,
+      181,
+      2
+     ],
+     [
+      "couloir",
+      183,
+      183,
+      1
+     ],
+     [
+      "couloir",
+      185,
+      187,
+      3
+     ],
+     [
+      "couloir",
+      192,
+      192,
+      1
+     ],
+     [
+      "couloir",
+      195,
+      195,
+      1
+     ]
+    ],
+    "nb_fenetres": 100
+   }
+  },
+  {
+   "jeu": "r11l-495a7899",
+   "etat": "ACTION_CAP",
+   "niveaux": 1,
+   "niveaux_total": 6,
+   "actions": 500,
+   "resets_compteur": 64,
+   "score_sdk": 0.08069612075074069,
+   "niveaux_actions": [
+    169,
+    331,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    22,
+    33,
+    51,
+    26,
+    52,
+    49
+   ],
+   "cpu_s": 4.14,
+   "cpu_cerveau_s": 1.09,
+   "mur_s": 4.16,
+   "prefixe": "r11l",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 77,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 180,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 257,
+   "actions_cerveau": 239,
+   "resume": {
+    "jeu": "r11l",
+    "graine": 0,
+    "niveaux": 1,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [
+     169
+    ],
+    "gagnes_a_l_action": [
+     169
+    ],
+    "attribution_gain": [
+     "sonde_clics"
+    ],
+    "actions_competences": 257,
+    "actions_cerveau": 239,
+    "competences": {
+     "sonde_clics": {
+      "activations": 2,
+      "succes": 0,
+      "actions": 77,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 2,
+      "succes": 0,
+      "actions": 180,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      36,
+      37
+     ],
+     [
+      "paires_clics",
+      38,
+      127,
+      90
+     ],
+     [
+      "sonde_clics",
+      169,
+      208,
+      40
+     ],
+     [
+      "paires_clics",
+      210,
+      299,
+      90
+     ]
+    ],
+    "nb_fenetres": 4
+   }
+  },
+  {
+   "jeu": "re86-8af5384d",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 8,
+   "actions": 500,
+   "resets_compteur": 4,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    26,
+    42,
+    86,
+    108,
+    189,
+    139,
+    424,
+    241
+   ],
+   "cpu_s": 1.36,
+   "cpu_cerveau_s": 0.23,
+   "mur_s": 1.38,
+   "prefixe": "re86",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 53,
+     "succes": 0,
+     "actions": 386,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 386,
+   "actions_cerveau": 110,
+   "resume": {
+    "jeu": "re86",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 386,
+    "actions_cerveau": 110,
+    "competences": {
+     "sonde_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 53,
+      "succes": 0,
+      "actions": 386,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "couloir",
+      11,
+      14,
+      4
+     ],
+     [
+      "couloir",
+      17,
+      23,
+      7
+     ],
+     [
+      "couloir",
+      25,
+      32,
+      8
+     ],
+     [
+      "couloir",
+      34,
+      41,
+      8
+     ],
+     [
+      "couloir",
+      43,
+      50,
+      8
+     ],
+     [
+      "couloir",
+      52,
+      59,
+      8
+     ],
+     [
+      "couloir",
+      65,
+      72,
+      8
+     ],
+     [
+      "couloir",
+      74,
+      81,
+      8
+     ],
+     [
+      "couloir",
+      83,
+      90,
+      8
+     ],
+     [
+      "couloir",
+      92,
+      99,
+      8
+     ],
+     [
+      "couloir",
+      102,
+      107,
+      6
+     ],
+     [
+      "couloir",
+      110,
+      117,
+      8
+     ],
+     [
+      "couloir",
+      119,
+      126,
+      8
+     ],
+     [
+      "couloir",
+      129,
+      136,
+      8
+     ],
+     [
+      "couloir",
+      138,
+      145,
+      8
+     ],
+     [
+      "couloir",
+      147,
+      154,
+      8
+     ],
+     [
+      "couloir",
+      158,
+      164,
+      7
+     ],
+     [
+      "couloir",
+      166,
+      173,
+      8
+     ],
+     [
+      "couloir",
+      175,
+      182,
+      8
+     ],
+     [
+      "couloir",
+      184,
+      191,
+      8
+     ],
+     [
+      "couloir",
+      193,
+      200,
+      8
+     ],
+     [
+      "couloir",
+      203,
+      210,
+      8
+     ],
+     [
+      "couloir",
+      214,
+      221,
+      8
+     ],
+     [
+      "couloir",
+      223,
+      230,
+      8
+     ],
+     [
+      "couloir",
+      232,
+      237,
+      6
+     ],
+     [
+      "couloir",
+      239,
+      241,
+      3
+     ],
+     [
+      "couloir",
+      244,
+      251,
+      8
+     ],
+     [
+      "couloir",
+      256,
+      262,
+      7
+     ],
+     [
+      "couloir",
+      268,
+      275,
+      8
+     ],
+     [
+      "couloir",
+      277,
+      279,
+      3
+     ],
+     [
+      "couloir",
+      285,
+      292,
+      8
+     ],
+     [
+      "couloir",
+      294,
+      301,
+      8
+     ],
+     [
+      "couloir",
+      304,
+      311,
+      8
+     ],
+     [
+      "couloir",
+      316,
+      323,
+      8
+     ],
+     [
+      "couloir",
+      326,
+      331,
+      6
+     ],
+     [
+      "couloir",
+      335,
+      342,
+      8
+     ],
+     [
+      "couloir",
+      344,
+      351,
+      8
+     ],
+     [
+      "couloir",
+      353,
+      360,
+      8
+     ],
+     [
+      "couloir",
+      362,
+      369,
+      8
+     ],
+     [
+      "couloir",
+      371,
+      378,
+      8
+     ]
+    ],
+    "nb_fenetres": 53
+   }
+  },
+  {
+   "jeu": "s5i5-18d95033",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 8,
+   "actions": 500,
+   "resets_compteur": 37,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    20,
+    89,
+    106,
+    54,
+    162,
+    38,
+    86,
+    83
+   ],
+   "cpu_s": 1.5,
+   "cpu_cerveau_s": 0.55,
+   "mur_s": 1.5,
+   "prefixe": "s5i5",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 27,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 90,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 117,
+   "actions_cerveau": 376,
+   "resume": {
+    "jeu": "s5i5",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 117,
+    "actions_cerveau": 376,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 27,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 90,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      26,
+      27
+     ],
+     [
+      "paires_clics",
+      28,
+      117,
+      90
+     ]
+    ],
+    "nb_fenetres": 2
+   }
+  },
+  {
+   "jeu": "sb26-7fbdac44",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 8,
+   "actions": 500,
+   "resets_compteur": 22,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    18,
+    28,
+    18,
+    19,
+    31,
+    23,
+    58,
+    18
+   ],
+   "cpu_s": 12.78,
+   "cpu_cerveau_s": 1.04,
+   "mur_s": 12.9,
+   "prefixe": "sb26",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 23,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 60,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 83,
+   "actions_cerveau": 415,
+   "resume": {
+    "jeu": "sb26",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 83,
+    "actions_cerveau": 415,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 23,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 60,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      22,
+      23
+     ],
+     [
+      "paires_clics",
+      24,
+      83,
+      60
+     ]
+    ],
+    "nb_fenetres": 2
+   }
+  },
+  {
+   "jeu": "sk48-d8078629",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 8,
+   "actions": 500,
+   "resets_compteur": 1,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    61,
+    177,
+    101,
+    103,
+    230,
+    181,
+    125,
+    92
+   ],
+   "cpu_s": 2.24,
+   "cpu_cerveau_s": 0.76,
+   "mur_s": 2.25,
+   "prefixe": "sk48",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 40,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 68,
+     "succes": 0,
+     "actions": 287,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 327,
+   "actions_cerveau": 172,
+   "resume": {
+    "jeu": "sk48",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 327,
+    "actions_cerveau": 172,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 40,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 68,
+      "succes": 0,
+      "actions": 287,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      39,
+      40
+     ],
+     [
+      "couloir",
+      41,
+      44,
+      4
+     ],
+     [
+      "couloir",
+      46,
+      49,
+      4
+     ],
+     [
+      "couloir",
+      55,
+      55,
+      1
+     ],
+     [
+      "couloir",
+      57,
+      57,
+      1
+     ],
+     [
+      "couloir",
+      65,
+      69,
+      5
+     ],
+     [
+      "couloir",
+      71,
+      74,
+      4
+     ],
+     [
+      "couloir",
+      86,
+      86,
+      1
+     ],
+     [
+      "couloir",
+      90,
+      92,
+      3
+     ],
+     [
+      "couloir",
+      95,
+      99,
+      5
+     ],
+     [
+      "couloir",
+      101,
+      101,
+      1
+     ],
+     [
+      "couloir",
+      108,
+      112,
+      5
+     ],
+     [
+      "couloir",
+      119,
+      119,
+      1
+     ],
+     [
+      "couloir",
+      129,
+      132,
+      4
+     ],
+     [
+      "couloir",
+      134,
+      134,
+      1
+     ],
+     [
+      "couloir",
+      147,
+      151,
+      5
+     ],
+     [
+      "couloir",
+      154,
+      158,
+      5
+     ],
+     [
+      "couloir",
+      160,
+      164,
+      5
+     ],
+     [
+      "couloir",
+      167,
+      170,
+      4
+     ],
+     [
+      "couloir",
+      175,
+      179,
+      5
+     ],
+     [
+      "couloir",
+      181,
+      185,
+      5
+     ],
+     [
+      "couloir",
+      192,
+      193,
+      2
+     ],
+     [
+      "couloir",
+      196,
+      200,
+      5
+     ],
+     [
+      "couloir",
+      203,
+      207,
+      5
+     ],
+     [
+      "couloir",
+      210,
+      214,
+      5
+     ],
+     [
+      "couloir",
+      216,
+      220,
+      5
+     ],
+     [
+      "couloir",
+      222,
+      226,
+      5
+     ],
+     [
+      "couloir",
+      229,
+      233,
+      5
+     ],
+     [
+      "couloir",
+      235,
+      239,
+      5
+     ],
+     [
+      "couloir",
+      241,
+      245,
+      5
+     ],
+     [
+      "couloir",
+      248,
+      252,
+      5
+     ],
+     [
+      "couloir",
+      257,
+      261,
+      5
+     ],
+     [
+      "couloir",
+      265,
+      269,
+      5
+     ],
+     [
+      "couloir",
+      272,
+      276,
+      5
+     ],
+     [
+      "couloir",
+      279,
+      283,
+      5
+     ],
+     [
+      "couloir",
+      287,
+      291,
+      5
+     ],
+     [
+      "couloir",
+      294,
+      297,
+      4
+     ],
+     [
+      "couloir",
+      300,
+      303,
+      4
+     ],
+     [
+      "couloir",
+      306,
+      310,
+      5
+     ],
+     [
+      "couloir",
+      313,
+      317,
+      5
+     ]
+    ],
+    "nb_fenetres": 69
+   }
+  },
+  {
+   "jeu": "sp80-589a99af",
+   "etat": "ACTION_CAP",
+   "niveaux": 1,
+   "niveaux_total": 6,
+   "actions": 500,
+   "resets_compteur": 47,
+   "score_sdk": 0.03408066564178195,
+   "niveaux_actions": [
+    461,
+    39,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    39,
+    58,
+    25,
+    148,
+    96,
+    152
+   ],
+   "cpu_s": 2.16,
+   "cpu_cerveau_s": 0.67,
+   "mur_s": 2.25,
+   "prefixe": "sp80",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 17,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 26,
+     "succes": 0,
+     "actions": 110,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 108,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 235,
+   "actions_cerveau": 254,
+   "resume": {
+    "jeu": "sp80",
+    "graine": 0,
+    "niveaux": 1,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [
+     461
+    ],
+    "gagnes_a_l_action": [
+     461
+    ],
+    "attribution_gain": [
+     "sonde_clics"
+    ],
+    "actions_competences": 235,
+    "actions_cerveau": 254,
+    "competences": {
+     "sonde_clics": {
+      "activations": 2,
+      "succes": 0,
+      "actions": 17,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 26,
+      "succes": 0,
+      "actions": 110,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 2,
+      "succes": 0,
+      "actions": 108,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      6,
+      7
+     ],
+     [
+      "couloir",
+      11,
+      13,
+      3
+     ],
+     [
+      "paires_clics",
+      15,
+      104,
+      90
+     ],
+     [
+      "couloir",
+      106,
+      108,
+      3
+     ],
+     [
+      "couloir",
+      112,
+      118,
+      7
+     ],
+     [
+      "couloir",
+      120,
+      120,
+      1
+     ],
+     [
+      "couloir",
+      123,
+      128,
+      6
+     ],
+     [
+      "couloir",
+      135,
+      141,
+      7
+     ],
+     [
+      "couloir",
+      143,
+      143,
+      1
+     ],
+     [
+      "couloir",
+      146,
+      151,
+      6
+     ],
+     [
+      "couloir",
+      200,
+      207,
+      8
+     ],
+     [
+      "couloir",
+      211,
+      218,
+      8
+     ],
+     [
+      "couloir",
+      220,
+      220,
+      1
+     ],
+     [
+      "couloir",
+      223,
+      225,
+      3
+     ],
+     [
+      "couloir",
+      228,
+      233,
+      6
+     ],
+     [
+      "couloir",
+      236,
+      236,
+      1
+     ],
+     [
+      "couloir",
+      238,
+      240,
+      3
+     ],
+     [
+      "couloir",
+      263,
+      268,
+      6
+     ],
+     [
+      "couloir",
+      297,
+      302,
+      6
+     ],
+     [
+      "couloir",
+      305,
+      309,
+      5
+     ],
+     [
+      "couloir",
+      326,
+      330,
+      5
+     ],
+     [
+      "couloir",
+      337,
+      341,
+      5
+     ],
+     [
+      "couloir",
+      372,
+      374,
+      3
+     ],
+     [
+      "couloir",
+      377,
+      379,
+      3
+     ],
+     [
+      "couloir",
+      392,
+      394,
+      3
+     ],
+     [
+      "couloir",
+      397,
+      398,
+      2
+     ],
+     [
+      "sonde_clics",
+      461,
+      470,
+      10
+     ],
+     [
+      "couloir",
+      472,
+      473,
+      2
+     ],
+     [
+      "couloir",
+      475,
+      480,
+      6
+     ],
+     [
+      "paires_clics",
+      482,
+      499,
+      18
+     ]
+    ],
+    "nb_fenetres": 30
+   }
+  },
+  {
+   "jeu": "su15-1944f8ab",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 9,
+   "actions": 500,
+   "resets_compteur": 40,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    22,
+    42,
+    26,
+    115,
+    36,
+    31,
+    8,
+    40,
+    41
+   ],
+   "cpu_s": 4.42,
+   "cpu_cerveau_s": 0.42,
+   "mur_s": 4.46,
+   "prefixe": "su15",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 26,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 90,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 116,
+   "actions_cerveau": 374,
+   "resume": {
+    "jeu": "su15",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 116,
+    "actions_cerveau": 374,
+    "competences": {
+     "sonde_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 26,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 1,
+      "succes": 0,
+      "actions": 90,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      25,
+      26
+     ],
+     [
+      "paires_clics",
+      27,
+      116,
+      90
+     ]
+    ],
+    "nb_fenetres": 2
+   }
+  },
+  {
+   "jeu": "tr87-cd924810",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 6,
+   "actions": 500,
+   "resets_compteur": 3,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    54,
+    58,
+    40,
+    45,
+    71,
+    146
+   ],
+   "cpu_s": 1.4,
+   "cpu_cerveau_s": 0.23,
+   "mur_s": 1.42,
+   "prefixe": "tr87",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 73,
+     "succes": 0,
+     "actions": 386,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 386,
+   "actions_cerveau": 111,
+   "resume": {
+    "jeu": "tr87",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 386,
+    "actions_cerveau": 111,
+    "competences": {
+     "sonde_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 73,
+      "succes": 0,
+      "actions": 386,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "couloir",
+      11,
+      11,
+      1
+     ],
+     [
+      "couloir",
+      13,
+      15,
+      3
+     ],
+     [
+      "couloir",
+      19,
+      20,
+      2
+     ],
+     [
+      "couloir",
+      22,
+      24,
+      3
+     ],
+     [
+      "couloir",
+      26,
+      33,
+      8
+     ],
+     [
+      "couloir",
+      35,
+      35,
+      1
+     ],
+     [
+      "couloir",
+      38,
+      39,
+      2
+     ],
+     [
+      "couloir",
+      43,
+      50,
+      8
+     ],
+     [
+      "couloir",
+      53,
+      60,
+      8
+     ],
+     [
+      "couloir",
+      62,
+      69,
+      8
+     ],
+     [
+      "couloir",
+      71,
+      78,
+      8
+     ],
+     [
+      "couloir",
+      80,
+      80,
+      1
+     ],
+     [
+      "couloir",
+      82,
+      89,
+      8
+     ],
+     [
+      "couloir",
+      91,
+      98,
+      8
+     ],
+     [
+      "couloir",
+      100,
+      107,
+      8
+     ],
+     [
+      "couloir",
+      110,
+      117,
+      8
+     ],
+     [
+      "couloir",
+      121,
+      127,
+      7
+     ],
+     [
+      "couloir",
+      130,
+      137,
+      8
+     ],
+     [
+      "couloir",
+      139,
+      139,
+      1
+     ],
+     [
+      "couloir",
+      141,
+      148,
+      8
+     ],
+     [
+      "couloir",
+      150,
+      157,
+      8
+     ],
+     [
+      "couloir",
+      160,
+      167,
+      8
+     ],
+     [
+      "couloir",
+      169,
+      169,
+      1
+     ],
+     [
+      "couloir",
+      171,
+      178,
+      8
+     ],
+     [
+      "couloir",
+      180,
+      187,
+      8
+     ],
+     [
+      "couloir",
+      189,
+      191,
+      3
+     ],
+     [
+      "couloir",
+      193,
+      194,
+      2
+     ],
+     [
+      "couloir",
+      197,
+      204,
+      8
+     ],
+     [
+      "couloir",
+      207,
+      214,
+      8
+     ],
+     [
+      "couloir",
+      216,
+      223,
+      8
+     ],
+     [
+      "couloir",
+      225,
+      226,
+      2
+     ],
+     [
+      "couloir",
+      228,
+      235,
+      8
+     ],
+     [
+      "couloir",
+      237,
+      238,
+      2
+     ],
+     [
+      "couloir",
+      240,
+      247,
+      8
+     ],
+     [
+      "couloir",
+      249,
+      256,
+      8
+     ],
+     [
+      "couloir",
+      259,
+      259,
+      1
+     ],
+     [
+      "couloir",
+      266,
+      266,
+      1
+     ],
+     [
+      "couloir",
+      269,
+      270,
+      2
+     ],
+     [
+      "couloir",
+      273,
+      280,
+      8
+     ],
+     [
+      "couloir",
+      282,
+      284,
+      3
+     ]
+    ],
+    "nb_fenetres": 73
+   }
+  },
+  {
+   "jeu": "tu93-0768757b",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 9,
+   "actions": 500,
+   "resets_compteur": 15,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    19,
+    16,
+    34,
+    42,
+    123,
+    80,
+    14,
+    23,
+    111
+   ],
+   "cpu_s": 6.32,
+   "cpu_cerveau_s": 0.33,
+   "mur_s": 6.38,
+   "prefixe": "tu93",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 6,
+     "succes": 0,
+     "actions": 8,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 8,
+   "actions_cerveau": 483,
+   "resume": {
+    "jeu": "tu93",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 8,
+    "actions_cerveau": 483,
+    "competences": {
+     "sonde_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 6,
+      "succes": 0,
+      "actions": 8,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "couloir",
+      13,
+      13,
+      1
+     ],
+     [
+      "couloir",
+      15,
+      16,
+      2
+     ],
+     [
+      "couloir",
+      18,
+      18,
+      1
+     ],
+     [
+      "couloir",
+      21,
+      21,
+      1
+     ],
+     [
+      "couloir",
+      23,
+      24,
+      2
+     ],
+     [
+      "couloir",
+      51,
+      51,
+      1
+     ]
+    ],
+    "nb_fenetres": 6
+   }
+  },
+  {
+   "jeu": "vc33-5430563c",
+   "etat": "ACTION_CAP",
+   "niveaux": 2,
+   "niveaux_total": 7,
+   "actions": 500,
+   "resets_compteur": 66,
+   "score_sdk": 0.04042486531080064,
+   "niveaux_actions": [
+    142,
+    270,
+    88,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    7,
+    18,
+    44,
+    61,
+    131,
+    34,
+    152
+   ],
+   "cpu_s": 1.42,
+   "cpu_cerveau_s": 0.38,
+   "mur_s": 1.48,
+   "prefixe": "vc33",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 3,
+     "succes": 0,
+     "actions": 50,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 3,
+     "succes": 0,
+     "actions": 184,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 234,
+   "actions_cerveau": 262,
+   "resume": {
+    "jeu": "vc33",
+    "graine": 0,
+    "niveaux": 2,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [
+     142,
+     270
+    ],
+    "gagnes_a_l_action": [
+     142,
+     412
+    ],
+    "attribution_gain": [
+     "sonde_clics",
+     "sonde_clics"
+    ],
+    "actions_competences": 234,
+    "actions_cerveau": 262,
+    "competences": {
+     "sonde_clics": {
+      "activations": 3,
+      "succes": 0,
+      "actions": 50,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 3,
+      "succes": 0,
+      "actions": 184,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "sonde_clics",
+      0,
+      8,
+      9
+     ],
+     [
+      "paires_clics",
+      12,
+      101,
+      90
+     ],
+     [
+      "sonde_clics",
+      142,
+      153,
+      12
+     ],
+     [
+      "paires_clics",
+      155,
+      190,
+      36
+     ],
+     [
+      "sonde_clics",
+      412,
+      440,
+      29
+     ],
+     [
+      "paires_clics",
+      442,
+      499,
+      58
+     ]
+    ],
+    "nb_fenetres": 6
+   }
+  },
+  {
+   "jeu": "wa30-ee6fef47",
+   "etat": "ACTION_CAP",
+   "niveaux": 0,
+   "niveaux_total": 9,
+   "actions": 500,
+   "resets_compteur": 2,
+   "score_sdk": 0.0,
+   "niveaux_actions": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "niveaux_reference": [
+    71,
+    119,
+    183,
+    98,
+    368,
+    68,
+    79,
+    442,
+    415
+   ],
+   "cpu_s": 1.36,
+   "cpu_cerveau_s": 0.27,
+   "mur_s": 1.38,
+   "prefixe": "wa30",
+   "graine": 0,
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "couloir": {
+     "activations": 69,
+     "succes": 0,
+     "actions": 404,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "actions_competences": 404,
+   "actions_cerveau": 94,
+   "resume": {
+    "jeu": "wa30",
+    "graine": 0,
+    "niveaux": 0,
+    "etat": "ACTION_CAP",
+    "niveaux_actions": [],
+    "gagnes_a_l_action": [],
+    "attribution_gain": [],
+    "actions_competences": 404,
+    "actions_cerveau": 94,
+    "competences": {
+     "sonde_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "couloir": {
+      "activations": 69,
+      "succes": 0,
+      "actions": 404,
+      "erreurs": 0,
+      "delais": 0
+     },
+     "paires_clics": {
+      "activations": 0,
+      "succes": 0,
+      "actions": 0,
+      "erreurs": 0,
+      "delais": 0
+     }
+    },
+    "fenetres": [
+     [
+      "couloir",
+      11,
+      14,
+      4
+     ],
+     [
+      "couloir",
+      17,
+      23,
+      7
+     ],
+     [
+      "couloir",
+      25,
+      32,
+      8
+     ],
+     [
+      "couloir",
+      34,
+      39,
+      6
+     ],
+     [
+      "couloir",
+      41,
+      41,
+      1
+     ],
+     [
+      "couloir",
+      43,
+      50,
+      8
+     ],
+     [
+      "couloir",
+      52,
+      57,
+      6
+     ],
+     [
+      "couloir",
+      60,
+      67,
+      8
+     ],
+     [
+      "couloir",
+      69,
+      69,
+      1
+     ],
+     [
+      "couloir",
+      71,
+      76,
+      6
+     ],
+     [
+      "couloir",
+      80,
+      87,
+      8
+     ],
+     [
+      "couloir",
+      89,
+      94,
+      6
+     ],
+     [
+      "couloir",
+      96,
+      103,
+      8
+     ],
+     [
+      "couloir",
+      105,
+      110,
+      6
+     ],
+     [
+      "couloir",
+      113,
+      120,
+      8
+     ],
+     [
+      "couloir",
+      122,
+      122,
+      1
+     ],
+     [
+      "couloir",
+      124,
+      131,
+      8
+     ],
+     [
+      "couloir",
+      133,
+      140,
+      8
+     ],
+     [
+      "couloir",
+      142,
+      147,
+      6
+     ],
+     [
+      "couloir",
+      149,
+      156,
+      8
+     ],
+     [
+      "couloir",
+      159,
+      166,
+      8
+     ],
+     [
+      "couloir",
+      168,
+      175,
+      8
+     ],
+     [
+      "couloir",
+      177,
+      177,
+      1
+     ],
+     [
+      "couloir",
+      180,
+      186,
+      7
+     ],
+     [
+      "couloir",
+      188,
+      193,
+      6
+     ],
+     [
+      "couloir",
+      195,
+      199,
+      5
+     ],
+     [
+      "couloir",
+      202,
+      204,
+      3
+     ],
+     [
+      "couloir",
+      206,
+      210,
+      5
+     ],
+     [
+      "couloir",
+      212,
+      216,
+      5
+     ],
+     [
+      "couloir",
+      218,
+      222,
+      5
+     ],
+     [
+      "couloir",
+      224,
+      228,
+      5
+     ],
+     [
+      "couloir",
+      230,
+      234,
+      5
+     ],
+     [
+      "couloir",
+      236,
+      240,
+      5
+     ],
+     [
+      "couloir",
+      242,
+      246,
+      5
+     ],
+     [
+      "couloir",
+      249,
+      256,
+      8
+     ],
+     [
+      "couloir",
+      258,
+      262,
+      5
+     ],
+     [
+      "couloir",
+      264,
+      271,
+      8
+     ],
+     [
+      "couloir",
+      273,
+      280,
+      8
+     ],
+     [
+      "couloir",
+      284,
+      291,
+      8
+     ],
+     [
+      "couloir",
+      293,
+      300,
+      8
+     ]
+    ],
+    "nb_fenetres": 69
+   }
+  }
+ ]
+}

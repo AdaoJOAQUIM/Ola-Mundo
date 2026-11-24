@@ -1,0 +1,829 @@
+{
+ "protocole": "20 jeux held-out, 500 actions, graine d'environnement 0, graine du cerveau 0, prieurs gelés (identique à la baseline des 7/150)",
+ "bassin_final": [
+  "sonde_clics",
+  "couloir",
+  "paires_clics"
+ ],
+ "B1": {
+  "seuil": 14,
+  "niveaux_nous": 9,
+  "niveaux_baseline": 7,
+  "niveaux_total": 150,
+  "atteint": false
+ },
+ "B2": {
+  "actions_par_niveau_nous": 236.6,
+  "actions_par_niveau_baseline": 111.4,
+  "niveaux_resolus_par_les_deux": 6,
+  "actions_par_niveau_commun_nous": 261.3,
+  "actions_par_niveau_commun_baseline": 73.5,
+  "niveaux_gagnes": [
+   [
+    "g50t",
+    1
+   ],
+   [
+    "lp85",
+    2
+   ],
+   [
+    "lp85",
+    3
+   ]
+  ],
+  "niveaux_perdus": [
+   [
+    "su15",
+    1
+   ]
+  ]
+ },
+ "B3": {
+  "analyse_statique_et_test_dynamique": "test_competences.py::test_aucun_reseau_ni_llm_a_l_execution (OK)",
+  "actions_competences_total": 4571,
+  "actions_cerveau_total": 5341
+ },
+ "B4": {
+  "competences_acceptees": 3,
+  "activees_au_moins_une_fois_en_held_out": 3,
+  "detail": {
+   "sonde_clics": {
+    "jeux_ou_active": 15,
+    "jeux": [
+     "ar25",
+     "bp35",
+     "cd82",
+     "dc22",
+     "ft09",
+     "lf52",
+     "lp85",
+     "m0r0",
+     "r11l",
+     "s5i5",
+     "sb26",
+     "sk48",
+     "sp80",
+     "su15",
+     "vc33"
+    ],
+    "activations_total": 23,
+    "niveaux_gagnes_pendant_ou_juste_apres": 8
+   },
+   "couloir": {
+    "jeux_ou_active": 12,
+    "jeux": [
+     "ar25",
+     "bp35",
+     "cd82",
+     "dc22",
+     "g50t",
+     "m0r0",
+     "re86",
+     "sk48",
+     "sp80",
+     "tr87",
+     "tu93",
+     "wa30"
+    ],
+    "activations_total": 659,
+    "niveaux_gagnes_pendant_ou_juste_apres": 1
+   },
+   "paires_clics": {
+    "jeux_ou_active": 12,
+    "jeux": [
+     "bp35",
+     "cd82",
+     "dc22",
+     "lf52",
+     "lp85",
+     "m0r0",
+     "r11l",
+     "s5i5",
+     "sb26",
+     "sp80",
+     "su15",
+     "vc33"
+    ],
+    "activations_total": 19,
+    "niveaux_gagnes_pendant_ou_juste_apres": 0
+   }
+  }
+ },
+ "jeux": [
+  {
+   "jeu": "ar25",
+   "niveaux_total": 8,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 58,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 360,
+   "actions_cerveau": 134
+  },
+  {
+   "jeu": "bp35",
+   "niveaux_total": 9,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 56,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 319,
+   "actions_cerveau": 169
+  },
+  {
+   "jeu": "cd82",
+   "niveaux_total": 6,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 53,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 205,
+   "actions_cerveau": 292
+  },
+  {
+   "jeu": "dc22",
+   "niveaux_total": 6,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 33,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 193,
+   "actions_cerveau": 304
+  },
+  {
+   "jeu": "ft09",
+   "niveaux_total": 6,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 40,
+   "actions_cerveau": 460
+  },
+  {
+   "jeu": "g50t",
+   "niveaux_total": 7,
+   "niveaux_nous": 1,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [
+    302
+   ],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 66,
+     "succes": 3
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [
+    "couloir"
+   ],
+   "actions_competences": 262,
+   "actions_cerveau": 235
+  },
+  {
+   "jeu": "lf52",
+   "niveaux_total": 10,
+   "niveaux_nous": 1,
+   "niveaux_baseline": 1,
+   "actions_par_niveau_nous": [
+    458
+   ],
+   "actions_par_niveau_baseline": [
+    175
+   ],
+   "competences": {
+    "sonde_clics": {
+     "activations": 2,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [
+    "sonde_clics"
+   ],
+   "actions_competences": 171,
+   "actions_cerveau": 329
+  },
+  {
+   "jeu": "lp85",
+   "niveaux_total": 8,
+   "niveaux_nous": 3,
+   "niveaux_baseline": 1,
+   "actions_par_niveau_nous": [
+    68,
+    170,
+    89
+   ],
+   "actions_par_niveau_baseline": [
+    22
+   ],
+   "competences": {
+    "sonde_clics": {
+     "activations": 4,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 3,
+     "succes": 1
+    }
+   },
+   "attribution_gains": [
+    "sonde_clics",
+    "sonde_clics",
+    "sonde_clics"
+   ],
+   "actions_competences": 185,
+   "actions_cerveau": 314
+  },
+  {
+   "jeu": "m0r0",
+   "niveaux_total": 6,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 98,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 283,
+   "actions_cerveau": 214
+  },
+  {
+   "jeu": "r11l",
+   "niveaux_total": 6,
+   "niveaux_nous": 1,
+   "niveaux_baseline": 1,
+   "actions_par_niveau_nous": [
+    169
+   ],
+   "actions_par_niveau_baseline": [
+    10
+   ],
+   "competences": {
+    "sonde_clics": {
+     "activations": 2,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [
+    "sonde_clics"
+   ],
+   "actions_competences": 257,
+   "actions_cerveau": 239
+  },
+  {
+   "jeu": "re86",
+   "niveaux_total": 8,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 53,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 386,
+   "actions_cerveau": 110
+  },
+  {
+   "jeu": "s5i5",
+   "niveaux_total": 8,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 117,
+   "actions_cerveau": 376
+  },
+  {
+   "jeu": "sb26",
+   "niveaux_total": 8,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 83,
+   "actions_cerveau": 415
+  },
+  {
+   "jeu": "sk48",
+   "niveaux_total": 8,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 68,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 327,
+   "actions_cerveau": 172
+  },
+  {
+   "jeu": "sp80",
+   "niveaux_total": 6,
+   "niveaux_nous": 1,
+   "niveaux_baseline": 1,
+   "actions_par_niveau_nous": [
+    461
+   ],
+   "actions_par_niveau_baseline": [
+    195
+   ],
+   "competences": {
+    "sonde_clics": {
+     "activations": 2,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 26,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 2,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [
+    "sonde_clics"
+   ],
+   "actions_competences": 235,
+   "actions_cerveau": 254
+  },
+  {
+   "jeu": "su15",
+   "niveaux_total": 9,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 1,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [
+    339
+   ],
+   "competences": {
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 1,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 116,
+   "actions_cerveau": 374
+  },
+  {
+   "jeu": "tr87",
+   "niveaux_total": 6,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 73,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 386,
+   "actions_cerveau": 111
+  },
+  {
+   "jeu": "tu93",
+   "niveaux_total": 9,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 6,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 8,
+   "actions_cerveau": 483
+  },
+  {
+   "jeu": "vc33",
+   "niveaux_total": 7,
+   "niveaux_nous": 2,
+   "niveaux_baseline": 2,
+   "actions_par_niveau_nous": [
+    142,
+    270
+   ],
+   "actions_par_niveau_baseline": [
+    16,
+    23
+   ],
+   "competences": {
+    "sonde_clics": {
+     "activations": 3,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 0,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 3,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [
+    "sonde_clics",
+    "sonde_clics"
+   ],
+   "actions_competences": 234,
+   "actions_cerveau": 262
+  },
+  {
+   "jeu": "wa30",
+   "niveaux_total": 9,
+   "niveaux_nous": 0,
+   "niveaux_baseline": 0,
+   "actions_par_niveau_nous": [],
+   "actions_par_niveau_baseline": [],
+   "competences": {
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0
+    },
+    "couloir": {
+     "activations": 69,
+     "succes": 0
+    },
+    "paires_clics": {
+     "activations": 0,
+     "succes": 0
+    }
+   },
+   "attribution_gains": [],
+   "actions_competences": 404,
+   "actions_cerveau": 94
+  }
+ ],
+ "posterieurs_dev": {
+  "sonde_clics": {
+   "activations": 23,
+   "succes": 5,
+   "alpha": 6,
+   "beta": 19,
+   "moyenne": 0.24,
+   "elagable": false
+  },
+  "couloir": {
+   "activations": 443,
+   "succes": 7,
+   "alpha": 8,
+   "beta": 437,
+   "moyenne": 0.018,
+   "elagable": true
+  },
+  "tour_objets": {
+   "activations": 140,
+   "succes": 0,
+   "alpha": 1,
+   "beta": 141,
+   "moyenne": 0.007,
+   "elagable": true
+  },
+  "paires_clics": {
+   "activations": 18,
+   "succes": 0,
+   "alpha": 1,
+   "beta": 19,
+   "moyenne": 0.05,
+   "elagable": false
+  }
+ },
+ "lignee": [
+  {
+   "ronde": "r1",
+   "candidat": "couloir__r1",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": -0.0383,
+   "niveaux_base": 5,
+   "niveaux_candidat": 6
+  },
+  {
+   "ronde": "r1",
+   "candidat": "sonde_clics__r1",
+   "accepte": true,
+   "raison": "a1(borne>0)=False a2(efficacite)=True b(aucune perte)=True",
+   "borne_inf": 0.0,
+   "niveaux_base": 5,
+   "niveaux_candidat": 5
+  },
+  {
+   "ronde": "r1",
+   "candidat": "tour_objets__r1",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": -0.0766,
+   "niveaux_base": 5,
+   "niveaux_candidat": 7
+  },
+  {
+   "ronde": "r2",
+   "candidat": "paires_clics__r2",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": -0.0383,
+   "niveaux_base": 5,
+   "niveaux_candidat": 6
+  },
+  {
+   "ronde": "r2",
+   "candidat": "repetition_clic__r2",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": 0.0,
+   "niveaux_base": 5,
+   "niveaux_candidat": 5
+  },
+  {
+   "ronde": "r2",
+   "candidat": "clic_puis_fleches__r2",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": 0.0,
+   "niveaux_base": 5,
+   "niveaux_candidat": 5
+  },
+  {
+   "ronde": "r3",
+   "candidat": "couloir__r3+tour_objets__r3+paires_clics__r3",
+   "accepte": true,
+   "raison": "a1(borne>0)=True a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": 0.015600000000000003,
+   "niveaux_base": 5,
+   "niveaux_candidat": 7
+  },
+  {
+   "ronde": "r4",
+   "candidat": "couverture__r4+visite_objets__r4+clic_nouveaux__r4",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=False",
+   "borne_inf": -0.3844,
+   "niveaux_base": 7,
+   "niveaux_candidat": 5
+  },
+  {
+   "ronde": "r4s",
+   "candidat": "couverture__r4",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": 0.0,
+   "niveaux_base": 7,
+   "niveaux_candidat": 7
+  },
+  {
+   "ronde": "r4s",
+   "candidat": "visite_objets__r4",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": 0.0,
+   "niveaux_base": 7,
+   "niveaux_candidat": 7
+  },
+  {
+   "ronde": "r4s",
+   "candidat": "clic_nouveaux__r4",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=False",
+   "borne_inf": -0.3844,
+   "niveaux_base": 7,
+   "niveaux_candidat": 5
+  },
+  {
+   "ronde": "r4",
+   "candidat": "retrait couloir",
+   "accepte": false,
+   "raison": "retrait : niveaux perdus=[('sc25', 0)]",
+   "borne_inf": -0.3844,
+   "niveaux_base": 7,
+   "niveaux_candidat": 5
+  },
+  {
+   "ronde": "r4",
+   "candidat": "retrait tour_objets",
+   "accepte": true,
+   "raison": "retrait : niveaux perdus=[]",
+   "borne_inf": 0.0,
+   "niveaux_base": 7,
+   "niveaux_candidat": 7
+  },
+  {
+   "ronde": "r5",
+   "candidat": "paires_clics__r5",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": -0.2829353600805232,
+   "niveaux_base": 7,
+   "niveaux_candidat": 8
+  },
+  {
+   "ronde": "r5",
+   "candidat": "sonde_clics__r5",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "borne_inf": -0.2383,
+   "niveaux_base": 7,
+   "niveaux_candidat": 6
+  }
+ ]
+}
