@@ -149,8 +149,62 @@ class Reseau:
         return out
 
 
+def _fond(frame):
+    v, n = np.unique(frame, return_counts=True)
+    return int(v[np.argmax(n)])
+
+
+def estimer_reseau_aretes(frames, cmax=10, cmin=3, seuil=0.2, min_aretes=4, clip=12):
+    """Réseau par les arêtes de couleur (sans composantes), pour un rendu où des cases voisines fusionnent.
+    Pour chaque période c, la part des arêtes (poids plafonné, pour que les barres de bandeau ne dominent pas)
+    qui tombe sur la meilleure phase, moins le hasard 1/c ; on prend le c au meilleur excès minimal sur les deux axes
+    (un multiple du vrai pas a un excès moindre, un diviseur aussi). Renvoie (c, px, py, fond) ou None."""
+    wx = np.zeros(frames[0].shape[1] + 1)
+    wy = np.zeros(frames[0].shape[0] + 1)
+    for f in frames:
+        dx = (f[:, 1:] != f[:, :-1]).sum(0)      # arête entre colonnes x et x+1 -> position x+1
+        dy = (f[1:, :] != f[:-1, :]).sum(1)
+        wx[1:f.shape[1]] += dx
+        wy[1:f.shape[0]] += dy
+    wx, wy = np.minimum(wx, clip * len(frames)), np.minimum(wy, clip * len(frames))
+    if (wx > 0).sum() < min_aretes or (wy > 0).sum() < min_aretes:
+        return None
+    best = None
+    for c in range(cmin, cmax + 1):
+        ph, ex = [], []
+        for w in (wx, wy):
+            sc = [w[p::c].sum() / w.sum() for p in range(c)]
+            p = int(np.argmax(sc))
+            ph.append(p)
+            ex.append(sc[p] - 1.0 / c)
+        k = min(ex)
+        if k >= seuil and (best is None or k > best[0] + 1e-9):
+            best = (k, c, ph[0], ph[1])
+    if best is None:
+        return None
+    return best[1], best[2], best[3], _fond(frames[0])
+
+
+def reseau_plein(frames, est):
+    """Réseau couvrant tout le cadre (aucun a priori de plateau centré ni carré)."""
+    c, px, py, bg = est
+    H, W = frames[0].shape
+    return Reseau(c, px, py, bg, 0, 0, (W - px) // c, (H - py) // c)
+
+
 def construire_reseau(frames, rec=None):
-    """Estime le réseau et l'étendue du plateau à partir des composantes cohérentes avec le réseau."""
+    """Estime le réseau et l'étendue du plateau à partir des composantes cohérentes avec le réseau ;
+    à défaut (rendu réel : cases voisines fusionnées), par les arêtes de couleur sur le cadre entier."""
+    r = _construire_reseau_composantes(frames)
+    if r is not None:
+        return r
+    est = estimer_reseau_aretes(frames)
+    if est is not None:
+        return reseau_plein(frames, est)
+    return None
+
+
+def _construire_reseau_composantes(frames, rec=None):
     est = estimer_reseau(frames)
     if est is None:
         return None

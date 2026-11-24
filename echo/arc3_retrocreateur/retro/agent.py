@@ -305,6 +305,8 @@ class RetroCreateur:
         # amorçage de l'avatar
         if self.scene.av_class is None and act[0] in ("ACTION1", "ACTION2", "ACTION3", "ACTION4"):
             mob = self.scene.trouver_mobile(self.raw, raw)
+            if mob and self._reprendre_sol(frame, mob, act):
+                return
             if mob:
                 (col, cl), p, q = mob[0]
                 self.scene.av_class = cl
@@ -388,6 +390,39 @@ class RetroCreateur:
         self.snap = new
         # complète le dictionnaire des directions : bijection actions <-> directions
         self._completer_dirs()
+
+    def _reprendre_sol(self, frame, mob, act):
+        """Rendu réel : le fond majoritaire n'est pas toujours le sol. La case que l'avatar vient de quitter montre le sol :
+        si c'est une couleur unie différente du « vide » supposé, on refait la perception du niveau avec ce sol comme vide
+        (les cases d'une autre couleur deviennent alors des murs / objets, ce que le programme sait manier)."""
+        if self.scene.bg_sol is not None or self.opt.get("sans_sol"):
+            return False
+        (col, cl), p, q = mob[0]
+        geo = self.geo
+        net = geo.net
+        c = net.c
+        r, qq = divmod(p, geo.C)
+        y0, x0 = net.py + (geo.gy0 + r) * c, net.px + (geo.gx0 + qq) * c
+        blk = frame[y0:y0 + c, x0:x0 + c]
+        v = np.unique(blk)
+        if len(v) != 1 or int(v[0]) == net.bg:
+            self.scene.bg_sol = net.bg
+            return False
+        old_frame, old_act = self.frame, act
+        niveau_cur = self.lv_cur
+        self.scene = Scene(self.types.__class__())
+        self.types = self.scene.types
+        self.scene.bg_sol = int(v[0])
+        self.modele = Modele(self.types)
+        self.compteur = Compteur()
+        self.sel_amb, self.others = {}, {}
+        self._niveau(old_frame)
+        self.lv_cur = niveau_cur
+        self.prev_snap = self.snap
+        self.prev_act = old_act
+        self.raw_prev = self.raw
+        self._transition(frame, self.lv, self.taken)
+        return True
 
     def _maj_cap(self):
         obs = self.obs_E.get(self.lv_cur, [])

@@ -51,6 +51,7 @@ class Scene:
         self.geo = None
         self._cache = {}
         self.sig_av = {}           # id brut -> (couleur, classe) de la partie avatar, ou None
+        self.bg_sol = None         # couleur du sol (apprise au premier déplacement) ; None = fond majoritaire
         self.sel_candidat = None
         self.sel_part = None       # (couleur, classe) du contour qui marque la pièce sélectionnée (mondes à sélection)
         self.av_parts = set()      # (couleur, classe) reconnues comme avatar (variantes : fusion avec une case de même couleur)
@@ -58,6 +59,8 @@ class Scene:
     # ------------------------------------------------------------ niveau
     def nouveau_niveau(self, frame):
         net = construire_reseau([frame])
+        if net is not None and self.bg_sol is not None:
+            net.bg = self.bg_sol          # rendu réel : le « vide » est le sol sur lequel l'avatar marche, pas la couleur majoritaire
         if net is None:
             self.geo = None
             return None
@@ -219,5 +222,18 @@ class Scene:
         bords = [x for x in res if x[0][1] and x[0][1][-1] == 1]
         if glyphes and bords:
             self.sel_candidat = bords[0][0]
-            return glyphes
-        return res
+            return self._plus_rare(glyphes, raw0)
+        return self._plus_rare(res, raw0)
+
+    def _plus_rare(self, res, raw0):
+        """Rendu réel : un sol uniforme (non fond) se déplace « à l'envers » de l'avatar. Un terrain remplit des cases
+        entières et se répète partout ; l'avatar est la partie la plus rare. On trie par fréquence croissante."""
+        g = self.geo
+        inv = self.types.inv
+        cnt = {}
+        for p in range(g.N):
+            if p in g.ignore:
+                continue
+            for part in inv[raw0[p]]:
+                cnt[part] = cnt.get(part, 0) + 1
+        return sorted(res, key=lambda x: (cnt.get(x[0], 0), x[0][1] is not None and x[0][1][0] == 0))
