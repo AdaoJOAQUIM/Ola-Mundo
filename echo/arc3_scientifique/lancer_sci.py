@@ -45,20 +45,9 @@ def charger_prior(utiliser=True):
 
 
 def _worker(args):
-    os.chdir(RUNS)
-    import logging
-    logging.disable(logging.CRITICAL)
-    import harnais
-    import agent
+    import run
     jeu, variante, graine = args
-    cfg = VARIANTES[variante]
-    prior = charger_prior(cfg["prior"])
-    fab = lambda: agent.Scientifique(graine, prior, dict(cfg["options"]))
-    res, pol = harnais.jouer(jeu, fab)
-    res.update({"prefixe": jeu, "variante": variante, "graine": graine,
-                "stats_agent": pol.stats, "etiquettes": pol.exporter_etiquettes(),
-                "types_map": {str(c): t for c, t in pol.croy.map_types().items()}})
-    return res
+    return run._un((jeu, 500, graine, variante, str(ICI / "prior_gele.json"), "adapter:AdaptateurARC3", str(RUNS)))
 
 
 def lancer(taches):
@@ -89,6 +78,7 @@ if __name__ == "__main__":
         ecrire(f"res_dev_{var}.json", out)
         print(var, resume(out))
     elif cmd == "held":
+        raise SystemExit("HELD reporté à l'évaluation finale (voir criteres.md, amendement).")
         if (ICI / "res_held.json").exists():
             raise SystemExit("HELD déjà ouvert : refus de rejouer.")
         out = lancer([(j, "plein", 0) for j in HELD])
