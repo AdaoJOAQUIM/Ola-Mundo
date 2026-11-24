@@ -1,3 +1,8 @@
 ls arc3 arc/externes/prime-agent competences/arc3
 cat arc3/harnais.py arc3/lancer.py (lecture)
 cat prime-agent README AGENTS broker (lecture)
+cat game_protocol_guard.py broker_client.py (lecture)
+# --- commandes shell (hors jeu), ordre chronologique ---
+python (tirage random.Random(2026).sample) -> ['cn04','ls20','sc25']
+mkdir skills gradients modeles runs; ecriture pilote.json .gitignore
+git add/commit tirage

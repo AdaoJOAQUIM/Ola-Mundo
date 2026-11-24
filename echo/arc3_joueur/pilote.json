@@ -1,0 +1,6 @@
+{
+  "tirage": {"graine": 2026, "methode": "random.Random(2026).sample(liste_des_25_ids_dans_l_ordre_donne, 3)"},
+  "ordre_de_jeu": ["cn04", "ls20", "sc25"],
+  "regles": "400 actions de jeu max par niveau; 40 appels d'outil sans progres = abandon du niveau; 75 min par jeu",
+  "note": "tirage fait AVANT toute partie"
+}
