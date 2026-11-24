@@ -88,6 +88,20 @@ class RetroCreateur:
                             cand.append((p, col))
                             break
                 cand = [x for x in cand if isinstance(x, tuple)]
+                if not cand:
+                    # fusion avec une case de même couleur : unique case d'arrivée voisine dont la signature a changé
+                    pr, pc = divmod(prev[1], geo.C)
+                    arr = [p for p in range(geo.N) if p not in geo.ignore and p != prev[1] and raw[p] != self.raw_prev[p]
+                           and raw[p] != 0 and abs(p // geo.C - pr) + abs(p % geo.C - pc) == 1]
+                    if len(arr) == 1:
+                        for col, cl in self.types.inv[raw[arr[0]]]:
+                            if col in sc.av_colors or True:
+                                sc.ajouter_part((col, cl))
+                                cand = [(arr[0], col)]
+                                break
+                        if cand:
+                            self.modele.avc_change = True if cand[0][1] not in sc.av_colors else self.modele.avc_change
+                            sc.ajouter_couleur_av(cand[0][1])
                 if cand:
                     best = min(cand, key=lambda x: abs(x[0] // geo.C - prev[1] // geo.C) + abs(x[0] % geo.C - prev[1] % geo.C))
                     sc.ajouter_couleur_av(best[1])
@@ -95,8 +109,10 @@ class RetroCreateur:
                     cand = [best[0]]
             if cand:
                 if prev is not None and prev[1] >= 0:
-                    # le candidat doit être la case précédente (avatar immobile) ou une case qui a changé
-                    ok = [p for p in cand if p == prev[1] or raw[p] != self.raw_prev[p]]
+                    # valides : avatar immobile (case inchangée) ou case d'arrivée (case changée) ;
+                    # la case précédente modifiée n'est qu'un dernier recours (look-alike révélé)
+                    bons = [p for p in cand if (p == prev[1]) == (raw[p] == self.raw_prev[p])]
+                    ok = bons or [p for p in cand if p == prev[1] or raw[p] != self.raw_prev[p]]
                     if ok:
                         cand = ok
                     pr, pc = divmod(prev[1], geo.C)
@@ -145,6 +161,11 @@ class RetroCreateur:
         self.prev_snap = self.snap
         self.prev_act = act
         self.raw_prev = self.raw
+        if self.opt.get("verbose"):
+            import sys
+            g = self.geo
+            print(f"[{taken}] niv{lv} {act[0]} {divmod(act[1], g.C) if act[1] is not None else ''} pos={divmod(self.snap[1], g.C) if self.snap[1] >= 0 else None}"
+                  f" win={self.modele.prog.win} guess={self.guess}", file=sys.stderr)
         return _act_dict(act, self.geo)
 
     def _transition(self, frame, lv, taken):
@@ -182,7 +203,8 @@ class RetroCreateur:
         ev = Ev(prev, act, new, 0, geo0)
         chg = self.modele.observer(ev)
         if self.guess is not None and act[0] == "ACTION6":
-            inex = [t for t in new[0] if t > 0 and t not in self.modele.explore]
+            ref = self.modele.explore if new[1] >= 0 else self.modele.explore_click
+            inex = [t for t in new[0] if t > 0 and t not in ref]
             if self.modele.prog.atome(self.guess, new[0], geo0) and not chg and not inex:
                 self.guess_excl.append(self.guess)
                 self.guess = None

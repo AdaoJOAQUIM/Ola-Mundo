@@ -67,7 +67,9 @@ class Modele:
         self.creneaux = {}            # cle -> Creneau
         self.events = []
         self.vus = set()
+        self.dans_events = set()
         self.explore = set()          # types dont le comportement à l'entrée est connu
+        self.explore_click = set()    # types déjà essayés par un clic
         self.click_inerte = set()
         self.prog = Prog(types)
         self.stats = {"surprises": 0, "evenements": 0, "reevals": 0}
@@ -138,13 +140,7 @@ class Modele:
             for t in set(M):
                 if t > 0:
                     vus[t] = vus.get(t, 0) + 1
-        evapore = set()
-        for ev in self.events:
-            if ev.s1 is None or ev.flag:
-                continue
-            a = set(ev.s0[0])
-            b = set(ev.s1[0])
-            evapore |= {t for t in a - b if t > 0}
+        evapore = {t for t, fx in self.fx.items() if any(e[0] == "set" and e[1] == 0 for e in fx)}
         for t in sorted(evapore):
             ats.append(("gone", t))
         Z = self.familles_panneau()
@@ -223,17 +219,19 @@ class Modele:
     # ------------------------------------------------------------ observation
     def observer(self, ev):
         """Ajoute un événement ; propose des règles s'il n'est pas prédit. Renvoie True si le programme a changé."""
-        if ev.cle in self.vus:
-            return False
-        self.vus.add(ev.cle)
-        self.events.append(ev)
+        nouveau = ev.cle not in self.dans_events
+        self.dans_events.add(ev.cle)
+        if nouveau:
+            self.events.append(ev)
         self.stats["evenements"] += 1
-        self._marquer_explore(ev)
+        if ev.flag != 2:
+            self._marquer_explore(ev)
         if ev.act[0] == "ACTION6" and ev.flag == 0 and ev.s1 is not None and ev.s1[0] == ev.s0[0]:
             T = ev.s0[0][ev.act[1]]
             if T not in self.clk:
                 self.click_inerte.add(T)
         if ecart(self.prog, ev) == 0:
+            self.vus.add(ev.cle)
             return False
         self.stats["surprises"] += 1
         changed = False
@@ -246,6 +244,8 @@ class Modele:
                 break
         if changed:
             self._stabiliser()
+        if ecart(self.prog, ev) == 0:
+            self.vus.add(ev.cle)
         return changed
 
     def _marquer_explore(self, ev):
@@ -253,7 +253,7 @@ class Modele:
         if name == "ACTION6":
             p = ev.act[1]
             if p is not None and p >= 0 and ev.s0[0][p] > 0:
-                self.explore.add(ev.s0[0][p])
+                self.explore_click.add(ev.s0[0][p])
             return
         d = self.dirmap.get(name)
         if d is None or ev.s0[1] < 0:
@@ -328,9 +328,10 @@ class Modele:
         if q < 0:
             return False
         T = ev.s0[0][q]
-        if T in self.push:
+        if T in self.push or T in self.kill:
             return False
-        if T in self.kill:
+        if T == 0 or T in self.explore:
+            self.stats["energie"] = self.stats.get("energie", 0) + 1      # mort sur une case sûre : épuisement
             return False
         self.kill.add(T)
         self.solid.discard(T)
@@ -495,11 +496,11 @@ class Modele:
         if not ch:
             if T not in self.click_inerte and T not in self.clk:
                 self.click_inerte.add(T)
-                self.explore.add(T)
+                self.explore_click.add(T)
                 return True
             return False
         self.click_inerte.discard(T)
-        self.explore.add(T)
+        self.explore_click.add(T)
         r0, c0 = divmod(p, geo.C)
         # famille de panneau : types du changement de la case cliquée (+ familles déjà connues)
         fam = set()

@@ -170,4 +170,23 @@ def construire_reseau(frames, rec=None):
     if not xs0:
         return None
     gx0, gx1, gy0, gy1 = min(xs0), max(xs1), min(ys0), max(ys1)
+    # objets plus petits qu'une case (points, croix fines) : ils comptent s'ils sont centrés dans une case
+    # voisine de l'étendue (le bandeau d'information, lui, n'est en général pas centré sur le réseau)
+    ext = [gx0, gx1, gy0, gy1]
+    for f in frames:
+        for b in comps_bbox(f)[0]:
+            w, h = b[2] - b[0] + 1, b[3] - b[1] + 1
+            if w > c or h > c:
+                continue
+            q0, q1 = (b[0] - px) // c, (b[2] - px) // c
+            r0, r1 = (b[1] - py) // c, (b[3] - py) // c
+            if q0 != q1 or r0 != r1:
+                continue
+            ccx, ccy = px + q0 * c + (c - 1) / 2, py + r0 * c + (c - 1) / 2
+            if abs((b[0] + b[2]) / 2 - ccx) > 1.0 or abs((b[1] + b[3]) / 2 - ccy) > 1.0:
+                continue
+            if gx0 - 1 <= q0 <= gx1 + 1 and gy0 - 1 <= r0 <= gy1 + 1:
+                ext[0], ext[1] = min(ext[0], q0), max(ext[1], q0)
+                ext[2], ext[3] = min(ext[2], r0), max(ext[3], r0)
+    gx0, gx1, gy0, gy1 = ext
     return Reseau(c, px, py, bg, gx0, gy0, gx1 - gx0 + 1, gy1 - gy0 + 1)

@@ -12,7 +12,7 @@ def main():
     seed, d = int(sys.argv[1]), int(sys.argv[2])
     budget = int(sys.argv[3]) if len(sys.argv) > 3 else 500
     t = time.time()
-    res, pol = jouer(seed, d, lambda: RetroCreateur(0), max_actions=budget)
+    res, pol = jouer(seed, d, lambda: RetroCreateur(0, {'verbose': len(sys.argv) > 4}), max_actions=budget)
     print({k: res[k] for k in ("jeu", "etat", "niveaux", "niveaux_total", "actions", "niveaux_actions", "niveaux_reference", "mecaniques", "but")}, round(time.time() - t, 1), "s")
     print(pol.stats, pol.modele.stats)
     for tr in pol.trace[-3:]:

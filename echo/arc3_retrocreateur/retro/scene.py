@@ -46,6 +46,7 @@ class Scene:
         self.geo = None
         self._cache = {}
         self.sig_av = {}           # id brut -> (couleur, classe) de la partie avatar, ou None
+        self.av_parts = set()      # (couleur, classe) reconnues comme avatar (variantes : fusion avec une case de même couleur)
 
     # ------------------------------------------------------------ niveau
     def nouveau_niveau(self, frame):
@@ -111,7 +112,7 @@ class Scene:
         if v == 0:
             v = None
             for col, cl in self.types.inv[rid]:
-                if cl == self.av_class and col in self.av_colors:
+                if (cl == self.av_class and col in self.av_colors) or (col, cl) in self.av_parts:
                     v = (col, cl)
                     break
             self.sig_av[rid] = v
@@ -133,6 +134,11 @@ class Scene:
         """Signature restante d'une case une fois la partie avatar retirée -> identifiant de type."""
         sg = tuple(x for x in self.types.inv[rid] if x != partie)
         return self.types.id(sg)
+
+    def ajouter_part(self, part):
+        if part not in self.av_parts:
+            self.av_parts.add(part)
+            self.reset_av()
 
     def ajouter_couleur_av(self, col):
         if col not in self.av_colors:
