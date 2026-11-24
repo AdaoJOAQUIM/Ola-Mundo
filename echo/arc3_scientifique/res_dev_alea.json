@@ -1,0 +1,1317 @@
+[
+ {
+  "jeu": "cn04-2fe56bfb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   29,
+   54,
+   85,
+   300,
+   208,
+   113
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 4.99,
+  "prefixe": "cn04",
+  "variante": "alea",
+  "graine": 0,
+  "stats_agent": {
+   "morts": 6,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 116,
+   "mode_generique": 376,
+   "surprises": 1,
+   "avatar_adopte": 29
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "cn04-2fe56bfb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   29,
+   54,
+   85,
+   300,
+   208,
+   113
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 3.65,
+  "prefixe": "cn04",
+  "variante": "alea",
+  "graine": 1,
+  "stats_agent": {
+   "morts": 6,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 379,
+   "mode_generique": 113,
+   "surprises": 0,
+   "avatar_adopte": 9
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 4,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 3,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "cn04-2fe56bfb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   29,
+   54,
+   85,
+   300,
+   208,
+   113
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 5.74,
+  "prefixe": "cn04",
+  "variante": "alea",
+  "graine": 2,
+  "stats_agent": {
+   "morts": 6,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 224,
+   "mode_generique": 268,
+   "surprises": 4,
+   "avatar_adopte": 15
+  },
+  "etiquettes": [
+   {
+    "type": 2,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "ls20-9607627b",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   22,
+   123,
+   73,
+   84,
+   96,
+   192,
+   186
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 2.97,
+  "prefixe": "ls20",
+  "variante": "alea",
+  "graine": 0,
+  "stats_agent": {
+   "morts": 3,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 94,
+   "mode_generique": 401,
+   "surprises": 2,
+   "avatar_adopte": 1
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": true,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "ls20-9607627b",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   22,
+   123,
+   73,
+   84,
+   96,
+   192,
+   186
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 3.15,
+  "prefixe": "ls20",
+  "variante": "alea",
+  "graine": 1,
+  "stats_agent": {
+   "morts": 3,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 91,
+   "mode_generique": 404,
+   "surprises": 2,
+   "avatar_adopte": 1
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": true,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "ls20-9607627b",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   22,
+   123,
+   73,
+   84,
+   96,
+   192,
+   186
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 3.18,
+  "prefixe": "ls20",
+  "variante": "alea",
+  "graine": 2,
+  "stats_agent": {
+   "morts": 3,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 89,
+   "mode_generique": 406,
+   "surprises": 2,
+   "avatar_adopte": 1
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": true,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "sc25-635fd71a",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   36,
+   6,
+   32,
+   83,
+   143,
+   50
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 8.98,
+  "prefixe": "sc25",
+  "variante": "alea",
+  "graine": 0,
+  "stats_agent": {
+   "morts": 5,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 17,
+   "mode_generique": 471,
+   "surprises": 3,
+   "avatar_adopte": 1
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "sc25-635fd71a",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   36,
+   6,
+   32,
+   83,
+   143,
+   50
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 8.39,
+  "prefixe": "sc25",
+  "variante": "alea",
+  "graine": 1,
+  "stats_agent": {
+   "morts": 5,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 16,
+   "mode_generique": 472,
+   "surprises": 3,
+   "avatar_adopte": 1
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "sc25-635fd71a",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   36,
+   6,
+   32,
+   83,
+   143,
+   50
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 8.69,
+  "prefixe": "sc25",
+  "variante": "alea",
+  "graine": 2,
+  "stats_agent": {
+   "morts": 5,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 16,
+   "mode_generique": 472,
+   "surprises": 3,
+   "avatar_adopte": 1
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "tn36-ef4dde99",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   32,
+   72,
+   26,
+   40,
+   30,
+   55,
+   62
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 1.38,
+  "prefixe": "tn36",
+  "variante": "alea",
+  "graine": 0,
+  "stats_agent": {
+   "morts": 8,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 0,
+   "mode_generique": 492,
+   "surprises": 0,
+   "avatar_adopte": 0
+  },
+  "etiquettes": []
+ },
+ {
+  "jeu": "tn36-ef4dde99",
+  "etat": "ACTION_CAP",
+  "niveaux": 1,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   493,
+   7,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   32,
+   72,
+   26,
+   40,
+   30,
+   55,
+   62
+  ],
+  "score_sdk": 0.015046936449616565,
+  "cpu_s": 1.62,
+  "prefixe": "tn36",
+  "variante": "alea",
+  "graine": 1,
+  "stats_agent": {
+   "morts": 7,
+   "niveaux": 1,
+   "resets_agent": 0,
+   "mode_avatar": 0,
+   "mode_generique": 493,
+   "surprises": 0,
+   "avatar_adopte": 0
+  },
+  "etiquettes": []
+ },
+ {
+  "jeu": "tn36-ef4dde99",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   32,
+   72,
+   26,
+   40,
+   30,
+   55,
+   62
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 1.33,
+  "prefixe": "tn36",
+  "variante": "alea",
+  "graine": 2,
+  "stats_agent": {
+   "morts": 8,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 0,
+   "mode_generique": 492,
+   "surprises": 0,
+   "avatar_adopte": 0
+  },
+  "etiquettes": []
+ },
+ {
+  "jeu": "ka59-38d34dbb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   28,
+   109,
+   51,
+   51,
+   33,
+   132,
+   326
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 3.05,
+  "prefixe": "ka59",
+  "variante": "alea",
+  "graine": 0,
+  "stats_agent": {
+   "morts": 4,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 152,
+   "mode_generique": 342,
+   "surprises": 3,
+   "avatar_adopte": 7
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "ka59-38d34dbb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   28,
+   109,
+   51,
+   51,
+   33,
+   132,
+   326
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 3.05,
+  "prefixe": "ka59",
+  "variante": "alea",
+  "graine": 1,
+  "stats_agent": {
+   "morts": 4,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 152,
+   "mode_generique": 342,
+   "surprises": 2,
+   "avatar_adopte": 4
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": false
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "ka59-38d34dbb",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 7,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   28,
+   109,
+   51,
+   51,
+   33,
+   132,
+   326
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 2.9,
+  "prefixe": "ka59",
+  "variante": "alea",
+  "graine": 2,
+  "stats_agent": {
+   "morts": 4,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 162,
+   "mode_generique": 332,
+   "surprises": 2,
+   "avatar_adopte": 4
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 3,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 3,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ }
+]

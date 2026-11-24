@@ -1,6 +1,6 @@
 """Point d'entrée documenté (agent gelé) :
 
-  python run.py --jeux ls20 ka59 --budget 500 --graine 0 [--variante plein|alea|reactif|sans_prior]
+  python run.py --jeux JEU1 JEU2 --budget 500 --graine 0 [--variante plein|alea|reactif|sans_prior]
                 [--prior prior_gele.json] [--sortie res.json] [--env adaptateur.module:Classe]
 
 --env permet de brancher un autre environnement respectant l'interface de adapter.py

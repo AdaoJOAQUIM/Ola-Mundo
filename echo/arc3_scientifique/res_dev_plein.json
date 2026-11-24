@@ -22,7 +22,7 @@
    113
   ],
   "score_sdk": 0.0,
-  "cpu_s": 3.04,
+  "cpu_s": 3.38,
   "prefixe": "cn04",
   "variante": "plein",
   "graine": 0,
@@ -87,7 +87,7 @@
    113
   ],
   "score_sdk": 0.0,
-  "cpu_s": 3.96,
+  "cpu_s": 3.45,
   "prefixe": "cn04",
   "variante": "plein",
   "graine": 1,
@@ -95,14 +95,14 @@
    "morts": 6,
    "niveaux": 0,
    "resets_agent": 0,
-   "mode_avatar": 61,
-   "mode_generique": 431,
-   "surprises": 9,
+   "mode_avatar": 64,
+   "mode_generique": 428,
+   "surprises": 6,
    "avatar_adopte": 15
   },
   "etiquettes": [
    {
-    "type": 1,
+    "type": 3,
     "cars": {
      "aire_grande": true,
      "aire_petite": false,
@@ -115,7 +115,20 @@
     }
    },
    {
-    "type": 3,
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
     "cars": {
      "aire_grande": false,
      "aire_petite": false,
@@ -152,7 +165,7 @@
    113
   ],
   "score_sdk": 0.0,
-  "cpu_s": 3.77,
+  "cpu_s": 3.55,
   "prefixe": "cn04",
   "variante": "plein",
   "graine": 2,
@@ -165,7 +178,21 @@
    "surprises": 2,
    "avatar_adopte": 17
   },
-  "etiquettes": []
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   }
+  ]
  },
  {
   "jeu": "ls20-9607627b",
@@ -192,7 +219,7 @@
    186
   ],
   "score_sdk": 1.028299481601088,
-  "cpu_s": 2.88,
+  "cpu_s": 3.0,
   "prefixe": "ls20",
   "variante": "plein",
   "graine": 0,
@@ -200,9 +227,9 @@
    "morts": 2,
    "niveaux": 1,
    "resets_agent": 0,
-   "mode_avatar": 494,
-   "mode_generique": 2,
-   "surprises": 2,
+   "mode_avatar": 427,
+   "mode_generique": 69,
+   "surprises": 3,
    "avatar_adopte": 1
   },
   "etiquettes": [
@@ -243,6 +270,19 @@
      "rectangle": false,
      "fond": false,
      "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
     }
    },
    {
@@ -311,7 +351,7 @@
    186
   ],
   "score_sdk": 1.028299481601088,
-  "cpu_s": 2.71,
+  "cpu_s": 2.99,
   "prefixe": "ls20",
   "variante": "plein",
   "graine": 1,
@@ -319,9 +359,9 @@
    "morts": 2,
    "niveaux": 1,
    "resets_agent": 0,
-   "mode_avatar": 494,
-   "mode_generique": 2,
-   "surprises": 2,
+   "mode_avatar": 427,
+   "mode_generique": 69,
+   "surprises": 3,
    "avatar_adopte": 1
   },
   "etiquettes": [
@@ -362,6 +402,19 @@
      "rectangle": false,
      "fond": false,
      "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
     }
    },
    {
@@ -430,7 +483,7 @@
    186
   ],
   "score_sdk": 1.028299481601088,
-  "cpu_s": 2.93,
+  "cpu_s": 2.96,
   "prefixe": "ls20",
   "variante": "plein",
   "graine": 2,
@@ -438,9 +491,9 @@
    "morts": 2,
    "niveaux": 1,
    "resets_agent": 0,
-   "mode_avatar": 494,
-   "mode_generique": 2,
-   "surprises": 2,
+   "mode_avatar": 427,
+   "mode_generique": 69,
+   "surprises": 3,
    "avatar_adopte": 1
   },
   "etiquettes": [
@@ -481,6 +534,19 @@
      "rectangle": false,
      "fond": false,
      "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
     }
    },
    {
@@ -547,7 +613,7 @@
    50
   ],
   "score_sdk": 0.0,
-  "cpu_s": 9.31,
+  "cpu_s": 9.98,
   "prefixe": "sc25",
   "variante": "plein",
   "graine": 0,
@@ -555,8 +621,99 @@
    "morts": 3,
    "niveaux": 0,
    "resets_agent": 0,
-   "mode_avatar": 17,
-   "mode_generique": 473,
+   "mode_avatar": 16,
+   "mode_generique": 474,
+   "surprises": 3,
+   "avatar_adopte": 1
+  },
+  "etiquettes": [
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": true,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 1,
+    "cars": {
+     "aire_grande": true,
+     "aire_petite": false,
+     "une_compo": true,
+     "multi_compo": false,
+     "bord": true,
+     "rectangle": false,
+     "fond": true,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": true
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": true,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": false,
+     "rectangle": true,
+     "fond": false,
+     "carre_petit": true
+    }
+   }
+  ]
+ },
+ {
+  "jeu": "sc25-635fd71a",
+  "etat": "ACTION_CAP",
+  "niveaux": 0,
+  "niveaux_total": 6,
+  "actions": 500,
+  "niveaux_actions": [
+   500,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "niveaux_reference": [
+   36,
+   6,
+   32,
+   83,
+   143,
+   50
+  ],
+  "score_sdk": 0.0,
+  "cpu_s": 9.03,
+  "prefixe": "sc25",
+  "variante": "plein",
+  "graine": 1,
+  "stats_agent": {
+   "morts": 3,
+   "niveaux": 0,
+   "resets_agent": 0,
+   "mode_avatar": 16,
+   "mode_generique": 474,
    "surprises": 3,
    "avatar_adopte": 1
   },
@@ -641,104 +798,13 @@
   "cpu_s": 8.99,
   "prefixe": "sc25",
   "variante": "plein",
-  "graine": 1,
-  "stats_agent": {
-   "morts": 3,
-   "niveaux": 0,
-   "resets_agent": 0,
-   "mode_avatar": 17,
-   "mode_generique": 473,
-   "surprises": 3,
-   "avatar_adopte": 1
-  },
-  "etiquettes": [
-   {
-    "type": 0,
-    "cars": {
-     "aire_grande": false,
-     "aire_petite": false,
-     "une_compo": false,
-     "multi_compo": true,
-     "bord": false,
-     "rectangle": false,
-     "fond": false,
-     "carre_petit": false
-    }
-   },
-   {
-    "type": 1,
-    "cars": {
-     "aire_grande": true,
-     "aire_petite": false,
-     "une_compo": true,
-     "multi_compo": false,
-     "bord": true,
-     "rectangle": false,
-     "fond": true,
-     "carre_petit": false
-    }
-   },
-   {
-    "type": 0,
-    "cars": {
-     "aire_grande": false,
-     "aire_petite": true,
-     "une_compo": false,
-     "multi_compo": false,
-     "bord": false,
-     "rectangle": false,
-     "fond": false,
-     "carre_petit": true
-    }
-   },
-   {
-    "type": 0,
-    "cars": {
-     "aire_grande": false,
-     "aire_petite": true,
-     "une_compo": false,
-     "multi_compo": false,
-     "bord": false,
-     "rectangle": true,
-     "fond": false,
-     "carre_petit": true
-    }
-   }
-  ]
- },
- {
-  "jeu": "sc25-635fd71a",
-  "etat": "ACTION_CAP",
-  "niveaux": 0,
-  "niveaux_total": 6,
-  "actions": 500,
-  "niveaux_actions": [
-   500,
-   0,
-   0,
-   0,
-   0,
-   0
-  ],
-  "niveaux_reference": [
-   36,
-   6,
-   32,
-   83,
-   143,
-   50
-  ],
-  "score_sdk": 0.0,
-  "cpu_s": 9.29,
-  "prefixe": "sc25",
-  "variante": "plein",
   "graine": 2,
   "stats_agent": {
    "morts": 3,
    "niveaux": 0,
    "resets_agent": 0,
-   "mode_avatar": 17,
-   "mode_generique": 473,
+   "mode_avatar": 16,
+   "mode_generique": 474,
    "surprises": 3,
    "avatar_adopte": 1
   },
@@ -822,7 +888,7 @@
    62
   ],
   "score_sdk": 1.5873015873015872,
-  "cpu_s": 4.33,
+  "cpu_s": 4.24,
   "prefixe": "tn36",
   "variante": "plein",
   "graine": 0,
@@ -862,7 +928,7 @@
    62
   ],
   "score_sdk": 1.125621070219408,
-  "cpu_s": 3.7,
+  "cpu_s": 4.25,
   "prefixe": "tn36",
   "variante": "plein",
   "graine": 1,
@@ -902,7 +968,7 @@
    62
   ],
   "score_sdk": 1.0158730158730158,
-  "cpu_s": 4.55,
+  "cpu_s": 3.89,
   "prefixe": "tn36",
   "variante": "plein",
   "graine": 2,
@@ -942,7 +1008,7 @@
    326
   ],
   "score_sdk": 0.0,
-  "cpu_s": 2.39,
+  "cpu_s": 2.79,
   "prefixe": "ka59",
   "variante": "plein",
   "graine": 0,
@@ -964,6 +1030,19 @@
      "une_compo": false,
      "multi_compo": true,
      "bord": false,
+     "rectangle": false,
+     "fond": false,
+     "carre_petit": false
+    }
+   },
+   {
+    "type": 0,
+    "cars": {
+     "aire_grande": false,
+     "aire_petite": false,
+     "une_compo": false,
+     "multi_compo": false,
+     "bord": true,
      "rectangle": false,
      "fond": false,
      "carre_petit": false
@@ -1009,7 +1088,7 @@
    326
   ],
   "score_sdk": 0.0,
-  "cpu_s": 2.28,
+  "cpu_s": 2.32,
   "prefixe": "ka59",
   "variante": "plein",
   "graine": 1,
@@ -1102,7 +1181,7 @@
    326
   ],
   "score_sdk": 0.0,
-  "cpu_s": 2.3,
+  "cpu_s": 2.27,
   "prefixe": "ka59",
   "variante": "plein",
   "graine": 2,

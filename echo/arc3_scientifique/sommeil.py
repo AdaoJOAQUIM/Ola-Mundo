@@ -28,8 +28,8 @@ def analyser(res):
     """Étiquettes par jeu (graine 0 uniquement, jeux DEV)."""
     par = {}
     for r in res:
-        if r["graine"] == 0:
-            par[r["prefixe"]] = [e for e in r["etiquettes"] if e["cars"]]
+        if r["graine"] == 0:        # étiquettes poolées sur les variantes d'exploration (même jeu)
+            par.setdefault(r["prefixe"], []).extend(e for e in r["etiquettes"] if e["cars"])
     return par
 
 
@@ -74,7 +74,10 @@ def dormir(res):
             break
         courant.append(meilleur)
     final = juge.ajuster(tous, courant)
-    prior = {"base": base, "gabarits": [{"pred": p, "probs": q} for p, q in final]}
+    # le prior brut (frequences DEV) rend « win » très improbable et bride la recherche de l'objectif :
+    # on le tempère à moitié vers l'uniforme (choix fait sur DEV, voir resultats).
+    base_t = [0.5 * x + 0.5 * 0.2 for x in base]
+    prior = {"base": base_t, "base_brut": base, "gabarits": [{"pred": p, "probs": q} for p, q in final]}
     (ICI / "prior_gele.json").write_text(json.dumps(prior, indent=1))
     (ICI / "sommeil_journal.json").write_text(json.dumps(
         {"n_etiquettes": len(tous), "par_jeu": {j: len(v) for j, v in par.items()}, "base": base,
@@ -84,6 +87,6 @@ def dormir(res):
 
 
 if __name__ == "__main__":
-    res = json.loads(Path(sys.argv[1]).read_text())
+    res = [r for f in sys.argv[1:] for r in json.loads(Path(f).read_text())]
     prior, journal = dormir(res)
     print(json.dumps(journal, indent=1))

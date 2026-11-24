@@ -1,0 +1,275 @@
+{
+ "split": {
+  "DEV": [
+   "cn04",
+   "ka59",
+   "ls20",
+   "sc25",
+   "tn36"
+  ],
+  "HELD": "non ouvert (reporté)"
+ },
+ "dev": {
+  "cn04": {
+   "niveaux": 0,
+   "total": 6,
+   "actions_par_niveau": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference_humaine": [
+    29,
+    54,
+    85,
+    300,
+    208,
+    113
+   ],
+   "stats": {
+    "morts": 6,
+    "niveaux": 0,
+    "resets_agent": 0,
+    "mode_avatar": 77,
+    "mode_generique": 415,
+    "surprises": 9,
+    "avatar_adopte": 9
+   }
+  },
+  "ls20": {
+   "niveaux": 1,
+   "total": 7,
+   "actions_par_niveau": [
+    41,
+    459,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference_humaine": [
+    22,
+    123,
+    73,
+    84,
+    96,
+    192,
+    186
+   ],
+   "stats": {
+    "morts": 2,
+    "niveaux": 1,
+    "resets_agent": 0,
+    "mode_avatar": 427,
+    "mode_generique": 69,
+    "surprises": 3,
+    "avatar_adopte": 1
+   }
+  },
+  "sc25": {
+   "niveaux": 0,
+   "total": 6,
+   "actions_par_niveau": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference_humaine": [
+    36,
+    6,
+    32,
+    83,
+    143,
+    50
+   ],
+   "stats": {
+    "morts": 3,
+    "niveaux": 0,
+    "resets_agent": 0,
+    "mode_avatar": 16,
+    "mode_generique": 474,
+    "surprises": 3,
+    "avatar_adopte": 1
+   }
+  },
+  "tn36": {
+   "niveaux": 1,
+   "total": 7,
+   "actions_par_niveau": [
+    48,
+    452,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference_humaine": [
+    32,
+    72,
+    26,
+    40,
+    30,
+    55,
+    62
+   ],
+   "stats": {
+    "morts": 7,
+    "niveaux": 1,
+    "resets_agent": 0,
+    "mode_avatar": 0,
+    "mode_generique": 493,
+    "surprises": 0,
+    "avatar_adopte": 0
+   }
+  },
+  "ka59": {
+   "niveaux": 0,
+   "total": 7,
+   "actions_par_niveau": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference_humaine": [
+    28,
+    109,
+    51,
+    51,
+    33,
+    132,
+    326
+   ],
+   "stats": {
+    "morts": 4,
+    "niveaux": 0,
+    "resets_agent": 0,
+    "mode_avatar": 21,
+    "mode_generique": 473,
+    "surprises": 1,
+    "avatar_adopte": 2
+   }
+  }
+ },
+ "ablations": {
+  "plein": {
+   "niveaux_3_graines": 6,
+   "sur": 99,
+   "par_jeu": {
+    "cn04": 0,
+    "ka59": 0,
+    "ls20": 3,
+    "sc25": 0,
+    "tn36": 3
+   }
+  },
+  "sans_prior": {
+   "niveaux_3_graines": 6,
+   "sur": 99,
+   "par_jeu": {
+    "cn04": 0,
+    "ka59": 0,
+    "ls20": 3,
+    "sc25": 0,
+    "tn36": 3
+   }
+  },
+  "alea": {
+   "niveaux_3_graines": 1,
+   "sur": 99,
+   "par_jeu": {
+    "cn04": 0,
+    "ka59": 0,
+    "ls20": 0,
+    "sc25": 0,
+    "tn36": 1
+   }
+  },
+  "reactif": {
+   "niveaux_3_graines": 3,
+   "sur": 99,
+   "par_jeu": {
+    "cn04": 0,
+    "ka59": 0,
+    "ls20": 0,
+    "sc25": 0,
+    "tn36": 3
+   }
+  }
+ },
+ "baseline_echo_arc3_dev": {
+  "cn04": 0,
+  "ls20": 1,
+  "sc25": 0,
+  "tn36": 1,
+  "ka59": 0
+ },
+ "sommeil": {
+  "n_etiquettes": 51,
+  "par_jeu": {
+   "cn04": 8,
+   "ls20": 18,
+   "sc25": 12,
+   "tn36": 0,
+   "ka59": 13
+  },
+  "base": [
+   0.625,
+   0.25,
+   0.017857142857142856,
+   0.08928571428571429,
+   0.017857142857142856
+  ],
+  "frequences_types": {
+   "pass": 0.625,
+   "block": 0.25,
+   "lethal": 0.017857142857142856,
+   "collect": 0.08928571428571429,
+   "win": 0.017857142857142856
+  },
+  "candidats_testes": 79,
+  "journal": [
+   {
+    "tour": 0,
+    "gabarit": {
+     "une_compo": true,
+     "rectangle": true
+    },
+    "resultat": {
+     "gain_moyen": 0.17185025692665956,
+     "plis_ok": 1.0,
+     "n_plis": 1
+    },
+    "garde": false
+   }
+  ]
+ },
+ "prior": {
+  "base": [
+   0.4125,
+   0.225,
+   0.10892857142857143,
+   0.14464285714285716,
+   0.10892857142857143
+  ],
+  "base_brut": [
+   0.625,
+   0.25,
+   0.017857142857142856,
+   0.08928571428571429,
+   0.017857142857142856
+  ],
+  "gabarits": []
+ }
+}

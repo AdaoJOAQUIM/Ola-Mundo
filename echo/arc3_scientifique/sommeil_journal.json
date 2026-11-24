@@ -1,0 +1,40 @@
+{
+ "n_etiquettes": 51,
+ "par_jeu": {
+  "cn04": 8,
+  "ls20": 18,
+  "sc25": 12,
+  "tn36": 0,
+  "ka59": 13
+ },
+ "base": [
+  0.625,
+  0.25,
+  0.017857142857142856,
+  0.08928571428571429,
+  0.017857142857142856
+ ],
+ "frequences_types": {
+  "pass": 0.625,
+  "block": 0.25,
+  "lethal": 0.017857142857142856,
+  "collect": 0.08928571428571429,
+  "win": 0.017857142857142856
+ },
+ "candidats_testes": 79,
+ "journal": [
+  {
+   "tour": 0,
+   "gabarit": {
+    "une_compo": true,
+    "rectangle": true
+   },
+   "resultat": {
+    "gain_moyen": 0.17185025692665956,
+    "plis_ok": 1.0,
+    "n_plis": 1
+   },
+   "garde": false
+  }
+ ]
+}
