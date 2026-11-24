@@ -398,6 +398,244 @@
     "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
     "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
    }
+  },
+  {
+   "date": "2026-11-24T08:40:03",
+   "ronde": "r4",
+   "candidat": "couverture__r4+visite_objets__r4+clic_nouveaux__r4",
+   "groupe": true,
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=False",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": -0.2,
+    "sd": 0.42163702135578396,
+    "borne_inf": -0.3844,
+    "niveaux_base": 7,
+    "niveaux_candidat": 5,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 50,
+    "niveaux_perdus": [
+     [
+      "sc25",
+      0
+     ]
+    ]
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
+  },
+  {
+   "date": "2026-11-24T08:40:59",
+   "ronde": "r4s",
+   "candidat": "couverture__r4",
+   "sha_source": "1783aa0b8006ea12",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": 0.0,
+    "sd": 0.0,
+    "borne_inf": 0.0,
+    "niveaux_base": 7,
+    "niveaux_candidat": 7,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 686,
+    "niveaux_perdus": []
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
+  },
+  {
+   "date": "2026-11-24T08:41:22",
+   "ronde": "r4s",
+   "candidat": "visite_objets__r4",
+   "sha_source": "9b44061b186521e6",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": 0.0,
+    "sd": 0.0,
+    "borne_inf": 0.0,
+    "niveaux_base": 7,
+    "niveaux_candidat": 7,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 686,
+    "niveaux_perdus": []
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
+  },
+  {
+   "date": "2026-11-24T08:41:54",
+   "ronde": "r4s",
+   "candidat": "clic_nouveaux__r4",
+   "sha_source": "171e817e655472d5",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=False",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": -0.2,
+    "sd": 0.42163702135578396,
+    "borne_inf": -0.3844,
+    "niveaux_base": 7,
+    "niveaux_candidat": 5,
+    "cout_actions_base": 686,
+    "cout_actions_candidat": 50,
+    "niveaux_perdus": [
+     [
+      "sc25",
+      0
+     ]
+    ]
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
   }
  ]
 }

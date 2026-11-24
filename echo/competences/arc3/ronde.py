@@ -129,3 +129,54 @@ if __name__ == "__main__":
         juger_groupe(k, args)
     elif cmd == "juger":
         juger(k, args)
+
+
+def posterieurs(k):
+    """Postérieur Beta(1,1) par compétence : succès = niveau gagné pendant l'activation ou dans les
+    FENETRE_SUCCES actions suivantes. Calculé sur DEV-train (graines 0..2) et DEV-gate (graines 0..4)."""
+    bassin = charger_bassin()
+    pr = jouer.prieurs_geles() or None
+    taches = [(j, g, bassin, pr, False) for j in jouer.DEV_TRAIN for g in GRAINES_TRAIN] + \
+             [(j, g, bassin, pr, False) for j in jouer.DEV_GATE for g in range(5)]
+    res = jouer.jouer_lot(taches, 2)
+    tot = {}
+    for r in res:
+        for nom, st in r["competences"].items():
+            t = tot.setdefault(nom, {"activations": 0, "succes": 0})
+            t["activations"] += st["activations"]
+            t["succes"] += st["succes"]
+    out = {}
+    for nom, t in tot.items():
+        a, b = 1 + t["succes"], 1 + t["activations"] - t["succes"]
+        out[nom] = {**t, "alpha": a, "beta": b, "moyenne": round(a / (a + b), 4),
+                    "elagable": t["activations"] >= MIN_ACTIVATIONS and a / (a + b) < SEUIL_ELAGAGE}
+    ecrire(f"posterieurs_{k}.json", out)
+    print(json.dumps(out, indent=1))
+    return out
+
+
+def elaguer(k):
+    """Retire une compétence élagable si le juge (mode retrait) confirme qu'aucun niveau DEV-gate n'est perdu."""
+    import juge
+    post = lire(f"posterieurs_{k}.json", {})
+    bassin = charger_bassin()
+    pr = jouer.prieurs_geles() or None
+    lign = lire("lignee.json", {"evenements": []})
+    for nom, p in post.items():
+        if not p["elagable"]:
+            continue
+        nouveau = [b for b in bassin if b["nom"] != nom]
+        d = juge.juger([{"nom": b["nom"], "source": b["source"]} for b in bassin],
+                       [{"nom": b["nom"], "source": b["source"]} for b in nouveau], pr, "retrait", {})
+        lign["evenements"].append({"date": datetime.now().isoformat(timespec="seconds"), "ronde": k,
+                                   "retrait": nom, "accepte": d["accepte"], "raison": d.get("raison"),
+                                   "mesures": d.get("mesures"), "posterieur": p})
+        print("retrait", nom, "->", d["accepte"], d.get("raison"))
+        if d["accepte"]:
+            bassin = nouveau
+            ecrire("bassin.json", {"competences": [{"nom": b["nom"], "fichier": b["fichier"]} for b in bassin]})
+    ecrire("lignee.json", lign)
+
+
+if __name__ == "__main__" and sys.argv[1] in ("posterieurs", "elaguer"):
+    {"posterieurs": posterieurs, "elaguer": elaguer}[sys.argv[1]](sys.argv[2])

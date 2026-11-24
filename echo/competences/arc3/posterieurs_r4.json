@@ -1,0 +1,34 @@
+{
+ "sonde_clics": {
+  "activations": 23,
+  "succes": 5,
+  "alpha": 6,
+  "beta": 19,
+  "moyenne": 0.24,
+  "elagable": false
+ },
+ "couloir": {
+  "activations": 443,
+  "succes": 7,
+  "alpha": 8,
+  "beta": 437,
+  "moyenne": 0.018,
+  "elagable": true
+ },
+ "tour_objets": {
+  "activations": 140,
+  "succes": 0,
+  "alpha": 1,
+  "beta": 141,
+  "moyenne": 0.007,
+  "elagable": true
+ },
+ "paires_clics": {
+  "activations": 18,
+  "succes": 0,
+  "alpha": 1,
+  "beta": 19,
+  "moyenne": 0.05,
+  "elagable": false
+ }
+}
