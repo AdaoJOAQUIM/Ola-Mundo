@@ -56,7 +56,7 @@ def charger(p):
 
 
 def ligne(nom, s, exact):
-    e = f" | {s['taux_programme_exact']:.0%}" if exact else ""
+    e = f" | {s['taux_programme_exact']:.0%}" if exact else " | —"
     return (f"| {nom} | {s['mondes']} | {s['taux_niveaux']:.0%} ({s['niveaux_resolus']}/{s['niveaux_total']}) | "
             f"{s['ratio_actions_sur_optimum']} | {s['ratio_median_par_niveau']}{e} |")
 
@@ -90,6 +90,24 @@ def main():
               f"- Niveaux résolus (500 actions) : **{j['taux_niveaux_500']:.1%}** (seuil {j['seuil_niveaux']:.0%}) -> {'OK' if j['taux_niveaux_500'] >= j['seuil_niveaux'] else 'NON atteint'}",
               f"- Actions par niveau résolu / optimum : **{j['ratio_actions_sur_optimum']}** (seuil <= {j['seuil_ratio']}) -> {'OK' if j['ratio_actions_sur_optimum'] <= j['seuil_ratio'] else 'NON atteint'}",
               f"- **J1 : {'ATTEINT' if j['atteint'] else 'NON ATTEINT'}**", ""]
+    if r500:
+        perdus, inexacts = {}, {}
+        tot_perdu = sum(r["niveaux_total"] - r["niveaux"] for r in r500)
+        tot_inex = sum(1 for r in r500 if not r.get("validation", {}).get("exact"))
+        for r in r500:
+            for m in MECAS:
+                if m in r["mecaniques"]:
+                    perdus[m] = perdus.get(m, 0) + r["niveaux_total"] - r["niveaux"]
+                    inexacts[m] = inexacts.get(m, 0) + (0 if r.get("validation", {}).get("exact") else 1)
+        J["causes"] = {"niveaux_perdus_total": tot_perdu, "mondes_inexacts_total": tot_inex,
+                       "niveaux_perdus_par_mecanique": dict(sorted(perdus.items(), key=lambda x: -x[1])),
+                       "mondes_inexacts_par_mecanique": dict(sorted(inexacts.items(), key=lambda x: -x[1]))}
+        L += ["## Où les niveaux et les programmes exacts se perdent (500 actions)", "",
+              f"Niveaux perdus au total : {tot_perdu} ; mondes au programme inexact : {tot_inex}. Un monde compte pour chaque mécanique qu'il contient (les causes se recouvrent).", "",
+              "| Mécanique | Niveaux perdus dans les mondes qui la contiennent | Mondes inexacts qui la contiennent |", "|---|---|---|"]
+        for m in J["causes"]["niveaux_perdus_par_mecanique"]:
+            L.append(f"| {m} | {perdus[m]} | {inexacts[m]} |")
+        L.append("")
     L += [a.notes, ""]
     L += ["## Comparaison sur les mêmes 300 mondes (500 actions)", "",
           "| Agent | Mondes | Niveaux résolus | Actions / optimum (agrégé) | Médiane par niveau | Programme exact |", "|---|---|---|---|---|---|"]
@@ -98,7 +116,7 @@ def main():
     if r5000:
         L.append(ligne("Rétro-Créateur (5000 actions)", J["retro_5000"]["global"], True))
     if cer:
-        L.append(ligne("Cerveau bayésien (echo/arc3)", J["cerveau_500"]["global"], False).replace("|  |", "| — |"))
+        L.append(ligne("Cerveau bayésien (echo/arc3)", J["cerveau_500"]["global"], False))
     if v1:
         L.append(ligne("Scientifique v1", J["v1_500"]["global"], False))
     L.append("")
