@@ -1,0 +1,174 @@
+{
+ "ronde": "r0",
+ "bassin": [],
+ "resumes": [
+  {
+   "jeu": "ls20",
+   "graine": 0,
+   "niveaux": 1,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [
+    198
+   ],
+   "gagnes_a_l_action": [
+    198
+   ],
+   "attribution_gain": [
+    "cerveau"
+   ],
+   "actions_competences": 0,
+   "actions_cerveau": 495,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0,
+   "traj": {
+    "images_distinctes": 437,
+    "n_images": 495,
+    "part_sans_effet": 0.085,
+    "types_actions": {
+     "ACTION1": 191,
+     "ACTION4": 126,
+     "ACTION2": 75,
+     "ACTION3": 103
+    }
+   }
+  },
+  {
+   "jeu": "ls20",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 497,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0
+  },
+  {
+   "jeu": "ls20",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 497,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0
+  },
+  {
+   "jeu": "cn04",
+   "graine": 0,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 494,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0,
+   "traj": {
+    "images_distinctes": 406,
+    "n_images": 494,
+    "part_sans_effet": 0.097,
+    "types_actions": {
+     "ACTION6": 396,
+     "ACTION2": 34,
+     "ACTION1": 16,
+     "ACTION4": 15,
+     "ACTION3": 17,
+     "ACTION5": 16
+    }
+   }
+  },
+  {
+   "jeu": "cn04",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 494,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0
+  },
+  {
+   "jeu": "cn04",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 494,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0
+  },
+  {
+   "jeu": "ka59",
+   "graine": 0,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 496,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0,
+   "traj": {
+    "images_distinctes": 437,
+    "n_images": 496,
+    "part_sans_effet": 0.101,
+    "types_actions": {
+     "ACTION6": 318,
+     "ACTION3": 46,
+     "ACTION2": 39,
+     "ACTION4": 39,
+     "ACTION1": 54
+    }
+   }
+  },
+  {
+   "jeu": "ka59",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 496,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0
+  },
+  {
+   "jeu": "ka59",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 0,
+   "actions_cerveau": 496,
+   "competences": {},
+   "fenetres": [],
+   "nb_fenetres": 0
+  }
+ ]
+}

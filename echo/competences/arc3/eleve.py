@@ -37,6 +37,10 @@ class Competence:
         self.nom = nom
         self.source = source
         ns = liste_blanche.charger(source, nom)
+        import builtins
+        # les imports paresseux de numpy (niveau C) cherchent __import__ dans les builtins du cadre courant ;
+        # la liste blanche interdit tout nom contenant « __ », donc une compétence ne peut pas l'appeler.
+        ns["activation"].__globals__["__builtins__"]["__import__"] = builtins.__import__
         self.activation = ns["activation"]
         self.agir = ns["agir"]
         self.terminer = ns["terminer"]

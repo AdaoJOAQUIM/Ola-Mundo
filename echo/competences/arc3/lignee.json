@@ -1,0 +1,175 @@
+{
+ "evenements": [
+  {
+   "date": "2026-11-24T08:28:56",
+   "ronde": "r1",
+   "candidat": "couloir__r1",
+   "sha_source": "d8c58409b05d776a",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": 0.1,
+    "sd": 0.31622776601683794,
+    "borne_inf": -0.0383,
+    "niveaux_base": 5,
+    "niveaux_candidat": 6,
+    "cout_actions_base": 206,
+    "cout_actions_candidat": 426,
+    "niveaux_perdus": []
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      0,
+      1,
+      0,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
+  },
+  {
+   "date": "2026-11-24T08:29:18",
+   "ronde": "r1",
+   "candidat": "sonde_clics__r1",
+   "sha_source": "2a704b012b49b20e",
+   "accepte": true,
+   "raison": "a1(borne>0)=False a2(efficacite)=True b(aucune perte)=True",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": 0.0,
+    "sd": 0.0,
+    "borne_inf": 0.0,
+    "niveaux_base": 5,
+    "niveaux_candidat": 5,
+    "cout_actions_base": 206,
+    "cout_actions_candidat": 50,
+    "niveaux_perdus": []
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
+  },
+  {
+   "date": "2026-11-24T08:29:40",
+   "ronde": "r1",
+   "candidat": "tour_objets__r1",
+   "sha_source": "d2e20fc3415c2692",
+   "accepte": false,
+   "raison": "a1(borne>0)=False a2(efficacite)=False b(aucune perte)=True",
+   "mesures": {
+    "n_paires": 10,
+    "gain_moyen": 0.2,
+    "sd": 0.6324555320336759,
+    "borne_inf": -0.0766,
+    "niveaux_base": 5,
+    "niveaux_candidat": 7,
+    "cout_actions_base": 50,
+    "cout_actions_candidat": 263,
+    "niveaux_perdus": []
+   },
+   "niveaux_par_jeu_graine": {
+    "tn36": {
+     "base": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "candidat": [
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "sc25": {
+     "base": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "candidat": [
+      0,
+      0,
+      0,
+      2,
+      0
+     ]
+    }
+   },
+   "empreintes_juge": {
+    "juge.py": "70c5afa1304424a4e760b4c8aae56f1710d75ab1e7fc3d719fe09c9d8d1d1815",
+    "liste_blanche.py": "dffdae0ba5a55a12e98924cb71d884b6c7788ed3fd930385c79caa497a56fb74"
+   }
+  }
+ ]
+}

@@ -1,0 +1,2245 @@
+{
+ "ronde": "r1",
+ "bassin": [
+  "couloir",
+  "sonde_clics",
+  "tour_objets"
+ ],
+ "resumes": [
+  {
+   "jeu": "ls20",
+   "graine": 0,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 382,
+   "actions_cerveau": 115,
+   "competences": {
+    "couloir": {
+     "activations": 20,
+     "succes": 0,
+     "actions": 54,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 14,
+     "succes": 0,
+     "actions": 328,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "tour_objets",
+     7,
+     66,
+     60
+    ],
+    [
+     "couloir",
+     68,
+     71,
+     4
+    ],
+    [
+     "couloir",
+     73,
+     74,
+     2
+    ],
+    [
+     "couloir",
+     77,
+     82,
+     6
+    ],
+    [
+     "couloir",
+     84,
+     89,
+     6
+    ],
+    [
+     "couloir",
+     91,
+     94,
+     4
+    ],
+    [
+     "tour_objets",
+     96,
+     128,
+     33
+    ],
+    [
+     "tour_objets",
+     130,
+     156,
+     27
+    ],
+    [
+     "couloir",
+     158,
+     163,
+     6
+    ],
+    [
+     "tour_objets",
+     167,
+     226,
+     60
+    ],
+    [
+     "couloir",
+     231,
+     232,
+     2
+    ],
+    [
+     "couloir",
+     236,
+     237,
+     2
+    ],
+    [
+     "tour_objets",
+     239,
+     259,
+     21
+    ],
+    [
+     "tour_objets",
+     261,
+     299,
+     39
+    ],
+    [
+     "tour_objets",
+     310,
+     355,
+     46
+    ],
+    [
+     "couloir",
+     359,
+     362,
+     4
+    ],
+    [
+     "tour_objets",
+     366,
+     367,
+     2
+    ],
+    [
+     "couloir",
+     374,
+     374,
+     1
+    ],
+    [
+     "tour_objets",
+     378,
+     380,
+     3
+    ],
+    [
+     "couloir",
+     385,
+     385,
+     1
+    ],
+    [
+     "tour_objets",
+     401,
+     403,
+     3
+    ],
+    [
+     "tour_objets",
+     414,
+     420,
+     7
+    ],
+    [
+     "tour_objets",
+     431,
+     439,
+     9
+    ],
+    [
+     "couloir",
+     445,
+     446,
+     2
+    ],
+    [
+     "couloir",
+     449,
+     450,
+     2
+    ],
+    [
+     "tour_objets",
+     452,
+     457,
+     6
+    ],
+    [
+     "couloir",
+     460,
+     461,
+     2
+    ],
+    [
+     "couloir",
+     467,
+     468,
+     2
+    ],
+    [
+     "couloir",
+     470,
+     471,
+     2
+    ],
+    [
+     "couloir",
+     473,
+     474,
+     2
+    ],
+    [
+     "tour_objets",
+     476,
+     478,
+     3
+    ],
+    [
+     "couloir",
+     483,
+     484,
+     2
+    ],
+    [
+     "couloir",
+     486,
+     486,
+     1
+    ],
+    [
+     "couloir",
+     489,
+     489,
+     1
+    ],
+    [
+     "tour_objets",
+     491,
+     499,
+     9
+    ]
+   ],
+   "nb_fenetres": 35,
+   "traj": {
+    "images_distinctes": 443,
+    "n_images": 497,
+    "part_sans_effet": 0.085,
+    "types_actions": {
+     "ACTION1": 121,
+     "ACTION4": 147,
+     "ACTION3": 138,
+     "ACTION2": 91
+    }
+   }
+  },
+  {
+   "jeu": "ls20",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 347,
+   "actions_cerveau": 150,
+   "competences": {
+    "couloir": {
+     "activations": 20,
+     "succes": 0,
+     "actions": 66,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 19,
+     "succes": 0,
+     "actions": 281,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "tour_objets",
+     7,
+     50,
+     44
+    ],
+    [
+     "couloir",
+     52,
+     54,
+     3
+    ],
+    [
+     "couloir",
+     57,
+     62,
+     6
+    ],
+    [
+     "couloir",
+     64,
+     69,
+     6
+    ],
+    [
+     "couloir",
+     71,
+     73,
+     3
+    ],
+    [
+     "couloir",
+     76,
+     81,
+     6
+    ],
+    [
+     "couloir",
+     83,
+     86,
+     4
+    ],
+    [
+     "couloir",
+     91,
+     94,
+     4
+    ],
+    [
+     "couloir",
+     96,
+     97,
+     2
+    ],
+    [
+     "couloir",
+     99,
+     101,
+     3
+    ],
+    [
+     "tour_objets",
+     103,
+     126,
+     24
+    ],
+    [
+     "tour_objets",
+     147,
+     154,
+     8
+    ],
+    [
+     "couloir",
+     156,
+     159,
+     4
+    ],
+    [
+     "tour_objets",
+     165,
+     165,
+     1
+    ],
+    [
+     "couloir",
+     167,
+     169,
+     3
+    ],
+    [
+     "couloir",
+     171,
+     174,
+     4
+    ],
+    [
+     "couloir",
+     180,
+     181,
+     2
+    ],
+    [
+     "tour_objets",
+     186,
+     223,
+     38
+    ],
+    [
+     "tour_objets",
+     234,
+     261,
+     28
+    ],
+    [
+     "tour_objets",
+     263,
+     267,
+     5
+    ],
+    [
+     "tour_objets",
+     278,
+     337,
+     60
+    ],
+    [
+     "tour_objets",
+     348,
+     361,
+     14
+    ],
+    [
+     "couloir",
+     376,
+     378,
+     3
+    ],
+    [
+     "couloir",
+     382,
+     383,
+     2
+    ],
+    [
+     "couloir",
+     385,
+     388,
+     4
+    ],
+    [
+     "tour_objets",
+     390,
+     392,
+     3
+    ],
+    [
+     "tour_objets",
+     394,
+     399,
+     6
+    ],
+    [
+     "couloir",
+     406,
+     408,
+     3
+    ],
+    [
+     "tour_objets",
+     410,
+     428,
+     19
+    ],
+    [
+     "couloir",
+     430,
+     430,
+     1
+    ],
+    [
+     "couloir",
+     433,
+     433,
+     1
+    ],
+    [
+     "tour_objets",
+     439,
+     442,
+     4
+    ],
+    [
+     "couloir",
+     455,
+     456,
+     2
+    ],
+    [
+     "tour_objets",
+     463,
+     482,
+     20
+    ],
+    [
+     "tour_objets",
+     493,
+     499,
+     7
+    ]
+   ],
+   "nb_fenetres": 35
+  },
+  {
+   "jeu": "ls20",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 380,
+   "actions_cerveau": 117,
+   "competences": {
+    "couloir": {
+     "activations": 18,
+     "succes": 0,
+     "actions": 40,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 13,
+     "succes": 0,
+     "actions": 340,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "couloir",
+     7,
+     7,
+     1
+    ],
+    [
+     "tour_objets",
+     9,
+     68,
+     60
+    ],
+    [
+     "couloir",
+     70,
+     72,
+     3
+    ],
+    [
+     "couloir",
+     74,
+     79,
+     6
+    ],
+    [
+     "couloir",
+     81,
+     83,
+     3
+    ],
+    [
+     "couloir",
+     85,
+     88,
+     4
+    ],
+    [
+     "couloir",
+     90,
+     92,
+     3
+    ],
+    [
+     "tour_objets",
+     94,
+     131,
+     38
+    ],
+    [
+     "tour_objets",
+     133,
+     154,
+     22
+    ],
+    [
+     "couloir",
+     158,
+     159,
+     2
+    ],
+    [
+     "tour_objets",
+     165,
+     224,
+     60
+    ],
+    [
+     "couloir",
+     226,
+     229,
+     4
+    ],
+    [
+     "couloir",
+     234,
+     235,
+     2
+    ],
+    [
+     "tour_objets",
+     237,
+     262,
+     26
+    ],
+    [
+     "tour_objets",
+     264,
+     276,
+     13
+    ],
+    [
+     "couloir",
+     289,
+     290,
+     2
+    ],
+    [
+     "couloir",
+     301,
+     301,
+     1
+    ],
+    [
+     "couloir",
+     303,
+     303,
+     1
+    ],
+    [
+     "couloir",
+     306,
+     306,
+     1
+    ],
+    [
+     "tour_objets",
+     318,
+     377,
+     60
+    ],
+    [
+     "couloir",
+     384,
+     384,
+     1
+    ],
+    [
+     "tour_objets",
+     388,
+     393,
+     6
+    ],
+    [
+     "tour_objets",
+     395,
+     429,
+     35
+    ],
+    [
+     "tour_objets",
+     440,
+     443,
+     4
+    ],
+    [
+     "couloir",
+     454,
+     455,
+     2
+    ],
+    [
+     "couloir",
+     457,
+     457,
+     1
+    ],
+    [
+     "tour_objets",
+     459,
+     466,
+     8
+    ],
+    [
+     "couloir",
+     477,
+     478,
+     2
+    ],
+    [
+     "couloir",
+     480,
+     480,
+     1
+    ],
+    [
+     "tour_objets",
+     492,
+     499,
+     8
+    ]
+   ],
+   "nb_fenetres": 30
+  },
+  {
+   "jeu": "cn04",
+   "graine": 0,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 271,
+   "actions_cerveau": 223,
+   "competences": {
+    "couloir": {
+     "activations": 31,
+     "succes": 0,
+     "actions": 264,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 7,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     6,
+     7
+    ],
+    [
+     "couloir",
+     9,
+     11,
+     3
+    ],
+    [
+     "couloir",
+     29,
+     40,
+     12
+    ],
+    [
+     "couloir",
+     43,
+     56,
+     14
+    ],
+    [
+     "couloir",
+     60,
+     60,
+     1
+    ],
+    [
+     "couloir",
+     62,
+     74,
+     13
+    ],
+    [
+     "couloir",
+     82,
+     93,
+     12
+    ],
+    [
+     "couloir",
+     95,
+     103,
+     9
+    ],
+    [
+     "couloir",
+     106,
+     108,
+     3
+    ],
+    [
+     "couloir",
+     113,
+     123,
+     11
+    ],
+    [
+     "couloir",
+     142,
+     142,
+     1
+    ],
+    [
+     "couloir",
+     145,
+     150,
+     6
+    ],
+    [
+     "couloir",
+     154,
+     157,
+     4
+    ],
+    [
+     "couloir",
+     159,
+     172,
+     14
+    ],
+    [
+     "couloir",
+     175,
+     181,
+     7
+    ],
+    [
+     "couloir",
+     198,
+     209,
+     12
+    ],
+    [
+     "couloir",
+     219,
+     219,
+     1
+    ],
+    [
+     "couloir",
+     229,
+     239,
+     11
+    ],
+    [
+     "couloir",
+     255,
+     266,
+     12
+    ],
+    [
+     "couloir",
+     289,
+     289,
+     1
+    ],
+    [
+     "couloir",
+     293,
+     299,
+     7
+    ],
+    [
+     "couloir",
+     311,
+     313,
+     3
+    ],
+    [
+     "couloir",
+     315,
+     326,
+     12
+    ],
+    [
+     "couloir",
+     329,
+     332,
+     4
+    ],
+    [
+     "couloir",
+     352,
+     365,
+     14
+    ],
+    [
+     "couloir",
+     369,
+     378,
+     10
+    ],
+    [
+     "couloir",
+     381,
+     392,
+     12
+    ],
+    [
+     "couloir",
+     403,
+     416,
+     14
+    ],
+    [
+     "couloir",
+     425,
+     436,
+     12
+    ],
+    [
+     "couloir",
+     439,
+     452,
+     14
+    ],
+    [
+     "couloir",
+     463,
+     473,
+     11
+    ],
+    [
+     "couloir",
+     480,
+     483,
+     4
+    ]
+   ],
+   "nb_fenetres": 32,
+   "traj": {
+    "images_distinctes": 425,
+    "n_images": 494,
+    "part_sans_effet": 0.101,
+    "types_actions": {
+     "ACTION6": 144,
+     "ACTION1": 32,
+     "ACTION5": 16,
+     "ACTION3": 99,
+     "ACTION4": 130,
+     "ACTION2": 73
+    }
+   }
+  },
+  {
+   "jeu": "cn04",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 317,
+   "actions_cerveau": 177,
+   "competences": {
+    "couloir": {
+     "activations": 37,
+     "succes": 0,
+     "actions": 310,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 7,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     6,
+     7
+    ],
+    [
+     "couloir",
+     11,
+     19,
+     9
+    ],
+    [
+     "couloir",
+     31,
+     41,
+     11
+    ],
+    [
+     "couloir",
+     44,
+     55,
+     12
+    ],
+    [
+     "couloir",
+     59,
+     72,
+     14
+    ],
+    [
+     "couloir",
+     74,
+     74,
+     1
+    ],
+    [
+     "couloir",
+     82,
+     85,
+     4
+    ],
+    [
+     "couloir",
+     87,
+     98,
+     12
+    ],
+    [
+     "couloir",
+     101,
+     103,
+     3
+    ],
+    [
+     "couloir",
+     105,
+     115,
+     11
+    ],
+    [
+     "couloir",
+     117,
+     130,
+     14
+    ],
+    [
+     "couloir",
+     143,
+     150,
+     8
+    ],
+    [
+     "couloir",
+     159,
+     167,
+     9
+    ],
+    [
+     "couloir",
+     170,
+     181,
+     12
+    ],
+    [
+     "couloir",
+     186,
+     197,
+     12
+    ],
+    [
+     "couloir",
+     200,
+     202,
+     3
+    ],
+    [
+     "couloir",
+     204,
+     217,
+     14
+    ],
+    [
+     "couloir",
+     230,
+     240,
+     11
+    ],
+    [
+     "couloir",
+     246,
+     249,
+     4
+    ],
+    [
+     "couloir",
+     251,
+     263,
+     13
+    ],
+    [
+     "couloir",
+     268,
+     270,
+     3
+    ],
+    [
+     "couloir",
+     272,
+     285,
+     14
+    ],
+    [
+     "couloir",
+     292,
+     302,
+     11
+    ],
+    [
+     "couloir",
+     305,
+     307,
+     3
+    ],
+    [
+     "couloir",
+     318,
+     321,
+     4
+    ],
+    [
+     "couloir",
+     338,
+     340,
+     3
+    ],
+    [
+     "couloir",
+     342,
+     355,
+     14
+    ],
+    [
+     "couloir",
+     358,
+     371,
+     14
+    ],
+    [
+     "couloir",
+     373,
+     373,
+     1
+    ],
+    [
+     "couloir",
+     382,
+     385,
+     4
+    ],
+    [
+     "couloir",
+     396,
+     406,
+     11
+    ],
+    [
+     "couloir",
+     412,
+     414,
+     3
+    ],
+    [
+     "couloir",
+     421,
+     429,
+     9
+    ],
+    [
+     "couloir",
+     439,
+     439,
+     1
+    ],
+    [
+     "couloir",
+     443,
+     454,
+     12
+    ],
+    [
+     "couloir",
+     459,
+     461,
+     3
+    ],
+    [
+     "couloir",
+     471,
+     479,
+     9
+    ],
+    [
+     "couloir",
+     483,
+     496,
+     14
+    ]
+   ],
+   "nb_fenetres": 38
+  },
+  {
+   "jeu": "cn04",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 347,
+   "actions_cerveau": 147,
+   "competences": {
+    "couloir": {
+     "activations": 33,
+     "succes": 0,
+     "actions": 285,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 7,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 19,
+     "succes": 0,
+     "actions": 55,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     6,
+     7
+    ],
+    [
+     "couloir",
+     8,
+     19,
+     12
+    ],
+    [
+     "couloir",
+     23,
+     33,
+     11
+    ],
+    [
+     "couloir",
+     36,
+     47,
+     12
+    ],
+    [
+     "couloir",
+     53,
+     61,
+     9
+    ],
+    [
+     "tour_objets",
+     82,
+     136,
+     55
+    ],
+    [
+     "couloir",
+     140,
+     150,
+     11
+    ],
+    [
+     "couloir",
+     153,
+     155,
+     3
+    ],
+    [
+     "couloir",
+     158,
+     161,
+     4
+    ],
+    [
+     "couloir",
+     163,
+     175,
+     13
+    ],
+    [
+     "couloir",
+     186,
+     197,
+     12
+    ],
+    [
+     "couloir",
+     205,
+     218,
+     14
+    ],
+    [
+     "couloir",
+     220,
+     220,
+     1
+    ],
+    [
+     "couloir",
+     222,
+     222,
+     1
+    ],
+    [
+     "couloir",
+     229,
+     239,
+     11
+    ],
+    [
+     "couloir",
+     243,
+     254,
+     12
+    ],
+    [
+     "couloir",
+     258,
+     268,
+     11
+    ],
+    [
+     "couloir",
+     272,
+     272,
+     1
+    ],
+    [
+     "couloir",
+     274,
+     287,
+     14
+    ],
+    [
+     "couloir",
+     292,
+     302,
+     11
+    ],
+    [
+     "couloir",
+     315,
+     318,
+     4
+    ],
+    [
+     "couloir",
+     321,
+     323,
+     3
+    ],
+    [
+     "couloir",
+     327,
+     335,
+     9
+    ],
+    [
+     "couloir",
+     340,
+     352,
+     13
+    ],
+    [
+     "couloir",
+     354,
+     366,
+     13
+    ],
+    [
+     "couloir",
+     378,
+     378,
+     1
+    ],
+    [
+     "couloir",
+     383,
+     386,
+     4
+    ],
+    [
+     "couloir",
+     390,
+     400,
+     11
+    ],
+    [
+     "couloir",
+     406,
+     408,
+     3
+    ],
+    [
+     "couloir",
+     418,
+     431,
+     14
+    ],
+    [
+     "couloir",
+     433,
+     446,
+     14
+    ],
+    [
+     "couloir",
+     450,
+     454,
+     5
+    ],
+    [
+     "couloir",
+     465,
+     467,
+     3
+    ],
+    [
+     "couloir",
+     469,
+     482,
+     14
+    ],
+    [
+     "couloir",
+     489,
+     499,
+     11
+    ]
+   ],
+   "nb_fenetres": 35
+  },
+  {
+   "jeu": "ka59",
+   "graine": 0,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 160,
+   "actions_cerveau": 336,
+   "competences": {
+    "couloir": {
+     "activations": 33,
+     "succes": 0,
+     "actions": 147,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 13,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 0,
+     "succes": 0,
+     "actions": 0,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     12,
+     13
+    ],
+    [
+     "couloir",
+     24,
+     24,
+     1
+    ],
+    [
+     "couloir",
+     33,
+     35,
+     3
+    ],
+    [
+     "couloir",
+     37,
+     39,
+     3
+    ],
+    [
+     "couloir",
+     48,
+     53,
+     6
+    ],
+    [
+     "couloir",
+     69,
+     74,
+     6
+    ],
+    [
+     "couloir",
+     84,
+     90,
+     7
+    ],
+    [
+     "couloir",
+     107,
+     112,
+     6
+    ],
+    [
+     "couloir",
+     115,
+     117,
+     3
+    ],
+    [
+     "couloir",
+     122,
+     127,
+     6
+    ],
+    [
+     "couloir",
+     134,
+     139,
+     6
+    ],
+    [
+     "couloir",
+     146,
+     148,
+     3
+    ],
+    [
+     "couloir",
+     156,
+     161,
+     6
+    ],
+    [
+     "couloir",
+     170,
+     175,
+     6
+    ],
+    [
+     "couloir",
+     180,
+     185,
+     6
+    ],
+    [
+     "couloir",
+     194,
+     196,
+     3
+    ],
+    [
+     "couloir",
+     206,
+     208,
+     3
+    ],
+    [
+     "couloir",
+     216,
+     218,
+     3
+    ],
+    [
+     "couloir",
+     273,
+     278,
+     6
+    ],
+    [
+     "couloir",
+     304,
+     306,
+     3
+    ],
+    [
+     "couloir",
+     309,
+     311,
+     3
+    ],
+    [
+     "couloir",
+     330,
+     335,
+     6
+    ],
+    [
+     "couloir",
+     345,
+     346,
+     2
+    ],
+    [
+     "couloir",
+     349,
+     354,
+     6
+    ],
+    [
+     "couloir",
+     369,
+     373,
+     5
+    ],
+    [
+     "couloir",
+     378,
+     382,
+     5
+    ],
+    [
+     "couloir",
+     388,
+     391,
+     4
+    ],
+    [
+     "couloir",
+     405,
+     409,
+     5
+    ],
+    [
+     "couloir",
+     419,
+     421,
+     3
+    ],
+    [
+     "couloir",
+     426,
+     432,
+     7
+    ],
+    [
+     "couloir",
+     439,
+     441,
+     3
+    ],
+    [
+     "couloir",
+     460,
+     466,
+     7
+    ],
+    [
+     "couloir",
+     488,
+     491,
+     4
+    ],
+    [
+     "couloir",
+     499,
+     499,
+     1
+    ]
+   ],
+   "nb_fenetres": 34,
+   "traj": {
+    "images_distinctes": 412,
+    "n_images": 496,
+    "part_sans_effet": 0.139,
+    "types_actions": {
+     "ACTION6": 272,
+     "ACTION2": 58,
+     "ACTION1": 71,
+     "ACTION4": 32,
+     "ACTION3": 63
+    }
+   }
+  },
+  {
+   "jeu": "ka59",
+   "graine": 1,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 257,
+   "actions_cerveau": 239,
+   "competences": {
+    "couloir": {
+     "activations": 42,
+     "succes": 0,
+     "actions": 176,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 13,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 3,
+     "succes": 0,
+     "actions": 68,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     12,
+     13
+    ],
+    [
+     "couloir",
+     15,
+     20,
+     6
+    ],
+    [
+     "couloir",
+     24,
+     32,
+     9
+    ],
+    [
+     "couloir",
+     36,
+     42,
+     7
+    ],
+    [
+     "couloir",
+     44,
+     46,
+     3
+    ],
+    [
+     "couloir",
+     49,
+     52,
+     4
+    ],
+    [
+     "couloir",
+     54,
+     57,
+     4
+    ],
+    [
+     "couloir",
+     63,
+     66,
+     4
+    ],
+    [
+     "couloir",
+     68,
+     73,
+     6
+    ],
+    [
+     "couloir",
+     78,
+     80,
+     3
+    ],
+    [
+     "couloir",
+     83,
+     85,
+     3
+    ],
+    [
+     "couloir",
+     88,
+     91,
+     4
+    ],
+    [
+     "couloir",
+     93,
+     98,
+     6
+    ],
+    [
+     "couloir",
+     102,
+     104,
+     3
+    ],
+    [
+     "couloir",
+     109,
+     116,
+     8
+    ],
+    [
+     "couloir",
+     123,
+     125,
+     3
+    ],
+    [
+     "couloir",
+     128,
+     133,
+     6
+    ],
+    [
+     "couloir",
+     135,
+     140,
+     6
+    ],
+    [
+     "couloir",
+     146,
+     152,
+     7
+    ],
+    [
+     "couloir",
+     154,
+     160,
+     7
+    ],
+    [
+     "couloir",
+     164,
+     166,
+     3
+    ],
+    [
+     "couloir",
+     173,
+     176,
+     4
+    ],
+    [
+     "couloir",
+     200,
+     200,
+     1
+    ],
+    [
+     "couloir",
+     215,
+     217,
+     3
+    ],
+    [
+     "couloir",
+     219,
+     221,
+     3
+    ],
+    [
+     "couloir",
+     228,
+     228,
+     1
+    ],
+    [
+     "couloir",
+     230,
+     236,
+     7
+    ],
+    [
+     "couloir",
+     238,
+     240,
+     3
+    ],
+    [
+     "couloir",
+     245,
+     249,
+     5
+    ],
+    [
+     "couloir",
+     263,
+     268,
+     6
+    ],
+    [
+     "couloir",
+     280,
+     283,
+     4
+    ],
+    [
+     "couloir",
+     286,
+     286,
+     1
+    ],
+    [
+     "couloir",
+     294,
+     296,
+     3
+    ],
+    [
+     "couloir",
+     304,
+     306,
+     3
+    ],
+    [
+     "couloir",
+     311,
+     312,
+     2
+    ],
+    [
+     "couloir",
+     316,
+     316,
+     1
+    ],
+    [
+     "couloir",
+     329,
+     335,
+     7
+    ],
+    [
+     "couloir",
+     356,
+     358,
+     3
+    ],
+    [
+     "couloir",
+     361,
+     367,
+     7
+    ],
+    [
+     "couloir",
+     390,
+     390,
+     1
+    ]
+   ],
+   "nb_fenetres": 45
+  },
+  {
+   "jeu": "ka59",
+   "graine": 2,
+   "niveaux": 0,
+   "etat": "ACTION_CAP",
+   "niveaux_actions": [],
+   "gagnes_a_l_action": [],
+   "attribution_gain": [],
+   "actions_competences": 207,
+   "actions_cerveau": 289,
+   "competences": {
+    "couloir": {
+     "activations": 29,
+     "succes": 0,
+     "actions": 110,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "sonde_clics": {
+     "activations": 1,
+     "succes": 0,
+     "actions": 13,
+     "erreurs": 0,
+     "delais": 0
+    },
+    "tour_objets": {
+     "activations": 2,
+     "succes": 0,
+     "actions": 84,
+     "erreurs": 0,
+     "delais": 0
+    }
+   },
+   "fenetres": [
+    [
+     "sonde_clics",
+     0,
+     12,
+     13
+    ],
+    [
+     "couloir",
+     16,
+     18,
+     3
+    ],
+    [
+     "couloir",
+     20,
+     27,
+     8
+    ],
+    [
+     "couloir",
+     29,
+     35,
+     7
+    ],
+    [
+     "couloir",
+     39,
+     41,
+     3
+    ],
+    [
+     "couloir",
+     43,
+     46,
+     4
+    ],
+    [
+     "couloir",
+     49,
+     51,
+     3
+    ],
+    [
+     "couloir",
+     60,
+     62,
+     3
+    ],
+    [
+     "couloir",
+     66,
+     69,
+     4
+    ],
+    [
+     "couloir",
+     72,
+     75,
+     4
+    ],
+    [
+     "couloir",
+     80,
+     85,
+     6
+    ],
+    [
+     "couloir",
+     103,
+     105,
+     3
+    ],
+    [
+     "couloir",
+     107,
+     109,
+     3
+    ],
+    [
+     "couloir",
+     112,
+     115,
+     4
+    ],
+    [
+     "couloir",
+     125,
+     125,
+     1
+    ],
+    [
+     "couloir",
+     134,
+     139,
+     6
+    ],
+    [
+     "couloir",
+     143,
+     146,
+     4
+    ],
+    [
+     "couloir",
+     151,
+     154,
+     4
+    ],
+    [
+     "couloir",
+     200,
+     200,
+     1
+    ],
+    [
+     "couloir",
+     203,
+     207,
+     5
+    ],
+    [
+     "couloir",
+     217,
+     219,
+     3
+    ],
+    [
+     "couloir",
+     233,
+     233,
+     1
+    ],
+    [
+     "couloir",
+     240,
+     243,
+     4
+    ],
+    [
+     "couloir",
+     306,
+     306,
+     1
+    ],
+    [
+     "couloir",
+     313,
+     317,
+     5
+    ],
+    [
+     "couloir",
+     322,
+     323,
+     2
+    ],
+    [
+     "couloir",
+     352,
+     354,
+     3
+    ],
+    [
+     "couloir",
+     359,
+     365,
+     7
+    ],
+    [
+     "couloir",
+     369,
+     372,
+     4
+    ],
+    [
+     "tour_objets",
+     405,
+     464,
+     60
+    ],
+    [
+     "couloir",
+     471,
+     474,
+     4
+    ],
+    [
+     "tour_objets",
+     476,
+     499,
+     24
+    ]
+   ],
+   "nb_fenetres": 32
+  }
+ ]
+}
