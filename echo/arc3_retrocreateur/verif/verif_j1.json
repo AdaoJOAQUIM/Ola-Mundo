@@ -1,0 +1,50 @@
+{
+ "commit_verifie": "f9bd261",
+ "worktree": "HEAD=f9bd261, arbre propre (verifie)",
+ "verdict_global": "revendications reproduites; reserves methodologiques sur la metrique 'programme exact' et sur les a priori de rendu",
+ "1_tests": {"passes": 10, "total": 10, "ok": true},
+ "2_isolation": {
+  "import_mondes_arc3_dans_retro": false,
+  "test_isolation_statique": "passe", "test_isolation_execution": "passe",
+  "obs_lues_par_agent": ["frame[-1]", "available_actions", "levels_completed", "actions_taken", "(terminal via garde)"],
+  "game_id_lu_par_agent": false,
+  "test_aucun_identifiant_de_jeu": "passe", "test_garde_de_socket": "passe", "ok": true
+ },
+ "3_protocole": {
+  "graines_j1": {"min": 9000000, "max": 9000213, "mondes": 300, "uniques": 300},
+  "graines_dev_max_observee": 154, "graines_dev_autorisees": "1..2999",
+  "disjointes": true,
+  "mondes_avec_meca_scellee": 0, "mondes_but_cibles": 0,
+  "metadonnees_regenerees_identiques_aux_runs": true,
+  "reserve": "j1_cerveau_500.json (21:16) et j1_v1_500.json (21:18) ont ete joues sur les graines J1 avant les derniers commits de l'agent (d021ac7, 21:48); ce sont d'autres agents, aucune fuite demontree; le premier run retro sur J1 date de 21:52, apres le gel; retro/ inchange entre d021ac7 et f9bd261",
+  "ok": true
+ },
+ "4_rejeu": {
+  "echantillon": 60, "methode": "random.Random(7).sample(liste ordonnee d=1,2,3 de choisir_seeds.tout(), 60)", "budget": 500,
+  "differences_niveaux": 0, "differences_exact": 0, "differences_actions": 0,
+  "niveaux_resolus_echantillon": "297/347", "exact_echantillon": "45/60",
+  "mondes_garde_cpu_dans_echantillon": 1,
+  "controle_supplementaire_6_mondes_garde_cpu": {"identiques_niveaux_exact_actions": 6, "difference_niveaux_actions_par_niveau": 1, "monde": "9000104 d3", "detail": "meme total 500 actions, 3 niveaux, inexact; repartition par niveau differente; compteur cpu_depasse 291 vs 298"},
+  "deterministe": "oui sauf garde de temps CPU (non deterministe par construction)",
+  "ok": true
+ },
+ "5_metrique": {
+  "agregats_recalcules_depuis_runs": {"niveaux": "1367/1667", "exact": "227/300", "actions_sur_optimum": "18949/11577=1.637"},
+  "optimum": "oracle A* admissible du generateur (generateur.oracle, lv.opt), jamais vu par l'agent; 0 niveau resolu en moins d'actions que l'optimum",
+  "exact_definition_reelle": "40 sequences de 1 a 4 actions depuis des etats visites; 1 erreur = inexact; verite = frames du vrai env",
+  "reserves": [
+   "la comparaison porte sur l'etat percu par l'agent (types, position, couleur avatar) apres sa propre perception, pas sur l'etat interne du vrai env",
+   "ne compare pas le contenu cache sous l'avatar ni l'energie restante",
+   "etats de depart = etats visites par l'agent (biais vers le explore)",
+   "la fonction de validation est celle de l'agent (pol.valider), appelee par l'evaluateur",
+   "runs/ est ignore par git (.gitignore): les resultats par monde ne sont pas dans le commit, seuls les agregats le sont"
+  ],
+  "ok_avec_reserves": true
+ },
+ "6_a_priori_rendu": {
+  "plateau_carre_centre": "lie au generateur (n=(64-2px)//c, origine du reseau); risque eleve sur vrais jeux",
+  "jauges_fines_ignorees": "partiellement generique (bande unie >=20px, <=3 lignes) mais risque moyen: murs/lignes fines et compteur d'energie",
+  "dependance_plus_large": "le reseau regulier de cases lui-meme est une hypothese du generateur",
+  "ablation": "non realisee (evaluation seule)"
+ }
+}
