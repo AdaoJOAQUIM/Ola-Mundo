@@ -78,6 +78,8 @@ class Modele:
         self.avc_change = False
         self.win_nonobs = set()
         self.undo = None
+        self.select = False
+        self.selwin = False
 
     # ------------------------------------------------------------ construction
     def construire(self, choix=None):
@@ -88,6 +90,7 @@ class Modele:
         p.clk = dict(self.clk)
         p.grav = self.grav
         p.undo = self.undo
+        p.select, p.selwin = self.select, self.selwin
         for cle, cr in self.creneaux.items():
             nom = cr.alts[(choix or {}).get(cle, cr.choix)][0]
             self._appliquer(p, cle, nom)
@@ -342,6 +345,9 @@ class Modele:
 
     def _expl_mort(self, ev):
         name, _ = ev.act
+        if name == "ACTION6":
+            self.stats["energie"] = self.stats.get("energie", 0) + 1
+            return False
         d = self.dirmap.get(name)
         if d is None:
             return False
@@ -514,6 +520,8 @@ class Modele:
         if p is None or p < 0:
             return False
         if ev.flag == 1:
+            if s0[1] >= 0:
+                return False          # victoire par clic avec l'avatar posé sur la sortie : pas une règle de panneau
             if ev not in self.win_click:
                 self.win_click.append(ev)
                 return True

@@ -28,6 +28,9 @@ class Geo:
         self.nb = nb
         self.dirs = ((-1, 0), (1, 0), (0, -1), (0, 1))
         self.cle = (net.cle(), R, C, gx0, gy0, self.ignore, self.outer)
+        self.exits = {}                           # mondes à sélection : case de sortie -> couleur
+        self.exit_type = {}                       # case de sortie -> type brut au début du niveau
+        self.exit_open = set()                    # types de sortie déverrouillée (apparence dérivée B)
         self.nm = None                            # cycles de clic propres à ce niveau (type -> type suivant)
         self.cap = None                           # capacité d'énergie estimée du niveau (actions effectives par vie)
 
@@ -48,6 +51,8 @@ class Scene:
         self.geo = None
         self._cache = {}
         self.sig_av = {}           # id brut -> (couleur, classe) de la partie avatar, ou None
+        self.sel_candidat = None
+        self.sel_part = None       # (couleur, classe) du contour qui marque la pièce sélectionnée (mondes à sélection)
         self.av_parts = set()      # (couleur, classe) reconnues comme avatar (variantes : fusion avec une case de même couleur)
 
     # ------------------------------------------------------------ niveau
@@ -208,4 +213,11 @@ class Scene:
             return []
         dest = {q for _, _, q in res}
         tete = [x for x in res if x[1] not in dest]
-        return tete or res
+        res = tete or res
+        # un contour de case entière qui se déplace avec l'avatar : marque de sélection, pas l'avatar
+        glyphes = [x for x in res if not (x[0][1] and x[0][1][-1] == 1)]
+        bords = [x for x in res if x[0][1] and x[0][1][-1] == 1]
+        if glyphes and bords:
+            self.sel_candidat = bords[0][0]
+            return glyphes
+        return res

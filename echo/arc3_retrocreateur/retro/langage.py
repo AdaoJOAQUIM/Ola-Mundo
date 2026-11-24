@@ -40,6 +40,8 @@ class Prog:
         self.win = None
         self.grav = None
         self.undo = None
+        self.select = False        # clic sur une pièce non sélectionnée (M < -1) : elle devient l'avatar
+        self.selwin = False        # victoire : chaque case de sortie porte la pièce de sa couleur
 
     def copie(self):
         p = Prog(self.types)
@@ -49,6 +51,7 @@ class Prog:
         p.clk = dict(self.clk)
         p.sync = list(self.sync)
         p.win, p.grav, p.undo = self.win, self.grav, self.undo
+        p.select, p.selwin = self.select, self.selwin
         return p
 
     def taille(self):
@@ -146,7 +149,7 @@ class Prog:
             if q < 0 or q in geo.ignore:
                 return None
             T = M[q]
-            if T in self.solid:
+            if T in self.solid or T < -1:
                 return None
             Ml = list(M)
             Ml[pos] = self.revele(tor)
@@ -193,12 +196,24 @@ class Prog:
                 Ml = self.faire_sync(Ml, geo)
             if flag == 0 and w is not None and w[0] == "cond" and self.conds(w[1], Ml, geo):
                 flag = 1
+            if flag == 0 and self.selwin and self.toutes_sorties(geo, Ml, q, avc):
+                flag = 1
             return (tuple(Ml), q, avc, T0), flag, T
         if name == "ACTION6":
             p = arg
             if p is None or p < 0 or p >= geo.N or p in geo.ignore:
                 return None
             T = M[p]
+            if self.select and T < -1 and pos >= 0:
+                Ml = list(M)
+                Ml[pos] = -(2 + avc)
+                avc2 = -T - 2
+                Ml[p] = -1
+                tor2 = geo.exit_type.get(p, 0)
+                if self.sync:
+                    Ml = self.faire_sync(Ml, geo)
+                flag = 1 if (self.selwin and self.toutes_sorties(geo, Ml, p, avc2)) else 0
+                return (tuple(Ml), p, avc2, tor2), flag, T
             ck = self.clk.get(T)
             if ck is None:
                 return None
@@ -235,8 +250,31 @@ class Prog:
             w = self.win
             if w is not None and w[0] == "cond" and self.conds(w[1], Ml, geo):
                 flag = 1
+            elif w is not None and w[0] == "enter" and pos >= 0 and self.sync:
+                # l'avatar est posé sur une sortie verrouillée que ce clic vient d'ouvrir : victoire
+                tt = tor
+                for A, B, ats in self.sync:
+                    if tt == A and self.conds(ats, Ml, geo):
+                        tt = B
+                if tt in w[1]:
+                    flag = 1
             return (tuple(Ml), pos, avc, tor), flag, T
         return None
+
+    def toutes_sorties(self, geo, Ml, pos, avc):
+        """Chaque case de sortie porte la pièce de sa couleur ; sorties déverrouillées (conditions des apparences dérivées)."""
+        if not geo.exits:
+            return False
+        for e, col in geo.exits.items():
+            if e == pos:
+                if avc != col:
+                    return False
+            elif Ml[e] != -(2 + col):
+                return False
+        for A, B, ats in self.sync:
+            if B in geo.exit_open and not self.conds(ats, Ml, geo):
+                return False
+        return True
 
     def pas_u(self, geo, s, u, act):
         """Pas avec minuterie d'énergie : u = nombre d'actions effectives déjà dépensées dans la vie courante."""

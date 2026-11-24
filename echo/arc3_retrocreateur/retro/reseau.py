@@ -92,7 +92,8 @@ def _classe(m, c):
     # fraction des pixels sur la croix médiane : distingue croix et diamant
     mid = m[cm, :].sum() + m[:, cm].sum() - int(m[cm, cm])
     ax = int(mid >= 0.8 * m.sum())
-    return (e, cen, cor, nc, ax)
+    big = int(w >= c or h >= c)          # contour de case entière (marque de sélection, murs)
+    return (e, cen, cor, nc, ax, big)
 
 
 def signature_case(bloc, bg):

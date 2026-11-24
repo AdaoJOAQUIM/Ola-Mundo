@@ -3,18 +3,24 @@ from __future__ import annotations
 
 import heapq
 import itertools
+import time
 from collections import deque
 
 
-def chercher(prog, geo, s0, but, actions=None, cout=None, cap=80000, interdit=None):
+def chercher(prog, geo, s0, but, actions=None, cout=None, cap=60000, interdit=None, duree=0.6):
     """Plus court chemin (en coût) de s0 à un état satisfaisant `but(s2, flag, tin, act)` ; None si introuvable.
     cout(tin) -> coût du pas (défaut 1) ; interdit : types traités comme solides pour ce plan.
     Renvoie (liste d'actions, s_final, flag, tin)."""
     if actions is None:
         mv = [(n, None) for n in prog.dirmap]
-        acts_f = lambda s: mv
+        if prog.select:
+            def acts_f(s):
+                return mv + [("ACTION6", p) for p, t in enumerate(s[0]) if t < -1]
+        else:
+            acts_f = lambda s: mv
     else:
         acts_f = lambda s: actions
+    limite = time.process_time() + duree
     sol0 = None
     if interdit:
         sol0 = prog.solid
@@ -45,7 +51,7 @@ def chercher(prog, geo, s0, but, actions=None, cout=None, cap=80000, interdit=No
                         vu[s2] = (s, act)
                         q.append(s2)
                 n += 1
-                if n > cap:
+                if n > cap or (n & 255 == 0 and time.process_time() > limite):
                     return None
             return None
         cpt = itertools.count()
@@ -67,7 +73,7 @@ def chercher(prog, geo, s0, but, actions=None, cout=None, cap=80000, interdit=No
             if c > g.get(s, 1 << 30):
                 continue
             n += 1
-            if n > cap:
+            if n > cap or (n & 255 == 0 and time.process_time() > limite):
                 return None
             for act in acts_f(s):
                 r = prog.pas(geo, s, act)

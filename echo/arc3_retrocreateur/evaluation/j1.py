@@ -145,18 +145,25 @@ def main():
     ap.add_argument("--n", type=int, default=100, help="mondes par difficulté")
     ap.add_argument("--valider", action="store_true")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--reprise", default=None, help="résultats du budget 500 : les mondes déjà terminés (WIN) sont repris tels quels (agent déterministe)")
     ap.add_argument("--dev", action="store_true", help="graines de développement (1..2999) au lieu des 300 mondes J1")
     a = ap.parse_args()
     seeds = {d: choisir(1, d, a.n) for d in (1, 2, 3)} if a.dev else tout()
     if a.dev:
         assert all(max(v) < 3000 for v in seeds.values())
-    taches = []
+    taches, repris = [], {}
+    if a.reprise:
+        for r in json.loads(Path(a.reprise).read_text()):
+            if r["etat"] == "WIN":
+                repris[(r["seed"], r["difficulte"])] = r
     for d in (1, 2, 3):
         for s in seeds[d][:a.n]:
-            taches.append((a.agent, s, d, a.budget, a.valider))
+            if (s, d) not in repris:
+                taches.append((a.agent, s, d, a.budget, a.valider))
     t0 = time.time()
     with get_context("fork").Pool(a.procs) as p:
         out = p.map(un_monde, taches, chunksize=1)
+    out = out + list(repris.values())
     niv = sum(r["niveaux"] for r in out)
     tot = sum(r["niveaux_total"] for r in out)
     print(a.agent, a.budget, "niveaux", niv, "/", tot, round(niv / tot, 4), "temps", round(time.time() - t0))

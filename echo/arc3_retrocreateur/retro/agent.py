@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import math
 import random
+import time
 
 import numpy as np
 
@@ -30,6 +31,8 @@ def _act_dict(act, geo):
 class RetroCreateur:
     def __init__(self, graine=0, options=None):
         self.rng = random.Random(graine)
+        self.t0 = time.process_time()
+        self.cpu_max = float((options or {}).get('cpu_max', 60.0))
         self.opt = dict(options or {})
         import os, json as _json
         if os.environ.get('RETRO_OPTS'):
@@ -68,6 +71,10 @@ class RetroCreateur:
         self.cap_niveau = {}
         self.lv_cur = 0
         self.n_energie = 0
+        self.plan_cache = None
+        self.others = {}        # mondes à sélection : pièces non sélectionnées (case -> couleur)
+        self.sel_amb = {}       # couleur -> deux cases (pièce ou sortie ?) à départager par un clic
+        self.sel_test = None
 
     # ================================================================== perception
     def _niveau(self, frame):
@@ -97,8 +104,52 @@ class RetroCreateur:
         self.guess = None
         self.prev_snap = None
         self.prev_act = None
+        self.others, self.sel_amb, self.sel_test = {}, {}, None
+        if self.scene.sel_part is not None:
+            self._ident_selection()
         self.snap = self._construire_snap(self.raw, None)
         return True
+
+    def _ident_selection(self):
+        """Mondes à sélection : sorties (anneaux ou cases de même couleur) et pièces non sélectionnées du niveau."""
+        sc, geo, raw = self.scene, self.geo, self.raw
+        inv = self.types.inv
+        sel_cells = [p for p in range(geo.N) if p not in geo.ignore and sc.sel_part in inv[raw[p]]]
+        pos = sel_cells[0] if sel_cells else -1
+        cands, autres = {}, {}
+        for p in range(geo.N):
+            if p in geo.ignore or p == pos:
+                continue
+            sg = inv[raw[p]]
+            if len(sg) != 1:
+                continue
+            col, cl = sg[0]
+            if cl == sc.av_class:
+                cands.setdefault(col, []).append(p)
+            else:
+                autres.setdefault(col, []).append(p)
+        avc = None
+        if pos >= 0:
+            for col, cl in inv[raw[pos]]:
+                if cl == sc.av_class:
+                    avc = col
+        geo.exits, geo.exit_type = {}, {}
+        # couleurs de pièces : celle de l'avatar et celles des cases de même forme que lui (hors fenêtre de panneau)
+        for col in set(cands) | ({avc} if avc is not None else set()):
+            sorties = autres.get(col, [])
+            if col == avc:
+                ex = sorties or cands.get(col, [])
+                if len(ex) == 1:
+                    geo.exits[ex[0]] = col
+                continue
+            if len(cands.get(col, [])) == 1 and len(sorties) == 1:
+                geo.exits[sorties[0]] = col
+                self.others[cands[col][0]] = col
+            elif len(cands.get(col, [])) == 2 and not sorties:
+                self.sel_amb[col] = list(cands[col])
+        for e in geo.exits:
+            geo.exit_type[e] = raw[e]
+        self.modele.prog = self.modele.construire()
 
     def _construire_snap(self, raw, prev, geo=None, raw_prev=None, M_ref=None):
         geo = geo or self.geo
@@ -109,6 +160,30 @@ class RetroCreateur:
         for i in geo.ignore:
             M[i] = M_ref[i]
         pos, avc, tor = -1, 0, 0
+        if sc.sel_part is not None and sc.av_class is not None:
+            inv = self.types.inv
+            cells = [p for p in range(geo.N) if p not in geo.ignore and sc.sel_part in inv[raw[p]]]
+            if cells and prev is not None and prev[1] >= 0:
+                pr, pc = divmod(prev[1], geo.C)
+                cells.sort(key=lambda p: abs(p // geo.C - pr) + abs(p % geo.C - pc))
+            if cells:
+                pos = cells[0]
+                gl = [x for x in inv[raw[pos]] if x[1] == sc.av_class]
+                if gl:
+                    avc = gl[0][0]
+                    sc.ajouter_couleur_av(avc)
+                elif prev is not None:
+                    avc = prev[2]
+                if prev is not None and prev[1] == pos:
+                    tor = prev[3]
+                elif pos in geo.exits:
+                    tor = geo.exit_type.get(pos, 0)
+                elif prev is not None and prev[1] >= 0 and prev[0][pos] > -1:
+                    tor = prev[0][pos]
+                M[pos] = -1
+            for cell, col in self.others.items():
+                M[cell] = -(2 + col)
+            return (tuple(M), pos, avc, tor)
         if sc.av_class is not None:
             cand = sc.cellules_avatar(raw)
             if prev is not None and prev[1] >= 0:
@@ -173,6 +248,9 @@ class RetroCreateur:
         taken = obs["actions_taken"]
         if self.utilise_v1:
             return self._v1(obs)
+        if time.process_time() - self.t0 > self.cpu_max:           # garde de temps : au-delà, actions aléatoires sûres
+            self.stats["cpu_depasse"] = self.stats.get("cpu_depasse", 0) + 1
+            return self._act_de_secours(obs)
         premier = self.geo is None and self.prev_act is None and self.snap is None and self.raw is None
         try:
             self.lv_cur = lv
@@ -233,6 +311,12 @@ class RetroCreateur:
                 self.scene.av_colors = [col]
                 self.scene.reset_av()
                 part = (col, cl)
+                if self.scene.sel_candidat is not None:
+                    self.scene.sel_part = self.scene.sel_candidat
+                    self.modele.select = True
+                    self.modele.selwin = True
+                    self.modele.prog = self.modele.construire()
+                    self._ident_selection()
                 s0M = list(self.raw)
                 s0M[p] = -1
                 tor0 = self.scene.reste(self.raw[p], part)
@@ -240,8 +324,38 @@ class RetroCreateur:
                 self.prev_snap = prev
                 self.snap = prev
         self.raw_prev = self.raw
+        sautee = False
+        if self.scene.sel_part is not None and act[0] == "ACTION6" and prev[1] >= 0:
+            inv = self.types.inv
+            cs = [p for p in range(geo0.N) if p not in geo0.ignore and self.scene.sel_part in inv[raw[p]]]
+            p_new = cs[0] if cs else -1
+            if self.sel_test is not None and act[1] == self.sel_test[1]:
+                col, u, v = self.sel_test
+                self.sel_test = None
+                self.sel_amb.pop(col, None)
+                if p_new == u:                    # u était une pièce : la sélection a changé
+                    self.others[prev[1]] = prev[2]
+                    self.others.pop(u, None)
+                    geo0.exits[v] = col
+                    geo0.exit_type[v] = raw[v]
+                    self.modele.select = True
+                else:                             # u était la sortie
+                    geo0.exits[u] = col
+                    geo0.exit_type[u] = raw[u]
+                    self.others[v] = col
+                sautee = True
+            elif p_new >= 0 and p_new != prev[1]:
+                self.others.pop(p_new, None)
+                self.others[prev[1]] = prev[2]
         new = self._construire_snap(raw, prev)
         self.raw = raw
+        if sautee:
+            self.snap = new
+            self.frame = frame
+            self.pile.append(prev)
+            self.used += 1
+            self.modele.prog = self.modele.construire()
+            return
         if act[0] == "ACTION7":
             if self.pile and self.modele.undo is None:
                 ok = new[:3] == self.pile[-1][:3]
@@ -383,14 +497,48 @@ class RetroCreateur:
             if inconnues and (s[1] >= 0 or self.scene.av_class is None) and len(prog.dirmap) < 3:
                 # essaie l'action la moins tentée
                 a = min(inconnues, key=lambda n: (self.essais.get(n, 0), n))
+                # une action inconnue déjà essayée sans effet : on se déplace d'abord avec une action connue
+                if self.essais.get(a, 0) >= 1 and prog.dirmap and self.essais.get("sep", 0) % 2 == 0:
+                    self.essais["sep"] = self.essais.get("sep", 0) + 1
+                    k = self.rng.choice(sorted(prog.dirmap))
+                    return (k, None)
+                self.essais["sep"] = self.essais.get("sep", 0) + 1
                 self.essais[a] = self.essais.get(a, 0) + 1
                 if self.essais[a] <= 6:
                     return (a, None)
+        # 1ter. mondes à sélection : départager pièce et sortie de même couleur par un clic
+        if self.sel_amb and 6 in self.avail and s[1] >= 0:
+            col = sorted(self.sel_amb)[0]
+            u, v = self.sel_amb[col]
+            self.sel_test = (col, u, v)
+            return ("ACTION6", u)
+        geo.exit_open = {B for _, B, _ in prog.sync}
         # 1bis. une action d'annulation est-elle disponible ? un seul essai, après un coup effectif
-        if 7 in self.avail and mo.undo is None and self.pile and not self.opt.get("sans_undo"):
+        if 7 in self.avail and mo.undo is None and self.pile and not self.opt.get("sans_undo") and self.scene.sel_part is None:
             return ("ACTION7", None)
         # 2. plan vers la victoire dans le programme MAP
+        # plan mis en cache : on le suit tant que les états perçus sont ceux que le programme prédisait
+        pc = self.plan_cache
+        if pc is not None:
+            i = pc["i"]
+            if pc["prog"] is prog and pc["geo"] is geo and i < len(pc["acts"]) and s[:3] == pc["exp"][i][:3]:
+                pc["i"] += 1
+                self.stats["plans"] += 1
+                return pc["acts"][i]
+            self.plan_cache = None
         plan = self._plan_victoire(prog, geo, s)
+        if plan and len(plan) > 1:
+            exp, sx = [], s
+            for act in plan:
+                r = prog.pas(geo, sx, act)
+                if r is None:
+                    exp = None
+                    break
+                sx = r[0]
+                exp.append(sx)
+            if exp is not None:
+                self.plan_cache = {"prog": prog, "geo": geo, "acts": plan, "exp": [s] + exp[:-1] + [sx], "i": 1}
+                # exp[i] = état attendu avant l'action i
         if plan:
             # curiosité bon marché : tester un type inconnu adjacent, ou ré-entrer un déclencheur ambigu (un coup de plus)
             rest = (geo.cap - self.used) if geo.cap else None
@@ -443,6 +591,8 @@ class RetroCreateur:
     # ------------------------------------------------------------ plan
     def _plan_victoire(self, prog, geo, s):
         w = prog.win
+        if w is None and prog.selwin and geo.exits and s[1] >= 0:
+            w = ("selwin",)
         if w is None and prog.clk and s[1] < 0:
             w = self._deviner_victoire(prog, s)
             if w is not None:
@@ -504,11 +654,19 @@ class RetroCreateur:
         out.sort(key=lambda x: x[0])
         if self.guess is not None and self.guess not in self.guess_excl:
             return ("cond", (self.guess,))
+        # a priori du créateur : le motif de départ est le motif but brouillé par peu de coups -> on vise l'atome
+        # qui demande le moins de clics (à égalité : motif égal à la référence d'abord)
+        meilleur, mc = None, 10 ** 9
         for _, a in out:
             if a in self.guess_excl:
                 continue
-            self.guess = a
-            return ("cond", (a,))
+            cl = clics_pour(prog, self.geo, s, [a])
+            c = len(cl) if cl is not None else 10 ** 8
+            if c < mc:
+                meilleur, mc = a, c
+        if meilleur is not None:
+            self.guess = meilleur
+            return ("cond", (meilleur,))
         return None
 
     # ------------------------------------------------------------ expériences
