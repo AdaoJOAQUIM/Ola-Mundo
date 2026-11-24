@@ -1,0 +1,56 @@
+{
+ "reserve": {
+  "pct": 92.6412511754919,
+  "ppl": 2.480907678604126,
+  "ratio_ppl": 1.0053605737783953,
+  "pct_secteur": 88.96187676323785
+ },
+ "reference_ppl": 2.467679500579834,
+ "candidates": {
+  "cand_1": {
+   "pct": 91.45982530381944,
+   "pct_secteur": 87.88172403971355,
+   "gain_pts": 1.1814258716724595,
+   "ppl": 2.4863219261169434,
+   "ratio_ppl": 1.0075546380851845,
+   "accord": 0.9921875,
+   "c_octets": false,
+   "c_ppl": true,
+   "c_accord": true,
+   "faults": 0,
+   "passe": false,
+   "sha": "02aace4fee252fe350e761ff17f45300cc98fe567fbb5151cdba634cb34d85e2"
+  },
+  "cand_2": {
+   "pct": 87.8512771041305,
+   "pct_secteur": 82.70510920771846,
+   "gain_pts": 4.789974071361399,
+   "ppl": 2.5364418029785156,
+   "ratio_ppl": 1.0278651674103239,
+   "accord": 0.95654296875,
+   "c_octets": true,
+   "c_ppl": false,
+   "c_accord": true,
+   "faults": 0,
+   "passe": false,
+   "sha": "600e926f86ba68fc092105369bae800ab2377e0b5a6c84d7c3cce8fcdd7bc65b"
+  },
+  "cand_3": {
+   "pct": 93.67039998372395,
+   "pct_secteur": 93.67039998372395,
+   "gain_pts": -1.0291488082320512,
+   "ppl": 2.5790276527404785,
+   "ratio_ppl": 1.0451226150456252,
+   "accord": 0.95068359375,
+   "c_octets": false,
+   "c_ppl": false,
+   "c_accord": true,
+   "faults": 0,
+   "passe": false,
+   "sha": "2f0511f168d7e1283af9890476cacf0078e90358a895b55d4d88ef3d7354814a"
+  }
+ },
+ "accepte": null,
+ "duree_s": 1004.7720239162445,
+ "empreinte_juge": "86a0339752d76c3783ed0d65a5d21107a6ce346c32c906837be186513b56f7ab"
+}

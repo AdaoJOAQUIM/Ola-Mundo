@@ -1,0 +1,19 @@
+{
+ "scores": {
+  "base4": {
+   "moyenne": 0.0,
+   "ecart_type": 0.049997500187484376,
+   "p_pos": 0.5
+  },
+  "lod3_10": {
+   "moyenne": 7.3577441033340945,
+   "ecart_type": 0.05842393333281694,
+   "p_pos": 1.0
+  }
+ },
+ "elagues": [],
+ "reserve": [
+  "lod3_10.py",
+  "base4.py"
+ ]
+}

@@ -24,6 +24,8 @@ VARIANTES = {
     "sans_graphe": {"graphe": False},
     "sans_theorie": {"theorie": False},
     "sans_valeur": {"valeur": False},
+    "nette2": {"nette": 2.0},
+    "nette4": {"nette": 4.0},
 }
 
 
@@ -52,7 +54,7 @@ def _un(args):
         if pretrain and variante != "sans_effet":
             from effet import ModeleEffet
             import torch
-            modele = ModeleEffet(graine)
+            modele = ModeleEffet(graine, threads=1)
             modele.charger(torch.load(pretrain))
         ag = Scientifique2(graine, dict(VARIANTES[variante]), modele)
     res = adapter.jouer(env, ag)

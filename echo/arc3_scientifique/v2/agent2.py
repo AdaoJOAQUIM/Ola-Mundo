@@ -71,10 +71,10 @@ def _dict(arc):
 class Scientifique2:
     def __init__(self, graine=0, options=None, modele=None):
         self.opt = {"effet": True, "graphe": True, "theorie": True, "valeur": True, "macro": True,
-                    "periode": PERIODE_ENTRAIN, "th_alloc": 120, "th_bloc": 80}
+                    "periode": PERIODE_ENTRAIN, "nette": 1.0, "th_alloc": 120, "th_bloc": 80}
         self.opt.update(options or {})
         self.rng = np.random.default_rng(graine)
-        self.effet = (modele if modele is not None else ModeleEffet(graine)) if self.opt["effet"] else None
+        self.effet = (modele if modele is not None else ModeleEffet(graine, threads=1)) if self.opt["effet"] else None
         self.th = Theorie(graine) if self.opt["theorie"] else None
         self.val = buts.ModeleValeur(self.opt["valeur"])
         self.hud = percep.Hud()
@@ -414,7 +414,7 @@ class Scientifique2:
             return None
         if self.effet is None:
             return libres[int(self.rng.integers(len(libres)))]
-        p = np.array([pr[a] for a in libres]) + 0.02
+        p = (np.array([pr[a] for a in libres]) + 0.02) ** self.opt["nette"]
         p /= p.sum()
         return libres[int(self.rng.choice(len(libres), p=p))]
 

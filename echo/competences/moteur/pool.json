@@ -1,13 +1,35 @@
 {
  "competences": [
+  "lod3_10.py",
   "base4.py"
  ],
  "obs": {
   "base4": {
    "fichier": "base4.py",
-   "obs": []
+   "obs": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "lod3_10": {
+   "fichier": "lod3_10.py",
+   "obs": [
+    7.251880787037037,
+    7.284884982638889,
+    7.386836299189815,
+    7.511393229166667
+   ]
   }
  },
- "lignee": [],
+ "lignee": [
+  {
+   "tour": 1,
+   "accepte": "lod3_10",
+   "fichier": "lod3_10.py",
+   "verdict": "tours/tour_1/verdict.json"
+  }
+ ],
  "elagues": []
 }

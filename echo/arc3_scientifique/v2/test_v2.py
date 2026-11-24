@@ -13,7 +13,7 @@ import chemin  # noqa: E402,F401
 from graphe import Graphe, RESET, hacher  # noqa: E402
 
 IDS = "ar25 bp35 cd82 cn04 dc22 ft09 g50t ka59 lf52 lp85 ls20 m0r0 r11l re86 s5i5 sb26 sc25 sk48 sp80 su15 tn36 tr87 tu93 vc33 wa30".split()
-CODE = ["agent2.py", "effet.py", "graphe.py", "buts.py", "run2.py", "chemin.py", "pretrain.py"]
+CODE = ["bibliotheque.py", "campagne.py", "adaptateur_monde.py", "adaptateur_large.py", "agrege.py", "agent2.py", "effet.py", "graphe.py", "buts.py", "run2.py", "chemin.py", "pretrain.py"]
 
 
 def test_aucun_id_de_jeu_dans_le_code():
@@ -216,3 +216,11 @@ def test_valeur_apprise_et_motif_de_reference():
     f[30:36, 30:36] = g
     p = buts.trouver_paires(f, 0, None)
     assert p and p[0][0] > 0.9
+
+
+def test_facade_bibliotheque():
+    import bibliotheque as b
+    for nom in ("Graphe", "ModeleEffet", "ModeleValeur", "Racine", "analyser", "caracteristiques", "trouver_paires", "hacher", "RESET"):
+        assert hasattr(b, nom)
+    m1, m2 = b.ModeleEffet(0), b.ModeleEffet(0)
+    assert m1.ex is not m2.ex and b.Graphe().noeuds is not b.Graphe().noeuds

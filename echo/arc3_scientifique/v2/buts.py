@@ -14,6 +14,7 @@ from collections import deque
 
 import numpy as np
 
+import chemin  # noqa: F401  (rend `percep` de v1 importable)
 import percep
 
 H = W = 64

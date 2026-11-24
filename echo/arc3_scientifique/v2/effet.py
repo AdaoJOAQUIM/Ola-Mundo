@@ -11,7 +11,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-torch.set_num_threads(1)
 H = W = 64
 
 
@@ -40,7 +39,9 @@ def onehot(frames: np.ndarray) -> torch.Tensor:
 
 
 class ModeleEffet:
-    def __init__(self, graine=0, c=16, lr=2e-3):
+    def __init__(self, graine=0, c=16, lr=2e-3, threads=None):
+        if threads is not None:
+            torch.set_num_threads(int(threads))
         torch.manual_seed(graine)
         self.rng = np.random.default_rng(graine)
         self.net = Reseau(c)
