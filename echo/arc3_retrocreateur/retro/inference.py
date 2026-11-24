@@ -250,8 +250,13 @@ class Modele:
 
     def _marquer_explore(self, ev):
         name = ev.act[0]
+        if name == "ACTION6":
+            p = ev.act[1]
+            if p is not None and p >= 0 and ev.s0[0][p] > 0:
+                self.explore.add(ev.s0[0][p])
+            return
         d = self.dirmap.get(name)
-        if d is None or ev.s0[1] < 0 or name == "ACTION6":
+        if d is None or ev.s0[1] < 0:
             return
         q = ev.geo.nb[ev.s0[1]][d]
         if q < 0 or q in ev.geo.ignore:
@@ -364,7 +369,9 @@ class Modele:
                 self.explore.add(T0)
                 changed = True
             elif T0 == 0 and q in geo.outer:
-                changed = False
+                geo.ignore = geo.ignore | {q}
+                geo.outer = geo.outer - {q}
+                changed = True
             return changed
         if pos1 != q:
             return False
