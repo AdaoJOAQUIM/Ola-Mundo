@@ -12,10 +12,11 @@ import numpy as np
 
 from .inference import Ev, Modele
 from .langage import Prog
-from .planif import chercher, clics_pour
+from .planif import chercher, chercher_u, clics_pour
 from .compteur import Compteur
 from .reseau import Types
 from .scene import Scene
+from .registre import Registre
 
 MOVES = (1, 2, 3, 4)
 
@@ -75,6 +76,7 @@ class RetroCreateur:
         self.others = {}        # mondes à sélection : pièces non sélectionnées (case -> couleur)
         self.sel_amb = {}       # couleur -> deux cases (pièce ou sortie ?) à départager par un clic
         self.sel_test = None
+        self.reg = None         # registre du niveau (motif caché affiché par un glyphe), ou None
 
     # ================================================================== perception
     def _niveau(self, frame):
@@ -101,6 +103,12 @@ class RetroCreateur:
             return False
         self.raw = self.scene.lire(frame)
         self.M_ref = list(self.raw)
+        self.reg = None if self.opt.get("sans_registre") else Registre(frame, getattr(self, "reg_bbox", None))
+        if self.reg is not None and not self.reg.actif:
+            self.reg = None
+        geo.regtarget = self.reg.cibles() if self.reg is not None else None
+        geo.regactif = self.reg is not None
+        self.last_L = L0
         self.guess = None
         self.prev_snap = None
         self.prev_act = None
@@ -152,6 +160,15 @@ class RetroCreateur:
         self.modele.prog = self.modele.construire()
 
     def _construire_snap(self, raw, prev, geo=None, raw_prev=None, M_ref=None):
+        """Instantané perçu ; avc = couleur de l'avatar | mode du registre << 8 (variable cachée de motif)."""
+        if prev is not None and prev[2] > 255:
+            prev = (prev[0], prev[1], prev[2] & 255, prev[3])
+        sn = self._construire_snap0(raw, prev, geo, raw_prev, M_ref)
+        if self.reg is not None and self.reg.mode:
+            sn = (sn[0], sn[1], (sn[2] & 255) | (self.reg.mode << 8), sn[3])
+        return sn
+
+    def _construire_snap0(self, raw, prev, geo=None, raw_prev=None, M_ref=None):
         geo = geo or self.geo
         M_ref = M_ref if M_ref is not None else self.M_ref
         raw_prev = raw_prev if raw_prev is not None else getattr(self, 'raw_prev', None)
@@ -302,6 +319,11 @@ class RetroCreateur:
             self._niveau(frame)
             return
         raw = self.scene.lire(frame)
+        if self.reg is not None:
+            self.reg.maj(frame)
+            geo0.regtarget = self.reg.cibles()
+            if self.reg.reg is not None:
+                self.reg_bbox = self.reg.gl[self.reg.reg]["bbox"]
         # amorçage de l'avatar
         if self.scene.av_class is None and act[0] in ("ACTION1", "ACTION2", "ACTION3", "ACTION4"):
             mob = self.scene.trouver_mobile(self.raw, raw)
@@ -375,9 +397,20 @@ class RetroCreateur:
             self.used += 1
             self.compteur.maj(self.frame, frame)
             L = self.compteur.longueur(frame)
-            if L is not None and self.V0:
+            if L is not None and getattr(self, "last_L", None) is not None and L > self.last_L + 1 and new[1] >= 0:
+                # la jauge remonte : la case où l'avatar vient d'entrer est un déclencheur d'énergie (général : « recharge »)
+                T = new[3]
+                if T > 0 and ("refill",) not in self.modele.fx.get(T, []):
+                    self.modele.fx[T] = list(self.modele.fx.get(T, [])) + [("refill",)]
+                    self.modele.prog = self.modele.construire()
+                self.used = 1
+                self.V0 = max(self.V0 or 0, L)
+                self.obs_E[self.lv_cur] = [(1, L)]
+            elif L is not None and self.V0:
                 self.obs_E.setdefault(self.lv_cur, []).append((self.used, L))
                 self._maj_cap()
+            if L is not None:
+                self.last_L = L
         self.frame = frame
         ev = Ev(prev, act, new, 0, geo0)
         chg = self.modele.observer(ev)
@@ -662,7 +695,10 @@ class RetroCreateur:
         strict = {t for t in self._types_presents(sx) if t not in self.modele.explore and t > 0}
         if w[0] == "enter":
             strict -= set(w[1])
-        res = chercher(prog, geo, sx, lambda s2, fl, tin, act: fl == 1, interdit=strict)
+        if geo.cap and (any(e[0] in ("refill", "mod") for fx in prog.fx.values() for e in fx)):
+            res = chercher_u(prog, geo, sx, self.used, lambda s2, fl, tin, act: fl == 1, interdit=strict)
+        else:
+            res = chercher(prog, geo, sx, lambda s2, fl, tin, act: fl == 1, interdit=strict)
         if res is None:
             return None
         return pre + res[0]
@@ -783,6 +819,8 @@ class RetroCreateur:
                     cls = cl
             if cls is not None and len(cols) > 1:
                 p2.win = ("entermatch", cls)
+            elif getattr(geo, "regactif", False):
+                p2.win = ("enterreg", frozenset({t}))
             else:
                 p2.win = ("enter", frozenset({t}))
             plan = self._plan_victoire(p2, geo, s)

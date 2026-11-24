@@ -9,20 +9,25 @@
 
 Programme :
     dirmap  : action -> direction (0 haut, 1 bas, 2 gauche, 3 droite)
-    solid   : types qui bloquent l'avatar            push : types poussables (un seul bloc, destination vide)
+    solid   : types qui bloquent l'avatar            solidreg : types qui bloquent tant que le registre n'est pas sur la cible
+    push : types poussables (un seul bloc, destination vide)
     kill    : types mortels au contact                fx   : type -> effets au contact
     clk     : type -> effet d'un clic                 sync : apparences dérivées (A, B, conditions)
     win     : condition de victoire                   grav : direction de la gravité des blocs ou None
+    (J3) avc contient aussi le mode du registre : avc = couleur (8 bits bas) | élément de D4 << 8
 Effets : ('set', T2) la case devient T2 (supprimer = 0) ; ('recolor', A, B) toute case A devient B ;
-         ('toggle', A, B) échange A et B partout ; ('avc', couleur) ; ('die',) ; ('win',)
+         ('toggle', A, B) échange A et B partout ; ('avc', couleur) ; ('mod', g) isométrie g de D4 sur le registre ; ('refill',) énergie pleine ; ('die',) ; ('win',)
 Clics  : ('flip', décalages, A, B) bascule A<->B sur les cases décalées ; ('next', décalages, {T: T'}) cycle
 Conditions (atomes) : ('gone', T) plus aucune case T ; ('all', Z, S) toute case de type dans Z est de type S ;
          ('pmatch', P, R) motif des cases P égal à la référence R (appariement par ordre de lecture et couleur)
 Victoire : ('enter', frozenset(T)) ; ('entermatch', classe) : entrer sur une case de cette forme de la couleur de l'avatar ;
-         ('cond', atomes) : tous les atomes vrais après un coup.
+         ('cond', atomes) : tous les atomes vrais après un coup ; ('enterreg', frozenset(T)) : entrer sur un type T quand le
+         registre est égal à la cible du niveau (geo.regtarget : ensemble de modes ; None = pas d'exigence).
 Exécution rapide : tuples, listes locales, aucune allocation superflue sur les pas sans effet.
 """
 from __future__ import annotations
+
+from .registre import composer as _composer
 
 NOM_DIRS = ("haut", "bas", "gauche", "droite")
 
@@ -40,6 +45,7 @@ class Prog:
         self.win = None
         self.grav = None
         self.undo = None
+        self.solidreg = set()      # types qui bloquent tant que le registre n'est pas égal à la cible (porte à motif)
         self.select = False        # clic sur une pièce non sélectionnée (M < -1) : elle devient l'avatar
         self.selwin = False        # victoire : chaque case de sortie porte la pièce de sa couleur
 
@@ -52,6 +58,7 @@ class Prog:
         p.sync = list(self.sync)
         p.win, p.grav, p.undo = self.win, self.grav, self.undo
         p.select, p.selwin = self.select, self.selwin
+        p.solidreg = set(self.solidreg)
         return p
 
     def taille(self):
@@ -151,6 +158,10 @@ class Prog:
             T = M[q]
             if T in self.solid or T < -1:
                 return None
+            if self.solidreg and T in self.solidreg:
+                ct = getattr(geo, "regtarget", None)
+                if ct is not None and (avc >> 8) not in ct:
+                    return None
             Ml = list(M)
             Ml[pos] = self.revele(tor)
             if T in self.push:
@@ -179,7 +190,12 @@ class Prog:
                         A, B = e[1], e[2]
                         Ml = [B if t == A else (A if t == B else t) for t in Ml]
                     elif k == "avc":
-                        avc = e[1]
+                        avc = (avc & ~255) | (e[1] & 255)
+                    elif k == "mod":
+                        # déclencheur de registre : le motif caché subit l'isométrie g (élément de D4)
+                        avc = (avc & 255) | (_composer(e[1], avc >> 8) << 8)
+                    elif k == "refill":
+                        pass            # énergie remise à pleine : géré par pas_u
                     elif k == "die":
                         flag = 2
                     elif k == "win":
@@ -190,7 +206,11 @@ class Prog:
                     if T0 in w[1]:
                         flag = 1
                 elif w[0] == "entermatch":
-                    if (avc, w[1]) in self.types.inv[T0]:
+                    if (avc & 255, w[1]) in self.types.inv[T0]:
+                        flag = 1
+                elif w[0] == "enterreg":
+                    ct = getattr(geo, "regtarget", None)
+                    if T0 in w[1] and (ct is None or (avc >> 8) in ct):
                         flag = 1
             if self.sync:
                 Ml = self.faire_sync(Ml, geo)
@@ -267,7 +287,7 @@ class Prog:
             return False
         for e, col in geo.exits.items():
             if e == pos:
-                if avc != col:
+                if (avc & 255) != col:
                     return False
             elif Ml[e] != -(2 + col):
                 return False
@@ -283,6 +303,8 @@ class Prog:
             return None
         s2, fl, tin = r
         u2 = u + 1
+        if self.fx and any(e[0] == "refill" for e in self.fx.get(s2[3], ())):
+            u2 = 0               # déclencheur d'énergie (la case vient d'être consommée : plus d'effet ensuite)
         if fl == 0 and geo.cap is not None and u2 >= geo.cap:
             fl = 2
         return s2, fl, tin, u2

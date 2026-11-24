@@ -96,6 +96,51 @@ def chercher(prog, geo, s0, but, actions=None, cout=None, cap=60000, interdit=No
             prog.solid = sol0
 
 
+def chercher_u(prog, geo, s0, u0, but, cap=120000, interdit=None, duree=1.5):
+    """Comme `chercher`, mais l'énergie fait partie de l'état : une vie dure geo.cap actions effectives, une recharge
+    ('refill') la remet à zéro. BFS sur (état, énergie dépensée). Même valeur de retour que `chercher`."""
+    mv = [(n, None) for n in prog.dirmap]
+    limite = time.process_time() + duree
+    sol0 = None
+    if interdit:
+        sol0 = prog.solid
+        prog.solid = prog.solid | set(interdit)
+    try:
+        dep = (s0, u0)
+        vu = {dep: None}
+        q = deque([dep])
+        n = 0
+        while q:
+            x = q.popleft()
+            s, u = x
+            for act in mv:
+                r = prog.pas_u(geo, s, u, act)
+                if r is None:
+                    continue
+                s2, fl, tin, u2 = r
+                if fl == 2:
+                    continue
+                if but(s2, fl, tin, act):
+                    ch = [act]
+                    y = x
+                    while vu[y] is not None:
+                        y, a = vu[y]
+                        ch.append(a)
+                    ch.reverse()
+                    return ch, s2, fl, tin
+                k = (s2, u2)
+                if k not in vu:
+                    vu[k] = (x, act)
+                    q.append(k)
+            n += 1
+            if n > cap or (n & 255 == 0 and time.process_time() > limite):
+                return None
+        return None
+    finally:
+        if sol0 is not None:
+            prog.solid = sol0
+
+
 def _cibles(prog, M0, atomes):
     """Pour chaque case de panneau, l'ensemble des types visés par les atomes de panneau ; None si impossible."""
     cl = prog.types.couleurs

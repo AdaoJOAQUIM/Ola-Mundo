@@ -80,6 +80,7 @@ class Modele:
         self.undo = None
         self.select = False
         self.selwin = False
+        self.solidreg = set()
 
     # ------------------------------------------------------------ construction
     def construire(self, choix=None):
@@ -91,6 +92,7 @@ class Modele:
         p.grav = self.grav
         p.undo = self.undo
         p.select, p.selwin = self.select, self.selwin
+        p.solidreg = set(self.solidreg)
         for cle, cr in self.creneaux.items():
             nom = cr.alts[(choix or {}).get(cle, cr.choix)][0]
             self._appliquer(p, cle, nom)
@@ -124,7 +126,10 @@ class Modele:
                     cls = {c for _, _, c in self.win_obs}
                     if len(cls) == 1:
                         return ("entermatch", next(iter(cls)))
-            return ("enter", frozenset(t for t, _, _ in self.win_obs) - self.win_nonobs)
+            ts = frozenset(t for t, _, _ in self.win_obs) - self.win_nonobs
+            if any(e[0] == "mod" for fx in self.fx.values() for e in fx):
+                return ("enterreg", ts)
+            return ("enter", ts)
         return None
 
     # ------------------------------------------------------------ atomes et apprentissage de conditions
@@ -273,7 +278,9 @@ class Modele:
         if ev.flag == 0 and ev.s0[1] >= 0 and name != "ACTION6" and name in self.dirmap and ev.s1 is not None:
             q = ev.geo.nb[ev.s0[1]][self.dirmap[name]]
             if q >= 0 and ev.s1[1] == q:
-                self.entre_sans_gain.add((ev.s0[0][q], ev.s0[2]))
+                ct = getattr(ev.geo, "regtarget", None)
+                if not getattr(ev.geo, "regactif", False) or (ct is not None and (ev.s0[2] >> 8) in ct):
+                    self.entre_sans_gain.add((ev.s0[0][q], ev.s0[2] & 255))
         if name == "ACTION6":
             p = ev.act[1]
             if p is not None and p >= 0 and ev.s0[0][p] > 0:
@@ -392,8 +399,12 @@ class Modele:
         T0 = M0[q]
         changed = False
         if pos1 == pos0:           # bloqué
-            if T0 not in self.push and T0 not in self.solid and T0 > 0 and T0 != -1:
-                self.solid.add(T0)
+            if T0 not in self.push and T0 not in self.solid and T0 not in self.solidreg and T0 > 0 and T0 != -1:
+                ct = getattr(geo, "regtarget", None)
+                if getattr(geo, "regactif", False) and ct is not None and (s0[2] >> 8) not in ct:
+                    self.solidreg.add(T0)          # porte à motif : ne s'ouvre que registre = cible
+                else:
+                    self.solid.add(T0)
                 self.explore.add(T0)
                 changed = True
             elif T0 == 0 and q in geo.outer:
@@ -407,6 +418,11 @@ class Modele:
         if T0 in self.solid:
             self.solid.discard(T0)
             changed = True
+        if T0 in self.solidreg:
+            ct = getattr(geo, "regtarget", None)
+            if ct is None or (s0[2] >> 8) not in ct:
+                self.solidreg.discard(T0)          # franchie sans que le motif soit égal : ce n'est pas une porte à motif
+                changed = True
         self.explore.add(T0)
         # case quittée : contenu révélé
         tor = s0[3]
@@ -440,9 +456,15 @@ class Modele:
                         self.grav = g
                         changed = True
         # avatar : couleur
-        if s1[2] != s0[2]:
-            if ("avc", s1[2]) not in self.fx.get(T0, []):
-                self.fx[T0] = [e for e in self.fx.get(T0, []) if e[0] != "avc"] + [("avc", s1[2])]
+        if (s1[2] & 255) != (s0[2] & 255):
+            if ("avc", s1[2] & 255) not in self.fx.get(T0, []):
+                self.fx[T0] = [e for e in self.fx.get(T0, []) if e[0] != "avc"] + [("avc", s1[2] & 255)]
+                changed = True
+        if (s1[2] >> 8) != (s0[2] >> 8):
+            # registre : g tel que mode1 = g o mode0 (élément de D4) ; le plus petit élément cohérent
+            g = self.elem_mode(s0[2] >> 8, s1[2] >> 8)
+            if g is not None and ("mod", g) not in self.fx.get(T0, []):
+                self.fx[T0] = [e for e in self.fx.get(T0, []) if e[0] != "mod"] + [("mod", g)]
                 changed = True
         # autres changements de cases : groupes (A -> B)
         grp = {}
@@ -488,6 +510,14 @@ class Modele:
         cr = Creneau(cle, [("toggle", 0.0)])
         self.creneaux[cle] = cr
 
+    @staticmethod
+    def elem_mode(m0, m1):
+        from .registre import composer
+        for g in range(8):
+            if composer(g, m0) == m1:
+                return g
+        return None
+
     def _expl_win_move(self, ev):
         name, _ = ev.act
         d = self.dirmap.get(name)
@@ -497,7 +527,7 @@ class Modele:
         T0 = ev.s0[0][q]
         if T0 in self.push:
             return False
-        avc = ev.s0[2]
+        avc = ev.s0[2] & 255
         cls = None
         for col, cl in self.types.inv[T0]:
             if col == avc:
