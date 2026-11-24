@@ -37,14 +37,14 @@ class Reel(S.Sim):
         self.exts.append((base + s, n))
         sc_n, pl_n = (lay.GU_SC, lay.GU_PL) if kind == "gu" else (lay.DN_SC, lay.DN_PL)
         outs = lay.I_DIM if kind == "gu" else lay.D_IN
-        sc = np.frombuffer(buf[:sc_n], np.float16).reshape(lay.BLK, -1)
+        sc = np.frombuffer(buf[:sc_n], np.float16)
         q = np.zeros((lay.BLK, outs), np.int32)
         for p in range(k):
             pl = np.frombuffer(buf[sc_n + p * pl_n: sc_n + (p + 1) * pl_n], np.uint8).reshape(lay.BLK, -1)
             q += np.unpackbits(pl, axis=1).astype(np.int32) << (3 - p)
         off = (2 ** (4 - k) - 1) / 2.0
         v = (torch.from_numpy(q).float() + off) - 7.5
-        return v * torch.from_numpy(sc.astype(np.float32)).repeat_interleave(S.fmt.GROUP, dim=1)
+        return v * torch.from_numpy(sc.astype(np.float32))[None, :]
 
     @torch.no_grad()
     def moe_cm(self, L, h):

@@ -2,9 +2,10 @@
 
 Un expert = [gate | up | down].
   gate, up : W^T de forme (2048 canaux d'entree permutes, 1024 sorties permutees).
-             64 blocs de 32 colonnes. Bloc = [echelles fp16 (32 x 32 groupes) 2048 o | plan3 | plan2 | plan1 | plan0], 4096 o par plan.
+             64 blocs de 32 colonnes. Bloc = [echelles fp16 (une par sortie : 1024) 2048 o | plan3 | plan2 | plan1 | plan0], 4096 o par plan.
   down     : W^T de forme (1024 canaux intermediaires permutes, 2048 sorties).
-             32 blocs de 32 colonnes. Bloc = [echelles (32 x 64) 4096 o | plan3 | plan2 | plan1 | plan0], 8192 o par plan.
+             32 blocs de 32 colonnes. Bloc = [echelles (une par sortie : 2048) 4096 o | plan3 | plan2 | plan1 | plan0], 8192 o par plan.
+Quantification : groupes de 32 le long de l'entree = un bloc de colonnes, une echelle par (sortie, bloc).
 Les plans vont du bit de poids fort (plan3) au bit de poids faible (plan0) du code 4 bits ; lire k plans donne un code
 a k bits (reconstruction au milieu de l'intervalle). Lire un bloc a k bits = une extension contigue
 [debut du bloc, debut + echelles + k x plan]. Les octets lus sont comptes en pages de 4 Kio (union des pages touchees).

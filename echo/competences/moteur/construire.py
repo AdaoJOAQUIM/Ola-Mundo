@@ -17,12 +17,13 @@ PLANES = S.CM_DIR + "/cm_planes.bin"
 
 
 def planes_bytes(q, sc, kind):
-    """q (cols, outs) uint8 codes 0..15, sc (cols, outs/32) fp16 -> octets selon layout.py."""
+    """q (cols, outs) uint8 codes 0..15 ; sc (blocs, outs) fp16 : une echelle par (sortie, bloc de 32 colonnes d'entree)
+    -> octets selon layout.py."""
     nb = lay.GU_NB if kind == "gu" else lay.DN_NB
     out = []
     for b in range(nb):
         r = slice(b * lay.BLK, (b + 1) * lay.BLK)
-        out.append(np.ascontiguousarray(sc[r]).tobytes())
+        out.append(np.ascontiguousarray(sc[b]).tobytes())
         for p in range(4):
             bits = ((q[r] >> (3 - p)) & 1).astype(np.uint8)
             out.append(np.packbits(bits, axis=1).tobytes())
@@ -42,13 +43,16 @@ def travail(L):
     for e in range(S.NE):
         pi = torch.as_tensor(p["perm_i"][L, e].astype(np.int64))
         Wg, Wu, Wd = store.decode(store.read(L, e, "bf16"), L, e, "bf16")
-        tens = [Wg.T[pd][:, pi].contiguous(), Wu.T[pd][:, pi].contiguous(), Wd.T[pi].contiguous()]
+        # (sorties permutees, entrees permutees) ; groupes de 32 le long de l'entree = un bloc de colonnes
+        tens = [Wg[pi][:, pd].contiguous(), Wu[pi][:, pd].contiguous(), Wd[:, pi].contiguous()]
         nib, pl = [], []
         for i, w in enumerate(tens):
             c, s = fmt.quantize(w, 4)
-            nib.append(c.numpy().tobytes() + s.numpy().tobytes())
-            q = fmt.unpack_codes(c, 4).reshape(w.shape).numpy()
-            pl.append(planes_bytes(q, s.numpy().reshape(w.shape[0], -1), "gu" if i < 2 else "dn"))
+            q = fmt.unpack_codes(c, 4).reshape(w.shape)             # (sorties, entrees)
+            q_cm = q.T.contiguous()                                 # (entrees, sorties)
+            sc_cm = s.reshape(w.shape[0], -1).T.contiguous()        # (blocs, sorties)
+            nib.append(fmt.pack_codes(q_cm.reshape(-1), 4).numpy().tobytes() + sc_cm.numpy().tobytes())
+            pl.append(planes_bytes(q_cm.numpy(), sc_cm.numpy(), "gu" if i < 2 else "dn"))
         off = (L * S.NE + e) * lay.CHUNK
         nb, pb = b"".join(nib), b"".join(pl)
         assert len(nb) == lay.CHUNK and len(pb) == lay.CHUNK

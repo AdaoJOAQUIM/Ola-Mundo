@@ -43,8 +43,10 @@ def lut_k(k):
 
 
 def deq_k(codes, scales, k, shape):
-    v = torch.index_select(lut_k(k), 0, codes.to(torch.int32)).reshape(-1, fmt.GROUP)
-    v.mul_(scales.float()[:, None])
+    """codes : (entrees x sorties) emballes par paires de sorties ; scales : (blocs, sorties), un bloc = 32 entrees."""
+    nin, nout = shape
+    v = torch.index_select(lut_k(k), 0, codes.to(torch.int32)).reshape(nin // fmt.GROUP, fmt.GROUP, nout)
+    v.mul_(scales.float().reshape(nin // fmt.GROUP, 1, nout))
     return v.reshape(shape)
 
 
@@ -84,6 +86,7 @@ class Sim(mt.Moteur):
     def __init__(self, backend="cm", max_ctx=520):
         super().__init__(WORLD, mode="q4", cache_frac=0.0, prefetch=False, max_ctx=max_ctx, drop=False,
                          direct=False)
+        torch.set_num_threads(int(os.environ.get("MONDE_THREADS", "2")))
         self.backend = backend
         self.pool = []
         self.only_layers = None
