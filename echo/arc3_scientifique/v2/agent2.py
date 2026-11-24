@@ -71,7 +71,7 @@ def _dict(arc):
 class Scientifique2:
     def __init__(self, graine=0, options=None, modele=None):
         self.opt = {"effet": True, "graphe": True, "theorie": True, "valeur": True, "macro": True,
-                    "periode": PERIODE_ENTRAIN}
+                    "periode": PERIODE_ENTRAIN, "th_alloc": 120, "th_bloc": 80}
         self.opt.update(options or {})
         self.rng = np.random.default_rng(graine)
         self.effet = (modele if modele is not None else ModeleEffet(graine)) if self.opt["effet"] else None
@@ -373,8 +373,12 @@ class Scientifique2:
         arc_th = None
         if self.th is not None:
             d = self.th.choisir(obs)
+            ecoule = n - self.niveau_debut_n
+            alloue = ecoule < self.opt["th_alloc"] or ((ecoule - self.opt["th_alloc"]) // self.opt["th_bloc"]) % 2 == 1
             if self.th_pause > 0:
                 self.th_pause -= 1
+            elif not alloue:
+                pass
             elif self.th.mode in ("decouverte", "avatar", "generique_av"):
                 if d["name"] == "ACTION6":
                     arc_th = ("C", int(d["data"]["x"]), int(d["data"]["y"]))
