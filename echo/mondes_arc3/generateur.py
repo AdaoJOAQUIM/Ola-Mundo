@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import random
 
-from moteur import Moteur, Niveau
+from moteur import Moteur, Niveau, oracle
 
 MECANIQUES = (
     "deplacement", "murs", "cles_portes", "blocs_poussables", "collectibles", "dangers",
@@ -50,6 +50,10 @@ class Monde:
                     continue
                 if m == "selection" and "couleurs" in meca or m == "couleurs" and "selection" in meca:
                     continue
+                if m == "selection" and meca & {"ennemis", "teleporteurs", "blocs_poussables", "interrupteurs", "cles_portes"}:
+                    continue
+                if m in ("ennemis", "teleporteurs", "blocs_poussables", "interrupteurs", "cles_portes") and "selection" in meca:
+                    continue
                 meca.add(m)
             if "blocs_poussables" in meca and w.random() < 0.45:
                 meca.add("gravite")
@@ -80,7 +84,24 @@ class Monde:
         pool = [c for c in range(16) if c != self.bg]
         w.shuffle(pool)
         self.col = {}
-        for i, role in enumerate(ROLES):
+        besoin = ["mur", "hud_on", "hud_off", "sel"]
+        if self.goal == "sortie":
+            besoin.append("sortie")
+        if "couleurs" not in meca:
+            besoin.append("joueur")
+        for m, rs in (("cles_portes", ("cle0", "cle1")), ("blocs_poussables", ("bloc",)), ("cibles", ("cible",)),
+                      ("collectibles", ("gemme",)), ("dangers", ("danger",)), ("teleporteurs", ("tele0", "tele1")),
+                      ("interrupteurs", ("inter", "swall")), ("couleurs", ("c0", "c1", "c2")),
+                      ("motif", ("c0", "c1", "c2")), ("lumieres", ("on", "off")), ("energie", ("energie",)),
+                      ("ennemis", ("ennemi",))):
+            if m in meca:
+                besoin.extend(rs)
+        vus = []
+        for r_ in besoin:
+            if r_ not in vus:
+                vus.append(r_)
+        autres = [r_ for r_ in ROLES if r_ not in vus]
+        for i, role in enumerate(vus + autres):
             self.col[role] = pool[i % len(pool)]
         # couleurs de HUD dédiées et distinctes de bg
         formes = list(FORMES)
@@ -115,7 +136,7 @@ class Monde:
 
     def niveau(self, k: int) -> Niveau:
         if k not in self._niveaux:
-            self._niveaux[k] = gen_niveau(self, k)
+            self._niveaux[k] = _cache_lire(self, k) or _cache_ecrire(self, k, gen_niveau(self, k))
         return self._niveaux[k]
 
     def niveaux(self):
@@ -130,18 +151,62 @@ class Monde:
 
 
 # ---------------------------------------------------------------------------------------------
+# Cache disque optionnel (accélère les évaluations répétées) ; invalidé si le code change.
+def _version():
+    import hashlib
+    from pathlib import Path
+    h = hashlib.sha1()
+    for nom in ("generateur.py", "moteur.py"):
+        h.update((Path(__file__).resolve().parent / nom).read_bytes())
+    return h.hexdigest()[:10]
+
+
+def _chemin_cache(W, k):
+    import os
+    from pathlib import Path
+    if os.environ.get("MONDES_SANS_CACHE"):
+        return None
+    d = Path(__file__).resolve().parent / "runs" / "cache" / _version()
+    return d / f"mx{W.seed}d{W.d}_{k}.pkl"
+
+
+def _cache_lire(W, k):
+    import pickle
+    p = _chemin_cache(W, k)
+    if p is not None and p.exists():
+        try:
+            return pickle.loads(p.read_bytes())
+        except Exception:
+            return None
+    return None
+
+
+def _cache_ecrire(W, k, lv):
+    import pickle
+    p = _chemin_cache(W, k)
+    if p is not None:
+        try:
+            p.parent.mkdir(parents=True, exist_ok=True)
+            tmp = p.with_suffix(".tmp%d" % __import__("os").getpid())
+            tmp.write_bytes(pickle.dumps(lv))
+            tmp.replace(p)
+        except Exception:
+            pass
+    return lv
+
+
 class _Echec(Exception):
     pass
 
 
 def difficulte_niveau(W: Monde, k: int) -> float:
-    return W.d * 0.9 + 2.2 * k / max(1, W.nl - 1)
+    return W.d * 0.55 + 2.4 * k / max(1, W.nl - 1)
 
 
 def bornes(W: Monde, k: int):
     if W.goal == "panel":
         return 2 + k // 3, 5 + 2 * k + 2 * W.d
-    return 3 + 2 * k, min(70, 12 + 5 * k + 8 * (W.d - 1))
+    return 3 + 2 * k, min(80, 16 + 6 * k + 10 * (W.d - 1))
 
 
 def gen_niveau(W: Monde, k: int) -> Niveau:
@@ -163,8 +228,7 @@ def gen_niveau(W: Monde, k: int) -> Niveau:
             - ({"attente"} if "ennemis" in lv.presentes() else set())
         if manque:
             continue
-        M = Moteur(lv)
-        r = M.resoudre(cap=60000)
+        r = oracle(lv, cap=8000)
         if r is None:
             continue
         opt, chemin = r
@@ -239,7 +303,7 @@ def _tenter(W: Monde, rng, L, relax):
     n = min(10, 6 + int(L * 0.8))
     kind = "lumieres" if "lumieres" in M else ("motif" if "motif" in M else None)
     if kind:
-        n = max(n, 8)
+        n = max(n, 9)
     # orientation aléatoire du repère canonique (u = axe de la chaîne de salles)
     transp = rng.random() < 0.5
     flipu = rng.random() < 0.5
@@ -279,7 +343,7 @@ def _tenter(W: Monde, rng, L, relax):
         types.append("bloc")
     rng.shuffle(types)
     ulo, uhi = 2, (n - 4 if kind else n - 3)
-    maxg = (uhi - ulo) // 2 + 1
+    maxg = (uhi - ulo) // 3 + 1
     if goal == "cibles":
         want = min(len(types), 1 + int(L >= 2.5))
     else:
@@ -312,9 +376,9 @@ def _tenter(W: Monde, rng, L, relax):
             walls.add((gu, v))
         occ.add((gu, gv))
         if t == "ennemi":
-            m = 2 if (L >= 3 and gu >= 3 and gu <= n - 5) else 1
-            for du in range(-m, m + 1):
-                occ.add((gu + du, gv))
+            m = 2 if (L >= 3 and 2 <= gv <= n - 3) else 1
+            for dv in range(-m, m + 1):
+                occ.add((gu - 1, gv + dv))
     # murs épars
     nw = int(n * n * (0.03 + 0.012 * L) / (1 + relax * 0.5))
     for _ in range(nw):
@@ -348,7 +412,7 @@ def _tenter(W: Monde, rng, L, relax):
     items = {}
     # départ
     if lv.selection:
-        npc = 2 + int(L >= 3.4)
+        npc = 2 + int(L >= 3.8 and relax == 0)
         starts = [prendre(r0) for _ in range(npc)]
         lv.piece_cols = tuple(range(npc))
     else:
@@ -391,8 +455,8 @@ def _tenter(W: Monde, rng, L, relax):
             tele[a] = b
             tele[b] = a
         elif t == "ennemi":
-            m = 2 if (L >= 3 and gu >= 3 and gu <= n - 5) else 1
-            tr = [(gu + du, gv) for du in range(-m, m + 1)]
+            m = 2 if (L >= 3 and 2 <= gv <= n - 3) else 1
+            tr = [(gu - 1, gv + dv) for dv in range(-m, m + 1)]
             for c in tr:
                 walls.discard(c)
             cyc = tr + tr[-2:0:-1]
@@ -431,17 +495,17 @@ def _tenter(W: Monde, rng, L, relax):
         elif t == "bloc":
             blocks.append(prendre())
     if "collectibles" in M:
-        for _ in range(min(4, 1 + int(L) // 2)):
+        for _ in range(1 if relax >= 2 else min(4, 1 + int(L) // 2)):
             gem_cells.append(prendre())
     hz = []
     if "dangers" in M:
         sx = starts
-        for _ in range(min(5, 1 + int(L))):
+        for _ in range(1 if relax >= 2 else min(5, 1 + int(L))):
             hz.append(prendre(lambda u, v: all(abs(u - a) + abs(v - b) > 1 for a, b in sx)
                               and (u, v) not in [(g, w_) for g, w_ in zip(gus, gvs)]))
     targets = []
     if goal == "cibles":
-        nb = min(3, 1 + int(L / 2.2))
+        nb = 1 if relax >= 2 else min(3, 1 + int(L / 2.2))
         for _ in range(nb):
             ro = rng.randrange(len(gus) + 1)
             pr = lambda u, v, ro=ro: piece_de(u) == ro and u not in gus and 1 <= u <= n - 2 and 1 <= v <= n - 2

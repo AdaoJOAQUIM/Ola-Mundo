@@ -284,7 +284,9 @@ class Moteur:
                 sel = pcs.index(c)
             else:
                 return None
-        # tic : ennemis
+            s2 = (pcs, sel, blk, gem, key, sw, col, pan, t)
+            return s2, (1 if self.gagne(s2) else 0)
+        # tic : ennemis (seuls déplacements et attente font avancer le temps)
         t2 = t
         if lv.enemies:
             t2 = (t + 1) % self.period
@@ -414,3 +416,61 @@ class Moteur:
                         nxt.append(s2)
             front = nxt
         return None
+
+
+def solution_panneau(pn):
+    """Séquence minimale de clics (actions abstraites) amenant le panneau à son but."""
+    if pn["kind"] == "motif":
+        K = pn["K"]
+        out = []
+        for i, (c, g) in enumerate(zip(pn["init"], pn["goal"])):
+            out.extend([CLIC0 + pn["cells"][i]] * ((g - c) % K))
+        return out
+    k = pn["k"]
+    lm = []
+    for i in range(k * k):
+        a, b = divmod(i, k)
+        m = 1 << i
+        for da, db in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            if 0 <= a + da < k and 0 <= b + db < k:
+                m |= 1 << ((a + da) * k + b + db)
+        lm.append(m)
+    s0, g = pn["init"], pn["goal"]
+    par = {s0: None}
+    front = [s0]
+    while front and g not in par:
+        nxt = []
+        for s in front:
+            for i, m in enumerate(lm):
+                s2 = s ^ m
+                if s2 not in par:
+                    par[s2] = (s, i)
+                    nxt.append(s2)
+        front = nxt
+    if g not in par:
+        return None
+    out = []
+    x = g
+    while par[x] is not None:
+        x, i = par[x]
+        out.append(CLIC0 + pn["cells"][i])
+    out.reverse()
+    return out
+
+
+def oracle(lv, cap=30000):
+    """Optimum et solution d'un niveau. Panneau et navigation sont indépendants (les clics ne font pas avancer le temps des ennemis) : on décompose, l'optimum est alors la somme exacte."""
+    if lv.panel:
+        pa = solution_panneau(lv.panel)
+        if pa is None:
+            return None
+        if lv.goal == "panel":
+            return (len(pa), pa) if pa else None
+        import copy
+        lv2 = copy.copy(lv)
+        lv2.panel = None
+        r = Moteur(lv2).resoudre(cap)
+        if r is None:
+            return None
+        return len(pa) + r[0], pa + r[1]
+    return Moteur(lv).resoudre(cap)
