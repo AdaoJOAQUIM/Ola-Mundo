@@ -295,7 +295,7 @@ class RetroCreateur:
             self.stats["cpu_depasse"] = self.stats.get("cpu_depasse", 0) + 1
             return self._act_de_secours(obs)
         if not self.utilise_v1 and not self.opt.get("sans_filet") and self.geo is not None and \
-                taken - self.niveau_debut_n >= (self.opt.get("stall", 250) if (self.stats["plans"] > 0 or self.opt.get("sans_schema")) else self.opt.get("stall0", 25)) and self.stats["plans"] == self._plans_niv:
+                taken - self.niveau_debut_n >= (self.opt.get("stall", 250) if (self.stats["plans"] > 0 or self.stats["explorations"] > 2 or self.opt.get("sans_schema")) else self.opt.get("stall0", 25)) and self.stats["plans"] == self._plans_niv:
             self.lv_filet = lv           # aucun plan en `stall` actions sur ce niveau : le programme ne prédit pas assez bien
             self.stats["stall"] = self.stats.get("stall", 0) + 1
             return self._v1(obs)

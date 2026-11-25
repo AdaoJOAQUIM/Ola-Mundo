@@ -133,3 +133,27 @@ def test_agent_schema_apprend_translation_rotation_et_but():
     assert c.ops[1][0] == "T" and c.ops[1][1] == (-3, 0)
     assert any(op[0] == "R" for op in c.ops.values())      # la rotation a été induite comme règle locale
     assert "aligner" in ag.stats.get("confirmes", [])      # but « motif = référence » confirmé par la victoire
+
+
+def test_assembleur_apparie_les_pointes():
+    from retro.schemas.buts import assembler, couleur_pointe
+    from retro.schemas.transitions import D4
+    # objet fixe : barre (col 1) avec pointe (col 8) à droite ; mobile : même barre avec pointe à gauche, à poser pointe sur pointe
+    fixe_pts = np.array([[r, c] for r in range(20, 23) for c in range(10, 25)] + [[r, c] for r in range(20, 23) for c in range(25, 28)])
+    fixe_cols = np.array([1] * 45 + [8] * 9)
+    mob_pts = np.array([[r, c] for r in range(40, 43) for c in range(10, 13)] + [[r, c] for r in range(40, 43) for c in range(13, 28)])
+    mob_cols = np.array([8] * 9 + [1] * 45)
+    fixes = [{"pts": fixe_pts, "cols": fixe_cols}]
+    assert couleur_pointe(fixes + [{"cols": mob_cols}]) == 8
+    mobiles = [{"id": 0, "rel": {0: mob_pts}, "cols": mob_cols, "Ms": [0], "M0": 0, "t0": (0, 0)}]
+    sols = assembler(fixes, mobiles, 8)
+    assert sols and sols[0][0][0][0] == 0
+    # la pointe du mobile (colonnes 10-12) doit recouvrir celle du fixe (colonnes 25-27) : décalage (-20, +15)
+    assert tuple(sols[0][0][0][1:]) == (-20, 15)
+
+
+def test_hud_et_sans_identifiant():
+    from retro.schemas.agent_schema import _hud_masque
+    f = np.full((64, 64), 5, dtype=np.int16)
+    f[0, 16:30] = 4
+    assert _hud_masque(f)[0].all()
