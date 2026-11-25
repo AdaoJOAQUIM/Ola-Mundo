@@ -223,6 +223,27 @@ et la taille des fichiers (1 561 Go). 3 Go de poids non routés chauds gardés e
 - Latences SATA/USB supposées dans le premier rapport ; ici seulement le débit. Les 3 Go résidents sont une hypothèse.
 - Le 4 bits simple coûte déjà +6 % de perplexité contre bf16 ; l'objectif (d) était hors de portée avec ces mécanismes.
 
+## 7 sexies. ARC-AGI-3 : du cerveau au Rétro-Créateur
+
+Chronologie des jalons mesurés (jeux ARC-AGI-3 locaux, sans grand modèle à la partie) :
+
+- **Cerveau bayésien (base)** : 7/150 niveaux sur les 20 jeux HELD, 500 actions par jeu.
+- **Skill-Pro** (compétences apprises avec un grand modèle comme professeur) : 9/150 sur HELD.
+- **v1 Scientifique** : 6/99 sur DEV.
+- **v2** : 5/99 sur DEV, et 181/1119 niveaux sur les mondes procéduraux.
+- **Rétro-Créateur J1**, 300 mondes procéduraux, vérifié de façon indépendante : 82 % des niveaux résolus, 76 % avec le « programme exact », 1,64 fois l'optimum d'actions. Deux réserves du vérificateur : « exact » est mesuré sur des états perçus, pas sur l'état réel ; l'a priori de plateau carré est propre au générateur de mondes.
+- **J3 sur DEV** : 9,1 % des niveaux, seuil visé non atteint. Sur ls20, les niveaux 1 et 2 sont résolus en moins d'actions que les humains.
+- **J3-bis (schémas appris)** : 12,1 %, seuil non atteint. Premier niveau 1 de cn04 résolu.
+- **J4 (examen final, agent gelé au commit d57daf4, jeux HELD joués une seule fois, sans réglage)** : **6/150 niveaux (4,0 %)**, aucun jeu terminé, aucun plantage. Niveau 1 résolu sur ar25, bp35, lp85, m0r0, r11l et vc33 ; jamais le niveau 2. C'est moins que la base (7) et que Skill-Pro (9). Détail : `echo/arc3_retrocreateur/examen/resultats_j4.md`.
+
+Ce qui bloque, sans enjolivure :
+
+- **La découverte du but.** L'agent ne sait pas, sur un jeu inconnu, ce qu'il faut atteindre. Les mondes procéduraux donnent le but dans un cadre connu ; les vrais jeux non.
+- **Des mécaniques absentes du langage.** Ce qui n'est pas exprimable dans le langage de règles ne peut ni être appris ni planifié. Les schémas appris sur DEV ne se transfèrent presque pas aux 20 jeux HELD.
+- **Les niveaux résolus coûtent cher** : de 1,6 à 46 fois les actions de référence, et le budget de 500 actions s'épuise sur le niveau suivant.
+
+Distance au but : 4,0 % contre 100 %, soit 96 points. Pour situer, le meilleur agent publié sans modèle de langage, StochasticGoose, a obtenu 12,58 % dans la compétition de préversion d'ARC-AGI-3. Ce n'est pas directement comparable : autres jeux, autre protocole. Notre 4,0 % sur HELD n'est pas non plus à comparer à notre 12,1 % sur DEV, qui avait servi au réglage.
+
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,

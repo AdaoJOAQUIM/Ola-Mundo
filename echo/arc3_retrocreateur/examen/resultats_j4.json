@@ -1,0 +1,327 @@
+{
+ "protocole": "20 jeux HELD, 500 actions, graine env 0, graine agent 0, opts cpu_max=60 (comme runner J3), agent gele d57daf4, un seul passage",
+ "totaux": {
+  "niveaux": 6,
+  "total": 150,
+  "pourcentage": 4.0,
+  "baseline": 7,
+  "skill_pro": 9,
+  "jeux_avec_niveau": 6,
+  "jeux_gagnes": 0,
+  "crashs": 0
+ },
+ "controles": {
+  "tests": "21 passes (tests/)",
+  "no_game_ids": "pass",
+  "garde_socket": "pass",
+  "decoupe_held": "pass",
+  "import_mondes_arc3": "pass (test d'import isole)",
+  "sha256_retro": "identiques avant/apres (17 fichiers)"
+ },
+ "jeux": [
+  {
+   "jeu": "ar25",
+   "niveaux": 1,
+   "total": 8,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [
+    134
+   ],
+   "reference_niveaux_resolus": [
+    32
+   ],
+   "actions_niveau_en_cours": 366,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 7.8
+  },
+  {
+   "jeu": "bp35",
+   "niveaux": 1,
+   "total": 9,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [
+    486
+   ],
+   "reference_niveaux_resolus": [
+    21
+   ],
+   "actions_niveau_en_cours": 14,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 11.2
+  },
+  {
+   "jeu": "cd82",
+   "niveaux": 0,
+   "total": 6,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 10.8
+  },
+  {
+   "jeu": "dc22",
+   "niveaux": 0,
+   "total": 6,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 10.3
+  },
+  {
+   "jeu": "ft09",
+   "niveaux": 0,
+   "total": 6,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 41,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 7.5
+  },
+  {
+   "jeu": "g50t",
+   "niveaux": 0,
+   "total": 7,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 1,
+   "cpu_s": 12.6
+  },
+  {
+   "jeu": "lf52",
+   "niveaux": 0,
+   "total": 10,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 166,
+   "baseline": 1,
+   "skill_pro": 1,
+   "cpu_s": 13.8
+  },
+  {
+   "jeu": "lp85",
+   "niveaux": 1,
+   "total": 8,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [
+    27
+   ],
+   "reference_niveaux_resolus": [
+    17
+   ],
+   "actions_niveau_en_cours": 473,
+   "baseline": 1,
+   "skill_pro": 3,
+   "cpu_s": 4.7
+  },
+  {
+   "jeu": "m0r0",
+   "niveaux": 1,
+   "total": 6,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [
+    68
+   ],
+   "reference_niveaux_resolus": [
+    30
+   ],
+   "actions_niveau_en_cours": 432,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 9.3
+  },
+  {
+   "jeu": "r11l",
+   "niveaux": 1,
+   "total": 6,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [
+    138
+   ],
+   "reference_niveaux_resolus": [
+    22
+   ],
+   "actions_niveau_en_cours": 362,
+   "baseline": 1,
+   "skill_pro": 1,
+   "cpu_s": 6.8
+  },
+  {
+   "jeu": "re86",
+   "niveaux": 0,
+   "total": 8,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 197,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 7.9
+  },
+  {
+   "jeu": "s5i5",
+   "niveaux": 0,
+   "total": 8,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 5.6
+  },
+  {
+   "jeu": "sb26",
+   "niveaux": 0,
+   "total": 8,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 10.2
+  },
+  {
+   "jeu": "sk48",
+   "niveaux": 0,
+   "total": 8,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 9.4
+  },
+  {
+   "jeu": "sp80",
+   "niveaux": 0,
+   "total": 6,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 16,
+   "baseline": 1,
+   "skill_pro": 1,
+   "cpu_s": 9.5
+  },
+  {
+   "jeu": "su15",
+   "niveaux": 0,
+   "total": 9,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 197,
+   "baseline": 1,
+   "skill_pro": 0,
+   "cpu_s": 5.6
+  },
+  {
+   "jeu": "tr87",
+   "niveaux": 0,
+   "total": 6,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 9.9
+  },
+  {
+   "jeu": "tu93",
+   "niveaux": 0,
+   "total": 9,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 153,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 7.8
+  },
+  {
+   "jeu": "vc33",
+   "niveaux": 1,
+   "total": 7,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [
+    321
+   ],
+   "reference_niveaux_resolus": [
+    7
+   ],
+   "actions_niveau_en_cours": 179,
+   "baseline": 2,
+   "skill_pro": 2,
+   "cpu_s": 2.1
+  },
+  {
+   "jeu": "wa30",
+   "niveaux": 0,
+   "total": 9,
+   "actions": 500,
+   "etat": "ACTION_CAP",
+   "crash": null,
+   "actions_par_niveau_resolu": [],
+   "reference_niveaux_resolus": [],
+   "actions_niveau_en_cours": 500,
+   "baseline": 0,
+   "skill_pro": 0,
+   "cpu_s": 10.9
+  }
+ ]
+}
