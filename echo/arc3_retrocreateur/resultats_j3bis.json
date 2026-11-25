@@ -1,0 +1,311 @@
+{
+ "protocole": "graine d'agent 0 (parties déterministes), budget 500",
+ "dev_train": [
+  {
+   "jeu": "cn04",
+   "niveaux": 1,
+   "total": 6,
+   "actions_par_niveau": [
+    62,
+    438,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference": [
+    29,
+    54,
+    85,
+    300,
+    208,
+    113
+   ],
+   "stats": {
+    "plans": 0,
+    "explorations": 1,
+    "fallback": 0,
+    "echec_perception": 0,
+    "stall": 1,
+    "schema": 99,
+    "v1": 197,
+    "filet": 175
+   }
+  },
+  {
+   "jeu": "ls20",
+   "niveaux": 2,
+   "total": 7,
+   "actions_par_niveau": [
+    16,
+    102,
+    382,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference": [
+    22,
+    123,
+    73,
+    84,
+    96,
+    192,
+    186
+   ],
+   "stats": {
+    "plans": 63,
+    "explorations": 200,
+    "fallback": 0,
+    "echec_perception": 0,
+    "niveau_long": 1,
+    "schema": 58,
+    "v1": 120,
+    "filet": 51
+   }
+  },
+  {
+   "jeu": "sc25",
+   "niveaux": 0,
+   "total": 6,
+   "actions_par_niveau": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference": [
+    36,
+    6,
+    32,
+    83,
+    143,
+    50
+   ],
+   "stats": {
+    "plans": 0,
+    "explorations": 0,
+    "fallback": 1,
+    "echec_perception": 1,
+    "schema": 20,
+    "v1": 300,
+    "filet": 175
+   }
+  }
+ ],
+ "dev_val": [
+  {
+   "jeu": "tn36",
+   "niveaux": 1,
+   "total": 7,
+   "actions_par_niveau": [
+    120,
+    380,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference": [
+    32,
+    72,
+    26,
+    40,
+    30,
+    55,
+    62
+   ],
+   "stats": {
+    "plans": 0,
+    "explorations": 0,
+    "fallback": 1,
+    "echec_perception": 1,
+    "stall": 1,
+    "schema": 28,
+    "v1": 267,
+    "filet": 175
+   }
+  },
+  {
+   "jeu": "ka59",
+   "niveaux": 0,
+   "total": 7,
+   "actions_par_niveau": [
+    500,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reference": [
+    28,
+    109,
+    51,
+    51,
+    33,
+    132,
+    326
+   ],
+   "stats": {
+    "plans": 0,
+    "explorations": 145,
+    "fallback": 0,
+    "echec_perception": 0,
+    "niveau_long": 1,
+    "schema": 97,
+    "v1": 120,
+    "filet": 130
+   }
+  }
+ ],
+ "dev_train_total": [
+  3,
+  19
+ ],
+ "dev_val_total": [
+  1,
+  14
+ ],
+ "regression_mondes": {
+  "n_mondes": 100,
+  "niveaux_f9bd261": 438,
+  "niveaux_actuel": 440,
+  "niveaux_total": 562,
+  "part_f9bd261": 0.7794,
+  "part_actuel": 0.7829,
+  "ecart_points": 0.36,
+  "ok": true,
+  "graines": [
+   9000074,
+   9000185,
+   9000085,
+   9000213,
+   9000131,
+   9000182,
+   9000177,
+   9000134,
+   9000097,
+   9000179,
+   9000103,
+   9000067,
+   9000111,
+   9000143,
+   9000101,
+   9000159,
+   9000041,
+   9000006,
+   9000208,
+   9000152,
+   9000012,
+   9000152,
+   9000073,
+   9000065,
+   9000036,
+   9000201,
+   9000050,
+   9000029,
+   9000084,
+   9000140,
+   9000061,
+   9000002,
+   9000140,
+   9000045,
+   9000101,
+   9000124,
+   9000004,
+   9000096,
+   9000080,
+   9000077,
+   9000017,
+   9000093,
+   9000061,
+   9000119,
+   9000042,
+   9000062,
+   9000144,
+   9000169,
+   9000035,
+   9000082,
+   9000203,
+   9000056,
+   9000005,
+   9000107,
+   9000039,
+   9000145,
+   9000183,
+   9000117,
+   9000007,
+   9000103,
+   9000161,
+   9000001,
+   9000113,
+   9000112,
+   9000077,
+   9000026,
+   9000046,
+   9000180,
+   9000170,
+   9000004,
+   9000013,
+   9000176,
+   9000111,
+   9000127,
+   9000108,
+   9000211,
+   9000151,
+   9000140,
+   9000161,
+   9000042,
+   9000151,
+   9000157,
+   9000006,
+   9000009,
+   9000198,
+   9000160,
+   9000080,
+   9000128,
+   9000169,
+   9000051,
+   9000135,
+   9000155,
+   9000143,
+   9000008,
+   9000051,
+   9000100,
+   9000158,
+   9000080,
+   9000193,
+   9000028
+  ],
+  "mur_s": 62
+ },
+ "seuil": "25 % des niveaux DEV",
+ "atteint": false,
+ "schemas_appris": {
+  "cn04": "corps rigide multi-pièces : translation 3 px (T), rotation quart de tour avec table exacte pose par pose, sélection par clic (couleur du corps commandé), but = pointes appariées (assemblage)",
+  "ls20": "avatar : translation 5 px ; contact avec une tuile -> changement à distance (registre) ; but = toucher l'objet de même gabarit que la zone changée, après n déclencheurs",
+  "sc25": "aucun corps réactif trouvé (clics sans effet utile) : rien appris",
+  "tn36": "aucun corps ; un clic de la phase de sélection puis exploration v1 résout le niveau 1 (120 coups contre 368)",
+  "ka59": "avatar détecté, but non trouvé"
+ },
+ "dev_train_5000": [
+  [
+   "cn04",
+   1
+  ],
+  [
+   "ls20",
+   2
+  ],
+  [
+   "sc25",
+   0
+  ]
+ ]
+}
