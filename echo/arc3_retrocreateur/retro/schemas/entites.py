@@ -119,3 +119,35 @@ def deplacement_commun(avant, apres, tol_aire=0):
     na = [i for i in range(len(avant)) if i not in ua]
     nb = [j for j in range(len(apres)) if j not in ub]
     return paires, na, nb
+
+
+def composites(frame, bg, ignorer=None, aire_max=1500):
+    """Objets composites : composantes 8-connexes multicolores hors fond (un corps articulé = plusieurs couleurs collées).
+    Renvoie des dicts {pts (n,2), cols (n,)}."""
+    H, W = frame.shape
+    vu = np.zeros((H, W), bool)
+    if ignorer is not None:
+        vu |= ignorer
+    vu |= (frame == bg)
+    fr = frame
+    res = []
+    for r0 in range(H):
+        for c0 in range(W):
+            if vu[r0, c0]:
+                continue
+            pile = [(r0, c0)]
+            vu[r0, c0] = True
+            pts = []
+            while pile:
+                r, c = pile.pop()
+                pts.append((r, c))
+                for dr in (-1, 0, 1):
+                    for dc in (-1, 0, 1):
+                        rr, cc = r + dr, c + dc
+                        if 0 <= rr < H and 0 <= cc < W and not vu[rr, cc]:
+                            vu[rr, cc] = True
+                            pile.append((rr, cc))
+            if len(pts) <= aire_max:
+                p = np.array(pts)
+                res.append({"pts": p, "cols": fr[p[:, 0], p[:, 1]].copy()})
+    return res

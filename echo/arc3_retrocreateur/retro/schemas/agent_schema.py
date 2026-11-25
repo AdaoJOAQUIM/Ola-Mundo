@@ -7,16 +7,27 @@ Aucun identifiant de jeu, aucun réseau, aucun modèle de langue.
 """
 from __future__ import annotations
 
+import itertools
 import random
 
 import numpy as np
 
-from .entites import composantes, couleur_fond
+from .entites import composantes, couleur_fond, composites
 from .transitions import expliquer, pixels, trouver_d4, D4, d4_mul
 from .modele import Corps, Modele, HypCouleurs
-from .buts import Contexte, bfs, But, poses_alignees
+from .buts import Contexte, bfs, But, poses_alignees, assembler, couleur_pointe
 
 MOUV = (1, 2, 3, 4, 5)
+
+
+def _iou(a, b):
+    y0, x0 = max(a[0], b[0]), max(a[1], b[1])
+    y1, x1 = min(a[2], b[2]), min(a[3], b[3])
+    if y1 <= y0 or x1 <= x0:
+        return 0.0
+    i = (y1 - y0) * (x1 - x0)
+    u = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - i
+    return i / max(1, u)
 
 
 def _hud_masque(frame):
@@ -72,6 +83,21 @@ class AgentSchema:
         self.clics_faits = False
         self.reprobe = False
         self.n_reprobe = 0
+        self.sel = None
+        self.n_sel = 0
+        self.clic_deja = set()
+        self.click_corps = {}
+        self.file_interrompu = False
+        self.asm_cibles = {}
+        self.asm_essais = 0
+        self.asm_ancre = None
+        self.visites = {}
+        self.reprobes = {}
+        self.epoque = 0
+        self.effets = []
+        self.resid_hist = []
+        self.touches = {}
+        self.region_effet = None
         self.interdits = set()
         self.nul_de_suite = 0
         self.stat_ent = None
@@ -101,19 +127,91 @@ class AgentSchema:
                 self.hud[:, c] = True
         self.hud_persist |= self.hud
 
-    def _fit(self, corps, pose, frame):
+    def _score(self, corps, pix, frame):
+        """Fraction de pixels du corps qui collent à l'image : couleurs exactes, jokers (couleur de sélection) acceptés
+        seulement s'ils prennent une couleur unique différente du fond."""
+        H, W = frame.shape
+        ok = (pix[:, 0] >= 0) & (pix[:, 0] < H) & (pix[:, 1] >= 0) & (pix[:, 1] < W)
+        if not ok.any():
+            return 0.0
+        cc = corps.cols[ok]
+        vals = frame[pix[ok, 0], pix[ok, 1]]
+        fixe = cc >= 0
+        bon = float((vals[fixe] == cc[fixe]).sum())
+        jok = ~fixe
+        if jok.any():
+            c0 = corps.cols0[ok][jok]
+            vj = vals[jok]
+            for g in np.unique(c0):
+                m = c0 == g
+                v, n = np.unique(vj[m], return_counts=True)
+                k = int(np.argmax(n))
+                if int(v[k]) != self.bg and n[k] >= 0.95 * m.sum():
+                    bon += float(n[k])
+        return bon / len(corps.cols)
+
+    def _recoloration(self, corps, pose, frame):
+        """À la pose prédite, une partie du corps a gardé sa couleur et le reste a changé de couleur de façon uniforme par groupe
+        (le corps a été recoloré par un déclencheur) : la pose est bonne, les pixels changés deviennent des jokers."""
+        pix = corps.pixels_pose(pose)
+        H, W = frame.shape
+        ok = (pix[:, 0] >= 0) & (pix[:, 0] < H) & (pix[:, 1] >= 0) & (pix[:, 1] < W)
+        if ok.sum() < 0.95 * len(pix):
+            return False
+        vals = frame[pix[ok, 0], pix[ok, 1]]
+        c0 = corps.cols[ok]
+        fixe = c0 >= 0
+        if fixe.sum() == 0:
+            return False
+        exact = (vals == c0) & fixe
+        if exact.sum() < 0.35 * len(pix):
+            return False
+        for g in np.unique(c0[fixe]):
+            m = fixe & (c0 == g) & (vals != c0)
+            if m.sum() == 0:
+                continue
+            v, n = np.unique(vals[m], return_counts=True)
+            if n.max() < 0.95 * m.sum():
+                return False
+        return True
+
+    def _forme(self, corps, pose, frame):
         pix = corps.pixels_pose(pose)
         H, W = frame.shape
         ok = (pix[:, 0] >= 0) & (pix[:, 0] < H) & (pix[:, 1] >= 0) & (pix[:, 1] < W)
         if not ok.any():
             return 0.0
-        r, c = pix[ok, 0], pix[ok, 1]
-        return float((frame[r, c] == corps.cols[ok]).sum()) / len(corps.cols)
+        return float((frame[pix[ok, 0], pix[ok, 1]] != self.bg).sum()) / len(pix)
+
+    def _exact(self, corps, pose, frame):
+        """Fraction de pixels aux couleurs d'origine (celles du corps quand il était commandé)."""
+        pix = corps.pixels_pose(pose)
+        H, W = frame.shape
+        ok = (pix[:, 0] >= 0) & (pix[:, 0] < H) & (pix[:, 1] >= 0) & (pix[:, 1] < W)
+        if not ok.any():
+            return 0.0
+        return float((frame[pix[ok, 0], pix[ok, 1]] == corps.cols0[ok]).sum()) / len(pix)
+
+    def _sel_depuis_image(self, frame):
+        """Sélection lue sur l'image : le corps dont les couleurs d'origine sont intactes est celui qui est commandé."""
+        cs = [c for c in self.corps if c.ops and not getattr(c, "perdu", False)]
+        if len(cs) < 2 or not any((c.cols < 0).any() for c in cs):
+            return
+        ex = [c for c in cs if self._exact(c, c.pose(), frame) >= 0.93]
+        if len(ex) == 1:
+            self.sel = ex[0].id
+        elif len(ex) == 0:
+            self.sel = None
+
+    def _fit(self, corps, pose, frame):
+        return self._score(corps, corps.pixels_pose(pose), frame)
 
     def _localiser(self, corps, frame):
         """Cherche la pose dont l'empreinte colle le mieux à l'image : 8 éléments D4 x translations ancrées sur un pixel rare."""
         best, bp = 0.0, None
-        cols, cnt = np.unique(corps.cols, return_counts=True)
+        cols, cnt = np.unique(corps.cols[corps.cols >= 0], return_counts=True)
+        if not len(cols):
+            return None, 0.0
         # ancre : couleur la plus rare dans le corps
         ca = int(cols[np.argmin(cnt)])
         i0 = int(np.nonzero(corps.cols == ca)[0][0])
@@ -129,12 +227,38 @@ class AgentSchema:
                 ok = (pix[:, 0] >= 0) & (pix[:, 0] < H) & (pix[:, 1] >= 0) & (pix[:, 1] < W)
                 if ok.sum() < 0.8 * len(pix):
                     continue
-                f = float((frame[pix[ok, 0], pix[ok, 1]] == corps.cols[ok]).sum()) / len(pix)
+                f = self._score(corps, pix, frame)
                 if f > best:
                     best, bp = f, (M, int(t[0]), int(t[1]))
                     if f >= 0.999:
                         return bp, best
         return bp, best
+
+    def _localiser_relache(self, corps, frame):
+        """Localisation tolérante aux changements de couleur (sélection) : même forme (aucun pixel de fond sous le corps) et au
+        moins 25 % de pixels à la couleur d'origine ; les pixels restants deviendront des jokers."""
+        cols, cnt = np.unique(corps.cols0, return_counts=True)
+        ca = int(cols[np.argmin(cnt)])
+        i0 = int(np.nonzero(corps.cols0 == ca)[0][0])
+        cand = np.argwhere(frame == ca)
+        if len(cand) > 1500:
+            return None
+        H, W = frame.shape
+        best, bp = 0.0, None
+        for M in range(8):
+            rel = corps.rel[M]
+            for q in cand:
+                t = q - rel[i0]
+                pix = rel + t
+                ok = (pix[:, 0] >= 0) & (pix[:, 0] < H) & (pix[:, 1] >= 0) & (pix[:, 1] < W)
+                if ok.sum() < len(pix):
+                    continue
+                vals = frame[pix[:, 0], pix[:, 1]]
+                forme = float((vals != self.bg).mean())
+                ex = float((vals == corps.cols0).mean())
+                if forme >= 0.97 and ex >= 0.10 and ex + forme > best:
+                    best, bp = ex + forme, (M, int(t[0]), int(t[1]))
+        return bp
 
     def _creer_corps(self, Ea, idx):
         ents = [Ea[i] for i in idx]
@@ -160,6 +284,63 @@ class AgentSchema:
         return best if bs >= 0.5 else None
 
     def _apprendre(self, prev, a, frame):
+        """Une transition : met à jour corps / règles (_apprendre_corps), puis détecte un effet à distance (schéma « déclencheur »)."""
+        av = {c.id: c.pose() for c in self.corps}
+        self._apprendre_corps(prev, a, frame)
+        try:
+            self._effet_distant(prev, a, frame, av)
+        except Exception:
+            import traceback
+            self.trace.append(traceback.format_exc())
+
+    def _effet_distant(self, prev, a, frame, av):
+        """Pixels qui changent hors des empreintes des corps et hors bandeaux : un déclencheur a agi sur une autre entité
+        (registre, porte, motif…). On retient la zone, l'entité touchée et on ouvre une nouvelle époque (les buts écartés sont
+        de nouveau testables : le monde a changé)."""
+        if a not in MOUV or not self.corps:
+            return
+        D = (prev != frame) & ~self.hud
+        H, W = D.shape
+        for c in self.corps:
+            for pose in (av.get(c.id, c.pose()), c.pose()):
+                w = c.pixels_pose(pose)
+                ok = (w[:, 0] >= 0) & (w[:, 0] < H) & (w[:, 1] >= 0) & (w[:, 1] < W)
+                D[w[ok, 0], w[ok, 1]] = False
+        n = int(D.sum())
+        self.resid_hist = (self.resid_hist + [n >= 3])[-6:]
+        if n < 3 or sum(self.resid_hist[:-1]) >= 3:
+            return                                   # rien, ou bruit continu (animation, compteur) : pas un événement isolé
+        ys, xs = np.nonzero(D)
+        bbox = (int(ys.min()), int(xs.min()), int(ys.max()), int(xs.max()))
+        # entité statique touchée : recouvre la nouvelle empreinte (image avant)
+        touche = None
+        for c in self.corps:
+            if c.pose() == av.get(c.id):
+                continue
+            new = set(map(tuple, c.monde().tolist()))
+            best = None
+            for e in self._entites(prev):
+                if e.aire > 400 or e.aire < 2:
+                    continue
+                pts = set(map(tuple, (np.argwhere(e.masque) + np.array([e.r, e.c])).tolist()))
+                if pts & new and not (pts <= set(map(tuple, c.pixels_pose(av.get(c.id, c.pose())).tolist()))):
+                    if best is None or e.aire < best.aire:
+                        best = e
+            if best is not None:
+                touche = (best.col, best.kd4, best.r, best.c)
+        self.epoque += 1
+        self.effets.append({"n": self.n_transitions, "bbox": bbox, "touche": touche, "pixels": n})
+        self.region_effet = bbox
+        if touche is not None:
+            self.touches[touche] = self.touches.get(touche, 0) + 1
+        self.rejetes = {k for k in self.rejetes if k[0] != "toucher"}
+        self.interdits = set()               # un blocage observé avant le changement du monde n'est plus une preuve
+        self.visites = {}
+        self.buts = None
+        self.stat_ent = None
+        self.stats["effets_distants"] = self.stats.get("effets_distants", 0) + 1
+
+    def _apprendre_corps(self, prev, a, frame):
         """Une transition (prev, action a, frame). Met à jour corps, règles, hypothèses de couleurs."""
         m = self.m
         self.n_transitions += 1
@@ -167,36 +348,84 @@ class AgentSchema:
         Eb = self._entites(frame)
         self.E = Eb
         ev = expliquer(Ea, Eb, prev, frame, self.hud)
+        poses_av = {c.id: c.pose() for c in self.corps}
         self.nul_de_suite = self.nul_de_suite + 1 if ev["type"] == "none" else 0
         self._maj_hud(prev, frame)
         # --- remise à zéro du niveau (game over) : l'image redevient l'image initiale
-        if np.array_equal(frame, self.frame0) and not np.array_equal(prev, self.frame0):
+        egal0 = lambda f: bool(((f == self.frame0) | self.hud).all())
+        hud_on = lambda f: int(((f != self.bg) & self.hud).sum())
+        # un retour à la disposition initiale est un game over seulement si la jauge s'est remplie (un simple aller-retour la vide)
+        if egal0(frame) and not egal0(prev) and (hud_on(frame) > hud_on(prev) or not self.hud.any()
+                                                  and not np.array_equal(prev, frame)
+                                                  and np.array_equal(frame, self.frame0) and self.n_transitions > 8):
+            # game over : le niveau repart de zéro (poses, sélection, éventuellement aussi les états cachés). On repart d'un niveau
+            # neuf en gardant ce qui a été appris du jeu (translations, solides, mortelles, buts confirmés).
             if self.dest_cols is not None:
                 m.mortel.ajouter(self.dest_cols - {self.bg}, True)
-            for c in self.corps:
-                p, f = self._localiser(c, frame)
-                if p is not None and f >= 0.85:
-                    c.M, c.t = p[0], (p[1], p[2])
-                else:
-                    c.perdu = True
             self.stats["reset_vu"] = self.stats.get("reset_vu", 0) + 1
-            self.file = []
+            n_reset = self.stats["reset_vu"]
+            lv_act = self.lv_actions
+            frame0, lv = self.frame0, self.lv
+            self._nouveau_niveau(frame, lv, frame0)
+            self.lv_actions = lv_act
+            self.prev_act = None
+            avail = [x for x in MOUV if x in self.avail_cur]
+            self.sondes = sorted(avail, key=lambda x: (x not in self.ops_globaux, x))
+            self.sel = None
             return
         if self.dest_cols is not None:
             m.mortel.ajouter(self.dest_cols - {self.bg}, False)
         # corps concerné par l'événement (avant mise à jour des poses)
         corps_ev = None
+        rot_vu = None
         if ev["type"] == "T":
             corps_ev = self._corps_pour(pixels([Ea[i] for i in ev["idx_a"]]))
         elif ev["type"] == "D4":
             corps_ev = self._corps_pour(ev["pa"])
+            if corps_ev is not None:
+                i, tt = ev["i"], np.array(ev["t"])
+                M0, t0 = corps_ev.M, np.array(corps_ev.t)
+                M1 = d4_mul(i, M0)
+                t1 = D4[i] @ t0 + tt
+                M1c, t1c = corps_ev.canon(M1, (int(t1[0]), int(t1[1])))
+                corps_ev.rot_tab[(a, M0)] = (M1c, (t1c[0] - int(t0[0]), t1c[1] - int(t0[1])))
+                rot_vu = (corps_ev.id, M1c, t1c)
         # --- corps connus : la pose prédite est-elle observée ?
         connus = [c for c in self.corps if a in c.ops]
+        if len(connus) > 1:
+            # plusieurs corps répondent à la même action : un seul est commandé (sélection) ; les autres restent en place
+            if corps_ev is not None:
+                connus = [c for c in connus if c.id == corps_ev.id]
+            elif self.sel is not None and any(c.id == self.sel for c in connus):
+                connus = [c for c in connus if c.id == self.sel]
         resolu = set()
+        if rot_vu is not None:
+            for c in connus:
+                if c.id == rot_vu[0]:
+                    c.M, c.t = rot_vu[1], rot_vu[2]
+                    resolu.add(c.id)
         for c in connus:
+            if c.id in resolu:
+                continue
             pred = c.appliquer(a, c.pose())
             f_pred = self._fit(c, pred, frame)
             f_old = self._fit(c, c.pose(), frame)
+            if pred != c.pose() and f_pred < 0.9 and self._recoloration(c, pred, frame):
+                w = c.pixels_pose(pred)
+                H, W = frame.shape
+                for k, (r, cc) in enumerate(w.tolist()):
+                    if 0 <= r < H and 0 <= cc < W and c.cols[k] >= 0 and frame[r, cc] != c.cols[k]:
+                        c.cols[k] = -1
+                f_pred = self._fit(c, pred, frame)
+            if pred != c.pose() and f_pred < 0.9 and f_old < 0.9 and self._forme(c, pred, frame) >= 0.97 \
+                    and self._forme(c, c.pose(), frame) < 0.9:
+                # même forme à la pose prédite, mais des pièces ont changé de couleur (pointes appariées) : jokers par pixel
+                w = c.pixels_pose(pred)
+                H, W = frame.shape
+                for k, (r, cc) in enumerate(w.tolist()):
+                    if 0 <= r < H and 0 <= cc < W and c.cols[k] >= 0 and frame[r, cc] != c.cols[k]:
+                        c.cols[k] = -1
+                f_pred = self._fit(c, pred, frame)
             if pred != c.pose() and f_pred >= 0.9 and f_pred >= f_old:
                 cols, hors = m.couleurs_dest(prev, c.pixels_pose(pred), c.pixels_pose(c.pose()))
                 if cols:
@@ -208,27 +437,47 @@ class AgentSchema:
             elif f_old >= 0.9 and f_pred < f_old + 1e-9 or (pred == c.pose() and f_old >= 0.9):
                 # le corps n'a pas bougé alors qu'une règle l'y poussait : obstacle
                 cols, hors = m.couleurs_dest(prev, c.pixels_pose(pred), c.pixels_pose(c.pose()))
-                if cols and pred != c.pose():
+                vrai_blocage = ev["type"] == "none" or (self.sel is None and len(self.corps) == 1)
+                if cols and pred != c.pose() and vrai_blocage:
                     m.solide.ajouter(cols, True)
-                if pred != c.pose():
+                if pred != c.pose() and vrai_blocage:
                     self.interdits.add((tuple(q.pose() for q in self.corps if q.ops), a))
                     self.file = []
+                    self.file_interrompu = True
                 resolu.add(c.id)
             else:
                 # surprise : localisation globale
                 self.stats["surprises"] += 1
+                self.file, self.file_interrompu = [], True
                 p, f = self._localiser(c, frame)
                 if p is not None and f >= 0.85:
-                    c.M, c.t = p[0], (p[1], p[2])
+                    if f >= 0.97 and (self.sel is None or self.sel == c.id or len(connus) == 1) and a in MOUV:
+                        self._apprendre_pose(c, a, p)     # l'événement n'était pas explicable par entités : on apprend par la pose
+                    c.M, c.t = c.canon(p[0], (p[1], p[2]))
                 else:
                     c.perdu = True
+        # --- corps dont l'action a n'a pas encore de règle mais dont la pose a manifestement changé : on le relocalise par son motif
+        if a in MOUV and ev["type"] not in ("none",):
+            cand = [c for c in self.corps if a not in c.ops and (self.sel is None or c.id == self.sel) and not getattr(c, "perdu", False)]
+            for c in cand:
+                if self._fit(c, c.pose(), frame) < 0.9:
+                    p, f = self._localiser(c, frame)
+                    if p is not None and f >= 0.97:
+                        self._apprendre_pose(c, a, p)
+                        c.M, c.t = c.canon(p[0], (p[1], p[2]))
+                        self.ops_globaux.setdefault(a, c.ops[a][:2] if c.ops[a][0] == "T" else ("R", c.ops[a][1]))
         # --- nouvelles règles (les clics sont paramétriques : leurs effets sont des événements, pas des opérateurs)
         if a == 6:
+            self._marquer_jokers(Ea, ev)
+            if ev["type"] != "none" and self.click_corps.get(self.dernier_clic) is not None:
+                self.sel = self.click_corps[self.dernier_clic]
             self.clics_effets = getattr(self, "clics_effets", [])
             self.clics_effets.append((ev["type"], len(ev.get("recol", []))))
-            if ev["type"] != "none":
-                self.reprobe = True            # un clic a changé la scène (sélection ?) : on re-sonde les déplacements
+            if ev["type"] != "none" and self.click_corps.get(self.dernier_clic) is None:
+                self.reprobe = True            # un clic exploratoire a changé la scène (sélection ?) : on re-sonde les déplacements
             return
+        if corps_ev is not None and ev["type"] in ("T", "D4"):
+            self.sel = corps_ev.id
         if ev["type"] in ("T", "D4") and (corps_ev is None or a not in corps_ev.ops):
             self._induire(Ea, Eb, ev, a, prev, frame, corps_ev)
         if ev["type"] in ("autre", "T"):
@@ -241,6 +490,36 @@ class AgentSchema:
                     if mine & set(map(tuple, c.monde().tolist())):
                         m.consomme.add((e.col, e.kex))
         return
+
+    def _marquer_jokers(self, Ea, ev):
+        """Entités recolorées par un clic (sélection) : leurs pixels deviennent des jokers dans les corps qui les contiennent."""
+        for i, j in ev.get("recol", []):
+            e = Ea[i]
+            ep = set(map(tuple, (np.argwhere(e.masque) + np.array([e.r, e.c])).tolist()))
+            for c in self.corps:
+                w = c.monde()
+                idx = [k for k, p in enumerate(map(tuple, w.tolist())) if p in ep]
+                if idx:
+                    c.cols[idx] = -1
+
+    def _apprendre_pose(self, c, a, p):
+        """Règle d'action déduite de la pose observée (corps localisé par son motif) : translation ou rotation exacte."""
+        M0, t0 = c.M, np.array(c.t)
+        M1, t1c = c.canon(p[0], (p[1], p[2]))
+        t1 = np.array(t1c)
+        if M1 == M0:
+            if a not in c.ops:
+                c.ops[a] = ("T", (int(t1[0] - t0[0]), int(t1[1] - t0[1])))
+        else:
+            if a not in c.ops:
+                g = None
+                for gg in range(8):
+                    if d4_mul(gg, M0) == M1:
+                        g = gg
+                        break
+                c.ops[a] = ("R", g if g is not None else 1, np.zeros(2))
+            c.rot_tab[(a, M0)] = (M1, (int(t1[0] - t0[0]), int(t1[1] - t0[1])))
+        self.stats["pose_apprise"] = self.stats.get("pose_apprise", 0) + 1
 
     def _revele(self, prev, frame, c, pred):
         """Couleurs révélées par le départ du corps (sol sous le corps) : pixels de l'ancienne empreinte hors nouvelle."""
@@ -291,7 +570,7 @@ class AgentSchema:
             q = np.linalg.lstsq(A.astype(float), b, rcond=None)[0] if abs(np.linalg.det(A)) > 1e-9 else np.zeros(2)
             c.ops[a] = ("R", i, q)
             self.ops_globaux[a] = ("R", i)
-            c.M, c.t = M1, (int(t1[0]), int(t1[1]))
+            c.M, c.t = c.canon(M1, (int(t1[0]), int(t1[1])))
 
     # ================================================================== buts
     def _terrain(self, frame):
@@ -342,11 +621,68 @@ class AgentSchema:
             sc = (1.0 / n) * (1.0 if e.aire >= 2 else 0.3)
             cand.append((sc, e))
         cand.sort(key=lambda x: -x[0])
-        for sc, e in cand[:6]:
+        # registre <-> porte : une entité de même gabarit et de même palette que la zone qui vient de changer est la cible probable
+        pal_reg, dim_reg = None, None
+        if self.region_effet is not None:
+            y0, x0, y1, x1 = self.region_effet
+            zone = frame[max(0, y0 - 1):y1 + 2, max(0, x0 - 1):x1 + 2]
+            pal_reg = set(np.unique(zone).tolist()) - {self.bg}
+            dim_reg = (y1 - y0 + 1, x1 - x0 + 1)
+        # objets composites (cadre + motif d'un glyphe, par exemple) : cibles de contact au même titre que les entités monochromes
+        Tn = terrain.copy()
+        Tn[Tn < 0] = self.bg
+        comps = [cp for cp in composites(Tn, self.bg, aire_max=400) if 12 <= len(cp["pts"])
+                 and cp["pts"][:, 0].min() > 1 and cp["pts"][:, 1].min() > 1
+                 and cp["pts"][:, 0].max() < Tn.shape[0] - 2 and cp["pts"][:, 1].max() < Tn.shape[1] - 2]
+        sigs = {}
+        for cp in comps:
+            h = int(cp["pts"][:, 0].max() - cp["pts"][:, 0].min() + 1)
+            w = int(cp["pts"][:, 1].max() - cp["pts"][:, 1].min() + 1)
+            cp["dim"] = (min(h, w), max(h, w))
+            cp["pal"] = frozenset(np.unique(cp["cols"]).tolist())
+            sigs[(cp["dim"], cp["pal"])] = sigs.get((cp["dim"], cp["pal"]), 0) + 1
+        cand2 = []
+        vus_bbox = []
+        for sc, e in cand:
+            cand2.append([sc, ("ent", e), (e.r, e.c, e.r + e.h, e.c + e.w)])
+        for cp in comps:
+            y0, x0 = int(cp["pts"][:, 0].min()), int(cp["pts"][:, 1].min())
+            y1, x1 = int(cp["pts"][:, 0].max()) + 1, int(cp["pts"][:, 1].max()) + 1
+            sc = 1.0 / sigs[(cp["dim"], cp["pal"])] * 1.1       # légèrement préférés : un objet entier plutôt qu'un morceau de couleur
+            cand2.append([sc, ("comp", cp), (y0, x0, y1, x1)])
+        for it in cand2:
+            sc, (kind, o), bb = it
+            bonus = 1.0
+            if pal_reg is not None:
+                reg = frame[bb[0]:bb[2], bb[1]:bb[3]]
+                pal = set(np.unique(reg).tolist()) - {self.bg}
+                if pal and pal_reg and len(pal & pal_reg) / max(1, len(pal | pal_reg)) >= 0.5:
+                    bonus *= 2.5
+            sig = (bb[0], bb[1])
+            for k_, v_ in self.touches.items():
+                if abs(k_[2] - bb[0]) <= 2 and abs(k_[3] - bb[1]) <= 2:
+                    bonus *= 1.0 if v_ < 4 else 0.2
+            it[0] = sc * bonus
+        cand2.sort(key=lambda x: -x[0])
+        retenus = []
+        for sc, (kind, o), bb in cand2:
+            if any(_iou(bb, r) > 0.6 for r in retenus):
+                continue
+            retenus.append(bb)
             cible = np.zeros(terrain.shape, bool)
-            cible[e.r:e.r + e.h, e.c:e.c + e.w] |= e.masque
-            buts.append(But("toucher", 0.3 * sc, lambda p, g, t: t, cible=cible, detail=f"col{e.col}@{e.r},{e.c}"))
-        # 5. tout consommer (si une règle de consommation est connue)
+            if kind == "ent":
+                cible[o.r:o.r + o.h, o.c:o.c + o.w] |= o.masque
+                det = f"col{o.col}@{o.r},{o.c}"
+            else:
+                cible[bb[0]:bb[2], bb[1]:bb[3]] = True
+                det = f"obj@{bb[0]},{bb[1]}"
+            buts.append(But("toucher", 0.3 * sc, lambda p, g, t: t, cible=cible, detail=det))
+            if len(retenus) >= 9:
+                break
+        # 5. buts confirmés par une victoire à un niveau précédent : leur a priori est relevé (la suite du jeu les réutilise)
+        for b in buts:
+            if b.nom in self.buts_confirmes:
+                b.prior = min(0.99, b.prior * 1.6 + 0.1)
         return buts
 
     def _contexte(self, frame, but=None, consommables=None):
@@ -361,6 +697,7 @@ class AgentSchema:
         frame = np.asarray(obs["frame"][-1], dtype=np.int16)
         lv = obs["levels_completed"]
         avail = [a for a in obs.get("available_actions", []) if a != 0]
+        self.avail_cur = avail
         nouveau = self.lv is None or lv != self.lv
         if nouveau:
             if self.lv is not None and lv > self.lv:
@@ -379,13 +716,24 @@ class AgentSchema:
                 if self.stats["exc"] > 20:
                     return None
         self.cur = frame
+        if not nouveau:
+            self._sel_depuis_image(frame)
+        if self.opt.get("debug_schema"):
+            import sys
+            print("   [fits]", [(c.id, c.pose(), round(self._fit(c, c.pose(), frame), 2)) for c in self.corps], "sel", self.sel, file=sys.stderr)
         self.lv_actions += 1
-        if self.lv_actions > self.opt.get("schema_max_niveau", 150) or self.nul_de_suite >= 14:
+        cap = self.opt.get("schema_max_niveau", 150)
+        if not self.buts_confirmes and self.stats["abandon"] >= 1:
+            cap = min(cap, self.opt.get("schema_max_sans_succes", 40))   # le modèle n'a encore rien résolu dans ce jeu : crédit réduit
+        if self.lv_actions > cap or self.nul_de_suite >= 14:
+            self.stats["abandon_raison"] = "plafond" if self.lv_actions > cap else "immobile"
             return None
         self.dest_cols = None
+        self.dernier_clic = None
         act = self._decider(frame, avail)
         if act is None:
             self.stats["abandon"] += 1
+            self.stats.setdefault("abandon_raison", "decider")
             return None
         self.prev_frame, self.prev_act = frame, act[0]
         # couleurs de destination prévues (pour mortel / gagnant)
@@ -397,6 +745,7 @@ class AgentSchema:
                 break
         self.last_pose = [c.pose() for c in self.corps]
         if act[0] == 6:
+            self.dernier_clic = (int(act[1]), int(act[2]))
             return {"name": "ACTION6", "data": {"x": int(act[1]), "y": int(act[2])}}
         return {"name": f"ACTION{act[0]}", "data": {}}
 
@@ -428,8 +777,69 @@ class AgentSchema:
         if not corps:
             return self._sans_corps(frame, avail)
         if self.file:
-            return (self.file.pop(0),)
+            return self._jeton(self.file.pop(0))
+        # actions sans effet connu (probablement bloquées à la pose du sondage) : on les re-sonde depuis une autre pose
+        if corps:
+            c0 = next((c for c in corps if c.id == self.sel), corps[0])
+            for a in MOUV:
+                if a in avail and all(a not in c.ops for c in corps) and self.reprobes.get(a, (None, 0))[1] < 4:
+                    pose_a, k = self.reprobes.get(a, (None, 0))
+                    if pose_a != tuple(c0.pose()):
+                        self.reprobes[a] = (tuple(c0.pose()), k + 1)
+                        self.stats["sondes"] += 1
+                        return (a,)
+        for c in corps:
+            for a, op in c.ops.items():
+                if op[0] == "R" and self.sel == c.id and (a, c.M) not in c.rot_tab and a in avail \
+                        and len([k for k in c.rot_tab if k[0] == a]) < 4:
+                    self.stats["sondes"] += 1
+                    return (a,)          # on poursuit la rotation jusqu'à refermer le cycle : table exacte pose par pose
+        r = self._phase_selection(frame, avail)
+        if r is not None:
+            return r
         return self._planifier(frame, avail)
+
+    def _jeton(self, x):
+        return x if isinstance(x, tuple) else (x,)
+
+    def _point_corps(self, c, pose=None):
+        w = c.monde() if pose is None else c.pixels_pose(pose)
+        ctr = w.mean(0)
+        k = int(np.argmin(((w - ctr) ** 2).sum(1)))
+        return int(w[k, 1]), int(w[k, 0])
+
+    def _phase_selection(self, frame, avail):
+        """Objets composites jamais commandés : un clic (sélection ?) puis re-sondage des déplacements."""
+        if 6 not in avail or self.n_sel >= 6 or not any(c.ops for c in self.corps):
+            return None
+        comps = composites(frame, self.bg, self.hud)
+        cand = []
+        for cp in comps:
+            if len(cp["pts"]) < 30:
+                continue
+            sig = (int(cp["pts"][:, 0].min()), int(cp["pts"][:, 1].min()), len(cp["pts"]))
+            if sig in self.clic_deja:
+                continue
+            ps = set(map(tuple, cp["pts"].tolist()))
+            couvert = False
+            for c in self.corps:
+                fp = set(map(tuple, c.monde().tolist()))
+                if len(ps & fp) >= 0.4 * min(len(ps), len(fp)):
+                    couvert = True
+                    break
+            if not couvert:
+                cand.append((len(cp["pts"]), sig, cp))
+        if not cand:
+            return None
+        cand.sort(key=lambda x: -x[0])
+        _, sig, cp = cand[0]
+        self.clic_deja.add(sig)
+        self.n_sel += 1
+        ctr = cp["pts"].mean(0)
+        k = int(np.argmin(((cp["pts"] - ctr) ** 2).sum(1)))
+        x, y = int(cp["pts"][k, 1]), int(cp["pts"][k, 0])
+        self.dernier_clic = (x, y)
+        return (6, x, y)
 
     @staticmethod
     def _point_dans(e):
@@ -453,8 +863,132 @@ class AgentSchema:
                 return (6, x, y)
         return None
 
+    # ------------------------------------------------------------------ assemblage multi-corps
+    def _Ms(self, c):
+        Ms, front = {c.M}, [c.M]
+        while front:
+            M = front.pop()
+            for a, op in c.ops.items():
+                if op[0] == "R":
+                    r = c.appliquer(a, (M, 0, 0))
+                    M2 = r[0]
+                    if M2 not in Ms:
+                        Ms.add(M2); front.append(M2)
+        return sorted(Ms)
+
+    def _plan_assemblage(self, frame):
+        corps = [c for c in self.corps if c.ops and not getattr(c, "perdu", False)]
+        if not corps:
+            return None
+        comps = composites(frame, self.bg, self.hud)
+        fixes = []
+        for cp in comps:
+            ps = set(map(tuple, cp["pts"].tolist()))
+            if len(ps) < 20:
+                continue
+            if any(len(ps & set(map(tuple, c.monde().tolist()))) >= 0.4 * min(len(ps), len(c.cols)) for c in corps):
+                continue
+            fixes.append(cp)
+        if not fixes and len(corps) < 2:
+            return None
+        objets = list(fixes) + [{"cols": c.cols0} for c in corps]
+        tipcol = couleur_pointe(objets)
+        if tipcol is None:
+            return None
+        mobiles = []
+        for c in corps:
+            Ms = self._Ms(c)
+            mobiles.append({"id": c.id, "rel": {M: c.rel[M] for M in Ms}, "cols": c.cols0, "Ms": Ms, "M0": c.M, "t0": c.t})
+        sols = assembler(fixes, mobiles, tipcol, ancre=self.asm_ancre if not fixes else None)
+        if not sols and self.asm_ancre is not None and not fixes:
+            sols = assembler(fixes, mobiles, tipcol)
+        if not sols:
+            self.stats["asm_vide"] = self.stats.get("asm_vide", 0) + 1
+            return None
+        par_id = {c.id: c for c in corps}
+
+        def cout(so):
+            sol = so[0]
+            tot = 0
+            for i, (M, tr, tc) in sol.items():
+                c = par_id[i]
+                tot += (abs(tr - c.t[0]) + abs(tc - c.t[1])) / 3.0 + (2 if M != c.M else 0)
+            return tot
+        sols.sort(key=cout)
+        for sol, anc in sols[:6]:
+            movers = [par_id[i] for i, p in sol.items() if p != par_id[i].pose()]
+            if not movers:
+                continue
+            for ordre in itertools.islice(itertools.permutations(movers), 24):
+                plan = self._naviguer(frame, ordre, sol, corps, fixes, tipcol)
+                if plan is not None:
+                    self.asm_cibles = dict(sol)
+                    if anc is not None and self.asm_ancre is None:
+                        self.asm_ancre = anc
+                    self.stats["asm_plans"] = self.stats.get("asm_plans", 0) + 1
+                    return plan
+        self.stats["asm_inaccessible"] = self.stats.get("asm_inaccessible", 0) + 1
+        return None
+
+    def _naviguer(self, frame, ordre, sol, corps, fixes, tipcol):
+        sim = {c.id: c.pose() for c in corps}
+        jetons = []
+        for b in ordre:
+            T = self._terrain(frame)
+            H, W = T.shape
+            ex = np.zeros((H, W), bool)
+            for fx in fixes:
+                T[fx["pts"][:, 0], fx["pts"][:, 1]] = -1
+                tk = fx["cols"] == tipcol
+                ex[fx["pts"][tk, 0], fx["pts"][tk, 1]] = True
+            for o in corps:
+                if o.id == b.id:
+                    continue
+                pix = o.pixels_pose(sim[o.id])
+                mk = (pix[:, 0] >= 0) & (pix[:, 0] < H) & (pix[:, 1] >= 0) & (pix[:, 1] < W)
+                T[pix[mk, 0], pix[mk, 1]] = -1
+                tk = mk & (o.cols0 == tipcol)
+                ex[pix[tk, 0], pix[tk, 1]] = True
+            ctx = Contexte(T, [b], self.m.solide.map_union(), self.hud, actions=sorted(b.ops))
+            ctx.tip_exempt, ctx.tipcol = ex, tipcol
+            cible = sol[b.id]
+            chemin = bfs(ctx, (sim[b.id],), lambda poses, g, t, cible=cible: poses[0] == cible, interdits=self.interdits)
+            if chemin is None:
+                return None
+            if self.sel != b.id:
+                x, y = self._point_corps(b, sim[b.id])
+                self.click_corps[(x, y)] = b.id
+                jetons.append((6, x, y))
+            jetons += chemin
+            sim[b.id] = cible
+        return jetons
+
     def _planifier(self, frame, avail):
         m = self.m
+        cle = tuple(c.pose() for c in self.corps if c.ops)
+        self.visites[cle] = self.visites.get(cle, 0) + 1
+        if self.visites[cle] > 6:
+            self.stats["boucle"] = self.stats.get("boucle", 0) + 1
+            return None                      # on tourne en rond dans le même état : le modèle ne suffit pas, on abandonne le niveau
+        if ("assemblage",) not in self.rejetes and (len(self.corps) >= 2 or any(c.ops for c in self.corps)):
+            atteint = all(c.pose() == self.asm_cibles.get(c.id, c.pose()) for c in self.corps)
+            if self.but_cur is not None and self.but_cur.nom == "assemblage" and not self.file_interrompu and \
+                    (atteint or self.asm_essais >= 4):
+                self.rejetes.add(("assemblage",))          # poses prévues atteintes sans victoire : but falsifié
+                self.but_cur = None
+            else:
+                if self.but_cur is not None and self.but_cur.nom == "assemblage":
+                    self.asm_essais += 1                   # le monde a réagi autrement (poussée, blocage) : on replanifie
+                plan = self._plan_assemblage(frame)
+                self.file_interrompu = False
+                if plan:
+                    b = But("assemblage", 0.95, lambda p, g, t: False, detail=f"{len(plan)} jetons")
+                    b.cle = ("assemblage",)
+                    self.but_cur = b
+                    self.stats["buts_testes"] += 1
+                    self.log.append((self.lv, "assemblage", b.detail, len(plan)))
+                    self.file = list(plan)
+                    return self._jeton(self.file.pop(0))
         if self.stat_ent is None or self.buts is None:
             terrain = self._terrain(frame)
             self.stat_ent = self._statiques(terrain)
@@ -467,7 +1001,10 @@ class AgentSchema:
             self.pose_vues.add((c.id,) + c.pose())
         # un but atteint sans victoire est falsifié
         if self.but_cur is not None and self.but_cur.test(poses, frozenset(), self.but_cur.cible is not None and self._sur_cible(self.but_cur, corps)):
-            self.rejetes.add(self.but_cur.cle)
+            if self.epoque == getattr(self.but_cur, "epoque0", self.epoque):
+                self.rejetes.add(self.but_cur.cle)           # atteint, rien n'a changé, pas de victoire : but falsifié
+            else:
+                self.stats["declencheurs"] = self.stats.get("declencheurs", 0) + 1   # atteint et le monde a réagi : c'est un déclencheur
             self.but_cur = None
         meilleur = None
         for b in self.buts:
@@ -483,6 +1020,9 @@ class AgentSchema:
                 meilleur = (sc, b, plan)
         if meilleur is not None:
             _, b, plan = meilleur
+            if b.nom in ("toucher", "couleur_gagnante") and plan:
+                plan = list(plan) + [plan[-1]]       # le contact en pixels précède souvent l'entrée : on pousse une fois de plus
+            b.epoque0 = self.epoque
             self.but_cur = b
             self.stats["plans"] += 1
             self.stats["buts_testes"] += 1

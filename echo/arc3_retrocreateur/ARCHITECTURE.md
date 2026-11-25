@@ -103,3 +103,37 @@ Langage (nouvelles primitives, `langage.py`, `registre.py`) :
 4. **Déclencheur d'énergie** `('refill',)` : la jauge remonte quand l'avatar entre sur un type (anneau consommé après usage) ; la planification devient sensible à l'énergie (`planif.chercher_u`, état = (état, énergie dépensée)) dès qu'un `refill` ou un `mod` est connu, car la vie dure ~21 coups et la solution exige plus.
 
 Filet de sécurité (`filet.py`) : assemblage de la v2 (`bibliotheque` : Graphe, ModeleEffet, ModeleValeur, théorie v1), pris quand la perception échoue ou qu'aucun plan n'a été exécuté en 250 actions sur un niveau ; rend la main au programme au niveau suivant ; un RESET de la v2 est interdit en cours de partie (il peut renvoyer le jeu au niveau 0).
+
+## Phase 4 (J3-bis) : couche de schémas causaux locaux (`retro/schemas/`)
+
+But : ne plus dépendre d'un langage de programmes écrit à la main. Inspiration : Schema Networks (Kansky et al. 2017) et les modèles
+orientés objets ; tout est écrit ici, rien n'est téléchargé, aucun identifiant de jeu, aucun réseau, aucun modèle de langue.
+
+Ordre d'intégration (`agent.py`, `_filet` / `_dernier_recours`) :
+1. le programme (langage de J1 / J3) joue d'abord ; il passe la main aux schémas si la perception échoue, s'il n'a produit aucun plan en 25 actions
+   (`stall0`), ou s'il n'a pas fini le niveau en 150 actions (`niveau_max` : 99 % des niveaux résolus des mondes le sont en moins de 130 coups) ;
+2. les schémas (`AgentSchema`) ; le moteur qui vient de gagner reste prioritaire au niveau suivant ;
+3. dernier recours seulement : la v1 (exploration) 120 coups par niveau, puis le filet v2 plafonné à 35 % du budget total.
+
+Organes de la couche :
+- **Perception sans grille** (`entites.py`) : composantes connexes monochromes (couleur, position, taille, masque, forme canonique D4),
+  objets composites (composantes 8-connexes multicolores), bandeaux / compteurs (composantes minces collées au bord, puis lignes du bord qui changent
+  presque à chaque coup).
+- **Corps rigides et avatars par sondage** (`modele.py`, `agent_schema.py`) : chaque action 1-5 est essayée ; les entités qui bougent ensemble forment un
+  corps (gabarit de pixels). Règles locales apprises : translation (`T`, vecteur), rotation / symétrie (`R`, table exacte pose par pose
+  `(action, orientation) -> (orientation', décalage)`, car le pivot dépend de l'orientation), couleurs de sélection (jokers par groupe de couleurs).
+- **Explication d'une transition** (`transitions.py`) : translation commune, transformation D4 avec translation (test exact sur les pixels),
+  recoloration en place, apparition / disparition, et effet à distance (pixels qui changent hors des corps : un déclencheur a agi ailleurs).
+- **Bayes + longueur de description** (`HypCouleurs`) : pour « couleur solide », « couleur mortelle », « couleur gagnante », posterior sur les sous-ensembles
+  de couleurs avec a priori exp(-lambda |H|) ; les 8 meilleurs sont gardés, mis à jour à chaque observation (blocage ou passage libre).
+- **Planification** (`buts.py`) : BFS dans les poses prédites (corps, consommations) avec collision contre le terrain appris ; ré-induction à la
+  première surprise (pose relocalisée par le motif, règle apprise par la pose observée, arête interdite après un blocage).
+- **Découverte de but** : hypothèses a priori pragmatiques (motif = référence par pointes ou parties jumelles, couleur gagnante apprise, toucher un objet
+  unique et saillant ; un objet de même gabarit et de même palette que la zone qui vient de changer est la cible probable), essayées au meilleur rapport
+  prior / coût ; une hypothèse atteinte sans victoire est écartée, sauf si le monde a réagi (alors c'est un déclencheur et les hypothèses sont de
+  nouveau testables : nouvelle « époque »). Les buts confirmés par une victoire voient leur a priori relevé aux niveaux suivants.
+- **Assemblage multi-corps** : sélection par clic (le clic bascule la couleur du corps commandé), re-sondage, puis recherche exhaustive des poses où toutes
+  les pointes (petites pièces de même couleur présentes dans plusieurs objets) sont appariées deux à deux, navigation corps par corps.
+
+Limites connues (voir resultats_j3bis.md) : tracking des corps non commandés quand ils se recouvrent, états cachés (palette du registre), jeux à clics
+dont l'objet cliqué n'est pas un corps (sc25), niveaux avec plusieurs corps qui se poussent.

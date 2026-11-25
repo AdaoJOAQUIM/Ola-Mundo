@@ -96,10 +96,26 @@ class Corps:
         self.pix = np.asarray(pix, dtype=int)          # (n, 3) r, c, col à la création (pose identité, t=0)
         self.id = ident
         self.rel = [self.pix[:, :2] @ D4[i].T for i in range(8)]
-        self.cols = self.pix[:, 2]
+        self.cols0 = self.pix[:, 2].copy()              # couleurs d'origine (jamais modifiées)
+        self.cols = self.pix[:, 2].copy()               # -1 = joker (couleur de sélection : change quand le corps est (dé)sélectionné)
         self.M, self.t = 0, (0, 0)
         self.ops = {}                                   # action -> ('T', d) | ('R', g, q)
+        self.rot_tab = {}                               # (action, M) -> (M', (dr, dc)) : effet exact des rotations, appris pose par pose
         self.parts = None                               # [(masque indices)] sous-corps par couleur-composante, rempli à la création
+
+    def canon(self, M, t):
+        """Pose équivalente d'indice D4 minimal (les corps symétriques ont plusieurs indices pour la même empreinte)."""
+        sigs = {}
+        for m in range(8):
+            pts = self.rel[m] - self.rel[m].min(0)
+            sigs[m] = frozenset(map(tuple, np.concatenate([pts, self.cols[:, None]], 1).tolist()))
+        for m in range(8):
+            if sigs[m] == sigs[M]:
+                if m == M:
+                    return M, tuple(t)
+                d = self.rel[M].min(0) - self.rel[m].min(0)
+                return m, (int(t[0] + d[0]), int(t[1] + d[1]))
+        return M, tuple(t)
 
     def monde(self, M=None, t=None):
         M = self.M if M is None else M
@@ -118,6 +134,12 @@ class Corps:
         if op[0] == "T":
             return (M, tr + op[1][0], tc + op[1][1])
         _, g, q = op
+        k = (a, M)
+        if k in self.rot_tab:
+            M2, dv = self.rot_tab[k]
+            return (M2, tr + dv[0], tc + dv[1])
+        if self.rot_tab and any(kk[0] == a for kk in self.rot_tab):
+            pass
         M2 = d4_mul(g, M)
         dv = (D4[M] - D4[M2]) @ q
         return (M2, tr + int(round(dv[0])), tc + int(round(dv[1])))

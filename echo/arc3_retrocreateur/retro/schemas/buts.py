@@ -24,14 +24,19 @@ class Contexte:
         self.consommables = consommables or {}
         self.actions = tuple(actions)
         self.terr_idx = np.where(terrain < 0, 16, terrain)
+        self.tip_exempt = None                    # (H, W) bool : pointes des autres corps (franchissables par les pointes seulement)
+        self.tipcol = None
 
-    def evaluer(self, pix):
+    def evaluer(self, pix, b=None):
         """0 bloqué ; 1 libre ; 2 libre et touche la cible."""
         r, c = pix[:, 0], pix[:, 1]
         if r.min() < 0 or c.min() < 0 or r.max() >= self.H or c.max() >= self.W:
             return 0
         cols = self.terr_idx[r, c]
         bl = self.lut[cols]
+        if self.tip_exempt is not None and b is not None:
+            tm = (b.cols == self.tipcol) & self.tip_exempt[r, c]
+            bl = bl & ~tm
         touche = False
         if self.cible is not None:
             m = self.cible[r, c]
@@ -77,7 +82,7 @@ def bfs(ctx, depart, test_but, cap=30000, interdits=()):
                     nouv.append(p)
                     continue
                 pix = b.pixels_pose(q)
-                ev = ctx.evaluer(pix)
+                ev = ctx.evaluer(pix, b)
                 if ev == 0:
                     nouv.append(p)
                     continue
@@ -151,3 +156,105 @@ def poses_alignees(corps, statiques):
             if ok:
                 poses.add((M, int(t[0]), int(t[1])))
     return poses or None
+
+
+# ------------------------------------------------------------------ assemblage : toutes les pointes appariées entre objets
+def _comp_tips(pts_tip):
+    """Coins haut-gauche des pointes (composantes 4-connexes) d'un ensemble de pixels."""
+    s = set(map(tuple, pts_tip.tolist()))
+    vu, res = set(), []
+    for p in sorted(s):
+        if p in vu:
+            continue
+        pile = [p]; vu.add(p); comp = []
+        while pile:
+            r, c = pile.pop(); comp.append((r, c))
+            for q in ((r + 1, c), (r - 1, c), (r, c + 1), (r, c - 1)):
+                if q in s and q not in vu:
+                    vu.add(q); pile.append(q)
+        res.append(min(comp))
+    return res
+
+
+def couleur_pointe(objets):
+    """Couleur « connecteur » : petite pièce (<= 40 pixels de cette couleur dans l'objet) présente dans >= 2 objets."""
+    cnt = {}
+    for o in objets:
+        cols, n = np.unique(o["cols"], return_counts=True)
+        for c, k in zip(cols.tolist(), n.tolist()):
+            if c >= 0 and k <= 40:
+                cnt[c] = cnt.get(c, 0) + 1
+    if not cnt:
+        return None
+    c, k = max(cnt.items(), key=lambda kv: kv[1])
+    return c if k >= 2 else None
+
+
+def assembler(fixes, mobiles, tipcol, bornes=(1, 64, 0, 64), max_sol=40, ancre=None):
+    """fixes : [{'pts','cols'}] (monde) ; mobiles : [{'id','rel':{M:(n,2)},'cols','Ms':[M..]}].
+    Cherche des poses (M, tr, tc) des mobiles telles que toutes les pointes (couleur tipcol) soient appariées 2 à 2 et que les
+    objets ne se recouvrent qu'aux pointes appariées. Renvoie une liste de solutions {id: (M, tr, tc)}."""
+    r0, r1, c0, c1 = bornes
+    base = []
+    for f in fixes:
+        tm = f["cols"] == tipcol
+        base.append((f["pts"], tm))
+    sols = []
+    ancre_cur = [None]
+
+    def libres(placed):
+        out = []
+        for (pp, tm) in placed:
+            out += [tuple(x) for x in _comp_tips(pp[tm])]
+        return out
+
+    def rec(restants, placed, poses):
+        if len(sols) >= max_sol:
+            return
+        if not restants:
+            cnt = {}
+            for pp, tm in placed:
+                for p in map(tuple, pp[tm].tolist()):
+                    cnt[p] = cnt.get(p, 0) + 1
+            if cnt and all(v == 2 for v in cnt.values()):
+                sols.append((dict(poses), ancre_cur[0]))
+            return
+        for k, b in enumerate(restants):
+            tm0 = b["cols"] == tipcol
+            for M in b["Ms"]:
+                rel = b["rel"][M]
+                tcs = _comp_tips(rel[tm0])
+                libs = libres(placed)
+                vus = set()
+                for tc in tcs:
+                    for u in libs:
+                        t = (u[0] - tc[0], u[1] - tc[1])
+                        if t in vus:
+                            continue
+                        vus.add(t)
+                        q = rel + np.array(t)
+                        if q[:, 0].min() < r0 or q[:, 0].max() >= r1 or q[:, 1].min() < c0 or q[:, 1].max() >= c1:
+                            continue
+                        sq = set(map(tuple, q.tolist())); tq = set(map(tuple, q[tm0].tolist()))
+                        ok = True
+                        for pp, tm in placed:
+                            sp = set(map(tuple, pp.tolist())); tp = set(map(tuple, pp[tm].tolist()))
+                            if not (sq & sp) <= (tq & tp):
+                                ok = False
+                                break
+                        if ok:
+                            rec(restants[:k] + restants[k + 1:], placed + [(q, tm0)], {**poses, b["id"]: (M, int(t[0]), int(t[1]))})
+
+    if fixes:
+        rec(list(mobiles), base, {})
+    else:
+        # sans objet fixe : chaque mobile à tour de rôle sert d'ancre (il ne bouge pas)
+        for a in range(len(mobiles)):
+            b = mobiles[a]
+            if ancre is not None and b["id"] != ancre:
+                continue
+            ancre_cur[0] = b["id"]
+            M0 = b["M0"]
+            q = b["rel"][M0] + np.array(b["t0"])
+            rec([m for i, m in enumerate(mobiles) if i != a], [(q, b["cols"] == tipcol)], {b["id"]: (M0, int(b["t0"][0]), int(b["t0"][1]))})
+    return sols

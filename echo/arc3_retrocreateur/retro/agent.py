@@ -299,6 +299,11 @@ class RetroCreateur:
             self.lv_filet = lv           # aucun plan en `stall` actions sur ce niveau : le programme ne prédit pas assez bien
             self.stats["stall"] = self.stats.get("stall", 0) + 1
             return self._v1(obs)
+        if not self.utilise_v1 and not self.opt.get("sans_schema") and self.geo is not None and \
+                taken - self.niveau_debut_n >= self.opt.get("niveau_max", 150):
+            self.lv_filet = lv           # 99 % des niveaux résolus des mondes le sont en moins de 130 coups : au-delà, le programme ne fit pas
+            self.stats["niveau_long"] = self.stats.get("niveau_long", 0) + 1
+            return self._v1(obs)
         premier = self.geo is None and self.prev_act is None and self.snap is None and self.raw is None
         try:
             self.lv_cur = lv
