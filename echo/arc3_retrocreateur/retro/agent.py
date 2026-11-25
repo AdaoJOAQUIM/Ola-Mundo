@@ -76,6 +76,10 @@ class RetroCreateur:
         self.others = {}        # mondes à sélection : pièces non sélectionnées (case -> couleur)
         self.sel_amb = {}       # couleur -> deux cases (pièce ou sortie ?) à départager par un clic
         self.sel_test = None
+        self.lv_filet = -1
+        self.niveau_debut_n = 0
+        self._plans_niv = 0
+        self._lv_vu = 0
         self.reg = None         # registre du niveau (motif caché affiché par un glyphe), ou None
 
     # ================================================================== perception
@@ -263,11 +267,22 @@ class RetroCreateur:
         self.avail = [a for a in obs.get("available_actions", []) if a != 0]
         lv = obs["levels_completed"]
         taken = obs["actions_taken"]
+        if lv != self._lv_vu:
+            self._lv_vu, self.niveau_debut_n, self._plans_niv = lv, taken, self.stats["plans"]
         if self.utilise_v1:
-            return self._v1(obs)
+            if lv > self.lv_filet and not self.opt.get("filet_definitif") and self.geo is not None:
+                self.utilise_v1 = False          # nouveau niveau : on redonne la main au programme (perception refaite)
+                self.geo, self.snap, self.raw, self.prev_act, self.prev_snap = None, None, None, None, None
+            else:
+                return self._filet(obs)
         if time.process_time() - self.t0 > self.cpu_max:           # garde de temps : au-delà, actions aléatoires sûres
             self.stats["cpu_depasse"] = self.stats.get("cpu_depasse", 0) + 1
             return self._act_de_secours(obs)
+        if not self.utilise_v1 and not self.opt.get("sans_filet") and self.geo is not None and \
+                taken - self.niveau_debut_n >= self.opt.get("stall", 250) and self.stats["plans"] == self._plans_niv:
+            self.lv_filet = lv           # aucun plan en `stall` actions sur ce niveau : le programme ne prédit pas assez bien
+            self.stats["stall"] = self.stats.get("stall", 0) + 1
+            return self._v1(obs)
         premier = self.geo is None and self.prev_act is None and self.snap is None and self.raw is None
         try:
             self.lv_cur = lv
@@ -873,10 +888,22 @@ class RetroCreateur:
     def _fallback(self, obs, raison):
         self.stats["fallback"] += 1
         self.stats["echec_perception"] += 1
+        self.lv_filet = obs["levels_completed"]
         self.trace.append(raison)
         return self._v1(obs)
 
+    def _filet(self, obs):
+        if getattr(self, "filet", None) is None:
+            from .filet import Filet
+            self.filet = Filet(0)
+        self.stats["filet"] = self.stats.get("filet", 0) + 1
+        return self.filet.choisir(obs)
+
     def _v1(self, obs):
+        self.utilise_v1 = True
+        return self._filet(obs)
+
+    def _v1_ancien(self, obs):
         if self.v1 is None:
             import importlib.util
             import sys

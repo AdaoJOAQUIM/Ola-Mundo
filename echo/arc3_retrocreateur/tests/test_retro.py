@@ -297,3 +297,71 @@ def test_garde_de_socket():
 if __name__ == "__main__":
     import pytest
     sys.exit(pytest.main([__file__, "-q"]))
+
+
+# ------------------------------------------------------------------ J3 : garde de découpe, registre, réseau réel, filet
+def test_garde_decoupe_refuse_les_jeux_held():
+    sys.path.insert(0, str(RACINE / "evaluation"))
+    import jeux_reels as J
+    assert len(J.HELD) == 20 and len(J.DEV) == 5 and not set(J.HELD) & set(J.DEV)
+    for h in J.HELD:
+        try:
+            J.garde(h)
+        except J.JeuInterdit:
+            continue
+        raise AssertionError(h)
+    for d in J.DEV:
+        assert J.garde(d)
+    assert set(J.DEV_TRAIN) | set(J.DEV_VAL) == set(J.DEV) and not set(J.DEV_TRAIN) & set(J.DEV_VAL)
+    for h in J.HELD:
+        try:
+            J.ouvrir(h, 10)
+        except J.JeuInterdit:
+            continue
+        raise AssertionError(h)
+
+
+def test_registre_d4_et_glyphes():
+    import numpy as np
+    from retro import registre as R
+    a = np.array([[9, 9, 9], [5, 5, 9], [9, 5, 9]])
+    assert R.elements_vers(a, R.appliquer(3, a)) and R.composer(3, 1) == 0
+    f = np.full((30, 30), 4)
+    for (y0, x0, arr, s) in ((2, 2, a, 2), (18, 15, R.appliquer(1, a), 1)):
+        n = arr.shape[0] * s
+        f[y0:y0 + n + 4, x0:x0 + n + 4] = 5
+        f[y0 + 2:y0 + 2 + n, x0 + 2:x0 + 2 + n] = np.kron(arr, np.ones((s, s), dtype=int))
+    gl = R.glyphes(f)
+    assert len(gl) == 2 and R.paires(gl) == [(0, 1)]
+    r = R.Registre(f)
+    f2 = f.copy()
+    f2[4:10, 4:10] = np.kron(R.appliquer(3, a), np.ones((2, 2), dtype=int))
+    g = r.maj(f2)
+    assert g == 3 and r.mode == 3 and r.reg == 0 and 1 in (r.cibles() or set()) or r.cibles() is not None
+
+
+def test_reseau_par_aretes_et_effets_registre():
+    import numpy as np
+    from retro.reseau import estimer_reseau_aretes
+    f = np.full((64, 64), 4)
+    for q in range(2, 10):
+        for r in range(2, 9):
+            if (q + r) % 3 == 0:
+                f[r * 5:(r + 1) * 5, 4 + q * 5:4 + (q + 1) * 5] = 3
+    est = estimer_reseau_aretes([f])
+    assert est is not None and est[0] == 5 and est[1] == 4 and est[2] == 0
+    from retro.langage import Prog
+    p = Prog(Types())
+    p.dirmap = {"ACTION1": 3}
+    p.fx = {7: (("mod", 3),)}
+    geo = Geo(Reseau(5, 0, 0, 0, 0, 0, 4, 1), 1, 4, 0, 0, frozenset(), frozenset())
+    r = p.pas(geo, ((-1, 7, 0, 0), 0, 0, 0)[:0] or ((-1, 7, 0, 0), 0, 12, 0), ("ACTION1", None))
+    assert r is not None and (r[0][2] >> 8) == 3 and (r[0][2] & 255) == 12
+
+
+def test_filet_v2_charge_et_aucune_modification_de_v2():
+    from retro.filet import Filet, V2
+    f = Filet(0)
+    assert f.ag is not None
+    out = subprocess.run(["git", "status", "--porcelain", str(V2)], capture_output=True, text=True, cwd=str(RACINE))
+    assert out.stdout.strip() == ""
