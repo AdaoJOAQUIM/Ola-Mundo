@@ -59,3 +59,28 @@ Cette section est commitée AVANT toute mesure J3. Les écarts éventuels seront
 - **J3 atteint** si les niveaux résolus à 500 actions sont >= 50 % sur l'ensemble des 5 jeux DEV (moyenne sur les 3 graines, agrégée sur les niveaux).
 - Lecture équitable : DEV-val seul >= 50 % est la seule preuve de généralisation ; si DEV-val < 50 % alors que le total >= 50 %, le résultat est rapporté comme « atteint mais non généralisé ».
 - Rapporté tel quel, quel que soit le résultat. Aucun réglage sur tn36 et ka59.
+
+---
+
+# Phase 4 : critères pré-enregistrés (J3-bis, couche de schémas causaux locaux)
+
+Cette section est commitée AVANT toute mesure J3-bis. Les écarts éventuels seront signalés dans resultats_j3bis.md, pas ici.
+
+## Jeux et protocole
+- Mêmes jeux et même découpe que J3 (DEV-train = cn04, ls20, sc25 ; DEV-val = tn36, ka59). HELD jamais touché, garde du lanceur inchangé.
+- DEV-val a déjà été mesuré en J3 et ses causes d'échec ont été publiées (resultats_j3.md) : DEV-val est donc une **validation affaiblie** ; DEV-train a servi au développement. Aucun des deux n'est une preuve de généralisation. Le rapport le dit.
+- Budget de protocole : 500 actions par jeu. Les parties sont déterministes (le jeu et l'agent le sont ; J3 a montré que les graines 0, 1, 2 donnent les mêmes niveaux) : **la graine d'agent 0 suffit**. Budget large (5 000) rapporté à part, si le temps le permet.
+- DEV-val : un seul passage, à la fin, agent gelé (commit marqué), sans réglage ensuite.
+- Aucun réseau ni modèle de langue à la partie (test de garde de socket), aucun identifiant de jeu dans le code de l'agent (test), jamais de lecture du dossier des jeux.
+- Les mécaniques ajoutées à une copie privée du générateur (corps rigide, rotation, recoloration) ne servent qu'au développement ; `echo/mondes_arc3` n'est pas modifié.
+
+## Mesures
+1. **Niveaux résolus** à 500 actions sur l'ensemble des 5 jeux DEV (somme des niveaux terminés / somme des niveaux), puis DEV-train et DEV-val séparément, et par jeu.
+2. Actions par niveau résolu contre la référence humaine (information).
+3. Schémas appris par jeu (information).
+4. **Régression sur les mondes** : mêmes 100 graines que J3 (`random.Random(11)` parmi les 300 graines J1, budget 500), comparées à la mesure du commit 8ff1aea (439 niveaux sur 562, 78,1 %).
+
+## Seuils J3-bis
+- **J3-bis atteint** si les niveaux résolus à 500 actions sur les 5 jeux DEV sont >= 25 %.
+- Régression : la part de niveaux sur les 100 mondes ne doit pas baisser de plus de 5 points par rapport à 78,1 % (donc >= 73,1 %).
+- Rapporté tel quel, DEV-train et DEV-val séparés.
