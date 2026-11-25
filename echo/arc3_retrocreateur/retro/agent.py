@@ -81,12 +81,21 @@ class RetroCreateur:
         self._plans_niv = 0
         self._lv_vu = 0
         self.reg = None         # registre du niveau (motif caché affiché par un glyphe), ou None
+        self.schema = None      # couche de schémas causaux locaux (phase 4), créée à la demande
+        self.schema_abandon = -1   # niveau où le modèle de schémas a abandonné
+        self.moteur = "prog"       # moteur actif : prog | schema | v1 | net
+        self.schema_premier = False
+        self.net_n = 0             # actions jouées par le filet v2 (plafonné)
+        self.dr_niveau = {}        # niveau -> actions de dernier recours déjà jouées
+        self.v1_agent = None
+        self.frame_niv = None
 
     # ================================================================== perception
     def _niveau(self, frame):
         geo = self.scene.nouveau_niveau(frame)
         self.geo = geo
         self.frame = frame
+        self.frame_niv = frame.copy()
         self.used = 0
         self.pile = []
         if geo is not None:
@@ -273,13 +282,20 @@ class RetroCreateur:
             if lv > self.lv_filet and not self.opt.get("filet_definitif") and self.geo is not None:
                 self.utilise_v1 = False          # nouveau niveau : on redonne la main au programme (perception refaite)
                 self.geo, self.snap, self.raw, self.prev_act, self.prev_snap = None, None, None, None, None
+                # le moteur qui vient de gagner reste prioritaire (programme d'abord, sinon schémas)
+                self.schema_premier = self.moteur == "schema" and not self.opt.get("sans_schema")
+                if self.schema_premier:
+                    self.frame_niv = frame.copy()
+                    self.lv_filet = lv
+                    self.utilise_v1 = True
+                    return self._filet(obs)
             else:
                 return self._filet(obs)
         if time.process_time() - self.t0 > self.cpu_max:           # garde de temps : au-delà, actions aléatoires sûres
             self.stats["cpu_depasse"] = self.stats.get("cpu_depasse", 0) + 1
             return self._act_de_secours(obs)
         if not self.utilise_v1 and not self.opt.get("sans_filet") and self.geo is not None and \
-                taken - self.niveau_debut_n >= self.opt.get("stall", 250) and self.stats["plans"] == self._plans_niv:
+                taken - self.niveau_debut_n >= (self.opt.get("stall", 250) if (self.stats["plans"] > 0 or self.opt.get("sans_schema")) else self.opt.get("stall0", 25)) and self.stats["plans"] == self._plans_niv:
             self.lv_filet = lv           # aucun plan en `stall` actions sur ce niveau : le programme ne prédit pas assez bien
             self.stats["stall"] = self.stats.get("stall", 0) + 1
             return self._v1(obs)
@@ -893,11 +909,57 @@ class RetroCreateur:
         return self._v1(obs)
 
     def _filet(self, obs):
+        """Hors programme : 1) schémas causaux locaux ; 2) v1 (exploration) puis filet v2, filet plafonné ; jamais l'inverse."""
+        lv = obs["levels_completed"]
+        if not self.opt.get("sans_schema") and self.schema_abandon != lv:
+            if self.schema is None:
+                from .schemas.agent_schema import AgentSchema
+                self.schema = AgentSchema(0, self.opt)
+            a = self.schema.choisir(obs, frame0=self.frame_niv if self.schema.lv is None else None)
+            if a is not None:
+                self.moteur = "schema"
+                self.stats["schema"] = self.stats.get("schema", 0) + 1
+                return a
+            self.schema_abandon = lv
+        return self._dernier_recours(obs)
+
+    def _dernier_recours(self, obs):
+        lv = obs["levels_completed"]
+        n = self.dr_niveau.get(lv, 0)
+        self.dr_niveau[lv] = n + 1
+        budget = obs["actions_taken"] + obs.get("actions_remaining", 500)
+        cap = self.opt.get("part_filet", 0.35) * budget
+        if n < self.opt.get("v1_d", 120) or self.net_n >= cap or self.opt.get("sans_net"):
+            self.moteur = "v1"
+            self.stats["v1"] = self.stats.get("v1", 0) + 1
+            return self._v1_exploration(obs)
+        self.moteur = "net"
+        self.net_n += 1
         if getattr(self, "filet", None) is None:
             from .filet import Filet
             self.filet = Filet(0)
         self.stats["filet"] = self.stats.get("filet", 0) + 1
         return self.filet.choisir(obs)
+
+    def _v1_exploration(self, obs):
+        if self.v1_agent is None:
+            import importlib.util
+            import sys
+            from .v1 import V1
+            sys.path.insert(0, str(V1))
+            try:
+                spec = importlib.util.spec_from_file_location("retro_v1_agent", V1 / "agent.py")
+                m = importlib.util.module_from_spec(spec)
+                sys.modules["retro_v1_agent"] = m
+                spec.loader.exec_module(m)
+                self.v1_agent = m.Scientifique(0)
+            finally:
+                sys.path.remove(str(V1))
+        a = self.v1_agent.choisir(obs)
+        if a.get("name") == "RESET" and obs.get("levels_completed", 0) > 0:
+            dispo = [x for x in obs.get("available_actions", []) if x in (1, 2, 3, 4, 5)]
+            return {"name": f"ACTION{dispo[self.n_dec % len(dispo)] if dispo else 1}", "data": {}}
+        return a
 
     def _v1(self, obs):
         self.utilise_v1 = True

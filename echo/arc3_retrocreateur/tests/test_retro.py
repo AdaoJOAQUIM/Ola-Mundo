@@ -235,7 +235,7 @@ def test_planificateur_optimal_sur_mondes_jouets():
 
 # ------------------------------------------------------------------ isolation, identifiants, réseau
 def _sources():
-    return sorted((RACINE / "retro").glob("*.py"))
+    return sorted((RACINE / "retro").rglob("*.py"))
 
 
 def test_isolation_pas_d_import_des_mondes():
