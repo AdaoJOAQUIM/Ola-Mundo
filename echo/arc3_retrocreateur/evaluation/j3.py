@@ -9,15 +9,16 @@ import jeux_reels as J
 
 def un(jeu, graine, budget, opts=None):
     from retro.agent import RetroCreateur
-    os.makedirs(ICI.parent / "runs" / "rec", exist_ok=True)
-    cwd = os.getcwd(); os.chdir(ICI.parent / "runs" / "rec")
+    rec = ICI.parent / "runs" / f"rec_{os.getpid()}"
+    os.makedirs(rec, exist_ok=True)
+    cwd = os.getcwd(); os.chdir(rec)
     try:
         opts = dict(opts or {}); opts.setdefault('cpu_max', 60.0 if budget <= 500 else 400.0)
         res, ag = J.jouer(jeu, lambda: RetroCreateur(graine, opts), budget)
     finally:
         os.chdir(cwd)
         import shutil
-        shutil.rmtree(ICI.parent / 'runs' / 'rec', ignore_errors=True)   # enregistrements du SDK : jamais gardés (volumineux)
+        shutil.rmtree(rec, ignore_errors=True)   # enregistrements du SDK : jamais gardés (volumineux)
     res.update({"prefixe": jeu, "graine": graine, "budget": budget, "stats": getattr(ag, "stats", {})})
     return res
 

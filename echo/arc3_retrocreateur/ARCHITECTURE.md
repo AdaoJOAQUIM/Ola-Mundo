@@ -85,3 +85,21 @@ un écart entre mondes rêvés et vrais jeux (J3 le mesure), ou le budget de cou
 
 Aucun grand modèle, aucun réseau pendant le jeu (test par garde de socket) ; jamais de lecture du code des jeux ;
 aucun identifiant de jeu dans le code (test) ; juges verrouillés par empreinte SHA-256 ; jeux de test touchés une seule fois.
+
+## Phase 3 (J3) : vrais jeux, primitives ajoutées
+
+Toutes déduites d'observations et de rejeux sur DEV-train (jamais du code ni des fichiers des jeux), formulées sans identifiant de jeu.
+
+Perception réelle (les deux a priori du générateur sont relâchés) :
+- **Réseau par arêtes** (`reseau.estimer_reseau_aretes`) : quand les composantes de couleur ne s'alignent pas (cases voisines fusionnées), la période et les phases viennent des arêtes de couleur sur tout le cadre, sans plateau carré ni centré. Preuve : cases de 3 px et de 5 px trouvées sur deux jeux d'entraînement ; le repli composantes reste prioritaire (mondes inchangés).
+- **Sol appris** (`agent._reprendre_sol`) : le « vide » est la couleur de la case que l'avatar vient de quitter, pas la couleur majoritaire. Preuve : sur un jeu, le fond majoritaire est le mur et le sol une couleur plus rare.
+- **Avatar = partie la plus rare** (`scene._plus_rare`) : un sol uniforme se déplace « à l'envers » de l'avatar ; on garde la partie la moins fréquente.
+- Les bandeaux sont des cases du réseau ; une jauge qui baisse à chaque coup est gérée par `Compteur` (inchangé).
+
+Langage (nouvelles primitives, `langage.py`, `registre.py`) :
+1. **Registre à motif** (variable cachée affichée par un glyphe) : cadre de couleur unie contenant un motif n x n ; deux glyphes dont l'un est l'image de l'autre par D4 forment une paire registre / cible. Le mode du registre est un élément de D4 stocké dans les bits hauts de `avc`. Preuve : sur un jeu, le motif du bandeau tourne d'un quart de tour à chaque entrée sur une case précise (observé : 999/559/959 -> 959/559/999 -> ...), la cible est un second glyphe sur le plateau.
+2. **Déclencheur de transformation** `('mod', g)` : entrer sur un type applique g au registre (g appris à la première observation).
+3. **But « registre = cible »** : `('enterreg', types)` et **porte à motif** `solidreg` (un type qui bloque tant que le registre n'est pas sur la cible ; une bosse avec registre != cible l'apprend sans la rendre solide pour toujours). Preuve : la case centrale du glyphe cible refuse l'avatar tant que le motif diffère, et le niveau est gagné à l'entrée quand il est égal.
+4. **Déclencheur d'énergie** `('refill',)` : la jauge remonte quand l'avatar entre sur un type (anneau consommé après usage) ; la planification devient sensible à l'énergie (`planif.chercher_u`, état = (état, énergie dépensée)) dès qu'un `refill` ou un `mod` est connu, car la vie dure ~21 coups et la solution exige plus.
+
+Filet de sécurité (`filet.py`) : assemblage de la v2 (`bibliotheque` : Graphe, ModeleEffet, ModeleValeur, théorie v1), pris quand la perception échoue ou qu'aucun plan n'a été exécuté en 250 actions sur un niveau ; rend la main au programme au niveau suivant ; un RESET de la v2 est interdit en cours de partie (il peut renvoyer le jeu au niveau 0).
