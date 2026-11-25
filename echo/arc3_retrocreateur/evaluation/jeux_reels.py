@@ -53,7 +53,9 @@ def ouvrir(jeu_id: str, budget: int):
     logging.disable(logging.CRITICAL)
     sys.path.insert(0, str(ECHO / "arc3_scientifique"))
     from adapter import AdaptateurARC3
-    cwd = os.getcwd()
+    import harnais  # noqa: F401  (ajoute le courtier à sys.path)
+    import arc3_local_broker as b
+    b.MAX_ACTIONS = max(b.MAX_ACTIONS, int(budget))      # budget large : plafond relevé en mémoire, aucun fichier modifié
     return AdaptateurARC3(jeu_id, budget)
 
 
