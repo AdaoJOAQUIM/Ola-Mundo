@@ -1,0 +1,6969 @@
+{
+ "graine": 20260801,
+ "n": 400,
+ "questions": [
+  {
+   "cmd": "postgres",
+   "stem": "This option dumps out the servers internal configuration variables, descriptions, and defaults in tab-delimited COPY format.",
+   "choices": [
+    "--single",
+    "--describe-config",
+    "-O",
+    "-N"
+   ],
+   "answer": 1,
+   "answer_flag": "--describe-config",
+   "all_flags": [
+    "--describe-config"
+   ],
+   "id": 0,
+   "split": "tune"
+  },
+  {
+   "cmd": "jrunscript",
+   "stem": "Evaluates the specified script file (batch mode).",
+   "choices": [
+    "-f",
+    "-help",
+    "-e",
+    "-encoding"
+   ],
+   "answer": 0,
+   "answer_flag": "-f",
+   "all_flags": [
+    "-f"
+   ],
+   "id": 1,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Do not output commands to set ownership of objects to match the original database.",
+   "choices": [
+    "--file",
+    "--tablespaces-only",
+    "--no-owner",
+    "--quote-all-identifiers"
+   ],
+   "answer": 2,
+   "answer_flag": "--no-owner",
+   "all_flags": [
+    "-O",
+    "--no-owner"
+   ],
+   "id": 2,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dump",
+   "stem": "Output commands to DROP all the dumped database objects prior to outputting the commands for creating them.",
+   "choices": [
+    "--if-exists",
+    "--clean",
+    "--exclude-table-data-and-children",
+    "--schema"
+   ],
+   "answer": 1,
+   "answer_flag": "--clean",
+   "all_flags": [
+    "-c",
+    "--clean"
+   ],
+   "id": 3,
+   "split": "tune"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Request that the package or the predefined application image be signed.",
+   "choices": [
+    "--install-dir",
+    "-background-darkAqua.png",
+    "--win-menu-group",
+    "--mac-sign"
+   ],
+   "answer": 3,
+   "answer_flag": "--mac-sign",
+   "all_flags": [
+    "--mac-sign"
+   ],
+   "id": 4,
+   "split": "tune"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Hint for a tool to issue a warning if the module is resolved.",
+   "choices": [
+    "--warn-if-resolved",
+    "--help-extra",
+    "--legal-notices",
+    "--module-version"
+   ],
+   "answer": 0,
+   "answer_flag": "--warn-if-resolved",
+   "all_flags": [
+    "--warn-if-resolved"
+   ],
+   "id": 5,
+   "split": "tune"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "The user name to connect as",
+   "choices": [
+    "--sampling-rate",
+    "--jobs",
+    "--username",
+    "--port"
+   ],
+   "answer": 2,
+   "answer_flag": "--username",
+   "all_flags": [
+    "-U",
+    "--username"
+   ],
+   "id": 6,
+   "split": "tune"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Specifies the LC_COLLATE setting to be used in this database.",
+   "choices": [
+    "--encoding",
+    "--icu-rules",
+    "--lc-collate",
+    "--version"
+   ],
+   "answer": 2,
+   "answer_flag": "--lc-collate",
+   "all_flags": [
+    "--lc-collate"
+   ],
+   "id": 7,
+   "split": "tune"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Only calculate statistics for use by the optimizer (no vacuum).",
+   "choices": [
+    "--analyze-only",
+    "--skip-locked",
+    "--password",
+    "--parallel"
+   ],
+   "answer": 0,
+   "answer_flag": "--analyze-only",
+   "all_flags": [
+    "-Z",
+    "--analyze-only"
+   ],
+   "id": 8,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_archivecleanup",
+   "stem": "Print the names of the files that would have been removed on stdout (performs a dry run).",
+   "choices": [
+    "-d",
+    "-x",
+    "--version",
+    "-n"
+   ],
+   "answer": 3,
+   "answer_flag": "-n",
+   "all_flags": [
+    "-n"
+   ],
+   "id": 9,
+   "split": "tune"
+  },
+  {
+   "cmd": "jstat",
+   "stem": "Determines the statistics information that the jstat command displays.",
+   "choices": [
+    "-gcnewcapacity",
+    "-statOption",
+    "-gccause",
+    "-printcompilation"
+   ],
+   "answer": 1,
+   "answer_flag": "-statOption",
+   "all_flags": [
+    "-statOption"
+   ],
+   "id": 10,
+   "split": "tune"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Suppresses a fatal error when signed modular JARs are linked in the runtime image.",
+   "choices": [
+    "--version",
+    "--limit-modules",
+    "--save-opts",
+    "--ignore-signing-information"
+   ],
+   "answer": 3,
+   "answer_flag": "--ignore-signing-information",
+   "all_flags": [
+    "--ignore-signing-information"
+   ],
+   "id": 11,
+   "split": "tune"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "This option specifies the directory where the database cluster should be stored.",
+   "choices": [
+    "--pwprompt",
+    "--set",
+    "--pgdata",
+    "--auth"
+   ],
+   "answer": 2,
+   "answer_flag": "--pgdata",
+   "all_flags": [
+    "-D",
+    "--pgdata"
+   ],
+   "id": 12,
+   "split": "tune"
+  },
+  {
+   "cmd": "reindexdb",
+   "stem": "Echo the commands that reindexdb generates and sends to the server.",
+   "choices": [
+    "--echo",
+    "--help",
+    "--port",
+    "--tablespace"
+   ],
+   "answer": 0,
+   "answer_flag": "--echo",
+   "all_flags": [
+    "-e",
+    "--echo"
+   ],
+   "id": 13,
+   "split": "tune"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Lists the table of contents for the archive.",
+   "choices": [
+    "--list",
+    "--version",
+    "--create",
+    "--release"
+   ],
+   "answer": 0,
+   "answer_flag": "--list",
+   "all_flags": [
+    "-t",
+    "--list"
+   ],
+   "id": 14,
+   "split": "tune"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the password used to protect the private key of the keystore entry addressed by the alias specified on the command line.",
+   "choices": [
+    "-addprovider",
+    "-Jjavaoption",
+    "-keypass",
+    "-sigfile"
+   ],
+   "answer": 2,
+   "answer_flag": "-keypass",
+   "all_flags": [
+    "-keypass",
+    "-certchain"
+   ],
+   "id": 15,
+   "split": "tune"
+  },
+  {
+   "cmd": "jstatd",
+   "stem": "This option sets the name to which the remote RMI object is bound in the RMI registry.",
+   "choices": [
+    "-r",
+    "-p",
+    "-nr",
+    "-n"
+   ],
+   "answer": 3,
+   "answer_flag": "-n",
+   "all_flags": [
+    "-n"
+   ],
+   "id": 16,
+   "split": "tune"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Lists available plug-ins, which you can access through command-line options; see jlink Plug-ins.",
+   "choices": [
+    "--list-plugins",
+    "--launcher",
+    "--ignore-signing-information",
+    "--module-path"
+   ],
+   "answer": 0,
+   "answer_flag": "--list-plugins",
+   "all_flags": [
+    "--list-plugins"
+   ],
+   "id": 17,
+   "split": "tune"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Write all query output into file filename, in addition to the normal output destination.",
+   "choices": [
+    "--list",
+    "--echo-hidden",
+    "--log-file",
+    "--dbname"
+   ],
+   "answer": 2,
+   "answer_flag": "--log-file",
+   "all_flags": [
+    "-L",
+    "--log-file"
+   ],
+   "id": 18,
+   "split": "tune"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Do not clean or analyze any tables in schema.",
+   "choices": [
+    "--verbose",
+    "--skip-locked",
+    "--exclude-schema",
+    "--disable-page-skipping"
+   ],
+   "answer": 2,
+   "answer_flag": "--exclude-schema",
+   "all_flags": [
+    "-N",
+    "--exclude-schema"
+   ],
+   "id": 19,
+   "split": "tune"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Specifies the Buffer Access Strategy ring buffer size for a given invocation of vacuumdb.",
+   "choices": [
+    "--no-password",
+    "--disable-page-skipping",
+    "--jobs",
+    "--buffer-usage-limit"
+   ],
+   "answer": 3,
+   "answer_flag": "--buffer-usage-limit",
+   "all_flags": [
+    "--buffer-usage-limit"
+   ],
+   "id": 20,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Append the server log output to filename.",
+   "choices": [
+    "-S",
+    "--help",
+    "--log",
+    "--pgdata"
+   ],
+   "answer": 2,
+   "answer_flag": "--log",
+   "all_flags": [
+    "-l",
+    "--log"
+   ],
+   "id": 21,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "This option is for use by in-place upgrade utilities.",
+   "choices": [
+    "--roles-only",
+    "--username",
+    "--extra-float-digits",
+    "--binary-upgrade"
+   ],
+   "answer": 3,
+   "answer_flag": "--binary-upgrade",
+   "all_flags": [
+    "--binary-upgrade"
+   ],
+   "id": 22,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dump",
+   "stem": "Exclude large objects in the dump.",
+   "choices": [
+    "--compress",
+    "--no-large-objects",
+    "--if-exists",
+    "--format"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-large-objects",
+   "all_flags": [
+    "-B",
+    "--no-large-objects",
+    "--no-blobs"
+   ],
+   "id": 23,
+   "split": "tune"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Same as --list-deps without listing the implied reads edges from the module graph.",
+   "choices": [
+    "--list-reduced-deps",
+    "--system",
+    "--module-path",
+    "--no-recursive"
+   ],
+   "answer": 0,
+   "answer_flag": "--list-reduced-deps",
+   "all_flags": [
+    "--list-reduced-deps"
+   ],
+   "id": 24,
+   "split": "tune"
+  },
+  {
+   "cmd": "java",
+   "stem": "Sets the maximum large page size (in bytes) used by the JVM. The size argument must be a valid page size supported by the environment to have any effect.",
+   "choices": [
+    "-XX:OnError",
+    "-XX:LargePageSizeInBytes",
+    "-XX:FreqInlineSize",
+    "-XX:+HeapDumpOnOutOfMemoryError"
+   ],
+   "answer": 1,
+   "answer_flag": "-XX:LargePageSizeInBytes",
+   "all_flags": [
+    "-XX:LargePageSizeInBytes"
+   ],
+   "id": 25,
+   "split": "tune"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Overrides the location of the installed extensions. directories is a list of directories, separated by the platform path separator (; on Windows, and : otherwise).",
+   "choices": [
+    "-XprintProcessorInfo",
+    "--module-version",
+    "-XprintRounds",
+    "-extdirs"
+   ],
+   "answer": 3,
+   "answer_flag": "-extdirs",
+   "all_flags": [
+    "-extdirs"
+   ],
+   "id": 26,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Exclude tables matching the specified pattern.",
+   "choices": [
+    "--exclude-table",
+    "--no-dependent-toast",
+    "--password",
+    "--progress"
+   ],
+   "answer": 0,
+   "answer_flag": "--exclude-table",
+   "all_flags": [
+    "-T",
+    "--exclude-table"
+   ],
+   "id": 27,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_test_fsync",
+   "stem": "Specifies the file name to write test data in.",
+   "choices": [
+    "--help",
+    "--secs-per-test",
+    "--version",
+    "--filename"
+   ],
+   "answer": 3,
+   "answer_flag": "--filename",
+   "all_flags": [
+    "-f",
+    "--filename"
+   ],
+   "id": 28,
+   "split": "tune"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Maximum number of rows in a table cell.",
+   "choices": [
+    "--verbose",
+    "--cell-height",
+    "--include-events",
+    "--interactive"
+   ],
+   "answer": 1,
+   "answer_flag": "--cell-height",
+   "all_flags": [
+    "--cell-height"
+   ],
+   "id": 29,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "the new PostgreSQL executable directory; default is the directory where pg_upgrade resides; environment variable PGBINNEW",
+   "choices": [
+    "--socketdir",
+    "--old-bindir",
+    "--new-port",
+    "--new-bindir"
+   ],
+   "answer": 3,
+   "answer_flag": "--new-bindir",
+   "all_flags": [
+    "-B",
+    "--new-bindir"
+   ],
+   "id": 30,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Specifies the location of the postgres executable.",
+   "choices": [
+    "-S",
+    "-p",
+    "--core-files",
+    "--version"
+   ],
+   "answer": 1,
+   "answer_flag": "-p",
+   "all_flags": [
+    "-p"
+   ],
+   "id": 31,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Start type of the system service. start-type can be auto, or demand, or the first letter of one of these two.",
+   "choices": [
+    "--options",
+    "-U",
+    "-e",
+    "-S"
+   ],
+   "answer": 3,
+   "answer_flag": "-S",
+   "all_flags": [
+    "-S"
+   ],
+   "id": 32,
+   "split": "tune"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Use separator as the record separator for unaligned output.",
+   "choices": [
+    "--tuples-only",
+    "--version",
+    "--record-separator",
+    "--log-file"
+   ],
+   "answer": 2,
+   "answer_flag": "--record-separator",
+   "all_flags": [
+    "-R",
+    "--record-separator"
+   ],
+   "id": 33,
+   "split": "tune"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Show help about createdb command line arguments, and exit.",
+   "choices": [
+    "--maintenance-db",
+    "--owner",
+    "--lc-ctype",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 34,
+   "split": "tune"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "A delay of this many seconds occurs when a new server process is started, after it conducts the authentication procedure.",
+   "choices": [
+    "--single",
+    "-f",
+    "-p",
+    "-W"
+   ],
+   "answer": 3,
+   "answer_flag": "-W",
+   "all_flags": [
+    "-W"
+   ],
+   "id": 35,
+   "split": "tune"
+  },
+  {
+   "cmd": "jstatd",
+   "stem": "This option sets the port number where the RMI registry is expected to be found, or when not found, created if the -nr option isn't specified.",
+   "choices": [
+    "-p",
+    "-Joption",
+    "-n",
+    "-r"
+   ],
+   "answer": 0,
+   "answer_flag": "-p",
+   "all_flags": [
+    "-p"
+   ],
+   "id": 36,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "By default, when pg_basebackup aborts with an error, it removes any directories it might have created before discovering that it cannot finish the job (for example, the target directory and write-ahead log directory).",
+   "choices": [
+    "--no-clean",
+    "--verbose",
+    "--no-estimate-size",
+    "--username"
+   ],
+   "answer": 0,
+   "answer_flag": "--no-clean",
+   "all_flags": [
+    "-n",
+    "--no-clean"
+   ],
+   "id": 37,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Print only errors, no informational messages.",
+   "choices": [
+    "--silent",
+    "--version",
+    "--help",
+    "--pgdata"
+   ],
+   "answer": 0,
+   "answer_flag": "--silent",
+   "all_flags": [
+    "-s",
+    "--silent"
+   ],
+   "id": 38,
+   "split": "tune"
+  },
+  {
+   "cmd": "dropdb",
+   "stem": "Specifies the name of the database to connect to in order to drop the target database.",
+   "choices": [
+    "--no-password",
+    "--host",
+    "--maintenance-db",
+    "--username"
+   ],
+   "answer": 2,
+   "answer_flag": "--maintenance-db",
+   "all_flags": [
+    "--maintenance-db"
+   ],
+   "id": 39,
+   "split": "tune"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Enable retries for transactions with serialization/deadlock errors and set the maximum number of these tries.",
+   "choices": [
+    "--max-tries",
+    "--scale",
+    "--define",
+    "--jobs"
+   ],
+   "answer": 0,
+   "answer_flag": "--max-tries",
+   "all_flags": [
+    "--max-tries"
+   ],
+   "id": 40,
+   "split": "tune"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Prints version information and enters the tool.",
+   "choices": [
+    "--add-modules",
+    "--module-path",
+    "--show-version",
+    "--add-exports"
+   ],
+   "answer": 2,
+   "answer_flag": "--show-version",
+   "all_flags": [
+    "--show-version"
+   ],
+   "id": 41,
+   "split": "tune"
+  },
+  {
+   "cmd": "vacuumlo",
+   "stem": "Show help about vacuumlo command line arguments, and exit.",
+   "choices": [
+    "--help",
+    "--password",
+    "--limit",
+    "--username"
+   ],
+   "answer": 0,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 42,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_verifybackup",
+   "stem": "Do not verify data file checksums.",
+   "choices": [
+    "--manifest-path",
+    "--exit-on-error",
+    "--wal-directory",
+    "--skip-checksums"
+   ],
+   "answer": 3,
+   "answer_flag": "--skip-checksums",
+   "all_flags": [
+    "-s",
+    "--skip-checksums"
+   ],
+   "id": 43,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "This option causes pg_receivewal to not force WAL data to be flushed to disk.",
+   "choices": [
+    "--compress",
+    "--no-loop",
+    "--no-sync",
+    "--directory"
+   ],
+   "answer": 2,
+   "answer_flag": "--no-sync",
+   "all_flags": [
+    "--no-sync"
+   ],
+   "id": 44,
+   "split": "tune"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Allow JavaScript in options and comments.",
+   "choices": [
+    "-protected",
+    "--spec-base-url",
+    "-notimestamp",
+    "--allow-script-in-comments"
+   ],
+   "answer": 3,
+   "answer_flag": "--allow-script-in-comments",
+   "all_flags": [
+    "--allow-script-in-comments"
+   ],
+   "id": 45,
+   "split": "tune"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Forbids the use of particular scan and join methods: s and i disable sequential and index scans respectively, o, b and t disable index-only scans, bitmap index scans, and TID scans respectively, while n, m, and h disable nested-loop, merge and hash joins respectively.",
+   "choices": [
+    "-r",
+    "-f",
+    "-k",
+    "-W"
+   ],
+   "answer": 1,
+   "answer_flag": "-f",
+   "all_flags": [
+    "-f"
+   ],
+   "id": 46,
+   "split": "tune"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Uses the specified path to search for source files in the specified path.",
+   "choices": [
+    "-listenany",
+    "-sourcepath",
+    "-tserver",
+    "-trackallthreads"
+   ],
+   "answer": 1,
+   "answer_flag": "-sourcepath",
+   "all_flags": [
+    "-sourcepath"
+   ],
+   "id": 47,
+   "split": "tune"
+  },
+  {
+   "cmd": "dropdb",
+   "stem": "Attempt to terminate all existing connections to the target database before dropping it.",
+   "choices": [
+    "--maintenance-db",
+    "--host",
+    "--force",
+    "--if-exists"
+   ],
+   "answer": 2,
+   "answer_flag": "--force",
+   "all_flags": [
+    "-f",
+    "--force"
+   ],
+   "id": 48,
+   "split": "tune"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Specifies the location of application JAR files or a directory containing classes to copy into the resulting JMOD file.",
+   "choices": [
+    "--class-path",
+    "--target-platform",
+    "--module-version",
+    "--config"
+   ],
+   "answer": 0,
+   "answer_flag": "--class-path",
+   "all_flags": [
+    "--class-path"
+   ],
+   "id": 49,
+   "split": "tune"
+  },
+  {
+   "cmd": "jstatd",
+   "stem": "This option sets the port number to which the RMI connector is bound.",
+   "choices": [
+    "-r",
+    "-p",
+    "-n",
+    "-Joption"
+   ],
+   "answer": 0,
+   "answer_flag": "-r",
+   "all_flags": [
+    "-r"
+   ],
+   "id": 50,
+   "split": "tune"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Print the recording in JSON format.",
+   "choices": [
+    "--verbose",
+    "--max-chunks",
+    "--include-categories",
+    "--json"
+   ],
+   "answer": 3,
+   "answer_flag": "--json",
+   "all_flags": [
+    "--json"
+   ],
+   "id": 51,
+   "split": "tune"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Specifies the database user who will own the new database. (This name is processed as a double-quoted identifier.)",
+   "choices": [
+    "--version",
+    "--owner",
+    "--icu-locale",
+    "--port"
+   ],
+   "answer": 1,
+   "answer_flag": "--owner",
+   "all_flags": [
+    "-O",
+    "--owner"
+   ],
+   "id": 52,
+   "split": "tune"
+  },
+  {
+   "cmd": "jconsole",
+   "stem": "Doesn't tile the windows for two or more connections.",
+   "choices": [
+    "-version",
+    "--help",
+    "-Jinput_arguments",
+    "-notile"
+   ],
+   "answer": 3,
+   "answer_flag": "-notile",
+   "all_flags": [
+    "-notile"
+   ],
+   "id": 53,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_resetwal",
+   "stem": "Manually set the oldest unfrozen transaction ID.",
+   "choices": [
+    "--wal-segsize",
+    "--oldest-transaction-id",
+    "--dry-run",
+    "--multixact-ids"
+   ],
+   "answer": 1,
+   "answer_flag": "--oldest-transaction-id",
+   "all_flags": [
+    "-u",
+    "--oldest-transaction-id"
+   ],
+   "id": 54,
+   "split": "tune"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Limits the universe of observable modules.",
+   "choices": [
+    "-Akey",
+    "--add-reads",
+    "--limit-modules",
+    "-Xlint"
+   ],
+   "answer": 2,
+   "answer_flag": "--limit-modules",
+   "all_flags": [
+    "--limit-modules"
+   ],
+   "id": 55,
+   "split": "tune"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Passes option to the debuggee JVM, where option is one of the options described on the reference page for the Java application launcher.",
+   "choices": [
+    "-dbgtrace",
+    "-sourcepath",
+    "-listenany",
+    "-Roption"
+   ],
+   "answer": 3,
+   "answer_flag": "-Roption",
+   "all_flags": [
+    "-Roption"
+   ],
+   "id": 56,
+   "split": "tune"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Specifies the path that the javap command uses to find user class files.",
+   "choices": [
+    "--class-path",
+    "--system",
+    "-l",
+    "-sysinfo"
+   ],
+   "answer": 0,
+   "answer_flag": "--class-path",
+   "all_flags": [
+    "--class-path",
+    "-classpath",
+    "-cp"
+   ],
+   "id": 57,
+   "split": "tune"
+  },
+  {
+   "cmd": "jmap",
+   "stem": "Connects to a running process and dumps the Java heap.",
+   "choices": [
+    "-histo",
+    "-clstats",
+    "-finalizerinfo",
+    "-dump:dump_options"
+   ],
+   "answer": 3,
+   "answer_flag": "-dump:dump_options",
+   "all_flags": [
+    "-dump:dump_options"
+   ],
+   "id": 58,
+   "split": "tune"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Select events matching a category name.",
+   "choices": [
+    "--include-categories",
+    "--include-events",
+    "--truncate",
+    "--width"
+   ],
+   "answer": 0,
+   "answer_flag": "--include-categories",
+   "all_flags": [
+    "--include-categories"
+   ],
+   "id": 59,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "If provided, only display records that modify blocks in the given fork.",
+   "choices": [
+    "--fork",
+    "--follow",
+    "--block",
+    "--xid"
+   ],
+   "answer": 0,
+   "answer_flag": "--fork",
+   "all_flags": [
+    "-F",
+    "--fork"
+   ],
+   "id": 60,
+   "split": "tune"
+  },
+  {
+   "cmd": "jhsdb",
+   "stem": "Attempts to print both java and native frames if the platform allows it.",
+   "choices": [
+    "--mixed",
+    "--heap",
+    "--locks",
+    "--help"
+   ],
+   "answer": 0,
+   "answer_flag": "--mixed",
+   "all_flags": [
+    "--mixed"
+   ],
+   "id": 61,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "Show help about pg_receivewal command line arguments, and exit.",
+   "choices": [
+    "--help",
+    "--verbose",
+    "--username",
+    "--drop-slot"
+   ],
+   "answer": 0,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 62,
+   "split": "tune"
+  },
+  {
+   "cmd": "clusterdb",
+   "stem": "Echo the commands that clusterdb generates and sends to the server.",
+   "choices": [
+    "--verbose",
+    "--echo",
+    "--no-password",
+    "--quiet"
+   ],
+   "answer": 1,
+   "answer_flag": "--echo",
+   "all_flags": [
+    "-e",
+    "--echo"
+   ],
+   "id": 63,
+   "split": "tune"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "The new user will not be allowed to create databases.",
+   "choices": [
+    "--interactive",
+    "--port",
+    "--valid-until",
+    "--no-createdb"
+   ],
+   "answer": 3,
+   "answer_flag": "--no-createdb",
+   "all_flags": [
+    "-D",
+    "--no-createdb"
+   ],
+   "id": 64,
+   "split": "tune"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Do not truncate empty pages at the end of the table.",
+   "choices": [
+    "--no-truncate",
+    "--password",
+    "--schema",
+    "--no-process-main"
+   ],
+   "answer": 0,
+   "answer_flag": "--no-truncate",
+   "all_flags": [
+    "--no-truncate"
+   ],
+   "id": 65,
+   "split": "tune"
+  },
+  {
+   "cmd": "keytool",
+   "stem": "Used with the -addprovider or -providerclass option to represent an optional string input argument for the constructor of class name.",
+   "choices": [
+    "-printcert",
+    "-providerarg",
+    "-printcertreq",
+    "-storetype"
+   ],
+   "answer": 1,
+   "answer_flag": "-providerarg",
+   "all_flags": [
+    "-providerarg"
+   ],
+   "id": 66,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "use hard links instead of copying files to the new cluster",
+   "choices": [
+    "--new-datadir",
+    "--old-bindir",
+    "--jobs",
+    "--link"
+   ],
+   "answer": 3,
+   "answer_flag": "--link",
+   "all_flags": [
+    "-k",
+    "--link"
+   ],
+   "id": 67,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dump",
+   "stem": "Specify the compression method and/or the compression level to use.",
+   "choices": [
+    "--no-large-objects",
+    "--on-conflict-do-nothing",
+    "--encoding",
+    "--compress"
+   ],
+   "answer": 3,
+   "answer_flag": "--compress",
+   "all_flags": [
+    "-Z",
+    "--compress"
+   ],
+   "id": 68,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "Print verbose debugging output that is mostly useful for developers debugging pg_rewind.",
+   "choices": [
+    "--version",
+    "--debug",
+    "--config-file",
+    "--restore-target-wal"
+   ],
+   "answer": 1,
+   "answer_flag": "--debug",
+   "all_flags": [
+    "--debug"
+   ],
+   "id": 69,
+   "split": "tune"
+  },
+  {
+   "cmd": "jdeprscan",
+   "stem": "Limits scanning or listing to APIs that are deprecated for removal.",
+   "choices": [
+    "--class-path",
+    "--full-version",
+    "--for-removal",
+    "--list"
+   ],
+   "answer": 2,
+   "answer_flag": "--for-removal",
+   "all_flags": [
+    "--for-removal"
+   ],
+   "id": 70,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Specifies the maximum number of seconds to wait when waiting for an operation to complete (see option -w).",
+   "choices": [
+    "-P",
+    "-U",
+    "--timeout",
+    "-e"
+   ],
+   "answer": 2,
+   "answer_flag": "--timeout",
+   "all_flags": [
+    "-t",
+    "--timeout"
+   ],
+   "id": 71,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Save full page images found in the WAL records to the save_path directory.",
+   "choices": [
+    "--quiet",
+    "--save-fullpage",
+    "--version",
+    "--bkp-details"
+   ],
+   "answer": 1,
+   "answer_flag": "--save-fullpage",
+   "all_flags": [
+    "--save-fullpage"
+   ],
+   "id": 72,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Check tables matching the specified pattern, unless they are otherwise excluded.",
+   "choices": [
+    "--maintenance-db",
+    "--index",
+    "--table",
+    "--schema"
+   ],
+   "answer": 2,
+   "answer_flag": "--table",
+   "all_flags": [
+    "-t",
+    "--table"
+   ],
+   "id": 73,
+   "split": "tune"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Create all tables as unlogged tables, rather than permanent tables.",
+   "choices": [
+    "--unlogged-tables",
+    "--progress-timestamp",
+    "--latency-limit",
+    "--version"
+   ],
+   "answer": 0,
+   "answer_flag": "--unlogged-tables",
+   "all_flags": [
+    "--unlogged-tables"
+   ],
+   "id": 74,
+   "split": "tune"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Execute transactions targeting the specified rate instead of running as fast as possible (the default).",
+   "choices": [
+    "--rate",
+    "--scale",
+    "--sampling-rate",
+    "--file"
+   ],
+   "answer": 0,
+   "answer_flag": "--rate",
+   "all_flags": [
+    "-R",
+    "--rate"
+   ],
+   "id": 75,
+   "split": "tune"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Specifies additional collation rules to customize the behavior of the default collation of this database.",
+   "choices": [
+    "--icu-rules",
+    "--echo",
+    "--encoding",
+    "--locale"
+   ],
+   "answer": 0,
+   "answer_flag": "--icu-rules",
+   "all_flags": [
+    "--icu-rules"
+   ],
+   "id": 76,
+   "split": "tune"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Sets the feedback mode to concise, which is the same as entering --feedback concise.",
+   "choices": [
+    "--module-path",
+    "-q",
+    "-v",
+    "-s"
+   ],
+   "answer": 1,
+   "answer_flag": "-q",
+   "all_flags": [
+    "-q"
+   ],
+   "id": 77,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "the new cluster port number; environment variable PGPORTNEW",
+   "choices": [
+    "--old-options",
+    "--new-port",
+    "--socketdir",
+    "--clone"
+   ],
+   "answer": 1,
+   "answer_flag": "--new-port",
+   "all_flags": [
+    "-P",
+    "--new-port"
+   ],
+   "id": 78,
+   "split": "tune"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "The new user will be allowed to log in (that is, the user name can be used as the initial session user identifier).",
+   "choices": [
+    "--host",
+    "--connection-limit",
+    "--login",
+    "--encrypted"
+   ],
+   "answer": 2,
+   "answer_flag": "--login",
+   "all_flags": [
+    "-l",
+    "--login"
+   ],
+   "id": 79,
+   "split": "tune"
+  },
+  {
+   "cmd": "jhsdb",
+   "stem": "Dumps the java heap in hprof binary format.",
+   "choices": [
+    "--binaryheap",
+    "--locks",
+    "--flags",
+    "--heap"
+   ],
+   "answer": 0,
+   "answer_flag": "--binaryheap",
+   "all_flags": [
+    "--binaryheap"
+   ],
+   "id": 80,
+   "split": "tune"
+  },
+  {
+   "cmd": "jdeprscan",
+   "stem": "Enables additional message output during processing.",
+   "choices": [
+    "--full-version",
+    "--version",
+    "--verbose",
+    "--for-removal"
+   ],
+   "answer": 2,
+   "answer_flag": "--verbose",
+   "all_flags": [
+    "--verbose",
+    "-v"
+   ],
+   "id": 81,
+   "split": "tune"
+  },
+  {
+   "cmd": "dropdb",
+   "stem": "Echo the commands that dropdb generates and sends to the server.",
+   "choices": [
+    "--echo",
+    "--force",
+    "--password",
+    "--username"
+   ],
+   "answer": 0,
+   "answer_flag": "--echo",
+   "all_flags": [
+    "-e",
+    "--echo"
+   ],
+   "id": 82,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "the new database cluster configuration directory; environment variable PGDATANEW",
+   "choices": [
+    "--socketdir",
+    "--username",
+    "--old-port",
+    "--new-datadir"
+   ],
+   "answer": 3,
+   "answer_flag": "--new-datadir",
+   "all_flags": [
+    "-D",
+    "--new-datadir"
+   ],
+   "id": 83,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "This option is relevant only when creating a data-only dump.",
+   "choices": [
+    "--schema-only",
+    "--port",
+    "--disable-triggers",
+    "--no-security-labels"
+   ],
+   "answer": 2,
+   "answer_flag": "--disable-triggers",
+   "all_flags": [
+    "--disable-triggers"
+   ],
+   "id": 84,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_archivecleanup",
+   "stem": "Provide an extension that will be stripped from all file names before deciding if they should be deleted.",
+   "choices": [
+    "--version",
+    "-n",
+    "-x",
+    "--help"
+   ],
+   "answer": 2,
+   "answer_flag": "-x",
+   "all_flags": [
+    "-x"
+   ],
+   "id": 85,
+   "split": "tune"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Select events matching an event name.",
+   "choices": [
+    "--exclude-categories",
+    "--width",
+    "--input",
+    "--include-events"
+   ],
+   "answer": 3,
+   "answer_flag": "--include-events",
+   "all_flags": [
+    "--include-events"
+   ],
+   "id": 86,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Stop reading at the specified WAL location, instead of reading to the end of the log stream.",
+   "choices": [
+    "--help",
+    "--stats",
+    "--rmgr",
+    "--end"
+   ],
+   "answer": 3,
+   "answer_flag": "--end",
+   "all_flags": [
+    "-e",
+    "--end"
+   ],
+   "id": 87,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Specifies the host name of the machine on which the database server is running.",
+   "choices": [
+    "--load-via-partition-root",
+    "--superuser",
+    "--host",
+    "--on-conflict-do-nothing"
+   ],
+   "answer": 2,
+   "answer_flag": "--host",
+   "all_flags": [
+    "-h",
+    "--host"
+   ],
+   "id": 88,
+   "split": "tune"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Prints a summary of nonstandard options and exits the tool.",
+   "choices": [
+    "--help-extra",
+    "--add-modules",
+    "-Rflag",
+    "-q"
+   ],
+   "answer": 0,
+   "answer_flag": "--help-extra",
+   "all_flags": [
+    "--help-extra",
+    "-X"
+   ],
+   "id": 89,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "By default, table data is restored even if the creation command for the table failed (e.g., because it already exists).",
+   "choices": [
+    "--no-reconnect",
+    "--no-data-for-failed-tables",
+    "--version",
+    "--section"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-data-for-failed-tables",
+   "all_flags": [
+    "--no-data-for-failed-tables"
+   ],
+   "id": 90,
+   "split": "tune"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Write information about each transaction to a log file.",
+   "choices": [
+    "--debug",
+    "--host",
+    "--failures-detailed",
+    "--log"
+   ],
+   "answer": 3,
+   "answer_flag": "--log",
+   "all_flags": [
+    "-l",
+    "--log"
+   ],
+   "id": 91,
+   "split": "tune"
+  },
+  {
+   "cmd": "dropuser",
+   "stem": "Echo the commands that dropuser generates and sends to the server.",
+   "choices": [
+    "--host",
+    "--interactive",
+    "--echo",
+    "--password"
+   ],
+   "answer": 2,
+   "answer_flag": "--echo",
+   "all_flags": [
+    "-e",
+    "--echo"
+   ],
+   "id": 92,
+   "split": "tune"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Specifies options to be placed within the HTML table tag.",
+   "choices": [
+    "--record-separator",
+    "--table-attr",
+    "--log-file",
+    "--set"
+   ],
+   "answer": 1,
+   "answer_flag": "--table-attr",
+   "all_flags": [
+    "-T",
+    "--table-attr"
+   ],
+   "id": 93,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_dump",
+   "stem": "Show help about pg_dump command line arguments, and exit.",
+   "choices": [
+    "--no-reconnect",
+    "--no-security-labels",
+    "--encoding",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 94,
+   "split": "tune"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "Prompt for the user name if none is specified on the command line, and also prompt for whichever of the options -d/-D, -r/-R, -s/-S is not specified on the command line. (This was the default behavior up to PostgreSQL 9.1.)",
+   "choices": [
+    "--connection-limit",
+    "--encrypted",
+    "--interactive",
+    "--echo"
+   ],
+   "answer": 2,
+   "answer_flag": "--interactive",
+   "all_flags": [
+    "--interactive"
+   ],
+   "id": 95,
+   "split": "tune"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "By default, pg_upgrade will wait for all files of the upgraded cluster to be written safely to disk.",
+   "choices": [
+    "--old-bindir",
+    "--no-sync",
+    "--version",
+    "--old-options"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-sync",
+   "all_flags": [
+    "-N",
+    "--no-sync"
+   ],
+   "id": 96,
+   "split": "tune"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Specifies where to place generated native header files.",
+   "choices": [
+    "-h",
+    "--release",
+    "--limit-modules",
+    "-XprintProcessorInfo"
+   ],
+   "answer": 0,
+   "answer_flag": "-h",
+   "all_flags": [
+    "-h"
+   ],
+   "id": 97,
+   "split": "tune"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Displays the command-line help for the jar command or optionally the compatibility help.",
+   "choices": [
+    "--main-class",
+    "--help",
+    "--update",
+    "--file"
+   ],
+   "answer": 1,
+   "answer_flag": "--help",
+   "all_flags": [
+    "-h",
+    "--help"
+   ],
+   "id": 98,
+   "split": "tune"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "The new user will not have the REPLICATION privilege, which is described more fully in the documentation for CREATE ROLE (CREATE_ROLE(7)).",
+   "choices": [
+    "--superuser",
+    "--pwprompt",
+    "--no-replication",
+    "--no-superuser"
+   ],
+   "answer": 2,
+   "answer_flag": "--no-replication",
+   "all_flags": [
+    "--no-replication"
+   ],
+   "id": 99,
+   "split": "tune"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Analyzes the dependences per other given options and then finds all artifacts that directly and indirectly depend on the matching nodes.",
+   "choices": [
+    "--dot-output",
+    "-filter:archive",
+    "--inverse",
+    "--list-deps"
+   ],
+   "answer": 2,
+   "answer_flag": "--inverse",
+   "all_flags": [
+    "-I",
+    "--inverse"
+   ],
+   "id": 100,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "Specifies additional collation rules to customize the behavior of the default collation.",
+   "choices": [
+    "--lc-collate",
+    "--pwfile",
+    "--locale",
+    "--icu-rules"
+   ],
+   "answer": 3,
+   "answer_flag": "--icu-rules",
+   "all_flags": [
+    "--icu-rules"
+   ],
+   "id": 101,
+   "split": "test"
+  },
+  {
+   "cmd": "clusterdb",
+   "stem": "Specifies the host name of the machine on which the server is running.",
+   "choices": [
+    "--host",
+    "--verbose",
+    "--username",
+    "--echo"
+   ],
+   "answer": 0,
+   "answer_flag": "--host",
+   "all_flags": [
+    "-h",
+    "--host"
+   ],
+   "id": 102,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Creates class and package usage pages.",
+   "choices": [
+    "--allow-script-in-comments",
+    "-Werror",
+    "-public",
+    "-use"
+   ],
+   "answer": 3,
+   "answer_flag": "-use",
+   "all_flags": [
+    "-use"
+   ],
+   "id": 103,
+   "split": "test"
+  },
+  {
+   "cmd": "reindexdb",
+   "stem": "When the -a/--all is used, connect to this database to gather the list of databases to reindex.",
+   "choices": [
+    "--maintenance-db",
+    "--help",
+    "--concurrently",
+    "--tablespace"
+   ],
+   "answer": 0,
+   "answer_flag": "--maintenance-db",
+   "all_flags": [
+    "--maintenance-db"
+   ],
+   "id": 104,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Prints additional information about the selected class.",
+   "choices": [
+    "--module",
+    "--multi-release",
+    "-verbose",
+    "--class-path"
+   ],
+   "answer": 2,
+   "answer_flag": "-verbose",
+   "all_flags": [
+    "-verbose",
+    "-v"
+   ],
+   "id": 105,
+   "split": "test"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Create foreign key constraints between the standard tables. (This option adds the f step to the initialization step sequence, if it is not already present.)",
+   "choices": [
+    "--progress",
+    "--foreign-keys",
+    "--port",
+    "--quiet"
+   ],
+   "answer": 1,
+   "answer_flag": "--foreign-keys",
+   "all_flags": [
+    "--foreign-keys"
+   ],
+   "id": 106,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "Specifies the ICU locale when the ICU provider is used.",
+   "choices": [
+    "--wal-segsize",
+    "--pwprompt",
+    "--icu-locale",
+    "--auth-host"
+   ],
+   "answer": 2,
+   "answer_flag": "--icu-locale",
+   "all_flags": [
+    "--icu-locale"
+   ],
+   "id": 107,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeprscan",
+   "stem": "Prints the set of deprecated APIs.",
+   "choices": [
+    "--for-removal",
+    "--version",
+    "--release",
+    "--list"
+   ],
+   "answer": 3,
+   "answer_flag": "--list",
+   "all_flags": [
+    "--list",
+    "-l"
+   ],
+   "id": 108,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Attempt to allow server crashes to produce core files, on platforms where this is possible, by lifting any soft resource limit placed on core files.",
+   "choices": [
+    "--timeout",
+    "--version",
+    "--core-files",
+    "--log"
+   ],
+   "answer": 2,
+   "answer_flag": "--core-files",
+   "all_flags": [
+    "-c",
+    "--core-files"
+   ],
+   "id": 109,
+   "split": "test"
+  },
+  {
+   "cmd": "oid2name",
+   "stem": "display more information about each object shown: tablespace name, schema name, and OID.",
+   "choices": [
+    "--extended",
+    "--username",
+    "-H",
+    "--tablespaces"
+   ],
+   "answer": 0,
+   "answer_flag": "--extended",
+   "all_flags": [
+    "-x",
+    "--extended"
+   ],
+   "id": 110,
+   "split": "test"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Select events matching a thread name.",
+   "choices": [
+    "--truncate",
+    "--include-threads",
+    "--cell-height",
+    "--exclude-threads"
+   ],
+   "answer": 1,
+   "answer_flag": "--include-threads",
+   "all_flags": [
+    "--include-threads"
+   ],
+   "id": 111,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Qualified name of the application main class to execute This option can only be used if --main-jar is specified.",
+   "choices": [
+    "--add-modules",
+    "--main-class",
+    "--help",
+    "-post-msi.wsf"
+   ],
+   "answer": 1,
+   "answer_flag": "--main-class",
+   "all_flags": [
+    "--main-class"
+   ],
+   "id": 112,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumlo",
+   "stem": "Write a lot of progress messages.",
+   "choices": [
+    "--host",
+    "--no-password",
+    "--dry-run",
+    "--verbose"
+   ],
+   "answer": 3,
+   "answer_flag": "--verbose",
+   "all_flags": [
+    "-v",
+    "--verbose"
+   ],
+   "id": 113,
+   "split": "test"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Compiles those source files in the named modules that are newer than the corresponding files in the output directory.",
+   "choices": [
+    "-Xdoclint",
+    "--module-path",
+    "--module",
+    "--system"
+   ],
+   "answer": 2,
+   "answer_flag": "--module",
+   "all_flags": [
+    "--module",
+    "-m"
+   ],
+   "id": 114,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Specifies where to find doclet class files (specified with the -doclet option) and any JAR files it depends on.",
+   "choices": [
+    "-docletpath",
+    "-locale",
+    "-Jflag",
+    "-noindex"
+   ],
+   "answer": 0,
+   "answer_flag": "-docletpath",
+   "all_flags": [
+    "-docletpath"
+   ],
+   "id": 115,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "Require pg_receivewal to use an existing replication slot (see Section 27.2.6).",
+   "choices": [
+    "--slot",
+    "--no-loop",
+    "--drop-slot",
+    "--port"
+   ],
+   "answer": 0,
+   "answer_flag": "--slot",
+   "all_flags": [
+    "-S",
+    "--slot"
+   ],
+   "id": 116,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Forces all filenames in the backup manifest to be hex-encoded.",
+   "choices": [
+    "--waldir",
+    "--manifest-force-encode",
+    "--manifest-checksums",
+    "--password"
+   ],
+   "answer": 1,
+   "answer_flag": "--manifest-force-encode",
+   "all_flags": [
+    "--manifest-force-encode"
+   ],
+   "id": 117,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Allows remote clients to connect via TCP/IP (Internet domain) connections.",
+   "choices": [
+    "--describe-config",
+    "-W",
+    "--version",
+    "-i"
+   ],
+   "answer": 3,
+   "answer_flag": "-i",
+   "all_flags": [
+    "-i"
+   ],
+   "id": 118,
+   "split": "test"
+  },
+  {
+   "cmd": "jhsdb",
+   "stem": "Prints the information on objects awaiting finalization.",
+   "choices": [
+    "--dumpfile",
+    "--hostname",
+    "--all",
+    "--finalizerinfo"
+   ],
+   "answer": 3,
+   "answer_flag": "--finalizerinfo",
+   "all_flags": [
+    "--finalizerinfo"
+   ],
+   "id": 119,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Specifies a directory to search for WAL segment files or a directory with a pg_wal subdirectory that contains such files.",
+   "choices": [
+    "--path",
+    "--timeline",
+    "--quiet",
+    "--save-fullpage"
+   ],
+   "answer": 0,
+   "answer_flag": "--path",
+   "all_flags": [
+    "-p",
+    "--path"
+   ],
+   "id": 120,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "In --start mode, automatically stop replication and exit with normal exit status 0 when receiving reaches the specified LSN. If specified when not in --start mode, an error is raised.",
+   "choices": [
+    "--username",
+    "--option",
+    "--endpos",
+    "--password"
+   ],
+   "answer": 2,
+   "answer_flag": "--endpos",
+   "all_flags": [
+    "-E",
+    "--endpos"
+   ],
+   "id": 121,
+   "split": "test"
+  },
+  {
+   "cmd": "jstat",
+   "stem": "Java HotSpot VM compiler method statistics.",
+   "choices": [
+    "-statOption",
+    "-JjavaOption",
+    "-printcompilation",
+    "-gcnew"
+   ],
+   "answer": 2,
+   "answer_flag": "-printcompilation",
+   "all_flags": [
+    "-printcompilation"
+   ],
+   "id": 122,
+   "split": "test"
+  },
+  {
+   "cmd": "jmap",
+   "stem": "Connects to a running process and prints information on objects awaiting finalization.",
+   "choices": [
+    "-histo",
+    "-dump:dump_options",
+    "-finalizerinfo",
+    "-clstats"
+   ],
+   "answer": 2,
+   "answer_flag": "-finalizerinfo",
+   "all_flags": [
+    "-finalizerinfo"
+   ],
+   "id": 123,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "Makes initdb prompt for a password to give the bootstrap superuser.",
+   "choices": [
+    "--pwprompt",
+    "--icu-rules",
+    "--text-search-config",
+    "--allow-group-access"
+   ],
+   "answer": 0,
+   "answer_flag": "--pwprompt",
+   "all_flags": [
+    "-W",
+    "--pwprompt"
+   ],
+   "id": 124,
+   "split": "test"
+  },
+  {
+   "cmd": "jstat",
+   "stem": "Displays a time-stamp column as the first column of output.",
+   "choices": [
+    "-gcnew",
+    "-gcutil",
+    "-t",
+    "-gcoldcapacity"
+   ],
+   "answer": 2,
+   "answer_flag": "-t",
+   "all_flags": [
+    "-t"
+   ],
+   "id": 125,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Specifies the module version, when creating or updating a modular JAR file, or updating a non-modular JAR file.",
+   "choices": [
+    "--module-version",
+    "-C",
+    "--update",
+    "--no-compress"
+   ],
+   "answer": 0,
+   "answer_flag": "--module-version",
+   "all_flags": [
+    "--module-version"
+   ],
+   "id": 126,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Password for the user to run the service as.",
+   "choices": [
+    "--log",
+    "--version",
+    "-P",
+    "--silent"
+   ],
+   "answer": 2,
+   "answer_flag": "-P",
+   "all_flags": [
+    "-P"
+   ],
+   "id": 127,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "Do not output commands to restore security labels, even if the archive contains them.",
+   "choices": [
+    "--exclude-schema",
+    "--no-security-labels",
+    "--no-owner",
+    "--port"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-security-labels",
+   "all_flags": [
+    "--no-security-labels"
+   ],
+   "id": 128,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "Drop the replication slot with the name specified in --slot, then exit.",
+   "choices": [
+    "--drop-slot",
+    "--no-sync",
+    "--verbose",
+    "--if-not-exists"
+   ],
+   "answer": 0,
+   "answer_flag": "--drop-slot",
+   "all_flags": [
+    "--drop-slot"
+   ],
+   "id": 129,
+   "split": "test"
+  },
+  {
+   "cmd": "dropdb",
+   "stem": "Show help about dropdb command line arguments, and exit.",
+   "choices": [
+    "--host",
+    "--username",
+    "--interactive",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 130,
+   "split": "test"
+  },
+  {
+   "cmd": "dropuser",
+   "stem": "Prompt for confirmation before actually removing the user, and prompt for the user name if none is specified on the command line.",
+   "choices": [
+    "--if-exists",
+    "--password",
+    "--version",
+    "--interactive"
+   ],
+   "answer": 3,
+   "answer_flag": "--interactive",
+   "all_flags": [
+    "-i",
+    "--interactive"
+   ],
+   "id": 131,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Suggest providers that implement the given service types from the module path.",
+   "choices": [
+    "--module-path",
+    "--suggest-providers",
+    "--help",
+    "--compress"
+   ],
+   "answer": 1,
+   "answer_flag": "--suggest-providers",
+   "all_flags": [
+    "--suggest-providers"
+   ],
+   "id": 132,
+   "split": "test"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Echo the commands that createdb generates and sends to the server.",
+   "choices": [
+    "--owner",
+    "--lc-ctype",
+    "--echo",
+    "--password"
+   ],
+   "answer": 2,
+   "answer_flag": "--echo",
+   "all_flags": [
+    "-e",
+    "--echo"
+   ],
+   "id": 133,
+   "split": "test"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Allows code to depend on the preview features of this release.",
+   "choices": [
+    "-Rflag",
+    "--feedback",
+    "--enable-preview",
+    "--startup"
+   ],
+   "answer": 2,
+   "answer_flag": "--enable-preview",
+   "all_flags": [
+    "--enable-preview"
+   ],
+   "id": 134,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Performs a dry run of hash mode.",
+   "choices": [
+    "--warn-if-resolved",
+    "--module-path",
+    "--help-extra",
+    "--dry-run"
+   ],
+   "answer": 3,
+   "answer_flag": "--dry-run",
+   "all_flags": [
+    "--dry-run"
+   ],
+   "id": 135,
+   "split": "test"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Maximum number of chunks per file, by default 5.",
+   "choices": [
+    "--exclude-events",
+    "--truncate",
+    "--json",
+    "--max-chunks"
+   ],
+   "answer": 3,
+   "answer_flag": "--max-chunks",
+   "all_flags": [
+    "--max-chunks"
+   ],
+   "id": 136,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "Do not error out when --create-slot is specified and a slot with the specified name already exists.",
+   "choices": [
+    "--option",
+    "--slot",
+    "--no-password",
+    "--if-not-exists"
+   ],
+   "answer": 3,
+   "answer_flag": "--if-not-exists",
+   "all_flags": [
+    "--if-not-exists"
+   ],
+   "id": 137,
+   "split": "test"
+  },
+  {
+   "cmd": "reindexdb",
+   "stem": "Show help about reindexdb command line arguments, and exit.",
+   "choices": [
+    "--echo",
+    "--jobs",
+    "--port",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 138,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "Create a new logical replication slot with the name specified by --slot, using the output plugin specified by --plugin, for the database specified by --dbname.",
+   "choices": [
+    "--if-not-exists",
+    "--port",
+    "--host",
+    "--create-slot"
+   ],
+   "answer": 3,
+   "answer_flag": "--create-slot",
+   "all_flags": [
+    "--create-slot"
+   ],
+   "id": 139,
+   "split": "test"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Create indexes in the specified tablespace, rather than the default tablespace.",
+   "choices": [
+    "--skip-some-updates",
+    "--partitions",
+    "--index-tablespace",
+    "--random-seed"
+   ],
+   "answer": 2,
+   "answer_flag": "--index-tablespace",
+   "all_flags": [
+    "--index-tablespace"
+   ],
+   "id": 140,
+   "split": "test"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "Set a maximum number of connections for the new user.",
+   "choices": [
+    "--member-of",
+    "--echo",
+    "--no-inherit",
+    "--connection-limit"
+   ],
+   "answer": 3,
+   "answer_flag": "--connection-limit",
+   "all_flags": [
+    "-c",
+    "--connection-limit"
+   ],
+   "id": 141,
+   "split": "test"
+  },
+  {
+   "cmd": "jstat",
+   "stem": "Passes javaOption to the Java application launcher.",
+   "choices": [
+    "-help",
+    "-statOption",
+    "-JjavaOption",
+    "-gcnewcapacity"
+   ],
+   "answer": 2,
+   "answer_flag": "-JjavaOption",
+   "all_flags": [
+    "-JjavaOption"
+   ],
+   "id": 142,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Instructs the server where to place the base backup.",
+   "choices": [
+    "--dbname",
+    "--target",
+    "--manifest-checksums",
+    "--password"
+   ],
+   "answer": 1,
+   "answer_flag": "--target",
+   "all_flags": [
+    "-t",
+    "--target"
+   ],
+   "id": 143,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the password that is required to access the keystore.",
+   "choices": [
+    "-tsapolicyid",
+    "-tsacert",
+    "-strict",
+    "-storepass"
+   ],
+   "answer": 3,
+   "answer_flag": "-storepass",
+   "all_flags": [
+    "-storepass"
+   ],
+   "id": 144,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "Makes initdb read the bootstrap superusers password from a file.",
+   "choices": [
+    "--pwfile",
+    "--pgdata",
+    "--locale-provider",
+    "--no-sync"
+   ],
+   "answer": 0,
+   "answer_flag": "--pwfile",
+   "all_flags": [
+    "--pwfile"
+   ],
+   "id": 145,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_resetwal",
+   "stem": "Manually set the next multitransaction offset.",
+   "choices": [
+    "--wal-segsize",
+    "--next-oid",
+    "--multixact-offset",
+    "--next-wal-file"
+   ],
+   "answer": 2,
+   "answer_flag": "--multixact-offset",
+   "all_flags": [
+    "-O",
+    "--multixact-offset"
+   ],
+   "id": 146,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Limits the universe of observable modules to those in the transitive closure of the named modules, mod, plus the main module, if any, plus any further modules specified in the --add-modules option.",
+   "choices": [
+    "--launcher",
+    "--no-header-files",
+    "--version",
+    "--limit-modules"
+   ],
+   "answer": 3,
+   "answer_flag": "--limit-modules",
+   "all_flags": [
+    "--limit-modules"
+   ],
+   "id": 147,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_verifybackup",
+   "stem": "Dont print anything when a backup is successfully verified.",
+   "choices": [
+    "--no-parse-wal",
+    "--quiet",
+    "--manifest-path",
+    "--wal-directory"
+   ],
+   "answer": 1,
+   "answer_flag": "--quiet",
+   "all_flags": [
+    "-q",
+    "--quiet"
+   ],
+   "id": 148,
+   "split": "test"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Number of frames in stack traces, by default 5.",
+   "choices": [
+    "--stack-depth",
+    "--exclude-categories",
+    "--max-size",
+    "--include-events"
+   ],
+   "answer": 0,
+   "answer_flag": "--stack-depth",
+   "all_flags": [
+    "--stack-depth"
+   ],
+   "id": 149,
+   "split": "test"
+  },
+  {
+   "cmd": "jwebserver",
+   "stem": "Specifies the port to listen on.",
+   "choices": [
+    "--bind-address",
+    "--directory",
+    "--port",
+    "--output"
+   ],
+   "answer": 2,
+   "answer_flag": "--port",
+   "all_flags": [
+    "-p",
+    "--port"
+   ],
+   "id": 150,
+   "split": "test"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Specifies the name of the database to connect to.",
+   "choices": [
+    "--dbname",
+    "--no-align",
+    "--html",
+    "--single-step"
+   ],
+   "answer": 0,
+   "answer_flag": "--dbname",
+   "all_flags": [
+    "-d",
+    "--dbname"
+   ],
+   "id": 151,
+   "split": "test"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Do not use Readline for line editing and do not use the command history (see the section called \"Command-Line Editing\" below).",
+   "choices": [
+    "--single-transaction",
+    "--no-readline",
+    "--csv",
+    "--host"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-readline",
+   "all_flags": [
+    "-n",
+    "--no-readline"
+   ],
+   "id": 152,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Indicates that the jpackage output is intended for the Mac App Store.",
+   "choices": [
+    "--mac-app-store",
+    "--mac-package-name",
+    "-volume.icns",
+    "--module"
+   ],
+   "answer": 0,
+   "answer_flag": "--mac-app-store",
+   "all_flags": [
+    "--mac-app-store"
+   ],
+   "id": 153,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "By default, pg_rewind will wait for all files to be written safely to disk.",
+   "choices": [
+    "--no-sync",
+    "--no-ensure-shutdown",
+    "--source-pgdata",
+    "--write-recovery-conf"
+   ],
+   "answer": 0,
+   "answer_flag": "--no-sync",
+   "all_flags": [
+    "-N",
+    "--no-sync"
+   ],
+   "id": 154,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Prints information for debugging the jdb command.",
+   "choices": [
+    "-trackallthreads",
+    "-listconnectors",
+    "-classpath",
+    "-dbgtrace"
+   ],
+   "answer": 3,
+   "answer_flag": "-dbgtrace",
+   "all_flags": [
+    "-dbgtrace"
+   ],
+   "id": 155,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Testing mode to exercise JIT compilers.",
+   "choices": [
+    "-XX:-UseContainerSupport",
+    "-XX:ReservedCodeCacheSize",
+    "-XX:MaxMetaspaceSize",
+    "-Xcomp"
+   ],
+   "answer": 3,
+   "answer_flag": "-Xcomp",
+   "all_flags": [
+    "-Xcomp"
+   ],
+   "id": 156,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Saves jlink options in the specified file.",
+   "choices": [
+    "--no-header-files",
+    "--no-man-pages",
+    "--help",
+    "--save-opts"
+   ],
+   "answer": 3,
+   "answer_flag": "--save-opts",
+   "all_flags": [
+    "--save-opts"
+   ],
+   "id": 157,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Name of the application and/or package",
+   "choices": [
+    "-service-install.wxi",
+    "--main-class",
+    "--launcher-as-service",
+    "--name"
+   ],
+   "answer": 3,
+   "answer_flag": "--name",
+   "all_flags": [
+    "--name",
+    "-n"
+   ],
+   "id": 158,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Output detailed information about backup blocks.",
+   "choices": [
+    "--rmgr",
+    "--limit",
+    "--bkp-details",
+    "--version"
+   ],
+   "answer": 2,
+   "answer_flag": "--bkp-details",
+   "all_flags": [
+    "-b",
+    "--bkp-details"
+   ],
+   "id": 159,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "Do everything except actually modifying the target directory.",
+   "choices": [
+    "--progress",
+    "--source-server",
+    "--target-pgdata",
+    "--dry-run"
+   ],
+   "answer": 3,
+   "answer_flag": "--dry-run",
+   "all_flags": [
+    "-n",
+    "--dry-run"
+   ],
+   "id": 160,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Passes the specified option to the JVM. For example: javap -J-version javap -J-Djava.security.manager -J-Djava.security.policy=MyPolicy MyClassName See Overview of Java Options in java.",
+   "choices": [
+    "--class-path",
+    "-Joption",
+    "--module",
+    "-verbose"
+   ],
+   "answer": 1,
+   "answer_flag": "-Joption",
+   "all_flags": [
+    "-Joption"
+   ],
+   "id": 161,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Display summary statistics (number and size of records and full-page images) instead of individual records.",
+   "choices": [
+    "--version",
+    "--end",
+    "--quiet",
+    "--stats"
+   ],
+   "answer": 3,
+   "answer_flag": "--stats",
+   "all_flags": [
+    "-z",
+    "--stats"
+   ],
+   "id": 162,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "Run the most time-consuming steps of pg_restore - those that load data, create indexes, or create constraints - concurrently, using up to number-of-jobs concurrent sessions.",
+   "choices": [
+    "--verbose",
+    "--list",
+    "--jobs",
+    "--no-reconnect"
+   ],
+   "answer": 2,
+   "answer_flag": "--jobs",
+   "all_flags": [
+    "-j",
+    "--jobs"
+   ],
+   "id": 163,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "clusters install user name; environment variable PGUSER",
+   "choices": [
+    "--help",
+    "--retain",
+    "--username",
+    "--version"
+   ],
+   "answer": 2,
+   "answer_flag": "--username",
+   "all_flags": [
+    "-U",
+    "--username"
+   ],
+   "id": 164,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Display the specified number of records, then stop.",
+   "choices": [
+    "--fork",
+    "--limit",
+    "--block",
+    "--help"
+   ],
+   "answer": 1,
+   "answer_flag": "--limit",
+   "all_flags": [
+    "-n",
+    "--limit"
+   ],
+   "id": 165,
+   "split": "test"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Specifies the TCP port or the local Unix-domain socket file extension on which the server is listening for connections.",
+   "choices": [
+    "--echo-all",
+    "--quiet",
+    "--port",
+    "--single-transaction"
+   ],
+   "answer": 2,
+   "answer_flag": "--port",
+   "all_flags": [
+    "-p",
+    "--port"
+   ],
+   "id": 166,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_archivecleanup",
+   "stem": "Show help about pg_archivecleanup command line arguments, and exit.",
+   "choices": [
+    "--help",
+    "-d",
+    "-x",
+    "--version"
+   ],
+   "answer": 0,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 167,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Specifies the location of module dependence for generating the hash.",
+   "choices": [
+    "--version",
+    "--module-path",
+    "--help",
+    "--update"
+   ],
+   "answer": 1,
+   "answer_flag": "--module-path",
+   "all_flags": [
+    "-p",
+    "--module-path"
+   ],
+   "id": 168,
+   "split": "test"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Specifies the ICU locale ID to be used in this database, if the ICU locale provider is selected.",
+   "choices": [
+    "--icu-locale",
+    "--port",
+    "--no-password",
+    "--version"
+   ],
+   "answer": 0,
+   "answer_flag": "--icu-locale",
+   "all_flags": [
+    "--icu-locale"
+   ],
+   "id": 169,
+   "split": "test"
+  },
+  {
+   "cmd": "keytool",
+   "stem": "Used to identify a cryptographic service provider's name when listed in the security properties file.",
+   "choices": [
+    "-storepass",
+    "-printcert",
+    "-providername",
+    "-printcertreq"
+   ],
+   "answer": 2,
+   "answer_flag": "-providername",
+   "all_flags": [
+    "-providername"
+   ],
+   "id": 170,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Only display records marked with the given transaction ID.",
+   "choices": [
+    "--quiet",
+    "--xid",
+    "--start",
+    "--help"
+   ],
+   "answer": 1,
+   "answer_flag": "--xid",
+   "all_flags": [
+    "-x",
+    "--xid"
+   ],
+   "id": 171,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Sets a custom command or a series of semicolon-separated commands to run when an irrecoverable error occurs.",
+   "choices": [
+    "-XX:MaxHeapSize",
+    "-XX:+Inline",
+    "-XX:OnError",
+    "-XX:AllocateHeapAt"
+   ],
+   "answer": 2,
+   "answer_flag": "-XX:OnError",
+   "all_flags": [
+    "-XX:OnError"
+   ],
+   "id": 172,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Shuts off messages so that only the warnings and errors appear to make them easier to view.",
+   "choices": [
+    "--no-frames",
+    "-quiet",
+    "--date",
+    "--no-platform-links"
+   ],
+   "answer": 1,
+   "answer_flag": "-quiet",
+   "all_flags": [
+    "-quiet"
+   ],
+   "id": 173,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_test_fsync",
+   "stem": "Specifies the number of seconds for each test.",
+   "choices": [
+    "--help",
+    "--secs-per-test",
+    "--filename",
+    "--version"
+   ],
+   "answer": 1,
+   "answer_flag": "--secs-per-test",
+   "all_flags": [
+    "-s",
+    "--secs-per-test"
+   ],
+   "id": 174,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Specifies the location of native commands to copy into the resulting JMOD file.",
+   "choices": [
+    "--exclude",
+    "--version",
+    "--do-not-resolve-by-default",
+    "--cmds"
+   ],
+   "answer": 3,
+   "answer_flag": "--cmds",
+   "all_flags": [
+    "--cmds"
+   ],
+   "id": 175,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Doesn't show missing dependencies from -generate-module-info output.",
+   "choices": [
+    "-P",
+    "--class-path",
+    "-q",
+    "--package"
+   ],
+   "answer": 2,
+   "answer_flag": "-q",
+   "all_flags": [
+    "-q",
+    "-quiet"
+   ],
+   "id": 176,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "In --start mode, start replication from the given LSN. For details on the effect of this, see the documentation in Chapter 49 and Section 55.4.",
+   "choices": [
+    "--no-loop",
+    "--startpos",
+    "--username",
+    "--slot"
+   ],
+   "answer": 1,
+   "answer_flag": "--startpos",
+   "all_flags": [
+    "-I",
+    "--startpos"
+   ],
+   "id": 177,
+   "split": "test"
+  },
+  {
+   "cmd": "jrunscript",
+   "stem": "Passes flag directly to the Java Virtual Machine where the jrunscript command is running.",
+   "choices": [
+    "-Dname",
+    "-Jflag",
+    "-help",
+    "-q"
+   ],
+   "answer": 1,
+   "answer_flag": "-Jflag",
+   "all_flags": [
+    "-Jflag"
+   ],
+   "id": 178,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_verifybackup",
+   "stem": "Show help about pg_verifybackup command line arguments, and exit.",
+   "choices": [
+    "--help",
+    "--progress",
+    "--wal-directory",
+    "--exit-on-error"
+   ],
+   "answer": 0,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 179,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_resetwal",
+   "stem": "Set the new WAL segment size, in megabytes.",
+   "choices": [
+    "--commit-timestamp-ids",
+    "--wal-segsize",
+    "--dry-run",
+    "--multixact-offset"
+   ],
+   "answer": 1,
+   "answer_flag": "--wal-segsize",
+   "all_flags": [
+    "--wal-segsize"
+   ],
+   "id": 180,
+   "split": "test"
+  },
+  {
+   "cmd": "jrunscript",
+   "stem": "Displays a help message and exits.",
+   "choices": [
+    "-e",
+    "-f",
+    "-Dname",
+    "-help"
+   ],
+   "answer": 3,
+   "answer_flag": "-help",
+   "all_flags": [
+    "-help"
+   ],
+   "id": 181,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_isready",
+   "stem": "The maximum number of seconds to wait when attempting connection before returning that the server is not responding.",
+   "choices": [
+    "--port",
+    "--version",
+    "--username",
+    "--timeout"
+   ],
+   "answer": 3,
+   "answer_flag": "--timeout",
+   "all_flags": [
+    "-t",
+    "--timeout"
+   ],
+   "id": 182,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Name of the system service to register.",
+   "choices": [
+    "-e",
+    "-N",
+    "--wait",
+    "--version"
+   ],
+   "answer": 1,
+   "answer_flag": "-N",
+   "all_flags": [
+    "-N"
+   ],
+   "id": 183,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Connects to the target JVM with the named connector and listed argument values.",
+   "choices": [
+    "-listenany",
+    "-connect",
+    "-help",
+    "-launch"
+   ],
+   "answer": 1,
+   "answer_flag": "-connect",
+   "all_flags": [
+    "-connect"
+   ],
+   "id": 184,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Enable compression of resources: 0: No compression 1: Constant string sharing 2: ZIP",
+   "choices": [
+    "--compress",
+    "--endian",
+    "--bind-services",
+    "--help"
+   ],
+   "answer": 0,
+   "answer_flag": "--compress",
+   "all_flags": [
+    "-c",
+    "--compress"
+   ],
+   "id": 185,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Adds the named modules, mod, to the default set of root modules.",
+   "choices": [
+    "--add-modules",
+    "--help",
+    "--module-path",
+    "--save-opts"
+   ],
+   "answer": 0,
+   "answer_flag": "--add-modules",
+   "all_flags": [
+    "--add-modules"
+   ],
+   "id": 186,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Show help about pg_waldump command line arguments, and exit.",
+   "choices": [
+    "--start",
+    "--timeline",
+    "--stats",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 187,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "directory to use for postmaster sockets during upgrade; default is current working directory; environment variable PGSOCKETDIR",
+   "choices": [
+    "--old-bindir",
+    "--new-options",
+    "--socketdir",
+    "--new-datadir"
+   ],
+   "answer": 2,
+   "answer_flag": "--socketdir",
+   "all_flags": [
+    "-s",
+    "--socketdir"
+   ],
+   "id": 188,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Suppresses the entire comment body, including the main description and all tags, and generate only declarations.",
+   "choices": [
+    "-sourcetab",
+    "-d",
+    "-nocomment",
+    "--no-frames"
+   ],
+   "answer": 2,
+   "answer_flag": "-nocomment",
+   "all_flags": [
+    "-nocomment"
+   ],
+   "id": 189,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_resetwal",
+   "stem": "Manually set the WAL starting location by specifying the name of the next WAL segment file.",
+   "choices": [
+    "--wal-segsize",
+    "--multixact-offset",
+    "--commit-timestamp-ids",
+    "--next-wal-file"
+   ],
+   "answer": 3,
+   "answer_flag": "--next-wal-file",
+   "all_flags": [
+    "-l",
+    "--next-wal-file"
+   ],
+   "id": 190,
+   "split": "test"
+  },
+  {
+   "cmd": "keytool",
+   "stem": "The password that is used to protect the integrity of the keystore.",
+   "choices": [
+    "-addprovider",
+    "-storepass",
+    "-importkeystore",
+    "-importcert"
+   ],
+   "answer": 1,
+   "answer_flag": "-storepass",
+   "all_flags": [
+    "-storepass"
+   ],
+   "id": 191,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "This option specifies the authentication method for local users via TCP/IP connections used in pg_hba.conf (host lines).",
+   "choices": [
+    "--auth-host",
+    "--auth",
+    "--debug",
+    "--sync-only"
+   ],
+   "answer": 0,
+   "answer_flag": "--auth-host",
+   "all_flags": [
+    "--auth-host"
+   ],
+   "id": 192,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "Show help about initdb command line arguments, and exit.",
+   "choices": [
+    "--discard-caches",
+    "--help",
+    "--no-clean",
+    "--auth-host"
+   ],
+   "answer": 1,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 193,
+   "split": "test"
+  },
+  {
+   "cmd": "jhsdb",
+   "stem": "Prints the histogram of java object heap.",
+   "choices": [
+    "--finalizerinfo",
+    "--histo",
+    "--heap",
+    "--all"
+   ],
+   "answer": 1,
+   "answer_flag": "--histo",
+   "all_flags": [
+    "--histo"
+   ],
+   "id": 194,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Determines the leaf modules and records the hashes of the dependencies directly and indirectly requiring them, based on the module graph of the modules matching the given regex-pattern.",
+   "choices": [
+    "--header-files",
+    "--config",
+    "--hash-modules",
+    "--help"
+   ],
+   "answer": 2,
+   "answer_flag": "--hash-modules",
+   "all_flags": [
+    "--hash-modules"
+   ],
+   "id": 195,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumlo",
+   "stem": "Dont remove anything, just show what would be done.",
+   "choices": [
+    "--dry-run",
+    "--version",
+    "--password",
+    "--verbose"
+   ],
+   "answer": 0,
+   "answer_flag": "--dry-run",
+   "all_flags": [
+    "-n",
+    "--dry-run"
+   ],
+   "id": 196,
+   "split": "test"
+  },
+  {
+   "cmd": "jwebserver",
+   "stem": "Specifies the address to bind to.",
+   "choices": [
+    "--output",
+    "--bind-address",
+    "--port",
+    "--version"
+   ],
+   "answer": 1,
+   "answer_flag": "--bind-address",
+   "all_flags": [
+    "-b",
+    "--bind-address"
+   ],
+   "id": 197,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dump",
+   "stem": "Do not output commands to select tablespaces.",
+   "choices": [
+    "--exclude-table-data-and-children",
+    "--table-and-children",
+    "--no-tablespaces",
+    "--no-password"
+   ],
+   "answer": 2,
+   "answer_flag": "--no-tablespaces",
+   "all_flags": [
+    "--no-tablespaces"
+   ],
+   "id": 198,
+   "split": "test"
+  },
+  {
+   "cmd": "dropuser",
+   "stem": "Show help about dropuser command line arguments, and exit.",
+   "choices": [
+    "--interactive",
+    "--host",
+    "--if-exists",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 199,
+   "split": "test"
+  },
+  {
+   "cmd": "jconsole",
+   "stem": "Specifies the path that jconsole uses to look up plug-ins.",
+   "choices": [
+    "-pluginpath",
+    "-notile",
+    "-interval",
+    "-Jinput_arguments"
+   ],
+   "answer": 0,
+   "answer_flag": "-pluginpath",
+   "all_flags": [
+    "-pluginpath"
+   ],
+   "id": 200,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "Use the specified main server configuration file for the target cluster.",
+   "choices": [
+    "--dry-run",
+    "--write-recovery-conf",
+    "--no-sync",
+    "--config-file"
+   ],
+   "answer": 3,
+   "answer_flag": "--config-file",
+   "all_flags": [
+    "--config-file"
+   ],
+   "id": 201,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_verifybackup",
+   "stem": "Exit as soon as a problem with the backup is detected.",
+   "choices": [
+    "--wal-directory",
+    "--exit-on-error",
+    "--ignore",
+    "--progress"
+   ],
+   "answer": 1,
+   "answer_flag": "--exit-on-error",
+   "all_flags": [
+    "-e",
+    "--exit-on-error"
+   ],
+   "id": 202,
+   "split": "test"
+  },
+  {
+   "cmd": "jstat",
+   "stem": "Memory pool generation and space capacities.",
+   "choices": [
+    "-gccapacity",
+    "-statOption",
+    "-t",
+    "-h"
+   ],
+   "answer": 0,
+   "answer_flag": "-gccapacity",
+   "all_flags": [
+    "-gccapacity"
+   ],
+   "id": 203,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Also calculate statistics for use by the optimizer.",
+   "choices": [
+    "--no-truncate",
+    "--buffer-usage-limit",
+    "--analyze",
+    "--force-index-cleanup"
+   ],
+   "answer": 2,
+   "answer_flag": "--analyze",
+   "all_flags": [
+    "-z",
+    "--analyze"
+   ],
+   "id": 204,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Computes and records the hashes of modules matched by the given pattern and that depend upon directly or indirectly on a modular JAR file being created or a non-modular JAR file being updated.",
+   "choices": [
+    "--create",
+    "--no-manifest",
+    "--main-class",
+    "--hash-modules"
+   ],
+   "answer": 3,
+   "answer_flag": "--hash-modules",
+   "all_flags": [
+    "--hash-modules"
+   ],
+   "id": 205,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "Copy files to the new cluster.",
+   "choices": [
+    "--no-sync",
+    "--old-bindir",
+    "--copy",
+    "--username"
+   ],
+   "answer": 2,
+   "answer_flag": "--copy",
+   "all_flags": [
+    "--copy"
+   ],
+   "id": 206,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "This option specifies the default authentication method for local users used in pg_hba.conf (host and local lines).",
+   "choices": [
+    "-L",
+    "--no-locale",
+    "--auth",
+    "--locale-provider"
+   ],
+   "answer": 2,
+   "answer_flag": "--auth",
+   "all_flags": [
+    "-A",
+    "--auth"
+   ],
+   "id": 207,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Prints the module descriptor or automatic module name.",
+   "choices": [
+    "--no-manifest",
+    "--release",
+    "--create",
+    "--describe-module"
+   ],
+   "answer": 3,
+   "answer_flag": "--describe-module",
+   "all_flags": [
+    "-d",
+    "--describe-module"
+   ],
+   "id": 208,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Disables verification of checksums, if they are enabled on the server the base backup is taken from.",
+   "choices": [
+    "--label",
+    "--dbname",
+    "--host",
+    "--no-verify-checksums"
+   ],
+   "answer": 3,
+   "answer_flag": "--no-verify-checksums",
+   "all_flags": [
+    "--no-verify-checksums"
+   ],
+   "id": 209,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Specifies the number of seconds between status packets sent back to the source server.",
+   "choices": [
+    "--status-interval",
+    "--waldir",
+    "--wal-method",
+    "--host"
+   ],
+   "answer": 0,
+   "answer_flag": "--status-interval",
+   "all_flags": [
+    "-s",
+    "--status-interval"
+   ],
+   "id": 210,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "In --start mode, use the existing logical replication slot named slot_name.",
+   "choices": [
+    "--port",
+    "--option",
+    "--slot",
+    "--verbose"
+   ],
+   "answer": 2,
+   "answer_flag": "--slot",
+   "all_flags": [
+    "-S",
+    "--slot"
+   ],
+   "id": 211,
+   "split": "test"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Length of aggregation interval (in seconds).",
+   "choices": [
+    "--progress",
+    "--aggregate-interval",
+    "--file",
+    "--init-steps"
+   ],
+   "answer": 1,
+   "answer_flag": "--aggregate-interval",
+   "all_flags": [
+    "--aggregate-interval"
+   ],
+   "id": 212,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "Flush the WAL data to disk immediately after it has been received.",
+   "choices": [
+    "--status-interval",
+    "--drop-slot",
+    "--version",
+    "--synchronous"
+   ],
+   "answer": 3,
+   "answer_flag": "--synchronous",
+   "all_flags": [
+    "--synchronous"
+   ],
+   "id": 213,
+   "split": "test"
+  },
+  {
+   "cmd": "jrunscript",
+   "stem": "Indicates where any class files are that the script needs to access.",
+   "choices": [
+    "-cp",
+    "-help",
+    "-Dname",
+    "-l"
+   ],
+   "answer": 0,
+   "answer_flag": "-cp",
+   "all_flags": [
+    "-cp",
+    "-classpath"
+   ],
+   "id": 214,
+   "split": "test"
+  },
+  {
+   "cmd": "oid2name",
+   "stem": "include system objects (those in information_schema, pg_toast and pg_catalog schemas).",
+   "choices": [
+    "--table",
+    "--indexes",
+    "--system-objects",
+    "--filenode"
+   ],
+   "answer": 2,
+   "answer_flag": "--system-objects",
+   "all_flags": [
+    "-S",
+    "--system-objects"
+   ],
+   "id": 215,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "Automatically stop replication and exit with normal exit status 0 when receiving reaches the specified LSN.",
+   "choices": [
+    "--if-not-exists",
+    "--endpos",
+    "--port",
+    "--password"
+   ],
+   "answer": 1,
+   "answer_flag": "--endpos",
+   "all_flags": [
+    "-E",
+    "--endpos"
+   ],
+   "id": 216,
+   "split": "test"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Specifies the name of the database to connect to when creating the new database.",
+   "choices": [
+    "--strategy",
+    "--maintenance-db",
+    "--username",
+    "--template"
+   ],
+   "answer": 1,
+   "answer_flag": "--maintenance-db",
+   "all_flags": [
+    "--maintenance-db"
+   ],
+   "id": 217,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Controls the use of CRC32 intrinsics for java.util.zip.CRC32.",
+   "choices": [
+    "-XX:+UseCRC32Intrinsics",
+    "-XX:+UnlockDiagnosticVMOptions",
+    "--enable-preview",
+    "-XX:+UseAdaptiveSizePolicy"
+   ],
+   "answer": 0,
+   "answer_flag": "-XX:+UseCRC32Intrinsics",
+   "all_flags": [
+    "-XX:+UseCRC32Intrinsics"
+   ],
+   "id": 218,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Use DROP ... IF EXISTS commands to drop objects in --clean mode.",
+   "choices": [
+    "--inserts",
+    "--no-publications",
+    "--rows-per-insert",
+    "--if-exists"
+   ],
+   "answer": 3,
+   "answer_flag": "--if-exists",
+   "all_flags": [
+    "--if-exists"
+   ],
+   "id": 219,
+   "split": "test"
+  },
+  {
+   "cmd": "clusterdb",
+   "stem": "When the -a/--all is used, connect to this database to gather the list of databases to cluster.",
+   "choices": [
+    "--echo",
+    "--no-password",
+    "--maintenance-db",
+    "--host"
+   ],
+   "answer": 2,
+   "answer_flag": "--maintenance-db",
+   "all_flags": [
+    "--maintenance-db"
+   ],
+   "id": 220,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Reports an error if any warnings occur.",
+   "choices": [
+    "-splitindex",
+    "-Xdoclint:flag",
+    "-Werror",
+    "-linksource"
+   ],
+   "answer": 2,
+   "answer_flag": "-Werror",
+   "all_flags": [
+    "-Werror"
+   ],
+   "id": 221,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dump",
+   "stem": "Do not dump the contents of unlogged tables and sequences.",
+   "choices": [
+    "--no-owner",
+    "--no-unlogged-table-data",
+    "--load-via-partition-root",
+    "--snapshot"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-unlogged-table-data",
+   "all_flags": [
+    "--no-unlogged-table-data"
+   ],
+   "id": 222,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Check indexes matching the specified pattern, unless they are otherwise excluded.",
+   "choices": [
+    "--echo",
+    "--no-dependent-indexes",
+    "--no-password",
+    "--index"
+   ],
+   "answer": 3,
+   "answer_flag": "--index",
+   "all_flags": [
+    "-i",
+    "--index"
+   ],
+   "id": 223,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "options to be passed directly to the old postgres command; multiple option invocations are appended",
+   "choices": [
+    "--clone",
+    "--help",
+    "--socketdir",
+    "--old-options"
+   ],
+   "answer": 3,
+   "answer_flag": "--old-options",
+   "all_flags": [
+    "-o",
+    "--old-options"
+   ],
+   "id": 224,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "Specifies a libpq connection string to connect to the source PostgreSQL server to synchronize the target with.",
+   "choices": [
+    "--source-server",
+    "--version",
+    "--debug",
+    "--restore-target-wal"
+   ],
+   "answer": 0,
+   "answer_flag": "--source-server",
+   "all_flags": [
+    "--source-server"
+   ],
+   "id": 225,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Specifies a role name to be used to create the dump.",
+   "choices": [
+    "--rows-per-insert",
+    "--tablespaces-only",
+    "--role",
+    "--extra-float-digits"
+   ],
+   "answer": 2,
+   "answer_flag": "--role",
+   "all_flags": [
+    "--role"
+   ],
+   "id": 226,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "Like --locale, but only sets the locale in the specified category.",
+   "choices": [
+    "--waldir",
+    "--lc-collate",
+    "--pgdata",
+    "--no-clean"
+   ],
+   "answer": 1,
+   "answer_flag": "--lc-collate",
+   "all_flags": [
+    "--lc-collate",
+    "--lc-ctype",
+    "--lc-messages",
+    "--lc-monetary",
+    "--lc-numeric",
+    "--lc-time"
+   ],
+   "id": 227,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "This option is relevant only when performing a data-only restore.",
+   "choices": [
+    "--file",
+    "--disable-triggers",
+    "--exit-on-error",
+    "--trigger"
+   ],
+   "answer": 1,
+   "answer_flag": "--disable-triggers",
+   "all_flags": [
+    "--disable-triggers"
+   ],
+   "id": 228,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "Specifies the file system path to the data directory of the source server to synchronize the target with.",
+   "choices": [
+    "--target-pgdata",
+    "--debug",
+    "--dry-run",
+    "--source-pgdata"
+   ],
+   "answer": 3,
+   "answer_flag": "--source-pgdata",
+   "all_flags": [
+    "--source-pgdata"
+   ],
+   "id": 229,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Doesn't create a manifest file for the entries.",
+   "choices": [
+    "--help",
+    "--module-version",
+    "--describe-module",
+    "--no-manifest"
+   ],
+   "answer": 3,
+   "answer_flag": "--no-manifest",
+   "all_flags": [
+    "-M",
+    "--no-manifest"
+   ],
+   "id": 230,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_upgrade",
+   "stem": "the old PostgreSQL executable directory; environment variable PGBINOLD",
+   "choices": [
+    "--old-bindir",
+    "--new-datadir",
+    "--new-options",
+    "--old-options"
+   ],
+   "answer": 0,
+   "answer_flag": "--old-bindir",
+   "all_flags": [
+    "-b",
+    "--old-bindir"
+   ],
+   "id": 231,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_verifybackup",
+   "stem": "Use the manifest file at the specified path, rather than one located in the root of the backup directory.",
+   "choices": [
+    "--help",
+    "--exit-on-error",
+    "--quiet",
+    "--manifest-path"
+   ],
+   "answer": 3,
+   "answer_flag": "--manifest-path",
+   "all_flags": [
+    "-m",
+    "--manifest-path"
+   ],
+   "id": 232,
+   "split": "test"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Exclude events matching a thread name.",
+   "choices": [
+    "--json",
+    "--input",
+    "--width",
+    "--exclude-threads"
+   ],
+   "answer": 3,
+   "answer_flag": "--exclude-threads",
+   "all_flags": [
+    "--exclude-threads"
+   ],
+   "id": 233,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Prints line and local variable tables.",
+   "choices": [
+    "--module-path",
+    "-l",
+    "-verbose",
+    "--system"
+   ],
+   "answer": 1,
+   "answer_flag": "-l",
+   "all_flags": [
+    "-l"
+   ],
+   "id": 234,
+   "split": "test"
+  },
+  {
+   "cmd": "jhsdb",
+   "stem": "An optional unique ID for this debug server.",
+   "choices": [
+    "--clstats",
+    "--mixed",
+    "--serverid",
+    "--registryport"
+   ],
+   "answer": 2,
+   "answer_flag": "--serverid",
+   "all_flags": [
+    "--serverid"
+   ],
+   "id": 235,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Prints a help message for the javap command.",
+   "choices": [
+    "-constants",
+    "-verbose",
+    "-package",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help",
+    "-help",
+    "-h"
+   ],
+   "id": 236,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Used to specify the name of cryptographic service provider's master class file when the service provider isn't listed in the java.security security properties file.",
+   "choices": [
+    "-strict",
+    "-providerClass",
+    "-Jjavaoption",
+    "-protected"
+   ],
+   "answer": 1,
+   "answer_flag": "-providerClass",
+   "all_flags": [
+    "-providerClass",
+    "-providerArg"
+   ],
+   "id": 237,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Track all threads as they are created, including virtual threads.",
+   "choices": [
+    "-tclient",
+    "-listconnectors",
+    "-trackallthreads",
+    "-attach"
+   ],
+   "answer": 2,
+   "answer_flag": "-trackallthreads",
+   "all_flags": [
+    "-trackallthreads"
+   ],
+   "id": 238,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Dump data as INSERT commands with explicit column names (INSERT INTO table (column, ...) VALUES ...).",
+   "choices": [
+    "--column-inserts",
+    "--no-security-labels",
+    "--version",
+    "--quote-all-identifiers"
+   ],
+   "answer": 0,
+   "answer_flag": "--column-inserts",
+   "all_flags": [
+    "--column-inserts",
+    "--attribute-inserts"
+   ],
+   "id": 239,
+   "split": "test"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Names of the annotation processors to run.",
+   "choices": [
+    "--processor-path",
+    "--system",
+    "-processor",
+    "--add-modules"
+   ],
+   "answer": 2,
+   "answer_flag": "-processor",
+   "all_flags": [
+    "-processor"
+   ],
+   "id": 240,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Exclude indexes matching the specified pattern.",
+   "choices": [
+    "--startblock",
+    "--exclude-index",
+    "--jobs",
+    "--progress"
+   ],
+   "answer": 1,
+   "answer_flag": "--exclude-index",
+   "all_flags": [
+    "-I",
+    "--exclude-index"
+   ],
+   "id": 241,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Finds dependences matching the specified pattern.",
+   "choices": [
+    "--print-module-deps",
+    "--package",
+    "--require",
+    "--regex"
+   ],
+   "answer": 3,
+   "answer_flag": "--regex",
+   "all_flags": [
+    "-e",
+    "-regex",
+    "--regex"
+   ],
+   "id": 242,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Specifies the module version to record in the module-info.class file.",
+   "choices": [
+    "--man-pages",
+    "--module-version",
+    "--dateTIMESTAMP",
+    "--libs"
+   ],
+   "answer": 1,
+   "answer_flag": "--module-version",
+   "all_flags": [
+    "--module-version"
+   ],
+   "id": 243,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the object identifier (OID) that identifies the policy ID to be sent to the TSA server.",
+   "choices": [
+    "-verbose",
+    "-verify",
+    "-tsapolicyid",
+    "-providerClass"
+   ],
+   "answer": 2,
+   "answer_flag": "-tsapolicyid",
+   "all_flags": [
+    "-tsapolicyid"
+   ],
+   "id": 244,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Exclude relations matching the specified pattern.",
+   "choices": [
+    "--host",
+    "--help",
+    "--exclude-relation",
+    "--password"
+   ],
+   "answer": 2,
+   "answer_flag": "--exclude-relation",
+   "all_flags": [
+    "-R",
+    "--exclude-relation"
+   ],
+   "id": 245,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the name of the message digest algorithm to use when digesting the entries of a JAR file.",
+   "choices": [
+    "-keystore",
+    "-tsacert",
+    "-digestalg",
+    "-providerPath"
+   ],
+   "answer": 2,
+   "answer_flag": "-digestalg",
+   "all_flags": [
+    "-digestalg"
+   ],
+   "id": 246,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "This option can only be used together with -X stream.",
+   "choices": [
+    "--pgdata",
+    "--format",
+    "--slot",
+    "--no-estimate-size"
+   ],
+   "answer": 2,
+   "answer_flag": "--slot",
+   "all_flags": [
+    "-S",
+    "--slot"
+   ],
+   "id": 247,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Lists the connectors available in this JVM.",
+   "choices": [
+    "-X",
+    "-connect",
+    "-classpath",
+    "-listconnectors"
+   ],
+   "answer": 3,
+   "answer_flag": "-listconnectors",
+   "all_flags": [
+    "-listconnectors"
+   ],
+   "id": 248,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Use num concurrent connections to the server, or one per object to be checked, whichever is less.",
+   "choices": [
+    "--exclude-table",
+    "--exclude-toast-pointers",
+    "--table",
+    "--jobs"
+   ],
+   "answer": 3,
+   "answer_flag": "--jobs",
+   "all_flags": [
+    "-j",
+    "--jobs"
+   ],
+   "id": 249,
+   "split": "test"
+  },
+  {
+   "cmd": "jinfo",
+   "stem": "Prints the name and value of the specified command-line flag.",
+   "choices": [
+    "-flag",
+    "-sysprops",
+    "-h",
+    "-flags"
+   ],
+   "answer": 0,
+   "answer_flag": "-flag",
+   "all_flags": [
+    "-flag"
+   ],
+   "id": 250,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Specifies the destination directory for DOT file output.",
+   "choices": [
+    "--generate-module-info",
+    "--version",
+    "--dot-output",
+    "-filter:package"
+   ],
+   "answer": 2,
+   "answer_flag": "--dot-output",
+   "all_flags": [
+    "-dotoutput",
+    "--dot-output"
+   ],
+   "id": 251,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "User name for the user to run the service as.",
+   "choices": [
+    "-U",
+    "--mode",
+    "--version",
+    "--options"
+   ],
+   "answer": 0,
+   "answer_flag": "-U",
+   "all_flags": [
+    "-U"
+   ],
+   "id": 252,
+   "split": "test"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Create a partitioned pgbench_accounts table with NAME method.",
+   "choices": [
+    "--port",
+    "--fillfactor",
+    "--partition-method",
+    "--aggregate-interval"
+   ],
+   "answer": 2,
+   "answer_flag": "--partition-method",
+   "all_flags": [
+    "--partition-method"
+   ],
+   "id": 253,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Specifies the location where jmod puts extracted files from the specified JMOD archive.",
+   "choices": [
+    "--main-class",
+    "--header-files",
+    "--dir",
+    "--do-not-resolve-by-default"
+   ],
+   "answer": 2,
+   "answer_flag": "--dir",
+   "all_flags": [
+    "--dir"
+   ],
+   "id": 254,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "When the connection to the server is lost, do not retry in a loop, just exit.",
+   "choices": [
+    "--help",
+    "--no-loop",
+    "--create-slot",
+    "--no-password"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-loop",
+   "all_flags": [
+    "-n",
+    "--no-loop"
+   ],
+   "id": 255,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the message digest algorithm that is used to generate the message imprint to be sent to the TSA server.",
+   "choices": [
+    "-certchain",
+    "-verify",
+    "-conf",
+    "-tsadigestalg"
+   ],
+   "answer": 3,
+   "answer_flag": "-tsadigestalg",
+   "all_flags": [
+    "-tsadigestalg"
+   ],
+   "id": 256,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_isready",
+   "stem": "Show help about pg_isready command line arguments, and exit.",
+   "choices": [
+    "--dbname",
+    "--username",
+    "--version",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 257,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "This option specifies the authentication method for local users via Unix-domain socket connections used in pg_hba.conf (local lines).",
+   "choices": [
+    "--auth-local",
+    "--debug",
+    "--encoding",
+    "--icu-rules"
+   ],
+   "answer": 0,
+   "answer_flag": "--auth-local",
+   "all_flags": [
+    "--auth-local"
+   ],
+   "id": 258,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Path of the icon of the application package (absolute path or relative to the current directory)",
+   "choices": [
+    "--icon",
+    "--mac-sign",
+    "--linux-menu-group",
+    "--win-dir-chooser"
+   ],
+   "answer": 0,
+   "answer_flag": "--icon",
+   "all_flags": [
+    "--icon"
+   ],
+   "id": 259,
+   "split": "test"
+  },
+  {
+   "cmd": "dropdb",
+   "stem": "Do not throw an error if the database does not exist.",
+   "choices": [
+    "--echo",
+    "--version",
+    "--if-exists",
+    "--username"
+   ],
+   "answer": 2,
+   "answer_flag": "--if-exists",
+   "all_flags": [
+    "--if-exists"
+   ],
+   "id": 260,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Sets the generated code style for prefetch instructions.",
+   "choices": [
+    "-XX:+PreserveFramePointer",
+    "-XX:AllocatePrefetchStyle",
+    "-XX:+UsePoly1305Intrinsics",
+    "-XX:MinRAMFraction"
+   ],
+   "answer": 1,
+   "answer_flag": "-XX:AllocatePrefetchStyle",
+   "all_flags": [
+    "-XX:AllocatePrefetchStyle"
+   ],
+   "id": 261,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "Create standby.signal and append connection settings to postgresql.auto.conf in the output directory. --source-server is mandatory with this option.",
+   "choices": [
+    "--write-recovery-conf",
+    "--no-ensure-shutdown",
+    "--debug",
+    "--restore-target-wal"
+   ],
+   "answer": 0,
+   "answer_flag": "--write-recovery-conf",
+   "all_flags": [
+    "-R",
+    "--write-recovery-conf"
+   ],
+   "id": 262,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Sets the maximum bytecode size (in bytes) of a hot method to be inlined.",
+   "choices": [
+    "-XX:UseBranchProtection",
+    "--illegal-access",
+    "-XX:FreqInlineSize",
+    "-XX:+UseCondCardMark"
+   ],
+   "answer": 2,
+   "answer_flag": "-XX:FreqInlineSize",
+   "all_flags": [
+    "-XX:FreqInlineSize"
+   ],
+   "id": 263,
+   "split": "test"
+  },
+  {
+   "cmd": "dropuser",
+   "stem": "User name to connect as (not the user name to drop).",
+   "choices": [
+    "--if-exists",
+    "--help",
+    "--password",
+    "--username"
+   ],
+   "answer": 3,
+   "answer_flag": "--username",
+   "all_flags": [
+    "-U",
+    "--username"
+   ],
+   "id": 264,
+   "split": "test"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Specifies where to find annotation processors.",
+   "choices": [
+    "--processor-path",
+    "-h",
+    "--target",
+    "-XprintRounds"
+   ],
+   "answer": 0,
+   "answer_flag": "--processor-path",
+   "all_flags": [
+    "--processor-path",
+    "-processorpath"
+   ],
+   "id": 265,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_resetwal",
+   "stem": "Manually set the next transaction ID.",
+   "choices": [
+    "--dry-run",
+    "--next-transaction-id",
+    "--commit-timestamp-ids",
+    "--version"
+   ],
+   "answer": 1,
+   "answer_flag": "--next-transaction-id",
+   "all_flags": [
+    "-x",
+    "--next-transaction-id"
+   ],
+   "id": 266,
+   "split": "test"
+  },
+  {
+   "cmd": "reindexdb",
+   "stem": "Execute the reindex commands in parallel by running njobs commands simultaneously.",
+   "choices": [
+    "--jobs",
+    "--username",
+    "--table",
+    "--concurrently"
+   ],
+   "answer": 0,
+   "answer_flag": "--jobs",
+   "all_flags": [
+    "-j",
+    "--jobs"
+   ],
+   "id": 267,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the name of signed JAR file.",
+   "choices": [
+    "-addprovider",
+    "-providerName",
+    "-sigfile",
+    "-signedjar"
+   ],
+   "answer": 3,
+   "answer_flag": "-signedjar",
+   "all_flags": [
+    "-signedjar"
+   ],
+   "id": 268,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Specifies a command to perform on a method.",
+   "choices": [
+    "-XX:G1HeapRegionSize",
+    "-XX:+UseSerialGC",
+    "-XX:VMOptionsFile",
+    "-XX:CompileCommand"
+   ],
+   "answer": 3,
+   "answer_flag": "-XX:CompileCommand",
+   "all_flags": [
+    "-XX:CompileCommand"
+   ],
+   "id": 269,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Shows help about pg_basebackup command line arguments, and exits.",
+   "choices": [
+    "--help",
+    "--pgdata",
+    "--version",
+    "--write-recovery-conf"
+   ],
+   "answer": 0,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 270,
+   "split": "test"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "The new role will not automatically inherit privileges of roles it is a member of.",
+   "choices": [
+    "--connection-limit",
+    "--interactive",
+    "--host",
+    "--no-inherit"
+   ],
+   "answer": 3,
+   "answer_flag": "--no-inherit",
+   "all_flags": [
+    "-I",
+    "--no-inherit"
+   ],
+   "id": 271,
+   "split": "test"
+  },
+  {
+   "cmd": "jwebserver",
+   "stem": "Prints the help message and exits.",
+   "choices": [
+    "--help",
+    "--port",
+    "--bind-address",
+    "--directory"
+   ],
+   "answer": 0,
+   "answer_flag": "--help",
+   "all_flags": [
+    "-h",
+    "--help"
+   ],
+   "id": 272,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Link service provider modules and their dependencies.",
+   "choices": [
+    "--launcher",
+    "--add-modules",
+    "--compress",
+    "--bind-services"
+   ],
+   "answer": 3,
+   "answer_flag": "--bind-services",
+   "all_flags": [
+    "--bind-services"
+   ],
+   "id": 273,
+   "split": "test"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Specifies the TCP port or the local Unix domain socket file extension on which the server is listening for connections.",
+   "choices": [
+    "--icu-locale",
+    "--username",
+    "--port",
+    "--template"
+   ],
+   "answer": 2,
+   "answer_flag": "--port",
+   "all_flags": [
+    "-p",
+    "--port"
+   ],
+   "id": 274,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "UUID associated with upgrades for this package",
+   "choices": [
+    "--about-url",
+    "--mac-signing-key-user-name",
+    "--win-upgrade-uuid",
+    "--icon"
+   ],
+   "answer": 2,
+   "answer_flag": "--win-upgrade-uuid",
+   "all_flags": [
+    "--win-upgrade-uuid"
+   ],
+   "id": 275,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_archivecleanup",
+   "stem": "Print lots of debug logging output on stderr.",
+   "choices": [
+    "--version",
+    "--help",
+    "-x",
+    "-d"
+   ],
+   "answer": 3,
+   "answer_flag": "-d",
+   "all_flags": [
+    "-d"
+   ],
+   "id": 276,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "Do not output commands to select table access methods.",
+   "choices": [
+    "--no-table-access-method",
+    "--port",
+    "--no-comments",
+    "--superuser"
+   ],
+   "answer": 0,
+   "answer_flag": "--no-table-access-method",
+   "all_flags": [
+    "--no-table-access-method"
+   ],
+   "id": 277,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Specifies the shutdown mode. mode can be smart, fast, or immediate, or the first letter of one of these three.",
+   "choices": [
+    "--mode",
+    "--log",
+    "-P",
+    "--silent"
+   ],
+   "answer": 0,
+   "answer_flag": "--mode",
+   "all_flags": [
+    "-m",
+    "--mode"
+   ],
+   "id": 278,
+   "split": "test"
+  },
+  {
+   "cmd": "oid2name",
+   "stem": "Show help about oid2name command line arguments, and exit.",
+   "choices": [
+    "--extended",
+    "-H",
+    "--port",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 279,
+   "split": "test"
+  },
+  {
+   "cmd": "jmap",
+   "stem": "Connects to a running process and prints a histogram of the Java object heap.",
+   "choices": [
+    "-clstats",
+    "-dump:dump_options",
+    "-histo",
+    "-finalizerinfo"
+   ],
+   "answer": 2,
+   "answer_flag": "-histo",
+   "all_flags": [
+    "-histo"
+   ],
+   "id": 280,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Specifies a database or connection string to be used to discover the list of databases to be checked.",
+   "choices": [
+    "--maintenance-db",
+    "--relation",
+    "--progress",
+    "--parent-check"
+   ],
+   "answer": 0,
+   "answer_flag": "--maintenance-db",
+   "all_flags": [
+    "--maintenance-db"
+   ],
+   "id": 281,
+   "split": "test"
+  },
+  {
+   "cmd": "jhsdb",
+   "stem": "Sets the port number to which the RMI connector is bound.",
+   "choices": [
+    "--dumpfile",
+    "--help",
+    "--rmiport",
+    "--binaryheap"
+   ],
+   "answer": 2,
+   "answer_flag": "--rmiport",
+   "all_flags": [
+    "--rmiport"
+   ],
+   "id": 282,
+   "split": "test"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "User name to connect as (not the user name to create).",
+   "choices": [
+    "--no-inherit",
+    "--replication",
+    "--no-replication",
+    "--username"
+   ],
+   "answer": 3,
+   "answer_flag": "--username",
+   "all_flags": [
+    "-U",
+    "--username"
+   ],
+   "id": 283,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Show help about postgres command line arguments, and exit.",
+   "choices": [
+    "-f",
+    "-D",
+    "--help",
+    "--name"
+   ],
+   "answer": 2,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 284,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Specifies the application entry point for standalone applications bundled into a modular or executable modular JAR file.",
+   "choices": [
+    "--update",
+    "--hash-modules",
+    "-C",
+    "--main-class"
+   ],
+   "answer": 3,
+   "answer_flag": "--main-class",
+   "all_flags": [
+    "-e",
+    "--main-class"
+   ],
+   "id": 285,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Analyzes the dependence of the specified modules.",
+   "choices": [
+    "--jdk-internals",
+    "--check",
+    "-filter:none",
+    "--system"
+   ],
+   "answer": 1,
+   "answer_flag": "--check",
+   "all_flags": [
+    "--check"
+   ],
+   "id": 286,
+   "split": "test"
+  },
+  {
+   "cmd": "createdb",
+   "stem": "Specifies the LC_CTYPE setting to be used in this database.",
+   "choices": [
+    "--lc-collate",
+    "--lc-ctype",
+    "--host",
+    "--tablespace"
+   ],
+   "answer": 1,
+   "answer_flag": "--lc-ctype",
+   "all_flags": [
+    "--lc-ctype"
+   ],
+   "id": 287,
+   "split": "test"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "The new user will be allowed to create databases.",
+   "choices": [
+    "--connection-limit",
+    "--bypassrls",
+    "--createdb",
+    "--interactive"
+   ],
+   "answer": 2,
+   "answer_flag": "--createdb",
+   "all_flags": [
+    "-d",
+    "--createdb"
+   ],
+   "id": 288,
+   "split": "test"
+  },
+  {
+   "cmd": "jstatd",
+   "stem": "This option does not attempt to create an internal RMI registry within the jstatd process when an existing RMI registry isn't found.",
+   "choices": [
+    "-n",
+    "-nr",
+    "-r",
+    "-p"
+   ],
+   "answer": 1,
+   "answer_flag": "-nr",
+   "all_flags": [
+    "-nr"
+   ],
+   "id": 289,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Runs the application in the Java HotSpot VM server.",
+   "choices": [
+    "-Joption",
+    "-tserver",
+    "-trackallthreads",
+    "-Dname"
+   ],
+   "answer": 1,
+   "answer_flag": "-tserver",
+   "all_flags": [
+    "-tserver"
+   ],
+   "id": 290,
+   "split": "test"
+  },
+  {
+   "cmd": "keytool",
+   "stem": "Used to add a security provider by name (such as SunPKCS11) .",
+   "choices": [
+    "-list",
+    "-importcert",
+    "-addprovider",
+    "-providerarg"
+   ],
+   "answer": 2,
+   "answer_flag": "-addprovider",
+   "all_flags": [
+    "-addprovider"
+   ],
+   "id": 291,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeprscan",
+   "stem": "Prints out a full help message.",
+   "choices": [
+    "--full-version",
+    "--help",
+    "--list",
+    "--for-removal"
+   ],
+   "answer": 1,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help",
+    "-h"
+   ],
+   "id": 292,
+   "split": "test"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Set the filename prefix for the log files created by --log.",
+   "choices": [
+    "--foreign-keys",
+    "--progress",
+    "--verbose-errors",
+    "--log-prefix"
+   ],
+   "answer": 3,
+   "answer_flag": "--log-prefix",
+   "all_flags": [
+    "--log-prefix"
+   ],
+   "id": 293,
+   "split": "test"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "A comma-separated list of .jfc files from which the new configuration is based.",
+   "choices": [
+    "--width",
+    "--max-size",
+    "--input",
+    "--interactive"
+   ],
+   "answer": 2,
+   "answer_flag": "--input",
+   "all_flags": [
+    "--input"
+   ],
+   "id": 294,
+   "split": "test"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Set the record separator for unaligned output to a zero byte.",
+   "choices": [
+    "--port",
+    "--single-step",
+    "--no-align",
+    "--record-separator-zero"
+   ],
+   "answer": 3,
+   "answer_flag": "--record-separator-zero",
+   "all_flags": [
+    "--record-separator-zero"
+   ],
+   "id": 295,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Specifies the directory of the Unix-domain socket on which postgres is to listen for connections from client applications.",
+   "choices": [
+    "-k",
+    "-r",
+    "--version",
+    "-h"
+   ],
+   "answer": 0,
+   "answer_flag": "-k",
+   "all_flags": [
+    "-k"
+   ],
+   "id": 296,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Executes a program encapsulated in a JAR file.",
+   "choices": [
+    "-XX:OnOutOfMemoryError",
+    "-XX:+PrintFlagsRanges",
+    "-XX:+UseTransparentHugePages",
+    "-jar"
+   ],
+   "answer": 3,
+   "answer_flag": "-jar",
+   "all_flags": [
+    "-jar"
+   ],
+   "id": 297,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "This option has the same effect as the option of the same name in pg_receivewal(1).",
+   "choices": [
+    "--status-interval",
+    "--no-loop",
+    "--if-not-exists",
+    "--host"
+   ],
+   "answer": 0,
+   "answer_flag": "--status-interval",
+   "all_flags": [
+    "-s",
+    "--status-interval"
+   ],
+   "id": 298,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Overrides the location of bootstrap class files.",
+   "choices": [
+    "-package",
+    "-version",
+    "-s",
+    "-bootclasspath"
+   ],
+   "answer": 3,
+   "answer_flag": "-bootclasspath",
+   "all_flags": [
+    "-bootclasspath"
+   ],
+   "id": 299,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Execute the vacuum or analyze commands in parallel by running njobs commands simultaneously.",
+   "choices": [
+    "--no-process-main",
+    "--no-password",
+    "--jobs",
+    "--freeze"
+   ],
+   "answer": 2,
+   "answer_flag": "--jobs",
+   "all_flags": [
+    "-j",
+    "--jobs"
+   ],
+   "id": 300,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_checksums",
+   "stem": "By default, pg_checksums will wait for all files to be written safely to disk.",
+   "choices": [
+    "--enable",
+    "--no-sync",
+    "--help",
+    "--check"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-sync",
+   "all_flags": [
+    "-N",
+    "--no-sync"
+   ],
+   "id": 301,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Sets the default date style to \"European\", that is DMY ordering of input date fields.",
+   "choices": [
+    "-P",
+    "-e",
+    "-O",
+    "-k"
+   ],
+   "answer": 1,
+   "answer_flag": "-e",
+   "all_flags": [
+    "-e"
+   ],
+   "id": 302,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Do not wait forever to acquire shared table locks at the beginning of the dump.",
+   "choices": [
+    "--verbose",
+    "--no-role-passwords",
+    "--lock-wait-timeout",
+    "--use-set-session-authorization"
+   ],
+   "answer": 2,
+   "answer_flag": "--lock-wait-timeout",
+   "all_flags": [
+    "--lock-wait-timeout"
+   ],
+   "id": 303,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Specifies the user name to connect as.",
+   "choices": [
+    "--tablespace-mapping",
+    "--username",
+    "--status-interval",
+    "--manifest-force-encode"
+   ],
+   "answer": 1,
+   "answer_flag": "--username",
+   "all_flags": [
+    "-U",
+    "--username"
+   ],
+   "id": 304,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Creates a shortcut for the application.",
+   "choices": [
+    "--linux-shortcut",
+    "--linux-app-category",
+    "-post-image.sh",
+    "--name"
+   ],
+   "answer": 0,
+   "answer_flag": "--linux-shortcut",
+   "all_flags": [
+    "--linux-shortcut"
+   ],
+   "id": 305,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "This option is relevant only when restoring the contents of a table which has row security.",
+   "choices": [
+    "--host",
+    "--enable-row-security",
+    "--format",
+    "--superuser"
+   ],
+   "answer": 1,
+   "answer_flag": "--enable-row-security",
+   "all_flags": [
+    "--enable-row-security"
+   ],
+   "id": 306,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Specifies the TCP/IP port or local Unix domain socket file extension on which postgres is to listen for connections from client applications.",
+   "choices": [
+    "-j",
+    "--single",
+    "-p",
+    "-C"
+   ],
+   "answer": 2,
+   "answer_flag": "-p",
+   "all_flags": [
+    "-p"
+   ],
+   "id": 307,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Omits the HELP link in the navigation bar at the top of each page of output.",
+   "choices": [
+    "-public",
+    "-nohelp",
+    "--show-packages",
+    "--no-frames"
+   ],
+   "answer": 1,
+   "answer_flag": "-nohelp",
+   "all_flags": [
+    "-nohelp"
+   ],
+   "id": 308,
+   "split": "test"
+  },
+  {
+   "cmd": "clusterdb",
+   "stem": "Show help about clusterdb command line arguments, and exit.",
+   "choices": [
+    "--verbose",
+    "--help",
+    "--no-password",
+    "--port"
+   ],
+   "answer": 1,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 309,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "By default, if a table is checked, any btree indexes of that table will also be checked, even if they are not explicitly selected by an option such as --index or --relation.",
+   "choices": [
+    "--all",
+    "--progress",
+    "--no-dependent-indexes",
+    "--exclude-relation"
+   ],
+   "answer": 2,
+   "answer_flag": "--no-dependent-indexes",
+   "all_flags": [
+    "--no-dependent-indexes"
+   ],
+   "id": 310,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Do not output commands to set TOAST compression methods.",
+   "choices": [
+    "--quote-all-identifiers",
+    "--no-toast-compression",
+    "--no-tablespaces",
+    "--inserts"
+   ],
+   "answer": 1,
+   "answer_flag": "--no-toast-compression",
+   "all_flags": [
+    "--no-toast-compression"
+   ],
+   "id": 311,
+   "split": "test"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Turn off printing of column names and result row count footers, etc.",
+   "choices": [
+    "--no-align",
+    "--help",
+    "--table-attr",
+    "--tuples-only"
+   ],
+   "answer": 3,
+   "answer_flag": "--tuples-only",
+   "all_flags": [
+    "-t",
+    "--tuples-only"
+   ],
+   "id": 312,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the type of keystore to be instantiated.",
+   "choices": [
+    "-verify",
+    "-tsadigestalg",
+    "-storetype",
+    "-providerName"
+   ],
+   "answer": 2,
+   "answer_flag": "-storetype",
+   "all_flags": [
+    "-storetype"
+   ],
+   "id": 313,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "Drop the replication slot with the name specified by --slot, then exit.",
+   "choices": [
+    "--port",
+    "--start",
+    "--drop-slot",
+    "--file"
+   ],
+   "answer": 2,
+   "answer_flag": "--drop-slot",
+   "all_flags": [
+    "--drop-slot"
+   ],
+   "id": 314,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Shows system information (path, size, date, SHA-256 hash) of the class being processed.",
+   "choices": [
+    "-sysinfo",
+    "-s",
+    "--class-path",
+    "-version"
+   ],
+   "answer": 0,
+   "answer_flag": "-sysinfo",
+   "all_flags": [
+    "-sysinfo"
+   ],
+   "id": 315,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Do not print any output, except for errors.",
+   "choices": [
+    "--rmgr",
+    "--path",
+    "--bkp-details",
+    "--quiet"
+   ],
+   "answer": 3,
+   "answer_flag": "--quiet",
+   "all_flags": [
+    "-q",
+    "--quiet"
+   ],
+   "id": 316,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Adds a security provider by name (such as SunPKCS11) and an optional configure argument.",
+   "choices": [
+    "-conf",
+    "-addprovider",
+    "-strict",
+    "-protected"
+   ],
+   "answer": 1,
+   "answer_flag": "-addprovider",
+   "all_flags": [
+    "-addprovider",
+    "-providerArg"
+   ],
+   "id": 317,
+   "split": "test"
+  },
+  {
+   "cmd": "jconsole",
+   "stem": "Displays the help message for the command.",
+   "choices": [
+    "-pluginpath",
+    "-version",
+    "-Jinput_arguments",
+    "--help"
+   ],
+   "answer": 3,
+   "answer_flag": "--help",
+   "all_flags": [
+    "-help",
+    "--help"
+   ],
+   "id": 318,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "Do not restore objects that are in the named schema.",
+   "choices": [
+    "--list",
+    "--no-reconnect",
+    "--exclude-schema",
+    "--host"
+   ],
+   "answer": 2,
+   "answer_flag": "--exclude-schema",
+   "all_flags": [
+    "-N",
+    "--exclude-schema"
+   ],
+   "id": 319,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "Generates index information for the specified JAR file.",
+   "choices": [
+    "--main-class",
+    "--update",
+    "--generate-index",
+    "--release"
+   ],
+   "answer": 2,
+   "answer_flag": "--generate-index",
+   "all_flags": [
+    "-i",
+    "--generate-index"
+   ],
+   "id": 320,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "This option specifies the target data directory that is synchronized with the source.",
+   "choices": [
+    "--restore-target-wal",
+    "--debug",
+    "--target-pgdata",
+    "--no-sync"
+   ],
+   "answer": 2,
+   "answer_flag": "--target-pgdata",
+   "all_flags": [
+    "-D",
+    "--target-pgdata"
+   ],
+   "id": 321,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "When the -a/--all is used, connect to this database to gather the list of databases to vacuum.",
+   "choices": [
+    "--maintenance-db",
+    "--no-index-cleanup",
+    "--version",
+    "--no-process-main"
+   ],
+   "answer": 0,
+   "answer_flag": "--maintenance-db",
+   "all_flags": [
+    "--maintenance-db"
+   ],
+   "id": 322,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "Specifies the base file name to be used for the generated .SF and signature block files.",
+   "choices": [
+    "-sigfile",
+    "-providerClass",
+    "-sectionsonly",
+    "-tsa"
+   ],
+   "answer": 0,
+   "answer_flag": "-sigfile",
+   "all_flags": [
+    "-sigfile"
+   ],
+   "id": 323,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Print the usage text with a list and description of each valid option for the current platform to the output stream, and exit.",
+   "choices": [
+    "--runtime-image",
+    "--help",
+    "--linux-package-name",
+    "--main-class"
+   ],
+   "answer": 1,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help",
+    "-h"
+   ],
+   "id": 324,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Sets a named run-time parameter; a shorter form of -c.",
+   "choices": [
+    "-t",
+    "-D",
+    "--version",
+    "--name"
+   ],
+   "answer": 3,
+   "answer_flag": "--name",
+   "all_flags": [
+    "--name"
+   ],
+   "id": 325,
+   "split": "test"
+  },
+  {
+   "cmd": "clusterdb",
+   "stem": "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections.",
+   "choices": [
+    "--quiet",
+    "--port",
+    "--all",
+    "--host"
+   ],
+   "answer": 1,
+   "answer_flag": "--port",
+   "all_flags": [
+    "-p",
+    "--port"
+   ],
+   "id": 326,
+   "split": "test"
+  },
+  {
+   "cmd": "jfr",
+   "stem": "Maximum number of bytes per file.",
+   "choices": [
+    "--include-events",
+    "--truncate",
+    "--max-chunks",
+    "--max-size"
+   ],
+   "answer": 3,
+   "answer_flag": "--max-size",
+   "all_flags": [
+    "--max-size"
+   ],
+   "id": 327,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Background image Default resource is background_dmg.tiff",
+   "choices": [
+    "-background.tiff",
+    "--win-help-url",
+    "--input",
+    "--license-file"
+   ],
+   "answer": 0,
+   "answer_flag": "-background.tiff",
+   "all_flags": [
+    "-background.tiff"
+   ],
+   "id": 328,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Filters dependences matching the given pattern.",
+   "choices": [
+    "-filter:package",
+    "--list-reduced-deps",
+    "-verbose:package",
+    "-f"
+   ],
+   "answer": 3,
+   "answer_flag": "-f",
+   "all_flags": [
+    "-f",
+    "-filter"
+   ],
+   "id": 329,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_restore",
+   "stem": "Use the provided string as the psql \\restrict key in the dump output.",
+   "choices": [
+    "--use-list",
+    "--restrict-key",
+    "--no-owner",
+    "--single-transaction"
+   ],
+   "answer": 1,
+   "answer_flag": "--restrict-key",
+   "all_flags": [
+    "--restrict-key"
+   ],
+   "id": 330,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Exclude from the default root set of modules",
+   "choices": [
+    "--dry-run",
+    "--compress",
+    "--do-not-resolve-by-default",
+    "--help"
+   ],
+   "answer": 2,
+   "answer_flag": "--do-not-resolve-by-default",
+   "all_flags": [
+    "--do-not-resolve-by-default"
+   ],
+   "id": 331,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Specifies the byte order of the generated image.",
+   "choices": [
+    "--version",
+    "--module-path",
+    "--disable-plugin",
+    "--endian"
+   ],
+   "answer": 3,
+   "answer_flag": "--endian",
+   "all_flags": [
+    "--endian"
+   ],
+   "id": 332,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Lists directories separated by colons in which to look for classes.",
+   "choices": [
+    "-launch",
+    "-classpath",
+    "-attach",
+    "-tserver"
+   ],
+   "answer": 1,
+   "answer_flag": "-classpath",
+   "all_flags": [
+    "-classpath"
+   ],
+   "id": 333,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Restricts the analysis to APIs, for example, dependences from the signature of public and protected members of public classes including field type, method parameter types, returned type, and checked exception types.",
+   "choices": [
+    "--ignore-missing-deps",
+    "--package",
+    "--api-only",
+    "-filter:module"
+   ],
+   "answer": 2,
+   "answer_flag": "--api-only",
+   "all_flags": [
+    "-apionly",
+    "--api-only"
+   ],
+   "id": 334,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Starts the debugged application immediately upon startup of the jdb command.",
+   "choices": [
+    "-Dname",
+    "-listen",
+    "-launch",
+    "-trackallthreads"
+   ],
+   "answer": 2,
+   "answer_flag": "-launch",
+   "all_flags": [
+    "-launch"
+   ],
+   "id": 335,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_verifybackup",
+   "stem": "Dont attempt to parse write-ahead log data that will be needed to recover from this backup.",
+   "choices": [
+    "--no-parse-wal",
+    "--version",
+    "--exit-on-error",
+    "--skip-checksums"
+   ],
+   "answer": 0,
+   "answer_flag": "--no-parse-wal",
+   "all_flags": [
+    "-n",
+    "--no-parse-wal"
+   ],
+   "id": 336,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "Specifies the number of seconds between status packets sent back to the server.",
+   "choices": [
+    "--status-interval",
+    "--compress",
+    "--if-not-exists",
+    "--no-password"
+   ],
+   "answer": 0,
+   "answer_flag": "--status-interval",
+   "all_flags": [
+    "-s",
+    "--status-interval"
+   ],
+   "id": 337,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Unconditionally, excludes the specified packages and their subpackages from the list formed by -subpackages.",
+   "choices": [
+    "-docfilessubdirs",
+    "-exclude",
+    "-html5",
+    "--no-frames"
+   ],
+   "answer": 1,
+   "answer_flag": "-exclude",
+   "all_flags": [
+    "-exclude"
+   ],
+   "id": 338,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_verifybackup",
+   "stem": "Try to parse WAL files stored in the specified directory, rather than in pg_wal.",
+   "choices": [
+    "--exit-on-error",
+    "--manifest-path",
+    "--ignore",
+    "--wal-directory"
+   ],
+   "answer": 3,
+   "answer_flag": "--wal-directory",
+   "all_flags": [
+    "-w",
+    "--wal-directory"
+   ],
+   "id": 339,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Specifies the file system location of the database configuration files.",
+   "choices": [
+    "-E",
+    "-D",
+    "-N",
+    "-k"
+   ],
+   "answer": 1,
+   "answer_flag": "-D",
+   "all_flags": [
+    "-D"
+   ],
+   "id": 340,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Prints the help on extra options to the error stream.",
+   "choices": [
+    "-XX:+UseCountedLoopSafepoints",
+    "-Xmixed",
+    "-X",
+    "--add-exports"
+   ],
+   "answer": 2,
+   "answer_flag": "-X",
+   "all_flags": [
+    "-X"
+   ],
+   "id": 341,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_ctl",
+   "stem": "Wait for the operation to complete.",
+   "choices": [
+    "-U",
+    "--wait",
+    "-e",
+    "-S"
+   ],
+   "answer": 1,
+   "answer_flag": "--wait",
+   "all_flags": [
+    "-w",
+    "--wait"
+   ],
+   "id": 342,
+   "split": "test"
+  },
+  {
+   "cmd": "jmap",
+   "stem": "Connects to a running process and prints class loader statistics of Java heap.",
+   "choices": [
+    "-histo",
+    "-clstats",
+    "-finalizerinfo",
+    "-dump:dump_options"
+   ],
+   "answer": 1,
+   "answer_flag": "-clstats",
+   "all_flags": [
+    "-clstats"
+   ],
+   "id": 343,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Passes flag directly to the Java Runtime Environment (JRE) that runs the javadoc tool.",
+   "choices": [
+    "-bottom",
+    "-doctitle",
+    "-Jflag",
+    "-protected"
+   ],
+   "answer": 2,
+   "answer_flag": "-Jflag",
+   "all_flags": [
+    "-Jflag"
+   ],
+   "id": 344,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_amcheck",
+   "stem": "Start checking at the specified block number.",
+   "choices": [
+    "--relation",
+    "--exclude-relation",
+    "--rootdescend",
+    "--startblock"
+   ],
+   "answer": 3,
+   "answer_flag": "--startblock",
+   "all_flags": [
+    "--startblock"
+   ],
+   "id": 345,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_receivewal",
+   "stem": "Create a new physical replication slot with the name specified in --slot, then exit.",
+   "choices": [
+    "--create-slot",
+    "--endpos",
+    "--directory",
+    "--no-sync"
+   ],
+   "answer": 0,
+   "answer_flag": "--create-slot",
+   "all_flags": [
+    "--create-slot"
+   ],
+   "id": 346,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_rewind",
+   "stem": "pg_rewind requires that the target server is cleanly shut down before rewinding.",
+   "choices": [
+    "--write-recovery-conf",
+    "--version",
+    "--no-ensure-shutdown",
+    "--config-file"
+   ],
+   "answer": 2,
+   "answer_flag": "--no-ensure-shutdown",
+   "all_flags": [
+    "--no-ensure-shutdown"
+   ],
+   "id": 347,
+   "split": "test"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Specifies the directories and archives that are searched to locate class files.",
+   "choices": [
+    "--help-extra",
+    "--help",
+    "-n",
+    "--class-path"
+   ],
+   "answer": 3,
+   "answer_flag": "--class-path",
+   "all_flags": [
+    "--class-path"
+   ],
+   "id": 348,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Specifies where to find application modules.",
+   "choices": [
+    "-Joption",
+    "--module-path",
+    "-s",
+    "-verbose"
+   ],
+   "answer": 1,
+   "answer_flag": "--module-path",
+   "all_flags": [
+    "--module-path"
+   ],
+   "id": 349,
+   "split": "test"
+  },
+  {
+   "cmd": "psql",
+   "stem": "Echo the actual queries generated by \\d and other backslash commands.",
+   "choices": [
+    "--record-separator-zero",
+    "--echo-hidden",
+    "--pset",
+    "--no-readline"
+   ],
+   "answer": 1,
+   "answer_flag": "--echo-hidden",
+   "all_flags": [
+    "-E",
+    "--echo-hidden"
+   ],
+   "id": 350,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_test_fsync",
+   "stem": "Show help about pg_test_fsync command line arguments, and exit.",
+   "choices": [
+    "--version",
+    "--help",
+    "--filename",
+    "--secs-per-test"
+   ],
+   "answer": 1,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 351,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "This option is a no-op and is just retained for backwards compatibility.",
+   "choices": [
+    "--no-frames",
+    "-version",
+    "--main-stylesheet",
+    "-linksource"
+   ],
+   "answer": 0,
+   "answer_flag": "--no-frames",
+   "all_flags": [
+    "--no-frames"
+   ],
+   "id": 352,
+   "split": "test"
+  },
+  {
+   "cmd": "oid2name",
+   "stem": "show info for table with OID oid.",
+   "choices": [
+    "--port",
+    "--extended",
+    "--quiet",
+    "--oid"
+   ],
+   "answer": 3,
+   "answer_flag": "--oid",
+   "all_flags": [
+    "-o",
+    "--oid"
+   ],
+   "id": 353,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Specifies that the replication slot named by the --slot option should be created before starting the backup.",
+   "choices": [
+    "--no-verify-checksums",
+    "--create-slot",
+    "--waldir",
+    "--username"
+   ],
+   "answer": 1,
+   "answer_flag": "--create-slot",
+   "all_flags": [
+    "-C",
+    "--create-slot"
+   ],
+   "id": 354,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Specifies the location of legal notices to copy into the resulting JMOD file.",
+   "choices": [
+    "--dry-run",
+    "--legal-notices",
+    "--compress",
+    "--version"
+   ],
+   "answer": 1,
+   "answer_flag": "--legal-notices",
+   "all_flags": [
+    "--legal-notices"
+   ],
+   "id": 355,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Adds modules to the root set for analysis.",
+   "choices": [
+    "--add-modules",
+    "-filter:package",
+    "--api-only",
+    "--print-module-deps"
+   ],
+   "answer": 0,
+   "answer_flag": "--add-modules",
+   "all_flags": [
+    "--add-modules"
+   ],
+   "id": 356,
+   "split": "test"
+  },
+  {
+   "cmd": "dropdb",
+   "stem": "Issues a verification prompt before doing anything destructive.",
+   "choices": [
+    "--username",
+    "--force",
+    "--interactive",
+    "--port"
+   ],
+   "answer": 2,
+   "answer_flag": "--interactive",
+   "all_flags": [
+    "-i",
+    "--interactive"
+   ],
+   "id": 357,
+   "split": "test"
+  },
+  {
+   "cmd": "jarsigner",
+   "stem": "In the past, the signature block file generated when a JAR file was signed included a complete encoded copy of the .SF file (signature file) also generated.",
+   "choices": [
+    "-keystore",
+    "-keypass",
+    "-verbose",
+    "-internalsf"
+   ],
+   "answer": 3,
+   "answer_flag": "-internalsf",
+   "all_flags": [
+    "-internalsf"
+   ],
+   "id": 358,
+   "split": "test"
+  },
+  {
+   "cmd": "jmod",
+   "stem": "Specifies location of native libraries to copy into the resulting JMOD file.",
+   "choices": [
+    "--header-files",
+    "--module-version",
+    "--dateTIMESTAMP",
+    "--libs"
+   ],
+   "answer": 3,
+   "answer_flag": "--libs",
+   "all_flags": [
+    "--libs"
+   ],
+   "id": 359,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Non-Windows: Enables installation of signal handlers by the application.",
+   "choices": [
+    "-XX:RTMRetryCount",
+    "-XX:SurvivorRatio",
+    "-XX:StartFlightRecording",
+    "-XX:+AllowUserSignalHandlers"
+   ],
+   "answer": 3,
+   "answer_flag": "-XX:+AllowUserSignalHandlers",
+   "all_flags": [
+    "-XX:+AllowUserSignalHandlers"
+   ],
+   "id": 360,
+   "split": "test"
+  },
+  {
+   "cmd": "keytool",
+   "stem": "This qualifier specifies the type of keystore to be instantiated.",
+   "choices": [
+    "-storetype",
+    "-genkeypair",
+    "-genseckey",
+    "-keypasswd"
+   ],
+   "answer": 0,
+   "answer_flag": "-storetype",
+   "all_flags": [
+    "-storetype"
+   ],
+   "id": 361,
+   "split": "test"
+  },
+  {
+   "cmd": "jinfo",
+   "stem": "Prints Java system properties as name-value pairs.",
+   "choices": [
+    "-flags",
+    "-h",
+    "-flag",
+    "-sysprops"
+   ],
+   "answer": 3,
+   "answer_flag": "-sysprops",
+   "all_flags": [
+    "-sysprops"
+   ],
+   "id": 362,
+   "split": "test"
+  },
+  {
+   "cmd": "pgbench",
+   "stem": "Vacuum all four standard tables before running the test.",
+   "choices": [
+    "--fillfactor",
+    "--partition-method",
+    "--transactions",
+    "--vacuum-all"
+   ],
+   "answer": 3,
+   "answer_flag": "--vacuum-all",
+   "all_flags": [
+    "-v",
+    "--vacuum-all"
+   ],
+   "id": 363,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_resetwal",
+   "stem": "Manually set the oldest and newest transaction IDs for which the commit time can be retrieved.",
+   "choices": [
+    "--next-oid",
+    "--next-transaction-id",
+    "--next-wal-file",
+    "--commit-timestamp-ids"
+   ],
+   "answer": 3,
+   "answer_flag": "--commit-timestamp-ids",
+   "all_flags": [
+    "-c",
+    "--commit-timestamp-ids"
+   ],
+   "id": 364,
+   "split": "test"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Specifies the directory used to place the generated source files.",
+   "choices": [
+    "-s",
+    "--add-reads",
+    "-h",
+    "-nowarn"
+   ],
+   "answer": 0,
+   "answer_flag": "-s",
+   "all_flags": [
+    "-s"
+   ],
+   "id": 365,
+   "split": "test"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Provides a flag to pass to the runtime system.",
+   "choices": [
+    "-Jflag",
+    "--execution",
+    "-q",
+    "-Rflag"
+   ],
+   "answer": 0,
+   "answer_flag": "-Jflag",
+   "all_flags": [
+    "-Jflag"
+   ],
+   "id": 366,
+   "split": "test"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Sets the feedback mode to verbose, which is the same as entering --feedback verbose.",
+   "choices": [
+    "-q",
+    "--help-extra",
+    "-v",
+    "--add-exports"
+   ],
+   "answer": 2,
+   "answer_flag": "-v",
+   "all_flags": [
+    "-v"
+   ],
+   "id": 367,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_waldump",
+   "stem": "Only display records generated by the specified resource manager.",
+   "choices": [
+    "--block",
+    "--timeline",
+    "--bkp-details",
+    "--rmgr"
+   ],
+   "answer": 3,
+   "answer_flag": "--rmgr",
+   "all_flags": [
+    "-r",
+    "--rmgr"
+   ],
+   "id": 368,
+   "split": "test"
+  },
+  {
+   "cmd": "dropuser",
+   "stem": "Do not throw an error if the user does not exist.",
+   "choices": [
+    "--interactive",
+    "--help",
+    "--port",
+    "--if-exists"
+   ],
+   "answer": 3,
+   "answer_flag": "--if-exists",
+   "all_flags": [
+    "--if-exists"
+   ],
+   "id": 369,
+   "split": "test"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Specifies a package to be considered as exported from its defining module.",
+   "choices": [
+    "--no-startup",
+    "--execution",
+    "--add-exports",
+    "--help"
+   ],
+   "answer": 2,
+   "answer_flag": "--add-exports",
+   "all_flags": [
+    "--add-exports"
+   ],
+   "id": 370,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "Show help about pg_recvlogical command line arguments, and exit.",
+   "choices": [
+    "--if-not-exists",
+    "--help",
+    "--host",
+    "--slot"
+   ],
+   "answer": 1,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 371,
+   "split": "test"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Specifies which file to read when both a source file and class file are found for an implicitly compiled class using one of the following options.",
+   "choices": [
+    "--default-module-for-created-files",
+    "-XprintProcessorInfo",
+    "--processor-path",
+    "-Xprefer"
+   ],
+   "answer": 3,
+   "answer_flag": "-Xprefer",
+   "all_flags": [
+    "-Xprefer"
+   ],
+   "id": 372,
+   "split": "test"
+  },
+  {
+   "cmd": "javadoc",
+   "stem": "Omits from the generated documents the Since sections associated with the since tags.",
+   "choices": [
+    "-nosince",
+    "-docletpath",
+    "-linkoffline",
+    "-charset"
+   ],
+   "answer": 0,
+   "answer_flag": "-nosince",
+   "all_flags": [
+    "-nosince"
+   ],
+   "id": 373,
+   "split": "test"
+  },
+  {
+   "cmd": "jlink",
+   "stem": "Specifies the location of the generated runtime image.",
+   "choices": [
+    "--limit-modules",
+    "--output",
+    "--compress",
+    "--no-man-pages"
+   ],
+   "answer": 1,
+   "answer_flag": "--output",
+   "all_flags": [
+    "--output"
+   ],
+   "id": 374,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_basebackup",
+   "stem": "Specifies parameters used to connect to the server, as a connection string; these will override any conflicting command line options.",
+   "choices": [
+    "--format",
+    "--tablespace-mapping",
+    "--no-clean",
+    "--dbname"
+   ],
+   "answer": 3,
+   "answer_flag": "--dbname",
+   "all_flags": [
+    "-d",
+    "--dbname"
+   ],
+   "id": 375,
+   "split": "test"
+  },
+  {
+   "cmd": "jpackage",
+   "stem": "Path to override jpackage resources (absolute path or relative to the current directory) Icons, template files, and other resources of jpackage can be over-ridden by adding replacement resources to this directory.",
+   "choices": [
+    "--resource-dir",
+    "--mac-package-identifier",
+    "--win-menu",
+    "--copyright"
+   ],
+   "answer": 0,
+   "answer_flag": "--resource-dir",
+   "all_flags": [
+    "--resource-dir"
+   ],
+   "id": 376,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_recvlogical",
+   "stem": "Write received and decoded transaction data into this file.",
+   "choices": [
+    "--username",
+    "--file",
+    "--help",
+    "--slot"
+   ],
+   "answer": 1,
+   "answer_flag": "--file",
+   "all_flags": [
+    "-f",
+    "--file"
+   ],
+   "id": 377,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Disable skipping pages based on the contents of the visibility map.",
+   "choices": [
+    "--disable-page-skipping",
+    "--version",
+    "--all",
+    "--password"
+   ],
+   "answer": 0,
+   "answer_flag": "--disable-page-skipping",
+   "all_flags": [
+    "--disable-page-skipping"
+   ],
+   "id": 378,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Lists the module dependences and also the package names of JDK internal APIs (if referenced).",
+   "choices": [
+    "--missing-deps",
+    "--ignore-missing-deps",
+    "--add-modules",
+    "--list-deps"
+   ],
+   "answer": 3,
+   "answer_flag": "--list-deps",
+   "all_flags": [
+    "--list-deps"
+   ],
+   "id": 379,
+   "split": "test"
+  },
+  {
+   "cmd": "jshell",
+   "stem": "Sets the feedback mode to silent, which is the same as entering --feedback silent.",
+   "choices": [
+    "--show-version",
+    "-Jflag",
+    "-s",
+    "--add-exports"
+   ],
+   "answer": 2,
+   "answer_flag": "-s",
+   "all_flags": [
+    "-s"
+   ],
+   "id": 380,
+   "split": "test"
+  },
+  {
+   "cmd": "postgres",
+   "stem": "Send all server log output to filename.",
+   "choices": [
+    "--single",
+    "--name",
+    "-r",
+    "--help"
+   ],
+   "answer": 2,
+   "answer_flag": "-r",
+   "all_flags": [
+    "-r"
+   ],
+   "id": 381,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dump",
+   "stem": "This option is relevant only when dumping the contents of a table which has row security.",
+   "choices": [
+    "--dbname",
+    "--include-foreign-data",
+    "--use-set-session-authorization",
+    "--enable-row-security"
+   ],
+   "answer": 3,
+   "answer_flag": "--enable-row-security",
+   "all_flags": [
+    "--enable-row-security"
+   ],
+   "id": 382,
+   "split": "test"
+  },
+  {
+   "cmd": "jar",
+   "stem": "The timestamp in ISO-8601 extended offset date-time with optional time-zone format, to use for the timestamp of the entries, e.g. 2022-02-12T12:30:00-05:00.",
+   "choices": [
+    "--version",
+    "--module-path",
+    "--create",
+    "--date"
+   ],
+   "answer": 3,
+   "answer_flag": "--date",
+   "all_flags": [
+    "--date"
+   ],
+   "id": 383,
+   "split": "test"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Overrides the location of the bootstrap class files.",
+   "choices": [
+    "-s",
+    "--system",
+    "-Xbootclasspath:path",
+    "--enable-preview"
+   ],
+   "answer": 2,
+   "answer_flag": "-Xbootclasspath:path",
+   "all_flags": [
+    "-Xbootclasspath:path"
+   ],
+   "id": 384,
+   "split": "test"
+  },
+  {
+   "cmd": "initdb",
+   "stem": "Allows users in the same group as the cluster owner to read all cluster files created by initdb.",
+   "choices": [
+    "--text-search-config",
+    "--icu-rules",
+    "--allow-group-access",
+    "--pwfile"
+   ],
+   "answer": 2,
+   "answer_flag": "--allow-group-access",
+   "all_flags": [
+    "-g",
+    "--allow-group-access"
+   ],
+   "id": 385,
+   "split": "test"
+  },
+  {
+   "cmd": "createuser",
+   "stem": "Specifies an existing role that will be automatically added as a member of the new role with admin option, giving it the right to grant membership in the new role to others.",
+   "choices": [
+    "--pwprompt",
+    "--with-admin",
+    "--no-superuser",
+    "--replication"
+   ],
+   "answer": 1,
+   "answer_flag": "--with-admin",
+   "all_flags": [
+    "-a",
+    "--with-admin"
+   ],
+   "id": 386,
+   "split": "test"
+  },
+  {
+   "cmd": "jstat",
+   "stem": "This option displays the same summary of garbage collection statistics as the -gcutil option, but includes the causes of the last garbage collection event and (when applicable), the current garbage collection event.",
+   "choices": [
+    "-gcnewcapacity",
+    "-options",
+    "-help",
+    "-gccause"
+   ],
+   "answer": 3,
+   "answer_flag": "-gccause",
+   "all_flags": [
+    "-gccause"
+   ],
+   "id": 387,
+   "split": "test"
+  },
+  {
+   "cmd": "jhsdb",
+   "stem": "Displays the options available for the command.",
+   "choices": [
+    "--help",
+    "--binaryheap",
+    "--histo",
+    "--mixed"
+   ],
+   "answer": 0,
+   "answer_flag": "--help",
+   "all_flags": [
+    "--help"
+   ],
+   "id": 388,
+   "split": "test"
+  },
+  {
+   "cmd": "jstat",
+   "stem": "Displays a column header every n samples (output rows), where n is a positive integer.",
+   "choices": [
+    "-gcnew",
+    "-h",
+    "-class",
+    "-help"
+   ],
+   "answer": 1,
+   "answer_flag": "-h",
+   "all_flags": [
+    "-h"
+   ],
+   "id": 389,
+   "split": "test"
+  },
+  {
+   "cmd": "jdb",
+   "stem": "Attaches the debugger to a running JVM with the default connection mechanism.",
+   "choices": [
+    "-v",
+    "-sourcepath",
+    "-tclient",
+    "-attach"
+   ],
+   "answer": 3,
+   "answer_flag": "-attach",
+   "all_flags": [
+    "-attach"
+   ],
+   "id": 390,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Skip relations that cannot be immediately locked for processing.",
+   "choices": [
+    "--username",
+    "--skip-locked",
+    "--parallel",
+    "--analyze"
+   ],
+   "answer": 1,
+   "answer_flag": "--skip-locked",
+   "all_flags": [
+    "--skip-locked"
+   ],
+   "id": 391,
+   "split": "test"
+  },
+  {
+   "cmd": "javac",
+   "stem": "Sets the destination directory (or class output directory) for class files.",
+   "choices": [
+    "--patch-module",
+    "--module-source-path",
+    "-Akey",
+    "-d"
+   ],
+   "answer": 3,
+   "answer_flag": "-d",
+   "all_flags": [
+    "-d"
+   ],
+   "id": 392,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Restricts analysis to the classes matching pattern.",
+   "choices": [
+    "-include",
+    "-s",
+    "-filter:archive",
+    "--multi-release"
+   ],
+   "answer": 0,
+   "answer_flag": "-include",
+   "all_flags": [
+    "-include"
+   ],
+   "id": 393,
+   "split": "test"
+  },
+  {
+   "cmd": "jdeps",
+   "stem": "Same as --list-reduced-deps with printing a comma-separated list of module dependences.",
+   "choices": [
+    "-filter:package",
+    "--api-only",
+    "--ignore-missing-deps",
+    "--print-module-deps"
+   ],
+   "answer": 3,
+   "answer_flag": "--print-module-deps",
+   "all_flags": [
+    "--print-module-deps"
+   ],
+   "id": 394,
+   "split": "test"
+  },
+  {
+   "cmd": "java",
+   "stem": "Sets the step size (in bytes) for sequential prefetch instructions.",
+   "choices": [
+    "-Xlog:gc+ref",
+    "-XX:VMOptionsFile",
+    "-XX:+UseMontgomerySquareIntrinsic",
+    "-XX:AllocatePrefetchStepSize"
+   ],
+   "answer": 3,
+   "answer_flag": "-XX:AllocatePrefetchStepSize",
+   "all_flags": [
+    "-XX:AllocatePrefetchStepSize"
+   ],
+   "id": 395,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Send output to the specified file.",
+   "choices": [
+    "--tablespaces-only",
+    "--rows-per-insert",
+    "--no-security-labels",
+    "--file"
+   ],
+   "answer": 3,
+   "answer_flag": "--file",
+   "all_flags": [
+    "-f",
+    "--file"
+   ],
+   "id": 396,
+   "split": "test"
+  },
+  {
+   "cmd": "vacuumdb",
+   "stem": "Do not remove index entries pointing to dead tuples.",
+   "choices": [
+    "--force-index-cleanup",
+    "--no-process-main",
+    "--schema",
+    "--no-index-cleanup"
+   ],
+   "answer": 3,
+   "answer_flag": "--no-index-cleanup",
+   "all_flags": [
+    "--no-index-cleanup"
+   ],
+   "id": 397,
+   "split": "test"
+  },
+  {
+   "cmd": "javap",
+   "stem": "Prints disassembled code, for example, the instructions that comprise the Java bytecodes, for each of the methods in the class.",
+   "choices": [
+    "--module",
+    "-constants",
+    "-c",
+    "--system"
+   ],
+   "answer": 2,
+   "answer_flag": "-c",
+   "all_flags": [
+    "-c"
+   ],
+   "id": 398,
+   "split": "test"
+  },
+  {
+   "cmd": "pg_dumpall",
+   "stem": "Dump only roles, no databases or tablespaces.",
+   "choices": [
+    "--verbose",
+    "--globals-only",
+    "--roles-only",
+    "--no-security-labels"
+   ],
+   "answer": 2,
+   "answer_flag": "--roles-only",
+   "all_flags": [
+    "-r",
+    "--roles-only"
+   ],
+   "id": 399,
+   "split": "test"
+  }
+ ]
+}
