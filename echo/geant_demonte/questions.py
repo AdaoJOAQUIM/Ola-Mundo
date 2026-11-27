@@ -6,11 +6,14 @@ Reponse vraie = le drapeau de l'option ; 3 distracteurs = drapeaux d'autres opti
 """
 import json, os, random, re, sys
 import bibliotheque as bib
+import fuite
 
 GRAINE = 20260801
 N_CIBLE = 400
 N_TUNE = 100
-MAX_PAR_CMD = 20
+MAX_PAR_CMD = 1000
+MIN_MOTS, MAX_MOTS = 4, 60
+SEUIL_LEX = 0.5   # recouvrement lexical enonce/option maximal tolere (v2 : voir criteres.md, amendement)
 ICI = os.path.dirname(os.path.abspath(__file__))
 SORTIE = os.path.join(ICI, "questions.json")
 
@@ -36,10 +39,14 @@ def cite(stem, flag):
     return len(c) >= 5 and re.search(r"(?<![\w])" + re.escape(c) + r"(?![\w])", s) is not None
 
 
+def lex_max(stem, opt):
+    return max(fuite.score_lex(stem, f) for f in opt["flags"])
+
+
 def stem_de(opt):
     p = bib.premiere_phrase(opt["desc"])
     p = re.sub(r"\s+", " ", p).strip()
-    if len(p.split()) < 6 or len(p.split()) > 45:
+    if len(p.split()) < MIN_MOTS or len(p.split()) > MAX_MOTS:
         return None
     if p.endswith(":") or "following" in p.lower() and p.lower().startswith("the following"):
         return None
@@ -62,10 +69,36 @@ def candidats(tables):
                 continue
             if any(cite(st, f) for f in o["flags"]):  # fuite triviale
                 continue
+            if lex_max(st, o) > SEUIL_LEX:  # fuite lexicale : la reponse partage des mots avec l'enonce
+                continue
             out.append((o, st))
         if out:
             res[cmd] = out
     return res
+
+
+def fabriquer(tables, rng, cmd, opt, stem):
+    """Construit une question (ou None si on ne trouve pas 3 distracteurs de meme niveau lexical)."""
+    autres = [o for o in tables[cmd] if set(o["flags"]).isdisjoint(opt["flags"])]
+    bonne = affiche(opt)
+    dist, formes = [], {bonne}
+    rng.shuffle(autres)
+    for o in autres:
+        a = affiche(o)
+        if a in formes or cite(stem, a) or any(cite(stem, f) for f in o["flags"]):
+            continue  # distracteur nomme dans la question : exclu (symetrie)
+        if lex_max(stem, o) > SEUIL_LEX or fuite.score_lex(stem, a) != fuite.score_lex(stem, bonne):
+            continue  # distracteur au meme niveau de recouvrement lexical que la reponse (ici : nul)
+        dist.append(a)
+        formes.add(a)
+        if len(dist) == 3:
+            break
+    if len(dist) < 3:
+        return None
+    choix = dist + [bonne]
+    rng.shuffle(choix)
+    return dict(cmd=cmd, stem=stem, choices=choix, answer=choix.index(bonne), answer_flag=bonne,
+                all_flags=opt["flags"])
 
 
 def construire_questions(tables, graine=GRAINE, n_cible=N_CIBLE, n_tune=N_TUNE, max_par_cmd=MAX_PAR_CMD):
@@ -76,37 +109,20 @@ def construire_questions(tables, graine=GRAINE, n_cible=N_CIBLE, n_tune=N_TUNE, 
         lst = cands[cmd][:]
         rng.shuffle(lst)
         pool.append((cmd, lst[:max_par_cmd]))
-    # tour de role entre commandes jusqu'a n_cible
-    choisis, i = [], 0
-    while len(choisis) < n_cible + 60 and any(lst for _, lst in pool):
-        for cmd, lst in pool:
-            if lst and len(choisis) < n_cible + 60:
-                choisis.append((cmd, lst.pop()))
+    # tour de role entre commandes ; on continue jusqu'a avoir n_cible questions valides
     qs, vus = [], set()
-    for cmd, (opt, stem) in choisis:
-        if stem in vus:
-            continue
-        vus.add(stem)
-        autres = [o for o in tables[cmd] if set(o["flags"]).isdisjoint(opt["flags"])]
-        bonne = affiche(opt)
-        dist, formes = [], {bonne}
-        rng.shuffle(autres)
-        for o in autres:
-            a = affiche(o)
-            if a in formes or cite(stem, a) or any(cite(stem, f) for f in o["flags"]):
-                continue  # distracteur nomme dans la question : exclu (symetrie)
-            dist.append(a)
-            formes.add(a)
-            if len(dist) == 3:
-                break
-        if len(dist) < 3:
-            continue
-        choix = dist + [bonne]
-        rng.shuffle(choix)
-        qs.append(dict(cmd=cmd, stem=stem, choices=choix, answer=choix.index(bonne), answer_flag=bonne,
-                       all_flags=opt["flags"]))
+    while len(qs) < n_cible and any(lst for _, lst in pool):
+        for cmd, lst in pool:
+            if not lst or len(qs) >= n_cible:
+                continue
+            opt, stem = lst.pop()
+            if stem in vus:
+                continue
+            q = fabriquer(tables, rng, cmd, opt, stem)
+            if q is not None:
+                vus.add(stem)
+                qs.append(q)
     rng.shuffle(qs)
-    qs = qs[:n_cible]
     for k, q in enumerate(qs):
         q["id"] = k
         q["split"] = "tune" if k < n_tune else "test"

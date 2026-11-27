@@ -7,6 +7,9 @@ Le texte des pages n'est JAMAIS commite (cache/ est ignore par git).
 import gzip, json, os, re
 
 MAN_DIR = "/usr/share/man/man1"
+# Complement local (hors /usr/share/man, qui ne contient que PostgreSQL et JDK) : pages de cargo/rustc/rustdoc
+# de la chaine Rust installee. Voir resultats.md (ecart au plan).
+EXTRA_DIR = "/root/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/man/man1"
 ICI = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(ICI, "cache")
 LIB_DIR = os.path.join(CACHE, "bibliotheque")
@@ -29,7 +32,8 @@ def propre(s):
 
 
 def lire_page(chemin):
-    with gzip.open(chemin, "rt", encoding="utf-8", errors="replace") as f:
+    ouvre = gzip.open if chemin.endswith(".gz") else open
+    with ouvre(chemin, "rt", encoding="utf-8", errors="replace") as f:
         return f.read().split("\n")
 
 
@@ -156,11 +160,13 @@ def construire():
     """Parcourt les pages, ecrit cache/bibliotheque/<cmd>.txt, renvoie {cmd: [options]}."""
     os.makedirs(LIB_DIR, exist_ok=True)
     tables = {}
-    for nom in sorted(os.listdir(MAN_DIR)):
-        chemin = os.path.realpath(os.path.join(MAN_DIR, nom))
-        if not os.path.exists(chemin) or not nom.endswith(".1.gz"):
+    sources = [(MAN_DIR, ".1.gz")] + ([(EXTRA_DIR, ".1")] if os.path.isdir(EXTRA_DIR) else [])
+    paires = [(d, n, suf) for d, suf in sources for n in sorted(os.listdir(d)) if n.endswith(suf)]
+    for d, nom, suf in paires:
+        chemin = os.path.realpath(os.path.join(d, nom))
+        if not os.path.exists(chemin):
             continue
-        cmd = nom[:-5]
+        cmd = nom[:-len(suf)]
         lines = lignes_contenu(lire_page(chemin))
         pandoc = any(l.startswith(".TP") for l in lines) and any("Pandoc" in l for l in lire_page(chemin)[:25])
         brutes = options_pandoc(lines) if pandoc else options_docbook(lines)
@@ -181,10 +187,13 @@ def construire():
 
 
 def taille_bibliotheque():
-    brut = sum(os.path.getsize(os.path.realpath(os.path.join(MAN_DIR, n))) for n in os.listdir(MAN_DIR)
-               if os.path.exists(os.path.realpath(os.path.join(MAN_DIR, n))))
+    brut = 0
+    for d, suf in [(MAN_DIR, ".1.gz"), (EXTRA_DIR, ".1")]:
+        if os.path.isdir(d):
+            brut += sum(os.path.getsize(os.path.realpath(os.path.join(d, n))) for n in os.listdir(d)
+                        if n.endswith(suf) and os.path.exists(os.path.realpath(os.path.join(d, n))))
     txt = sum(os.path.getsize(os.path.join(LIB_DIR, n)) for n in os.listdir(LIB_DIR))
-    return dict(man_gz_octets=brut, texte_octets=txt, n_pages=len(os.listdir(LIB_DIR)))
+    return dict(man_octets_sur_disque=brut, texte_octets=txt, n_pages=len(os.listdir(LIB_DIR)))
 
 
 if __name__ == "__main__":

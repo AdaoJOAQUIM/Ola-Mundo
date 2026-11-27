@@ -2,6 +2,7 @@
 import json, os, re
 import bibliotheque as bib
 import questions as Q
+import fuite
 
 TABLES = bib.construire()
 
@@ -59,9 +60,12 @@ def test_structure_et_exigences():
         affiches = {Q.affiche(o) for o in opts}
         assert set(q["choices"]) <= affiches                      # distracteurs = drapeaux de la meme commande
         vrai = [o for o in opts if Q.affiche(o) == q["answer_flag"]]
-        assert vrai and q["stem"] == Q.stem_de(vrai[0])            # la reponse est bien l'option decrite
+        assert vrai and any(q["stem"] == Q.stem_de(o) for o in vrai)           # la reponse est bien l'option decrite
         for f in q["choices"]:                                     # aucune fuite triviale dans l'enonce
             assert not Q.cite(q["stem"], f), (q["stem"], f)
+        sc = [fuite.score_lex(q["stem"], f) for f in q["choices"]]  # aucun recouvrement lexical discriminant
+        assert len(set(sc)) == 1 and sc[0] <= Q.SEUIL_LEX, (q["stem"], q["choices"], sc)
+    assert abs(fuite.precision_lexicale(qs) - 0.25) < 1e-9
 
 
 def test_fichier_committe_coherent():
