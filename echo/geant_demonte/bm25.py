@@ -72,6 +72,7 @@ def charger_index():
 
 
 if __name__ == "__main__":
+    import bm25 as _m  # evite le piege du pickle sous __main__
     bib.construire()
-    idx = construire_index()
+    idx = _m.construire_index()
     print(idx.N, "fenetres ; index", os.path.getsize(INDEX_PATH), "octets")

@@ -1,0 +1,197 @@
+{
+ "A": {
+  "fmt": "liste",
+  "score": "sum",
+  "acc_tune": 0.725,
+  "n_tune": 40,
+  "toutes": [
+   {
+    "fmt": "cloze",
+    "score": "sum",
+    "acc": 0.675,
+    "n": 40
+   },
+   {
+    "fmt": "cloze",
+    "score": "mean",
+    "acc": 0.65,
+    "n": 40
+   },
+   {
+    "fmt": "liste",
+    "score": "sum",
+    "acc": 0.725,
+    "n": 40
+   },
+   {
+    "fmt": "liste",
+    "score": "mean",
+    "acc": 0.3,
+    "n": 40
+   }
+  ]
+ },
+ "B": {
+  "fmt": "liste",
+  "score": "sum",
+  "acc_tune": 0.65,
+  "n_tune": 100,
+  "toutes": [
+   {
+    "fmt": "cloze",
+    "score": "sum",
+    "acc": 0.54,
+    "n": 100
+   },
+   {
+    "fmt": "cloze",
+    "score": "mean",
+    "acc": 0.58,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "sum",
+    "acc": 0.65,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "mean",
+    "acc": 0.39,
+    "n": 100
+   }
+  ]
+ },
+ "C": {
+  "fmt": "cloze",
+  "score": "sum",
+  "acc_tune": 0.98,
+  "n_tune": 100,
+  "toutes": [
+   {
+    "fmt": "cloze",
+    "score": "sum",
+    "acc": 0.98,
+    "n": 100
+   },
+   {
+    "fmt": "cloze",
+    "score": "mean",
+    "acc": 0.96,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "sum",
+    "acc": 0.97,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "mean",
+    "acc": 0.75,
+    "n": 100
+   }
+  ]
+ },
+ "D": {
+  "fmt": "liste",
+  "score": "sum",
+  "acc_tune": 0.725,
+  "n_tune": 40,
+  "toutes": [
+   {
+    "fmt": "cloze",
+    "score": "sum",
+    "acc": 0.675,
+    "n": 40
+   },
+   {
+    "fmt": "cloze",
+    "score": "mean",
+    "acc": 0.65,
+    "n": 40
+   },
+   {
+    "fmt": "liste",
+    "score": "sum",
+    "acc": 0.725,
+    "n": 40
+   },
+   {
+    "fmt": "liste",
+    "score": "mean",
+    "acc": 0.3,
+    "n": 40
+   }
+  ],
+  "note": "D reprend le format choisi pour A"
+ },
+ "Ctrl": {
+  "fmt": "cloze",
+  "score": "sum",
+  "acc_tune": 0.98,
+  "n_tune": 100,
+  "toutes": [
+   {
+    "fmt": "cloze",
+    "score": "sum",
+    "acc": 0.98,
+    "n": 100
+   },
+   {
+    "fmt": "cloze",
+    "score": "mean",
+    "acc": 0.96,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "sum",
+    "acc": 0.97,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "mean",
+    "acc": 0.75,
+    "n": 100
+   }
+  ],
+  "note": "le controle reprend le format de C"
+ },
+ "Bsans": {
+  "fmt": "liste",
+  "score": "sum",
+  "acc_tune": 0.65,
+  "n_tune": 100,
+  "toutes": [
+   {
+    "fmt": "cloze",
+    "score": "sum",
+    "acc": 0.54,
+    "n": 100
+   },
+   {
+    "fmt": "cloze",
+    "score": "mean",
+    "acc": 0.58,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "sum",
+    "acc": 0.65,
+    "n": 100
+   },
+   {
+    "fmt": "liste",
+    "score": "mean",
+    "acc": 0.39,
+    "n": 100
+   }
+  ],
+  "note": "invite sans enonce ; normalisation de B"
+ }
+}
