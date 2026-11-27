@@ -7,9 +7,9 @@ ICI = A.ICI
 G = json.load(open(os.path.join(ICI, "format_gele.json")))
 
 
-def run(sys_, split="test"):
+def run(sys_, split="test", tag=""):
     g = G[sys_]
-    nom = f"{sys_}_{split}_{g['fmt']}"
+    nom = f"{sys_}_{split}_{g['fmt']}{tag}"
     if not os.path.exists(os.path.join(A.RUNS, nom + ".jsonl.meta.json")):
         return None
     rows = A.charger(nom)
@@ -23,7 +23,8 @@ def run(sys_, split="test"):
 
 
 def main():
-    R = {s: run(s) for s in ("A", "B", "C", "D", "Ctrl", "Bsans")}
+    R = {s: run(s) for s in ("A", "B", "C", "Ctrl", "Bsans")}
+    R["D"] = run("D", tag="_n30")
     out = dict(hasard=0.25, graine_questions=20260801, formats_geles=G)
     for s, r in R.items():
         if r:
@@ -41,6 +42,15 @@ def main():
         return dict(diff=d, ic95=list(A.bootstrap_diff(ra["_c"], rb["_c"])))
     out["diff"] = {"C-A": diff("C", "A"), "C-B": diff("C", "B"), "C-Ctrl": diff("C", "Ctrl"),
                    "A-B": diff("A", "B"), "B-Bsans": diff("B", "Bsans")}
+    # D : sous-ensemble des 30 premieres questions TEST (budget de temps) ; comparaison sur les memes questions
+    if R["D"]:
+        n = R["D"]["n"]
+        sub = {}
+        for s in ("A", "B", "C", "D"):
+            if R[s]:
+                c = R[s]["_c"][:n]
+                sub[s] = dict(n=n, acc=float(c.mean()), ic95=list(A.bootstrap_ic(c)))
+        out["sous_ensemble_D"] = sub
     # retrieval
     if R["C"]:
         ret = [r["ret"] for r in R["C"]["_rows"]]

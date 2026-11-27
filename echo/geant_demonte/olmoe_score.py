@@ -2,7 +2,7 @@
 
 Une seule passe par question : invite + les 4 options sont rangees dans une seule sequence ; un masque
 d'attention empeche les options de se voir entre elles (chacune ne voit que l'invite et elle-meme) et
-les positions des options repartent toutes de la fin de l'invite. Resultat identique a 4 passes separees,
+les positions des options repartent toutes de la fin de l'invite. Equivalent mathematiquement a 4 passes separees (non verifie numeriquement ici),
 pour un quart des lectures d'experts.
 """
 import os, sys, time
