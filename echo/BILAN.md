@@ -244,6 +244,32 @@ Ce qui bloque, sans enjolivure :
 
 Distance au but : 4,0 % contre 100 %, soit 96 points. Pour situer, le meilleur agent publié sans modèle de langage, StochasticGoose, a obtenu 12,58 % dans la compétition de préversion d'ARC-AGI-3. Ce n'est pas directement comparable : autres jeux, autre protocole. Notre 4,0 % sur HELD n'est pas non plus à comparer à notre 12,1 % sur DEV, qui avait servi au réglage.
 
+## 7 septies. Le géant démonté (`geant_demonte/`)
+
+Question : un petit modèle qui lit une bibliothèque locale bat-il un modèle plus gros qui répond de mémoire, sous 4 Go de RAM ? Le test porte sur 300 questions TEST à choix multiple (hasard 25 %), générées à partir des pages de man locales. Le critère était déposé d'avance.
+
+| Système | Précision | IC 95 % | s/question |
+|---|---|---|---|
+| A : OLMoE 7B en 4 bits, de mémoire | 68,0 % | [62,7 ; 73,0] | 8,5 |
+| B : Qwen 0,8B, de mémoire | 67,0 % | [61,7 ; 72,3] | 0,76 |
+| **C : Qwen 0,8B + BM25** | **99,3 %** | [98,3 ; 100] | 1,9 |
+| Contrôle : C avec passages hors sujet | 49,7 % | [44,0 ; 55,3] | 2,0 |
+| D : OLMoE + BM25 (30 questions) | 80 % | [66,7 ; 93,3] | 13,1 |
+
+**Critère réussi.** C dépasse A de +31,3 points, IC [+26,0 ; +36,7], pour un seuil fixé à +10. La RAM de pic de C est de 3 637 Mo, index compris. Les chiffres ont été recontrôlés depuis `resultats.json`.
+
+Le contrôle confirme que le gain vient des bons passages :
+- avec des passages hors sujet, C tombe de 99,3 % à 49,7 % ;
+- la récupération trouve un passage contenant la réponse pour 98,7 % des questions ;
+- la ligne de base lexicale vaut 25 %, et Qwen sans l'énoncé fait 25,3 % : pas de fuite.
+
+Limites :
+- les énoncés citent la page mot pour mot, ce qui avantage la récupération ;
+- le test mesure la lecture d'un passage fourni, pas le raisonnement sur une documentation paraphrasée ;
+- C et A n'utilisent pas le même format d'invite. Chaque format a été choisi sur TUNE puis gelé avant TEST.
+
+Le premier générateur de questions fuyait lexicalement. Il a été refait, et les critères amendés, avant tout calcul sur TEST.
+
 ## 8. Ce qui reste à faire
 
 Moteur pour un modèle de ≈ 100 milliards de paramètres sur votre machine (4 Go de RAM,
